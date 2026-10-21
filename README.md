@@ -34,7 +34,7 @@ English (default) and German. Texts live in `src/i18n/locales/*.json`; to add a 
 ### Saved progress
 
 Progress lives in the browser's localStorage for this site (key `terradeck:save:v1`) and survives
-reloads. Clearing site data (DevTools → Application → Storage → Clear site data) resets the game.
+reloads. Clearing site data resets the game.
 
 ### Tests (planned)
 
