@@ -22,6 +22,7 @@ export function About({ game }: { game: Game }) {
           <h2>{t('about.findTitle')}</h2>
           <p>{t('about.findText')}</p>
           <p>{t('about.findScope', { count: COUNTRIES.length })}</p>
+          <p>{t('about.continentRule')}</p>
         </li>
         <li className="panel">
           <h2>{t('about.stampsTitle')}</h2>

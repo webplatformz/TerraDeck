@@ -12,6 +12,8 @@ import { parseGameState } from '../src/persistence/validate.ts'
 
 const json = (path) => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'))
 const source = json('../scripts/rarity/snapshot.json')
+const extra = json('../scripts/atlas/snapshot.json')
+const initial = json('../scripts/atlas/initial-roster.json')
 const roster = json('../scripts/rarity/roster.json')
 const catalog = json('../src/data/generated/rarity.json')
 const en = json('../src/i18n/locales/en.json')
@@ -21,15 +23,21 @@ const pool = RARITIES.map((rarity, i) => ({ id: String(i), continent: 'europe', 
 const pick = (rng, entries = pool, saved = {}, recent = []) => pickCountry(entries, saved, recent, () => rng, DEFAULT_CONFIG.stampsToUnlock, DEFAULT_CONFIG.recentWindow)
 
 test('fixed catalog is reproducible, complete and represents five grades', () => {
-  assert.deepEqual(generateRarity(source, roster), catalog)
+  assert.deepEqual(generateRarity(source, roster, extra.observerRarity), catalog)
   assert.deepEqual(COUNTRIES.map((c) => c.id), roster)
-  assert.equal(COUNTRIES.length, 40)
-  assert.equal(new Set(COUNTRIES.map((c) => c.number)).size, 40)
+  assert.equal(COUNTRIES.length, 190)
+  assert.equal(new Set(COUNTRIES.map((c) => c.number)).size, 190)
+  assert.deepEqual(COUNTRIES.slice(0, 40).map(c => c.id), initial)
+  const old = generateRarity(source, initial)
+  for (const id of initial) assert.deepEqual(catalog[id], old[id])
   assert.equal(COUNTRY_BY_ID.nz.number, 20)
   assert.equal(COUNTRY_BY_ID.ch.rarity, 'legendary')
   assert.match(catalog.ch.override, /Switzerland/)
   assert.deepEqual(new Set(COUNTRIES.map((c) => c.rarity)), new Set(RARITIES))
   assert.equal(percentile([1, 2, 2, 4], 2), 0.5)
+  assert.equal(percentile([1, 2, 2, 4], 0), 0)
+  assert.equal(percentile([1, 2, 2, 4], 5), 1)
+  assert.equal(percentile([1, 2, 2, 4], 3), 0.75)
 })
 
 test('generator rejects missing provenance, invalid measurements and duplicate roster entries', () => {

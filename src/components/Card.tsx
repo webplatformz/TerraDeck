@@ -25,7 +25,7 @@ export function CardFront({ country, size = 'md' }: { country: Country; size?: '
           <Flag countryId={country.id} className="card-flag" />
           <CountryShape mapName={country.mapName} />
         </div>
-        <h3 className="card-name">{name}</h3>
+        <h3 className={`card-name${name.length > 26 ? ' card-name--long' : ''}`}>{name}</h3>
         <p className="card-continent">{content.continentName(country.continent)}</p>
         {size !== 'sm' && (
           <>

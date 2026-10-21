@@ -21,6 +21,7 @@ npm run build        # type-check and production build into dist/
 npm run preview      # serve the production build locally
 npm run geo:build    # regenerate src/data/generated/atlas.json after editing scripts/geo/countries.mjs
 npm run rarity:build # regenerate fixed rarity grades from the checked-in source snapshot
+npm run atlas:build  # regenerate the curated roster, content additions, flags, rarity and maps offline
 ```
 
 Useful URLs while developing:
@@ -45,7 +46,15 @@ are capped at a 15-minute remaining wait; shorter waits and stored packs are pre
 
 ### Rarity and country content
 
-The test atlas contains 40 playable countries. Rarity is fixed in
+The curated atlas contains **190 playable countries / 380 mastery stamps**, selected from the
+193 UN members plus the two observer states. **Tuvalu, Vatican City, Monaco, Maldives and Nauru**
+are deferred because the current map data or natural touch targets are insufficient. There are no
+artificial location markers. Other countries and territories are gray, untappable context, not
+distractors; this collection policy makes no statement about their political status.
+
+The original 40 card numbers, rarity assignments and saved progress remain intact; 150 additions
+follow in stable ISO-code order. Transcontinental countries use one accepted game continent, explained
+in How to play. Rarity is fixed in
 `src/data/generated/rarity.json`: Common, Uncommon, Rare, Epic and Legendary.
 Opening a pack reveals its country's name and rarity immediately; full cards need two successful
 encounters: Visitor, then Explorer.
@@ -56,7 +65,12 @@ override. These are game grades, not a ranking of countries' worth or an objecti
 
 - `scripts/rarity/snapshot.json`: sourced measurements, Wikidata article IDs, edition lists and reference set.
 - `scripts/rarity/scoring.mjs`: formula, grade thresholds and overrides.
-- `scripts/rarity/roster.json`: the 40-country test selection, in stable card-number order.
+- `scripts/atlas/roster.json`: canonical map features and continent assignments for all 190 cards.
+- `scripts/atlas/initial-roster.json`: the immutable original 40 card numbers.
+- `scripts/atlas/policy.mjs`: the five deferrals and noncanonical map aliases.
+- `scripts/atlas/snapshot.json`: frozen REST Countries metadata, English/German names, capitals and
+  source provenance, plus verified Wikidata coverage for Palestine (outside the 193-member baseline).
+- `scripts/rarity/roster.json`: the same 190-country selection, in stable card-number order.
 - `src/domain/rarity.ts`: independently tunable per-country draw weights (1.00 to 0.80).
 - `scripts/geo/exclusions.mjs`: gray, untappable territories and overseas polygons, including French Guiana.
 
@@ -66,9 +80,17 @@ repository), then regenerate and review the diff. Never run collection as part o
 changing source coverage must not silently change published grades. Source/API errors stop collection
 without replacing the previous snapshot.
 
+`npm run atlas:collect` explicitly refreshes the 195-candidate metadata and supplemental Palestine
+coverage, separately from the frozen rarity baseline. `npm run atlas:build` is offline and never runs
+as part of deployment. Existing localized country entries are preserved; newly appended facts use
+sourced landlocked status or land neighbors. Review source and output diffs before publishing.
+Capital displays use a single conventional capital, with explicit roles for Pretoria (executive),
+Mbabane (administrative) and Ramallah (administrative seat). The latter does not resolve Jerusalem's status.
+
 ### Tests
 
 `npm test` uses Node's built-in test runner with `tsx` for TypeScript imports. It covers weighted
-selection, discovery/save compatibility, source/catalog/content invariants and excluded map polygons.
+selection, discovery/save compatibility, the exact roster partition, source/catalog/content invariants,
+all-country completion rules, phone-width map visibility and excluded map polygons.
 Lint and the production build remain separate commands. Browser flows are currently checked manually
 with Chrome mobile emulation; a repository-managed end-to-end runner is not configured yet.

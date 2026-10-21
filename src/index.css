@@ -1866,6 +1866,7 @@ p {
 }
 
 .card-name {
+  overflow-wrap: anywhere;
   font-size: 10cqw;
   font-weight: 700;
   line-height: 1.05;
@@ -1882,12 +1883,20 @@ p {
   font-weight: 600;
 }
 
+.card--front:not(.card--sm) .card-name {
+  font-size: 8cqw;
+}
+
+.card--front:not(.card--sm) .card-name--long {
+  font-size: 7cqw;
+}
+
 .card-facts {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2cqw;
-  margin: 4cqw 0 0;
-  padding: 3cqw 0;
+  margin: 2cqw 0 0;
+  padding: 2cqw 0;
   border-top: 0.4cqw solid rgba(141, 106, 39, 0.45);
   border-bottom: 0.4cqw solid rgba(141, 106, 39, 0.45);
   text-align: center;
@@ -1903,16 +1912,16 @@ p {
 .card-facts dd {
   margin: 0.8cqw 0 0;
   font-family: var(--font-display);
-  font-size: 4.6cqw;
+  font-size: 4cqw;
   font-weight: 600;
   overflow-wrap: anywhere;
 }
 
 .card-fact {
-  margin-top: 3cqw;
+  margin-top: 2cqw;
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 4.4cqw;
+  font-size: 4cqw;
   line-height: 1.35;
   text-align: center;
   color: var(--ink-700);
@@ -1922,6 +1931,10 @@ p {
   display: flex;
   justify-content: center;
   margin-top: 3cqw;
+}
+
+.card--front:not(.card--sm) .card-stamps {
+  margin-top: 2cqw;
 }
 
 .card--sm .card-name {
@@ -1969,6 +1982,7 @@ p {
 }
 
 .card-back-title {
+  overflow-wrap: anywhere;
   font-family: var(--font-display);
   font-size: 9cqw;
   font-weight: 600;

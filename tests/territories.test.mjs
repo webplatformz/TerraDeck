@@ -23,7 +23,7 @@ test('French Guiana remains land but cannot be mistaken for mainland France', ()
   assert.ok(geoContains(outline, [-53.2, 4]))
 })
 
-test('all configured territory shapes are gray context, non-roster countries are not excluded', () => {
+test('all configured territory shapes are gray context, retained countries stay playable', () => {
   for (const f of countries.filter((f) => EXCLUDED_TERRITORY_ISOS.includes(f.properties.iso))) {
     assert.equal(f.properties.excluded, true, f.properties.name)
   }

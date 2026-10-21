@@ -12,6 +12,7 @@ import { mergeArcs, feature } from 'topojson-client'
 import { geoCentroid } from 'd3-geo'
 import { COUNTRIES, EXCLUDED, OVERSEAS_PARTS } from './geo/countries.mjs'
 import { EXCLUDED_PARTS, EXCLUDED_TERRITORY_ISOS } from './geo/exclusions.mjs'
+const roster = JSON.parse(readFileSync(new URL('./atlas/roster.json', import.meta.url), 'utf8'))
 
 const CONTINENT_IDS = ['africa', 'asia', 'europe', 'north-america', 'south-america', 'oceania']
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
@@ -58,7 +59,7 @@ const countries = shapes
     const entries = []
     if (main.length) entries.push({
       type: 'MultiPolygon', arcs: main,
-      properties: { name: g.properties.name, iso, continent, excluded: EXCLUDED_TERRITORY_ISOS.includes(iso) },
+      properties: { name: g.properties.name, iso, continent, excluded: EXCLUDED_TERRITORY_ISOS.includes(iso) || !roster.some(c => c.mapName === g.properties.name) },
     })
     for (const [region, arcs] of regions) entries.push({
       type: 'MultiPolygon', arcs,

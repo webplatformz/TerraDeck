@@ -23,7 +23,7 @@ export const CONTINENT_VIEWS: Record<ContinentId, ContinentView> = {
   'north-america': { center: [-94, 45], frame: [-170, 5, -10, 84], exclude: [[-180, 15, -150, 25]] },
   // Galápagos is left out.
   'south-america': { center: [-60, -20], frame: [-85, -60, -30, 15] },
-  oceania: { center: [150, -22], frame: [110, -50, 185, 0] },
+  oceania: { center: [170, -10], frame: [110, -50, 230, 25] },
 }
 
 export function continentProjection(id: ContinentId): GeoProjection {
@@ -46,12 +46,16 @@ export function framingLand(id: ContinentId, features: CountryFeature[]): MultiP
   for (const f of features) {
     if (f.properties.continent !== id || f.properties.excluded) continue
     const polygons = f.geometry.type === 'MultiPolygon' ? f.geometry.coordinates : [f.geometry.coordinates]
+    const preferred: Polygon['coordinates'][] = []
     for (const rings of polygons) {
       const polygon: Polygon = { type: 'Polygon', coordinates: rings }
       if (geoArea(polygon) < MIN_FRAMING_AREA_SR) continue
       const centroid = geoCentroid(polygon)
-      if (inBox(centroid, frame) && !exclude.some((box) => inBox(centroid, box))) coordinates.push(rings)
+      if (inBox(centroid, frame) && !exclude.some((box) => inBox(centroid, box))) preferred.push(rings)
     }
+    // Even small/remote countries must influence the fit so they remain reachable.
+    const largest = polygons.reduce((a, b) => geoArea({ type: 'Polygon', coordinates: a }) >= geoArea({ type: 'Polygon', coordinates: b }) ? a : b)
+    coordinates.push(...(preferred.length ? preferred : [largest]))
   }
   return { type: 'MultiPolygon', coordinates }
 }

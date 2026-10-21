@@ -17,10 +17,10 @@ pack refill, hash screens, Pages deploy). The game goal differs: learning geogra
 
 ## Screens
 - **Home** — the sealed pack as hero, pack count (`3 / 5`), countdown to the next pack
-  ("Atlas full" when at 5), collection progress (`7 / 20 cards`), links to Collection and How to play / About.
+  ("Atlas full" when at 5), collection progress (`7 / 190 cards`), links to Collection and How to play / About.
 - **Pack opening** — tear the pack (drag or tap), reveal "Find: Peru", then the challenge.
 - **Challenge** — step 1 continent picker, step 2 map with select + Confirm, result: stamp earned or answer reveal.
-- **Collection** — grid of 20 card slots (locked silhouettes, stamp progress, unlocked cards); tap to open card detail.
+- **Collection** — grid of 190 card slots (locked silhouettes, stamp progress, unlocked cards); tap to open card detail.
 - **How to play / About** — rules, data sources and credits.
 
 Navigation: screen state in `useGame`, main screens mirrored to the URL hash (`#home`, `#collection`, `#about`);
@@ -53,10 +53,12 @@ could be added later without touching the rules.
 
 ## Map approach
 - Natural Earth admin-0 1:50m via `world-atlas` TopoJSON (public domain), ISO-3166 ids.
-- All countries are tappable; non-roster countries act as distractors.
-- Equal Earth projection, SVG rendering, pinch/zoom/pan with d3-zoom, zoom limits and a reset button.
-- After the continent step, auto-fit to the correct continent.
-- Small countries: invisible hit circles of at least 44px, nearest-centroid fallback, zoom-dependent stroke width.
+- Only the 190 retained canonical countries are tappable; non-roster shapes are gray context.
+- Equal Earth world overview, azimuthal equal-area continent maps, SVG rendering and d3-zoom.
+- After the continent step, auto-fit to the correct continent with every retained country represented.
+- Small countries: geometry-first picking, nearby/ocean snapping and an ambiguity magnifier, not
+  enlarged overlapping hit circles or artificial location markers. Five playability deferrals and
+  one-continent conventions are recorded in [Decisions](DECISIONS.md).
 - Tap selects and highlights; a "Confirm" button submits, so a mis-tap is not counted as a mistake.
 
 ## Visual direction

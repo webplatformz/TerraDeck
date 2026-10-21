@@ -133,7 +133,8 @@
     "ripText": "Each pack holds one country. A new pack arrives every {{cooldown}}, and you can hold up to {{max}}. When the stack is full the clock pauses, so open one to keep packs coming.",
     "findTitle": "Find it on the map",
     "findText": "Pick the continent first, then tap the country on the unlabelled map and confirm. Pinch or use the buttons to zoom; in crowded spots a magnifier helps you pick small countries.",
-    "findScope": "This test atlas has {{count}} collectible countries. Other countries can still be wrong answers. Gray territories are context only and cannot be selected.",
+    "findScope": "This curated atlas has {{count}} collectible countries from a UN-based set (members plus the two observer states). Tuvalu, Vatican City, Monaco, Maldives and Nauru are deferred for map playability. Gray areas are outside this collection and cannot be selected; this is not a statement about their status.",
+    "continentRule": "Each country has one accepted continent in this game. Russia, Turkey, Kazakhstan, Cyprus and the Caucasus count as Asia; Egypt counts as Africa. Central America and the Caribbean count as North America.",
     "stampsTitle": "From Visitor to Explorer",
     "stampsText": "Get both answers right first time to earn the silver Visitor stamp. Do it again to earn the gold Explorer stamp: two stamps unlock the country's card and take it out of future packs. A mistake shows you the answer but never removes stamps you already have.",
     "sources": "Sources",
@@ -262,25 +263,855 @@
       "capital": "Wellington",
       "fact": "One of the last major landmasses to be settled by humans."
     },
-    "de": { "name": "Germany", "capital": "Berlin", "fact": "The Rhine flows through its western regions on its way to the North Sea." },
-    "es": { "name": "Spain", "capital": "Madrid", "fact": "Its territory includes the Balearic Islands in the Mediterranean and the Canary Islands in the Atlantic." },
-    "gb": { "name": "United Kingdom", "capital": "London", "fact": "Made up of England, Scotland, Wales and Northern Ireland." },
-    "gr": { "name": "Greece", "capital": "Athens", "fact": "Thousands of islands dot its Aegean and Ionian seas." },
-    "cn": { "name": "China", "capital": "Beijing", "fact": "The Yangtze is the longest river in Asia." },
-    "kr": { "name": "South Korea", "capital": "Seoul", "fact": "Occupies the southern part of the Korean Peninsula." },
-    "id": { "name": "Indonesia", "capital": "Jakarta", "fact": "An archipelago stretching across the equator between the Indian and Pacific oceans." },
-    "bt": { "name": "Bhutan", "capital": "Thimphu", "fact": "A Himalayan country between India and China." },
-    "dz": { "name": "Algeria", "capital": "Algiers", "fact": "The largest country in Africa by area." },
-    "gh": { "name": "Ghana", "capital": "Accra", "fact": "Lake Volta is one of the world's largest artificial lakes by surface area." },
-    "na": { "name": "Namibia", "capital": "Windhoek", "fact": "The Namib Desert runs along its Atlantic coast." },
-    "ls": { "name": "Lesotho", "capital": "Maseru", "fact": "Entirely surrounded by South Africa." },
-    "us": { "name": "United States", "capital": "Washington, D.C.", "fact": "Its 50 states include Alaska and the Pacific islands of Hawaii." },
-    "cr": { "name": "Costa Rica", "capital": "San José", "fact": "Has coastlines on both the Caribbean Sea and the Pacific Ocean." },
-    "jm": { "name": "Jamaica", "capital": "Kingston", "fact": "An island country in the Caribbean, south of Cuba." },
-    "ar": { "name": "Argentina", "capital": "Buenos Aires", "fact": "Home to Aconcagua, the highest mountain outside Asia." },
-    "bo": { "name": "Bolivia", "capital": "Sucre", "fact": "Sucre is the constitutional capital; La Paz is the seat of government." },
-    "uy": { "name": "Uruguay", "capital": "Montevideo", "fact": "Lies between Argentina and Brazil on South America's Atlantic side." },
-    "fj": { "name": "Fiji", "capital": "Suva", "fact": "Viti Levu and Vanua Levu are its two largest islands." },
-    "vu": { "name": "Vanuatu", "capital": "Port Vila", "fact": "An island chain in the South Pacific with several active volcanoes." }
+    "de": {
+      "name": "Germany",
+      "capital": "Berlin",
+      "fact": "The Rhine flows through its western regions on its way to the North Sea."
+    },
+    "es": {
+      "name": "Spain",
+      "capital": "Madrid",
+      "fact": "Its territory includes the Balearic Islands in the Mediterranean and the Canary Islands in the Atlantic."
+    },
+    "gb": {
+      "name": "United Kingdom",
+      "capital": "London",
+      "fact": "Made up of England, Scotland, Wales and Northern Ireland."
+    },
+    "gr": {
+      "name": "Greece",
+      "capital": "Athens",
+      "fact": "Thousands of islands dot its Aegean and Ionian seas."
+    },
+    "cn": {
+      "name": "China",
+      "capital": "Beijing",
+      "fact": "The Yangtze is the longest river in Asia."
+    },
+    "kr": {
+      "name": "South Korea",
+      "capital": "Seoul",
+      "fact": "Occupies the southern part of the Korean Peninsula."
+    },
+    "id": {
+      "name": "Indonesia",
+      "capital": "Jakarta",
+      "fact": "An archipelago stretching across the equator between the Indian and Pacific oceans."
+    },
+    "bt": {
+      "name": "Bhutan",
+      "capital": "Thimphu",
+      "fact": "A Himalayan country between India and China."
+    },
+    "dz": {
+      "name": "Algeria",
+      "capital": "Algiers",
+      "fact": "The largest country in Africa by area."
+    },
+    "gh": {
+      "name": "Ghana",
+      "capital": "Accra",
+      "fact": "Lake Volta is one of the world's largest artificial lakes by surface area."
+    },
+    "na": {
+      "name": "Namibia",
+      "capital": "Windhoek",
+      "fact": "The Namib Desert runs along its Atlantic coast."
+    },
+    "ls": {
+      "name": "Lesotho",
+      "capital": "Maseru",
+      "fact": "Entirely surrounded by South Africa."
+    },
+    "us": {
+      "name": "United States",
+      "capital": "Washington, D.C.",
+      "fact": "Its 50 states include Alaska and the Pacific islands of Hawaii."
+    },
+    "cr": {
+      "name": "Costa Rica",
+      "capital": "San José",
+      "fact": "Has coastlines on both the Caribbean Sea and the Pacific Ocean."
+    },
+    "jm": {
+      "name": "Jamaica",
+      "capital": "Kingston",
+      "fact": "An island country in the Caribbean, south of Cuba."
+    },
+    "ar": {
+      "name": "Argentina",
+      "capital": "Buenos Aires",
+      "fact": "Home to Aconcagua, the highest mountain outside Asia."
+    },
+    "bo": {
+      "name": "Bolivia",
+      "capital": "Sucre",
+      "fact": "Sucre is the constitutional capital; La Paz is the seat of government."
+    },
+    "uy": {
+      "name": "Uruguay",
+      "capital": "Montevideo",
+      "fact": "Lies between Argentina and Brazil on South America's Atlantic side."
+    },
+    "fj": {
+      "name": "Fiji",
+      "capital": "Suva",
+      "fact": "Viti Levu and Vanua Levu are its two largest islands."
+    },
+    "vu": {
+      "name": "Vanuatu",
+      "capital": "Port Vila",
+      "fact": "An island chain in the South Pacific with several active volcanoes."
+    },
+    "ad": {
+      "name": "Andorra",
+      "capital": "Andorra la Vella",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "ae": {
+      "name": "United Arab Emirates",
+      "capital": "Abu Dhabi",
+      "fact": "Its land neighbours include Oman and Saudi Arabia."
+    },
+    "af": {
+      "name": "Afghanistan",
+      "capital": "Kabul",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "ag": {
+      "name": "Antigua and Barbuda",
+      "capital": "Saint John's",
+      "fact": "An island country without land borders to another country."
+    },
+    "al": {
+      "name": "Albania",
+      "capital": "Tirana",
+      "fact": "Its land neighbours include Montenegro and Greece."
+    },
+    "am": {
+      "name": "Armenia",
+      "capital": "Yerevan",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "ao": {
+      "name": "Angola",
+      "capital": "Luanda",
+      "fact": "Its land neighbours include Republic of the Congo and Democratic Republic of the Congo."
+    },
+    "at": {
+      "name": "Austria",
+      "capital": "Vienna",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "az": {
+      "name": "Azerbaijan",
+      "capital": "Baku",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "ba": {
+      "name": "Bosnia and Herzegovina",
+      "capital": "Sarajevo",
+      "fact": "Its land neighbours include Croatia and Montenegro."
+    },
+    "bb": {
+      "name": "Barbados",
+      "capital": "Bridgetown",
+      "fact": "An island country without land borders to another country."
+    },
+    "bd": {
+      "name": "Bangladesh",
+      "capital": "Dhaka",
+      "fact": "Its land neighbours include Myanmar and India."
+    },
+    "be": {
+      "name": "Belgium",
+      "capital": "Brussels",
+      "fact": "Its land neighbours include France and Germany."
+    },
+    "bf": {
+      "name": "Burkina Faso",
+      "capital": "Ouagadougou",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "bg": {
+      "name": "Bulgaria",
+      "capital": "Sofia",
+      "fact": "Its land neighbours include Greece and North Macedonia."
+    },
+    "bh": {
+      "name": "Bahrain",
+      "capital": "Manama",
+      "fact": "An island country without land borders to another country."
+    },
+    "bi": {
+      "name": "Burundi",
+      "capital": "Gitega",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "bj": {
+      "name": "Benin",
+      "capital": "Porto-Novo",
+      "fact": "Its land neighbours include Burkina Faso and Niger."
+    },
+    "bn": {
+      "name": "Brunei",
+      "capital": "Bandar Seri Begawan",
+      "fact": "Its land neighbours include Malaysia."
+    },
+    "bs": {
+      "name": "Bahamas",
+      "capital": "Nassau",
+      "fact": "An island country without land borders to another country."
+    },
+    "bw": {
+      "name": "Botswana",
+      "capital": "Gaborone",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "by": {
+      "name": "Belarus",
+      "capital": "Minsk",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "bz": {
+      "name": "Belize",
+      "capital": "Belmopan",
+      "fact": "Its land neighbours include Guatemala and Mexico."
+    },
+    "cd": {
+      "name": "Democratic Republic of the Congo",
+      "capital": "Kinshasa",
+      "fact": "Its land neighbours include Angola and Burundi."
+    },
+    "cf": {
+      "name": "Central African Republic",
+      "capital": "Bangui",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "cg": {
+      "name": "Republic of the Congo",
+      "capital": "Brazzaville",
+      "fact": "Its land neighbours include Angola and Cameroon."
+    },
+    "ci": {
+      "name": "Côte d’Ivoire",
+      "capital": "Yamoussoukro",
+      "fact": "Its land neighbours include Burkina Faso and Ghana."
+    },
+    "cm": {
+      "name": "Cameroon",
+      "capital": "Yaoundé",
+      "fact": "Its land neighbours include Central African Republic and Chad."
+    },
+    "co": {
+      "name": "Colombia",
+      "capital": "Bogotá",
+      "fact": "Its land neighbours include Brazil and Ecuador."
+    },
+    "cv": {
+      "name": "Cape Verde",
+      "capital": "Praia",
+      "fact": "An island country without land borders to another country."
+    },
+    "cy": {
+      "name": "Cyprus",
+      "capital": "Nicosia",
+      "fact": "An island country without land borders to another country."
+    },
+    "cz": {
+      "name": "Czechia",
+      "capital": "Prague",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "dj": {
+      "name": "Djibouti",
+      "capital": "Djibouti",
+      "fact": "Its land neighbours include Eritrea and Ethiopia."
+    },
+    "dk": {
+      "name": "Denmark",
+      "capital": "Copenhagen",
+      "fact": "Its land neighbours include Germany."
+    },
+    "dm": {
+      "name": "Dominica",
+      "capital": "Roseau",
+      "fact": "An island country without land borders to another country."
+    },
+    "do": {
+      "name": "Dominican Republic",
+      "capital": "Santo Domingo",
+      "fact": "Its land neighbours include Haiti."
+    },
+    "ec": {
+      "name": "Ecuador",
+      "capital": "Quito",
+      "fact": "Its land neighbours include Colombia and Peru."
+    },
+    "ee": {
+      "name": "Estonia",
+      "capital": "Tallinn",
+      "fact": "Its land neighbours include Latvia and Russia."
+    },
+    "er": {
+      "name": "Eritrea",
+      "capital": "Asmara",
+      "fact": "Its land neighbours include Djibouti and Ethiopia."
+    },
+    "et": {
+      "name": "Ethiopia",
+      "capital": "Addis Ababa",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "fi": {
+      "name": "Finland",
+      "capital": "Helsinki",
+      "fact": "Its land neighbours include Norway and Sweden."
+    },
+    "fm": {
+      "name": "Micronesia",
+      "capital": "Palikir",
+      "fact": "An island country without land borders to another country."
+    },
+    "ga": {
+      "name": "Gabon",
+      "capital": "Libreville",
+      "fact": "Its land neighbours include Cameroon and Republic of the Congo."
+    },
+    "gd": {
+      "name": "Grenada",
+      "capital": "St. George's",
+      "fact": "An island country without land borders to another country."
+    },
+    "ge": {
+      "name": "Georgia",
+      "capital": "Tbilisi",
+      "fact": "Its land neighbours include Armenia and Azerbaijan."
+    },
+    "gm": {
+      "name": "Gambia",
+      "capital": "Banjul",
+      "fact": "Its land neighbours include Senegal."
+    },
+    "gn": {
+      "name": "Guinea",
+      "capital": "Conakry",
+      "fact": "Its land neighbours include Côte d’Ivoire and Guinea-Bissau."
+    },
+    "gq": {
+      "name": "Equatorial Guinea",
+      "capital": "Ciudad de la Paz",
+      "fact": "Its land neighbours include Cameroon and Gabon."
+    },
+    "gt": {
+      "name": "Guatemala",
+      "capital": "Guatemala City",
+      "fact": "Its land neighbours include Belize and El Salvador."
+    },
+    "gw": {
+      "name": "Guinea-Bissau",
+      "capital": "Bissau",
+      "fact": "Its land neighbours include Guinea and Senegal."
+    },
+    "gy": {
+      "name": "Guyana",
+      "capital": "Georgetown",
+      "fact": "Its land neighbours include Brazil and Suriname."
+    },
+    "hn": {
+      "name": "Honduras",
+      "capital": "Tegucigalpa",
+      "fact": "Its land neighbours include Guatemala and El Salvador."
+    },
+    "hr": {
+      "name": "Croatia",
+      "capital": "Zagreb",
+      "fact": "Its land neighbours include Bosnia and Herzegovina and Hungary."
+    },
+    "ht": {
+      "name": "Haiti",
+      "capital": "Port-au-Prince",
+      "fact": "Its land neighbours include Dominican Republic."
+    },
+    "hu": {
+      "name": "Hungary",
+      "capital": "Budapest",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "ie": {
+      "name": "Ireland",
+      "capital": "Dublin",
+      "fact": "Its land neighbours include United Kingdom."
+    },
+    "il": {
+      "name": "Israel",
+      "capital": "Jerusalem",
+      "fact": "Its land neighbours include Egypt and Jordan."
+    },
+    "iq": {
+      "name": "Iraq",
+      "capital": "Baghdad",
+      "fact": "Its land neighbours include Iran and Jordan."
+    },
+    "ir": {
+      "name": "Iran",
+      "capital": "Tehran",
+      "fact": "Its land neighbours include Afghanistan and Armenia."
+    },
+    "is": {
+      "name": "Iceland",
+      "capital": "Reykjavik",
+      "fact": "An island country without land borders to another country."
+    },
+    "jo": {
+      "name": "Jordan",
+      "capital": "Amman",
+      "fact": "Its land neighbours include Iraq and Israel."
+    },
+    "kg": {
+      "name": "Kyrgyzstan",
+      "capital": "Bishkek",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "kh": {
+      "name": "Cambodia",
+      "capital": "Phnom Penh",
+      "fact": "Its land neighbours include Laos and Thailand."
+    },
+    "ki": {
+      "name": "Kiribati",
+      "capital": "South Tarawa",
+      "fact": "An island country without land borders to another country."
+    },
+    "km": {
+      "name": "Comoros",
+      "capital": "Moroni",
+      "fact": "An island country without land borders to another country."
+    },
+    "kn": {
+      "name": "Saint Kitts and Nevis",
+      "capital": "Basseterre",
+      "fact": "An island country without land borders to another country."
+    },
+    "kp": {
+      "name": "North Korea",
+      "capital": "Pyongyang",
+      "fact": "Its land neighbours include China and South Korea."
+    },
+    "kw": {
+      "name": "Kuwait",
+      "capital": "Kuwait City",
+      "fact": "Its land neighbours include Iraq and Saudi Arabia."
+    },
+    "kz": {
+      "name": "Kazakhstan",
+      "capital": "Astana",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "la": {
+      "name": "Laos",
+      "capital": "Vientiane",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "lb": {
+      "name": "Lebanon",
+      "capital": "Beirut",
+      "fact": "Its land neighbours include Israel and Syria."
+    },
+    "lc": {
+      "name": "Saint Lucia",
+      "capital": "Castries",
+      "fact": "An island country without land borders to another country."
+    },
+    "li": {
+      "name": "Liechtenstein",
+      "capital": "Vaduz",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "lk": {
+      "name": "Sri Lanka",
+      "capital": "Sri Jayawardenepura Kotte",
+      "fact": "An island country without land borders to another country."
+    },
+    "lr": {
+      "name": "Liberia",
+      "capital": "Monrovia",
+      "fact": "Its land neighbours include Guinea and Côte d’Ivoire."
+    },
+    "lt": {
+      "name": "Lithuania",
+      "capital": "Vilnius",
+      "fact": "Its land neighbours include Belarus and Latvia."
+    },
+    "lu": {
+      "name": "Luxembourg",
+      "capital": "Luxembourg",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "lv": {
+      "name": "Latvia",
+      "capital": "Riga",
+      "fact": "Its land neighbours include Belarus and Estonia."
+    },
+    "ly": {
+      "name": "Libya",
+      "capital": "Tripoli",
+      "fact": "Its land neighbours include Algeria and Chad."
+    },
+    "md": {
+      "name": "Moldova",
+      "capital": "Chișinău",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "me": {
+      "name": "Montenegro",
+      "capital": "Podgorica",
+      "fact": "Its land neighbours include Albania and Bosnia and Herzegovina."
+    },
+    "mh": {
+      "name": "Marshall Islands",
+      "capital": "Majuro",
+      "fact": "An island country without land borders to another country."
+    },
+    "mk": {
+      "name": "North Macedonia",
+      "capital": "Skopje",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "ml": {
+      "name": "Mali",
+      "capital": "Bamako",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "mm": {
+      "name": "Myanmar",
+      "capital": "Naypyidaw",
+      "fact": "Its land neighbours include Bangladesh and China."
+    },
+    "mn": {
+      "name": "Mongolia",
+      "capital": "Ulan Bator",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "mr": {
+      "name": "Mauritania",
+      "capital": "Nouakchott",
+      "fact": "Its land neighbours include Algeria and Mali."
+    },
+    "mt": {
+      "name": "Malta",
+      "capital": "Valletta",
+      "fact": "An island country without land borders to another country."
+    },
+    "mu": {
+      "name": "Mauritius",
+      "capital": "Port Louis",
+      "fact": "An island country without land borders to another country."
+    },
+    "mw": {
+      "name": "Malawi",
+      "capital": "Lilongwe",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "my": {
+      "name": "Malaysia",
+      "capital": "Kuala Lumpur",
+      "fact": "Its land neighbours include Brunei and Indonesia."
+    },
+    "mz": {
+      "name": "Mozambique",
+      "capital": "Maputo",
+      "fact": "Its land neighbours include Malawi and South Africa."
+    },
+    "ne": {
+      "name": "Niger",
+      "capital": "Niamey",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "ng": {
+      "name": "Nigeria",
+      "capital": "Abuja",
+      "fact": "Its land neighbours include Benin and Cameroon."
+    },
+    "ni": {
+      "name": "Nicaragua",
+      "capital": "Managua",
+      "fact": "Its land neighbours include Costa Rica and Honduras."
+    },
+    "nl": {
+      "name": "Netherlands",
+      "capital": "Amsterdam",
+      "fact": "Its land neighbours include Belgium and Germany."
+    },
+    "om": {
+      "name": "Oman",
+      "capital": "Muscat",
+      "fact": "Its land neighbours include Saudi Arabia and United Arab Emirates."
+    },
+    "pa": {
+      "name": "Panama",
+      "capital": "Panama City",
+      "fact": "Its land neighbours include Colombia and Costa Rica."
+    },
+    "pg": {
+      "name": "Papua New Guinea",
+      "capital": "Port Moresby",
+      "fact": "Its land neighbours include Indonesia."
+    },
+    "ph": {
+      "name": "Philippines",
+      "capital": "Manila",
+      "fact": "An island country without land borders to another country."
+    },
+    "pk": {
+      "name": "Pakistan",
+      "capital": "Islamabad",
+      "fact": "Its land neighbours include Afghanistan and China."
+    },
+    "pl": {
+      "name": "Poland",
+      "capital": "Warsaw",
+      "fact": "Its land neighbours include Belarus and Czechia."
+    },
+    "pt": {
+      "name": "Portugal",
+      "capital": "Lisbon",
+      "fact": "Its land neighbours include Spain."
+    },
+    "pw": {
+      "name": "Palau",
+      "capital": "Ngerulmud",
+      "fact": "An island country without land borders to another country."
+    },
+    "py": {
+      "name": "Paraguay",
+      "capital": "Asunción",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "qa": {
+      "name": "Qatar",
+      "capital": "Doha",
+      "fact": "Its land neighbours include Saudi Arabia."
+    },
+    "ro": {
+      "name": "Romania",
+      "capital": "Bucharest",
+      "fact": "Its land neighbours include Bulgaria and Hungary."
+    },
+    "rs": {
+      "name": "Serbia",
+      "capital": "Belgrade",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "ru": {
+      "name": "Russia",
+      "capital": "Moscow",
+      "fact": "Its land neighbours include Azerbaijan and Belarus."
+    },
+    "rw": {
+      "name": "Rwanda",
+      "capital": "Kigali",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "sa": {
+      "name": "Saudi Arabia",
+      "capital": "Riyadh",
+      "fact": "Its land neighbours include Iraq and Jordan."
+    },
+    "sb": {
+      "name": "Solomon Islands",
+      "capital": "Honiara",
+      "fact": "An island country without land borders to another country."
+    },
+    "sc": {
+      "name": "Seychelles",
+      "capital": "Victoria",
+      "fact": "An island country without land borders to another country."
+    },
+    "sd": {
+      "name": "Sudan",
+      "capital": "Khartoum",
+      "fact": "Its land neighbours include Central African Republic and Chad."
+    },
+    "se": {
+      "name": "Sweden",
+      "capital": "Stockholm",
+      "fact": "Its land neighbours include Finland and Norway."
+    },
+    "sg": {
+      "name": "Singapore",
+      "capital": "Singapore",
+      "fact": "An island country without land borders to another country."
+    },
+    "si": {
+      "name": "Slovenia",
+      "capital": "Ljubljana",
+      "fact": "Its land neighbours include Austria and Croatia."
+    },
+    "sk": {
+      "name": "Slovakia",
+      "capital": "Bratislava",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "sl": {
+      "name": "Sierra Leone",
+      "capital": "Freetown",
+      "fact": "Its land neighbours include Guinea and Liberia."
+    },
+    "sm": {
+      "name": "San Marino",
+      "capital": "City of San Marino",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "sn": {
+      "name": "Senegal",
+      "capital": "Dakar",
+      "fact": "Its land neighbours include Gambia and Guinea."
+    },
+    "so": {
+      "name": "Somalia",
+      "capital": "Mogadishu",
+      "fact": "Its land neighbours include Djibouti and Ethiopia."
+    },
+    "sr": {
+      "name": "Suriname",
+      "capital": "Paramaribo",
+      "fact": "Its land neighbours include Brazil and Guyana."
+    },
+    "ss": {
+      "name": "South Sudan",
+      "capital": "Juba",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "st": {
+      "name": "São Tomé and Príncipe",
+      "capital": "São Tomé",
+      "fact": "An island country without land borders to another country."
+    },
+    "sv": {
+      "name": "El Salvador",
+      "capital": "San Salvador",
+      "fact": "Its land neighbours include Guatemala and Honduras."
+    },
+    "sy": {
+      "name": "Syria",
+      "capital": "Damascus",
+      "fact": "Its land neighbours include Iraq and Israel."
+    },
+    "sz": {
+      "name": "Eswatini",
+      "capital": "Mbabane (administrative)",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "td": {
+      "name": "Chad",
+      "capital": "N'Djamena",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "tg": {
+      "name": "Togo",
+      "capital": "Lomé",
+      "fact": "Its land neighbours include Benin and Burkina Faso."
+    },
+    "th": {
+      "name": "Thailand",
+      "capital": "Bangkok",
+      "fact": "Its land neighbours include Myanmar and Cambodia."
+    },
+    "tj": {
+      "name": "Tajikistan",
+      "capital": "Dushanbe",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "tl": {
+      "name": "Timor-Leste",
+      "capital": "Dili",
+      "fact": "Its land neighbours include Indonesia."
+    },
+    "tm": {
+      "name": "Turkmenistan",
+      "capital": "Ashgabat",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "tn": {
+      "name": "Tunisia",
+      "capital": "Tunis",
+      "fact": "Its land neighbours include Algeria and Libya."
+    },
+    "to": {
+      "name": "Tonga",
+      "capital": "Nuku'alofa",
+      "fact": "An island country without land borders to another country."
+    },
+    "tr": {
+      "name": "Turkey",
+      "capital": "Ankara",
+      "fact": "Its land neighbours include Armenia and Azerbaijan."
+    },
+    "tt": {
+      "name": "Trinidad and Tobago",
+      "capital": "Port of Spain",
+      "fact": "An island country without land borders to another country."
+    },
+    "tz": {
+      "name": "Tanzania",
+      "capital": "Dodoma",
+      "fact": "Its land neighbours include Burundi and Democratic Republic of the Congo."
+    },
+    "ua": {
+      "name": "Ukraine",
+      "capital": "Kyiv",
+      "fact": "Its land neighbours include Belarus and Hungary."
+    },
+    "ug": {
+      "name": "Uganda",
+      "capital": "Kampala",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "uz": {
+      "name": "Uzbekistan",
+      "capital": "Tashkent",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "vc": {
+      "name": "Saint Vincent and the Grenadines",
+      "capital": "Kingstown",
+      "fact": "An island country without land borders to another country."
+    },
+    "ve": {
+      "name": "Venezuela",
+      "capital": "Caracas",
+      "fact": "Its land neighbours include Brazil and Colombia."
+    },
+    "ws": {
+      "name": "Samoa",
+      "capital": "Apia",
+      "fact": "An island country without land borders to another country."
+    },
+    "ye": {
+      "name": "Yemen",
+      "capital": "Sana'a",
+      "fact": "Its land neighbours include Oman and Saudi Arabia."
+    },
+    "za": {
+      "name": "South Africa",
+      "capital": "Pretoria (executive)",
+      "fact": "Its land neighbours include Botswana and Lesotho."
+    },
+    "zm": {
+      "name": "Zambia",
+      "capital": "Lusaka",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "zw": {
+      "name": "Zimbabwe",
+      "capital": "Harare",
+      "fact": "A landlocked country with no coastline on the open sea."
+    },
+    "ps": {
+      "name": "Palestine",
+      "capital": "Ramallah (administrative seat)",
+      "fact": "Its land neighbours include Israel and Egypt."
+    }
   }
 }
