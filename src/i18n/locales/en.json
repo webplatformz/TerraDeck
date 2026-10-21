@@ -1,0 +1,248 @@
+{
+  "common": {
+    "backToAtlas": "Back to atlas",
+    "backToTheAtlas": "Back to the atlas",
+    "close": "Close",
+    "continue": "Continue",
+    "loadingMap": "Unrolling the map…",
+    "language": "Language"
+  },
+  "nav": {
+    "main": "Main",
+    "brandHome": "TerraDeck – go to Atlas",
+    "home": "Atlas",
+    "collection": "Collection",
+    "about": "How to play"
+  },
+  "home": {
+    "eyebrow": "The Explorer's Atlas",
+    "packs": "Packs",
+    "resumeExpedition": "Resume expedition",
+    "openPack": "Open a pack",
+    "complete": "Atlas complete. Every country is yours.",
+    "stackFull": "Pack stack full. Rip one to restart the clock.",
+    "nextPackIn": "Next pack in <timer>{{time}}</timer>",
+    "resume": "Resume: find {{country}}",
+    "rip": "Rip open a pack",
+    "noPacks": "No packs right now",
+    "debugAddPack": "Debug: add a pack",
+    "debugReset": "Debug: reset progress",
+    "confirmReset": "Erase all progress on this device?",
+    "progress": "Progress",
+    "progressTitle": "Atlas progress",
+    "cardsCount": "<strong>{{collected}}</strong> / {{total}} cards",
+    "stampsEarned": "{{stamps}} of {{total}} mastery stamps earned",
+    "more": "More",
+    "collectionTitle": "Your collection",
+    "collectionSub": "Cards, stamps and undiscovered lands",
+    "aboutTitle": "How to play",
+    "aboutSub": "Packs, stamps and the map"
+  },
+  "pack": {
+    "kicker": "Expedition Pack",
+    "title": "One Country",
+    "sub": "Find it. Stamp it. Keep it.",
+    "tearHere": "Tear here"
+  },
+  "expedition": {
+    "ordersTitle": "Expedition orders",
+    "packTitle": "Expedition pack",
+    "noPackLeft": "No packs left. Come back when the next one arrives.",
+    "swipeHint": "Swipe the top strip or tap the pack to tear it open",
+    "tearOpen": "Tear open",
+    "destination": "Your destination",
+    "find": "Find",
+    "ordersSub": "First pick the continent, then mark the country on the map. Get both right to earn a stamp.",
+    "begin": "Begin",
+    "allCollected": "Every country is already in your atlas."
+  },
+  "challenge": {
+    "find": "Find",
+    "progress": "Progress",
+    "stepContinent": "1 · Continent",
+    "stepCountry": "2 · Country",
+    "promptContinent": "Which continent is <name>{{country}}</name> on? Tap it on the map or choose below.",
+    "continentRight": "Right, it's <name>{{continent}}</name>!",
+    "wrongContinentTitle": "Wrong continent",
+    "wrongContinentBody": "<name>{{country}}</name> is not in <name>{{wrong}}</name>.",
+    "showAnswer": "Show the answer",
+    "promptCountry": "Tap <name>{{country}}</name>. Pinch or use + to zoom; crowded spots open a magnifier.",
+    "confirm": "Confirm location",
+    "select": "Select a country",
+    "stampEarned": "Stamp earned",
+    "unlocked": "Three stamps! The <name>{{country}}</name> card is yours.",
+    "stampProgress": "{{stamps}} of 3 stamps. Find it again to complete the card.",
+    "revealCard": "Reveal card",
+    "notQuite": "Not quite",
+    "wrongContinent": "<name>{{country}}</name> is in <name>{{correct}}</name>, not <name>{{wrong}}</name>.",
+    "wrongCountry": "That was not <name>{{country}}</name>. It is marked on the map.",
+    "stampsSafe": "Your stamps are safe ({{stamps}} of 3)."
+  },
+  "map": {
+    "worldLabel": "World map of the continents",
+    "unlabelled": "Unlabelled map",
+    "unlabelledOf": "Unlabelled map of {{continent}}",
+    "lensHint": "Tap the exact country · tap outside to close",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "resetView": "Reset view"
+  },
+  "collection": {
+    "eyebrow": "Your collection",
+    "cardsCount": "{{collected}} <muted>/ {{total}} cards</muted>",
+    "filter": "Filter by continent",
+    "all": "All",
+    "moreStamps_one": "{{count}} more stamp to unlock this card.",
+    "moreStamps_other": "{{count}} more stamps to unlock this card.",
+    "notDiscovered": "Not discovered yet. It will turn up in a pack."
+  },
+  "card": {
+    "number": "No. {{number}}",
+    "label": "{{country}} card",
+    "backLabel": "{{country}}, {{stamps}} of 3 stamps",
+    "undiscoveredLabel": "Undiscovered card",
+    "undiscovered": "Undiscovered",
+    "capital": "Capital",
+    "people": "People",
+    "area": "Area"
+  },
+  "stamp": {
+    "ring": "TERRADECK · MASTERY · {{numeral}} ·",
+    "rowLabel": "{{stamps}} of 3 mastery stamps"
+  },
+  "unlock": {
+    "label": "{{country}} card unlocked",
+    "kicker": "Three stamps earned",
+    "title": "{{country}} joins your atlas",
+    "viewCollection": "View collection"
+  },
+  "about": {
+    "eyebrow": "Field guide",
+    "title": "How to play",
+    "seconds_one": "{{count}} second",
+    "seconds_other": "{{count}} seconds",
+    "minutes_one": "{{count}} minute",
+    "minutes_other": "{{count}} minutes",
+    "ripTitle": "Rip a pack",
+    "ripText": "Each pack holds one country. A new pack arrives every {{cooldown}}, and you can hold up to {{max}}. When the stack is full the clock pauses, so open one to keep packs coming.",
+    "findTitle": "Find it on the map",
+    "findText": "Pick the continent first, then tap the country on the unlabelled map and confirm. Pinch or use the buttons to zoom; in crowded spots a magnifier helps you pick small countries.",
+    "stampsTitle": "Earn three stamps",
+    "stampsText": "Get both answers right first time to earn a mastery stamp. Three stamps unlock the country's card and take it out of future packs. A mistake shows you the answer but never removes stamps you already have.",
+    "sources": "Sources",
+    "sourceBorders": "Borders: Natural Earth 1:50m via world-atlas (public domain / ISC).",
+    "sourceFlags": "Flags: flag-icons (MIT).",
+    "sourceNumbers": "Population and area are rounded recent estimates.",
+    "sourceStorage": "Progress and language are stored only in this browser."
+  },
+  "continents": {
+    "africa": "Africa",
+    "asia": "Asia",
+    "europe": "Europe",
+    "north-america": "North America",
+    "south-america": "South America",
+    "oceania": "Oceania"
+  },
+  "countries": {
+    "fr": {
+      "name": "France",
+      "capital": "Paris",
+      "fact": "The most visited country in the world."
+    },
+    "it": {
+      "name": "Italy",
+      "capital": "Rome",
+      "fact": "Surrounds two independent states: San Marino and Vatican City."
+    },
+    "no": {
+      "name": "Norway",
+      "capital": "Oslo",
+      "fact": "Its fjord-cut mainland coastline is longer than 25,000 km."
+    },
+    "ch": {
+      "name": "Switzerland",
+      "capital": "Bern",
+      "fact": "Has four national languages: German, French, Italian and Romansh."
+    },
+    "jp": {
+      "name": "Japan",
+      "capital": "Tokyo",
+      "fact": "Made up of more than 14,000 islands."
+    },
+    "in": {
+      "name": "India",
+      "capital": "New Delhi",
+      "fact": "The most populous country in the world since 2023."
+    },
+    "vn": {
+      "name": "Vietnam",
+      "capital": "Hanoi",
+      "fact": "The world's second-largest coffee producer."
+    },
+    "np": {
+      "name": "Nepal",
+      "capital": "Kathmandu",
+      "fact": "Home to eight of the world's ten highest peaks, including Everest."
+    },
+    "eg": {
+      "name": "Egypt",
+      "capital": "Cairo",
+      "fact": "About 95% of Egyptians live along the Nile and its delta."
+    },
+    "ke": {
+      "name": "Kenya",
+      "capital": "Nairobi",
+      "fact": "The equator runs right through the country."
+    },
+    "ma": {
+      "name": "Morocco",
+      "capital": "Rabat",
+      "fact": "Faces both the Atlantic Ocean and the Mediterranean Sea."
+    },
+    "mg": {
+      "name": "Madagascar",
+      "capital": "Antananarivo",
+      "fact": "Around 90% of its wildlife is found nowhere else on Earth."
+    },
+    "ca": {
+      "name": "Canada",
+      "capital": "Ottawa",
+      "fact": "Has the longest coastline of any country."
+    },
+    "mx": {
+      "name": "Mexico",
+      "capital": "Mexico City",
+      "fact": "Has the largest Spanish-speaking population in the world."
+    },
+    "cu": {
+      "name": "Cuba",
+      "capital": "Havana",
+      "fact": "The largest island in the Caribbean."
+    },
+    "br": {
+      "name": "Brazil",
+      "capital": "Brasília",
+      "fact": "Holds about 60% of the Amazon rainforest."
+    },
+    "pe": {
+      "name": "Peru",
+      "capital": "Lima",
+      "fact": "Machu Picchu, the 15th-century Inca citadel, sits high in its Andes."
+    },
+    "cl": {
+      "name": "Chile",
+      "capital": "Santiago",
+      "fact": "About 4,300 km long but on average only 177 km wide."
+    },
+    "au": {
+      "name": "Australia",
+      "capital": "Canberra",
+      "fact": "The only country that spans an entire continental mainland."
+    },
+    "nz": {
+      "name": "New Zealand",
+      "capital": "Wellington",
+      "fact": "One of the last major landmasses to be settled by humans."
+    }
+  }
+}

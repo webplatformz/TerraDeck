@@ -1,0 +1,83 @@
+import { useId } from 'react'
+import { useTranslation } from 'react-i18next'
+import { STAMP_INKS, STAMP_ROTATIONS } from '../theme'
+
+const NUMERALS = ['I', 'II', 'III']
+
+interface StampProps {
+  index: number
+  filled: boolean
+  code: string
+  size?: number
+  animate?: boolean
+}
+
+export function Stamp({ index, filled, code, size = 44, animate = false }: StampProps) {
+  const id = useId().replace(/:/g, '')
+  const { t } = useTranslation()
+  const ink = STAMP_INKS[index] ?? STAMP_INKS[0]
+  const rotation = STAMP_ROTATIONS[index] ?? 0
+
+  if (!filled) {
+    return (
+      <svg className="stamp stamp--empty" width={size} height={size} viewBox="0 0 64 64" aria-hidden>
+        <circle cx="32" cy="32" r="28" />
+        <text x="32" y="38">{NUMERALS[index]}</text>
+      </svg>
+    )
+  }
+
+  return (
+    <svg
+      className={`stamp${animate ? ' stamp--slam' : ''}`}
+      width={size}
+      height={size}
+      viewBox="0 0 64 64"
+      style={{ color: ink, ['--stamp-rot' as string]: `${rotation}deg` }}
+      aria-hidden
+    >
+      <defs>
+        <filter id={`rough-${id}`}>
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed={index + 3} />
+          <feDisplacementMap in="SourceGraphic" scale="1.6" />
+          <feComponentTransfer>
+            <feFuncA type="discrete" tableValues="0 1 1 1 0.85 1" />
+          </feComponentTransfer>
+        </filter>
+        <path id={`ring-${id}`} d="M32 32m-21 0a21 21 0 1 1 42 0a21 21 0 1 1 -42 0" />
+      </defs>
+      <circle cx="32" cy="32" r="31" fill="var(--stamp-paper, transparent)" />
+      <g filter={`url(#rough-${id})`} transform={`rotate(${rotation} 32 32)`}>
+        <circle cx="32" cy="32" r="29" fill="none" stroke="currentColor" strokeWidth="2.6" />
+        <circle cx="32" cy="32" r="16" fill="none" stroke="currentColor" strokeWidth="1.2" strokeDasharray="2 2" />
+        <text className="stamp-ring-text" fill="currentColor">
+          <textPath href={`#ring-${id}`} startOffset="0">
+            {t('stamp.ring', { numeral: NUMERALS[index] })}
+          </textPath>
+        </text>
+        <text x="32" y="37" className="stamp-code" fill="currentColor">
+          {code.toUpperCase()}
+        </text>
+      </g>
+    </svg>
+  )
+}
+
+interface StampRowProps {
+  stamps: number
+  code: string
+  size?: number
+  /** Index of a stamp that has just been earned and should animate in. */
+  fresh?: number | null
+}
+
+export function StampRow({ stamps, code, size, fresh = null }: StampRowProps) {
+  const { t } = useTranslation()
+  return (
+    <div className="stamp-row" aria-label={t('stamp.rowLabel', { stamps })}>
+      {[0, 1, 2].map((i) => (
+        <Stamp key={i} index={i} filled={i < stamps} code={code} size={size} animate={i === fresh} />
+      ))}
+    </div>
+  )
+}

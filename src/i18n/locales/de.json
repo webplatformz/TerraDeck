@@ -1,0 +1,248 @@
+{
+  "common": {
+    "backToAtlas": "Zurück zum Atlas",
+    "backToTheAtlas": "Zurück zum Atlas",
+    "close": "Schließen",
+    "continue": "Weiter",
+    "loadingMap": "Die Karte wird entrollt …",
+    "language": "Sprache"
+  },
+  "nav": {
+    "main": "Hauptmenü",
+    "brandHome": "TerraDeck – zum Atlas",
+    "home": "Atlas",
+    "collection": "Sammlung",
+    "about": "Spielanleitung"
+  },
+  "home": {
+    "eyebrow": "Der Atlas der Entdecker",
+    "packs": "Päckchen",
+    "resumeExpedition": "Expedition fortsetzen",
+    "openPack": "Päckchen öffnen",
+    "complete": "Atlas komplett. Alle Länder gehören dir.",
+    "stackFull": "Stapel voll. Öffne ein Päckchen, damit die Uhr weiterläuft.",
+    "nextPackIn": "Nächstes Päckchen in <timer>{{time}}</timer>",
+    "resume": "Weiter: {{country}} finden",
+    "rip": "Päckchen aufreißen",
+    "noPacks": "Gerade keine Päckchen",
+    "debugAddPack": "Debug: Päckchen hinzufügen",
+    "debugReset": "Debug: Fortschritt zurücksetzen",
+    "confirmReset": "Den gesamten Fortschritt auf diesem Gerät löschen?",
+    "progress": "Fortschritt",
+    "progressTitle": "Atlas-Fortschritt",
+    "cardsCount": "<strong>{{collected}}</strong> / {{total}} Karten",
+    "stampsEarned": "{{stamps}} von {{total}} Meisterstempeln gesammelt",
+    "more": "Mehr",
+    "collectionTitle": "Deine Sammlung",
+    "collectionSub": "Karten, Stempel und unentdeckte Länder",
+    "aboutTitle": "Spielanleitung",
+    "aboutSub": "Päckchen, Stempel und die Karte"
+  },
+  "pack": {
+    "kicker": "Expeditionspäckchen",
+    "title": "Ein Land",
+    "sub": "Finden. Stempeln. Behalten.",
+    "tearHere": "Hier aufreißen"
+  },
+  "expedition": {
+    "ordersTitle": "Expeditionsauftrag",
+    "packTitle": "Expeditionspäckchen",
+    "noPackLeft": "Keine Päckchen mehr. Schau wieder vorbei, wenn das nächste da ist.",
+    "swipeHint": "Wische über den oberen Streifen oder tippe auf das Päckchen, um es aufzureißen",
+    "tearOpen": "Aufreißen",
+    "destination": "Dein Ziel",
+    "find": "Finde",
+    "ordersSub": "Wähle zuerst den Kontinent, dann markiere das Land auf der Karte. Beides richtig ergibt einen Stempel.",
+    "begin": "Los geht's",
+    "allCollected": "Alle Länder sind schon in deinem Atlas."
+  },
+  "challenge": {
+    "find": "Finde",
+    "progress": "Fortschritt",
+    "stepContinent": "1 · Kontinent",
+    "stepCountry": "2 · Land",
+    "promptContinent": "Gesucht: <name>{{country}}</name>. Auf welchem Kontinent liegt das Land? Tippe ihn auf der Karte an oder wähle unten.",
+    "continentRight": "Richtig, <name>{{continent}}</name>!",
+    "wrongContinentTitle": "Falscher Kontinent",
+    "wrongContinentBody": "Gesucht war <name>{{country}}</name> – das liegt nicht in <name>{{wrong}}</name>.",
+    "showAnswer": "Lösung zeigen",
+    "promptCountry": "Gesucht: <name>{{country}}</name>. Tippe das Land an. Zoome mit zwei Fingern oder +; an engen Stellen öffnet sich eine Lupe.",
+    "confirm": "Auswahl bestätigen",
+    "select": "Wähle ein Land",
+    "stampEarned": "Stempel erhalten",
+    "unlocked": "Drei Stempel! Die Karte <name>{{country}}</name> gehört dir.",
+    "stampProgress": "{{stamps}} von 3 Stempeln. Finde das Land noch einmal, um die Karte zu vervollständigen.",
+    "revealCard": "Karte aufdecken",
+    "notQuite": "Knapp daneben",
+    "wrongContinent": "Gesucht war <name>{{country}}</name>. Das liegt in <name>{{correct}}</name>, nicht in <name>{{wrong}}</name>.",
+    "wrongCountry": "Leider falsch – gesucht war <name>{{country}}</name>. Die richtige Stelle ist auf der Karte markiert.",
+    "stampsSafe": "Deine Stempel bleiben erhalten ({{stamps}} von 3)."
+  },
+  "map": {
+    "worldLabel": "Weltkarte der Kontinente",
+    "unlabelled": "Karte ohne Beschriftung",
+    "unlabelledOf": "Karte von {{continent}} ohne Beschriftung",
+    "lensHint": "Tippe auf das genaue Land · außerhalb tippen zum Schließen",
+    "zoomIn": "Hineinzoomen",
+    "zoomOut": "Herauszoomen",
+    "resetView": "Ansicht zurücksetzen"
+  },
+  "collection": {
+    "eyebrow": "Deine Sammlung",
+    "cardsCount": "{{collected}} <muted>/ {{total}} Karten</muted>",
+    "filter": "Nach Kontinent filtern",
+    "all": "Alle",
+    "moreStamps_one": "Noch {{count}} Stempel bis zu dieser Karte.",
+    "moreStamps_other": "Noch {{count}} Stempel bis zu dieser Karte.",
+    "notDiscovered": "Noch nicht entdeckt. Das Land taucht bald in einem Päckchen auf."
+  },
+  "card": {
+    "number": "Nr. {{number}}",
+    "label": "Karte: {{country}}",
+    "backLabel": "{{country}}, {{stamps}} von 3 Stempeln",
+    "undiscoveredLabel": "Unentdeckte Karte",
+    "undiscovered": "Unentdeckt",
+    "capital": "Hauptstadt",
+    "people": "Einwohner",
+    "area": "Fläche"
+  },
+  "stamp": {
+    "ring": "TERRADECK · MEISTER · {{numeral}} ·",
+    "rowLabel": "{{stamps}} von 3 Meisterstempeln"
+  },
+  "unlock": {
+    "label": "Karte freigeschaltet: {{country}}",
+    "kicker": "Drei Stempel gesammelt",
+    "title": "Neu in deinem Atlas: {{country}}",
+    "viewCollection": "Zur Sammlung"
+  },
+  "about": {
+    "eyebrow": "Feldhandbuch",
+    "title": "Spielanleitung",
+    "seconds_one": "{{count}} Sekunde",
+    "seconds_other": "{{count}} Sekunden",
+    "minutes_one": "{{count}} Minute",
+    "minutes_other": "{{count}} Minuten",
+    "ripTitle": "Päckchen aufreißen",
+    "ripText": "Jedes Päckchen enthält ein Land. Alle {{cooldown}} kommt ein neues dazu, und du kannst bis zu {{max}} sammeln. Ist der Stapel voll, pausiert die Uhr – öffne also eins, damit weitere kommen.",
+    "findTitle": "Auf der Karte finden",
+    "findText": "Wähle zuerst den Kontinent, tippe dann das Land auf der unbeschrifteten Karte an und bestätige. Zoome mit zwei Fingern oder den Knöpfen; an engen Stellen hilft eine Lupe bei kleinen Ländern.",
+    "stampsTitle": "Drei Stempel sammeln",
+    "stampsText": "Sind beide Antworten beim ersten Versuch richtig, gibt es einen Meisterstempel. Drei Stempel schalten die Karte des Landes frei, und es kommt in keinem Päckchen mehr vor. Ein Fehler zeigt dir die Lösung, nimmt dir aber nie bereits gesammelte Stempel weg.",
+    "sources": "Quellen",
+    "sourceBorders": "Grenzen: Natural Earth 1:50m über world-atlas (Public Domain / ISC).",
+    "sourceFlags": "Flaggen: flag-icons (MIT).",
+    "sourceNumbers": "Einwohnerzahl und Fläche sind gerundete aktuelle Schätzungen.",
+    "sourceStorage": "Fortschritt und Sprache werden nur in diesem Browser gespeichert."
+  },
+  "continents": {
+    "africa": "Afrika",
+    "asia": "Asien",
+    "europe": "Europa",
+    "north-america": "Nordamerika",
+    "south-america": "Südamerika",
+    "oceania": "Ozeanien"
+  },
+  "countries": {
+    "fr": {
+      "name": "Frankreich",
+      "capital": "Paris",
+      "fact": "Das meistbesuchte Land der Welt."
+    },
+    "it": {
+      "name": "Italien",
+      "capital": "Rom",
+      "fact": "Umschließt zwei unabhängige Staaten: San Marino und die Vatikanstadt."
+    },
+    "no": {
+      "name": "Norwegen",
+      "capital": "Oslo",
+      "fact": "Die von Fjorden zerklüftete Festlandküste ist über 25.000 km lang."
+    },
+    "ch": {
+      "name": "Schweiz",
+      "capital": "Bern",
+      "fact": "Hat vier Landessprachen: Deutsch, Französisch, Italienisch und Rätoromanisch."
+    },
+    "jp": {
+      "name": "Japan",
+      "capital": "Tokio",
+      "fact": "Besteht aus mehr als 14.000 Inseln."
+    },
+    "in": {
+      "name": "Indien",
+      "capital": "Neu-Delhi",
+      "fact": "Seit 2023 das bevölkerungsreichste Land der Welt."
+    },
+    "vn": {
+      "name": "Vietnam",
+      "capital": "Hanoi",
+      "fact": "Der zweitgrößte Kaffeeproduzent der Welt."
+    },
+    "np": {
+      "name": "Nepal",
+      "capital": "Kathmandu",
+      "fact": "Hier stehen acht der zehn höchsten Berge der Welt, darunter der Mount Everest."
+    },
+    "eg": {
+      "name": "Ägypten",
+      "capital": "Kairo",
+      "fact": "Rund 95 % der Bevölkerung leben am Nil und in seinem Delta."
+    },
+    "ke": {
+      "name": "Kenia",
+      "capital": "Nairobi",
+      "fact": "Der Äquator verläuft mitten durch das Land."
+    },
+    "ma": {
+      "name": "Marokko",
+      "capital": "Rabat",
+      "fact": "Liegt sowohl am Atlantik als auch am Mittelmeer."
+    },
+    "mg": {
+      "name": "Madagaskar",
+      "capital": "Antananarivo",
+      "fact": "Etwa 90 % der Tier- und Pflanzenwelt gibt es nirgendwo sonst auf der Erde."
+    },
+    "ca": {
+      "name": "Kanada",
+      "capital": "Ottawa",
+      "fact": "Hat die längste Küstenlinie aller Länder."
+    },
+    "mx": {
+      "name": "Mexiko",
+      "capital": "Mexiko-Stadt",
+      "fact": "Hat die größte spanischsprachige Bevölkerung der Welt."
+    },
+    "cu": {
+      "name": "Kuba",
+      "capital": "Havanna",
+      "fact": "Die größte Insel der Karibik."
+    },
+    "br": {
+      "name": "Brasilien",
+      "capital": "Brasília",
+      "fact": "Beherbergt rund 60 % des Amazonas-Regenwalds."
+    },
+    "pe": {
+      "name": "Peru",
+      "capital": "Lima",
+      "fact": "Machu Picchu, die Inka-Stadt aus dem 15. Jahrhundert, liegt hoch in seinen Anden."
+    },
+    "cl": {
+      "name": "Chile",
+      "capital": "Santiago",
+      "fact": "Rund 4.300 km lang, aber im Schnitt nur 177 km breit."
+    },
+    "au": {
+      "name": "Australien",
+      "capital": "Canberra",
+      "fact": "Das einzige Land, das ein ganzes Kontinent-Festland umfasst."
+    },
+    "nz": {
+      "name": "Neuseeland",
+      "capital": "Wellington",
+      "fact": "Eine der letzten großen Landmassen, die von Menschen besiedelt wurden."
+    }
+  }
+}
