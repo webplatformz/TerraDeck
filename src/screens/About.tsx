@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import type { Game } from '../game/useGame'
+import { COUNTRIES } from '../data/countries'
 
 export function About({ game }: { game: Game }) {
   const { t } = useTranslation()
@@ -20,10 +21,15 @@ export function About({ game }: { game: Game }) {
         <li className="panel">
           <h2>{t('about.findTitle')}</h2>
           <p>{t('about.findText')}</p>
+          <p>{t('about.findScope', { count: COUNTRIES.length })}</p>
         </li>
         <li className="panel">
           <h2>{t('about.stampsTitle')}</h2>
           <p>{t('about.stampsText')}</p>
+        </li>
+        <li className="panel">
+          <h2>{t('about.rarityTitle')}</h2>
+          <p>{t('about.rarityText')}</p>
         </li>
       </ol>
 
@@ -33,6 +39,7 @@ export function About({ game }: { game: Game }) {
           <li>{t('about.sourceBorders')}</li>
           <li>{t('about.sourceFlags')}</li>
           <li>{t('about.sourceNumbers')}</li>
+          <li>{t('about.sourceRarity')}</li>
           <li>{t('about.sourceStorage')}</li>
         </ul>
       </section>

@@ -4,6 +4,8 @@ export type ContinentId = 'africa' | 'asia' | 'europe' | 'north-america' | 'sout
 export type CountryId = string
 
 export interface CountryProgress {
+  /** Optional for v1 saves made before discovery-at-opening was introduced. */
+  discoveredAt?: number
   stamps: number
   encounters: number
   unlockedAt: number | null
@@ -37,4 +39,6 @@ export interface GameState {
 export interface RosterEntry {
   id: CountryId
   continent: ContinentId
+  rarity: Rarity
 }
+import type { Rarity } from './rarity'

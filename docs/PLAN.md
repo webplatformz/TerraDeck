@@ -12,7 +12,7 @@ pack refill, hash screens, Pages deploy). The game goal differs: learning geogra
 2. Ripping a pack reveals the country name and starts a challenge: pick the continent, then the country on an unlabelled map.
 3. Both answers correct on the first attempt → one mastery stamp.
 4. Any mistake ends the encounter and reveals the answer (continent + country location). Existing stamps are kept.
-5. Three stamps unlock the country's collectible card; collected countries leave the random pool.
+5. Two stamps unlock the country's collectible card: silver Visitor, then gold Explorer; collected countries leave the random pool.
 6. Progress and timestamps persist across reloads.
 
 ## Screens
@@ -30,7 +30,7 @@ pack-opening and challenge phases are not routes. No router library.
 ```
 src/
   domain/        Pure TS game rules. No React, storage or Date.now — clock and RNG are injected.
-    types.ts       CountryId, Continent, CountryProgress { stamps 0..3, attempts, unlockedAt? },
+    types.ts       CountryId, Continent, CountryProgress { stamps 0..2 (legacy 3 preserved), encounters, unlockedAt },
                    GameState { schemaVersion, progress, recentIds[], packs, refillAt, activeChallenge? }
     packRefill.ts  reconcilePackRefill(packs, refillAt, now, rules) — lazy regeneration from timestamps
     challenge.ts   startChallenge(state, rng, now), answerContinent(), answerCountry(), completeEncounter()
@@ -61,7 +61,9 @@ could be added later without touching the rules.
 
 ## Visual direction
 Premium explorer's collectible atlas: midnight-blue oceans, warm paper accents, distinctive cards,
-three mastery stamps and a satisfying unlock animation. Phone first, then tablet and desktop.
+two named mastery stamps (silver Visitor / Besucher, gold Explorer / Entdecker) and a satisfying unlock
+animation. Phone first, then tablet and desktop. Packs refill every 15 minutes, stacking to five
+(10-second debug mode). This pacing reflects field testing rather than a guaranteed completion date.
 
 ## Tech stack
 - React 18, TypeScript, Vite; ESLint (typescript-eslint, react-hooks).

@@ -6,7 +6,8 @@ const isNumOrNull = (v: unknown) => v === null || isNum(v)
 const isStrOrNull = (v: unknown) => v === null || typeof v === 'string'
 
 function isProgress(v: unknown): v is CountryProgress {
-  return isObject(v) && isNum(v.stamps) && v.stamps >= 0 && isNum(v.encounters) && v.encounters >= 0 && isNumOrNull(v.unlockedAt)
+  return isObject(v) && isNum(v.stamps) && v.stamps >= 0 && isNum(v.encounters) && v.encounters >= 0 && isNumOrNull(v.unlockedAt) &&
+    (v.discoveredAt === undefined || (isNum(v.discoveredAt) && v.discoveredAt >= 0))
 }
 
 function isChallenge(v: unknown): v is ActiveChallenge {

@@ -1,3 +1,5 @@
+import { MASTERY_STAMP_COUNT } from './mastery'
+
 export interface GameConfig {
   cooldownMs: number
   maxPacks: number
@@ -6,9 +8,9 @@ export interface GameConfig {
 }
 
 export const DEFAULT_CONFIG: GameConfig = {
-  cooldownMs: 30 * 60 * 1000,
+  cooldownMs: 15 * 60 * 1000,
   maxPacks: 5,
-  stampsToUnlock: 3,
+  stampsToUnlock: MASTERY_STAMP_COUNT,
   recentWindow: 3,
 }
 

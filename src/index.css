@@ -869,8 +869,11 @@ p {
 }
 
 .orders-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   width: 100%;
-  padding: 28px 22px;
+  padding: 12px 12px 24px;
   text-align: center;
   color: var(--ink-900);
   border-radius: 14px;
@@ -884,7 +887,27 @@ p {
 }
 
 .orders-card .eyebrow {
-  color: var(--brass-700);
+  color: inherit;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  min-width: 0;
+}
+
+.orders-top {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  text-align: left;
+  background: var(--rarity-banner);
+  color: var(--rarity-foreground);
+  border-bottom: 1px solid var(--rarity-accent);
+}
+
+.orders-top .rarity-badge {
+  flex-shrink: 0;
 }
 
 .orders-find {
@@ -1364,6 +1387,16 @@ p {
 }
 
 /* Magnifier for crowded spots. */
+.map-frame .map-land.is-excluded,
+.map-frame.is-interactive .map-land.is-excluded,
+.map-frame.is-interactive .map-land.is-excluded:hover {
+  fill: #707782;
+  stroke: #484f59;
+  opacity: 0.7;
+  cursor: default;
+  pointer-events: auto;
+}
+
 .map-lens-shadow {
   fill: rgba(4, 10, 22, 0.55);
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.6));
@@ -1487,6 +1520,32 @@ p {
   display: inline-flex;
   gap: 4px;
   align-items: center;
+  justify-content: center;
+}
+
+.stamp-stage {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  font: 600 10px/1.2 var(--font-body);
+}
+
+.stamp-stage-name {
+  white-space: nowrap;
+}
+
+.stamp-stage:not(.is-earned) .stamp-stage-name {
+  opacity: 0.65;
+}
+
+.card--sm .stamp-stage,
+.screen-bar .stamp-stage {
+  font-size: 8px;
+}
+
+.stamp-numeral {
+  font: 700 8px var(--font-body);
+  text-anchor: middle;
 }
 
 .stamp {
@@ -1558,6 +1617,150 @@ p {
 
 /* ---------- Cards ---------- */
 
+.rarity--common {
+  --rarity-accent: #8194ac;
+  --rarity-light: #e3ebf4;
+  --rarity-banner: linear-gradient(120deg, #263548, #435770);
+  --rarity-foreground: #f0f5fc;
+}
+
+.rarity--uncommon {
+  --rarity-accent: #24c76d;
+  --rarity-light: #a7ffcf;
+  --rarity-banner: linear-gradient(120deg, #06472d, #117a43);
+  --rarity-foreground: #ecfff4;
+}
+
+.rarity--rare {
+  --rarity-accent: #3994ff;
+  --rarity-light: #b5ddff;
+  --rarity-banner: linear-gradient(120deg, #103476, #175dbe);
+  --rarity-foreground: #f1f7ff;
+}
+
+.rarity--epic {
+  --rarity-accent: #b26bff;
+  --rarity-light: #ebcdff;
+  --rarity-banner: linear-gradient(120deg, #4a1677, #7c32b7);
+  --rarity-foreground: #fcf2ff;
+}
+
+.rarity--legendary {
+  --rarity-accent: #efb72f;
+  --rarity-light: #fff0b1;
+  --rarity-banner: linear-gradient(115deg, #b87512, #f8cd59 42%, #ffe9a1 55%, #dda02c 80%, #f8cf64);
+  --rarity-foreground: #382000;
+}
+
+.rarity-badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  flex-direction: column;
+  gap: 0.2em;
+  max-width: 100%;
+  padding: 0.45em 0.65em;
+  border: 1px solid var(--rarity-light);
+  border-radius: 3px 3px 8px 3px;
+  color: var(--rarity-foreground);
+  background: var(--rarity-banner);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.3);
+  font: 800 0.72rem/1.15 var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.rarity-pips {
+  font-size: 0.7em;
+  letter-spacing: 0.18em;
+  line-height: 1;
+}
+
+.card[class*="rarity--"] .card-top::before,
+.orders-top::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--rarity-accent), var(--rarity-light), var(--rarity-accent));
+}
+
+.orders-card[class*="rarity--"] {
+  box-shadow: inset 0 0 0 2px var(--rarity-accent), 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card .rarity-badge {
+  font-size: 4.4cqw;
+  padding: 0.45em 0.6em;
+  flex-shrink: 0;
+}
+
+.card[class*="rarity--"] .card-top {
+  background: var(--rarity-banner);
+  color: var(--rarity-foreground);
+}
+
+.card[class*="rarity--"] .card-top .card-number {
+  color: inherit;
+}
+
+.card--front[class*="rarity--"] .card-inner {
+  box-shadow:
+    inset 0 0 0 1.6cqw var(--paper-100),
+    inset 0 0 0 2.4cqw var(--rarity-accent),
+    inset 0 0 0 2.8cqw var(--paper-100),
+    inset 0 0 0 3.1cqw var(--rarity-accent);
+}
+
+.card--back[class*="rarity--"] .card-inner {
+  box-shadow: inset 0 0 0 2.4cqw var(--ocean-800), inset 0 0 0 3.2cqw var(--rarity-accent);
+  padding-top: 26cqw;
+}
+
+.card--back[class*="rarity--"] .card-top {
+  position: absolute;
+  inset: 6cqw 6cqw auto;
+}
+
+.card--back .card-top .card-number {
+  position: static;
+}
+
+.card.rarity--epic::after,
+.card.rarity--legendary::after,
+.orders-card.rarity--legendary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(125deg, transparent 25%, rgba(255, 255, 255, 0.08) 27%, transparent 31%, transparent 70%, rgba(255, 231, 150, 0.14) 73%, transparent 77%);
+}
+
+.card--lg.rarity--legendary::after,
+.orders-card.rarity--legendary::after {
+  inset: -100%;
+  background: linear-gradient(115deg, transparent 43%, rgba(255, 235, 155, 0.2) 48%, rgba(255, 255, 235, 0.3) 50%, transparent 57%);
+  animation: legendary-sheen 8s ease-in-out infinite;
+}
+
+@keyframes legendary-sheen {
+  0%, 65% {
+    transform: translateX(-45%);
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  95%, 100% {
+    transform: translateX(45%);
+    opacity: 0;
+  }
+}
+
 .card {
   container-type: inline-size;
   position: relative;
@@ -1605,9 +1808,14 @@ p {
 }
 
 .card-top {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 3cqw;
+  padding: 1cqw 3cqw;
+  min-height: 17cqw;
+  flex-shrink: 0;
 }
 
 .card-number {
@@ -1619,12 +1827,16 @@ p {
 }
 
 .card-flag {
+  position: absolute;
+  top: 3cqw;
+  right: 3cqw;
   width: 13cqw;
   border-radius: 1cqw;
   box-shadow: 0 0 0 0.4cqw rgba(35, 25, 14, 0.25);
 }
 
 .card-window {
+  position: relative;
   flex: 1;
   min-height: 0;
   margin: 4cqw 0;
@@ -1672,7 +1884,7 @@ p {
 
 .card-facts {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2cqw;
   margin: 4cqw 0 0;
   padding: 3cqw 0;
@@ -1693,6 +1905,7 @@ p {
   font-family: var(--font-display);
   font-size: 4.6cqw;
   font-weight: 600;
+  overflow-wrap: anywhere;
 }
 
 .card-fact {
@@ -2100,7 +2313,14 @@ p {
 
   .pack-foil,
   .pack-strip-arrow,
-  .unlock-rays {
+  .unlock-rays,
+  .card--lg.rarity--legendary::after,
+  .orders-card.rarity--legendary::after {
     animation: none !important;
+  }
+
+  .card--lg.rarity--legendary::after,
+  .orders-card.rarity--legendary::after {
+    inset: 0;
   }
 }

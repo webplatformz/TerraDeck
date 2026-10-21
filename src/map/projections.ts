@@ -44,7 +44,7 @@ export function framingLand(id: ContinentId, features: CountryFeature[]): MultiP
   const { frame, exclude = [] } = CONTINENT_VIEWS[id]
   const coordinates: Polygon['coordinates'][] = []
   for (const f of features) {
-    if (f.properties.continent !== id) continue
+    if (f.properties.continent !== id || f.properties.excluded) continue
     const polygons = f.geometry.type === 'MultiPolygon' ? f.geometry.coordinates : [f.geometry.coordinates]
     for (const rings of polygons) {
       const polygon: Polygon = { type: 'Polygon', coordinates: rings }

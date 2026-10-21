@@ -5,6 +5,7 @@ import { useContent } from '../i18n/useContent'
 import { UNLOCK_FLIP_MS } from '../theme'
 import { CardBack, CardFront } from './Card'
 import { Portal } from './Portal'
+import { MASTERY_STAMP_COUNT } from '../domain/mastery'
 
 interface Props {
   country: Country
@@ -30,7 +31,7 @@ export function UnlockSequence({ country, onCollection, onContinue }: Props) {
       <div className="unlock-stage" style={{ ['--flip-ms' as string]: `${UNLOCK_FLIP_MS}ms` }}>
         <div className="unlock-card">
           <div className="unlock-face unlock-face--back">
-            <CardBack country={country} stamps={3} discovered size="lg" />
+            <CardBack country={country} stamps={MASTERY_STAMP_COUNT} discovered size="lg" />
           </div>
           <div className="unlock-face unlock-face--front">
             <CardFront country={country} size="lg" />

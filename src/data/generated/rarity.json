@@ -1,0 +1,243 @@
+{
+  "fr": {
+    "grade": "common",
+    "score": 0.053125,
+    "familiarity": 0.005208,
+    "smallness": 0.244792
+  },
+  "it": {
+    "grade": "common",
+    "score": 0.098958,
+    "familiarity": 0.03125,
+    "smallness": 0.369792
+  },
+  "no": {
+    "grade": "common",
+    "score": 0.133333,
+    "familiarity": 0.088542,
+    "smallness": 0.3125
+  },
+  "ch": {
+    "grade": "legendary",
+    "score": 0.230208,
+    "familiarity": 0.117188,
+    "smallness": 0.682292,
+    "override": "The creator's playful Switzerland override."
+  },
+  "jp": {
+    "grade": "common",
+    "score": 0.076042,
+    "familiarity": 0.015625,
+    "smallness": 0.317708
+  },
+  "in": {
+    "grade": "common",
+    "score": 0.070833,
+    "familiarity": 0.080729,
+    "smallness": 0.03125
+  },
+  "vn": {
+    "grade": "common",
+    "score": 0.170833,
+    "familiarity": 0.127604,
+    "smallness": 0.34375
+  },
+  "np": {
+    "grade": "rare",
+    "score": 0.59375,
+    "familiarity": 0.622396,
+    "smallness": 0.479167
+  },
+  "eg": {
+    "grade": "common",
+    "score": 0.104167,
+    "familiarity": 0.09375,
+    "smallness": 0.145833
+  },
+  "ke": {
+    "grade": "uncommon",
+    "score": 0.327083,
+    "familiarity": 0.348958,
+    "smallness": 0.239583
+  },
+  "ma": {
+    "grade": "uncommon",
+    "score": 0.322917,
+    "familiarity": 0.330729,
+    "smallness": 0.291667
+  },
+  "mg": {
+    "grade": "rare",
+    "score": 0.441667,
+    "familiarity": 0.494792,
+    "smallness": 0.229167
+  },
+  "ca": {
+    "grade": "common",
+    "score": 0.053125,
+    "familiarity": 0.065104,
+    "smallness": 0.005208
+  },
+  "mx": {
+    "grade": "common",
+    "score": 0.0375,
+    "familiarity": 0.03125,
+    "smallness": 0.0625
+  },
+  "cu": {
+    "grade": "rare",
+    "score": 0.442708,
+    "familiarity": 0.419271,
+    "smallness": 0.536458
+  },
+  "br": {
+    "grade": "common",
+    "score": 0.10625,
+    "familiarity": 0.127604,
+    "smallness": 0.020833
+  },
+  "pe": {
+    "grade": "uncommon",
+    "score": 0.335417,
+    "familiarity": 0.395833,
+    "smallness": 0.09375
+  },
+  "cl": {
+    "grade": "common",
+    "score": 0.11875,
+    "familiarity": 0.101563,
+    "smallness": 0.1875
+  },
+  "au": {
+    "grade": "common",
+    "score": 0.040625,
+    "familiarity": 0.044271,
+    "smallness": 0.026042
+  },
+  "nz": {
+    "grade": "uncommon",
+    "score": 0.302083,
+    "familiarity": 0.28125,
+    "smallness": 0.385417
+  },
+  "de": {
+    "grade": "common",
+    "score": 0.116667,
+    "familiarity": 0.065104,
+    "smallness": 0.322917
+  },
+  "es": {
+    "grade": "common",
+    "score": 0.110417,
+    "familiarity": 0.072917,
+    "smallness": 0.260417
+  },
+  "gb": {
+    "grade": "common",
+    "score": 0.126042,
+    "familiarity": 0.057292,
+    "smallness": 0.401042
+  },
+  "gr": {
+    "grade": "uncommon",
+    "score": 0.220833,
+    "familiarity": 0.153646,
+    "smallness": 0.489583
+  },
+  "cn": {
+    "grade": "common",
+    "score": 0.04375,
+    "familiarity": 0.052083,
+    "smallness": 0.010417
+  },
+  "kr": {
+    "grade": "uncommon",
+    "score": 0.345833,
+    "familiarity": 0.294271,
+    "smallness": 0.552083
+  },
+  "id": {
+    "grade": "common",
+    "score": 0.165625,
+    "familiarity": 0.190104,
+    "smallness": 0.067708
+  },
+  "bt": {
+    "grade": "epic",
+    "score": 0.635417,
+    "familiarity": 0.622396,
+    "smallness": 0.6875
+  },
+  "dz": {
+    "grade": "common",
+    "score": 0.096875,
+    "familiarity": 0.109375,
+    "smallness": 0.046875
+  },
+  "gh": {
+    "grade": "rare",
+    "score": 0.417708,
+    "familiarity": 0.419271,
+    "smallness": 0.411458
+  },
+  "na": {
+    "grade": "rare",
+    "score": 0.44375,
+    "familiarity": 0.513021,
+    "smallness": 0.166667
+  },
+  "ls": {
+    "grade": "legendary",
+    "score": 0.820833,
+    "familiarity": 0.848958,
+    "smallness": 0.708333
+  },
+  "us": {
+    "grade": "common",
+    "score": 0.011458,
+    "familiarity": 0.010417,
+    "smallness": 0.015625
+  },
+  "cr": {
+    "grade": "epic",
+    "score": 0.757292,
+    "familiarity": 0.783854,
+    "smallness": 0.651042
+  },
+  "jm": {
+    "grade": "legendary",
+    "score": 0.81875,
+    "familiarity": 0.817708,
+    "smallness": 0.822917
+  },
+  "ar": {
+    "grade": "common",
+    "score": 0.130208,
+    "familiarity": 0.153646,
+    "smallness": 0.036458
+  },
+  "bo": {
+    "grade": "uncommon",
+    "score": 0.391667,
+    "familiarity": 0.455729,
+    "smallness": 0.135417
+  },
+  "uy": {
+    "grade": "rare",
+    "score": 0.502083,
+    "familiarity": 0.513021,
+    "smallness": 0.458333
+  },
+  "fj": {
+    "grade": "legendary",
+    "score": 0.889583,
+    "familiarity": 0.916667,
+    "smallness": 0.78125
+  },
+  "vu": {
+    "grade": "legendary",
+    "score": 0.908333,
+    "familiarity": 0.932292,
+    "smallness": 0.8125
+  }
+}

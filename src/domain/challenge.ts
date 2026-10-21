@@ -31,7 +31,7 @@ export function openPack(
   if (synced.activeChallenge || synced.packs < 1) return synced
 
   const countryId = pickCountry(
-    roster.map((c) => c.id),
+    roster,
     synced.progress,
     synced.recentIds,
     rng,
@@ -44,6 +44,14 @@ export function openPack(
   return {
     ...synced,
     ...stock,
+    progress: {
+      ...synced.progress,
+      [countryId]: {
+        stamps: 0, encounters: 0, unlockedAt: null,
+        ...synced.progress[countryId],
+        discoveredAt: synced.progress[countryId]?.discoveredAt ?? now,
+      },
+    },
     recentIds: [...synced.recentIds.filter((id) => id !== countryId), countryId].slice(-10),
     activeChallenge: {
       countryId,
@@ -90,7 +98,7 @@ export function dismissChallenge(state: GameState): GameState {
 function finish(state: GameState, outcome: 'stamp' | 'missed', now: number, config: GameConfig): GameState {
   const challenge = state.activeChallenge!
   const before: CountryProgress = state.progress[challenge.countryId] ?? { stamps: 0, encounters: 0, unlockedAt: null }
-  const stamps = outcome === 'stamp' ? Math.min(config.stampsToUnlock, before.stamps + 1) : before.stamps
+  const stamps = outcome === 'stamp' && before.stamps < config.stampsToUnlock ? Math.min(config.stampsToUnlock, before.stamps + 1) : before.stamps
   const unlocked = outcome === 'stamp' && before.stamps < config.stampsToUnlock && stamps >= config.stampsToUnlock
 
   return {
@@ -98,6 +106,7 @@ function finish(state: GameState, outcome: 'stamp' | 'missed', now: number, conf
     progress: {
       ...state.progress,
       [challenge.countryId]: {
+        ...before,
         stamps,
         encounters: before.encounters + 1,
         unlockedAt: unlocked ? now : before.unlockedAt,

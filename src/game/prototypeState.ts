@@ -4,7 +4,7 @@ import type { GameState } from '../domain/types'
 
 /** Milestone 1 only: a partly filled atlas so every screen has something to show. */
 export function prototypeState(config: GameConfig, now: number): GameState {
-  const done = (daysAgo: number) => ({ stamps: 3, encounters: 4, unlockedAt: now - daysAgo * 86_400_000 })
+  const done = (daysAgo: number) => ({ stamps: config.stampsToUnlock, encounters: 3, unlockedAt: now - daysAgo * 86_400_000 })
   return {
     ...createInitialState(config),
     packs: 3,
@@ -13,14 +13,16 @@ export function prototypeState(config: GameConfig, now: number): GameState {
       fr: done(6),
       jp: done(3),
       br: done(1),
-      it: { stamps: 2, encounters: 3, unlockedAt: null },
-      ke: { stamps: 2, encounters: 2, unlockedAt: null },
-      ca: { stamps: 2, encounters: 2, unlockedAt: null },
-      pe: { stamps: 2, encounters: 3, unlockedAt: null },
-      nz: { stamps: 2, encounters: 2, unlockedAt: null },
+      it: { stamps: 1, encounters: 3, unlockedAt: null },
+      ke: { stamps: 1, encounters: 2, unlockedAt: null },
+      ca: { stamps: 1, encounters: 2, unlockedAt: null },
+      pe: { stamps: 1, encounters: 3, unlockedAt: null },
+      nz: { stamps: 1, encounters: 2, unlockedAt: null },
       in: { stamps: 1, encounters: 2, unlockedAt: null },
       eg: { stamps: 1, encounters: 1, unlockedAt: null },
       mx: { stamps: 0, encounters: 1, unlockedAt: null },
+      bt: { stamps: 1, encounters: 1, unlockedAt: null, discoveredAt: now - 86_400_000 },
+      ch: { stamps: 0, encounters: 0, unlockedAt: null, discoveredAt: now - 3_600_000 },
     },
     recentIds: ['br', 'mx'],
   }

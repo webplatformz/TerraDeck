@@ -69,14 +69,15 @@
     "promptCountry": "Tap <name>{{country}}</name>. Pinch or use + to zoom; crowded spots open a magnifier.",
     "confirm": "Confirm location",
     "select": "Select a country",
-    "stampEarned": "Stamp earned",
-    "unlocked": "Three stamps! The <name>{{country}}</name> card is yours.",
-    "stampProgress": "{{stamps}} of 3 stamps. Find it again to complete the card.",
+    "stampEarned": "{{stage}} stamp earned",
+    "unlocked": "Explorer achieved! The <name>{{country}}</name> card is yours.",
+    "stampProgress": "{{stamps}} of {{total}} stamps. Find it again to become an Explorer and complete the card.",
+    "alreadyCollected": "This card is already in your collection.",
     "revealCard": "Reveal card",
     "notQuite": "Not quite",
     "wrongContinent": "<name>{{country}}</name> is in <name>{{correct}}</name>, not <name>{{wrong}}</name>.",
     "wrongCountry": "That was not <name>{{country}}</name>. It is marked on the map.",
-    "stampsSafe": "Your stamps are safe ({{stamps}} of 3)."
+    "stampsSafe": "Your stamps are safe ({{stamps}} of {{total}})."
   },
   "map": {
     "worldLabel": "World map of the continents",
@@ -99,7 +100,7 @@
   "card": {
     "number": "No. {{number}}",
     "label": "{{country}} card",
-    "backLabel": "{{country}}, {{stamps}} of 3 stamps",
+    "backLabel": "{{country}}, {{stamps}} of {{total}} stamps",
     "undiscoveredLabel": "Undiscovered card",
     "undiscovered": "Undiscovered",
     "capital": "Capital",
@@ -108,11 +109,16 @@
   },
   "stamp": {
     "ring": "TERRADECK · MASTERY · {{numeral}} ·",
-    "rowLabel": "{{stamps}} of 3 mastery stamps"
+    "rowLabel": "{{stamps}} of {{total}} mastery stamps",
+    "visitor": "Visitor",
+    "explorer": "Explorer",
+    "stageLabel": "{{stage}}: {{status}}",
+    "earned": "earned",
+    "notEarned": "not yet earned"
   },
   "unlock": {
     "label": "{{country}} card unlocked",
-    "kicker": "Three stamps earned",
+    "kicker": "Visitor to Explorer",
     "title": "{{country}} joins your atlas",
     "viewCollection": "View collection"
   },
@@ -127,13 +133,25 @@
     "ripText": "Each pack holds one country. A new pack arrives every {{cooldown}}, and you can hold up to {{max}}. When the stack is full the clock pauses, so open one to keep packs coming.",
     "findTitle": "Find it on the map",
     "findText": "Pick the continent first, then tap the country on the unlabelled map and confirm. Pinch or use the buttons to zoom; in crowded spots a magnifier helps you pick small countries.",
-    "stampsTitle": "Earn three stamps",
-    "stampsText": "Get both answers right first time to earn a mastery stamp. Three stamps unlock the country's card and take it out of future packs. A mistake shows you the answer but never removes stamps you already have.",
+    "findScope": "This test atlas has {{count}} collectible countries. Other countries can still be wrong answers. Gray territories are context only and cannot be selected.",
+    "stampsTitle": "From Visitor to Explorer",
+    "stampsText": "Get both answers right first time to earn the silver Visitor stamp. Do it again to earn the gold Explorer stamp: two stamps unlock the country's card and take it out of future packs. A mistake shows you the answer but never removes stamps you already have.",
     "sources": "Sources",
+    "rarityTitle": "Discover rarity",
+    "rarityText": "Your first pack reveals a country's name and fixed rarity. Five grades run from Common to Legendary, based mostly on Wikipedia language coverage and partly on size, not on a country's value. Switzerland is Legendary by a playful creator override. Higher grades are only slightly less likely in packs; all countries need the same two stamps: Visitor and Explorer.",
+    "sourceRarity": "Rarity: frozen Wikidata Wikipedia-language coverage and REST Countries area data. Coverage is an imperfect familiarity proxy, not a recognition survey.",
     "sourceBorders": "Borders: Natural Earth 1:50m via world-atlas (public domain / ISC).",
     "sourceFlags": "Flags: flag-icons (MIT).",
     "sourceNumbers": "Population and area are rounded recent estimates.",
     "sourceStorage": "Progress and language are stored only in this browser."
+  },
+  "rarity": {
+    "label": "Rarity: {{grade}}",
+    "common": "Common",
+    "uncommon": "Uncommon",
+    "rare": "Rare",
+    "epic": "Epic",
+    "legendary": "Legendary"
   },
   "continents": {
     "africa": "Africa",
@@ -243,6 +261,26 @@
       "name": "New Zealand",
       "capital": "Wellington",
       "fact": "One of the last major landmasses to be settled by humans."
-    }
+    },
+    "de": { "name": "Germany", "capital": "Berlin", "fact": "The Rhine flows through its western regions on its way to the North Sea." },
+    "es": { "name": "Spain", "capital": "Madrid", "fact": "Its territory includes the Balearic Islands in the Mediterranean and the Canary Islands in the Atlantic." },
+    "gb": { "name": "United Kingdom", "capital": "London", "fact": "Made up of England, Scotland, Wales and Northern Ireland." },
+    "gr": { "name": "Greece", "capital": "Athens", "fact": "Thousands of islands dot its Aegean and Ionian seas." },
+    "cn": { "name": "China", "capital": "Beijing", "fact": "The Yangtze is the longest river in Asia." },
+    "kr": { "name": "South Korea", "capital": "Seoul", "fact": "Occupies the southern part of the Korean Peninsula." },
+    "id": { "name": "Indonesia", "capital": "Jakarta", "fact": "An archipelago stretching across the equator between the Indian and Pacific oceans." },
+    "bt": { "name": "Bhutan", "capital": "Thimphu", "fact": "A Himalayan country between India and China." },
+    "dz": { "name": "Algeria", "capital": "Algiers", "fact": "The largest country in Africa by area." },
+    "gh": { "name": "Ghana", "capital": "Accra", "fact": "Lake Volta is one of the world's largest artificial lakes by surface area." },
+    "na": { "name": "Namibia", "capital": "Windhoek", "fact": "The Namib Desert runs along its Atlantic coast." },
+    "ls": { "name": "Lesotho", "capital": "Maseru", "fact": "Entirely surrounded by South Africa." },
+    "us": { "name": "United States", "capital": "Washington, D.C.", "fact": "Its 50 states include Alaska and the Pacific islands of Hawaii." },
+    "cr": { "name": "Costa Rica", "capital": "San José", "fact": "Has coastlines on both the Caribbean Sea and the Pacific Ocean." },
+    "jm": { "name": "Jamaica", "capital": "Kingston", "fact": "An island country in the Caribbean, south of Cuba." },
+    "ar": { "name": "Argentina", "capital": "Buenos Aires", "fact": "Home to Aconcagua, the highest mountain outside Asia." },
+    "bo": { "name": "Bolivia", "capital": "Sucre", "fact": "Sucre is the constitutional capital; La Paz is the seat of government." },
+    "uy": { "name": "Uruguay", "capital": "Montevideo", "fact": "Lies between Argentina and Brazil on South America's Atlantic side." },
+    "fj": { "name": "Fiji", "capital": "Suva", "fact": "Viti Levu and Vanua Levu are its two largest islands." },
+    "vu": { "name": "Vanuatu", "capital": "Port Vila", "fact": "An island chain in the South Pacific with several active volcanoes." }
   }
 }

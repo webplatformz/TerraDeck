@@ -3,12 +3,15 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Find every country on the map, earn three stamps, collect the atlas.",
+  "description": "Find every country on the map, earn Visitor and Explorer stamps, collect the atlas.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
+    "test": "tsx --test tests/*.test.mjs",
+    "rarity:build": "node scripts/build-rarity.mjs",
+    "rarity:collect": "node scripts/collect-rarity.mjs",
     "geo:build": "node scripts/build-geo.mjs"
   },
   "engines": {
@@ -46,6 +49,7 @@
     "globals": "^15.15.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.72.0",
-    "vite": "^5.4.21"
+    "vite": "^5.4.21",
+    "tsx": "^4.23.15"
   }
 }

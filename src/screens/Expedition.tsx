@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { Flag } from '../components/Flag'
 import { PackArt } from '../components/PackArt'
 import { StampRow } from '../components/Stamp'
+import { RarityBadge } from '../components/RarityBadge'
 import { COUNTRY_BY_ID } from '../data/countries'
 import type { Game } from '../game/useGame'
 import { useContent } from '../i18n/useContent'
@@ -114,8 +115,11 @@ export function Expedition({ game }: { game: Game }) {
 
         {phase === 'orders' && country && (
           <div className="orders">
-            <div className="orders-card">
-              <p className="eyebrow">{t('expedition.destination')}</p>
+            <div className={`orders-card rarity--${country.rarity}`}>
+              <header className="orders-top">
+                <p className="eyebrow">{t('expedition.destination')}</p>
+                <RarityBadge rarity={country.rarity} />
+              </header>
               <p className="orders-find">{t('expedition.find')}</p>
               <Flag countryId={country.id} className="orders-flag" />
               <h1 className="orders-name">{countryName(country.id)}</h1>

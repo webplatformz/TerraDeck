@@ -31,6 +31,7 @@ interface Shape {
   name: string
   d: string
   member: boolean
+  excluded: boolean
   centroid: Pt
   /** Largest side of the mainland bounding box at zoom 1, in px. */
   extent: number
@@ -100,7 +101,8 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
       shapes.push({
         name,
         d,
-        member: f.properties.continent === continent,
+        member: f.properties.continent === continent && !f.properties.excluded,
+        excluded: f.properties.excluded,
         centroid: path.centroid(main) as Pt,
         extent: Math.max(x1 - x0, y1 - y0),
         bounds,
@@ -185,10 +187,11 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
   /** Resolves a tap to the country under it plus nearby small countries, in a given screen mapping. */
   const probe = (event: MouseEvent, tap: Pt, toScreen: (s: Shape) => Pt, scale: number, inLens: boolean) => {
     const members = geo?.members ?? []
-    const under = document
+    const underElement = document
       .elementsFromPoint(event.clientX, event.clientY)
-      .find((el) => el.matches('path[data-name]') && !!el.closest('.map-lens') === inLens)
-      ?.getAttribute('data-name')
+      .find((el) => el.matches('path[data-map-land]') && !!el.closest('.map-lens') === inLens)
+    const blocked = underElement?.getAttribute('data-excluded') === 'true'
+    const under = underElement?.getAttribute('data-name')
     const direct = under ? members.find((s) => s.name === under) : undefined
     const isSmall = (s: Shape) => s.extent * scale < SMALL_PX
     const near = (radius: number) =>
@@ -196,7 +199,7 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
         .filter((s) => s !== direct && isSmall(s) && dist(toScreen(s), tap) <= radius)
         .sort((a, b) => dist(toScreen(a), tap) - dist(toScreen(b), tap))
     const nearest = (radius: number) => members.filter((s) => dist(toScreen(s), tap) <= radius).sort((a, b) => dist(toScreen(a), tap) - dist(toScreen(b), tap))[0]
-    return { direct, isSmall, near, nearest }
+    return { direct, isSmall, near, nearest, blocked }
   }
 
   const handleMapClick = (event: MouseEvent<SVGSVGElement>) => {
@@ -206,7 +209,8 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
     const tap: Pt = [event.clientX - rect.left, event.clientY - rect.top]
     const tr = transformRef.current
     const toScreen = (s: Shape) => tr.apply(s.centroid) as Pt
-    const { direct, isSmall, near, nearest } = probe(event, tap, toScreen, tr.k, false)
+    const { direct, isSmall, near, nearest, blocked } = probe(event, tap, toScreen, tr.k, false)
+    if (blocked) return
     const crowd = near(CROWD_RADIUS_PX)
 
     // Ambiguous: two or more small countries in reach, or a small one right next to the country under the finger.
@@ -234,7 +238,8 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
       const [sx, sy] = tr.apply(s.centroid)
       return [lens.center[0] + (sx - lens.at[0]) * lens.scale, lens.center[1] + (sy - lens.at[1]) * lens.scale]
     }
-    const { direct, near, nearest } = probe(event, tap, toScreen, tr.k * lens.scale, true)
+    const { direct, near, nearest, blocked } = probe(event, tap, toScreen, tr.k * lens.scale, true)
+    if (blocked) return
     const pick = direct ?? near(LENS_HIT_PX)[0] ?? nearest(OCEAN_SNAP_PX)
     if (pick) {
       setLens(null)
@@ -250,13 +255,13 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
       <>
         <path className="map-graticule" d={geo.graticule} />
         {geo.shapes.map((s) => {
-          const tone = markByName.get(s.name)
-          const cls = ['map-land', !s.member && 'is-faded', s.name === selected && 'is-selected', tone && `is-${tone}`].filter(Boolean).join(' ')
-          return <path key={keyPrefix + s.name} data-name={s.member ? s.name : undefined} className={cls} d={s.d} />
+          const tone = s.excluded ? undefined : markByName.get(s.name)
+          const cls = ['map-land', !s.member && 'is-faded', s.excluded && 'is-excluded', !s.excluded && s.name === selected && 'is-selected', tone && `is-${tone}`].filter(Boolean).join(' ')
+          return <path key={keyPrefix + s.name} data-map-land="" data-excluded={s.excluded} data-name={s.member ? s.name : undefined} className={cls} d={s.d} />
         })}
         {[...markByName.entries(), ...(selected ? [[selected, 'selected'] as const] : [])].map(([name, tone]) => {
           const s = geo.byName.get(name)
-          if (!s || s.extent * scale >= SMALL_PX) return null
+          if (!s || s.excluded || s.extent * scale >= SMALL_PX) return null
           return <circle key={`${keyPrefix}ring-${name}`} className={`map-ring map-ring--${tone}`} cx={s.centroid[0]} cy={s.centroid[1]} r={11 / scale} />
         })}
       </>
@@ -272,7 +277,7 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
           <rect className="map-ocean-hit" width={w} height={h} />
           <g ref={layerRef}>
             {renderLand(k, '')}
-            {pulseShape && (
+            {pulseShape && !pulseShape.excluded && (
               <g transform={`translate(${pulseShape.centroid[0]},${pulseShape.centroid[1]}) scale(${1 / k})`}>
                 <circle className="map-pulse" r={16} />
                 <circle className="map-pulse map-pulse--late" r={16} />

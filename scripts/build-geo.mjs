@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url'
 import { mergeArcs, feature } from 'topojson-client'
 import { geoCentroid } from 'd3-geo'
 import { COUNTRIES, EXCLUDED, OVERSEAS_PARTS } from './geo/countries.mjs'
+import { EXCLUDED_PARTS, EXCLUDED_TERRITORY_ISOS } from './geo/exclusions.mjs'
 
 const CONTINENT_IDS = ['africa', 'asia', 'europe', 'north-america', 'south-america', 'oceania']
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
@@ -38,15 +39,35 @@ if (errors.length) {
 }
 
 // ---- tag countries ----
+const inBox = ([lon, lat], [w, s, e, n]) => lon >= w && lon <= e && lat >= s && lat <= n
 const countries = shapes
   .filter((g) => !EXCLUDED.includes(g.properties.name))
-  .map((g) => {
+  .flatMap((g) => {
     const { iso, continent } = listed.get(g.properties.name)
-    return { type: g.type, arcs: g.arcs, properties: { name: g.properties.name, iso, continent } }
+    const polygons = g.type === 'MultiPolygon' ? g.arcs : [g.arcs]
+    const main = []
+    const regions = new Map()
+    for (const arcs of polygons) {
+      const centroid = geoCentroid(feature(source, { type: 'Polygon', arcs }))
+      const excluded = EXCLUDED_PARTS.find((p) => p.parent === g.properties.name && inBox(centroid, p.box))
+      if (excluded) {
+        if (!regions.has(excluded)) regions.set(excluded, [])
+        regions.get(excluded).push(arcs)
+      } else main.push(arcs)
+    }
+    const entries = []
+    if (main.length) entries.push({
+      type: 'MultiPolygon', arcs: main,
+      properties: { name: g.properties.name, iso, continent, excluded: EXCLUDED_TERRITORY_ISOS.includes(iso) },
+    })
+    for (const [region, arcs] of regions) entries.push({
+      type: 'MultiPolygon', arcs,
+      properties: { name: region.name, iso, continent: region.continent, excluded: true },
+    })
+    return entries
   })
 
 // ---- continent outlines: split into polygon parts, assign each part, merge ----
-const inBox = ([lon, lat], [w, s, e, n]) => lon >= w && lon <= e && lat >= s && lat <= n
 const partsByContinent = Object.fromEntries(CONTINENT_IDS.map((id) => [id, []]))
 for (const g of countries) {
   const polygons = g.type === 'MultiPolygon' ? g.arcs : [g.arcs]

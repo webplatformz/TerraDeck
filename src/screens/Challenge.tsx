@@ -6,6 +6,7 @@ import { CONTINENTS } from '../data/continents'
 import { COUNTRY_BY_ID, COUNTRY_BY_MAP_NAME } from '../data/countries'
 import type { WorldData } from '../data/world'
 import type { ContinentId } from '../domain/types'
+import { displayedStamps } from '../domain/mastery'
 import type { Game } from '../game/useGame'
 import { useContent } from '../i18n/useContent'
 import { ContinentMap, type MarkTone } from '../map/ContinentMap'
@@ -37,6 +38,7 @@ export function Challenge({ game, world }: { game: Game; world: WorldData }) {
   const { t } = useTranslation()
   const { countryName, continentName } = useContent()
   const name = countryName(country.id)
+  const stamps = displayedStamps(progress?.stamps ?? 0)
 
   const marks: { mapName: string; tone: MarkTone }[] = []
   const focus: string[] = []
@@ -135,13 +137,13 @@ export function Challenge({ game, world }: { game: Game; world: WorldData }) {
 
         {step === 'result' && outcome === 'stamp' && (
           <>
-            <p className="result-title result-title--good">{t('challenge.stampEarned')}</p>
+            <p className="result-title result-title--good">{t('challenge.stampEarned', { stage: t(stamps === 1 ? 'stamp.visitor' : 'stamp.explorer') })}</p>
             <StampRow stamps={progress?.stamps ?? 0} code={country.id} size={52} fresh={(progress?.stamps ?? 1) - 1} />
             <p className="sheet-prompt">
               {challenge.unlocked ? (
                 <Trans i18nKey="challenge.unlocked" values={{ country: name }} components={PLACE} />
               ) : (
-                t('challenge.stampProgress', { stamps: progress?.stamps ?? 0 })
+                t(stamps >= game.config.stampsToUnlock ? 'challenge.alreadyCollected' : 'challenge.stampProgress', { stamps, total: game.config.stampsToUnlock })
               )}
             </p>
             {challenge.unlocked ? (
@@ -169,7 +171,7 @@ export function Challenge({ game, world }: { game: Game; world: WorldData }) {
               ) : (
                 <Trans i18nKey="challenge.wrongCountry" values={{ country: name }} components={PLACE} />
               )}{' '}
-              {t('challenge.stampsSafe', { stamps: progress?.stamps ?? 0 })}
+              {t('challenge.stampsSafe', { stamps, total: game.config.stampsToUnlock })}
             </p>
             <button type="button" className="btn btn--primary btn--wide" onClick={() => game.finishExpedition()}>
               {t('common.backToTheAtlas')}

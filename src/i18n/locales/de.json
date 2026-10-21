@@ -69,14 +69,15 @@
     "promptCountry": "Gesucht: <name>{{country}}</name>. Tippe das Land an. Zoome mit zwei Fingern oder +; an engen Stellen öffnet sich eine Lupe.",
     "confirm": "Auswahl bestätigen",
     "select": "Wähle ein Land",
-    "stampEarned": "Stempel erhalten",
-    "unlocked": "Drei Stempel! Die Karte <name>{{country}}</name> gehört dir.",
-    "stampProgress": "{{stamps}} von 3 Stempeln. Finde das Land noch einmal, um die Karte zu vervollständigen.",
+    "stampEarned": "{{stage}}-Stempel erhalten",
+    "unlocked": "Entdecker erreicht! Die Karte <name>{{country}}</name> gehört dir.",
+    "stampProgress": "{{stamps}} von {{total}} Stempeln. Finde das Land noch einmal, um Entdecker zu werden und die Karte zu vervollständigen.",
+    "alreadyCollected": "Diese Karte ist bereits in deiner Sammlung.",
     "revealCard": "Karte aufdecken",
     "notQuite": "Knapp daneben",
     "wrongContinent": "Gesucht war <name>{{country}}</name>. Das liegt in <name>{{correct}}</name>, nicht in <name>{{wrong}}</name>.",
     "wrongCountry": "Leider falsch – gesucht war <name>{{country}}</name>. Die richtige Stelle ist auf der Karte markiert.",
-    "stampsSafe": "Deine Stempel bleiben erhalten ({{stamps}} von 3)."
+    "stampsSafe": "Deine Stempel bleiben erhalten ({{stamps}} von {{total}})."
   },
   "map": {
     "worldLabel": "Weltkarte der Kontinente",
@@ -99,7 +100,7 @@
   "card": {
     "number": "Nr. {{number}}",
     "label": "Karte: {{country}}",
-    "backLabel": "{{country}}, {{stamps}} von 3 Stempeln",
+    "backLabel": "{{country}}, {{stamps}} von {{total}} Stempeln",
     "undiscoveredLabel": "Unentdeckte Karte",
     "undiscovered": "Unentdeckt",
     "capital": "Hauptstadt",
@@ -108,11 +109,16 @@
   },
   "stamp": {
     "ring": "TERRADECK · MEISTER · {{numeral}} ·",
-    "rowLabel": "{{stamps}} von 3 Meisterstempeln"
+    "rowLabel": "{{stamps}} von {{total}} Meisterstempeln",
+    "visitor": "Besucher",
+    "explorer": "Entdecker",
+    "stageLabel": "{{stage}}: {{status}}",
+    "earned": "erhalten",
+    "notEarned": "noch nicht erhalten"
   },
   "unlock": {
     "label": "Karte freigeschaltet: {{country}}",
-    "kicker": "Drei Stempel gesammelt",
+    "kicker": "Vom Besucher zum Entdecker",
     "title": "Neu in deinem Atlas: {{country}}",
     "viewCollection": "Zur Sammlung"
   },
@@ -127,13 +133,25 @@
     "ripText": "Jedes Päckchen enthält ein Land. Alle {{cooldown}} kommt ein neues dazu, und du kannst bis zu {{max}} sammeln. Ist der Stapel voll, pausiert die Uhr – öffne also eins, damit weitere kommen.",
     "findTitle": "Auf der Karte finden",
     "findText": "Wähle zuerst den Kontinent, tippe dann das Land auf der unbeschrifteten Karte an und bestätige. Zoome mit zwei Fingern oder den Knöpfen; an engen Stellen hilft eine Lupe bei kleinen Ländern.",
-    "stampsTitle": "Drei Stempel sammeln",
-    "stampsText": "Sind beide Antworten beim ersten Versuch richtig, gibt es einen Meisterstempel. Drei Stempel schalten die Karte des Landes frei, und es kommt in keinem Päckchen mehr vor. Ein Fehler zeigt dir die Lösung, nimmt dir aber nie bereits gesammelte Stempel weg.",
+    "stampsTitle": "Vom Besucher zum Entdecker",
+    "stampsText": "Sind beide Antworten beim ersten Versuch richtig, erhältst du den silbernen Besucher-Stempel. Gelingt es erneut, folgt der goldene Entdecker-Stempel: Zwei Stempel schalten die Karte des Landes frei, und es kommt in keinem Päckchen mehr vor. Ein Fehler zeigt dir die Lösung, nimmt dir aber nie bereits gesammelte Stempel weg.",
     "sources": "Quellen",
+    "findScope": "Dieser Testatlas enthält {{count}} sammelbare Länder. Andere Länder können weiterhin falsche Antworten sein. Graue Gebiete dienen nur zur Orientierung und sind nicht auswählbar.",
+    "rarityTitle": "Seltenheit entdecken",
+    "rarityText": "Das erste Päckchen enthüllt Namen und feste Seltenheit eines Landes. Fünf Stufen reichen von Gewöhnlich bis Legendär. Sie beruhen vor allem auf der Zahl der Wikipedia-Sprachversionen und etwas auf der Fläche, nicht auf dem Wert eines Landes. Die Schweiz ist durch eine spielerische Ausnahme des Entwicklers Legendär. Höhere Stufen erscheinen nur etwas seltener; alle Länder brauchen dieselben zwei Stempel: Besucher und Entdecker.",
+    "sourceRarity": "Seltenheit: eingefrorene Wikipedia-Sprachabdeckung aus Wikidata und Flächendaten von REST Countries. Die Sprachabdeckung ist nur eine unvollkommene Näherung für Bekanntheit, keine Umfrage.",
     "sourceBorders": "Grenzen: Natural Earth 1:50m über world-atlas (Public Domain / ISC).",
     "sourceFlags": "Flaggen: flag-icons (MIT).",
     "sourceNumbers": "Einwohnerzahl und Fläche sind gerundete aktuelle Schätzungen.",
     "sourceStorage": "Fortschritt und Sprache werden nur in diesem Browser gespeichert."
+  },
+  "rarity": {
+    "label": "Seltenheit: {{grade}}",
+    "common": "Gewöhnlich",
+    "uncommon": "Ungewöhnlich",
+    "rare": "Selten",
+    "epic": "Episch",
+    "legendary": "Legendär"
   },
   "continents": {
     "africa": "Afrika",
@@ -243,6 +261,26 @@
       "name": "Neuseeland",
       "capital": "Wellington",
       "fact": "Eine der letzten großen Landmassen, die von Menschen besiedelt wurden."
-    }
+    },
+    "de": { "name": "Deutschland", "capital": "Berlin", "fact": "Der Rhein fließt durch den Westen des Landes auf seinem Weg zur Nordsee." },
+    "es": { "name": "Spanien", "capital": "Madrid", "fact": "Zum Land gehören die Balearen im Mittelmeer und die Kanarischen Inseln im Atlantik." },
+    "gb": { "name": "Vereinigtes Königreich", "capital": "London", "fact": "Besteht aus England, Schottland, Wales und Nordirland." },
+    "gr": { "name": "Griechenland", "capital": "Athen", "fact": "Tausende Inseln liegen in seiner Ägäis und im Ionischen Meer." },
+    "cn": { "name": "China", "capital": "Peking", "fact": "Der Jangtse ist der längste Fluss Asiens." },
+    "kr": { "name": "Südkorea", "capital": "Seoul", "fact": "Liegt im südlichen Teil der Koreanischen Halbinsel." },
+    "id": { "name": "Indonesien", "capital": "Jakarta", "fact": "Ein Inselreich am Äquator zwischen dem Indischen und dem Pazifischen Ozean." },
+    "bt": { "name": "Bhutan", "capital": "Thimphu", "fact": "Ein Himalaya-Land zwischen Indien und China." },
+    "dz": { "name": "Algerien", "capital": "Algier", "fact": "Das flächenmäßig größte Land Afrikas." },
+    "gh": { "name": "Ghana", "capital": "Accra", "fact": "Der Volta-Stausee zählt nach seiner Fläche zu den größten künstlichen Seen der Welt." },
+    "na": { "name": "Namibia", "capital": "Windhoek", "fact": "Die Namib-Wüste erstreckt sich entlang seiner Atlantikküste." },
+    "ls": { "name": "Lesotho", "capital": "Maseru", "fact": "Vollständig von Südafrika umgeben." },
+    "us": { "name": "Vereinigte Staaten", "capital": "Washington, D.C.", "fact": "Zu den 50 Bundesstaaten gehören Alaska und die pazifischen Inseln Hawaiis." },
+    "cr": { "name": "Costa Rica", "capital": "San José", "fact": "Hat Küsten sowohl am Karibischen Meer als auch am Pazifischen Ozean." },
+    "jm": { "name": "Jamaika", "capital": "Kingston", "fact": "Ein Inselstaat in der Karibik, südlich von Kuba." },
+    "ar": { "name": "Argentinien", "capital": "Buenos Aires", "fact": "Hier liegt der Aconcagua, der höchste Berg außerhalb Asiens." },
+    "bo": { "name": "Bolivien", "capital": "Sucre", "fact": "Sucre ist die verfassungsmäßige Hauptstadt; La Paz ist der Regierungssitz." },
+    "uy": { "name": "Uruguay", "capital": "Montevideo", "fact": "Liegt zwischen Argentinien und Brasilien auf der Atlantikseite Südamerikas." },
+    "fj": { "name": "Fidschi", "capital": "Suva", "fact": "Viti Levu und Vanua Levu sind die beiden größten Inseln." },
+    "vu": { "name": "Vanuatu", "capital": "Port Vila", "fact": "Eine südpazifische Inselkette mit mehreren aktiven Vulkanen." }
   }
 }

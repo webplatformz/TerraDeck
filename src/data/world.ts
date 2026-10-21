@@ -8,6 +8,7 @@ export interface CountryProps {
   name: string
   iso: string
   continent: ContinentId
+  excluded: boolean
 }
 
 export type CountryFeature = Feature<Polygon | MultiPolygon, CountryProps>

@@ -5,6 +5,7 @@ import { CardBack, CardFront } from '../components/Card'
 import { CONTINENTS } from '../data/continents'
 import { COUNTRIES, type Country } from '../data/countries'
 import type { ContinentId } from '../domain/types'
+import { isDiscovered } from '../domain/discovery'
 import type { Game } from '../game/useGame'
 import { useContent } from '../i18n/useContent'
 
@@ -47,7 +48,7 @@ export function Collection({ game }: { game: Game }) {
         {shown.map((c) => (
           <li key={c.id}>
             <button type="button" className="card-button" onClick={() => setOpen(c)}>
-              {isCollected(c) ? <CardFront country={c} size="sm" /> : <CardBack country={c} stamps={stampsOf(c)} discovered={(state.progress[c.id]?.encounters ?? 0) > 0} size="sm" />}
+              {isCollected(c) ? <CardFront country={c} size="sm" /> : <CardBack country={c} stamps={stampsOf(c)} discovered={isDiscovered(state, c.id)} size="sm" />}
             </button>
           </li>
         ))}
@@ -61,9 +62,9 @@ export function Collection({ game }: { game: Game }) {
               <CardFront country={open} size="lg" />
             ) : (
               <>
-                <CardBack country={open} stamps={stampsOf(open)} discovered={(state.progress[open.id]?.encounters ?? 0) > 0} size="lg" />
+                <CardBack country={open} stamps={stampsOf(open)} discovered={isDiscovered(state, open.id)} size="lg" />
                 <p className="modal-note">
-                  {(state.progress[open.id]?.encounters ?? 0) > 0
+                  {isDiscovered(state, open.id)
                     ? t('collection.moreStamps', { count: config.stampsToUnlock - stampsOf(open) })
                     : t('collection.notDiscovered')}
                 </p>
