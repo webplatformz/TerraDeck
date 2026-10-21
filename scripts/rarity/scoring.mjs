@@ -1,29 +1,33 @@
 export const GRADES = ['common', 'uncommon', 'rare', 'epic', 'legendary']
 export const OVERRIDES = { ch: { grade: 'legendary', reason: "The creator's playful Switzerland override." } }
 
-/** Midrank percentile gives tied source values the same score. */
+/** Preserve baseline midranks; supplemental unmatched values use the fraction below. */
 export function percentile(values, value) {
-  return (values.filter((v) => v < value).length + (values.filter((v) => v === value).length - 1) / 2) / (values.length - 1)
+  const lower = values.filter(v => v < value).length
+  const equal = values.filter(v => v === value).length
+  return equal ? (lower + (equal - 1) / 2) / (values.length - 1) : lower / values.length
 }
 
-export function generateRarity(snapshot, roster) {
+export function generateRarity(snapshot, roster, supplemental = []) {
   if (!snapshot.countrySource || !snapshot.articleSource || !snapshot.editionSource || !snapshot.retrievedAt) throw new Error('Missing rarity provenance')
   const sites = new Set(snapshot.wikipediaSites)
   if (sites.size < 250) throw new Error('Missing Wikipedia site reference')
   const reference = snapshot.countries
   if (reference.length !== 193 || new Set(reference.map((c) => c.id)).size !== 193) throw new Error('Invalid reference baseline')
-  for (const c of reference) {
+  for (const c of [...reference, ...supplemental]) {
     if (!Number.isFinite(c.areaKm2) || c.areaKm2 <= 0 || !Number.isInteger(c.coverage) || c.coverage <= 0 ||
         !c.wikidata || !c.article || c.editions?.length !== c.coverage || new Set(c.editions).size !== c.coverage ||
         c.editions.some((site) => !sites.has(site))) {
       throw new Error(`Invalid source data: ${c.id}`)
     }
   }
-  if (roster.length !== 40 || new Set(roster).size !== roster.length) throw new Error('Expected 40 unique playable countries')
+  if (!roster.length || new Set(roster).size !== roster.length) throw new Error('Expected unique playable countries')
+  if (new Set([...reference, ...supplemental].map(c => c.id)).size !== reference.length + supplemental.length)
+    throw new Error('Duplicate rarity source')
   const coverages = reference.map((c) => c.coverage)
   const areas = reference.map((c) => c.areaKm2)
   const result = Object.fromEntries(roster.map((id) => {
-    const c = reference.find((entry) => entry.id === id)
+    const c = [...reference, ...supplemental].find((entry) => entry.id === id)
     if (!c) throw new Error(`Missing rarity source: ${id}`)
     const familiarity = 1 - percentile(coverages, c.coverage)
     const smallness = 1 - percentile(areas, c.areaKm2)
@@ -38,6 +42,6 @@ export function generateRarity(snapshot, roster) {
       ...(override ? { override: override.reason } : {}),
     }]
   }))
-  for (const grade of GRADES) if (!Object.values(result).some((r) => r.grade === grade)) throw new Error(`Test roster lacks grade: ${grade}`)
+  for (const grade of GRADES) if (!Object.values(result).some((r) => r.grade === grade)) throw new Error(`Playable roster lacks grade: ${grade}`)
   return result
 }

@@ -136,7 +136,8 @@
     "stampsTitle": "Vom Besucher zum Entdecker",
     "stampsText": "Sind beide Antworten beim ersten Versuch richtig, erhältst du den silbernen Besucher-Stempel. Gelingt es erneut, folgt der goldene Entdecker-Stempel: Zwei Stempel schalten die Karte des Landes frei, und es kommt in keinem Päckchen mehr vor. Ein Fehler zeigt dir die Lösung, nimmt dir aber nie bereits gesammelte Stempel weg.",
     "sources": "Quellen",
-    "findScope": "Dieser Testatlas enthält {{count}} sammelbare Länder. Andere Länder können weiterhin falsche Antworten sein. Graue Gebiete dienen nur zur Orientierung und sind nicht auswählbar.",
+    "findScope": "Dieser kuratierte Atlas enthält {{count}} sammelbare Länder aus einer UN-basierten Auswahl (Mitglieder und die beiden Beobachterstaaten). Tuvalu, Vatikanstadt, Monaco, die Malediven und Nauru sind aus Gründen der Spielbarkeit vorerst ausgenommen. Graue Gebiete liegen außerhalb dieser Sammlung und sind nicht auswählbar; dies ist keine Aussage über ihren Status.",
+    "continentRule": "Im Spiel hat jedes Land einen gültigen Kontinent. Russland, die Türkei, Kasachstan, Zypern und der Kaukasus zählen zu Asien; Ägypten zählt zu Afrika. Mittelamerika und die Karibik zählen zu Nordamerika.",
     "rarityTitle": "Seltenheit entdecken",
     "rarityText": "Das erste Päckchen enthüllt Namen und feste Seltenheit eines Landes. Fünf Stufen reichen von Gewöhnlich bis Legendär. Sie beruhen vor allem auf der Zahl der Wikipedia-Sprachversionen und etwas auf der Fläche, nicht auf dem Wert eines Landes. Die Schweiz ist durch eine spielerische Ausnahme des Entwicklers Legendär. Höhere Stufen erscheinen nur etwas seltener; alle Länder brauchen dieselben zwei Stempel: Besucher und Entdecker.",
     "sourceRarity": "Seltenheit: eingefrorene Wikipedia-Sprachabdeckung aus Wikidata und Flächendaten von REST Countries. Die Sprachabdeckung ist nur eine unvollkommene Näherung für Bekanntheit, keine Umfrage.",
@@ -262,25 +263,855 @@
       "capital": "Wellington",
       "fact": "Eine der letzten großen Landmassen, die von Menschen besiedelt wurden."
     },
-    "de": { "name": "Deutschland", "capital": "Berlin", "fact": "Der Rhein fließt durch den Westen des Landes auf seinem Weg zur Nordsee." },
-    "es": { "name": "Spanien", "capital": "Madrid", "fact": "Zum Land gehören die Balearen im Mittelmeer und die Kanarischen Inseln im Atlantik." },
-    "gb": { "name": "Vereinigtes Königreich", "capital": "London", "fact": "Besteht aus England, Schottland, Wales und Nordirland." },
-    "gr": { "name": "Griechenland", "capital": "Athen", "fact": "Tausende Inseln liegen in seiner Ägäis und im Ionischen Meer." },
-    "cn": { "name": "China", "capital": "Peking", "fact": "Der Jangtse ist der längste Fluss Asiens." },
-    "kr": { "name": "Südkorea", "capital": "Seoul", "fact": "Liegt im südlichen Teil der Koreanischen Halbinsel." },
-    "id": { "name": "Indonesien", "capital": "Jakarta", "fact": "Ein Inselreich am Äquator zwischen dem Indischen und dem Pazifischen Ozean." },
-    "bt": { "name": "Bhutan", "capital": "Thimphu", "fact": "Ein Himalaya-Land zwischen Indien und China." },
-    "dz": { "name": "Algerien", "capital": "Algier", "fact": "Das flächenmäßig größte Land Afrikas." },
-    "gh": { "name": "Ghana", "capital": "Accra", "fact": "Der Volta-Stausee zählt nach seiner Fläche zu den größten künstlichen Seen der Welt." },
-    "na": { "name": "Namibia", "capital": "Windhoek", "fact": "Die Namib-Wüste erstreckt sich entlang seiner Atlantikküste." },
-    "ls": { "name": "Lesotho", "capital": "Maseru", "fact": "Vollständig von Südafrika umgeben." },
-    "us": { "name": "Vereinigte Staaten", "capital": "Washington, D.C.", "fact": "Zu den 50 Bundesstaaten gehören Alaska und die pazifischen Inseln Hawaiis." },
-    "cr": { "name": "Costa Rica", "capital": "San José", "fact": "Hat Küsten sowohl am Karibischen Meer als auch am Pazifischen Ozean." },
-    "jm": { "name": "Jamaika", "capital": "Kingston", "fact": "Ein Inselstaat in der Karibik, südlich von Kuba." },
-    "ar": { "name": "Argentinien", "capital": "Buenos Aires", "fact": "Hier liegt der Aconcagua, der höchste Berg außerhalb Asiens." },
-    "bo": { "name": "Bolivien", "capital": "Sucre", "fact": "Sucre ist die verfassungsmäßige Hauptstadt; La Paz ist der Regierungssitz." },
-    "uy": { "name": "Uruguay", "capital": "Montevideo", "fact": "Liegt zwischen Argentinien und Brasilien auf der Atlantikseite Südamerikas." },
-    "fj": { "name": "Fidschi", "capital": "Suva", "fact": "Viti Levu und Vanua Levu sind die beiden größten Inseln." },
-    "vu": { "name": "Vanuatu", "capital": "Port Vila", "fact": "Eine südpazifische Inselkette mit mehreren aktiven Vulkanen." }
+    "de": {
+      "name": "Deutschland",
+      "capital": "Berlin",
+      "fact": "Der Rhein fließt durch den Westen des Landes auf seinem Weg zur Nordsee."
+    },
+    "es": {
+      "name": "Spanien",
+      "capital": "Madrid",
+      "fact": "Zum Land gehören die Balearen im Mittelmeer und die Kanarischen Inseln im Atlantik."
+    },
+    "gb": {
+      "name": "Vereinigtes Königreich",
+      "capital": "London",
+      "fact": "Besteht aus England, Schottland, Wales und Nordirland."
+    },
+    "gr": {
+      "name": "Griechenland",
+      "capital": "Athen",
+      "fact": "Tausende Inseln liegen in seiner Ägäis und im Ionischen Meer."
+    },
+    "cn": {
+      "name": "China",
+      "capital": "Peking",
+      "fact": "Der Jangtse ist der längste Fluss Asiens."
+    },
+    "kr": {
+      "name": "Südkorea",
+      "capital": "Seoul",
+      "fact": "Liegt im südlichen Teil der Koreanischen Halbinsel."
+    },
+    "id": {
+      "name": "Indonesien",
+      "capital": "Jakarta",
+      "fact": "Ein Inselreich am Äquator zwischen dem Indischen und dem Pazifischen Ozean."
+    },
+    "bt": {
+      "name": "Bhutan",
+      "capital": "Thimphu",
+      "fact": "Ein Himalaya-Land zwischen Indien und China."
+    },
+    "dz": {
+      "name": "Algerien",
+      "capital": "Algier",
+      "fact": "Das flächenmäßig größte Land Afrikas."
+    },
+    "gh": {
+      "name": "Ghana",
+      "capital": "Accra",
+      "fact": "Der Volta-Stausee zählt nach seiner Fläche zu den größten künstlichen Seen der Welt."
+    },
+    "na": {
+      "name": "Namibia",
+      "capital": "Windhoek",
+      "fact": "Die Namib-Wüste erstreckt sich entlang seiner Atlantikküste."
+    },
+    "ls": {
+      "name": "Lesotho",
+      "capital": "Maseru",
+      "fact": "Vollständig von Südafrika umgeben."
+    },
+    "us": {
+      "name": "Vereinigte Staaten",
+      "capital": "Washington, D.C.",
+      "fact": "Zu den 50 Bundesstaaten gehören Alaska und die pazifischen Inseln Hawaiis."
+    },
+    "cr": {
+      "name": "Costa Rica",
+      "capital": "San José",
+      "fact": "Hat Küsten sowohl am Karibischen Meer als auch am Pazifischen Ozean."
+    },
+    "jm": {
+      "name": "Jamaika",
+      "capital": "Kingston",
+      "fact": "Ein Inselstaat in der Karibik, südlich von Kuba."
+    },
+    "ar": {
+      "name": "Argentinien",
+      "capital": "Buenos Aires",
+      "fact": "Hier liegt der Aconcagua, der höchste Berg außerhalb Asiens."
+    },
+    "bo": {
+      "name": "Bolivien",
+      "capital": "Sucre",
+      "fact": "Sucre ist die verfassungsmäßige Hauptstadt; La Paz ist der Regierungssitz."
+    },
+    "uy": {
+      "name": "Uruguay",
+      "capital": "Montevideo",
+      "fact": "Liegt zwischen Argentinien und Brasilien auf der Atlantikseite Südamerikas."
+    },
+    "fj": {
+      "name": "Fidschi",
+      "capital": "Suva",
+      "fact": "Viti Levu und Vanua Levu sind die beiden größten Inseln."
+    },
+    "vu": {
+      "name": "Vanuatu",
+      "capital": "Port Vila",
+      "fact": "Eine südpazifische Inselkette mit mehreren aktiven Vulkanen."
+    },
+    "ad": {
+      "name": "Andorra",
+      "capital": "Andorra la Vella",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "ae": {
+      "name": "Vereinigte Arabische Emirate",
+      "capital": "Abu Dhabi",
+      "fact": "Zu seinen Landnachbarn gehören Oman und Saudi-Arabien."
+    },
+    "af": {
+      "name": "Afghanistan",
+      "capital": "Kabul",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "ag": {
+      "name": "Antigua und Barbuda",
+      "capital": "Saint John's",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "al": {
+      "name": "Albanien",
+      "capital": "Tirana",
+      "fact": "Zu seinen Landnachbarn gehören Montenegro und Griechenland."
+    },
+    "am": {
+      "name": "Armenien",
+      "capital": "Jerewan",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "ao": {
+      "name": "Angola",
+      "capital": "Luanda",
+      "fact": "Zu seinen Landnachbarn gehören Republik Kongo und Demokratische Republik Kongo."
+    },
+    "at": {
+      "name": "Österreich",
+      "capital": "Wien",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "az": {
+      "name": "Aserbaidschan",
+      "capital": "Baku",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "ba": {
+      "name": "Bosnien und Herzegowina",
+      "capital": "Sarajevo",
+      "fact": "Zu seinen Landnachbarn gehören Kroatien und Montenegro."
+    },
+    "bb": {
+      "name": "Barbados",
+      "capital": "Bridgetown",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "bd": {
+      "name": "Bangladesch",
+      "capital": "Dhaka",
+      "fact": "Zu seinen Landnachbarn gehören Myanmar und Indien."
+    },
+    "be": {
+      "name": "Belgien",
+      "capital": "Brüssel",
+      "fact": "Zu seinen Landnachbarn gehören Frankreich und Deutschland."
+    },
+    "bf": {
+      "name": "Burkina Faso",
+      "capital": "Ouagadougou",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "bg": {
+      "name": "Bulgarien",
+      "capital": "Sofia",
+      "fact": "Zu seinen Landnachbarn gehören Griechenland und Nordmazedonien."
+    },
+    "bh": {
+      "name": "Bahrain",
+      "capital": "Manama",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "bi": {
+      "name": "Burundi",
+      "capital": "Gitega",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "bj": {
+      "name": "Benin",
+      "capital": "Porto-Novo",
+      "fact": "Zu seinen Landnachbarn gehören Burkina Faso und Niger."
+    },
+    "bn": {
+      "name": "Brunei",
+      "capital": "Bandar Seri Begawan",
+      "fact": "Zu seinen Landnachbarn gehört Malaysia."
+    },
+    "bs": {
+      "name": "Bahamas",
+      "capital": "Nassau",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "bw": {
+      "name": "Botswana",
+      "capital": "Gaborone",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "by": {
+      "name": "Belarus",
+      "capital": "Minsk",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "bz": {
+      "name": "Belize",
+      "capital": "Belmopan",
+      "fact": "Zu seinen Landnachbarn gehören Guatemala und Mexiko."
+    },
+    "cd": {
+      "name": "Demokratische Republik Kongo",
+      "capital": "Kinshasa",
+      "fact": "Zu seinen Landnachbarn gehören Angola und Burundi."
+    },
+    "cf": {
+      "name": "Zentralafrikanische Republik",
+      "capital": "Bangui",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "cg": {
+      "name": "Republik Kongo",
+      "capital": "Brazzaville",
+      "fact": "Zu seinen Landnachbarn gehören Angola und Kamerun."
+    },
+    "ci": {
+      "name": "Elfenbeinküste",
+      "capital": "Yamoussoukro",
+      "fact": "Zu seinen Landnachbarn gehören Burkina Faso und Ghana."
+    },
+    "cm": {
+      "name": "Kamerun",
+      "capital": "Yaoundé",
+      "fact": "Zu seinen Landnachbarn gehören Zentralafrikanische Republik und Tschad."
+    },
+    "co": {
+      "name": "Kolumbien",
+      "capital": "Bogotá",
+      "fact": "Zu seinen Landnachbarn gehören Brasilien und Ecuador."
+    },
+    "cv": {
+      "name": "Kap Verde",
+      "capital": "Praia",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "cy": {
+      "name": "Zypern",
+      "capital": "Nikosia",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "cz": {
+      "name": "Tschechien",
+      "capital": "Prag",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "dj": {
+      "name": "Dschibuti",
+      "capital": "Djibouti",
+      "fact": "Zu seinen Landnachbarn gehören Eritrea und Äthiopien."
+    },
+    "dk": {
+      "name": "Dänemark",
+      "capital": "Kopenhagen",
+      "fact": "Zu seinen Landnachbarn gehört Deutschland."
+    },
+    "dm": {
+      "name": "Dominica",
+      "capital": "Roseau",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "do": {
+      "name": "Dominikanische Republik",
+      "capital": "Santo Domingo",
+      "fact": "Zu seinen Landnachbarn gehört Haiti."
+    },
+    "ec": {
+      "name": "Ecuador",
+      "capital": "Quito",
+      "fact": "Zu seinen Landnachbarn gehören Kolumbien und Peru."
+    },
+    "ee": {
+      "name": "Estland",
+      "capital": "Tallinn",
+      "fact": "Zu seinen Landnachbarn gehören Lettland und Russland."
+    },
+    "er": {
+      "name": "Eritrea",
+      "capital": "Asmara",
+      "fact": "Zu seinen Landnachbarn gehören Dschibuti und Äthiopien."
+    },
+    "et": {
+      "name": "Äthiopien",
+      "capital": "Addis Ababa",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "fi": {
+      "name": "Finnland",
+      "capital": "Helsinki",
+      "fact": "Zu seinen Landnachbarn gehören Norwegen und Schweden."
+    },
+    "fm": {
+      "name": "Mikronesien",
+      "capital": "Palikir",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "ga": {
+      "name": "Gabun",
+      "capital": "Libreville",
+      "fact": "Zu seinen Landnachbarn gehören Kamerun und Republik Kongo."
+    },
+    "gd": {
+      "name": "Grenada",
+      "capital": "St. George's",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "ge": {
+      "name": "Georgien",
+      "capital": "Tbilisi",
+      "fact": "Zu seinen Landnachbarn gehören Armenien und Aserbaidschan."
+    },
+    "gm": {
+      "name": "Gambia",
+      "capital": "Banjul",
+      "fact": "Zu seinen Landnachbarn gehört Senegal."
+    },
+    "gn": {
+      "name": "Guinea",
+      "capital": "Conakry",
+      "fact": "Zu seinen Landnachbarn gehören Elfenbeinküste und Guinea-Bissau."
+    },
+    "gq": {
+      "name": "Äquatorialguinea",
+      "capital": "Ciudad de la Paz",
+      "fact": "Zu seinen Landnachbarn gehören Kamerun und Gabun."
+    },
+    "gt": {
+      "name": "Guatemala",
+      "capital": "Guatemala-Stadt",
+      "fact": "Zu seinen Landnachbarn gehören Belize und El Salvador."
+    },
+    "gw": {
+      "name": "Guinea-Bissau",
+      "capital": "Bissau",
+      "fact": "Zu seinen Landnachbarn gehören Guinea und Senegal."
+    },
+    "gy": {
+      "name": "Guyana",
+      "capital": "Georgetown",
+      "fact": "Zu seinen Landnachbarn gehören Brasilien und Suriname."
+    },
+    "hn": {
+      "name": "Honduras",
+      "capital": "Tegucigalpa",
+      "fact": "Zu seinen Landnachbarn gehören Guatemala und El Salvador."
+    },
+    "hr": {
+      "name": "Kroatien",
+      "capital": "Zagreb",
+      "fact": "Zu seinen Landnachbarn gehören Bosnien und Herzegowina und Ungarn."
+    },
+    "ht": {
+      "name": "Haiti",
+      "capital": "Port-au-Prince",
+      "fact": "Zu seinen Landnachbarn gehört Dominikanische Republik."
+    },
+    "hu": {
+      "name": "Ungarn",
+      "capital": "Budapest",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "ie": {
+      "name": "Irland",
+      "capital": "Dublin",
+      "fact": "Zu seinen Landnachbarn gehört Vereinigtes Königreich."
+    },
+    "il": {
+      "name": "Israel",
+      "capital": "Jerusalem",
+      "fact": "Zu seinen Landnachbarn gehören Ägypten und Jordanien."
+    },
+    "iq": {
+      "name": "Irak",
+      "capital": "Bagdad",
+      "fact": "Zu seinen Landnachbarn gehören Iran und Jordanien."
+    },
+    "ir": {
+      "name": "Iran",
+      "capital": "Teheran",
+      "fact": "Zu seinen Landnachbarn gehören Afghanistan und Armenien."
+    },
+    "is": {
+      "name": "Island",
+      "capital": "Reykjavik",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "jo": {
+      "name": "Jordanien",
+      "capital": "Amman",
+      "fact": "Zu seinen Landnachbarn gehören Irak und Israel."
+    },
+    "kg": {
+      "name": "Kirgisistan",
+      "capital": "Bischkek",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "kh": {
+      "name": "Kambodscha",
+      "capital": "Phnom Penh",
+      "fact": "Zu seinen Landnachbarn gehören Laos und Thailand."
+    },
+    "ki": {
+      "name": "Kiribati",
+      "capital": "Süd-Tarawa",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "km": {
+      "name": "Komoren",
+      "capital": "Moroni",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "kn": {
+      "name": "St. Kitts und Nevis",
+      "capital": "Basseterre",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "kp": {
+      "name": "Nordkorea",
+      "capital": "Pjöngjang",
+      "fact": "Zu seinen Landnachbarn gehören China und Südkorea."
+    },
+    "kw": {
+      "name": "Kuwait",
+      "capital": "Kuwait-Stadt",
+      "fact": "Zu seinen Landnachbarn gehören Irak und Saudi-Arabien."
+    },
+    "kz": {
+      "name": "Kasachstan",
+      "capital": "Astana",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "la": {
+      "name": "Laos",
+      "capital": "Vientiane",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "lb": {
+      "name": "Libanon",
+      "capital": "Beirut",
+      "fact": "Zu seinen Landnachbarn gehören Israel und Syrien."
+    },
+    "lc": {
+      "name": "St. Lucia",
+      "capital": "Castries",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "li": {
+      "name": "Liechtenstein",
+      "capital": "Vaduz",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "lk": {
+      "name": "Sri Lanka",
+      "capital": "Sri Jayawardenepura Kotte",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "lr": {
+      "name": "Liberia",
+      "capital": "Monrovia",
+      "fact": "Zu seinen Landnachbarn gehören Guinea und Elfenbeinküste."
+    },
+    "lt": {
+      "name": "Litauen",
+      "capital": "Vilnius",
+      "fact": "Zu seinen Landnachbarn gehören Belarus und Lettland."
+    },
+    "lu": {
+      "name": "Luxemburg",
+      "capital": "Luxemburg",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "lv": {
+      "name": "Lettland",
+      "capital": "Riga",
+      "fact": "Zu seinen Landnachbarn gehören Belarus und Estland."
+    },
+    "ly": {
+      "name": "Libyen",
+      "capital": "Tripoli",
+      "fact": "Zu seinen Landnachbarn gehören Algerien und Tschad."
+    },
+    "md": {
+      "name": "Moldawien",
+      "capital": "Chișinău",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "me": {
+      "name": "Montenegro",
+      "capital": "Podgorica",
+      "fact": "Zu seinen Landnachbarn gehören Albanien und Bosnien und Herzegowina."
+    },
+    "mh": {
+      "name": "Marshallinseln",
+      "capital": "Majuro",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "mk": {
+      "name": "Nordmazedonien",
+      "capital": "Skopje",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "ml": {
+      "name": "Mali",
+      "capital": "Bamako",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "mm": {
+      "name": "Myanmar",
+      "capital": "Naypyidaw",
+      "fact": "Zu seinen Landnachbarn gehören Bangladesch und China."
+    },
+    "mn": {
+      "name": "Mongolei",
+      "capital": "Ulaanbaatar",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "mr": {
+      "name": "Mauretanien",
+      "capital": "Nouakchott",
+      "fact": "Zu seinen Landnachbarn gehören Algerien und Mali."
+    },
+    "mt": {
+      "name": "Malta",
+      "capital": "Valletta",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "mu": {
+      "name": "Mauritius",
+      "capital": "Port Louis",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "mw": {
+      "name": "Malawi",
+      "capital": "Lilongwe",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "my": {
+      "name": "Malaysia",
+      "capital": "Kuala Lumpur",
+      "fact": "Zu seinen Landnachbarn gehören Brunei und Indonesien."
+    },
+    "mz": {
+      "name": "Mosambik",
+      "capital": "Maputo",
+      "fact": "Zu seinen Landnachbarn gehören Malawi und Südafrika."
+    },
+    "ne": {
+      "name": "Niger",
+      "capital": "Niamey",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "ng": {
+      "name": "Nigeria",
+      "capital": "Abuja",
+      "fact": "Zu seinen Landnachbarn gehören Benin und Kamerun."
+    },
+    "ni": {
+      "name": "Nicaragua",
+      "capital": "Managua",
+      "fact": "Zu seinen Landnachbarn gehören Costa Rica und Honduras."
+    },
+    "nl": {
+      "name": "Niederlande",
+      "capital": "Amsterdam",
+      "fact": "Zu seinen Landnachbarn gehören Belgien und Deutschland."
+    },
+    "om": {
+      "name": "Oman",
+      "capital": "Maskat",
+      "fact": "Zu seinen Landnachbarn gehören Saudi-Arabien und Vereinigte Arabische Emirate."
+    },
+    "pa": {
+      "name": "Panama",
+      "capital": "Panama-Stadt",
+      "fact": "Zu seinen Landnachbarn gehören Kolumbien und Costa Rica."
+    },
+    "pg": {
+      "name": "Papua-Neuguinea",
+      "capital": "Port Moresby",
+      "fact": "Zu seinen Landnachbarn gehört Indonesien."
+    },
+    "ph": {
+      "name": "Philippinen",
+      "capital": "Manila",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "pk": {
+      "name": "Pakistan",
+      "capital": "Islamabad",
+      "fact": "Zu seinen Landnachbarn gehören Afghanistan und China."
+    },
+    "pl": {
+      "name": "Polen",
+      "capital": "Warschau",
+      "fact": "Zu seinen Landnachbarn gehören Belarus und Tschechien."
+    },
+    "pt": {
+      "name": "Portugal",
+      "capital": "Lissabon",
+      "fact": "Zu seinen Landnachbarn gehört Spanien."
+    },
+    "pw": {
+      "name": "Palau",
+      "capital": "Ngerulmud",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "py": {
+      "name": "Paraguay",
+      "capital": "Asunción",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "qa": {
+      "name": "Katar",
+      "capital": "Doha",
+      "fact": "Zu seinen Landnachbarn gehört Saudi-Arabien."
+    },
+    "ro": {
+      "name": "Rumänien",
+      "capital": "Bukarest",
+      "fact": "Zu seinen Landnachbarn gehören Bulgarien und Ungarn."
+    },
+    "rs": {
+      "name": "Serbien",
+      "capital": "Belgrad",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "ru": {
+      "name": "Russland",
+      "capital": "Moskau",
+      "fact": "Zu seinen Landnachbarn gehören Aserbaidschan und Belarus."
+    },
+    "rw": {
+      "name": "Ruanda",
+      "capital": "Kigali",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "sa": {
+      "name": "Saudi-Arabien",
+      "capital": "Riad",
+      "fact": "Zu seinen Landnachbarn gehören Irak und Jordanien."
+    },
+    "sb": {
+      "name": "Salomonen",
+      "capital": "Honiara",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "sc": {
+      "name": "Seychellen",
+      "capital": "Victoria",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "sd": {
+      "name": "Sudan",
+      "capital": "Khartoum",
+      "fact": "Zu seinen Landnachbarn gehören Zentralafrikanische Republik und Tschad."
+    },
+    "se": {
+      "name": "Schweden",
+      "capital": "Stockholm",
+      "fact": "Zu seinen Landnachbarn gehören Finnland und Norwegen."
+    },
+    "sg": {
+      "name": "Singapur",
+      "capital": "Singapur",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "si": {
+      "name": "Slowenien",
+      "capital": "Ljubljana",
+      "fact": "Zu seinen Landnachbarn gehören Österreich und Kroatien."
+    },
+    "sk": {
+      "name": "Slowakei",
+      "capital": "Bratislava",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "sl": {
+      "name": "Sierra Leone",
+      "capital": "Freetown",
+      "fact": "Zu seinen Landnachbarn gehören Guinea und Liberia."
+    },
+    "sm": {
+      "name": "San Marino",
+      "capital": "San Marino",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "sn": {
+      "name": "Senegal",
+      "capital": "Dakar",
+      "fact": "Zu seinen Landnachbarn gehören Gambia und Guinea."
+    },
+    "so": {
+      "name": "Somalia",
+      "capital": "Mogadishu",
+      "fact": "Zu seinen Landnachbarn gehören Dschibuti und Äthiopien."
+    },
+    "sr": {
+      "name": "Suriname",
+      "capital": "Paramaribo",
+      "fact": "Zu seinen Landnachbarn gehören Brasilien und Guyana."
+    },
+    "ss": {
+      "name": "Südsudan",
+      "capital": "Juba",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "st": {
+      "name": "São Tomé und Príncipe",
+      "capital": "São Tomé",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "sv": {
+      "name": "El Salvador",
+      "capital": "San Salvador",
+      "fact": "Zu seinen Landnachbarn gehören Guatemala und Honduras."
+    },
+    "sy": {
+      "name": "Syrien",
+      "capital": "Damaskus",
+      "fact": "Zu seinen Landnachbarn gehören Irak und Israel."
+    },
+    "sz": {
+      "name": "Eswatini",
+      "capital": "Mbabane (Verwaltung)",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "td": {
+      "name": "Tschad",
+      "capital": "N'Djamena",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "tg": {
+      "name": "Togo",
+      "capital": "Lomé",
+      "fact": "Zu seinen Landnachbarn gehören Benin und Burkina Faso."
+    },
+    "th": {
+      "name": "Thailand",
+      "capital": "Bangkok",
+      "fact": "Zu seinen Landnachbarn gehören Myanmar und Kambodscha."
+    },
+    "tj": {
+      "name": "Tadschikistan",
+      "capital": "Duschanbe",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "tl": {
+      "name": "Timor-Leste",
+      "capital": "Dili",
+      "fact": "Zu seinen Landnachbarn gehört Indonesien."
+    },
+    "tm": {
+      "name": "Turkmenistan",
+      "capital": "Aschgabat",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "tn": {
+      "name": "Tunesien",
+      "capital": "Tunis",
+      "fact": "Zu seinen Landnachbarn gehören Algerien und Libyen."
+    },
+    "to": {
+      "name": "Tonga",
+      "capital": "Nuku'alofa",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "tr": {
+      "name": "Türkei",
+      "capital": "Ankara",
+      "fact": "Zu seinen Landnachbarn gehören Armenien und Aserbaidschan."
+    },
+    "tt": {
+      "name": "Trinidad und Tobago",
+      "capital": "Port of Spain",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "tz": {
+      "name": "Tansania",
+      "capital": "Dodoma",
+      "fact": "Zu seinen Landnachbarn gehören Burundi und Demokratische Republik Kongo."
+    },
+    "ua": {
+      "name": "Ukraine",
+      "capital": "Kyjiw",
+      "fact": "Zu seinen Landnachbarn gehören Belarus und Ungarn."
+    },
+    "ug": {
+      "name": "Uganda",
+      "capital": "Kampala",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "uz": {
+      "name": "Usbekistan",
+      "capital": "Taschkent",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "vc": {
+      "name": "St. Vincent und die Grenadinen",
+      "capital": "Kingstown",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "ve": {
+      "name": "Venezuela",
+      "capital": "Caracas",
+      "fact": "Zu seinen Landnachbarn gehören Brasilien und Kolumbien."
+    },
+    "ws": {
+      "name": "Samoa",
+      "capital": "Apia",
+      "fact": "Ein Inselstaat ohne Landgrenzen zu einem anderen Land."
+    },
+    "ye": {
+      "name": "Jemen",
+      "capital": "Sanaa",
+      "fact": "Zu seinen Landnachbarn gehören Oman und Saudi-Arabien."
+    },
+    "za": {
+      "name": "Südafrika",
+      "capital": "Pretoria (Exekutive)",
+      "fact": "Zu seinen Landnachbarn gehören Botswana und Lesotho."
+    },
+    "zm": {
+      "name": "Sambia",
+      "capital": "Lusaka",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "zw": {
+      "name": "Simbabwe",
+      "capital": "Harare",
+      "fact": "Ein Binnenstaat ohne Küste am offenen Meer."
+    },
+    "ps": {
+      "name": "Palästina",
+      "capital": "Ramallah (Verwaltungssitz)",
+      "fact": "Zu seinen Landnachbarn gehören Israel und Ägypten."
+    }
   }
 }

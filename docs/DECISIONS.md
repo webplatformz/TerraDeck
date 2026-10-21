@@ -4,8 +4,8 @@
 - **Cooldown: 15 minutes per pack** (debug mode via `?debug`: 10 seconds).
   - Field testing showed geography challenges were harder than expected: reduce both the former
     30-minute interval and three-success requirement to make repeat learning more approachable.
-  - A 195-country planning baseline needs 390 perfect encounters at two successes each; the current
-    40-country test roster needs 80. Mistakes, check-in frequency and the stock cap affect completion.
+  - The curated 190-country roster needs 380 perfect encounters at two successes each.
+    Mistakes, check-in frequency and the stock cap affect completion.
   - The original four-week worldwide goal remains an unvalidated long-term aim, not a guarantee from
     these settings. Reassess with play data rather than retaining the obsolete completion calculation.
 - **Packs stack up to 5.** The cooldown starts when a pack is opened.
@@ -34,16 +34,37 @@
   still resume without reducing historical counts or awarding duplicate unlocks.
 
 ## Content
-- Six continents, no Antarctica. Transcontinental countries are avoided in the starter set.
+- Six continents, no Antarctica. Each retained country has one accepted game continent, including
+  transcontinental countries (see Maps).
 - Starter 20: France, Italy, Norway, Switzerland; Japan, India, Vietnam, Nepal; Egypt, Kenya, Morocco, Madagascar;
   Canada, Mexico, Cuba; Brazil, Peru, Chile; Australia, New Zealand.
 - Cards: flag (`flag-icons`, MIT), capital, population, area, one fact — all bundled with the app.
-- The test roster now contains **40 countries**, retaining the original 20 and their card numbers.
-  Added: Germany, Spain, United Kingdom, Greece; China, South Korea, Indonesia, Bhutan; Algeria, Ghana,
-  Namibia, Lesotho; United States, Costa Rica, Jamaica; Argentina, Bolivia, Uruguay; Fiji, Vanuatu.
-  Their number, population and area data are sourced from the public REST Countries dataset captured in
-  `scripts/rarity/snapshot.json`; figures are approximate, not live statistics. Short geographic facts are
-  maintained in both locale files. The final worldwide roster and corner-case FAQ remain future work.
+- **190 retained countries / 380 stamps**, from the 193 UN members plus Vatican City/Holy See and
+  Palestine. Five explicitly deferred entries: **Tuvalu** (absent from the geometry), **Vatican City,
+  Monaco, Maldives and Nauru** (insufficient natural visual targets at phone scale). These are
+  playability decisions, not recognition decisions; no artificial location markers are added.
+- Original 40 IDs, card numbers, metadata, localized facts and rarity grades stay intact. The remaining
+  150 append in ISO-code order. Existing saves need no migration and can immediately draw additions.
+  Counts: Europe 41, Asia 48, Africa 54, North America 23, South America 12, Oceania 12.
+- `scripts/atlas/policy.mjs` records deferrals and duplicate/context-only map aliases;
+  `initial-roster.json` freezes the original numbering; generated `roster.json` binds each retained
+  ID to exactly one canonical map feature and continent. Taiwan, Kosovo, Somaliland, Northern Cyprus
+  and every other non-roster map entity remain gray and untappable, even when an alias shares a
+  retained country's ISO code. A brief in-game scope/continent note replaces the obsolete test-atlas
+  wording; a comprehensive corner-case FAQ is deferred.
+- Frozen public REST Countries metadata, EN/DE names and capitals are in `scripts/atlas/snapshot.json`,
+  with source URLs and retrieval date. Figures are approximate, not live statistics. New bilingual
+  facts describe sourced landlocked status or land neighbors (or island status when neither applies).
+  Existing localized entries are preserved by regeneration and may be editorially improved.
+- Capitals use one conventional display rather than an exhaustive constitutional/seat list. Pretoria
+  is labeled executive, Mbabane administrative, and Ramallah administrative seat. Palestine's display
+  does not negate its Jerusalem claim or resolve Jerusalem's status. Existing Sucre, and conventional
+  Amsterdam, Kuala Lumpur and Sri Jayawardenepura Kotte, remain conventional capital displays.
+- Long localized names wrap inside the card frame; full-card typography and fact spacing are compact,
+  with a smaller heading for names over 26 characters so expanded content cannot erase the silhouette.
+- `npm run atlas:collect` explicitly refreshes metadata and Palestine's supplemental Wikidata
+  measurement; `npm run atlas:build` regenerates roster/content additions/flags/rarity/maps offline.
+  Neither runs during normal builds or deployment. Review diffs before publishing.
 
 ## Rarity and discovery
 
@@ -53,13 +74,16 @@
   country's Wikidata item. Wikidata ISO claims verify article identity; Wikimedia's site matrix excludes
   non-Wikipedia projects and closed sites. This is editorial/online coverage, not a survey of recognition.
   Page views were considered, but API rate limiting led to using coverage with the user's approval.
-- **Frozen baseline:** 193 UN member countries, independent of the 40-country playable sample.
+- **Frozen baseline:** 193 UN member countries, independent of the curated playable roster.
   Guinea-Bissau's erroneous membership flag in the upstream dataset is explicitly corrected.
-  This reference set is for scoring only, not the final game roster.
+  This reference set is for scoring only, not the final game roster. Palestine uses a separately
+  verified Q219060/PS Wikipedia sitelink measurement counted against the same frozen edition list.
 - **Formula:** midrank percentile `(number lower + (number equal - 1) / 2) / (193 - 1)` for both
   coverage and country area. Rarity score is `0.8 * (1 - coverage percentile) + 0.2 * (1 - area percentile)`.
   Areas are source country areas, not a uniform measurement of land-only area.
   Score bands `[0,.2)`, `[.2,.4)`, `[.4,.6)`, `[.6,.8)`, `[.8,1]` yield the five grades.
+  Supplemental values not present in the reference use `number lower / 193`; exact reference values
+  retain the original midrank. Scores remain bounded without changing the original 40 assignments.
   The checked-in snapshot contains source URLs, retrieval date, edition lists and raw measurements;
   generated output retains intermediate scores. **Switzerland is explicitly Legendary**, regardless
   of its calculated score. Only explicit regeneration/review changes assignments.
@@ -94,12 +118,13 @@
 - **Generated data:** `npm run geo:build` validates the list (fails on missing or unknown shapes), tags
   every shape, merges the six continent outlines (topojson merge) and writes `src/data/generated/atlas.json`.
   The output is committed and lazy-loaded at runtime.
-- **Excluded territory context:** `scripts/geo/exclusions.mjs` is the explicit initial game-only list.
+- **Excluded territory context:** `scripts/geo/exclusions.mjs` lists separately split overseas polygons;
+  the approved canonical roster additionally excludes every non-roster feature.
   Embedded overseas polygons (including French Guiana) are split out before country-map rendering, while
   still being included in the geographically correct merged continent outlines. They stay gray, are omitted
   from frame fitting, country hit/lens candidates, selection marks and parent-country silhouettes, and block
-  taps rather than falling through to ocean snapping. Other non-roster countries remain possible wrong
-  answers. The exclusions do not claim a complete recognition policy.
+  taps rather than falling through to ocean snapping. Only retained canonical countries can be right
+  or wrong answers. This is a collection policy, not a political recognition policy.
 - **Continent step:** the world map (Equal Earth) shows only the six outlines with no borders, plus wide
   invisible tap edges. A tap highlights the continent and answers after 300 ms with no confirmation; a second
   tap within that time switches, and only the last one counts. The buttons stay as an alternative.
@@ -107,8 +132,12 @@
   continent and its button green for 700 ms, then the country step opens. A wrong pick turns them red and shows
   a "Wrong continent" overlay; its button leads to the existing reveal on the correct continent's map.
 - **Country step:** one map per continent, using an azimuthal equal-area projection centred on that
-  continent and fitted to the screen. The fit uses only the continent's larger land parts, so small remote
-  islands don't widen it; Svalbard, Hawaii and Galápagos fall outside the frame but are still drawn.
+  continent and fitted to the screen. The fit prefers larger land parts, but every retained country
+  contributes at least its largest polygon, keeping Cape Verde, Mauritius, Seychelles, Kiribati,
+  Samoa and Tonga reachable. The Pacific-centered Oceania frame crosses the antimeridian. Large
+  countries retain one card, with any included visible part accepted. Archipelagos preserve their
+  dispersed island geometry for silhouettes and answer framing; excluded territories never widen fits.
+  Remote nonessential parts such as Svalbard, Hawaii and Galápagos need not widen the overview.
   Neighbouring land is faded and can't be tapped. Zoom is limited to 1–6×, panning stays inside the
   frame, and double-tap zoom is off so it can't clash with the magnifier. Zoom buttons sit bottom-left so
   they don't cover the Lesser Antilles.

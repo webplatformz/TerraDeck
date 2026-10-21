@@ -50,6 +50,7 @@ const MAX_MAINLAND_DISTANCE_DEG = 20
 
 function mainlandOf(f: CountryFeature): CountryFeature {
   if (f.geometry.type !== 'MultiPolygon') return f
+  if (['KI', 'FM', 'MH', 'FJ', 'ID', 'PH', 'PG', 'VU', 'SB', 'TO', 'WS', 'CV', 'SC'].includes(f.properties.iso)) return f
   const parts = f.geometry.coordinates.map((coordinates) => {
     const polygon: Polygon = { type: 'Polygon', coordinates }
     return { coordinates, area: geoArea(polygon), centroid: geoCentroid(polygon) }

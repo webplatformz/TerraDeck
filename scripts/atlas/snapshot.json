@@ -1,0 +1,3540 @@
+{
+  "retrievedAt": "2026-10-21T23:22:49.593Z",
+  "countrySource": "https://raw.githubusercontent.com/restcountries/restcountries/master/src/main/resources/countriesV3.1.json",
+  "articleSource": "https://www.wikidata.org/wiki/Special:EntityData/Q219060.json",
+  "countries": [
+    {
+      "id": "ad",
+      "name": "Andorra",
+      "germanName": "Andorra",
+      "capital": [
+        "Andorra la Vella"
+      ],
+      "areaKm2": 468,
+      "population": 88406,
+      "landlocked": true,
+      "borders": [
+        "FRA",
+        "ESP"
+      ],
+      "cca3": "AND"
+    },
+    {
+      "id": "ae",
+      "name": "United Arab Emirates",
+      "germanName": "Vereinigte Arabische Emirate",
+      "capital": [
+        "Abu Dhabi"
+      ],
+      "areaKm2": 83600,
+      "population": 11294243,
+      "landlocked": false,
+      "borders": [
+        "OMN",
+        "SAU"
+      ],
+      "cca3": "ARE"
+    },
+    {
+      "id": "af",
+      "name": "Afghanistan",
+      "germanName": "Afghanistan",
+      "capital": [
+        "Kabul"
+      ],
+      "areaKm2": 652230,
+      "population": 43844000,
+      "landlocked": true,
+      "borders": [
+        "IRN",
+        "PAK",
+        "TKM",
+        "UZB",
+        "TJK",
+        "CHN"
+      ],
+      "cca3": "AFG"
+    },
+    {
+      "id": "ag",
+      "name": "Antigua and Barbuda",
+      "germanName": "Antigua und Barbuda",
+      "capital": [
+        "Saint John's"
+      ],
+      "areaKm2": 442,
+      "population": 103603,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "ATG"
+    },
+    {
+      "id": "al",
+      "name": "Albania",
+      "germanName": "Albanien",
+      "capital": [
+        "Tirana"
+      ],
+      "areaKm2": 28748,
+      "population": 2363314,
+      "landlocked": false,
+      "borders": [
+        "MNE",
+        "GRC",
+        "MKD",
+        "UNK"
+      ],
+      "cca3": "ALB"
+    },
+    {
+      "id": "am",
+      "name": "Armenia",
+      "germanName": "Armenien",
+      "capital": [
+        "Yerevan"
+      ],
+      "areaKm2": 29743,
+      "population": 3076200,
+      "landlocked": true,
+      "borders": [
+        "AZE",
+        "GEO",
+        "IRN",
+        "TUR"
+      ],
+      "cca3": "ARM"
+    },
+    {
+      "id": "ao",
+      "name": "Angola",
+      "germanName": "Angola",
+      "capital": [
+        "Luanda"
+      ],
+      "areaKm2": 1246700,
+      "population": 36170961,
+      "landlocked": false,
+      "borders": [
+        "COG",
+        "COD",
+        "ZMB",
+        "NAM"
+      ],
+      "cca3": "AGO"
+    },
+    {
+      "id": "ar",
+      "name": "Argentina",
+      "germanName": "Argentinien",
+      "capital": [
+        "Buenos Aires"
+      ],
+      "areaKm2": 2780400,
+      "population": 46735004,
+      "landlocked": false,
+      "borders": [
+        "BOL",
+        "BRA",
+        "CHL",
+        "PRY",
+        "URY"
+      ],
+      "cca3": "ARG"
+    },
+    {
+      "id": "at",
+      "name": "Austria",
+      "germanName": "Österreich",
+      "capital": [
+        "Vienna"
+      ],
+      "areaKm2": 83871,
+      "population": 9200931,
+      "landlocked": true,
+      "borders": [
+        "CZE",
+        "DEU",
+        "HUN",
+        "ITA",
+        "LIE",
+        "SVK",
+        "SVN",
+        "CHE"
+      ],
+      "cca3": "AUT"
+    },
+    {
+      "id": "au",
+      "name": "Australia",
+      "germanName": "Australien",
+      "capital": [
+        "Canberra"
+      ],
+      "areaKm2": 7692024,
+      "population": 27536874,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "AUS"
+    },
+    {
+      "id": "az",
+      "name": "Azerbaijan",
+      "germanName": "Aserbaidschan",
+      "capital": [
+        "Baku"
+      ],
+      "areaKm2": 86600,
+      "population": 10241722,
+      "landlocked": true,
+      "borders": [
+        "ARM",
+        "GEO",
+        "IRN",
+        "RUS",
+        "TUR"
+      ],
+      "cca3": "AZE"
+    },
+    {
+      "id": "ba",
+      "name": "Bosnia and Herzegovina",
+      "germanName": "Bosnien und Herzegowina",
+      "capital": [
+        "Sarajevo"
+      ],
+      "areaKm2": 51209,
+      "population": 3422000,
+      "landlocked": false,
+      "borders": [
+        "HRV",
+        "MNE",
+        "SRB"
+      ],
+      "cca3": "BIH"
+    },
+    {
+      "id": "bb",
+      "name": "Barbados",
+      "germanName": "Barbados",
+      "capital": [
+        "Bridgetown"
+      ],
+      "areaKm2": 430,
+      "population": 267800,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "BRB"
+    },
+    {
+      "id": "bd",
+      "name": "Bangladesh",
+      "germanName": "Bangladesch",
+      "capital": [
+        "Dhaka"
+      ],
+      "areaKm2": 147570,
+      "population": 169828911,
+      "landlocked": false,
+      "borders": [
+        "MMR",
+        "IND"
+      ],
+      "cca3": "BGD"
+    },
+    {
+      "id": "be",
+      "name": "Belgium",
+      "germanName": "Belgien",
+      "capital": [
+        "Brussels"
+      ],
+      "areaKm2": 30528,
+      "population": 11825551,
+      "landlocked": false,
+      "borders": [
+        "FRA",
+        "DEU",
+        "LUX",
+        "NLD"
+      ],
+      "cca3": "BEL"
+    },
+    {
+      "id": "bf",
+      "name": "Burkina Faso",
+      "germanName": "Burkina Faso",
+      "capital": [
+        "Ouagadougou"
+      ],
+      "areaKm2": 272967,
+      "population": 24070553,
+      "landlocked": true,
+      "borders": [
+        "BEN",
+        "CIV",
+        "GHA",
+        "MLI",
+        "NER",
+        "TGO"
+      ],
+      "cca3": "BFA"
+    },
+    {
+      "id": "bg",
+      "name": "Bulgaria",
+      "germanName": "Bulgarien",
+      "capital": [
+        "Sofia"
+      ],
+      "areaKm2": 110879,
+      "population": 6437360,
+      "landlocked": false,
+      "borders": [
+        "GRC",
+        "MKD",
+        "ROU",
+        "SRB",
+        "TUR"
+      ],
+      "cca3": "BGR"
+    },
+    {
+      "id": "bh",
+      "name": "Bahrain",
+      "germanName": "Bahrain",
+      "capital": [
+        "Manama"
+      ],
+      "areaKm2": 765,
+      "population": 1594654,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "BHR"
+    },
+    {
+      "id": "bi",
+      "name": "Burundi",
+      "germanName": "Burundi",
+      "capital": [
+        "Gitega"
+      ],
+      "areaKm2": 27834,
+      "population": 12332788,
+      "landlocked": true,
+      "borders": [
+        "COD",
+        "RWA",
+        "TZA"
+      ],
+      "cca3": "BDI"
+    },
+    {
+      "id": "bj",
+      "name": "Benin",
+      "germanName": "Benin",
+      "capital": [
+        "Porto-Novo"
+      ],
+      "areaKm2": 112622,
+      "population": 13224860,
+      "landlocked": false,
+      "borders": [
+        "BFA",
+        "NER",
+        "NGA",
+        "TGO"
+      ],
+      "cca3": "BEN"
+    },
+    {
+      "id": "bn",
+      "name": "Brunei",
+      "germanName": "Brunei",
+      "capital": [
+        "Bandar Seri Begawan"
+      ],
+      "areaKm2": 5765,
+      "population": 455500,
+      "landlocked": false,
+      "borders": [
+        "MYS"
+      ],
+      "cca3": "BRN"
+    },
+    {
+      "id": "bo",
+      "name": "Bolivia",
+      "germanName": "Bolivien",
+      "capital": [
+        "Sucre"
+      ],
+      "areaKm2": 1098581,
+      "population": 11365333,
+      "landlocked": true,
+      "borders": [
+        "ARG",
+        "BRA",
+        "CHL",
+        "PRY",
+        "PER"
+      ],
+      "cca3": "BOL"
+    },
+    {
+      "id": "br",
+      "name": "Brazil",
+      "germanName": "Brasilien",
+      "capital": [
+        "Brasília"
+      ],
+      "areaKm2": 8515767,
+      "population": 213421037,
+      "landlocked": false,
+      "borders": [
+        "ARG",
+        "BOL",
+        "COL",
+        "GUF",
+        "GUY",
+        "PRY",
+        "PER",
+        "SUR",
+        "URY",
+        "VEN"
+      ],
+      "cca3": "BRA"
+    },
+    {
+      "id": "bs",
+      "name": "Bahamas",
+      "germanName": "Bahamas",
+      "capital": [
+        "Nassau"
+      ],
+      "areaKm2": 13943,
+      "population": 398165,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "BHS"
+    },
+    {
+      "id": "bt",
+      "name": "Bhutan",
+      "germanName": "Bhutan",
+      "capital": [
+        "Thimphu"
+      ],
+      "areaKm2": 38394,
+      "population": 784043,
+      "landlocked": true,
+      "borders": [
+        "CHN",
+        "IND"
+      ],
+      "cca3": "BTN"
+    },
+    {
+      "id": "bw",
+      "name": "Botswana",
+      "germanName": "Botswana",
+      "capital": [
+        "Gaborone"
+      ],
+      "areaKm2": 582000,
+      "population": 2359609,
+      "landlocked": true,
+      "borders": [
+        "NAM",
+        "ZAF",
+        "ZMB",
+        "ZWE"
+      ],
+      "cca3": "BWA"
+    },
+    {
+      "id": "by",
+      "name": "Belarus",
+      "germanName": "Weißrussland",
+      "capital": [
+        "Minsk"
+      ],
+      "areaKm2": 207600,
+      "population": 9109280,
+      "landlocked": true,
+      "borders": [
+        "LVA",
+        "LTU",
+        "POL",
+        "RUS",
+        "UKR"
+      ],
+      "cca3": "BLR"
+    },
+    {
+      "id": "bz",
+      "name": "Belize",
+      "germanName": "Belize",
+      "capital": [
+        "Belmopan"
+      ],
+      "areaKm2": 22966,
+      "population": 417634,
+      "landlocked": false,
+      "borders": [
+        "GTM",
+        "MEX"
+      ],
+      "cca3": "BLZ"
+    },
+    {
+      "id": "ca",
+      "name": "Canada",
+      "germanName": "Kanada",
+      "capital": [
+        "Ottawa"
+      ],
+      "areaKm2": 9984670,
+      "population": 41651653,
+      "landlocked": false,
+      "borders": [
+        "USA"
+      ],
+      "cca3": "CAN"
+    },
+    {
+      "id": "cd",
+      "name": "DR Congo",
+      "germanName": "Kongo (Dem. Rep.)",
+      "capital": [
+        "Kinshasa"
+      ],
+      "areaKm2": 2344858,
+      "population": 112832000,
+      "landlocked": false,
+      "borders": [
+        "AGO",
+        "BDI",
+        "CAF",
+        "COG",
+        "RWA",
+        "SSD",
+        "TZA",
+        "UGA",
+        "ZMB"
+      ],
+      "cca3": "COD"
+    },
+    {
+      "id": "cf",
+      "name": "Central African Republic",
+      "germanName": "Zentralafrikanische Republik",
+      "capital": [
+        "Bangui"
+      ],
+      "areaKm2": 622984,
+      "population": 6470307,
+      "landlocked": true,
+      "borders": [
+        "CMR",
+        "TCD",
+        "COD",
+        "COG",
+        "SSD",
+        "SDN"
+      ],
+      "cca3": "CAF"
+    },
+    {
+      "id": "cg",
+      "name": "Republic of the Congo",
+      "germanName": "Kongo",
+      "capital": [
+        "Brazzaville"
+      ],
+      "areaKm2": 342000,
+      "population": 6142180,
+      "landlocked": false,
+      "borders": [
+        "AGO",
+        "CMR",
+        "CAF",
+        "COD",
+        "GAB"
+      ],
+      "cca3": "COG"
+    },
+    {
+      "id": "ch",
+      "name": "Switzerland",
+      "germanName": "Schweiz",
+      "capital": [
+        "Bern"
+      ],
+      "areaKm2": 41284,
+      "population": 9082848,
+      "landlocked": true,
+      "borders": [
+        "AUT",
+        "FRA",
+        "ITA",
+        "LIE",
+        "DEU"
+      ],
+      "cca3": "CHE"
+    },
+    {
+      "id": "ci",
+      "name": "Ivory Coast",
+      "germanName": "Elfenbeinküste",
+      "capital": [
+        "Yamoussoukro"
+      ],
+      "areaKm2": 322463,
+      "population": 31719275,
+      "landlocked": false,
+      "borders": [
+        "BFA",
+        "GHA",
+        "GIN",
+        "LBR",
+        "MLI"
+      ],
+      "cca3": "CIV"
+    },
+    {
+      "id": "cl",
+      "name": "Chile",
+      "germanName": "Chile",
+      "capital": [
+        "Santiago"
+      ],
+      "areaKm2": 756102,
+      "population": 20206953,
+      "landlocked": false,
+      "borders": [
+        "ARG",
+        "BOL",
+        "PER"
+      ],
+      "cca3": "CHL"
+    },
+    {
+      "id": "cm",
+      "name": "Cameroon",
+      "germanName": "Kamerun",
+      "capital": [
+        "Yaoundé"
+      ],
+      "areaKm2": 475442,
+      "population": 29442327,
+      "landlocked": false,
+      "borders": [
+        "CAF",
+        "TCD",
+        "COG",
+        "GNQ",
+        "GAB",
+        "NGA"
+      ],
+      "cca3": "CMR"
+    },
+    {
+      "id": "cn",
+      "name": "China",
+      "germanName": "China",
+      "capital": [
+        "Beijing"
+      ],
+      "areaKm2": 9706961,
+      "population": 1408280000,
+      "landlocked": false,
+      "borders": [
+        "AFG",
+        "BTN",
+        "MMR",
+        "HKG",
+        "IND",
+        "KAZ",
+        "NPL",
+        "PRK",
+        "KGZ",
+        "LAO",
+        "MAC",
+        "MNG",
+        "PAK",
+        "RUS",
+        "TJK",
+        "VNM"
+      ],
+      "cca3": "CHN"
+    },
+    {
+      "id": "co",
+      "name": "Colombia",
+      "germanName": "Kolumbien",
+      "capital": [
+        "Bogotá"
+      ],
+      "areaKm2": 1141748,
+      "population": 53057212,
+      "landlocked": false,
+      "borders": [
+        "BRA",
+        "ECU",
+        "PAN",
+        "PER",
+        "VEN"
+      ],
+      "cca3": "COL"
+    },
+    {
+      "id": "cr",
+      "name": "Costa Rica",
+      "germanName": "Costa Rica",
+      "capital": [
+        "San José"
+      ],
+      "areaKm2": 51100,
+      "population": 5309625,
+      "landlocked": false,
+      "borders": [
+        "NIC",
+        "PAN"
+      ],
+      "cca3": "CRI"
+    },
+    {
+      "id": "cu",
+      "name": "Cuba",
+      "germanName": "Kuba",
+      "capital": [
+        "Havana"
+      ],
+      "areaKm2": 109884,
+      "population": 9748007,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "CUB"
+    },
+    {
+      "id": "cv",
+      "name": "Cape Verde",
+      "germanName": "Kap Verde",
+      "capital": [
+        "Praia"
+      ],
+      "areaKm2": 4033,
+      "population": 491233,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "CPV"
+    },
+    {
+      "id": "cy",
+      "name": "Cyprus",
+      "germanName": "Zypern",
+      "capital": [
+        "Nicosia"
+      ],
+      "areaKm2": 9251,
+      "population": 1442614,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "CYP"
+    },
+    {
+      "id": "cz",
+      "name": "Czechia",
+      "germanName": "Tschechien",
+      "capital": [
+        "Prague"
+      ],
+      "areaKm2": 78865,
+      "population": 10882341,
+      "landlocked": true,
+      "borders": [
+        "AUT",
+        "DEU",
+        "POL",
+        "SVK"
+      ],
+      "cca3": "CZE"
+    },
+    {
+      "id": "de",
+      "name": "Germany",
+      "germanName": "Deutschland",
+      "capital": [
+        "Berlin"
+      ],
+      "areaKm2": 357114,
+      "population": 83491249,
+      "landlocked": false,
+      "borders": [
+        "AUT",
+        "BEL",
+        "CZE",
+        "DNK",
+        "FRA",
+        "LUX",
+        "NLD",
+        "POL",
+        "CHE"
+      ],
+      "cca3": "DEU"
+    },
+    {
+      "id": "dj",
+      "name": "Djibouti",
+      "germanName": "Dschibuti",
+      "capital": [
+        "Djibouti"
+      ],
+      "areaKm2": 23200,
+      "population": 1066809,
+      "landlocked": false,
+      "borders": [
+        "ERI",
+        "ETH",
+        "SOM"
+      ],
+      "cca3": "DJI"
+    },
+    {
+      "id": "dk",
+      "name": "Denmark",
+      "germanName": "Dänemark",
+      "capital": [
+        "Copenhagen"
+      ],
+      "areaKm2": 43094,
+      "population": 6011488,
+      "landlocked": false,
+      "borders": [
+        "DEU"
+      ],
+      "cca3": "DNK"
+    },
+    {
+      "id": "dm",
+      "name": "Dominica",
+      "germanName": "Dominica",
+      "capital": [
+        "Roseau"
+      ],
+      "areaKm2": 751,
+      "population": 67408,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "DMA"
+    },
+    {
+      "id": "do",
+      "name": "Dominican Republic",
+      "germanName": "Dominikanische Republik",
+      "capital": [
+        "Santo Domingo"
+      ],
+      "areaKm2": 48671,
+      "population": 10771504,
+      "landlocked": false,
+      "borders": [
+        "HTI"
+      ],
+      "cca3": "DOM"
+    },
+    {
+      "id": "dz",
+      "name": "Algeria",
+      "germanName": "Algerien",
+      "capital": [
+        "Algiers"
+      ],
+      "areaKm2": 2381741,
+      "population": 47400000,
+      "landlocked": false,
+      "borders": [
+        "TUN",
+        "LBY",
+        "NER",
+        "ESH",
+        "MRT",
+        "MLI",
+        "MAR"
+      ],
+      "cca3": "DZA"
+    },
+    {
+      "id": "ec",
+      "name": "Ecuador",
+      "germanName": "Ecuador",
+      "capital": [
+        "Quito"
+      ],
+      "areaKm2": 276841,
+      "population": 18103660,
+      "landlocked": false,
+      "borders": [
+        "COL",
+        "PER"
+      ],
+      "cca3": "ECU"
+    },
+    {
+      "id": "ee",
+      "name": "Estonia",
+      "germanName": "Estland",
+      "capital": [
+        "Tallinn"
+      ],
+      "areaKm2": 45227,
+      "population": 1369995,
+      "landlocked": false,
+      "borders": [
+        "LVA",
+        "RUS"
+      ],
+      "cca3": "EST"
+    },
+    {
+      "id": "eg",
+      "name": "Egypt",
+      "germanName": "Ägypten",
+      "capital": [
+        "Cairo"
+      ],
+      "areaKm2": 1002450,
+      "population": 107271260,
+      "landlocked": false,
+      "borders": [
+        "ISR",
+        "LBY",
+        "PSE",
+        "SDN"
+      ],
+      "cca3": "EGY"
+    },
+    {
+      "id": "er",
+      "name": "Eritrea",
+      "germanName": "Eritrea",
+      "capital": [
+        "Asmara"
+      ],
+      "areaKm2": 117600,
+      "population": 3607000,
+      "landlocked": false,
+      "borders": [
+        "DJI",
+        "ETH",
+        "SDN"
+      ],
+      "cca3": "ERI"
+    },
+    {
+      "id": "es",
+      "name": "Spain",
+      "germanName": "Spanien",
+      "capital": [
+        "Madrid"
+      ],
+      "areaKm2": 505992,
+      "population": 49315949,
+      "landlocked": false,
+      "borders": [
+        "AND",
+        "FRA",
+        "GIB",
+        "PRT",
+        "MAR"
+      ],
+      "cca3": "ESP"
+    },
+    {
+      "id": "et",
+      "name": "Ethiopia",
+      "germanName": "Äthiopien",
+      "capital": [
+        "Addis Ababa"
+      ],
+      "areaKm2": 1104300,
+      "population": 111652998,
+      "landlocked": true,
+      "borders": [
+        "DJI",
+        "ERI",
+        "KEN",
+        "SOM",
+        "SSD",
+        "SDN"
+      ],
+      "cca3": "ETH"
+    },
+    {
+      "id": "fi",
+      "name": "Finland",
+      "germanName": "Finnland",
+      "capital": [
+        "Helsinki"
+      ],
+      "areaKm2": 338455,
+      "population": 5650325,
+      "landlocked": false,
+      "borders": [
+        "NOR",
+        "SWE",
+        "RUS"
+      ],
+      "cca3": "FIN"
+    },
+    {
+      "id": "fj",
+      "name": "Fiji",
+      "germanName": "Fidschi",
+      "capital": [
+        "Suva"
+      ],
+      "areaKm2": 18272,
+      "population": 900869,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "FJI"
+    },
+    {
+      "id": "fm",
+      "name": "Micronesia",
+      "germanName": "Mikronesien",
+      "capital": [
+        "Palikir"
+      ],
+      "areaKm2": 702,
+      "population": 105564,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "FSM"
+    },
+    {
+      "id": "fr",
+      "name": "France",
+      "germanName": "Frankreich",
+      "capital": [
+        "Paris"
+      ],
+      "areaKm2": 543908,
+      "population": 66351959,
+      "landlocked": false,
+      "borders": [
+        "AND",
+        "BEL",
+        "DEU",
+        "ITA",
+        "LUX",
+        "MCO",
+        "ESP",
+        "CHE"
+      ],
+      "cca3": "FRA"
+    },
+    {
+      "id": "ga",
+      "name": "Gabon",
+      "germanName": "Gabun",
+      "capital": [
+        "Libreville"
+      ],
+      "areaKm2": 267668,
+      "population": 2469296,
+      "landlocked": false,
+      "borders": [
+        "CMR",
+        "COG",
+        "GNQ"
+      ],
+      "cca3": "GAB"
+    },
+    {
+      "id": "gb",
+      "name": "United Kingdom",
+      "germanName": "Vereinigtes Königreich",
+      "capital": [
+        "London"
+      ],
+      "areaKm2": 244376,
+      "population": 69281437,
+      "landlocked": false,
+      "borders": [
+        "IRL"
+      ],
+      "cca3": "GBR"
+    },
+    {
+      "id": "gd",
+      "name": "Grenada",
+      "germanName": "Grenada",
+      "capital": [
+        "St. George's"
+      ],
+      "areaKm2": 344,
+      "population": 109021,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "GRD"
+    },
+    {
+      "id": "ge",
+      "name": "Georgia",
+      "germanName": "Georgien",
+      "capital": [
+        "Tbilisi"
+      ],
+      "areaKm2": 69700,
+      "population": 4000921,
+      "landlocked": false,
+      "borders": [
+        "ARM",
+        "AZE",
+        "RUS",
+        "TUR"
+      ],
+      "cca3": "GEO"
+    },
+    {
+      "id": "gh",
+      "name": "Ghana",
+      "germanName": "Ghana",
+      "capital": [
+        "Accra"
+      ],
+      "areaKm2": 238533,
+      "population": 33742380,
+      "landlocked": false,
+      "borders": [
+        "BFA",
+        "CIV",
+        "TGO"
+      ],
+      "cca3": "GHA"
+    },
+    {
+      "id": "gm",
+      "name": "Gambia",
+      "germanName": "Gambia",
+      "capital": [
+        "Banjul"
+      ],
+      "areaKm2": 10689,
+      "population": 2422712,
+      "landlocked": false,
+      "borders": [
+        "SEN"
+      ],
+      "cca3": "GMB"
+    },
+    {
+      "id": "gn",
+      "name": "Guinea",
+      "germanName": "Guinea",
+      "capital": [
+        "Conakry"
+      ],
+      "areaKm2": 245857,
+      "population": 14363931,
+      "landlocked": false,
+      "borders": [
+        "CIV",
+        "GNB",
+        "LBR",
+        "MLI",
+        "SEN",
+        "SLE"
+      ],
+      "cca3": "GIN"
+    },
+    {
+      "id": "gq",
+      "name": "Equatorial Guinea",
+      "germanName": "Äquatorialguinea",
+      "capital": [
+        "Ciudad de la Paz"
+      ],
+      "areaKm2": 28051,
+      "population": 1668768,
+      "landlocked": false,
+      "borders": [
+        "CMR",
+        "GAB"
+      ],
+      "cca3": "GNQ"
+    },
+    {
+      "id": "gr",
+      "name": "Greece",
+      "germanName": "Griechenland",
+      "capital": [
+        "Athens"
+      ],
+      "areaKm2": 131990,
+      "population": 10400720,
+      "landlocked": false,
+      "borders": [
+        "ALB",
+        "BGR",
+        "TUR",
+        "MKD"
+      ],
+      "cca3": "GRC"
+    },
+    {
+      "id": "gt",
+      "name": "Guatemala",
+      "germanName": "Guatemala",
+      "capital": [
+        "Guatemala City"
+      ],
+      "areaKm2": 108889,
+      "population": 18079810,
+      "landlocked": false,
+      "borders": [
+        "BLZ",
+        "SLV",
+        "HND",
+        "MEX"
+      ],
+      "cca3": "GTM"
+    },
+    {
+      "id": "gw",
+      "name": "Guinea-Bissau",
+      "germanName": "Guinea-Bissau",
+      "capital": [
+        "Bissau"
+      ],
+      "areaKm2": 36125,
+      "population": 1781308,
+      "landlocked": false,
+      "borders": [
+        "GIN",
+        "SEN"
+      ],
+      "cca3": "GNB"
+    },
+    {
+      "id": "gy",
+      "name": "Guyana",
+      "germanName": "Guyana",
+      "capital": [
+        "Georgetown"
+      ],
+      "areaKm2": 214969,
+      "population": 772975,
+      "landlocked": false,
+      "borders": [
+        "BRA",
+        "SUR",
+        "VEN"
+      ],
+      "cca3": "GUY"
+    },
+    {
+      "id": "hn",
+      "name": "Honduras",
+      "germanName": "Honduras",
+      "capital": [
+        "Tegucigalpa"
+      ],
+      "areaKm2": 112492,
+      "population": 9892632,
+      "landlocked": false,
+      "borders": [
+        "GTM",
+        "SLV",
+        "NIC"
+      ],
+      "cca3": "HND"
+    },
+    {
+      "id": "hr",
+      "name": "Croatia",
+      "germanName": "Kroatien",
+      "capital": [
+        "Zagreb"
+      ],
+      "areaKm2": 56594,
+      "population": 3866233,
+      "landlocked": false,
+      "borders": [
+        "BIH",
+        "HUN",
+        "MNE",
+        "SRB",
+        "SVN"
+      ],
+      "cca3": "HRV"
+    },
+    {
+      "id": "ht",
+      "name": "Haiti",
+      "germanName": "Haiti",
+      "capital": [
+        "Port-au-Prince"
+      ],
+      "areaKm2": 27750,
+      "population": 11867032,
+      "landlocked": false,
+      "borders": [
+        "DOM"
+      ],
+      "cca3": "HTI"
+    },
+    {
+      "id": "hu",
+      "name": "Hungary",
+      "germanName": "Ungarn",
+      "capital": [
+        "Budapest"
+      ],
+      "areaKm2": 93028,
+      "population": 9539502,
+      "landlocked": true,
+      "borders": [
+        "AUT",
+        "HRV",
+        "ROU",
+        "SRB",
+        "SVK",
+        "SVN",
+        "UKR"
+      ],
+      "cca3": "HUN"
+    },
+    {
+      "id": "id",
+      "name": "Indonesia",
+      "germanName": "Indonesien",
+      "capital": [
+        "Jakarta"
+      ],
+      "areaKm2": 1904569,
+      "population": 284438782,
+      "landlocked": false,
+      "borders": [
+        "TLS",
+        "MYS",
+        "PNG"
+      ],
+      "cca3": "IDN"
+    },
+    {
+      "id": "ie",
+      "name": "Ireland",
+      "germanName": "Irland",
+      "capital": [
+        "Dublin"
+      ],
+      "areaKm2": 70273,
+      "population": 5458600,
+      "landlocked": false,
+      "borders": [
+        "GBR"
+      ],
+      "cca3": "IRL"
+    },
+    {
+      "id": "il",
+      "name": "Israel",
+      "germanName": "Israel",
+      "capital": [
+        "Jerusalem"
+      ],
+      "areaKm2": 21937,
+      "population": 10134800,
+      "landlocked": false,
+      "borders": [
+        "EGY",
+        "JOR",
+        "LBN",
+        "PSE",
+        "SYR"
+      ],
+      "cca3": "ISR"
+    },
+    {
+      "id": "in",
+      "name": "India",
+      "germanName": "Indien",
+      "capital": [
+        "New Delhi"
+      ],
+      "areaKm2": 3287263,
+      "population": 1417492000,
+      "landlocked": false,
+      "borders": [
+        "BGD",
+        "BTN",
+        "MMR",
+        "CHN",
+        "NPL",
+        "PAK"
+      ],
+      "cca3": "IND"
+    },
+    {
+      "id": "iq",
+      "name": "Iraq",
+      "germanName": "Irak",
+      "capital": [
+        "Baghdad"
+      ],
+      "areaKm2": 438317,
+      "population": 46118793,
+      "landlocked": false,
+      "borders": [
+        "IRN",
+        "JOR",
+        "KWT",
+        "SAU",
+        "SYR",
+        "TUR"
+      ],
+      "cca3": "IRQ"
+    },
+    {
+      "id": "ir",
+      "name": "Iran",
+      "germanName": "Iran",
+      "capital": [
+        "Tehran"
+      ],
+      "areaKm2": 1648195,
+      "population": 85961000,
+      "landlocked": false,
+      "borders": [
+        "AFG",
+        "ARM",
+        "AZE",
+        "IRQ",
+        "PAK",
+        "TUR",
+        "TKM"
+      ],
+      "cca3": "IRN"
+    },
+    {
+      "id": "is",
+      "name": "Iceland",
+      "germanName": "Island",
+      "capital": [
+        "Reykjavik"
+      ],
+      "areaKm2": 103000,
+      "population": 391810,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "ISL"
+    },
+    {
+      "id": "it",
+      "name": "Italy",
+      "germanName": "Italien",
+      "capital": [
+        "Rome"
+      ],
+      "areaKm2": 301336,
+      "population": 58927633,
+      "landlocked": false,
+      "borders": [
+        "AUT",
+        "FRA",
+        "SMR",
+        "SVN",
+        "CHE",
+        "VAT"
+      ],
+      "cca3": "ITA"
+    },
+    {
+      "id": "jm",
+      "name": "Jamaica",
+      "germanName": "Jamaika",
+      "capital": [
+        "Kingston"
+      ],
+      "areaKm2": 10991,
+      "population": 2825544,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "JAM"
+    },
+    {
+      "id": "jo",
+      "name": "Jordan",
+      "germanName": "Jordanien",
+      "capital": [
+        "Amman"
+      ],
+      "areaKm2": 89342,
+      "population": 11734000,
+      "landlocked": false,
+      "borders": [
+        "IRQ",
+        "ISR",
+        "PSE",
+        "SAU",
+        "SYR"
+      ],
+      "cca3": "JOR"
+    },
+    {
+      "id": "jp",
+      "name": "Japan",
+      "germanName": "Japan",
+      "capital": [
+        "Tokyo"
+      ],
+      "areaKm2": 377930,
+      "population": 123210000,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "JPN"
+    },
+    {
+      "id": "ke",
+      "name": "Kenya",
+      "germanName": "Kenia",
+      "capital": [
+        "Nairobi"
+      ],
+      "areaKm2": 580367,
+      "population": 53330978,
+      "landlocked": false,
+      "borders": [
+        "ETH",
+        "SOM",
+        "SSD",
+        "TZA",
+        "UGA"
+      ],
+      "cca3": "KEN"
+    },
+    {
+      "id": "kg",
+      "name": "Kyrgyzstan",
+      "germanName": "Kirgisistan",
+      "capital": [
+        "Bishkek"
+      ],
+      "areaKm2": 199951,
+      "population": 7281800,
+      "landlocked": true,
+      "borders": [
+        "CHN",
+        "KAZ",
+        "TJK",
+        "UZB"
+      ],
+      "cca3": "KGZ"
+    },
+    {
+      "id": "kh",
+      "name": "Cambodia",
+      "germanName": "Kambodscha",
+      "capital": [
+        "Phnom Penh"
+      ],
+      "areaKm2": 181035,
+      "population": 17577760,
+      "landlocked": false,
+      "borders": [
+        "LAO",
+        "THA",
+        "VNM"
+      ],
+      "cca3": "KHM"
+    },
+    {
+      "id": "ki",
+      "name": "Kiribati",
+      "germanName": "Kiribati",
+      "capital": [
+        "South Tarawa"
+      ],
+      "areaKm2": 811,
+      "population": 120740,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "KIR"
+    },
+    {
+      "id": "km",
+      "name": "Comoros",
+      "germanName": "Komoren",
+      "capital": [
+        "Moroni"
+      ],
+      "areaKm2": 1862,
+      "population": 919901,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "COM"
+    },
+    {
+      "id": "kn",
+      "name": "Saint Kitts and Nevis",
+      "germanName": "St. Kitts und Nevis",
+      "capital": [
+        "Basseterre"
+      ],
+      "areaKm2": 261,
+      "population": 51320,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "KNA"
+    },
+    {
+      "id": "kp",
+      "name": "North Korea",
+      "germanName": "Nordkorea",
+      "capital": [
+        "Pyongyang"
+      ],
+      "areaKm2": 120538,
+      "population": 25950000,
+      "landlocked": false,
+      "borders": [
+        "CHN",
+        "KOR",
+        "RUS"
+      ],
+      "cca3": "PRK"
+    },
+    {
+      "id": "kr",
+      "name": "South Korea",
+      "germanName": "Südkorea",
+      "capital": [
+        "Seoul"
+      ],
+      "areaKm2": 100210,
+      "population": 51159889,
+      "landlocked": false,
+      "borders": [
+        "PRK"
+      ],
+      "cca3": "KOR"
+    },
+    {
+      "id": "kw",
+      "name": "Kuwait",
+      "germanName": "Kuwait",
+      "capital": [
+        "Kuwait City"
+      ],
+      "areaKm2": 17818,
+      "population": 4881254,
+      "landlocked": false,
+      "borders": [
+        "IRQ",
+        "SAU"
+      ],
+      "cca3": "KWT"
+    },
+    {
+      "id": "kz",
+      "name": "Kazakhstan",
+      "germanName": "Kasachstan",
+      "capital": [
+        "Astana"
+      ],
+      "areaKm2": 2724900,
+      "population": 20426568,
+      "landlocked": true,
+      "borders": [
+        "CHN",
+        "KGZ",
+        "RUS",
+        "TKM",
+        "UZB"
+      ],
+      "cca3": "KAZ"
+    },
+    {
+      "id": "la",
+      "name": "Laos",
+      "germanName": "Laos",
+      "capital": [
+        "Vientiane"
+      ],
+      "areaKm2": 236800,
+      "population": 7647000,
+      "landlocked": true,
+      "borders": [
+        "MMR",
+        "KHM",
+        "CHN",
+        "THA",
+        "VNM"
+      ],
+      "cca3": "LAO"
+    },
+    {
+      "id": "lb",
+      "name": "Lebanon",
+      "germanName": "Libanon",
+      "capital": [
+        "Beirut"
+      ],
+      "areaKm2": 10452,
+      "population": 5490000,
+      "landlocked": false,
+      "borders": [
+        "ISR",
+        "SYR"
+      ],
+      "cca3": "LBN"
+    },
+    {
+      "id": "lc",
+      "name": "Saint Lucia",
+      "germanName": "St. Lucia",
+      "capital": [
+        "Castries"
+      ],
+      "areaKm2": 616,
+      "population": 184100,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "LCA"
+    },
+    {
+      "id": "li",
+      "name": "Liechtenstein",
+      "germanName": "Liechtenstein",
+      "capital": [
+        "Vaduz"
+      ],
+      "areaKm2": 160,
+      "population": 40900,
+      "landlocked": true,
+      "borders": [
+        "AUT",
+        "CHE"
+      ],
+      "cca3": "LIE"
+    },
+    {
+      "id": "lk",
+      "name": "Sri Lanka",
+      "germanName": "Sri Lanka",
+      "capital": [
+        "Sri Jayawardenepura Kotte"
+      ],
+      "areaKm2": 65610,
+      "population": 21763170,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "LKA"
+    },
+    {
+      "id": "lr",
+      "name": "Liberia",
+      "germanName": "Liberia",
+      "capital": [
+        "Monrovia"
+      ],
+      "areaKm2": 111369,
+      "population": 5248621,
+      "landlocked": false,
+      "borders": [
+        "GIN",
+        "CIV",
+        "SLE"
+      ],
+      "cca3": "LBR"
+    },
+    {
+      "id": "ls",
+      "name": "Lesotho",
+      "germanName": "Lesotho",
+      "capital": [
+        "Maseru"
+      ],
+      "areaKm2": 30355,
+      "population": 2116427,
+      "landlocked": true,
+      "borders": [
+        "ZAF"
+      ],
+      "cca3": "LSO"
+    },
+    {
+      "id": "lt",
+      "name": "Lithuania",
+      "germanName": "Litauen",
+      "capital": [
+        "Vilnius"
+      ],
+      "areaKm2": 65300,
+      "population": 2894886,
+      "landlocked": false,
+      "borders": [
+        "BLR",
+        "LVA",
+        "POL",
+        "RUS"
+      ],
+      "cca3": "LTU"
+    },
+    {
+      "id": "lu",
+      "name": "Luxembourg",
+      "germanName": "Luxemburg",
+      "capital": [
+        "Luxembourg"
+      ],
+      "areaKm2": 2586,
+      "population": 681973,
+      "landlocked": true,
+      "borders": [
+        "BEL",
+        "FRA",
+        "DEU"
+      ],
+      "cca3": "LUX"
+    },
+    {
+      "id": "lv",
+      "name": "Latvia",
+      "germanName": "Lettland",
+      "capital": [
+        "Riga"
+      ],
+      "areaKm2": 64559,
+      "population": 1829000,
+      "landlocked": false,
+      "borders": [
+        "BLR",
+        "EST",
+        "LTU",
+        "RUS"
+      ],
+      "cca3": "LVA"
+    },
+    {
+      "id": "ly",
+      "name": "Libya",
+      "germanName": "Libyen",
+      "capital": [
+        "Tripoli"
+      ],
+      "areaKm2": 1759540,
+      "population": 7459000,
+      "landlocked": false,
+      "borders": [
+        "DZA",
+        "TCD",
+        "EGY",
+        "NER",
+        "SDN",
+        "TUN"
+      ],
+      "cca3": "LBY"
+    },
+    {
+      "id": "ma",
+      "name": "Morocco",
+      "germanName": "Marokko",
+      "capital": [
+        "Rabat"
+      ],
+      "areaKm2": 446550,
+      "population": 36828330,
+      "landlocked": false,
+      "borders": [
+        "DZA",
+        "ESH",
+        "ESP"
+      ],
+      "cca3": "MAR"
+    },
+    {
+      "id": "mc",
+      "name": "Monaco",
+      "germanName": "Monaco",
+      "capital": [
+        "Monaco"
+      ],
+      "areaKm2": 2.02,
+      "population": 38423,
+      "landlocked": false,
+      "borders": [
+        "FRA"
+      ],
+      "cca3": "MCO"
+    },
+    {
+      "id": "md",
+      "name": "Moldova",
+      "germanName": "Moldawien",
+      "capital": [
+        "Chișinău"
+      ],
+      "areaKm2": 33847,
+      "population": 2749076,
+      "landlocked": true,
+      "borders": [
+        "ROU",
+        "UKR"
+      ],
+      "cca3": "MDA"
+    },
+    {
+      "id": "me",
+      "name": "Montenegro",
+      "germanName": "Montenegro",
+      "capital": [
+        "Podgorica"
+      ],
+      "areaKm2": 13812,
+      "population": 623327,
+      "landlocked": false,
+      "borders": [
+        "ALB",
+        "BIH",
+        "HRV",
+        "UNK",
+        "SRB"
+      ],
+      "cca3": "MNE"
+    },
+    {
+      "id": "mg",
+      "name": "Madagascar",
+      "germanName": "Madagaskar",
+      "capital": [
+        "Antananarivo"
+      ],
+      "areaKm2": 587041,
+      "population": 31727042,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "MDG"
+    },
+    {
+      "id": "mh",
+      "name": "Marshall Islands",
+      "germanName": "Marshallinseln",
+      "capital": [
+        "Majuro"
+      ],
+      "areaKm2": 181,
+      "population": 42418,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "MHL"
+    },
+    {
+      "id": "mk",
+      "name": "North Macedonia",
+      "germanName": "Nordmazedonien",
+      "capital": [
+        "Skopje"
+      ],
+      "areaKm2": 25713,
+      "population": 1822612,
+      "landlocked": true,
+      "borders": [
+        "ALB",
+        "BGR",
+        "GRC",
+        "UNK",
+        "SRB"
+      ],
+      "cca3": "MKD"
+    },
+    {
+      "id": "ml",
+      "name": "Mali",
+      "germanName": "Mali",
+      "capital": [
+        "Bamako"
+      ],
+      "areaKm2": 1240192,
+      "population": 22395489,
+      "landlocked": true,
+      "borders": [
+        "DZA",
+        "BFA",
+        "GIN",
+        "CIV",
+        "MRT",
+        "NER",
+        "SEN"
+      ],
+      "cca3": "MLI"
+    },
+    {
+      "id": "mm",
+      "name": "Myanmar",
+      "germanName": "Myanmar",
+      "capital": [
+        "Naypyidaw"
+      ],
+      "areaKm2": 676578,
+      "population": 51316756,
+      "landlocked": false,
+      "borders": [
+        "BGD",
+        "CHN",
+        "IND",
+        "LAO",
+        "THA"
+      ],
+      "cca3": "MMR"
+    },
+    {
+      "id": "mn",
+      "name": "Mongolia",
+      "germanName": "Mongolei",
+      "capital": [
+        "Ulan Bator"
+      ],
+      "areaKm2": 1564110,
+      "population": 3544835,
+      "landlocked": true,
+      "borders": [
+        "CHN",
+        "RUS"
+      ],
+      "cca3": "MNG"
+    },
+    {
+      "id": "mr",
+      "name": "Mauritania",
+      "germanName": "Mauretanien",
+      "capital": [
+        "Nouakchott"
+      ],
+      "areaKm2": 1030700,
+      "population": 4927532,
+      "landlocked": false,
+      "borders": [
+        "DZA",
+        "MLI",
+        "SEN",
+        "ESH"
+      ],
+      "cca3": "MRT"
+    },
+    {
+      "id": "mt",
+      "name": "Malta",
+      "germanName": "Malta",
+      "capital": [
+        "Valletta"
+      ],
+      "areaKm2": 316,
+      "population": 574250,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "MLT"
+    },
+    {
+      "id": "mu",
+      "name": "Mauritius",
+      "germanName": "Mauritius",
+      "capital": [
+        "Port Louis"
+      ],
+      "areaKm2": 2040,
+      "population": 1243741,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "MUS"
+    },
+    {
+      "id": "mv",
+      "name": "Maldives",
+      "germanName": "Malediven",
+      "capital": [
+        "Malé"
+      ],
+      "areaKm2": 300,
+      "population": 515132,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "MDV"
+    },
+    {
+      "id": "mw",
+      "name": "Malawi",
+      "germanName": "Malawi",
+      "capital": [
+        "Lilongwe"
+      ],
+      "areaKm2": 118484,
+      "population": 20734262,
+      "landlocked": true,
+      "borders": [
+        "MOZ",
+        "TZA",
+        "ZMB"
+      ],
+      "cca3": "MWI"
+    },
+    {
+      "id": "mx",
+      "name": "Mexico",
+      "germanName": "Mexiko",
+      "capital": [
+        "Mexico City"
+      ],
+      "areaKm2": 1964375,
+      "population": 130575786,
+      "landlocked": false,
+      "borders": [
+        "BLZ",
+        "GTM",
+        "USA"
+      ],
+      "cca3": "MEX"
+    },
+    {
+      "id": "my",
+      "name": "Malaysia",
+      "germanName": "Malaysia",
+      "capital": [
+        "Kuala Lumpur"
+      ],
+      "areaKm2": 330803,
+      "population": 34231700,
+      "landlocked": false,
+      "borders": [
+        "BRN",
+        "IDN",
+        "THA"
+      ],
+      "cca3": "MYS"
+    },
+    {
+      "id": "mz",
+      "name": "Mozambique",
+      "germanName": "Mosambik",
+      "capital": [
+        "Maputo"
+      ],
+      "areaKm2": 801590,
+      "population": 34090466,
+      "landlocked": false,
+      "borders": [
+        "MWI",
+        "ZAF",
+        "SWZ",
+        "TZA",
+        "ZMB",
+        "ZWE"
+      ],
+      "cca3": "MOZ"
+    },
+    {
+      "id": "na",
+      "name": "Namibia",
+      "germanName": "Namibia",
+      "capital": [
+        "Windhoek"
+      ],
+      "areaKm2": 825615,
+      "population": 3022401,
+      "landlocked": false,
+      "borders": [
+        "AGO",
+        "BWA",
+        "ZAF",
+        "ZMB"
+      ],
+      "cca3": "NAM"
+    },
+    {
+      "id": "ne",
+      "name": "Niger",
+      "germanName": "Niger",
+      "capital": [
+        "Niamey"
+      ],
+      "areaKm2": 1267000,
+      "population": 26312034,
+      "landlocked": true,
+      "borders": [
+        "DZA",
+        "BEN",
+        "BFA",
+        "TCD",
+        "LBY",
+        "MLI",
+        "NGA"
+      ],
+      "cca3": "NER"
+    },
+    {
+      "id": "ng",
+      "name": "Nigeria",
+      "germanName": "Nigeria",
+      "capital": [
+        "Abuja"
+      ],
+      "areaKm2": 923768,
+      "population": 223800000,
+      "landlocked": false,
+      "borders": [
+        "BEN",
+        "CMR",
+        "TCD",
+        "NER"
+      ],
+      "cca3": "NGA"
+    },
+    {
+      "id": "ni",
+      "name": "Nicaragua",
+      "germanName": "Nicaragua",
+      "capital": [
+        "Managua"
+      ],
+      "areaKm2": 130373,
+      "population": 6803886,
+      "landlocked": false,
+      "borders": [
+        "CRI",
+        "HND"
+      ],
+      "cca3": "NIC"
+    },
+    {
+      "id": "nl",
+      "name": "Netherlands",
+      "germanName": "Niederlande",
+      "capital": [
+        "Amsterdam"
+      ],
+      "areaKm2": 41865,
+      "population": 18100436,
+      "landlocked": false,
+      "borders": [
+        "BEL",
+        "DEU"
+      ],
+      "cca3": "NLD"
+    },
+    {
+      "id": "no",
+      "name": "Norway",
+      "germanName": "Norwegen",
+      "capital": [
+        "Oslo"
+      ],
+      "areaKm2": 386224,
+      "population": 5606944,
+      "landlocked": false,
+      "borders": [
+        "FIN",
+        "SWE",
+        "RUS"
+      ],
+      "cca3": "NOR"
+    },
+    {
+      "id": "np",
+      "name": "Nepal",
+      "germanName": "Nepal",
+      "capital": [
+        "Kathmandu"
+      ],
+      "areaKm2": 147181,
+      "population": 29911840,
+      "landlocked": true,
+      "borders": [
+        "CHN",
+        "IND"
+      ],
+      "cca3": "NPL"
+    },
+    {
+      "id": "nr",
+      "name": "Nauru",
+      "germanName": "Nauru",
+      "capital": [
+        "Yaren"
+      ],
+      "areaKm2": 21,
+      "population": 11680,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "NRU"
+    },
+    {
+      "id": "nz",
+      "name": "New Zealand",
+      "germanName": "Neuseeland",
+      "capital": [
+        "Wellington"
+      ],
+      "areaKm2": 268838,
+      "population": 5324700,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "NZL"
+    },
+    {
+      "id": "om",
+      "name": "Oman",
+      "germanName": "Oman",
+      "capital": [
+        "Muscat"
+      ],
+      "areaKm2": 309500,
+      "population": 5343630,
+      "landlocked": false,
+      "borders": [
+        "SAU",
+        "ARE",
+        "YEM"
+      ],
+      "cca3": "OMN"
+    },
+    {
+      "id": "pa",
+      "name": "Panama",
+      "germanName": "Panama",
+      "capital": [
+        "Panama City"
+      ],
+      "areaKm2": 75417,
+      "population": 4064780,
+      "landlocked": false,
+      "borders": [
+        "COL",
+        "CRI"
+      ],
+      "cca3": "PAN"
+    },
+    {
+      "id": "pe",
+      "name": "Peru",
+      "germanName": "Peru",
+      "capital": [
+        "Lima"
+      ],
+      "areaKm2": 1285216,
+      "population": 34350244,
+      "landlocked": false,
+      "borders": [
+        "BOL",
+        "BRA",
+        "CHL",
+        "COL",
+        "ECU"
+      ],
+      "cca3": "PER"
+    },
+    {
+      "id": "pg",
+      "name": "Papua New Guinea",
+      "germanName": "Papua-Neuguinea",
+      "capital": [
+        "Port Moresby"
+      ],
+      "areaKm2": 462840,
+      "population": 11781559,
+      "landlocked": false,
+      "borders": [
+        "IDN"
+      ],
+      "cca3": "PNG"
+    },
+    {
+      "id": "ph",
+      "name": "Philippines",
+      "germanName": "Philippinen",
+      "capital": [
+        "Manila"
+      ],
+      "areaKm2": 342353,
+      "population": 114123600,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "PHL"
+    },
+    {
+      "id": "pk",
+      "name": "Pakistan",
+      "germanName": "Pakistan",
+      "capital": [
+        "Islamabad"
+      ],
+      "areaKm2": 796095,
+      "population": 241499431,
+      "landlocked": false,
+      "borders": [
+        "AFG",
+        "CHN",
+        "IND",
+        "IRN"
+      ],
+      "cca3": "PAK"
+    },
+    {
+      "id": "pl",
+      "name": "Poland",
+      "germanName": "Polen",
+      "capital": [
+        "Warsaw"
+      ],
+      "areaKm2": 312679,
+      "population": 37392000,
+      "landlocked": false,
+      "borders": [
+        "BLR",
+        "CZE",
+        "DEU",
+        "LTU",
+        "RUS",
+        "SVK",
+        "UKR"
+      ],
+      "cca3": "POL"
+    },
+    {
+      "id": "pt",
+      "name": "Portugal",
+      "germanName": "Portugal",
+      "capital": [
+        "Lisbon"
+      ],
+      "areaKm2": 92090,
+      "population": 10749635,
+      "landlocked": false,
+      "borders": [
+        "ESP"
+      ],
+      "cca3": "PRT"
+    },
+    {
+      "id": "pw",
+      "name": "Palau",
+      "germanName": "Palau",
+      "capital": [
+        "Ngerulmud"
+      ],
+      "areaKm2": 459,
+      "population": 16733,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "PLW"
+    },
+    {
+      "id": "py",
+      "name": "Paraguay",
+      "germanName": "Paraguay",
+      "capital": [
+        "Asunción"
+      ],
+      "areaKm2": 406752,
+      "population": 6109644,
+      "landlocked": true,
+      "borders": [
+        "ARG",
+        "BOL",
+        "BRA"
+      ],
+      "cca3": "PRY"
+    },
+    {
+      "id": "qa",
+      "name": "Qatar",
+      "germanName": "Katar",
+      "capital": [
+        "Doha"
+      ],
+      "areaKm2": 11586,
+      "population": 3173024,
+      "landlocked": false,
+      "borders": [
+        "SAU"
+      ],
+      "cca3": "QAT"
+    },
+    {
+      "id": "ro",
+      "name": "Romania",
+      "germanName": "Rumänien",
+      "capital": [
+        "Bucharest"
+      ],
+      "areaKm2": 238391,
+      "population": 19036031,
+      "landlocked": false,
+      "borders": [
+        "BGR",
+        "HUN",
+        "MDA",
+        "SRB",
+        "UKR"
+      ],
+      "cca3": "ROU"
+    },
+    {
+      "id": "rs",
+      "name": "Serbia",
+      "germanName": "Serbien",
+      "capital": [
+        "Belgrade"
+      ],
+      "areaKm2": 77589,
+      "population": 6567783,
+      "landlocked": true,
+      "borders": [
+        "BIH",
+        "BGR",
+        "HRV",
+        "HUN",
+        "UNK",
+        "MKD",
+        "MNE",
+        "ROU"
+      ],
+      "cca3": "SRB"
+    },
+    {
+      "id": "ru",
+      "name": "Russia",
+      "germanName": "Russland",
+      "capital": [
+        "Moscow"
+      ],
+      "areaKm2": 17098246,
+      "population": 146028325,
+      "landlocked": false,
+      "borders": [
+        "AZE",
+        "BLR",
+        "CHN",
+        "EST",
+        "FIN",
+        "GEO",
+        "KAZ",
+        "PRK",
+        "LVA",
+        "LTU",
+        "MNG",
+        "NOR",
+        "POL",
+        "UKR"
+      ],
+      "cca3": "RUS"
+    },
+    {
+      "id": "rw",
+      "name": "Rwanda",
+      "germanName": "Ruanda",
+      "capital": [
+        "Kigali"
+      ],
+      "areaKm2": 26338,
+      "population": 14104969,
+      "landlocked": true,
+      "borders": [
+        "BDI",
+        "COD",
+        "TZA",
+        "UGA"
+      ],
+      "cca3": "RWA"
+    },
+    {
+      "id": "sa",
+      "name": "Saudi Arabia",
+      "germanName": "Saudi-Arabien",
+      "capital": [
+        "Riyadh"
+      ],
+      "areaKm2": 2149690,
+      "population": 35300280,
+      "landlocked": false,
+      "borders": [
+        "IRQ",
+        "JOR",
+        "KWT",
+        "OMN",
+        "QAT",
+        "ARE",
+        "YEM"
+      ],
+      "cca3": "SAU"
+    },
+    {
+      "id": "sb",
+      "name": "Solomon Islands",
+      "germanName": "Salomonen",
+      "capital": [
+        "Honiara"
+      ],
+      "areaKm2": 28896,
+      "population": 750325,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "SLB"
+    },
+    {
+      "id": "sc",
+      "name": "Seychelles",
+      "germanName": "Seychellen",
+      "capital": [
+        "Victoria"
+      ],
+      "areaKm2": 452,
+      "population": 122729,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "SYC"
+    },
+    {
+      "id": "sd",
+      "name": "Sudan",
+      "germanName": "Sudan",
+      "capital": [
+        "Khartoum"
+      ],
+      "areaKm2": 1886068,
+      "population": 51662000,
+      "landlocked": false,
+      "borders": [
+        "CAF",
+        "TCD",
+        "EGY",
+        "ERI",
+        "ETH",
+        "LBY",
+        "SSD"
+      ],
+      "cca3": "SDN"
+    },
+    {
+      "id": "se",
+      "name": "Sweden",
+      "germanName": "Schweden",
+      "capital": [
+        "Stockholm"
+      ],
+      "areaKm2": 450295,
+      "population": 10605098,
+      "landlocked": false,
+      "borders": [
+        "FIN",
+        "NOR"
+      ],
+      "cca3": "SWE"
+    },
+    {
+      "id": "sg",
+      "name": "Singapore",
+      "germanName": "Singapur",
+      "capital": [
+        "Singapore"
+      ],
+      "areaKm2": 710,
+      "population": 6110200,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "SGP"
+    },
+    {
+      "id": "si",
+      "name": "Slovenia",
+      "germanName": "Slowenien",
+      "capital": [
+        "Ljubljana"
+      ],
+      "areaKm2": 20273,
+      "population": 2130638,
+      "landlocked": false,
+      "borders": [
+        "AUT",
+        "HRV",
+        "ITA",
+        "HUN"
+      ],
+      "cca3": "SVN"
+    },
+    {
+      "id": "sk",
+      "name": "Slovakia",
+      "germanName": "Slowakei",
+      "capital": [
+        "Bratislava"
+      ],
+      "areaKm2": 49037,
+      "population": 5413813,
+      "landlocked": true,
+      "borders": [
+        "AUT",
+        "CZE",
+        "HUN",
+        "POL",
+        "UKR"
+      ],
+      "cca3": "SVK"
+    },
+    {
+      "id": "sl",
+      "name": "Sierra Leone",
+      "germanName": "Sierra Leone",
+      "capital": [
+        "Freetown"
+      ],
+      "areaKm2": 71740,
+      "population": 9077691,
+      "landlocked": false,
+      "borders": [
+        "GIN",
+        "LBR"
+      ],
+      "cca3": "SLE"
+    },
+    {
+      "id": "sm",
+      "name": "San Marino",
+      "germanName": "San Marino",
+      "capital": [
+        "City of San Marino"
+      ],
+      "areaKm2": 61,
+      "population": 34132,
+      "landlocked": true,
+      "borders": [
+        "ITA"
+      ],
+      "cca3": "SMR"
+    },
+    {
+      "id": "sn",
+      "name": "Senegal",
+      "germanName": "Senegal",
+      "capital": [
+        "Dakar"
+      ],
+      "areaKm2": 196722,
+      "population": 18593258,
+      "landlocked": false,
+      "borders": [
+        "GMB",
+        "GIN",
+        "GNB",
+        "MLI",
+        "MRT"
+      ],
+      "cca3": "SEN"
+    },
+    {
+      "id": "so",
+      "name": "Somalia",
+      "germanName": "Somalia",
+      "capital": [
+        "Mogadishu"
+      ],
+      "areaKm2": 637657,
+      "population": 19655000,
+      "landlocked": false,
+      "borders": [
+        "DJI",
+        "ETH",
+        "KEN"
+      ],
+      "cca3": "SOM"
+    },
+    {
+      "id": "sr",
+      "name": "Suriname",
+      "germanName": "Suriname",
+      "capital": [
+        "Paramaribo"
+      ],
+      "areaKm2": 163820,
+      "population": 616500,
+      "landlocked": false,
+      "borders": [
+        "BRA",
+        "GUF",
+        "GUY"
+      ],
+      "cca3": "SUR"
+    },
+    {
+      "id": "ss",
+      "name": "South Sudan",
+      "germanName": "Südsudan",
+      "capital": [
+        "Juba"
+      ],
+      "areaKm2": 619745,
+      "population": 15786898,
+      "landlocked": true,
+      "borders": [
+        "CAF",
+        "COD",
+        "ETH",
+        "KEN",
+        "SDN",
+        "UGA"
+      ],
+      "cca3": "SSD"
+    },
+    {
+      "id": "st",
+      "name": "São Tomé and Príncipe",
+      "germanName": "São Tomé und Príncipe",
+      "capital": [
+        "São Tomé"
+      ],
+      "areaKm2": 964,
+      "population": 209607,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "STP"
+    },
+    {
+      "id": "sv",
+      "name": "El Salvador",
+      "germanName": "El Salvador",
+      "capital": [
+        "San Salvador"
+      ],
+      "areaKm2": 21041,
+      "population": 6029976,
+      "landlocked": false,
+      "borders": [
+        "GTM",
+        "HND"
+      ],
+      "cca3": "SLV"
+    },
+    {
+      "id": "sy",
+      "name": "Syria",
+      "germanName": "Syrien",
+      "capital": [
+        "Damascus"
+      ],
+      "areaKm2": 185180,
+      "population": 25620000,
+      "landlocked": false,
+      "borders": [
+        "IRQ",
+        "ISR",
+        "JOR",
+        "LBN",
+        "TUR"
+      ],
+      "cca3": "SYR"
+    },
+    {
+      "id": "sz",
+      "name": "Eswatini",
+      "germanName": "Swasiland",
+      "capital": [
+        "Mbabane"
+      ],
+      "areaKm2": 17364,
+      "population": 1235549,
+      "landlocked": true,
+      "borders": [
+        "MOZ",
+        "ZAF"
+      ],
+      "cca3": "SWZ"
+    },
+    {
+      "id": "td",
+      "name": "Chad",
+      "germanName": "Tschad",
+      "capital": [
+        "N'Djamena"
+      ],
+      "areaKm2": 1284000,
+      "population": 19340757,
+      "landlocked": true,
+      "borders": [
+        "CMR",
+        "CAF",
+        "LBY",
+        "NER",
+        "NGA",
+        "SDN"
+      ],
+      "cca3": "TCD"
+    },
+    {
+      "id": "tg",
+      "name": "Togo",
+      "germanName": "Togo",
+      "capital": [
+        "Lomé"
+      ],
+      "areaKm2": 56785,
+      "population": 8095498,
+      "landlocked": false,
+      "borders": [
+        "BEN",
+        "BFA",
+        "GHA"
+      ],
+      "cca3": "TGO"
+    },
+    {
+      "id": "th",
+      "name": "Thailand",
+      "germanName": "Thailand",
+      "capital": [
+        "Bangkok"
+      ],
+      "areaKm2": 513120,
+      "population": 65859640,
+      "landlocked": false,
+      "borders": [
+        "MMR",
+        "KHM",
+        "LAO",
+        "MYS"
+      ],
+      "cca3": "THA"
+    },
+    {
+      "id": "tj",
+      "name": "Tajikistan",
+      "germanName": "Tadschikistan",
+      "capital": [
+        "Dushanbe"
+      ],
+      "areaKm2": 143100,
+      "population": 10499000,
+      "landlocked": true,
+      "borders": [
+        "AFG",
+        "CHN",
+        "KGZ",
+        "UZB"
+      ],
+      "cca3": "TJK"
+    },
+    {
+      "id": "tl",
+      "name": "Timor-Leste",
+      "germanName": "Osttimor",
+      "capital": [
+        "Dili"
+      ],
+      "areaKm2": 14874,
+      "population": 1391221,
+      "landlocked": false,
+      "borders": [
+        "IDN"
+      ],
+      "cca3": "TLS"
+    },
+    {
+      "id": "tm",
+      "name": "Turkmenistan",
+      "germanName": "Turkmenistan",
+      "capital": [
+        "Ashgabat"
+      ],
+      "areaKm2": 488100,
+      "population": 7057841,
+      "landlocked": true,
+      "borders": [
+        "AFG",
+        "IRN",
+        "KAZ",
+        "UZB"
+      ],
+      "cca3": "TKM"
+    },
+    {
+      "id": "tn",
+      "name": "Tunisia",
+      "germanName": "Tunesien",
+      "capital": [
+        "Tunis"
+      ],
+      "areaKm2": 163610,
+      "population": 11972169,
+      "landlocked": false,
+      "borders": [
+        "DZA",
+        "LBY"
+      ],
+      "cca3": "TUN"
+    },
+    {
+      "id": "to",
+      "name": "Tonga",
+      "germanName": "Tonga",
+      "capital": [
+        "Nuku'alofa"
+      ],
+      "areaKm2": 747,
+      "population": 100179,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "TON"
+    },
+    {
+      "id": "tr",
+      "name": "Turkey",
+      "germanName": "Türkei",
+      "capital": [
+        "Ankara"
+      ],
+      "areaKm2": 783562,
+      "population": 85664944,
+      "landlocked": false,
+      "borders": [
+        "ARM",
+        "AZE",
+        "BGR",
+        "GEO",
+        "GRC",
+        "IRN",
+        "IRQ",
+        "SYR"
+      ],
+      "cca3": "TUR"
+    },
+    {
+      "id": "tt",
+      "name": "Trinidad and Tobago",
+      "germanName": "Trinidad und Tobago",
+      "capital": [
+        "Port of Spain"
+      ],
+      "areaKm2": 5130,
+      "population": 1367764,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "TTO"
+    },
+    {
+      "id": "tv",
+      "name": "Tuvalu",
+      "germanName": "Tuvalu",
+      "capital": [
+        "Funafuti"
+      ],
+      "areaKm2": 26,
+      "population": 10643,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "TUV"
+    },
+    {
+      "id": "tz",
+      "name": "Tanzania",
+      "germanName": "Tansania",
+      "capital": [
+        "Dodoma"
+      ],
+      "areaKm2": 947303,
+      "population": 68153004,
+      "landlocked": false,
+      "borders": [
+        "BDI",
+        "COD",
+        "KEN",
+        "MWI",
+        "MOZ",
+        "RWA",
+        "UGA",
+        "ZMB"
+      ],
+      "cca3": "TZA"
+    },
+    {
+      "id": "ua",
+      "name": "Ukraine",
+      "germanName": "Ukraine",
+      "capital": [
+        "Kyiv"
+      ],
+      "areaKm2": 603550,
+      "population": 32862000,
+      "landlocked": false,
+      "borders": [
+        "BLR",
+        "HUN",
+        "MDA",
+        "POL",
+        "ROU",
+        "RUS",
+        "SVK"
+      ],
+      "cca3": "UKR"
+    },
+    {
+      "id": "ug",
+      "name": "Uganda",
+      "germanName": "Uganda",
+      "capital": [
+        "Kampala"
+      ],
+      "areaKm2": 241550,
+      "population": 45905417,
+      "landlocked": true,
+      "borders": [
+        "COD",
+        "KEN",
+        "RWA",
+        "SSD",
+        "TZA"
+      ],
+      "cca3": "UGA"
+    },
+    {
+      "id": "us",
+      "name": "United States",
+      "germanName": "Vereinigte Staaten",
+      "capital": [
+        "Washington, D.C."
+      ],
+      "areaKm2": 9525067,
+      "population": 340110988,
+      "landlocked": false,
+      "borders": [
+        "CAN",
+        "MEX"
+      ],
+      "cca3": "USA"
+    },
+    {
+      "id": "uy",
+      "name": "Uruguay",
+      "germanName": "Uruguay",
+      "capital": [
+        "Montevideo"
+      ],
+      "areaKm2": 181034,
+      "population": 3499451,
+      "landlocked": false,
+      "borders": [
+        "ARG",
+        "BRA"
+      ],
+      "cca3": "URY"
+    },
+    {
+      "id": "uz",
+      "name": "Uzbekistan",
+      "germanName": "Usbekistan",
+      "capital": [
+        "Tashkent"
+      ],
+      "areaKm2": 447400,
+      "population": 37859698,
+      "landlocked": true,
+      "borders": [
+        "AFG",
+        "KAZ",
+        "KGZ",
+        "TJK",
+        "TKM"
+      ],
+      "cca3": "UZB"
+    },
+    {
+      "id": "vc",
+      "name": "Saint Vincent and the Grenadines",
+      "germanName": "St. Vincent und die Grenadinen",
+      "capital": [
+        "Kingstown"
+      ],
+      "areaKm2": 389,
+      "population": 110872,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "VCT"
+    },
+    {
+      "id": "ve",
+      "name": "Venezuela",
+      "germanName": "Venezuela",
+      "capital": [
+        "Caracas"
+      ],
+      "areaKm2": 916445,
+      "population": 28517000,
+      "landlocked": false,
+      "borders": [
+        "BRA",
+        "COL",
+        "GUY"
+      ],
+      "cca3": "VEN"
+    },
+    {
+      "id": "vn",
+      "name": "Vietnam",
+      "germanName": "Vietnam",
+      "capital": [
+        "Hanoi"
+      ],
+      "areaKm2": 331212,
+      "population": 101343800,
+      "landlocked": false,
+      "borders": [
+        "KHM",
+        "CHN",
+        "LAO"
+      ],
+      "cca3": "VNM"
+    },
+    {
+      "id": "vu",
+      "name": "Vanuatu",
+      "germanName": "Vanuatu",
+      "capital": [
+        "Port Vila"
+      ],
+      "areaKm2": 12189,
+      "population": 321409,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "VUT"
+    },
+    {
+      "id": "ws",
+      "name": "Samoa",
+      "germanName": "Samoa",
+      "capital": [
+        "Apia"
+      ],
+      "areaKm2": 2842,
+      "population": 205557,
+      "landlocked": false,
+      "borders": [],
+      "cca3": "WSM"
+    },
+    {
+      "id": "ye",
+      "name": "Yemen",
+      "germanName": "Jemen",
+      "capital": [
+        "Sana'a"
+      ],
+      "areaKm2": 527968,
+      "population": 32684503,
+      "landlocked": false,
+      "borders": [
+        "OMN",
+        "SAU"
+      ],
+      "cca3": "YEM"
+    },
+    {
+      "id": "za",
+      "name": "South Africa",
+      "germanName": "Südafrika",
+      "capital": [
+        "Pretoria",
+        "Bloemfontein",
+        "Cape Town"
+      ],
+      "areaKm2": 1221037,
+      "population": 63100945,
+      "landlocked": false,
+      "borders": [
+        "BWA",
+        "LSO",
+        "MOZ",
+        "NAM",
+        "SWZ",
+        "ZWE"
+      ],
+      "cca3": "ZAF"
+    },
+    {
+      "id": "zm",
+      "name": "Zambia",
+      "germanName": "Sambia",
+      "capital": [
+        "Lusaka"
+      ],
+      "areaKm2": 752612,
+      "population": 19693423,
+      "landlocked": true,
+      "borders": [
+        "AGO",
+        "BWA",
+        "COD",
+        "MWI",
+        "MOZ",
+        "NAM",
+        "TZA",
+        "ZWE"
+      ],
+      "cca3": "ZMB"
+    },
+    {
+      "id": "zw",
+      "name": "Zimbabwe",
+      "germanName": "Simbabwe",
+      "capital": [
+        "Harare"
+      ],
+      "areaKm2": 390757,
+      "population": 17073087,
+      "landlocked": true,
+      "borders": [
+        "BWA",
+        "MOZ",
+        "ZAF",
+        "ZMB"
+      ],
+      "cca3": "ZWE"
+    },
+    {
+      "id": "ps",
+      "name": "Palestine",
+      "germanName": "Palästina",
+      "capital": [
+        "Ramallah",
+        "Jerusalem"
+      ],
+      "areaKm2": 6220,
+      "population": 5483450,
+      "landlocked": false,
+      "borders": [
+        "ISR",
+        "EGY",
+        "JOR"
+      ],
+      "cca3": "PSE"
+    },
+    {
+      "id": "va",
+      "name": "Vatican City",
+      "germanName": "Vatikanstadt",
+      "capital": [
+        "Vatican City"
+      ],
+      "areaKm2": 0.49,
+      "population": 882,
+      "landlocked": true,
+      "borders": [
+        "ITA"
+      ],
+      "cca3": "VAT"
+    }
+  ],
+  "observerRarity": [
+    {
+      "id": "ps",
+      "name": "Palestine",
+      "wikidata": "Q219060",
+      "article": "Palestine",
+      "areaKm2": 6220,
+      "editions": [
+        "acewiki",
+        "afwiki",
+        "alswiki",
+        "angwiki",
+        "anpwiki",
+        "anwiki",
+        "arwiki",
+        "arywiki",
+        "arzwiki",
+        "astwiki",
+        "aswiki",
+        "avwiki",
+        "azbwiki",
+        "azwiki",
+        "bawiki",
+        "bclwiki",
+        "bdrwiki",
+        "be_x_oldwiki",
+        "bewiki",
+        "bewwiki",
+        "bgwiki",
+        "bhwiki",
+        "bnwiki",
+        "brwiki",
+        "bswiki",
+        "btmwiki",
+        "cawiki",
+        "cdowiki",
+        "cewiki",
+        "ckbwiki",
+        "cowiki",
+        "crhwiki",
+        "csbwiki",
+        "cswiki",
+        "cywiki",
+        "dagwiki",
+        "dawiki",
+        "dewiki",
+        "diqwiki",
+        "dtpwiki",
+        "dvwiki",
+        "elwiki",
+        "enwiki",
+        "eowiki",
+        "eswiki",
+        "etwiki",
+        "euwiki",
+        "extwiki",
+        "fatwiki",
+        "fawiki",
+        "fiu_vrowiki",
+        "fiwiki",
+        "fjwiki",
+        "frrwiki",
+        "frwiki",
+        "furwiki",
+        "gagwiki",
+        "gawiki",
+        "gcrwiki",
+        "glwiki",
+        "gnwiki",
+        "gorwiki",
+        "guwiki",
+        "hakwiki",
+        "hawiki",
+        "hawwiki",
+        "hewiki",
+        "hifwiki",
+        "hiwiki",
+        "hrwiki",
+        "hsbwiki",
+        "huwiki",
+        "hywiki",
+        "hywwiki",
+        "iawiki",
+        "ibawiki",
+        "idwiki",
+        "igwiki",
+        "ikwiki",
+        "ilowiki",
+        "iowiki",
+        "isvwiki",
+        "iswiki",
+        "itwiki",
+        "jamwiki",
+        "jawiki",
+        "jvwiki",
+        "kaawiki",
+        "kabwiki",
+        "kawiki",
+        "kbpwiki",
+        "kcgwiki",
+        "kgewiki",
+        "kgwiki",
+        "kiwiki",
+        "kkwiki",
+        "kmwiki",
+        "knwiki",
+        "kowiki",
+        "krcwiki",
+        "kswiki",
+        "kuwiki",
+        "kwwiki",
+        "kywiki",
+        "ladwiki",
+        "lawiki",
+        "lbwiki",
+        "lezwiki",
+        "lfnwiki",
+        "lijwiki",
+        "lowiki",
+        "ltwiki",
+        "lvwiki",
+        "magwiki",
+        "map_bmswiki",
+        "mgwiki",
+        "minwiki",
+        "miwiki",
+        "mkwiki",
+        "mlwiki",
+        "mnwiki",
+        "mswiki",
+        "mtwiki",
+        "mywiki",
+        "nds_nlwiki",
+        "newiki",
+        "nlwiki",
+        "nnwiki",
+        "nowiki",
+        "nywiki",
+        "oswiki",
+        "papwiki",
+        "plwiki",
+        "pnbwiki",
+        "pntwiki",
+        "ptwiki",
+        "quwiki",
+        "rkiwiki",
+        "rowiki",
+        "ruewiki",
+        "ruwiki",
+        "rwwiki",
+        "sahwiki",
+        "satwiki",
+        "scowiki",
+        "scwiki",
+        "sdwiki",
+        "shnwiki",
+        "shwiki",
+        "simplewiki",
+        "siwiki",
+        "skrwiki",
+        "skwiki",
+        "slwiki",
+        "snwiki",
+        "sowiki",
+        "sqwiki",
+        "srwiki",
+        "sswiki",
+        "svwiki",
+        "swwiki",
+        "sylwiki",
+        "szlwiki",
+        "tawiki",
+        "tddwiki",
+        "tetwiki",
+        "tgwiki",
+        "thwiki",
+        "tkwiki",
+        "tlwiki",
+        "tlywiki",
+        "tokwiki",
+        "towiki",
+        "trwiki",
+        "ttwiki",
+        "ugwiki",
+        "ukwiki",
+        "urwiki",
+        "uzwiki",
+        "vecwiki",
+        "viwiki",
+        "vlswiki",
+        "vowiki",
+        "wawiki",
+        "wuuwiki",
+        "xmfwiki",
+        "yowiki",
+        "zeawiki",
+        "zghwiki",
+        "zh_classicalwiki",
+        "zh_min_nanwiki",
+        "zh_yuewiki",
+        "zhwiki"
+      ],
+      "coverage": 193
+    }
+  ]
+}

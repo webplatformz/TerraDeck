@@ -1,0 +1,1052 @@
+[
+  {
+    "id": "ad",
+    "mapName": "Andorra",
+    "continent": "europe",
+    "population": 88406,
+    "areaKm2": 468
+  },
+  {
+    "id": "ae",
+    "mapName": "United Arab Emirates",
+    "continent": "asia",
+    "population": 11294243,
+    "areaKm2": 83600
+  },
+  {
+    "id": "af",
+    "mapName": "Afghanistan",
+    "continent": "asia",
+    "population": 43844000,
+    "areaKm2": 652230
+  },
+  {
+    "id": "ag",
+    "mapName": "Antigua and Barb.",
+    "continent": "north-america",
+    "population": 103603,
+    "areaKm2": 442
+  },
+  {
+    "id": "al",
+    "mapName": "Albania",
+    "continent": "europe",
+    "population": 2363314,
+    "areaKm2": 28748
+  },
+  {
+    "id": "am",
+    "mapName": "Armenia",
+    "continent": "asia",
+    "population": 3076200,
+    "areaKm2": 29743
+  },
+  {
+    "id": "ao",
+    "mapName": "Angola",
+    "continent": "africa",
+    "population": 36170961,
+    "areaKm2": 1246700
+  },
+  {
+    "id": "at",
+    "mapName": "Austria",
+    "continent": "europe",
+    "population": 9200931,
+    "areaKm2": 83871
+  },
+  {
+    "id": "az",
+    "mapName": "Azerbaijan",
+    "continent": "asia",
+    "population": 10241722,
+    "areaKm2": 86600
+  },
+  {
+    "id": "ba",
+    "mapName": "Bosnia and Herz.",
+    "continent": "europe",
+    "population": 3422000,
+    "areaKm2": 51209
+  },
+  {
+    "id": "bb",
+    "mapName": "Barbados",
+    "continent": "north-america",
+    "population": 267800,
+    "areaKm2": 430
+  },
+  {
+    "id": "bd",
+    "mapName": "Bangladesh",
+    "continent": "asia",
+    "population": 169828911,
+    "areaKm2": 147570
+  },
+  {
+    "id": "be",
+    "mapName": "Belgium",
+    "continent": "europe",
+    "population": 11825551,
+    "areaKm2": 30528
+  },
+  {
+    "id": "bf",
+    "mapName": "Burkina Faso",
+    "continent": "africa",
+    "population": 24070553,
+    "areaKm2": 272967
+  },
+  {
+    "id": "bg",
+    "mapName": "Bulgaria",
+    "continent": "europe",
+    "population": 6437360,
+    "areaKm2": 110879
+  },
+  {
+    "id": "bh",
+    "mapName": "Bahrain",
+    "continent": "asia",
+    "population": 1594654,
+    "areaKm2": 765
+  },
+  {
+    "id": "bi",
+    "mapName": "Burundi",
+    "continent": "africa",
+    "population": 12332788,
+    "areaKm2": 27834
+  },
+  {
+    "id": "bj",
+    "mapName": "Benin",
+    "continent": "africa",
+    "population": 13224860,
+    "areaKm2": 112622
+  },
+  {
+    "id": "bn",
+    "mapName": "Brunei",
+    "continent": "asia",
+    "population": 455500,
+    "areaKm2": 5765
+  },
+  {
+    "id": "bs",
+    "mapName": "Bahamas",
+    "continent": "north-america",
+    "population": 398165,
+    "areaKm2": 13943
+  },
+  {
+    "id": "bw",
+    "mapName": "Botswana",
+    "continent": "africa",
+    "population": 2359609,
+    "areaKm2": 582000
+  },
+  {
+    "id": "by",
+    "mapName": "Belarus",
+    "continent": "europe",
+    "population": 9109280,
+    "areaKm2": 207600
+  },
+  {
+    "id": "bz",
+    "mapName": "Belize",
+    "continent": "north-america",
+    "population": 417634,
+    "areaKm2": 22966
+  },
+  {
+    "id": "cd",
+    "mapName": "Dem. Rep. Congo",
+    "continent": "africa",
+    "population": 112832000,
+    "areaKm2": 2344858
+  },
+  {
+    "id": "cf",
+    "mapName": "Central African Rep.",
+    "continent": "africa",
+    "population": 6470307,
+    "areaKm2": 622984
+  },
+  {
+    "id": "cg",
+    "mapName": "Congo",
+    "continent": "africa",
+    "population": 6142180,
+    "areaKm2": 342000
+  },
+  {
+    "id": "ci",
+    "mapName": "Côte d'Ivoire",
+    "continent": "africa",
+    "population": 31719275,
+    "areaKm2": 322463
+  },
+  {
+    "id": "cm",
+    "mapName": "Cameroon",
+    "continent": "africa",
+    "population": 29442327,
+    "areaKm2": 475442
+  },
+  {
+    "id": "co",
+    "mapName": "Colombia",
+    "continent": "south-america",
+    "population": 53057212,
+    "areaKm2": 1141748
+  },
+  {
+    "id": "cv",
+    "mapName": "Cabo Verde",
+    "continent": "africa",
+    "population": 491233,
+    "areaKm2": 4033
+  },
+  {
+    "id": "cy",
+    "mapName": "Cyprus",
+    "continent": "asia",
+    "population": 1442614,
+    "areaKm2": 9251
+  },
+  {
+    "id": "cz",
+    "mapName": "Czechia",
+    "continent": "europe",
+    "population": 10882341,
+    "areaKm2": 78865
+  },
+  {
+    "id": "dj",
+    "mapName": "Djibouti",
+    "continent": "africa",
+    "population": 1066809,
+    "areaKm2": 23200
+  },
+  {
+    "id": "dk",
+    "mapName": "Denmark",
+    "continent": "europe",
+    "population": 6011488,
+    "areaKm2": 43094
+  },
+  {
+    "id": "dm",
+    "mapName": "Dominica",
+    "continent": "north-america",
+    "population": 67408,
+    "areaKm2": 751
+  },
+  {
+    "id": "do",
+    "mapName": "Dominican Rep.",
+    "continent": "north-america",
+    "population": 10771504,
+    "areaKm2": 48671
+  },
+  {
+    "id": "ec",
+    "mapName": "Ecuador",
+    "continent": "south-america",
+    "population": 18103660,
+    "areaKm2": 276841
+  },
+  {
+    "id": "ee",
+    "mapName": "Estonia",
+    "continent": "europe",
+    "population": 1369995,
+    "areaKm2": 45227
+  },
+  {
+    "id": "er",
+    "mapName": "Eritrea",
+    "continent": "africa",
+    "population": 3607000,
+    "areaKm2": 117600
+  },
+  {
+    "id": "et",
+    "mapName": "Ethiopia",
+    "continent": "africa",
+    "population": 111652998,
+    "areaKm2": 1104300
+  },
+  {
+    "id": "fi",
+    "mapName": "Finland",
+    "continent": "europe",
+    "population": 5650325,
+    "areaKm2": 338455
+  },
+  {
+    "id": "fm",
+    "mapName": "Micronesia",
+    "continent": "oceania",
+    "population": 105564,
+    "areaKm2": 702
+  },
+  {
+    "id": "ga",
+    "mapName": "Gabon",
+    "continent": "africa",
+    "population": 2469296,
+    "areaKm2": 267668
+  },
+  {
+    "id": "gd",
+    "mapName": "Grenada",
+    "continent": "north-america",
+    "population": 109021,
+    "areaKm2": 344
+  },
+  {
+    "id": "ge",
+    "mapName": "Georgia",
+    "continent": "asia",
+    "population": 4000921,
+    "areaKm2": 69700
+  },
+  {
+    "id": "gm",
+    "mapName": "Gambia",
+    "continent": "africa",
+    "population": 2422712,
+    "areaKm2": 10689
+  },
+  {
+    "id": "gn",
+    "mapName": "Guinea",
+    "continent": "africa",
+    "population": 14363931,
+    "areaKm2": 245857
+  },
+  {
+    "id": "gq",
+    "mapName": "Eq. Guinea",
+    "continent": "africa",
+    "population": 1668768,
+    "areaKm2": 28051
+  },
+  {
+    "id": "gt",
+    "mapName": "Guatemala",
+    "continent": "north-america",
+    "population": 18079810,
+    "areaKm2": 108889
+  },
+  {
+    "id": "gw",
+    "mapName": "Guinea-Bissau",
+    "continent": "africa",
+    "population": 1781308,
+    "areaKm2": 36125
+  },
+  {
+    "id": "gy",
+    "mapName": "Guyana",
+    "continent": "south-america",
+    "population": 772975,
+    "areaKm2": 214969
+  },
+  {
+    "id": "hn",
+    "mapName": "Honduras",
+    "continent": "north-america",
+    "population": 9892632,
+    "areaKm2": 112492
+  },
+  {
+    "id": "hr",
+    "mapName": "Croatia",
+    "continent": "europe",
+    "population": 3866233,
+    "areaKm2": 56594
+  },
+  {
+    "id": "ht",
+    "mapName": "Haiti",
+    "continent": "north-america",
+    "population": 11867032,
+    "areaKm2": 27750
+  },
+  {
+    "id": "hu",
+    "mapName": "Hungary",
+    "continent": "europe",
+    "population": 9539502,
+    "areaKm2": 93028
+  },
+  {
+    "id": "ie",
+    "mapName": "Ireland",
+    "continent": "europe",
+    "population": 5458600,
+    "areaKm2": 70273
+  },
+  {
+    "id": "il",
+    "mapName": "Israel",
+    "continent": "asia",
+    "population": 10134800,
+    "areaKm2": 21937
+  },
+  {
+    "id": "iq",
+    "mapName": "Iraq",
+    "continent": "asia",
+    "population": 46118793,
+    "areaKm2": 438317
+  },
+  {
+    "id": "ir",
+    "mapName": "Iran",
+    "continent": "asia",
+    "population": 85961000,
+    "areaKm2": 1648195
+  },
+  {
+    "id": "is",
+    "mapName": "Iceland",
+    "continent": "europe",
+    "population": 391810,
+    "areaKm2": 103000
+  },
+  {
+    "id": "jo",
+    "mapName": "Jordan",
+    "continent": "asia",
+    "population": 11734000,
+    "areaKm2": 89342
+  },
+  {
+    "id": "kg",
+    "mapName": "Kyrgyzstan",
+    "continent": "asia",
+    "population": 7281800,
+    "areaKm2": 199951
+  },
+  {
+    "id": "kh",
+    "mapName": "Cambodia",
+    "continent": "asia",
+    "population": 17577760,
+    "areaKm2": 181035
+  },
+  {
+    "id": "ki",
+    "mapName": "Kiribati",
+    "continent": "oceania",
+    "population": 120740,
+    "areaKm2": 811
+  },
+  {
+    "id": "km",
+    "mapName": "Comoros",
+    "continent": "africa",
+    "population": 919901,
+    "areaKm2": 1862
+  },
+  {
+    "id": "kn",
+    "mapName": "St. Kitts and Nevis",
+    "continent": "north-america",
+    "population": 51320,
+    "areaKm2": 261
+  },
+  {
+    "id": "kp",
+    "mapName": "North Korea",
+    "continent": "asia",
+    "population": 25950000,
+    "areaKm2": 120538
+  },
+  {
+    "id": "kw",
+    "mapName": "Kuwait",
+    "continent": "asia",
+    "population": 4881254,
+    "areaKm2": 17818
+  },
+  {
+    "id": "kz",
+    "mapName": "Kazakhstan",
+    "continent": "asia",
+    "population": 20426568,
+    "areaKm2": 2724900
+  },
+  {
+    "id": "la",
+    "mapName": "Laos",
+    "continent": "asia",
+    "population": 7647000,
+    "areaKm2": 236800
+  },
+  {
+    "id": "lb",
+    "mapName": "Lebanon",
+    "continent": "asia",
+    "population": 5490000,
+    "areaKm2": 10452
+  },
+  {
+    "id": "lc",
+    "mapName": "Saint Lucia",
+    "continent": "north-america",
+    "population": 184100,
+    "areaKm2": 616
+  },
+  {
+    "id": "li",
+    "mapName": "Liechtenstein",
+    "continent": "europe",
+    "population": 40900,
+    "areaKm2": 160
+  },
+  {
+    "id": "lk",
+    "mapName": "Sri Lanka",
+    "continent": "asia",
+    "population": 21763170,
+    "areaKm2": 65610
+  },
+  {
+    "id": "lr",
+    "mapName": "Liberia",
+    "continent": "africa",
+    "population": 5248621,
+    "areaKm2": 111369
+  },
+  {
+    "id": "lt",
+    "mapName": "Lithuania",
+    "continent": "europe",
+    "population": 2894886,
+    "areaKm2": 65300
+  },
+  {
+    "id": "lu",
+    "mapName": "Luxembourg",
+    "continent": "europe",
+    "population": 681973,
+    "areaKm2": 2586
+  },
+  {
+    "id": "lv",
+    "mapName": "Latvia",
+    "continent": "europe",
+    "population": 1829000,
+    "areaKm2": 64559
+  },
+  {
+    "id": "ly",
+    "mapName": "Libya",
+    "continent": "africa",
+    "population": 7459000,
+    "areaKm2": 1759540
+  },
+  {
+    "id": "md",
+    "mapName": "Moldova",
+    "continent": "europe",
+    "population": 2749076,
+    "areaKm2": 33847
+  },
+  {
+    "id": "me",
+    "mapName": "Montenegro",
+    "continent": "europe",
+    "population": 623327,
+    "areaKm2": 13812
+  },
+  {
+    "id": "mh",
+    "mapName": "Marshall Is.",
+    "continent": "oceania",
+    "population": 42418,
+    "areaKm2": 181
+  },
+  {
+    "id": "mk",
+    "mapName": "Macedonia",
+    "continent": "europe",
+    "population": 1822612,
+    "areaKm2": 25713
+  },
+  {
+    "id": "ml",
+    "mapName": "Mali",
+    "continent": "africa",
+    "population": 22395489,
+    "areaKm2": 1240192
+  },
+  {
+    "id": "mm",
+    "mapName": "Myanmar",
+    "continent": "asia",
+    "population": 51316756,
+    "areaKm2": 676578
+  },
+  {
+    "id": "mn",
+    "mapName": "Mongolia",
+    "continent": "asia",
+    "population": 3544835,
+    "areaKm2": 1564110
+  },
+  {
+    "id": "mr",
+    "mapName": "Mauritania",
+    "continent": "africa",
+    "population": 4927532,
+    "areaKm2": 1030700
+  },
+  {
+    "id": "mt",
+    "mapName": "Malta",
+    "continent": "europe",
+    "population": 574250,
+    "areaKm2": 316
+  },
+  {
+    "id": "mu",
+    "mapName": "Mauritius",
+    "continent": "africa",
+    "population": 1243741,
+    "areaKm2": 2040
+  },
+  {
+    "id": "mw",
+    "mapName": "Malawi",
+    "continent": "africa",
+    "population": 20734262,
+    "areaKm2": 118484
+  },
+  {
+    "id": "my",
+    "mapName": "Malaysia",
+    "continent": "asia",
+    "population": 34231700,
+    "areaKm2": 330803
+  },
+  {
+    "id": "mz",
+    "mapName": "Mozambique",
+    "continent": "africa",
+    "population": 34090466,
+    "areaKm2": 801590
+  },
+  {
+    "id": "ne",
+    "mapName": "Niger",
+    "continent": "africa",
+    "population": 26312034,
+    "areaKm2": 1267000
+  },
+  {
+    "id": "ng",
+    "mapName": "Nigeria",
+    "continent": "africa",
+    "population": 223800000,
+    "areaKm2": 923768
+  },
+  {
+    "id": "ni",
+    "mapName": "Nicaragua",
+    "continent": "north-america",
+    "population": 6803886,
+    "areaKm2": 130373
+  },
+  {
+    "id": "nl",
+    "mapName": "Netherlands",
+    "continent": "europe",
+    "population": 18100436,
+    "areaKm2": 41865
+  },
+  {
+    "id": "om",
+    "mapName": "Oman",
+    "continent": "asia",
+    "population": 5343630,
+    "areaKm2": 309500
+  },
+  {
+    "id": "pa",
+    "mapName": "Panama",
+    "continent": "north-america",
+    "population": 4064780,
+    "areaKm2": 75417
+  },
+  {
+    "id": "pg",
+    "mapName": "Papua New Guinea",
+    "continent": "oceania",
+    "population": 11781559,
+    "areaKm2": 462840
+  },
+  {
+    "id": "ph",
+    "mapName": "Philippines",
+    "continent": "asia",
+    "population": 114123600,
+    "areaKm2": 342353
+  },
+  {
+    "id": "pk",
+    "mapName": "Pakistan",
+    "continent": "asia",
+    "population": 241499431,
+    "areaKm2": 796095
+  },
+  {
+    "id": "pl",
+    "mapName": "Poland",
+    "continent": "europe",
+    "population": 37392000,
+    "areaKm2": 312679
+  },
+  {
+    "id": "ps",
+    "mapName": "Palestine",
+    "continent": "asia",
+    "population": 5483450,
+    "areaKm2": 6220
+  },
+  {
+    "id": "pt",
+    "mapName": "Portugal",
+    "continent": "europe",
+    "population": 10749635,
+    "areaKm2": 92090
+  },
+  {
+    "id": "pw",
+    "mapName": "Palau",
+    "continent": "oceania",
+    "population": 16733,
+    "areaKm2": 459
+  },
+  {
+    "id": "py",
+    "mapName": "Paraguay",
+    "continent": "south-america",
+    "population": 6109644,
+    "areaKm2": 406752
+  },
+  {
+    "id": "qa",
+    "mapName": "Qatar",
+    "continent": "asia",
+    "population": 3173024,
+    "areaKm2": 11586
+  },
+  {
+    "id": "ro",
+    "mapName": "Romania",
+    "continent": "europe",
+    "population": 19036031,
+    "areaKm2": 238391
+  },
+  {
+    "id": "rs",
+    "mapName": "Serbia",
+    "continent": "europe",
+    "population": 6567783,
+    "areaKm2": 77589
+  },
+  {
+    "id": "ru",
+    "mapName": "Russia",
+    "continent": "asia",
+    "population": 146028325,
+    "areaKm2": 17098246
+  },
+  {
+    "id": "rw",
+    "mapName": "Rwanda",
+    "continent": "africa",
+    "population": 14104969,
+    "areaKm2": 26338
+  },
+  {
+    "id": "sa",
+    "mapName": "Saudi Arabia",
+    "continent": "asia",
+    "population": 35300280,
+    "areaKm2": 2149690
+  },
+  {
+    "id": "sb",
+    "mapName": "Solomon Is.",
+    "continent": "oceania",
+    "population": 750325,
+    "areaKm2": 28896
+  },
+  {
+    "id": "sc",
+    "mapName": "Seychelles",
+    "continent": "africa",
+    "population": 122729,
+    "areaKm2": 452
+  },
+  {
+    "id": "sd",
+    "mapName": "Sudan",
+    "continent": "africa",
+    "population": 51662000,
+    "areaKm2": 1886068
+  },
+  {
+    "id": "se",
+    "mapName": "Sweden",
+    "continent": "europe",
+    "population": 10605098,
+    "areaKm2": 450295
+  },
+  {
+    "id": "sg",
+    "mapName": "Singapore",
+    "continent": "asia",
+    "population": 6110200,
+    "areaKm2": 710
+  },
+  {
+    "id": "si",
+    "mapName": "Slovenia",
+    "continent": "europe",
+    "population": 2130638,
+    "areaKm2": 20273
+  },
+  {
+    "id": "sk",
+    "mapName": "Slovakia",
+    "continent": "europe",
+    "population": 5413813,
+    "areaKm2": 49037
+  },
+  {
+    "id": "sl",
+    "mapName": "Sierra Leone",
+    "continent": "africa",
+    "population": 9077691,
+    "areaKm2": 71740
+  },
+  {
+    "id": "sm",
+    "mapName": "San Marino",
+    "continent": "europe",
+    "population": 34132,
+    "areaKm2": 61
+  },
+  {
+    "id": "sn",
+    "mapName": "Senegal",
+    "continent": "africa",
+    "population": 18593258,
+    "areaKm2": 196722
+  },
+  {
+    "id": "so",
+    "mapName": "Somalia",
+    "continent": "africa",
+    "population": 19655000,
+    "areaKm2": 637657
+  },
+  {
+    "id": "sr",
+    "mapName": "Suriname",
+    "continent": "south-america",
+    "population": 616500,
+    "areaKm2": 163820
+  },
+  {
+    "id": "ss",
+    "mapName": "S. Sudan",
+    "continent": "africa",
+    "population": 15786898,
+    "areaKm2": 619745
+  },
+  {
+    "id": "st",
+    "mapName": "São Tomé and Principe",
+    "continent": "africa",
+    "population": 209607,
+    "areaKm2": 964
+  },
+  {
+    "id": "sv",
+    "mapName": "El Salvador",
+    "continent": "north-america",
+    "population": 6029976,
+    "areaKm2": 21041
+  },
+  {
+    "id": "sy",
+    "mapName": "Syria",
+    "continent": "asia",
+    "population": 25620000,
+    "areaKm2": 185180
+  },
+  {
+    "id": "sz",
+    "mapName": "eSwatini",
+    "continent": "africa",
+    "population": 1235549,
+    "areaKm2": 17364
+  },
+  {
+    "id": "td",
+    "mapName": "Chad",
+    "continent": "africa",
+    "population": 19340757,
+    "areaKm2": 1284000
+  },
+  {
+    "id": "tg",
+    "mapName": "Togo",
+    "continent": "africa",
+    "population": 8095498,
+    "areaKm2": 56785
+  },
+  {
+    "id": "th",
+    "mapName": "Thailand",
+    "continent": "asia",
+    "population": 65859640,
+    "areaKm2": 513120
+  },
+  {
+    "id": "tj",
+    "mapName": "Tajikistan",
+    "continent": "asia",
+    "population": 10499000,
+    "areaKm2": 143100
+  },
+  {
+    "id": "tl",
+    "mapName": "Timor-Leste",
+    "continent": "asia",
+    "population": 1391221,
+    "areaKm2": 14874
+  },
+  {
+    "id": "tm",
+    "mapName": "Turkmenistan",
+    "continent": "asia",
+    "population": 7057841,
+    "areaKm2": 488100
+  },
+  {
+    "id": "tn",
+    "mapName": "Tunisia",
+    "continent": "africa",
+    "population": 11972169,
+    "areaKm2": 163610
+  },
+  {
+    "id": "to",
+    "mapName": "Tonga",
+    "continent": "oceania",
+    "population": 100179,
+    "areaKm2": 747
+  },
+  {
+    "id": "tr",
+    "mapName": "Turkey",
+    "continent": "asia",
+    "population": 85664944,
+    "areaKm2": 783562
+  },
+  {
+    "id": "tt",
+    "mapName": "Trinidad and Tobago",
+    "continent": "north-america",
+    "population": 1367764,
+    "areaKm2": 5130
+  },
+  {
+    "id": "tz",
+    "mapName": "Tanzania",
+    "continent": "africa",
+    "population": 68153004,
+    "areaKm2": 947303
+  },
+  {
+    "id": "ua",
+    "mapName": "Ukraine",
+    "continent": "europe",
+    "population": 32862000,
+    "areaKm2": 603550
+  },
+  {
+    "id": "ug",
+    "mapName": "Uganda",
+    "continent": "africa",
+    "population": 45905417,
+    "areaKm2": 241550
+  },
+  {
+    "id": "uz",
+    "mapName": "Uzbekistan",
+    "continent": "asia",
+    "population": 37859698,
+    "areaKm2": 447400
+  },
+  {
+    "id": "vc",
+    "mapName": "St. Vin. and Gren.",
+    "continent": "north-america",
+    "population": 110872,
+    "areaKm2": 389
+  },
+  {
+    "id": "ve",
+    "mapName": "Venezuela",
+    "continent": "south-america",
+    "population": 28517000,
+    "areaKm2": 916445
+  },
+  {
+    "id": "ws",
+    "mapName": "Samoa",
+    "continent": "oceania",
+    "population": 205557,
+    "areaKm2": 2842
+  },
+  {
+    "id": "ye",
+    "mapName": "Yemen",
+    "continent": "asia",
+    "population": 32684503,
+    "areaKm2": 527968
+  },
+  {
+    "id": "za",
+    "mapName": "South Africa",
+    "continent": "africa",
+    "population": 63100945,
+    "areaKm2": 1221037
+  },
+  {
+    "id": "zm",
+    "mapName": "Zambia",
+    "continent": "africa",
+    "population": 19693423,
+    "areaKm2": 752612
+  },
+  {
+    "id": "zw",
+    "mapName": "Zimbabwe",
+    "continent": "africa",
+    "population": 17073087,
+    "areaKm2": 390757
+  }
+]

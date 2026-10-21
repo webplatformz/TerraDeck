@@ -1,6 +1,8 @@
 import type { ContinentId, CountryId, RosterEntry } from '../domain/types'
 import { isRarity, type Rarity } from '../domain/rarity'
 import catalog from './generated/rarity.json'
+import additions from './generated/country-additions.json'
+import { CONTINENTS } from './continents'
 
 export interface Country extends RosterEntry {
   id: CountryId
@@ -16,7 +18,7 @@ export interface Country extends RosterEntry {
 
 /** Names, capitals and facts are translated: see `countries` in src/i18n/locales/*.json. */
 
-const raw: Omit<Country, 'number' | 'rarity'>[] = [
+const original: Omit<Country, 'number' | 'rarity'>[] = [
   { id: 'fr', mapName: 'France', continent: 'europe', population: 68_400_000, areaKm2: 551_695 },
   { id: 'it', mapName: 'Italy', continent: 'europe', population: 59_000_000, areaKm2: 302_068 },
   { id: 'no', mapName: 'Norway', continent: 'europe', population: 5_550_000, areaKm2: 385_207 },
@@ -59,7 +61,13 @@ const raw: Omit<Country, 'number' | 'rarity'>[] = [
   { id: 'vu', mapName: 'Vanuatu', continent: 'oceania', population: 321_409, areaKm2: 12_189 },
 ]
 
-export const COUNTRIES: readonly Country[] = raw.map((c, i) => {
+const newCountries: Omit<Country, 'number' | 'rarity'>[] = additions.map(c => {
+  const continent = CONTINENTS.find(continent => continent.id === c.continent)?.id
+  if (!continent) throw new Error(`Invalid continent for ${c.id}`)
+  return { ...c, continent }
+})
+
+export const COUNTRIES: readonly Country[] = [...original, ...newCountries].map((c, i) => {
   const entry = Object.entries(catalog).find(([id]) => id === c.id)?.[1]
   if (!entry || !isRarity(entry.grade)) throw new Error(`Missing or invalid rarity for ${c.id}`)
   return { ...c, number: i + 1, rarity: entry.grade }
