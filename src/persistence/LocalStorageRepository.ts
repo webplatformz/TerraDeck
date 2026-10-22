@@ -6,12 +6,18 @@ export const STORAGE_KEY = 'terradeck:save:v1'
 
 export class LocalStorageRepository implements ProgressRepository {
   constructor(
-    private readonly storage: Storage = window.localStorage,
+    private readonly storage?: Storage,
     private readonly key: string = STORAGE_KEY,
   ) {}
 
   async load(): Promise<GameState | null> {
-    const raw = this.storage.getItem(this.key)
+    let raw: string | null
+    try {
+      raw = this.getStorage().getItem(this.key)
+    } catch (error) {
+      console.warn('TerraDeck: could not load progress; playing in memory', error)
+      return null
+    }
     if (raw === null) return null
     const state = this.parse(raw)
     if (!state) this.backupCorrupt(raw)
@@ -20,7 +26,7 @@ export class LocalStorageRepository implements ProgressRepository {
 
   async save(state: GameState): Promise<void> {
     try {
-      this.storage.setItem(this.key, JSON.stringify(state))
+      this.getStorage().setItem(this.key, JSON.stringify(state))
     } catch (err) {
       // Quota exceeded or storage disabled (e.g. some private modes): keep playing in memory.
       console.warn('TerraDeck: could not save progress', err)
@@ -28,12 +34,16 @@ export class LocalStorageRepository implements ProgressRepository {
   }
 
   async clear(): Promise<void> {
-    this.storage.removeItem(this.key)
+    try {
+      this.getStorage().removeItem(this.key)
+    } catch (error) {
+      console.warn('TerraDeck: could not clear saved progress', error)
+    }
   }
 
   subscribe(listener: (state: GameState | null) => void): () => void {
     const onStorage = (e: StorageEvent) => {
-      if (e.storageArea !== this.storage || (e.key !== this.key && e.key !== null)) return
+      if ((e.key !== this.key && e.key !== null) || e.storageArea !== this.getStorage()) return
       listener(e.newValue === null ? null : this.parse(e.newValue))
     }
     window.addEventListener('storage', onStorage)
@@ -48,12 +58,20 @@ export class LocalStorageRepository implements ProgressRepository {
     }
   }
 
+  private getStorage(): Storage {
+    return this.storage ?? window.localStorage
+  }
+
   private backupCorrupt(raw: string) {
     try {
-      this.storage.setItem(`${this.key}:corrupt:${Date.now()}`, raw)
+      this.getStorage().setItem(`${this.key}:corrupt:${Date.now()}`, raw)
     } catch {
       // Ignore: losing an unreadable save is acceptable.
     }
-    this.storage.removeItem(this.key)
+    try {
+      this.getStorage().removeItem(this.key)
+    } catch (error) {
+      console.warn('TerraDeck: could not remove unreadable progress', error)
+    }
   }
 }

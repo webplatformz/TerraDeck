@@ -12,7 +12,7 @@
     "brandHome": "TerraDeck – go to Atlas",
     "home": "Atlas",
     "collection": "Collection",
-    "about": "How to play"
+    "about": "Help & FAQ"
   },
   "home": {
     "eyebrow": "The Explorer's Atlas",
@@ -35,8 +35,8 @@
     "more": "More",
     "collectionTitle": "Your collection",
     "collectionSub": "Cards, stamps and undiscovered lands",
-    "aboutTitle": "How to play",
-    "aboutSub": "Packs, stamps and the map"
+    "aboutTitle": "How to play & FAQ",
+    "aboutSub": "Your field guide, curious questions and project notes"
   },
   "pack": {
     "kicker": "Expedition Pack",
@@ -139,12 +139,101 @@
     "stampsText": "Get both answers right first time to earn the silver Visitor stamp. Do it again to earn the gold Explorer stamp: two stamps unlock the country's card and take it out of future packs. A mistake shows you the answer but never removes stamps you already have.",
     "sources": "Sources",
     "rarityTitle": "Discover rarity",
-    "rarityText": "Your first pack reveals a country's name and fixed rarity. Five grades run from Common to Legendary, based mostly on Wikipedia language coverage and partly on size, not on a country's value. Switzerland is Legendary by a playful creator override. Higher grades are only slightly less likely in packs; all countries need the same two stamps: Visitor and Explorer.",
+    "rarityText": "Your first pack reveals a country's name and fixed rarity. Five grades run from Common to Legendary, based mostly on Wikipedia language coverage and partly on size, not on a country's value. Higher grades are only slightly less likely in packs; all countries need the same two stamps: Visitor and Explorer.",
     "sourceRarity": "Rarity: frozen Wikidata Wikipedia-language coverage and REST Countries area data. Coverage is an imperfect familiarity proxy, not a recognition survey.",
     "sourceBorders": "Borders: Natural Earth 1:50m via world-atlas (public domain / ISC).",
     "sourceFlags": "Flags: flag-icons (MIT).",
     "sourceNumbers": "Population and area are rounded recent estimates.",
     "sourceStorage": "Progress and language are stored only in this browser."
+  },
+  "notice": {
+    "eyebrow": "Before you set off",
+    "title": "Welcome to TerraDeck",
+    "project": "TerraDeck is an independent, non-commercial hobby project for playful geography learning — not an official atlas, and not affiliated with or endorsed by any authority or international organisation.",
+    "limitations": "Maps, country facts and game values are simplified and may be incomplete, outdated or wrong. The country selection serves gameplay, not political recognition. Rarity is a playful mix of rough familiarity and size — not a judgement of a country.",
+    "acknowledge": "Understood — explore",
+    "more": "About the project",
+    "sessionOnly": "Your acknowledgement applies for this session, but could not be saved in this browser. This notice may appear again."
+  },
+  "help": {
+    "title": "How to play & FAQ",
+    "intro": "A field guide for your atlas. Tap a question to unfold the answer.",
+    "footerLabel": "Project information",
+    "playing": "Playing TerraDeck",
+    "places": "Which places are included?",
+    "information": "Project & information",
+    "play": {
+      "title": "How do I play and collect cards?",
+      "body": "Open a pack, choose the country's continent, then find it on the unlabelled map and confirm. Both answers correct on the first attempt earn silver Visitor; a second successful encounter earns gold Explorer and unlocks the card. Collected countries leave future packs. A mistake ends the encounter and reveals the answer, but never removes earned stamps."
+    },
+    "packs": {
+      "title": "When do packs return?",
+      "body": "One pack refills every {{cooldown}}, including while the app is closed, up to {{max}} stored packs. The clock pauses when the stack is full and restarts when you open one."
+    },
+    "map": {
+      "title": "How do I pick small countries?",
+      "body": "Pinch or use + and − to zoom, drag to pan, and use Reset to return. Crowded taps can open a magnifier: pick the country inside it, or tap outside to close. Check the highlight before confirming."
+    },
+    "saving": {
+      "title": "Is my progress saved?",
+      "body": "Yes, in this browser only: reloading resumes your progress, but there is no cross-device sync. Clearing site data can erase it; private browsing or blocked/full storage may prevent saving."
+    },
+    "rarity": {
+      "title": "Where does rarity come from?",
+      "body": "Five fixed grades run from Common to Legendary, based mainly on Wikipedia language coverage as a rough familiarity proxy, and partly on size. Smaller, less-covered countries tend to be rarer and slightly less likely in packs. This is a playful estimate, not a survey or a measure of a country's worth."
+    },
+    "roster": {
+      "title": "Which countries are included?",
+      "body": "We start from 193 UN member states plus the two observer states: the Holy See (represented as Vatican City) and Palestine. Five playability exclusions leave {{count}} cards. This UN-based selection is a game convention, not a universal definition of countryhood or political recognition.",
+      "excluded": "Tuvalu has no usable shape in our map data. Vatican City, Monaco, Maldives and Nauru are too small for dependable natural targets on phone maps. These five are excluded from packs and completion totals; we use no artificial location markers.",
+      "wink": "Not in the pack doesn't mean not worth exploring. Five fantastic places — perhaps you'll discover them in person one day!"
+    },
+    "territories": {
+      "title": "Why are French Guiana and other areas gray?",
+      "body": "French Guiana is part of France, not a separate sovereign state. Overseas regions and dependencies have no separate cards; some are omitted from targeting and parent silhouettes for playability. Other non-roster entities, such as Kosovo and Taiwan, are excluded under the selection rule, not classified as dependencies. Gray means outside this collection."
+    },
+    "continents": {
+      "title": "Which continent counts?"
+    },
+    "accuracy": {
+      "title": "How accurate is TerraDeck?",
+      "body": "Maps are simplified, population and area are approximate, and capitals use one conventional name or a labeled administrative role. Facts and calculations may be incomplete, outdated or wrong; accuracy, completeness and suitability are not guaranteed. Each country has one card, and any included visible part counts. Check important facts with current sources; do not use this game for navigation or official decisions. Acknowledging the welcome notice does not waive your rights."
+    },
+    "project": {
+      "title": "About the project",
+      "inspiration": "The idea for TerraDeck took shape at a camp, inspired by Bundeshaus Pack. A big thank-you to its developers for the spark and the pack-opening inspiration!",
+      "credit": "Discover Bundeshaus Pack — inspiration & developer credit"
+    },
+    "report": {
+      "title": "Found a mistake?",
+      "body": "Report the country or entry, what seems wrong, and ideally a reliable source. Screenshots are welcome without personal details. Reports are reviewed as this hobby project allows, without a promised response time.",
+      "link": "Report an issue on GitHub",
+      "public": "GitHub Issues are public and posting usually requires a GitHub account. Do not include private information or your browser save. Nothing is uploaded automatically."
+    },
+    "privacy": {
+      "title": "Privacy",
+      "local": "Local storage holds progress, pack timestamps, language and notice acknowledgement, plus separate demo saves and any unreadable-save backups. There are no accounts, cloud saves, application analytics or advertising trackers. Fonts, flags and geography are bundled with the site.",
+      "hosting": "GitHub Pages receives technical request data, such as your IP address, when serving this site. Its privacy practices apply.",
+      "hostLink": "GitHub's privacy statement",
+      "external": "External links send requests to their operators. GitHub handles account information and issue reports under its own policies; submitted reports are public.",
+      "clear": "Clearing site data removes all local saves, backups and preferences; no server copy exists. Resetting game progress leaves language and notice acknowledgement intact."
+    },
+    "sources": {
+      "title": "Sources & credits",
+      "body": "Data, assets and their applicable terms:",
+      "naturalEarth": "Natural Earth — geographic data, public domain",
+      "worldAtlas": "world-atlas — map packaging, ISC; copyright Michael Bostock",
+      "flags": "flag-icons — flags, MIT; copyright Panayiotis Lipiridis",
+      "countries": "REST Countries — names, capitals, population, area and geographic facts",
+      "wikidata": "Wikidata — structured data and Wikipedia sitelinks, CC0",
+      "fraunces": "Fraunces — Fraunces Project Authors, SIL Open Font License 1.1",
+      "inter": "Inter — Inter Project Authors, SIL Open Font License 1.1"
+    },
+    "impressum": {
+      "title": "Impressum",
+      "by": "Project creator: {{name}}",
+      "incomplete": "Incomplete provider information: only the creator's name is published here. No postal address or direct contact details have been supplied. This is not a complete legal notice; applicable publication requirements still need to be checked before release."
+    }
   },
   "rarity": {
     "label": "Rarity: {{grade}}",

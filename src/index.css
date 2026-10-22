@@ -777,6 +777,15 @@ p {
 .app--full {
   height: 100dvh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.app--full > .expedition,
+.app--full > .challenge {
+  flex: 1;
+  min-height: 0;
+  height: auto;
 }
 
 .expedition {
@@ -2103,58 +2112,185 @@ p {
   margin: 0 auto;
 }
 
-.guide {
-  list-style: none;
-  counter-reset: guide;
-  margin: 0;
-  padding: 0;
+.help-page {
   display: grid;
-  gap: 12px;
+  gap: 28px;
 }
 
-.guide li {
-  counter-increment: guide;
-  position: relative;
-  padding: 18px 18px 18px 64px;
+.help-page .page-header {
+  margin-bottom: 0;
+  display: grid;
+  gap: 10px;
 }
 
-.guide li::before {
-  content: counter(guide);
-  position: absolute;
-  left: 18px;
-  top: 16px;
-  width: 32px;
-  height: 32px;
+.help-page .lang-select {
+  justify-self: end;
+}
+
+.help-group {
   display: grid;
-  place-items: center;
-  border-radius: 50%;
-  border: 1.5px solid var(--brass-400);
-  font-family: var(--font-display);
-  font-weight: 700;
+  gap: 10px;
+}
+
+.help-group > h2 {
+  font-size: 1.2rem;
   color: var(--brass-300);
+  margin-bottom: 4px;
 }
 
-.guide h2,
-.credits h2 {
-  font-size: 1.15rem;
-  margin-bottom: 6px;
+.help-entry {
+  scroll-margin-top: 80px;
 }
 
-.guide p,
-.credits li {
+.help-entry summary {
+  min-height: 56px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  list-style: none;
+  border-radius: var(--radius);
+}
+
+.help-entry summary::-webkit-details-marker {
+  display: none;
+}
+
+.help-entry summary h3 {
+  font-size: 1.03rem;
+  line-height: 1.4;
+}
+
+.help-entry summary > span {
+  color: var(--brass-300);
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.help-entry[open] summary > span {
+  transform: rotate(45deg);
+}
+
+.help-answer {
+  display: grid;
+  gap: 14px;
+  padding: 0 16px 18px;
+}
+
+.help-answer,
+.help-page .page-header > p:not(.eyebrow),
+.notice-copy {
   color: var(--paper-300);
-  line-height: 1.55;
+  line-height: 1.65;
   font-size: 0.93rem;
 }
 
-.credits {
-  margin-top: 16px;
-  padding: 18px;
+.help-answer ul {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
 }
 
-.credits ul {
+.help-answer a,
+.info-footer a,
+.notice-links a {
+  color: var(--brass-300);
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
+
+.help-aside {
+  font-style: italic;
+}
+
+.help-draft,
+.notice-storage-hint {
+  border-left: 3px solid var(--brass-400);
+  padding: 10px 14px;
+  background: rgba(201, 162, 74, 0.09);
+}
+
+.notice-storage-hint {
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.info-footer {
+  margin-top: 28px;
+  padding: 12px 0;
+}
+
+.info-footer nav,
+.notice-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 16px;
+}
+
+.info-footer a,
+.notice-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.76rem;
+}
+
+.app--full > .info-footer {
+  flex-shrink: 0;
   margin: 0;
-  padding-left: 18px;
+  padding: 0 12px var(--safe-b);
+  border-top: 1px solid rgba(201, 162, 74, 0.2);
+}
+
+.project-notice {
+  color: var(--paper-100);
+  background: linear-gradient(150deg, var(--ocean-700), var(--ocean-900));
+  border: 1px solid var(--brass-500);
+  border-radius: 20px;
+  padding: clamp(18px, 4vw, 30px);
+  width: min(560px, calc(100vw - 24px));
+  max-height: calc(100dvh - 24px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+}
+
+.project-notice::backdrop {
+  background: rgba(4, 10, 22, 0.88);
+}
+
+.notice-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.project-notice h1 {
+  font-size: clamp(1.7rem, 7vw, 2.1rem);
+  line-height: 1.2;
+}
+
+.notice-copy {
+  display: grid;
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.project-notice .btn {
+  white-space: normal;
+  padding: 12px 16px;
+  line-height: 1.4;
+}
+
+.notice-links {
+  margin-top: 12px;
 }
 
 /* ---------- Unlock ---------- */

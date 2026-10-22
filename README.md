@@ -44,6 +44,29 @@ Historical stamp counts and unlock dates are preserved, while progress displays 
 Normal packs refill every **15 minutes**, up to five stored packs. Existing future refill deadlines
 are capped at a 15-minute remaining wait; shorter waits and stored packs are preserved.
 
+### Help and project information
+
+**How to play & FAQ** combines expandable game instructions, the country-selection policy,
+data limitations, privacy and source credits in English and German. Footer links work during
+expeditions too; reading help does not consume a pack or dismiss an active challenge.
+Direct links include `#about/privacy`, `#about/impressum`, `#about/sources` and `#about/project`.
+The existing `#about` link still works.
+
+A short first-visit project notice is informational, not cookie consent or a waiver.
+Explicit acknowledgement is stored separately under `terradeck:project-notice`; the content
+version lives in `src/persistence/noticeStore.ts`. Change it only for substantive notice updates.
+Language changes and game-progress resets do not re-show an acknowledged notice. Escape dismisses
+it for the current app session without recording acknowledgement. Legal/help links remain readable
+before acknowledgement; returning to gameplay shows any still-pending notice.
+If browser storage is unavailable, acknowledgement lasts for the app session and a hint explains it.
+
+Project links and the approved public creator name live in `src/data/project.ts`. Error reports
+use [GitHub Issues](https://github.com/webplatformz/TerraDeck/issues), which are public and generally
+require a GitHub account. The camp inspiration and Bundeshaus Pack developers are credited.
+The **name-only Impressum is explicitly incomplete**: no address or direct contact has been supplied.
+Applicable provider-information requirements must be checked before treating the site as publication-ready;
+the welcome acknowledgement does not make the legal notice complete.
+
 ### Rarity and country content
 
 The curated atlas contains **190 playable countries / 380 mastery stamps**, selected from the
@@ -91,6 +114,7 @@ Mbabane (administrative) and Ramallah (administrative seat). The latter does not
 
 `npm test` uses Node's built-in test runner with `tsx` for TypeScript imports. It covers weighted
 selection, discovery/save compatibility, the exact roster partition, source/catalog/content invariants,
-all-country completion rules, phone-width map visibility and excluded map polygons.
+all-country completion rules, phone-width map visibility, excluded map polygons, help hashes and
+separate/versioned notice preferences (including unavailable storage).
 Lint and the production build remain separate commands. Browser flows are currently checked manually
 with Chrome mobile emulation; a repository-managed end-to-end runner is not configured yet.

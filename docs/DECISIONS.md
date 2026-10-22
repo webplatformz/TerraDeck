@@ -51,7 +51,8 @@
   ID to exactly one canonical map feature and continent. Taiwan, Kosovo, Somaliland, Northern Cyprus
   and every other non-roster map entity remain gray and untappable, even when an alias shares a
   retained country's ISO code. A brief in-game scope/continent note replaces the obsolete test-atlas
-  wording; a comprehensive corner-case FAQ is deferred.
+  wording. The combined Help & FAQ now gives concise explanations of the roster, five deferrals,
+  overseas areas and continent grouping, rather than a comprehensive political FAQ.
 - Frozen public REST Countries metadata, EN/DE names and capitals are in `scripts/atlas/snapshot.json`,
   with source URLs and retrieval date. Figures are approximate, not live statistics. New bilingual
   facts describe sourced landlocked status or land neighbors (or island status when neither applies).
@@ -167,10 +168,55 @@
 - Full-screen overlays (card modal, unlock) render through a portal to `document.body`, because screen enter animations use transforms that would otherwise trap `position: fixed`.
 - Progress is saved in the browser's localStorage under `terradeck:save:v1` (per site origin), so it survives reloads; clearing site data erases it. `?demo` uses a separate key seeded with a partly filled atlas (`src/game/prototypeState.ts`).
 
+## Help, project notice and credits
+
+- **One Help & FAQ page**, grouped into gameplay, included places and project information.
+  Fourteen entries give each topic one home: play/mastery and roster/deferrals are combined,
+  data limitations live under accuracy, inspiration under Project, storage details under Privacy,
+  and Sources is an attribution list. The first-visit notice stays self-contained.
+  Native `details`/`summary` support independent expanded entries and keyboard interaction.
+  The first gameplay answer starts open; other answers stay closed until opened or linked.
+  Footer links reach the project, privacy, sources and Impressum sections, including from expeditions.
+- **Deep links:** `#about/<section>` opens, focuses and scrolls to the relevant entry; existing
+  `#about` works; old `stamps` and `deferred` links resolve to `play` and `roster`.
+  Hash/history navigation is separate from game state and does not answer,
+  consume or dismiss an active encounter. Resume remains available on the help page.
+- **First-visit notice:** short EN/DE text describes the independent, non-commercial learning
+  project, source limitations, neutral selection and playful rarity. A native modal dialog/portal
+  makes the background inert, manages focus, cycles through all interactive controls and scrolls
+  on short screens. Language and legal-information links are accessible within it.
+- Only the explicit acknowledgement action saves the current notice version under
+  `terradeck:project-notice`, independently of progress and language. Escape dismisses for the
+  current app session without storing acknowledgement. Information pages are readable before
+  acknowledgement; returning to gameplay restores a pending notice. Only substantive version
+  changes re-show it for previously acknowledged browsers. This is not cookie consent,
+  a contract or a waiver of statutory rights.
+- Blocked storage must not prevent loading the game/help or trap players in a popup. The notice
+  store reports session-only acknowledgement visibly; progress-storage failures are logged and
+  allow in-memory play, without claiming a durable save.
+- **Corrections:** public GitHub Issues, with a clear public/account-required warning and no
+  automatic uploads. The user chose this instead of publishing an email/address. A report should
+  identify the entry/problem and ideally a reliable source; no promised response deadline.
+- **Impressum:** publish only the user-approved creator name, with an explicit incomplete-provider-
+  information warning. Address, direct contact and jurisdiction have not been supplied, so this is
+  not represented as a complete legal notice or legally ready for publication.
+- The idea arose at a camp, inspired by **Bundeshaus Pack**. Credit its developers collectively
+  and link to the app; do not invent individual contributors, the camp's identity or endorsement.
+- **Privacy:** distinguish browser-local progress/language/notice/demo/backups from GitHub Pages
+  hosting request data. No application analytics, advertising tracking, accounts or cloud saves
+  are currently integrated. External sources, inspiration and public GitHub reports have their own
+  handling. Do not import the reference app's unrelated profiling, accounts or analytics claims.
+- **Sources:** link Natural Earth public-domain data, world-atlas ISC packaging, flag-icons MIT,
+  REST Countries, Wikidata CC0 and Fraunces/Inter SIL OFL fonts. There are no portraits requiring
+  a photo-credit inventory. Current source/license links are in `src/data/project.ts`; EN/DE
+  descriptive copy is in the locale files.
+
 ## Languages (i18n)
 
 - `i18next` + `react-i18next`, one JSON file per language in `src/i18n/locales/` (`en.json`, `de.json`). Keys are typed from `en.json`; `de.json` must match it or the build fails.
-- English is the default. The language is stored under `terradeck:lang` only after the player picks one on the Home screen; it is separate from the game save. `<html lang>` follows the active language.
+- English is the default. The language is stored under `terradeck:lang` only after the player picks one
+  on Home, Help or the first-visit notice; it is separate from the game save. `<html lang>` follows
+  the active language.
 - Country names, capitals, facts and continent names live in the locale files, not in `src/data`. Numbers are formatted per language via `src/i18n/useContent.ts`.
 - German uses standard spelling (ß). Prompts avoid starting with a country name because some names need an article.
 - To add a language: add `locales/<code>.json`, register it in `LANGUAGES` in `src/i18n/index.ts`.

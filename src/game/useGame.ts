@@ -7,16 +7,9 @@ import { LocalStorageRepository, STORAGE_KEY } from '../persistence/LocalStorage
 import type { ProgressRepository } from '../persistence/ProgressRepository'
 import { prototypeState } from './prototypeState'
 import { useNow } from './useNow'
+import { mainHash, routeFromHash, type HelpSection, type MainScreen, type Route } from './navigation'
 
-export type MainScreen = 'home' | 'collection' | 'about'
-export type Screen = MainScreen | 'expedition'
-
-const MAIN_SCREENS: readonly MainScreen[] = ['home', 'collection', 'about']
-
-function screenFromHash(): MainScreen {
-  const hash = window.location.hash.slice(1)
-  return (MAIN_SCREENS as readonly string[]).includes(hash) ? (hash as MainScreen) : 'home'
-}
+export type { MainScreen, Screen } from './navigation'
 
 const params = () => new URLSearchParams(window.location.search)
 export const isDebug = () => params().has('debug')
@@ -28,7 +21,7 @@ export function useGame() {
   const demo = useMemo(isDemo, [])
   const config = debug ? DEBUG_CONFIG : DEFAULT_CONFIG
   const repository = useMemo<ProgressRepository>(
-    () => new LocalStorageRepository(window.localStorage, demo ? `${STORAGE_KEY}:demo` : STORAGE_KEY),
+    () => new LocalStorageRepository(undefined, demo ? `${STORAGE_KEY}:demo` : STORAGE_KEY),
     [demo],
   )
   const freshState = useCallback(
@@ -37,7 +30,8 @@ export function useGame() {
   )
   const [state, setState] = useState<GameState>(() => createInitialState(config))
   const [loaded, setLoaded] = useState(false)
-  const [screen, setScreen] = useState<Screen>(screenFromHash)
+  const [route, setRoute] = useState<Route>(() => routeFromHash(window.location.hash))
+  const { screen, helpSection } = route
   const now = useNow(1000)
   // Set when the current state came from storage (another tab), so it isn't written straight back.
   const fromStorage = useRef(false)
@@ -77,21 +71,23 @@ export function useGame() {
   }, [now, config, loaded])
 
   useEffect(() => {
-    const onHash = () => setScreen((current) => (current === 'expedition' ? current : screenFromHash()))
+    const onHash = () => setRoute(routeFromHash(window.location.hash))
     window.addEventListener('hashchange', onHash)
-    return () => window.removeEventListener('hashchange', onHash)
+    window.addEventListener('popstate', onHash)
+    return () => {
+      window.removeEventListener('hashchange', onHash)
+      window.removeEventListener('popstate', onHash)
+    }
   }, [])
 
-  useEffect(() => {
-    if (screen === 'expedition') return
-    const hash = `#${screen}`
+  const navigate = useCallback((next: MainScreen, section?: HelpSection) => {
+    const hash = mainHash(next, section)
     if (window.location.hash !== hash) window.history.pushState(null, '', hash)
-  }, [screen])
-
-  const navigate = useCallback((next: MainScreen) => setScreen(next), [])
+    setRoute(routeFromHash(hash))
+  }, [])
 
   /** Shows the sealed pack (or the challenge in progress). Nothing is consumed yet. */
-  const goToExpedition = useCallback(() => setScreen('expedition'), [])
+  const goToExpedition = useCallback(() => setRoute({ screen: 'expedition', helpSection: null }), [])
 
   const ripPack = useCallback(
     () => setState((s) => openPack(s, COUNTRIES, Date.now(), Math.random, config)),
@@ -110,8 +106,8 @@ export function useGame() {
 
   const finishExpedition = useCallback((next: MainScreen = 'home') => {
     setState(dismissChallenge)
-    setScreen(next)
-  }, [])
+    navigate(next)
+  }, [navigate])
 
   const addDebugPack = useCallback(
     () => setState((s) => ({ ...s, ...(s.packs + 1 >= config.maxPacks ? { packs: config.maxPacks, refillAt: null } : { packs: s.packs + 1 }) })),
@@ -121,13 +117,14 @@ export function useGame() {
   const resetProgress = useCallback(() => {
     void repository.clear()
     setState(freshState())
-    setScreen('home')
-  }, [repository, freshState])
+    navigate('home')
+  }, [repository, freshState, navigate])
 
   return {
     state,
     loaded,
     screen,
+    helpSection,
     now,
     config,
     debug,

@@ -21,9 +21,13 @@ pack refill, hash screens, Pages deploy). The game goal differs: learning geogra
 - **Pack opening** — tear the pack (drag or tap), reveal "Find: Peru", then the challenge.
 - **Challenge** — step 1 continent picker, step 2 map with select + Confirm, result: stamp earned or answer reveal.
 - **Collection** — grid of 190 card slots (locked silhouettes, stamp progress, unlocked cards); tap to open card detail.
-- **How to play / About** — rules, data sources and credits.
+- **How to play & FAQ** — grouped expandable rules, collection scope and deferrals, data limitations,
+  error reporting, privacy, sources, project credits and a name-only draft Impressum.
+- **First-visit notice** — short bilingual project/data notice with separate acknowledgement storage;
+  help and legal information remain accessible before acknowledgement.
 
 Navigation: screen state in `useGame`, main screens mirrored to the URL hash (`#home`, `#collection`, `#about`);
+help subsections use `#about/<section>` (including privacy, impressum, sources and project);
 pack-opening and challenge phases are not routes. No router library.
 
 ## Architecture

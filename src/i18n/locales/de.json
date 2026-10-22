@@ -12,7 +12,7 @@
     "brandHome": "TerraDeck – zum Atlas",
     "home": "Atlas",
     "collection": "Sammlung",
-    "about": "Spielanleitung"
+    "about": "Hilfe & FAQ"
   },
   "home": {
     "eyebrow": "Der Atlas der Entdecker",
@@ -35,8 +35,8 @@
     "more": "Mehr",
     "collectionTitle": "Deine Sammlung",
     "collectionSub": "Karten, Stempel und unentdeckte Länder",
-    "aboutTitle": "Spielanleitung",
-    "aboutSub": "Päckchen, Stempel und die Karte"
+    "aboutTitle": "Spielanleitung & FAQ",
+    "aboutSub": "Dein Reiseführer, neugierige Fragen und Projekthinweise"
   },
   "pack": {
     "kicker": "Expeditionspäckchen",
@@ -139,12 +139,101 @@
     "findScope": "Dieser kuratierte Atlas enthält {{count}} sammelbare Länder aus einer UN-basierten Auswahl (Mitglieder und die beiden Beobachterstaaten). Tuvalu, Vatikanstadt, Monaco, die Malediven und Nauru sind aus Gründen der Spielbarkeit vorerst ausgenommen. Graue Gebiete liegen außerhalb dieser Sammlung und sind nicht auswählbar; dies ist keine Aussage über ihren Status.",
     "continentRule": "Im Spiel hat jedes Land einen gültigen Kontinent. Russland, die Türkei, Kasachstan, Zypern und der Kaukasus zählen zu Asien; Ägypten zählt zu Afrika. Mittelamerika und die Karibik zählen zu Nordamerika.",
     "rarityTitle": "Seltenheit entdecken",
-    "rarityText": "Das erste Päckchen enthüllt Namen und feste Seltenheit eines Landes. Fünf Stufen reichen von Gewöhnlich bis Legendär. Sie beruhen vor allem auf der Zahl der Wikipedia-Sprachversionen und etwas auf der Fläche, nicht auf dem Wert eines Landes. Die Schweiz ist durch eine spielerische Ausnahme des Entwicklers Legendär. Höhere Stufen erscheinen nur etwas seltener; alle Länder brauchen dieselben zwei Stempel: Besucher und Entdecker.",
+    "rarityText": "Das erste Päckchen enthüllt Namen und feste Seltenheit eines Landes. Fünf Stufen reichen von Gewöhnlich bis Legendär. Sie beruhen vor allem auf der Zahl der Wikipedia-Sprachversionen und etwas auf der Fläche, nicht auf dem Wert eines Landes. Höhere Stufen erscheinen nur etwas seltener; alle Länder brauchen dieselben zwei Stempel: Besucher und Entdecker.",
     "sourceRarity": "Seltenheit: eingefrorene Wikipedia-Sprachabdeckung aus Wikidata und Flächendaten von REST Countries. Die Sprachabdeckung ist nur eine unvollkommene Näherung für Bekanntheit, keine Umfrage.",
     "sourceBorders": "Grenzen: Natural Earth 1:50m über world-atlas (Public Domain / ISC).",
     "sourceFlags": "Flaggen: flag-icons (MIT).",
     "sourceNumbers": "Einwohnerzahl und Fläche sind gerundete aktuelle Schätzungen.",
     "sourceStorage": "Fortschritt und Sprache werden nur in diesem Browser gespeichert."
+  },
+  "notice": {
+    "eyebrow": "Bevor du losziehst",
+    "title": "Willkommen bei TerraDeck",
+    "project": "TerraDeck ist ein unabhängiges, nicht kommerzielles Freizeitprojekt zum spielerischen Geografielernen — kein offizieller Atlas und keiner Behörde oder internationalen Organisation angeschlossen oder von ihr unterstützt.",
+    "limitations": "Karten, Länderangaben und Spielwerte sind vereinfacht und können unvollständig, veraltet oder falsch sein. Die Länderauswahl dient der Spielbarkeit, nicht der politischen Anerkennung. Seltenheit ist ein spielerischer Mix aus grober Bekanntheit und Größe — keine Bewertung eines Landes.",
+    "acknowledge": "Verstanden — auf Entdeckungsreise",
+    "more": "Mehr zum Projekt",
+    "sessionOnly": "Deine Bestätigung gilt für diese Sitzung, konnte aber nicht in diesem Browser gespeichert werden. Der Hinweis kann erneut erscheinen."
+  },
+  "help": {
+    "title": "Spielanleitung & FAQ",
+    "intro": "Ein Reiseführer für deinen Atlas. Tippe auf eine Frage, um die Antwort aufzuklappen.",
+    "footerLabel": "Projektinformationen",
+    "playing": "TerraDeck spielen",
+    "places": "Welche Orte sind dabei?",
+    "information": "Projekt & Informationen",
+    "play": {
+      "title": "Wie spiele und sammle ich Karten?",
+      "body": "Öffne ein Päckchen, wähle den Kontinent des Landes und finde es auf der unbeschrifteten Karte. Bestätige den Ort. Beide Antworten beim ersten Versuch richtig ergeben den silbernen Besucher; eine zweite erfolgreiche Begegnung bringt den goldenen Entdecker und schaltet die Karte frei. Gesammelte Länder erscheinen nicht mehr in Päckchen. Ein Fehler beendet die Begegnung und zeigt die Antwort, entfernt aber nie verdiente Stempel."
+    },
+    "packs": {
+      "title": "Wann kommen neue Päckchen?",
+      "body": "Alle {{cooldown}} kommt ein Päckchen dazu, auch bei geschlossener App, bis höchstens {{max}} gelagert sind. Bei vollem Stapel pausiert die Uhr und startet wieder, sobald du eines öffnest."
+    },
+    "map": {
+      "title": "Wie wähle ich kleine Länder aus?",
+      "body": "Zoome mit zwei Fingern oder + und −, verschiebe die Karte durch Ziehen und kehre mit Zurücksetzen zurück. An engen Stellen erscheint eine Lupe: Wähle darin das Land oder tippe außerhalb zum Schließen. Prüfe die Markierung vor dem Bestätigen."
+    },
+    "saving": {
+      "title": "Wird mein Fortschritt gespeichert?",
+      "body": "Ja, nur in diesem Browser: Neuladen setzt deinen Fortschritt fort, aber es gibt keine geräteübergreifende Synchronisierung. Das Löschen der Websitedaten kann ihn entfernen; privates Surfen oder gesperrter/voller Speicher können das Speichern verhindern."
+    },
+    "rarity": {
+      "title": "Woher kommt die Seltenheit?",
+      "body": "Fünf feste Stufen reichen von Gewöhnlich bis Legendär. Sie beruhen vor allem auf Wikipedia-Sprachabdeckung als grobem Bekanntheitsindikator und etwas auf der Größe. Kleinere, weniger abgedeckte Länder sind tendenziell seltener und erscheinen etwas seltener in Päckchen. Das ist eine spielerische Schätzung, keine Umfrage oder Bewertung eines Landes."
+    },
+    "roster": {
+      "title": "Welche Länder sind dabei?",
+      "body": "Ausgangspunkt sind 193 UN-Mitgliedstaaten und die beiden Beobachterstaaten: der Heilige Stuhl (als Vatikanstadt dargestellt) und Palästina. Fünf Ausnahmen für die Spielbarkeit ergeben {{count}} Karten. Diese UN-basierte Auswahl ist eine Spielkonvention, keine allgemeingültige Definition von Staatlichkeit oder politischer Anerkennung.",
+      "excluded": "Tuvalu hat in unseren Kartendaten keine nutzbare Form. Vatikanstadt, Monaco, die Malediven und Nauru sind auf Handykarten zu klein für verlässliche natürliche Ziele. Diese fünf zählen weder zu Päckchen noch zum Sammlungsabschluss; künstliche Ortsmarker verwenden wir nicht.",
+      "wink": "Nicht im Kartenstapel heißt nicht weniger sehenswert. Fünf großartige Orte — vielleicht entdeckt ihr sie eines Tages vor Ort!"
+    },
+    "territories": {
+      "title": "Warum sind Französisch-Guayana und andere Gebiete grau?",
+      "body": "Französisch-Guayana ist Teil Frankreichs und kein eigener souveräner Staat. Überseeregionen und abhängige Gebiete haben keine eigenen Karten; manche fehlen für die Spielbarkeit auch bei Auswahl und Silhouetten. Andere Orte wie Kosovo und Taiwan sind nach der Auswahlregel ausgeschlossen, nicht als abhängige Gebiete eingeordnet. Grau heißt außerhalb dieser Sammlung."
+    },
+    "continents": {
+      "title": "Welcher Kontinent zählt?"
+    },
+    "accuracy": {
+      "title": "Wie genau ist TerraDeck?",
+      "body": "Karten sind vereinfacht, Bevölkerung und Fläche Näherungswerte. Hauptstädte erscheinen als gebräuchlicher Name oder mit benannter Verwaltungsfunktion. Angaben und Berechnungen können unvollständig, veraltet oder falsch sein; Richtigkeit, Vollständigkeit und Eignung werden nicht garantiert. Jedes Land hat eine Karte, und jeder enthaltene sichtbare Teil zählt. Prüfe wichtige Fakten mit aktuellen Quellen; nutze das Spiel nicht für Navigation oder amtliche Entscheidungen. Die Bestätigung des Willkommenshinweises ist kein Verzicht auf deine Rechte."
+    },
+    "project": {
+      "title": "Über das Projekt",
+      "inspiration": "Die Idee zu TerraDeck entstand bei einem Camp, inspiriert von Bundeshaus Pack. Ein großes Dankeschön an dessen Entwicklerinnen und Entwickler für den Funken und die Inspiration zum Packöffnen!",
+      "credit": "Bundeshaus Pack entdecken — Inspiration & Dank ans Entwicklerteam"
+    },
+    "report": {
+      "title": "Einen Fehler entdeckt?",
+      "body": "Nenne das Land oder den Eintrag, was dir falsch erscheint, und möglichst eine verlässliche Quelle. Screenshots ohne persönliche Angaben helfen ebenfalls. Meldungen werden im Rahmen dieses Freizeitprojekts geprüft, ohne zugesagte Antwortfrist.",
+      "link": "Fehler auf GitHub melden",
+      "public": "GitHub Issues sind öffentlich; zum Schreiben brauchst du in der Regel ein GitHub-Konto. Teile keine privaten Angaben und keinen Browser-Spielstand. Es wird nichts automatisch hochgeladen."
+    },
+    "privacy": {
+      "title": "Datenschutz",
+      "local": "Der lokale Speicher enthält Spielstand, Päckchen-Zeitpunkte, Sprache und Hinweisbestätigung sowie separate Demospielstände und gegebenenfalls Sicherungen unlesbarer Spielstände. Es gibt keine Konten, Cloud-Spielstände, App-Analysedienste oder Werbetracker. Schriften, Flaggen und Geografie werden mit der Website ausgeliefert.",
+      "hosting": "GitHub Pages erhält beim Bereitstellen der Website technische Anfragedaten wie deine IP-Adresse. Dafür gelten dessen Datenschutzpraktiken.",
+      "hostLink": "Datenschutzerklärung von GitHub",
+      "external": "Externe Links senden Anfragen an deren Betreiber. GitHub verarbeitet Kontoinformationen und Fehlermeldungen nach eigenen Regeln; eingereichte Meldungen sind öffentlich.",
+      "clear": "Das Löschen der Websitedaten entfernt alle lokalen Spielstände, Sicherungen und Einstellungen; eine Serverkopie gibt es nicht. Ein Spielstand-Reset lässt Sprache und Hinweisbestätigung bestehen."
+    },
+    "sources": {
+      "title": "Quellen & Credits",
+      "body": "Daten, Inhalte und ihre jeweiligen Bedingungen:",
+      "naturalEarth": "Natural Earth — geografische Daten, gemeinfrei",
+      "worldAtlas": "world-atlas — Kartenaufbereitung, ISC; Copyright Michael Bostock",
+      "flags": "flag-icons — Flaggen, MIT; Copyright Panayiotis Lipiridis",
+      "countries": "REST Countries — Namen, Hauptstädte, Bevölkerung, Fläche und geografische Angaben",
+      "wikidata": "Wikidata — strukturierte Daten und Wikipedia-Sitelinks, CC0",
+      "fraunces": "Fraunces — Fraunces Project Authors, SIL Open Font License 1.1",
+      "inter": "Inter — Inter Project Authors, SIL Open Font License 1.1"
+    },
+    "impressum": {
+      "title": "Impressum",
+      "by": "Projektersteller: {{name}}",
+      "incomplete": "Unvollständige Anbieterangaben: Hier wird nur der Name des Erstellers veröffentlicht. Postanschrift und direkte Kontaktdaten wurden nicht angegeben. Dies ist kein vollständiges Impressum; die geltenden Veröffentlichungspflichten müssen vor einer Veröffentlichung noch geprüft werden."
+    }
   },
   "rarity": {
     "label": "Seltenheit: {{grade}}",
