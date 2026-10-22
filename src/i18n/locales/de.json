@@ -39,26 +39,88 @@
       "oddities": "Expeditionskuriositäten"
     },
     "badges": {
-      "first-encounter": { "name": "Und los!", "description": "Beende deine erste Begegnung, ob richtig oder falsch." },
-      "first-visitor": { "name": "Den Pass, bitte", "description": "Verdiene deinen ersten silbernen Besucherstempel. Sehr offiziell. Fast." },
-      "first-card": { "name": "Die bleibt hier!", "description": "Sammle deine erste Länderkarte." },
-      "discover-10": { "name": "Ich schaue nur", "description": "Entdecke beim Öffnen von Packs 10 verschiedene Länder. Das sagen sie alle." },
-      "encounters-25": { "name": "Gut unterwegs", "description": "Beende 25 Begegnungen." },
-      "collect-10": { "name": "Regal mit Aussicht", "description": "Sammle 10 Länderkarten." },
-      "collect-50": { "name": "Wir brauchen noch ein Regal", "description": "Sammle 50 Länderkarten. Das ist geografisch eskaliert." },
-      "all-continents": { "name": "Kontinentales Frühstück", "description": "Sammle mindestens ein Land aus jedem der sechs Kontinente." },
-      "complete-continent": { "name": "Ein Kapitel abgeschlossen", "description": "Sammle alle spielbaren Länder eines Kontinents. Der Zähler zeigt den Kontinent, der dem Abschluss am nächsten ist." },
-      "complete-atlas": { "name": "Atlas? Durchgespielt", "description": "Sammle alle Länder des aktuellen spielbaren Atlas." },
-      "perfect-5": { "name": "Fünf gute Treffer", "description": "Beende insgesamt fünf perfekte Begegnungen, nicht unbedingt am Stück." },
-      "stamp-continents": { "name": "Sechs Richtungen", "description": "Verdiene auf jedem Kontinent mindestens einen neuen Meisterschaftsstempel." },
-      "discover-50": { "name": "Weiter Horizont", "description": "Entdecke beim Öffnen von Packs 50 verschiedene Länder." },
-      "recovery": { "name": "Dich kenne ich doch!", "description": "Beende eine perfekte Begegnung mit einem zuvor verfehlten Land." },
-      "small-5": { "name": "Abenteuer im Taschenformat", "description": "Sammle fünf Länder aus der Kleinstaatenliste (bis 10.000 km²). Klein auf der Karte, groß im Reiseplan." },
-      "wrong-continent": { "name": "Ungeplanter Umweg", "description": "Wähle zum ersten Mal den falschen Kontinent. Die Karte hat dich freundlich umgeleitet.", "hint": "Manchmal beginnt die Panoramaroute auf einem anderen Kontinent." },
-      "scenic-route": { "name": "Die Panoramaroute", "description": "Sammle ein Land nach mindestens drei erfolglosen Begegnungen damit.", "hint": "Manche Reiseziele sind ein paar zusätzliche Besuche wert." },
-      "islands-5": { "name": "Inselhüpfen", "description": "Sammle fünf Länder aus der Inselländerliste. Geteilte Inseln zählen, der Kontinent Australien nicht." },
-      "landlocked-5": { "name": "Kein Strand? Kein Problem", "description": "Sammle fünf Binnenstaaten. Das Kaspische Meer zählt nicht als Ozean. Den Schnorchel kannst du zu Hause lassen." },
-      "legendary": { "name": "Na, das ist legendär", "description": "Sammle dein erstes legendäres Land." }
+      "first-encounter": {
+        "name": "Und los!",
+        "description": "Beende deine erste Begegnung, ob richtig oder falsch."
+      },
+      "first-visitor": {
+        "name": "Den Pass, bitte",
+        "description": "Verdiene deinen ersten silbernen Besucherstempel. Sehr offiziell. Fast."
+      },
+      "first-card": {
+        "name": "Die bleibt hier!",
+        "description": "Sammle deine erste Länderkarte."
+      },
+      "discover-10": {
+        "name": "Ich schaue nur",
+        "description": "Entdecke beim Öffnen von Packs 10 verschiedene Länder. Das sagen sie alle."
+      },
+      "encounters-25": {
+        "name": "Gut unterwegs",
+        "description": "Beende 25 Begegnungen."
+      },
+      "collect-10": {
+        "name": "Regal mit Aussicht",
+        "description": "Sammle 10 Länderkarten."
+      },
+      "collect-50": {
+        "name": "Wir brauchen noch ein Regal",
+        "description": "Sammle 50 Länderkarten. Das ist geografisch eskaliert."
+      },
+      "all-continents": {
+        "name": "Kontinentales Frühstück",
+        "description": "Sammle mindestens ein Land aus jedem der sechs Kontinente."
+      },
+      "complete-continent": {
+        "name": "Ein Kapitel abgeschlossen",
+        "description": "Sammle alle spielbaren Länder eines Kontinents. Der Zähler zeigt den Kontinent, der dem Abschluss am nächsten ist."
+      },
+      "complete-atlas": {
+        "name": "Atlas? Durchgespielt",
+        "description": "Sammle alle Länder des aktuellen spielbaren Atlas."
+      },
+      "perfect-5": {
+        "name": "Fünf gute Treffer",
+        "description": "Beende insgesamt fünf perfekte Begegnungen, nicht unbedingt am Stück."
+      },
+      "stamp-continents": {
+        "name": "Sechs Richtungen",
+        "description": "Verdiene auf jedem Kontinent mindestens einen neuen Meisterschaftsstempel."
+      },
+      "discover-50": {
+        "name": "Weiter Horizont",
+        "description": "Entdecke beim Öffnen von Packs 50 verschiedene Länder."
+      },
+      "recovery": {
+        "name": "Dich kenne ich doch!",
+        "description": "Beende eine perfekte Begegnung mit einem zuvor verfehlten Land."
+      },
+      "small-5": {
+        "name": "Abenteuer im Taschenformat",
+        "description": "Sammle drei Länder aus der Kleinstaatenliste (bis 10.000 km²). Klein auf der Karte, groß im Reiseplan."
+      },
+      "wrong-continent": {
+        "name": "Ungeplanter Umweg",
+        "description": "Wähle zum ersten Mal den falschen Kontinent. Die Karte hat dich freundlich umgeleitet.",
+        "hint": "Manchmal beginnt die Panoramaroute auf einem anderen Kontinent."
+      },
+      "scenic-route": {
+        "name": "Die Panoramaroute",
+        "description": "Sammle ein Land nach mindestens drei erfolglosen Begegnungen damit.",
+        "hint": "Manche Reiseziele sind ein paar zusätzliche Besuche wert."
+      },
+      "islands-5": {
+        "name": "Inselhüpfen",
+        "description": "Sammle fünf Länder aus der Inselländerliste. Geteilte Inseln zählen, der Kontinent Australien nicht."
+      },
+      "landlocked-5": {
+        "name": "Kein Strand? Kein Problem",
+        "description": "Sammle fünf Binnenstaaten. Das Kaspische Meer zählt nicht als Ozean. Den Schnorchel kannst du zu Hause lassen."
+      },
+      "legendary": {
+        "name": "Na, das ist legendär",
+        "description": "Sammle dein erstes legendäres Land."
+      }
     }
   },
   "home": {
@@ -138,8 +200,18 @@
     "zoomOut": "Herauszoomen",
     "resetView": "Ansicht zurücksetzen"
   },
+  "rosterUpdate": {
+    "title": "Ein kleines Atlas-Update",
+    "unfinished": "{{country}} ist jetzt ausgeschlossen, weil es auf Handykarten nicht zuverlässig auswählbar ist. Deine offene Begegnung wurde beendet und ein Päckchen bis zum Maximum von fünf zurückgegeben. Dein bisheriger Fortschritt bleibt im Sammlungsarchiv erhalten.",
+    "finished": "{{country}} ist jetzt ausgeschlossen, weil es auf Handykarten nicht zuverlässig auswählbar ist. Dein abgeschlossenes Ergebnis und dein Fortschritt bleiben im Archiv erhalten. Es wurden keine zusätzlichen Stempel, Abzeichen oder Päckchen vergeben.",
+    "debug": "Das vorgemerkte Debug-Ziel {{country}} wurde entfernt, weil dieses Land nicht mehr spielbar ist."
+  },
   "collection": {
     "eyebrow": "Deine Sammlung",
+    "archiveTitle": "Sammlungsarchiv",
+    "archiveDescription": "Diese früher entdeckten Länder sind wegen ihrer zu kleinen Kartenziele nicht mehr spielbar. Namen, Stempel und gesammelte Karten bleiben hier erhalten, getrennt vom Atlas-Abschluss.",
+    "archivedCard": "Archiviertes Land — zählt nicht zu Päckchen oder Abschlusszielen.",
+    "archivedProgress": "Dein bisheriger Fortschritt bleibt erhalten. Für diese archivierte Karte gibt es keine weiteren Stempel.",
     "cardsCount": "{{collected}} <muted>/ {{total}} Karten</muted>",
     "filter": "Nach Kontinent filtern",
     "all": "Alle",
@@ -234,9 +306,9 @@
     },
     "roster": {
       "title": "Welche Länder sind dabei?",
-      "body": "Ausgangspunkt sind 193 UN-Mitgliedstaaten und die beiden Beobachterstaaten: der Heilige Stuhl (als Vatikanstadt dargestellt) und Palästina. Fünf Ausnahmen für die Spielbarkeit ergeben {{count}} Karten. Diese UN-basierte Auswahl ist eine Spielkonvention, keine allgemeingültige Definition von Staatlichkeit oder politischer Anerkennung.",
-      "excluded": "Tuvalu hat in unseren Kartendaten keine nutzbare Form. Vatikanstadt, Monaco, die Malediven und Nauru sind auf Handykarten zu klein für verlässliche natürliche Ziele. Diese fünf zählen weder zu Päckchen noch zum Sammlungsabschluss; künstliche Ortsmarker verwenden wir nicht.",
-      "wink": "Nicht im Kartenstapel heißt nicht weniger sehenswert. Fünf großartige Orte — vielleicht entdeckt ihr sie eines Tages vor Ort!"
+      "body": "Unsere 195 Kandidaten sind die 193 UN-Mitgliedstaaten und die beiden Beobachterstaaten: der Heilige Stuhl (als Vatikanstadt dargestellt) und Palästina. 27 Ausnahmen für die Spielbarkeit lassen {{count}} spielbare Länder übrig. Diese UN-basierte Auswahl ist eine Spielkonvention, keine allgemeingültige Definition von Staatlichkeit oder politischer Anerkennung.",
+      "excluded": "Für diese 27 Orte fehlen nutzbare Formen in unseren Kartendaten, oder sie lassen sich auf Handykarten ohne künstliche Ortsmarker nicht zuverlässig auswählen. Sie zählen aus technischen Spielbarkeitsgründen weder zu Päckchen noch zum Sammlungsabschluss — nicht wegen ihrer Bedeutung oder Anerkennung. Entdecke die Orte auf Wikipedia:",
+      "wink": "Nicht im Kartenstapel heißt nicht weniger sehenswert. Großartige Orte — vielleicht entdeckt ihr sie eines Tages vor Ort!"
     },
     "territories": {
       "title": "Warum sind Französisch-Guayana und andere Gebiete grau?",

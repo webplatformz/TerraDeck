@@ -4,6 +4,7 @@ import type { CountryId, GameState } from './types'
 export function isDiscovered(state: GameState, id: CountryId): boolean {
   const progress = state.progress[id]
   return state.activeChallenge?.countryId === id ||
+    state.retiredChallenge?.countryId === id ||
     progress?.discoveredAt !== undefined ||
     (progress?.encounters ?? 0) > 0 ||
     (progress?.stamps ?? 0) > 0 ||

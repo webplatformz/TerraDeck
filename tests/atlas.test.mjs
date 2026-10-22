@@ -3,12 +3,13 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { feature } from 'topojson-client'
 import { geoPath } from 'd3-geo'
-import { COUNTRIES } from '../src/data/countries.ts'
+import { ALL_COUNTRIES, ARCHIVED_COUNTRIES, COUNTRIES } from '../src/data/countries.ts'
 import { continentProjection, framingLand } from '../src/map/projections.ts'
 import { createInitialState, openPack, answerContinent, answerCountry } from '../src/domain/challenge.ts'
 import { DEFAULT_CONFIG } from '../src/domain/config.ts'
-import { DEFERRED, CONTEXT_ONLY_FEATURES } from '../scripts/atlas/policy.mjs'
+import { DEFERRED, MOBILE_DEFERRED, CONTEXT_ONLY_FEATURES } from '../scripts/atlas/policy.mjs'
 import { parseGameState } from '../src/persistence/validate.ts'
+import { loadWorld } from '../src/data/world.ts'
 
 const read = path => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'))
 const reference = read('../scripts/rarity/snapshot.json')
@@ -19,13 +20,21 @@ const atlas = read('../src/data/generated/atlas.json')
 const features = feature(atlas, atlas.objects.countries).features
 const ids = new Set(COUNTRIES.map(c => c.id))
 
-test('exact UN-based candidate partition contains 190 playable and five explicitly deferred entries', () => {
+test('exact UN-based candidate partition contains 168 playable and 27 explicitly deferred entries', () => {
   assert.equal(source.countries.length, 195)
   assert.deepEqual(new Set(source.countries.map(c => c.id)), new Set([...reference.countries.map(c => c.id), 'ps', 'va']))
-  assert.deepEqual(Object.keys(DEFERRED).sort(), ['mc', 'mv', 'nr', 'tv', 'va'])
-  assert.equal(ids.size, 190)
-  assert.equal(COUNTRIES.length * DEFAULT_CONFIG.stampsToUnlock, 380)
+  assert.deepEqual(Object.keys(DEFERRED).sort(), [...MOBILE_DEFERRED, 'mc', 'mv', 'nr', 'tv', 'va'].sort())
+  assert.equal(ids.size, 168)
+  assert.equal(ARCHIVED_COUNTRIES.length, 22)
+  assert.equal(ALL_COUNTRIES.length, 190)
+  assert.equal(COUNTRIES.length * DEFAULT_CONFIG.stampsToUnlock, 336)
+  assert.deepEqual(Object.fromEntries(['common', 'uncommon', 'rare', 'epic', 'legendary'].map(rarity =>
+    [rarity, COUNTRIES.filter(c => c.rarity === rarity).length])), { common: 29, uncommon: 46, rare: 42, epic: 35, legendary: 16 })
   assert.deepEqual(COUNTRIES.map(c => c.id), roster.map(c => c.id))
+  assert.deepEqual(Object.fromEntries(['europe', 'asia', 'africa', 'north-america', 'south-america', 'oceania'].map(id =>
+    [id, COUNTRIES.filter(c => c.continent === id).length])), {
+    europe: 37, asia: 46, africa: 50, 'north-america': 16, 'south-america': 12, oceania: 7,
+  })
   for (const id of Object.keys(DEFERRED)) assert.equal(ids.has(id), false)
   for (const id of ['tw', 'xk', 'gl', 'pr', 'hk', 'ck', 'nu']) assert.equal(ids.has(id), false)
 })
@@ -43,7 +52,8 @@ test('every map feature is either an explicit canonical target or gray context, 
     assert.equal(features.find(f => f.properties.name === name)?.properties.excluded, true, name)
 })
 
-test('all 190 countries have real visible polygons after shared continent framing at both phone widths', () => {
+test('all 168 countries have visible polygons and selectable centroids after shared continent framing at both phone widths', async () => {
+  const world = await loadWorld()
   for (const width of [320, 390]) {
     const w = width - 26, h = 418
     const paths = new Map([...new Set(COUNTRIES.map(c => c.continent))].map(continent => [
@@ -60,6 +70,8 @@ test('all 190 countries have real visible polygons after shared continent framin
       const bounds = path.bounds(f)
       assert.ok(bounds.flat().every(Number.isFinite), `${width}/${c.id} finite bounds`)
       assert.ok(bounds[1][0] > 0 && bounds[0][0] < w && bounds[1][1] > 0 && bounds[0][1] < h, `${width}/${c.id} screen intersection`)
+      const [x, y] = path.centroid(world.mainland.get(c.mapName))
+      assert.ok(x >= 0 && x <= w && y >= 0 && y <= h, `${width}/${c.id} selectable centroid`)
     }
   }
 })

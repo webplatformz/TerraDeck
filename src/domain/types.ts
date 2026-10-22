@@ -32,6 +32,9 @@ export interface GameState {
   achievements?: import('./achievements').AchievementState
   /** Debug-only target for the next opened pack; never used by normal draws. */
   debugCountryId?: string
+  /** Preserves the last retired challenge verbatim, including completed results. */
+  retiredChallenge?: ActiveChallenge
+  rosterNotice?: { countryId?: string; refunded?: boolean; debugCountryId?: string }
   packs: number
   /** When the next pack arrives; null while the stack is full. */
   refillAt: number | null

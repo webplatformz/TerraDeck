@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { answerContinent, answerCountry, createInitialState, dismissChallenge, openPack, syncPacks } from '../domain/challenge'
 import { DEBUG_CONFIG, DEFAULT_CONFIG } from '../domain/config'
 import type { ContinentId, GameState } from '../domain/types'
-import { COUNTRIES } from '../data/countries'
+import { ARCHIVED_COUNTRIES, COUNTRIES } from '../data/countries'
 import { LocalStorageRepository, STORAGE_KEY } from '../persistence/LocalStorageRepository'
 import type { ProgressRepository } from '../persistence/ProgressRepository'
 import { prototypeState } from './prototypeState'
@@ -10,6 +10,9 @@ import { useNow } from './useNow'
 import { mainHash, routeFromHash, type HelpSection, type MainScreen, type Route } from './navigation'
 import { acknowledgeAchievements, emptyAchievements, trackAchievements, type AchievementId } from '../domain/achievements'
 import { addDebugPack as queueDebugPack } from '../domain/debug'
+import { reconcileRoster } from '../domain/rosterUpdate'
+
+const removedIds = ARCHIVED_COUNTRIES.map(c => c.id)
 
 export type { MainScreen, Screen } from './navigation'
 
@@ -37,18 +40,18 @@ export function useGame() {
   const now = useNow(1000)
   const [storageError, setStorageError] = useState(false)
   const mutate = useCallback((change: (state: GameState) => GameState) =>
-    repository.update(freshState, change).then(next => {
+    repository.update(freshState, saved => change(reconcileRoster(saved, removedIds, Date.now(), config))).then(next => {
       setState(next)
       return next
     }).catch((error: unknown) => {
       console.error('TerraDeck: could not update progress', error)
       setStorageError(true)
-    }), [repository, freshState])
+    }), [repository, freshState, config])
 
   useEffect(() => {
     let cancelled = false
     void repository.update(freshState, saved => {
-      const synced = syncPacks(saved, Date.now(), config)
+      const synced = syncPacks(reconcileRoster(saved, removedIds, Date.now(), config), Date.now(), config)
       return synced.achievements ? synced : { ...synced, achievements: emptyAchievements() }
     }).then((saved) => {
       if (cancelled) return
@@ -148,6 +151,8 @@ export function useGame() {
 
   const acknowledgeBadges = useCallback((ids: readonly AchievementId[]) =>
     mutate(s => acknowledgeAchievements(s, ids)), [mutate])
+  const dismissRosterNotice = useCallback(() =>
+    mutate(s => s.rosterNotice ? { ...s, rosterNotice: undefined } : s), [mutate])
 
   return {
     state,
@@ -156,6 +161,7 @@ export function useGame() {
     singleTabOnly: typeof navigator !== 'undefined' && !navigator.locks,
     notificationLock: `${STORAGE_KEY}${demo ? ':demo' : ''}:achievement-notification`,
     acknowledgeBadges,
+    dismissRosterNotice,
     screen,
     helpSection,
     now,

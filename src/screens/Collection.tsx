@@ -3,7 +3,7 @@ import { Trans, useTranslation } from 'react-i18next'
 import { Portal } from '../components/Portal'
 import { CardBack, CardFront } from '../components/Card'
 import { CONTINENTS } from '../data/continents'
-import { COUNTRIES, type Country } from '../data/countries'
+import { ARCHIVED_COUNTRIES, COUNTRIES, type Country } from '../data/countries'
 import type { ContinentId } from '../domain/types'
 import { isDiscovered } from '../domain/discovery'
 import type { Game } from '../game/useGame'
@@ -19,6 +19,8 @@ export function Collection({ game }: { game: Game }) {
   const isCollected = (c: Country) => stampsOf(c) >= config.stampsToUnlock
   const collected = COUNTRIES.filter(isCollected).length
   const shown = COUNTRIES.filter((c) => filter === 'all' || c.continent === filter)
+  const archived = ARCHIVED_COUNTRIES.filter(c => isDiscovered(state, c.id))
+  const isArchived = (c: Country) => ARCHIVED_COUNTRIES.some(entry => entry.id === c.id)
 
   useEffect(() => {
     if (!open) return
@@ -54,17 +56,36 @@ export function Collection({ game }: { game: Game }) {
         ))}
       </ul>
 
+      {archived.length > 0 && (
+        <section className="collection-archive" aria-labelledby="archive-title">
+          <h2 id="archive-title">{t('collection.archiveTitle')}</h2>
+          <p>{t('collection.archiveDescription')}</p>
+          <ul className="card-grid">
+            {archived.map(c => (
+              <li key={c.id}>
+                <button type="button" className="card-button" onClick={() => setOpen(c)}>
+                  {isCollected(c) ? <CardFront country={c} size="sm" /> : <CardBack country={c} stamps={stampsOf(c)} discovered size="sm" />}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {open && (
         <Portal>
         <div className="modal" role="dialog" aria-modal="true" aria-label={countryName(open.id)} onClick={() => setOpen(null)}>
           <div className="modal-body" onClick={(e) => e.stopPropagation()}>
+            {isArchived(open) && <p className="modal-note">{t('collection.archivedCard')}</p>}
             {isCollected(open) ? (
               <CardFront country={open} size="lg" />
             ) : (
               <>
                 <CardBack country={open} stamps={stampsOf(open)} discovered={isDiscovered(state, open.id)} size="lg" />
                 <p className="modal-note">
-                  {isDiscovered(state, open.id)
+                  {isArchived(open)
+                    ? t('collection.archivedProgress')
+                    : isDiscovered(state, open.id)
                     ? t('collection.moreStamps', { count: config.stampsToUnlock - stampsOf(open) })
                     : t('collection.notDiscovered')}
                 </p>

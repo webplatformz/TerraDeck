@@ -125,7 +125,7 @@ export function achievementProgress(
     case 'stamp-continents': current = a.stampedContinents.filter(c => continents.includes(c)).length; target = continents.length; break
     case 'discover-50': current = a.discovered.length; target = 50; break
     case 'recovery': current = Number(a.recovered); break
-    case 'small-5': current = groupCount(ACHIEVEMENT_GROUPS.small); target = 5; break
+    case 'small-5': current = groupCount(ACHIEVEMENT_GROUPS.small); target = 3; break
     case 'wrong-continent': current = Number(a.wrongContinent); break
     case 'scenic-route': current = Number(a.scenic); break
     case 'islands-5': current = groupCount(ACHIEVEMENT_GROUPS.islands); target = 5; break

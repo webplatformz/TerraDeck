@@ -17,11 +17,12 @@ pack refill, hash screens, Pages deploy). The game goal differs: learning geogra
 
 ## Screens
 - **Home** — the sealed pack as hero, pack count (`3 / 5`), countdown to the next pack
-  ("Atlas full" when at 5), collection progress (`7 / 190 cards`) linking to Collection,
+  ("Atlas full" when at 5), collection progress (`7 / 168 cards`) linking to Collection,
   an Achievements card with earned count (`3 / 20`), and How to play / About.
 - **Pack opening** — tear the pack (drag or tap), reveal "Find: Peru", then the challenge.
 - **Challenge** — step 1 continent picker, step 2 map with select + Confirm, result: stamp earned or answer reveal.
-- **Collection** — grid of 190 card slots (locked silhouettes, stamp progress, unlocked cards); tap to open card detail.
+- **Collection** — grid of 168 playable card slots (locked silhouettes, stamp progress, unlocked cards);
+  previously discovered excluded countries appear in a separate archive. Tap either to open card detail.
 - **Achievements / Erfolge** — 20 cosmetic badges in four categories, exact counters and progress bars,
   earned dates, two hinted surprises and grouped silent notifications after encounter/card feedback.
 - **How to play & FAQ** — grouped expandable rules, collection scope and deferrals, data limitations,
@@ -61,11 +62,11 @@ could be added later without touching the rules.
 
 ## Map approach
 - Natural Earth admin-0 1:50m via `world-atlas` TopoJSON (public domain), ISO-3166 ids.
-- Only the 190 retained canonical countries are tappable; non-roster shapes are gray context.
+- Only the 168 retained canonical countries are tappable; non-roster shapes are gray, untappable context.
 - Equal Earth world overview, azimuthal equal-area continent maps, SVG rendering and d3-zoom.
 - After the continent step, auto-fit to the correct continent with every retained country represented.
 - Small countries: geometry-first picking, nearby/ocean snapping and an ambiguity magnifier, not
-  enlarged overlapping hit circles or artificial location markers. Five playability deferrals and
+  enlarged overlapping hit circles or artificial location markers. All 27 playability deferrals and
   one-continent conventions are recorded in [Decisions](DECISIONS.md).
 - Tap selects and highlights; a "Confirm" button submits, so a mis-tap is not counted as a mistake.
 

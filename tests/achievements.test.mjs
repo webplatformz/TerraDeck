@@ -168,10 +168,11 @@ test('explicit groups contain unique playable IDs and match reviewed size/landlo
   assert.equal(ACHIEVEMENT_GROUPS.islands.includes('au'), false)
   for (const group of ['small', 'landlocked', 'islands']) {
     let state = fresh()
-    for (const [i, id] of ACHIEVEMENT_GROUPS[group].slice(0, 5).entries()) {
+    const target = group === 'small' ? 3 : 5
+    for (const [i, id] of ACHIEVEMENT_GROUPS[group].slice(0, target).entries()) {
       const country = COUNTRIES.find(c => c.id === id)
       state = encounter(encounter(state, country), country)
-      assert.equal(earned(state, `${group}-5`), i === 4)
+      assert.equal(earned(state, `${group}-5`), i === target - 1)
     }
   }
 })
@@ -211,13 +212,13 @@ test('completion uses the current roster, checks only a new unlock, and stays ea
   assert.equal(state.achievements.collected.length, 1)
 })
 
-test('full 190-country playthrough completes the atlas without changing mastery or economy', () => {
+test('full 168-country playthrough completes the atlas without changing mastery or economy', () => {
   let state = fresh()
   for (const country of COUNTRIES) state = encounter(encounter(state, country), country)
-  assert.equal(state.achievements.collected.length, 190)
-  assert.equal(state.achievements.perfect, 380)
+  assert.equal(state.achievements.collected.length, 168)
+  assert.equal(state.achievements.perfect, 336)
   assert.equal(earned(state, 'complete-atlas'), true)
-  assert.equal(state.achievements.earned['complete-atlas'].target, 190)
+  assert.equal(state.achievements.earned['complete-atlas'].target, 168)
   assert.ok(COUNTRIES.every(c => state.progress[c.id].stamps === 2))
 })
 

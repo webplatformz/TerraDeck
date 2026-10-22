@@ -8,6 +8,8 @@ import { languageStore, LANGUAGE_STORAGE_KEY } from '../src/persistence/language
 import { createInitialState } from '../src/domain/challenge.ts'
 import { DEFAULT_CONFIG } from '../src/domain/config.ts'
 import { SOURCE_LINKS, PROJECT } from '../src/data/project.ts'
+import { EXCLUDED_COUNTRIES } from '../src/data/excludedCountries.ts'
+import { DEFERRED } from '../scripts/atlas/policy.mjs'
 
 function memoryStorage() {
   const values = new Map()
@@ -91,11 +93,18 @@ test('bilingual help content covers every entry, the approved roster policy and 
       assert.ok(content.help.sources[source.id])
       assert.equal(new URL(source.url).protocol, 'https:')
     }
-    assert.match(content.help.roster.excluded, /Tuvalu/)
+    assert.match(content.help.roster.excluded, /27/)
     assert.match(content.help.territories.body, /Kosovo.*Taiwan/)
     assert.match(content.help.project.inspiration, /Camp|camp/)
     assert.match(content.help.project.inspiration, /Bundeshaus Pack/)
   }
   assert.deepEqual(Object.keys(en.notice).sort(), Object.keys(de.notice).sort())
+  assert.deepEqual(EXCLUDED_COUNTRIES.map(c => c.id).sort(), Object.keys(DEFERRED).sort())
+  for (const c of EXCLUDED_COUNTRIES) {
+    for (const language of ['en', 'de']) {
+      assert.ok(c[language].name)
+      assert.equal(new URL(c[language].wikipediaUrl).hostname, `${language}.wikipedia.org`)
+    }
+  }
   assert.equal(new URL(PROJECT.issuesUrl).pathname, '/webplatformz/TerraDeck/issues')
 })

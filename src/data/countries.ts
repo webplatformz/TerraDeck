@@ -2,6 +2,7 @@ import type { ContinentId, CountryId, RosterEntry } from '../domain/types'
 import { isRarity, type Rarity } from '../domain/rarity'
 import catalog from './generated/rarity.json'
 import additions from './generated/country-additions.json'
+import playableIds from './generated/playable-country-ids.json'
 import { CONTINENTS } from './continents'
 
 export interface Country extends RosterEntry {
@@ -67,10 +68,12 @@ const newCountries: Omit<Country, 'number' | 'rarity'>[] = additions.map(c => {
   return { ...c, continent }
 })
 
-export const COUNTRIES: readonly Country[] = [...original, ...newCountries].map((c, i) => {
+export const ALL_COUNTRIES: readonly Country[] = [...original, ...newCountries].map((c, i) => {
   const entry = Object.entries(catalog).find(([id]) => id === c.id)?.[1]
   if (!entry || !isRarity(entry.grade)) throw new Error(`Missing or invalid rarity for ${c.id}`)
   return { ...c, number: i + 1, rarity: entry.grade }
 })
-export const COUNTRY_BY_ID = Object.fromEntries(COUNTRIES.map((c) => [c.id, c])) as Record<CountryId, Country>
+export const COUNTRIES: readonly Country[] = ALL_COUNTRIES.filter(c => playableIds.includes(c.id))
+export const ARCHIVED_COUNTRIES: readonly Country[] = ALL_COUNTRIES.filter(c => !playableIds.includes(c.id))
+export const COUNTRY_BY_ID = Object.fromEntries(ALL_COUNTRIES.map((c) => [c.id, c])) as Record<CountryId, Country>
 export const COUNTRY_BY_MAP_NAME = Object.fromEntries(COUNTRIES.map((c) => [c.mapName, c])) as Record<string, Country>

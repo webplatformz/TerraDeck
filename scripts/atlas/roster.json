@@ -200,11 +200,6 @@
     "continent": "oceania"
   },
   {
-    "id": "ad",
-    "mapName": "Andorra",
-    "continent": "europe"
-  },
-  {
     "id": "ae",
     "mapName": "United Arab Emirates",
     "continent": "asia"
@@ -213,11 +208,6 @@
     "id": "af",
     "mapName": "Afghanistan",
     "continent": "asia"
-  },
-  {
-    "id": "ag",
-    "mapName": "Antigua and Barb.",
-    "continent": "north-america"
   },
   {
     "id": "al",
@@ -250,11 +240,6 @@
     "continent": "europe"
   },
   {
-    "id": "bb",
-    "mapName": "Barbados",
-    "continent": "north-america"
-  },
-  {
     "id": "bd",
     "mapName": "Bangladesh",
     "continent": "asia"
@@ -273,11 +258,6 @@
     "id": "bg",
     "mapName": "Bulgaria",
     "continent": "europe"
-  },
-  {
-    "id": "bh",
-    "mapName": "Bahrain",
-    "continent": "asia"
   },
   {
     "id": "bi",
@@ -370,11 +350,6 @@
     "continent": "europe"
   },
   {
-    "id": "dm",
-    "mapName": "Dominica",
-    "continent": "north-america"
-  },
-  {
     "id": "do",
     "mapName": "Dominican Rep.",
     "continent": "north-america"
@@ -405,19 +380,9 @@
     "continent": "europe"
   },
   {
-    "id": "fm",
-    "mapName": "Micronesia",
-    "continent": "oceania"
-  },
-  {
     "id": "ga",
     "mapName": "Gabon",
     "continent": "africa"
-  },
-  {
-    "id": "gd",
-    "mapName": "Grenada",
-    "continent": "north-america"
   },
   {
     "id": "ge",
@@ -515,21 +480,6 @@
     "continent": "asia"
   },
   {
-    "id": "ki",
-    "mapName": "Kiribati",
-    "continent": "oceania"
-  },
-  {
-    "id": "km",
-    "mapName": "Comoros",
-    "continent": "africa"
-  },
-  {
-    "id": "kn",
-    "mapName": "St. Kitts and Nevis",
-    "continent": "north-america"
-  },
-  {
     "id": "kp",
     "mapName": "North Korea",
     "continent": "asia"
@@ -553,16 +503,6 @@
     "id": "lb",
     "mapName": "Lebanon",
     "continent": "asia"
-  },
-  {
-    "id": "lc",
-    "mapName": "Saint Lucia",
-    "continent": "north-america"
-  },
-  {
-    "id": "li",
-    "mapName": "Liechtenstein",
-    "continent": "europe"
   },
   {
     "id": "lk",
@@ -605,11 +545,6 @@
     "continent": "europe"
   },
   {
-    "id": "mh",
-    "mapName": "Marshall Is.",
-    "continent": "oceania"
-  },
-  {
     "id": "mk",
     "mapName": "Macedonia",
     "continent": "europe"
@@ -632,16 +567,6 @@
   {
     "id": "mr",
     "mapName": "Mauritania",
-    "continent": "africa"
-  },
-  {
-    "id": "mt",
-    "mapName": "Malta",
-    "continent": "europe"
-  },
-  {
-    "id": "mu",
-    "mapName": "Mauritius",
     "continent": "africa"
   },
   {
@@ -720,11 +645,6 @@
     "continent": "europe"
   },
   {
-    "id": "pw",
-    "mapName": "Palau",
-    "continent": "oceania"
-  },
-  {
     "id": "py",
     "mapName": "Paraguay",
     "continent": "south-america"
@@ -765,11 +685,6 @@
     "continent": "oceania"
   },
   {
-    "id": "sc",
-    "mapName": "Seychelles",
-    "continent": "africa"
-  },
-  {
     "id": "sd",
     "mapName": "Sudan",
     "continent": "africa"
@@ -778,11 +693,6 @@
     "id": "se",
     "mapName": "Sweden",
     "continent": "europe"
-  },
-  {
-    "id": "sg",
-    "mapName": "Singapore",
-    "continent": "asia"
   },
   {
     "id": "si",
@@ -798,11 +708,6 @@
     "id": "sl",
     "mapName": "Sierra Leone",
     "continent": "africa"
-  },
-  {
-    "id": "sm",
-    "mapName": "San Marino",
-    "continent": "europe"
   },
   {
     "id": "sn",
@@ -822,11 +727,6 @@
   {
     "id": "ss",
     "mapName": "S. Sudan",
-    "continent": "africa"
-  },
-  {
-    "id": "st",
-    "mapName": "São Tomé and Principe",
     "continent": "africa"
   },
   {
@@ -880,11 +780,6 @@
     "continent": "africa"
   },
   {
-    "id": "to",
-    "mapName": "Tonga",
-    "continent": "oceania"
-  },
-  {
     "id": "tr",
     "mapName": "Turkey",
     "continent": "asia"
@@ -913,11 +808,6 @@
     "id": "uz",
     "mapName": "Uzbekistan",
     "continent": "asia"
-  },
-  {
-    "id": "vc",
-    "mapName": "St. Vin. and Gren.",
-    "continent": "north-america"
   },
   {
     "id": "ve",

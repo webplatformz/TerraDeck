@@ -95,14 +95,25 @@ the welcome acknowledgement does not make the legal notice complete.
 
 ### Rarity and country content
 
-The curated atlas contains **190 playable countries / 380 mastery stamps**, selected from the
-193 UN members plus the two observer states. **Tuvalu, Vatican City, Monaco, Maldives and Nauru**
-are deferred because the current map data or natural touch targets are insufficient. There are no
+The curated atlas contains **168 playable countries / 336 mastery stamps**, selected from the
+193 UN members plus the two observer states. **27 countries** are excluded because the current
+map data or natural touch targets are insufficient. The original five are Tuvalu, Vatican City,
+Monaco, Maldives and Nauru; the 22 further exclusions are San Marino, Liechtenstein, Malta,
+Andorra, Singapore, Bahrain, Saint Kitts and Nevis, Grenada, Saint Vincent and the Grenadines,
+Barbados, Antigua and Barbuda, Saint Lucia, Dominica, Seychelles, São Tomé and Príncipe, Comoros,
+Mauritius, Marshall Islands, Palau, Micronesia, Tonga and Kiribati. The FAQ links every excluded
+country to its verified English/German Wikipedia article. There are no
 artificial location markers. Other countries and territories are gray, untappable context, not
 distractors; this collection policy makes no statement about their political status.
 
-The original 40 card numbers, rarity assignments and saved progress remain intact; 150 additions
-follow in stable ISO-code order. Transcontinental countries use one accepted game continent, explained
+The published **190-card catalog** remains intact for archival compatibility: original numbers,
+rarity assignments and saved progress never change. Only 168 entries are playable; numbering gaps
+are intentional. Previously discovered excluded countries appear in a separate Collection archive,
+with their stamps and collected cards preserved but no contribution to completion totals.
+An unfinished challenge for an excluded country is retired with one pack refunded up to the cap of five;
+completed results are preserved without a refund or replay. A persisted explanation survives reloads
+until dismissed. Queued debug targets for excluded countries are cleared with an explanation.
+Transcontinental countries use one accepted game continent, explained
 in How to play. Rarity is fixed in
 `src/data/generated/rarity.json`: Common, Uncommon, Rare, Epic and Legendary.
 Opening a pack reveals its country's name and rarity immediately; full cards need two successful
@@ -114,12 +125,13 @@ override. These are game grades, not a ranking of countries' worth or an objecti
 
 - `scripts/rarity/snapshot.json`: sourced measurements, Wikidata article IDs, edition lists and reference set.
 - `scripts/rarity/scoring.mjs`: formula, grade thresholds and overrides.
-- `scripts/atlas/roster.json`: canonical map features and continent assignments for all 190 cards.
+- `scripts/atlas/roster.json`: canonical map features and continent assignments for the 168 playable cards.
+- `src/data/generated/playable-country-ids.json`: runtime playable subset of the shared catalog.
 - `scripts/atlas/initial-roster.json`: the immutable original 40 card numbers.
-- `scripts/atlas/policy.mjs`: the five deferrals and noncanonical map aliases.
+- `scripts/atlas/policy.mjs`: all 27 deferrals and noncanonical map aliases.
 - `scripts/atlas/snapshot.json`: frozen REST Countries metadata, English/German names, capitals and
   source provenance, plus verified Wikidata coverage for Palestine (outside the 193-member baseline).
-- `scripts/rarity/roster.json`: the same 190-country selection, in stable card-number order.
+- `scripts/rarity/roster.json`: the unchanged 190-card catalog in stable card-number order, including archives.
 - `src/domain/rarity.ts`: independently tunable per-country draw weights (1.00 to 0.80).
 - `scripts/geo/exclusions.mjs`: gray, untappable territories and overseas polygons, including French Guiana.
 
@@ -144,5 +156,8 @@ all-country completion rules, phone-width map visibility, excluded map polygons,
 separate/versioned notice preferences (including unavailable storage).
 Achievement coverage includes exact thresholds, simultaneous awards, fresh legacy tracking, reloads,
 acknowledgements, cross-tab transactions, geographic groups and permanent awards after roster expansion.
+Roster-update checks cover the exact 168/27 partition, frozen card numbering/rarity, archival progress,
+idempotent challenge refunds and debug-target removal. The small-country badge now requires three
+new eligible cards; its stable `small-5` ID and previously earned five-card targets remain intact.
 Lint and the production build remain separate commands. Browser flows are currently checked manually
 with Chrome mobile emulation; a repository-managed end-to-end runner is not configured yet.

@@ -1,7 +1,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { readFileSync, existsSync } from 'node:fs'
-import { COUNTRIES, COUNTRY_BY_ID } from '../src/data/countries.ts'
+import { ALL_COUNTRIES, COUNTRIES, COUNTRY_BY_ID } from '../src/data/countries.ts'
 import { RARITIES, RARITY_WEIGHTS } from '../src/domain/rarity.ts'
 import { generateRarity, percentile } from '../scripts/rarity/scoring.mjs'
 import { pickCountry } from '../src/domain/selection.ts'
@@ -24,10 +24,11 @@ const pick = (rng, entries = pool, saved = {}, recent = []) => pickCountry(entri
 
 test('fixed catalog is reproducible, complete and represents five grades', () => {
   assert.deepEqual(generateRarity(source, roster, extra.observerRarity), catalog)
-  assert.deepEqual(COUNTRIES.map((c) => c.id), roster)
-  assert.equal(COUNTRIES.length, 190)
-  assert.equal(new Set(COUNTRIES.map((c) => c.number)).size, 190)
-  assert.deepEqual(COUNTRIES.slice(0, 40).map(c => c.id), initial)
+  assert.deepEqual(ALL_COUNTRIES.map((c) => c.id), roster)
+  assert.equal(COUNTRIES.length, 168)
+  assert.equal(new Set(ALL_COUNTRIES.map((c) => c.number)).size, 190)
+  assert.deepEqual(ALL_COUNTRIES.slice(0, 40).map(c => c.id), initial)
+  for (const c of ALL_COUNTRIES) assert.equal(c.number, roster.indexOf(c.id) + 1)
   const old = generateRarity(source, initial)
   for (const id of initial) assert.deepEqual(catalog[id], old[id])
   assert.equal(COUNTRY_BY_ID.nz.number, 20)
@@ -47,18 +48,18 @@ test('generator rejects missing provenance, invalid measurements and duplicate r
   assert.throws(() => generateRarity(source, [...roster.slice(0, -1), 'xx']), /Missing rarity/)
 })
 
-test('all playable countries have localized content, a flag and a usable map feature', () => {
+test('playable and archived catalogs retain localized content, flags and correctly excluded map features', () => {
   const atlas = json('../src/data/generated/atlas.json')
   const features = atlas.objects.countries.geometries
   const flagSource = readFileSync(new URL('../src/data/flags.ts', import.meta.url), 'utf8')
-  for (const c of COUNTRIES) {
+  for (const c of ALL_COUNTRIES) {
     for (const locale of [en, de]) {
       assert.ok(locale.countries[c.id]?.name)
       assert.ok(locale.countries[c.id]?.capital)
       assert.ok(locale.countries[c.id]?.fact)
       assert.ok(locale.rarity[c.rarity])
     }
-    assert.ok(features.some((f) => f.properties.name === c.mapName && !f.properties.excluded), c.mapName)
+    assert.ok(features.some((f) => f.properties.name === c.mapName && f.properties.excluded === !COUNTRIES.some(p => p.id === c.id)), c.mapName)
     assert.ok(existsSync(new URL(`../node_modules/flag-icons/flags/4x3/${c.id}.svg`, import.meta.url)))
     assert.ok(flagSource.includes(c.id), `Flag catalog: ${c.id}`)
   }

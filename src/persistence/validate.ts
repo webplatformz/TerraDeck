@@ -47,6 +47,17 @@ export function parseGameState(raw: unknown): GameState | null {
   if (!isObject(raw.progress) || !Object.values(raw.progress).every(isProgress)) return null
   if (!Array.isArray(raw.recentIds) || !raw.recentIds.every((id) => typeof id === 'string')) return null
   if (raw.activeChallenge !== null && !isChallenge(raw.activeChallenge)) return null
+  if (raw.retiredChallenge !== undefined && !isChallenge(raw.retiredChallenge)) {
+    console.warn('TerraDeck: invalid retired challenge; country progress and roster notice preserved')
+    return parseGameState({ ...raw, retiredChallenge: undefined })
+  }
+  if (raw.rosterNotice !== undefined && (!isObject(raw.rosterNotice) ||
+      (raw.rosterNotice.countryId !== undefined && typeof raw.rosterNotice.countryId !== 'string') ||
+      (raw.rosterNotice.debugCountryId !== undefined && typeof raw.rosterNotice.debugCountryId !== 'string') ||
+      (raw.rosterNotice.refunded !== undefined && typeof raw.rosterNotice.refunded !== 'boolean'))) {
+    console.warn('TerraDeck: invalid roster notice; country progress and retired result preserved')
+    return parseGameState({ ...raw, rosterNotice: undefined })
+  }
   if (raw.debugCountryId !== undefined && (typeof raw.debugCountryId !== 'string' || !/^[a-z]{2}$/.test(raw.debugCountryId))) {
     console.warn('TerraDeck: invalid debug country target; country progress preserved')
     return parseGameState({ ...raw, debugCountryId: undefined })

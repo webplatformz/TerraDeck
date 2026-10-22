@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import type { Game } from '../game/useGame'
 import type { HelpSection } from '../game/navigation'
 import { COUNTRIES } from '../data/countries'
+import { EXCLUDED_COUNTRIES } from '../data/excludedCountries'
 import { PROJECT, SOURCE_LINKS } from '../data/project'
 import { LanguageSelect } from '../components/LanguageSelect'
 import { HelpLink } from '../components/InfoFooter'
@@ -18,7 +19,9 @@ function Entry({ id, title, children }: { id: HelpSection; title: string; childr
 }
 
 export function About({ game }: { game: Game }) {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const language = i18n.resolvedLanguage === 'de' ? 'de' : 'en'
+  const excludedCountries = [...EXCLUDED_COUNTRIES].sort((a, b) => a[language].name.localeCompare(b[language].name, language))
   const page = useRef<HTMLDivElement>(null)
   const { cooldownMs, maxPacks } = game.config
   const cooldown = cooldownMs < 60000 ? t('about.seconds', { count: cooldownMs / 1000 }) : t('about.minutes', { count: Math.round(cooldownMs / 60000) })
@@ -61,7 +64,16 @@ export function About({ game }: { game: Game }) {
         <h2 id="help-places">{t('help.places')}</h2>
         <Entry id="roster" title={t('help.roster.title')}>
           <p>{t('help.roster.body', { count: COUNTRIES.length })}</p>
-          <p>{t('help.roster.excluded')}</p>
+          <p id="help-roster-excluded">{t('help.roster.excluded')}</p>
+          <ul aria-labelledby="help-roster-excluded">
+            {excludedCountries.map(country => (
+              <li key={country.id}>
+                <a href={country[language].wikipediaUrl} hrefLang={language} style={{ display: 'inline-flex', alignItems: 'center', minHeight: 44 }}>
+                  {country[language].name}
+                </a>
+              </li>
+            ))}
+          </ul>
           <p className="help-aside">{t('help.roster.wink')}</p>
         </Entry>
         {textEntry('territories', t('help.territories.title'), t('help.territories.body'))}

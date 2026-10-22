@@ -102,6 +102,25 @@ p {
 
 /* ---------- Achievements ---------- */
 
+.collection-archive {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--paper-400);
+  color: var(--paper-100);
+}
+.collection-archive > p { margin: 12px 0 20px; line-height: 1.6; color: var(--paper-300); }
+.roster-notice {
+  max-width: 900px;
+  margin: 16px auto;
+  padding: 16px;
+  border: 1px solid var(--brass-400);
+  border-radius: 12px;
+  background: var(--ocean-800);
+  color: var(--paper-100);
+}
+.roster-notice h2 { font-size: 1.2rem; }
+.roster-notice p { margin: 10px 0; line-height: 1.6; }
+
 .achievements,
 .achievement-badge,
 .achievement-notification {
@@ -379,7 +398,9 @@ p {
   }
 
   .tabbar-brand {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     margin-right: auto;
     align-self: center;
     font-family: var(--font-display), serif;
@@ -390,6 +411,13 @@ p {
     border: 0;
     padding: 0;
     cursor: pointer;
+  }
+
+  .tabbar-brand-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    color: var(--brass-300);
   }
 
   .tabbar-brand:hover {

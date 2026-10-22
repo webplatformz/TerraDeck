@@ -4,7 +4,7 @@
 - **Cooldown: 15 minutes per pack** (debug mode via `?debug`: 10 seconds).
   - Field testing showed geography challenges were harder than expected: reduce both the former
     30-minute interval and three-success requirement to make repeat learning more approachable.
-  - The curated 190-country roster needs 380 perfect encounters at two successes each.
+  - The curated 168-country roster needs 336 perfect encounters at two successes each.
     Mistakes, check-in frequency and the stock cap affect completion.
   - The original four-week worldwide goal remains an unvalidated long-term aim, not a guarantee from
     these settings. Reassess with play data rather than retaining the obsolete completion calculation.
@@ -45,19 +45,35 @@
 - Starter 20: France, Italy, Norway, Switzerland; Japan, India, Vietnam, Nepal; Egypt, Kenya, Morocco, Madagascar;
   Canada, Mexico, Cuba; Brazil, Peru, Chile; Australia, New Zealand.
 - Cards: flag (`flag-icons`, MIT), capital, population, area, one fact — all bundled with the app.
-- **190 retained countries / 380 stamps**, from the 193 UN members plus Vatican City/Holy See and
-  Palestine. Five explicitly deferred entries: **Tuvalu** (absent from the geometry), **Vatican City,
-  Monaco, Maldives and Nauru** (insufficient natural visual targets at phone scale). These are
-  playability decisions, not recognition decisions; no artificial location markers are added.
-- Original 40 IDs, card numbers, metadata, localized facts and rarity grades stay intact. The remaining
-  150 append in ISO-code order. Existing saves need no migration and can immediately draw additions.
-  Counts: Europe 41, Asia 48, Africa 54, North America 23, South America 12, Oceania 12.
+- **168 playable countries / 336 stamps**, from the 193 UN members plus Vatican City/Holy See and
+  Palestine, with **27 exclusions**. The original five remain: **Tuvalu** (absent from the geometry),
+  **Vatican City, Monaco, Maldives and Nauru** (insufficient natural visual targets at phone scale).
+  Mobile testing additionally excludes **San Marino, Liechtenstein, Malta, Andorra, Singapore,
+  Bahrain, Saint Kitts and Nevis, Grenada, Saint Vincent and the Grenadines, Barbados,
+  Antigua and Barbuda, Saint Lucia, Dominica, Seychelles, São Tomé and Príncipe, Comoros,
+  Mauritius, Marshall Islands, Palau, Micronesia, Tonga and Kiribati**. These are playability
+  decisions, not recognition decisions; no artificial location markers are added.
+- The shared 190-card catalog retains every published ID, number, metadata value, fact, flag and
+  fixed rarity. `ALL_COUNTRIES` retains the catalog; `COUNTRIES` is its generated playable subset;
+  `ARCHIVED_COUNTRIES` contains the 22 removed cards. Numbering gaps are intentional. The original
+  40 entries and the subsequent 150 ISO-ordered additions are never renumbered or duplicated.
+  Playable counts: Europe 37, Asia 46, Africa 50, North America 16, South America 12, Oceania 7.
+  Rarity counts: Common 29, Uncommon 46, Rare 42, Epic 35, Legendary 16. No scores or draw weights change.
+- **Save transition under the existing Web Lock:** retire an active excluded-country challenge,
+  preserve it verbatim as `retiredChallenge`, and leave country and achievement history untouched.
+  Unfinished continent/country steps refund one pack after timestamp reconciliation, capped at five;
+  a full stock has no refill deadline. A completed result receives no refund and no replayed awards.
+  Clearing the active challenge makes retirement idempotent. Excluded queued debug targets are cleared.
+  A persisted localized notice explains both changes until explicitly dismissed, across reloads/tabs.
+  Migration runs before initial rendering and every mutation, including external-tab refresh.
+  Previously discovered/mastered excluded cards appear in a clearly separated Collection archive,
+  never in playable totals or draws. Unfinished archive cards cannot gain more stamps.
 - `scripts/atlas/policy.mjs` records deferrals and duplicate/context-only map aliases;
-  `initial-roster.json` freezes the original numbering; generated `roster.json` binds each retained
+  `initial-roster.json` freezes the original numbering; generated `roster.json` binds each playable
   ID to exactly one canonical map feature and continent. Taiwan, Kosovo, Somaliland, Northern Cyprus
   and every other non-roster map entity remain gray and untappable, even when an alias shares a
   retained country's ISO code. A brief in-game scope/continent note replaces the obsolete test-atlas
-  wording. The combined Help & FAQ now gives concise explanations of the roster, five deferrals,
+  wording. The combined Help & FAQ now gives concise explanations of the roster, all 27 deferrals,
   overseas areas and continent grouping, rather than a comprehensive political FAQ.
 - Frozen public REST Countries metadata, EN/DE names and capitals are in `scripts/atlas/snapshot.json`,
   with source URLs and retrieval date. Figures are approximate, not live statistics. New bilingual
@@ -210,7 +226,7 @@
   | --- | --- | --- |
   | First footsteps | `first-encounter`, `first-visitor`, `first-card`, `discover-10`, `encounters-25` | First finished encounter (mistakes count), first newly earned Visitor, first new card, 10 new discoveries, 25 finished encounters |
   | Atlas builder | `collect-10`, `collect-50`, `all-continents`, `complete-continent`, `complete-atlas` | 10/50 new cards, a new card from all six continents, one complete continent, complete playable atlas |
-  | Finding your bearings | `perfect-5`, `stamp-continents`, `discover-50`, `recovery`, `small-5` | Five perfect encounters total, new stamp on each continent, 50 new discoveries, perfect encounter after a newly recorded miss of that country, five new small-country cards |
+  | Finding your bearings | `perfect-5`, `stamp-continents`, `discover-50`, `recovery`, `small-5` | Five perfect encounters total, new stamp on each continent, 50 new discoveries, perfect encounter after a newly recorded miss of that country, three new small-country cards |
   | Expedition oddities | `wrong-continent`, `scenic-route`, `islands-5`, `landlocked-5`, `legendary` | First wrong-continent answer, new card after at least three newly recorded misses of that country, five new island/landlocked cards, first new Legendary card |
 
 - **Reviewed geographic groups:** `src/data/achievementGroups.ts` contains explicit playable-country IDs,
@@ -218,6 +234,11 @@
   `scripts/atlas/snapshot.json`, with editorial island review. Tests enforce unique, playable IDs
   and exact small/landlocked membership against that snapshot.
   - Small: total source area **at most 10,000 km²**, not visual map footprint; deferred countries stay excluded.
+    The remaining group has **seven**, not five: Brunei, Cape Verde, Cyprus, Luxembourg, Palestine,
+    Samoa and Trinidad and Tobago. The badge now requires **three**, retaining stable ID `small-5`.
+    Previously earned awards keep their original target (including five), date and acknowledgement.
+    All historical activity arrays/counters stay intact; locked collection/group progress filters to
+    eligible playable countries. Completion targets use the new roster, without awarding on migration.
   - Landlocked: no open-ocean coastline. Caspian-bordering Azerbaijan, Kazakhstan and Turkmenistan count.
     Kosovo and Vatican City are outside the playable roster.
   - Island: countries whose principal territory is on islands, including shared-island countries

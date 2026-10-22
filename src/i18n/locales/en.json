@@ -39,26 +39,88 @@
       "oddities": "Expedition oddities"
     },
     "badges": {
-      "first-encounter": { "name": "Off we go", "description": "Finish your first encounter, correct or not." },
-      "first-visitor": { "name": "Passport, please", "description": "Earn your first silver Visitor stamp. Very official. Mostly." },
-      "first-card": { "name": "A keeper!", "description": "Collect your first country card." },
-      "discover-10": { "name": "Just browsing", "description": "Reveal 10 different countries by opening packs. Famous last words." },
-      "encounters-25": { "name": "Getting mileage", "description": "Finish 25 encounters." },
-      "collect-10": { "name": "Shelf improvement", "description": "Collect 10 country cards." },
-      "collect-50": { "name": "We're going to need another shelf", "description": "Collect 50 country cards. This escalated geographically." },
-      "all-continents": { "name": "Continental breakfast", "description": "Collect at least one country from each of the six continents." },
-      "complete-continent": { "name": "One chapter closed", "description": "Collect every playable country in one continent. The counter shows the continent closest to completion." },
-      "complete-atlas": { "name": "Atlas? Completed it", "description": "Collect every country in the current playable atlas." },
-      "perfect-5": { "name": "Five well placed", "description": "Finish five perfect encounters in total, not necessarily consecutively." },
-      "stamp-continents": { "name": "Six directions", "description": "Earn at least one new mastery stamp in every continent." },
-      "discover-50": { "name": "Widening horizons", "description": "Reveal 50 different countries by opening packs." },
-      "recovery": { "name": "Hello again, got you this time", "description": "Finish a perfect encounter with a country you previously missed." },
-      "small-5": { "name": "Pocket-sized adventures", "description": "Collect five countries from the small-country list (up to 10,000 km²). Small on the map, big on the itinerary." },
-      "wrong-continent": { "name": "Unexpected detour", "description": "Give your first wrong-continent answer. The map has kindly redirected you.", "hint": "Sometimes the scenic route starts on another continent." },
-      "scenic-route": { "name": "Scenic route", "description": "Collect a country after at least three unsuccessful encounters with it.", "hint": "Some destinations are worth a few extra visits." },
-      "islands-5": { "name": "Island hopping", "description": "Collect five countries from the island-country list. Shared islands count; continental Australia doesn't." },
-      "landlocked-5": { "name": "No beach? No problem", "description": "Collect five landlocked countries. The Caspian Sea doesn't count as an ocean. Leave the snorkel at home." },
-      "legendary": { "name": "Well, that's legendary", "description": "Collect your first Legendary country." }
+      "first-encounter": {
+        "name": "Off we go",
+        "description": "Finish your first encounter, correct or not."
+      },
+      "first-visitor": {
+        "name": "Passport, please",
+        "description": "Earn your first silver Visitor stamp. Very official. Mostly."
+      },
+      "first-card": {
+        "name": "A keeper!",
+        "description": "Collect your first country card."
+      },
+      "discover-10": {
+        "name": "Just browsing",
+        "description": "Reveal 10 different countries by opening packs. Famous last words."
+      },
+      "encounters-25": {
+        "name": "Getting mileage",
+        "description": "Finish 25 encounters."
+      },
+      "collect-10": {
+        "name": "Shelf improvement",
+        "description": "Collect 10 country cards."
+      },
+      "collect-50": {
+        "name": "We're going to need another shelf",
+        "description": "Collect 50 country cards. This escalated geographically."
+      },
+      "all-continents": {
+        "name": "Continental breakfast",
+        "description": "Collect at least one country from each of the six continents."
+      },
+      "complete-continent": {
+        "name": "One chapter closed",
+        "description": "Collect every playable country in one continent. The counter shows the continent closest to completion."
+      },
+      "complete-atlas": {
+        "name": "Atlas? Completed it",
+        "description": "Collect every country in the current playable atlas."
+      },
+      "perfect-5": {
+        "name": "Five well placed",
+        "description": "Finish five perfect encounters in total, not necessarily consecutively."
+      },
+      "stamp-continents": {
+        "name": "Six directions",
+        "description": "Earn at least one new mastery stamp in every continent."
+      },
+      "discover-50": {
+        "name": "Widening horizons",
+        "description": "Reveal 50 different countries by opening packs."
+      },
+      "recovery": {
+        "name": "Hello again, got you this time",
+        "description": "Finish a perfect encounter with a country you previously missed."
+      },
+      "small-5": {
+        "name": "Pocket-sized adventures",
+        "description": "Collect three countries from the small-country list (up to 10,000 km²). Small on the map, big on the itinerary."
+      },
+      "wrong-continent": {
+        "name": "Unexpected detour",
+        "description": "Give your first wrong-continent answer. The map has kindly redirected you.",
+        "hint": "Sometimes the scenic route starts on another continent."
+      },
+      "scenic-route": {
+        "name": "Scenic route",
+        "description": "Collect a country after at least three unsuccessful encounters with it.",
+        "hint": "Some destinations are worth a few extra visits."
+      },
+      "islands-5": {
+        "name": "Island hopping",
+        "description": "Collect five countries from the island-country list. Shared islands count; continental Australia doesn't."
+      },
+      "landlocked-5": {
+        "name": "No beach? No problem",
+        "description": "Collect five landlocked countries. The Caspian Sea doesn't count as an ocean. Leave the snorkel at home."
+      },
+      "legendary": {
+        "name": "Well, that's legendary",
+        "description": "Collect your first Legendary country."
+      }
     }
   },
   "home": {
@@ -138,8 +200,18 @@
     "zoomOut": "Zoom out",
     "resetView": "Reset view"
   },
+  "rosterUpdate": {
+    "title": "A small atlas update",
+    "unfinished": "{{country}} is now excluded because it is difficult to select reliably on phones. Your unfinished encounter has been retired, with one pack returned up to the five-pack limit. Your existing progress is safe in the Collection archive.",
+    "finished": "{{country}} is now excluded because it is difficult to select reliably on phones. Your completed result and progress have been preserved in the archive. No additional stamps, badges or pack refund were awarded.",
+    "debug": "The queued debug target {{country}} was cleared because this country is no longer playable."
+  },
   "collection": {
     "eyebrow": "Your collection",
+    "archiveTitle": "Collection archive",
+    "archiveDescription": "These previously discovered countries are no longer playable because their map targets are too small. Your names, stamps and collected cards are preserved here, separately from atlas completion.",
+    "archivedCard": "Archived country — not included in packs or completion totals.",
+    "archivedProgress": "Your existing progress is preserved. No further stamps can be earned for this archived card.",
     "cardsCount": "{{collected}} <muted>/ {{total}} cards</muted>",
     "filter": "Filter by continent",
     "all": "All",
@@ -234,9 +306,9 @@
     },
     "roster": {
       "title": "Which countries are included?",
-      "body": "We start from 193 UN member states plus the two observer states: the Holy See (represented as Vatican City) and Palestine. Five playability exclusions leave {{count}} cards. This UN-based selection is a game convention, not a universal definition of countryhood or political recognition.",
-      "excluded": "Tuvalu has no usable shape in our map data. Vatican City, Monaco, Maldives and Nauru are too small for dependable natural targets on phone maps. These five are excluded from packs and completion totals; we use no artificial location markers.",
-      "wink": "Not in the pack doesn't mean not worth exploring. Five fantastic places — perhaps you'll discover them in person one day!"
+      "body": "Our 195 candidates are the 193 UN member states plus the two observer states: the Holy See (represented as Vatican City) and Palestine. Excluding 27 for playability leaves {{count}} playable countries. This UN-based selection is a game convention, not a universal definition of countryhood or political recognition.",
+      "excluded": "These 27 places lack usable geometry in our map data or cannot be selected reliably on phone maps without artificial location markers. They are excluded from packs and completion totals for technical playability, not because of their importance or recognition. Explore each place on Wikipedia:",
+      "wink": "Not in the pack doesn't mean not worth exploring. These are wonderful places — perhaps you'll discover them in person one day!"
     },
     "territories": {
       "title": "Why are French Guiana and other areas gray?",

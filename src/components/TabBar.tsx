@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import type { MainScreen } from '../game/useGame'
+import { Compass } from './Compass'
 
 const TABS: { id: MainScreen; icon: string }[] = [
   { id: 'home', icon: 'M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15M15 6v15' },
@@ -13,7 +14,8 @@ export function TabBar({ active, onNavigate }: { active: MainScreen; onNavigate:
   return (
     <nav className="tabbar" aria-label={t('nav.main')}>
       <button type="button" className="tabbar-brand" aria-label={t('nav.brandHome')} onClick={() => onNavigate('home')}>
-        TerraDeck
+        <Compass className="tabbar-brand-icon" />
+        <span>TerraDeck</span>
       </button>
       {TABS.map((tab) => (
         <button key={tab.id} type="button" className={`tab${tab.id === active ? ' is-active' : ''}`} aria-current={tab.id === active ? 'page' : undefined} onClick={() => onNavigate(tab.id)}>

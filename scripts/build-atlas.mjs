@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { COUNTRIES as shapes } from './geo/countries.mjs'
-import { CONTEXT_ONLY_FEATURES, DEFERRED } from './atlas/policy.mjs'
+import { CONTEXT_ONLY_FEATURES, DEFERRED, ORIGINAL_DEFERRED } from './atlas/policy.mjs'
 
 const read = path => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'))
 const write = (path, value) => writeFileSync(new URL(path, import.meta.url), `${JSON.stringify(value, null, 2)}\n`)
@@ -10,15 +10,19 @@ const initial = read('./atlas/initial-roster.json')
 const expected = [...reference.countries.map(c => c.id), 'ps', 'va']
 if (new Set(expected).size !== 195 || source.countries.length !== 195 ||
   expected.some(id => !source.countries.some(c => c.id === id))) throw new Error('Expected exact 195-candidate source')
-const order = [...initial, ...expected.filter(id => !initial.includes(id) && !(id in DEFERRED)).sort()]
-if (order.length !== 190 || new Set(order).size !== 190) throw new Error('Expected 190 unique retained countries')
-const roster = order.map(id => {
+// Keep the published 190-card catalog and numbering for archival saves and fixed rarity.
+const order = [...initial, ...expected.filter(id => !initial.includes(id) && !(id in ORIGINAL_DEFERRED)).sort()]
+if (order.length !== 190 || new Set(order).size !== 190) throw new Error('Expected 190 unique catalog countries')
+const catalog = order.map(id => {
   const entries = shapes.filter(([name, iso]) => iso.toLowerCase() === id && !CONTEXT_ONLY_FEATURES.includes(name))
   if (entries.length !== 1) throw new Error(`Expected one canonical feature: ${id}`)
   const [mapName, , continent] = entries[0]
   return { id, mapName, continent }
 })
+const roster = catalog.filter(c => !(c.id in DEFERRED))
+if (roster.length !== 168 || Object.keys(DEFERRED).length !== 27) throw new Error('Expected 168 playable countries and 27 exclusions')
 write('./atlas/roster.json', roster)
+write('../src/data/generated/playable-country-ids.json', roster.map(c => c.id))
 write('./rarity/roster.json', order)
 
 // Conventional German spellings; other capital proper names retain their source spelling.
@@ -60,7 +64,7 @@ for (const lang of ['en', 'de']) {
   }
   write(`../src/i18n/locales/${lang}.json`, locale)
 }
-write('../src/data/generated/country-additions.json', roster.filter(c => !initial.includes(c.id)).map(c => {
+write('../src/data/generated/country-additions.json', catalog.filter(c => !initial.includes(c.id)).map(c => {
   const metadata = source.countries.find(s => s.id === c.id)
   return { ...c, population: metadata.population, areaKm2: metadata.areaKm2 }
 }))
