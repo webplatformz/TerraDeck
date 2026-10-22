@@ -26,11 +26,13 @@ export function openPack(
   now: number,
   rng: Rng,
   config: GameConfig,
+  forcedCountryId?: string,
 ): GameState {
   const synced = syncPacks(state, now, config)
   if (synced.activeChallenge || synced.packs < 1) return synced
 
-  const countryId = pickCountry(
+  if (forcedCountryId && !roster.some(c => c.id === forcedCountryId)) throw new Error('Unknown debug country')
+  const countryId = forcedCountryId ?? pickCountry(
     roster,
     synced.progress,
     synced.recentIds,

@@ -28,6 +28,10 @@ export interface ActiveChallenge {
 
 export interface GameState {
   schemaVersion: 1
+  /** Optional, independently versioned extension; old saves start tracking fresh. */
+  achievements?: import('./achievements').AchievementState
+  /** Debug-only target for the next opened pack; never used by normal draws. */
+  debugCountryId?: string
   packs: number
   /** When the next pack arrives; null while the stack is full. */
   refillAt: number | null

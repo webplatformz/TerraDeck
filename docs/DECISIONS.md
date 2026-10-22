@@ -28,6 +28,12 @@
   silver **Visitor / Besucher** stamp (I); the second earns gold **Explorer / Entdecker** (II) and unlocks
   the card. Both passport stamps remain visible with localized names and earned/empty states.
 - **Collected countries** (at least 2 stamps) are removed from the random pool. When the pool is empty, show "Atlas complete".
+- **Debug targeting:** the optional two-letter code beside "add a pack" queues one playable country
+  for the next debug pack. Codes are case-insensitive; invalid/excluded entries show an error.
+  Stock still caps at five; a target can be set at full stock, survives reloads and waits for active
+  challenges. A new code replaces the target; an empty field only adds stock. Debug draws can repeat
+  recent or collected countries without resetting stamps or replaying card unlocks. Normal mode
+  ignores the target and keeps ordinary draw rules. Completed debug encounters still count as new activity.
 - **Existing saves:** retain the v1 storage key/schema, raw stamp counts, encounters, discovery and unlock
   dates. One stamp stays one; legacy two/three-stamp countries count as collected and display 2/2.
   No invented historical unlock dates or automatic unlock replay on load. Already-active challenges
@@ -157,16 +163,80 @@
 - Reference project for structure and tooling: webplatformz/-boring-game-name-.
 - Everything is local (localStorage); no backend or accounts.
 - Animation: CSS transitions/keyframes, respecting `prefers-reduced-motion`.
+- **No sound or video.** Feedback uses text, static artwork and optional reduced-motion-aware CSS only.
 - Fonts: Fraunces (headings), Inter (body), via `@fontsource`.
 - Navigation: screen state plus URL hash, no router library; Vite `base: '/TerraDeck/'` for builds.
 - Manual testing in Chrome mobile emulation; no real-device testing required.
-- No notifications or offline mode for now; show a countdown instead.
+- No operating-system notifications or offline mode; show a countdown instead.
+  Achievement feedback is an in-app banner, never a browser permission request.
 - Corrupted saved data is backed up and reset.
 - Multiple tabs stay in sync via the browser `storage` event.
 - Map accessibility: keyboard navigation now; a list-based alternative later.
 - Local Node is 18.19, so the project uses Vite 5 and Playwright 1.48 (newer Playwright needs Node 20). CI can use Node 20.
 - Full-screen overlays (card modal, unlock) render through a portal to `document.body`, because screen enter animations use transforms that would otherwise trap `position: fixed`.
 - Progress is saved in the browser's localStorage under `terradeck:save:v1` (per site origin), so it survives reloads; clearing site data erases it. `?demo` uses a separate key seeded with a partly filled atlas (`src/game/prototypeState.ts`).
+
+## Achievements
+
+- **20 cosmetic badges**, five in each category: First footsteps, Atlas builder, Finding your
+  bearings and Expedition oddities. The separate **Achievements / Erfolge** screen uses
+  `#achievements`. Badges do not alter packs, cooldowns, randomness, rarity or mastery.
+  No consecutive-success or calendar-day achievements; no goal family has more than three tiers.
+- **Stable IDs and pure rules:** `src/domain/achievements.ts` owns tracking, progress and evaluation;
+  the UI and repository do not define eligibility. Evaluate actual pack-opening and completed-encounter
+  transitions, not renders or timers. An unfinished encounter earns no encounter credit.
+  Reloading or answering an already-finished challenge cannot count again.
+- **Fresh tracking, not retroactive awards.** The optional `achievements` extension has its own
+  `version: 1` inside the unchanged v1 save/key. Loading an old save initializes empty tracking without
+  modifying country progress, raw stamps, dates, packs or active challenges. Previously known countries
+  do not count as new discoveries. A first Visitor earned now and a newly unlocked card count even if
+  the country was discovered or partly mastered earlier. A resumed unfinished encounter counts when
+  completed; a saved result does not replay. Historical mistakes, dates and successes are never guessed.
+- **Completion exception:** continent and atlas completion consult the whole saved collection, including
+  legacy cards, but evaluation requires a genuinely new card unlock. All other collection/group goals
+  count only cards unlocked since tracking began. Existing atlas-complete players must wait for roster
+  additions to earn new-activity collection badges; no backfill or replay mode is introduced.
+- **Permanent within the save:** award IDs, actual earned timestamps and the target at the time of
+  earning are persisted once. A roster expansion never revokes an award, changes its date or makes its
+  progress bar incomplete. Locked completion goals derive targets from the playable roster.
+  Explicit progress reset or clearing site storage still removes badges along with the rest of the save.
+- **Progress:** all visible goals have a native accessible progress bar and exact current/target counter.
+  Before completion, the continent goal shows the continent nearest completion by proportion.
+  Earned goals show their frozen completed target. The two hidden goals show hints without
+  revealing names, requirements or counters until earned.
+- **Thresholds and conditions:**
+
+  | Category | Stable IDs | Requirements |
+  | --- | --- | --- |
+  | First footsteps | `first-encounter`, `first-visitor`, `first-card`, `discover-10`, `encounters-25` | First finished encounter (mistakes count), first newly earned Visitor, first new card, 10 new discoveries, 25 finished encounters |
+  | Atlas builder | `collect-10`, `collect-50`, `all-continents`, `complete-continent`, `complete-atlas` | 10/50 new cards, a new card from all six continents, one complete continent, complete playable atlas |
+  | Finding your bearings | `perfect-5`, `stamp-continents`, `discover-50`, `recovery`, `small-5` | Five perfect encounters total, new stamp on each continent, 50 new discoveries, perfect encounter after a newly recorded miss of that country, five new small-country cards |
+  | Expedition oddities | `wrong-continent`, `scenic-route`, `islands-5`, `landlocked-5`, `legendary` | First wrong-continent answer, new card after at least three newly recorded misses of that country, five new island/landlocked cards, first new Legendary card |
+
+- **Reviewed geographic groups:** `src/data/achievementGroups.ts` contains explicit playable-country IDs,
+  independent of runtime map geometry. The source is the frozen REST Countries metadata in
+  `scripts/atlas/snapshot.json`, with editorial island review. Tests enforce unique, playable IDs
+  and exact small/landlocked membership against that snapshot.
+  - Small: total source area **at most 10,000 km²**, not visual map footprint; deferred countries stay excluded.
+  - Landlocked: no open-ocean coastline. Caspian-bordering Azerbaijan, Kazakhstan and Turkmenistan count.
+    Kosovo and Vatican City are outside the playable roster.
+  - Island: countries whose principal territory is on islands, including shared-island countries
+    (Ireland/UK, Haiti/Dominican Republic, Brunei/Indonesia, Papua New Guinea, Timor-Leste).
+    Japan, New Zealand and Madagascar count; continental Australia and mainland countries with
+    offshore islands do not. Overseas possessions do not change group membership.
+- **Quiet, grouped feedback:** no banner during an active challenge, answer reveal or card celebration.
+  After the encounter is dismissed, one compact banner groups all pending awards. Tapping opens an
+  optional native modal with earned badge details; viewing or closing the banner acknowledges exactly
+  that batch. Pending awards survive reloads; acknowledged awards never celebrate again.
+  The first-visit notice takes priority too.
+- **Cross-tab persistence:** game mutations read the latest save and commit under an origin-scoped
+  Web Lock, with a per-instance queue. This replaces render-effect writeback, prevents duplicate
+  encounters, and keeps acknowledgements from being overwritten by stale tab state. Notifications
+  hold a separate Web Lock for their visible lifetime and are eligible only in the focused, visible tab.
+  Storage events refresh other tabs. Modern secure-origin browsers (including GitHub Pages and localhost)
+  support Web Locks; otherwise a visible single-tab-only warning is shown, with serialized local updates
+  but no claim of concurrent-tab safety. Storage failures retain in-memory session state and log warnings;
+  malformed achievement extensions are reported without resetting valid country progress.
 
 ## Help, project notice and credits
 

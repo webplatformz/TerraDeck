@@ -30,6 +30,13 @@ Useful URLs while developing:
 - `http://localhost:5173/?demo` — a separate save pre-filled with some cards and stamps (combine: `?demo&debug`)
 - Test mobile layouts with Chrome DevTools device emulation (Cmd+Shift+M)
 
+In debug mode, the field before **add a pack** accepts a playable two-letter country code
+(for example `CH`, case-insensitive). It adds stock up to the usual five-pack cap and targets the
+next pack, even if that country is collected or was recently drawn. The target survives reloads,
+waits for any active challenge to finish, and is consumed once. Setting another code replaces it.
+An empty field only adds stock; an invalid or excluded code shows an error without changing the save.
+Normal mode ignores debug targets. Test encounters use the normal mastery and achievement rules.
+
 ### Languages
 
 English (default) and German. Texts live in `src/i18n/locales/*.json`; to add a language, add a JSON file and register it in `src/i18n/index.ts`. The choice is stored under `terradeck:lang`.
@@ -43,6 +50,25 @@ Historical stamp counts and unlock dates are preserved, while progress displays 
 
 Normal packs refill every **15 minutes**, up to five stored packs. Existing future refill deadlines
 are capped at a 15-minute remaining wait; shorter waits and stored packs are preserved.
+
+### Achievements
+
+Open **Achievements / Erfolge** (`#achievements`) for 20 cosmetic explorer badges across four
+categories. Visible goals have progress bars and exact counters; two playful surprises stay hidden
+behind hints until earned. No consecutive-success goals, date requirements, sound or video.
+Home links to achievements through an earned-count card; the atlas progress panel still opens Collection.
+
+Tracking starts fresh when this feature first loads: old activity is not backfilled. Newly unlocked
+cards count, including countries that already had a stamp. Continent/atlas completion checks the full
+collection after the next new card unlock. Earned badges retain their date and completed target even
+when the roster expands; resetting progress removes badges too.
+
+One silent banner groups pending awards after encounter feedback and country-card celebrations.
+View it for details or dismiss it to acknowledge the batch across tabs. Pending batches survive reloads.
+Rules live in `src/domain/achievements.ts`, reviewed country groups in `src/data/achievementGroups.ts`,
+and the independently versioned achievement extension stays inside the existing local save.
+Web Locks serialize browser-tab mutations and notification ownership; browsers without them show
+a single-tab-only warning. See [Decisions](docs/DECISIONS.md#achievements) for thresholds and conventions.
 
 ### Help and project information
 
@@ -116,5 +142,7 @@ Mbabane (administrative) and Ramallah (administrative seat). The latter does not
 selection, discovery/save compatibility, the exact roster partition, source/catalog/content invariants,
 all-country completion rules, phone-width map visibility, excluded map polygons, help hashes and
 separate/versioned notice preferences (including unavailable storage).
+Achievement coverage includes exact thresholds, simultaneous awards, fresh legacy tracking, reloads,
+acknowledgements, cross-tab transactions, geographic groups and permanent awards after roster expansion.
 Lint and the production build remain separate commands. Browser flows are currently checked manually
 with Chrome mobile emulation; a repository-managed end-to-end runner is not configured yet.

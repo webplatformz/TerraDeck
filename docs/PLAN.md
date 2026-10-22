@@ -17,16 +17,19 @@ pack refill, hash screens, Pages deploy). The game goal differs: learning geogra
 
 ## Screens
 - **Home** — the sealed pack as hero, pack count (`3 / 5`), countdown to the next pack
-  ("Atlas full" when at 5), collection progress (`7 / 190 cards`), links to Collection and How to play / About.
+  ("Atlas full" when at 5), collection progress (`7 / 190 cards`) linking to Collection,
+  an Achievements card with earned count (`3 / 20`), and How to play / About.
 - **Pack opening** — tear the pack (drag or tap), reveal "Find: Peru", then the challenge.
 - **Challenge** — step 1 continent picker, step 2 map with select + Confirm, result: stamp earned or answer reveal.
 - **Collection** — grid of 190 card slots (locked silhouettes, stamp progress, unlocked cards); tap to open card detail.
+- **Achievements / Erfolge** — 20 cosmetic badges in four categories, exact counters and progress bars,
+  earned dates, two hinted surprises and grouped silent notifications after encounter/card feedback.
 - **How to play & FAQ** — grouped expandable rules, collection scope and deferrals, data limitations,
   error reporting, privacy, sources, project credits and a name-only draft Impressum.
 - **First-visit notice** — short bilingual project/data notice with separate acknowledgement storage;
   help and legal information remain accessible before acknowledgement.
 
-Navigation: screen state in `useGame`, main screens mirrored to the URL hash (`#home`, `#collection`, `#about`);
+Navigation: screen state in `useGame`, main screens mirrored to the URL hash (`#home`, `#collection`, `#achievements`, `#about`);
 help subsections use `#about/<section>` (including privacy, impressum, sources and project);
 pack-opening and challenge phases are not routes. No router library.
 
@@ -40,13 +43,14 @@ src/
     challenge.ts   startChallenge(state, rng, now), answerContinent(), answerCountry(), completeEncounter()
     selection.ts   pickCountry(): exclude collected and recentIds
     config.ts      cooldownMs, maxPacks, stampsToUnlock, recentWindow
+    achievements.ts  Fresh activity tracking, stable badge IDs, pure evaluation and exact progress
   data/          countries.json (roster + card facts), world TopoJSON, continent mapping
-  persistence/   ProgressRepository { load(): Promise<GameState | null>; save(s): Promise<void> }
+  persistence/   ProgressRepository { load(); save(s); update(fallback, pureChange); clear(); subscribe() }
                  LocalStorageRepository — versioned key, migrations, schema validation,
-                 corrupt data → back up and reset
+                 corrupt data → back up and reset; Web Locks serialize latest-save mutations
   game/          useGame hook: wires domain + repository + clock; cross-tab sync via `storage` event
   map/           WorldMap (d3-geo + d3-zoom SVG), enlarged hit targets, fit-to-continent
-  screens/       Home, PackOpening, Challenge, Collection, About
+  screens/       Home, PackOpening, Challenge, Collection, Achievements, About
   components/    PackArt, CardFront, CardBack, Stamp, UnlockSequence, TabBar
   theme.ts       design tokens (colours, timings, clip paths)
 scripts/         data build: world TopoJSON + country facts → src/data (with source/licence notes)
@@ -76,6 +80,7 @@ animation. Phone first, then tablet and desktop. Packs refill every 15 minutes, 
 - d3-geo, d3-zoom, topojson-client, world-atlas.
 - Fonts via `@fontsource` packages (Fraunces, Inter).
 - Animations with CSS transitions/keyframes and clip-paths (as in the reference); no animation library.
+- No sound or video; all feedback remains visual and respects reduced motion.
 - Vitest for domain/persistence unit tests; Playwright for e2e on a mobile viewport.
 - Vite `base` set only for build (`/TerraDeck/`), `server.host: true` for local network access.
 - GitHub Actions → GitHub Pages (`upload-pages-artifact` + `deploy-pages`).

@@ -1,8 +1,10 @@
 import { Trans, useTranslation } from 'react-i18next'
+import { useState } from 'react'
 import { LanguageSelect } from '../components/LanguageSelect'
 import { PackArt } from '../components/PackArt'
 import { COUNTRIES } from '../data/countries'
 import { useContent } from '../i18n/useContent'
+import { ACHIEVEMENT_IDS } from '../domain/achievements'
 import type { Game } from '../game/useGame'
 
 export function formatCountdown(ms: number): string {
@@ -19,13 +21,16 @@ export function Home({ game }: { game: Game }) {
   const { state, now, config } = game
   const { t } = useTranslation()
   const { countryName } = useContent()
+  const [debugCode, setDebugCode] = useState('')
+  const [debugInvalid, setDebugInvalid] = useState(false)
   const collected = COUNTRIES.filter((c) => (state.progress[c.id]?.stamps ?? 0) >= config.stampsToUnlock).length
   const stamps = COUNTRIES.reduce((sum, c) => sum + Math.min(config.stampsToUnlock, state.progress[c.id]?.stamps ?? 0), 0)
   const totalStamps = COUNTRIES.length * config.stampsToUnlock
+  const achievementsEarned = ACHIEVEMENT_IDS.filter(id => state.achievements?.earned[id]).length
   const complete = collected === COUNTRIES.length
   const active = state.activeChallenge
   const full = state.packs >= config.maxPacks
-  const canOpen = !complete && (active || state.packs > 0)
+  const canOpen = !!active || ((!complete || (game.debug && !!state.debugCountryId)) && state.packs > 0)
 
   return (
     <div className="home">
@@ -62,9 +67,25 @@ export function Home({ game }: { game: Game }) {
           {active ? t('home.resume', { country: countryName(active.countryId) }) : state.packs > 0 ? t('home.rip') : t('home.noPacks')}
         </button>
         {game.debug && (
-          <button type="button" className="btn btn--ghost btn--small" onClick={game.addDebugPack}>
-            {t('home.debugAddPack')}
-          </button>
+          <div className="debug-pack-controls">
+            <form className="debug-pack-form" onSubmit={event => {
+              event.preventDefault()
+              const code = debugCode.trim().toLowerCase()
+              if (code && !COUNTRIES.some(country => country.id === code)) {
+                setDebugInvalid(true)
+                return
+              }
+              setDebugInvalid(false)
+              void game.addDebugPack(code)
+            }}>
+              <input aria-label={t('home.debugCountryCode')} aria-invalid={debugInvalid} aria-describedby={debugInvalid ? 'debug-code-error' : undefined}
+                placeholder="CH" maxLength={2} autoComplete="off" autoCapitalize="characters" spellCheck={false}
+                value={debugCode} onChange={event => { setDebugCode(event.target.value); setDebugInvalid(false) }} />
+              <button type="submit" className="btn btn--ghost btn--small">{t('home.debugAddPack')}</button>
+            </form>
+            {debugInvalid && <p id="debug-code-error" role="alert">{t('home.debugInvalidCode')}</p>}
+            {state.debugCountryId && <p role="status">{t('home.debugQueued', { country: countryName(state.debugCountryId) })}</p>}
+          </div>
         )}
         {game.debug && (
           <button
@@ -96,9 +117,12 @@ export function Home({ game }: { game: Game }) {
       </button>
 
       <nav className="home-links" aria-label={t('home.more')}>
-        <button type="button" className="link-tile panel" onClick={() => game.navigate('collection')}>
-          <span className="link-title">{t('home.collectionTitle')}</span>
-          <span className="link-sub">{t('home.collectionSub')}</span>
+        <button type="button" className="link-tile panel" onClick={() => game.navigate('achievements')}>
+          <span className="link-title">{t('nav.achievements')}</span>
+          <span className="home-achievement-count mono" aria-label={t('achievements.total', { count: achievementsEarned, total: ACHIEVEMENT_IDS.length })}>
+            {achievementsEarned} / {ACHIEVEMENT_IDS.length}
+          </span>
+          <span className="link-sub">{t('home.achievementsSub')}</span>
         </button>
         <button type="button" className="link-tile panel" onClick={() => game.navigate('about')}>
           <span className="link-title">{t('home.aboutTitle')}</span>

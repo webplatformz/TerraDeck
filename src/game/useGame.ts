@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { answerContinent, answerCountry, createInitialState, dismissChallenge, openPack, syncPacks } from '../domain/challenge'
 import { DEBUG_CONFIG, DEFAULT_CONFIG } from '../domain/config'
 import type { ContinentId, GameState } from '../domain/types'
@@ -8,6 +8,8 @@ import type { ProgressRepository } from '../persistence/ProgressRepository'
 import { prototypeState } from './prototypeState'
 import { useNow } from './useNow'
 import { mainHash, routeFromHash, type HelpSection, type MainScreen, type Route } from './navigation'
+import { acknowledgeAchievements, emptyAchievements, trackAchievements, type AchievementId } from '../domain/achievements'
+import { addDebugPack as queueDebugPack } from '../domain/debug'
 
 export type { MainScreen, Screen } from './navigation'
 
@@ -33,15 +35,28 @@ export function useGame() {
   const [route, setRoute] = useState<Route>(() => routeFromHash(window.location.hash))
   const { screen, helpSection } = route
   const now = useNow(1000)
-  // Set when the current state came from storage (another tab), so it isn't written straight back.
-  const fromStorage = useRef(false)
+  const [storageError, setStorageError] = useState(false)
+  const mutate = useCallback((change: (state: GameState) => GameState) =>
+    repository.update(freshState, change).then(next => {
+      setState(next)
+      return next
+    }).catch((error: unknown) => {
+      console.error('TerraDeck: could not update progress', error)
+      setStorageError(true)
+    }), [repository, freshState])
 
   useEffect(() => {
     let cancelled = false
-    void repository.load().then((saved) => {
+    void repository.update(freshState, saved => {
+      const synced = syncPacks(saved, Date.now(), config)
+      return synced.achievements ? synced : { ...synced, achievements: emptyAchievements() }
+    }).then((saved) => {
       if (cancelled) return
-      setState(syncPacks(saved ?? freshState(), Date.now(), config))
+      setState(saved)
       setLoaded(true)
+    }).catch((error: unknown) => {
+      console.error('TerraDeck: could not initialize progress', error)
+      setStorageError(true)
     })
     return () => {
       cancelled = true
@@ -50,25 +65,16 @@ export function useGame() {
 
   useEffect(
     () =>
-      repository.subscribe((external) => {
-        fromStorage.current = true
-        setState(external ?? freshState())
+      repository.subscribe(() => {
+        // Refresh under the same queue as local actions so delayed events cannot restore stale UI.
+        void mutate(s => syncPacks(s, Date.now(), config))
       }),
-    [repository, freshState],
+    [repository, freshState, mutate, config],
   )
 
   useEffect(() => {
-    if (!loaded) return
-    if (fromStorage.current) {
-      fromStorage.current = false
-      return
-    }
-    void repository.save(state)
-  }, [state, loaded, repository])
-
-  useEffect(() => {
-    if (loaded) setState((s) => syncPacks(s, now, config))
-  }, [now, config, loaded])
+    if (loaded && state.refillAt !== null && state.refillAt <= now) void mutate(s => syncPacks(s, now, config))
+  }, [now, config, loaded, mutate, state.refillAt])
 
   useEffect(() => {
     const onHash = () => setRoute(routeFromHash(window.location.hash))
@@ -90,39 +96,66 @@ export function useGame() {
   const goToExpedition = useCallback(() => setRoute({ screen: 'expedition', helpSection: null }), [])
 
   const ripPack = useCallback(
-    () => setState((s) => openPack(s, COUNTRIES, Date.now(), Math.random, config)),
-    [config],
+    () => {
+      const at = Date.now()
+      void mutate(s => {
+        const target = debug && COUNTRIES.some(c => c.id === s.debugCountryId) ? s.debugCountryId : undefined
+        const opened = openPack(s, COUNTRIES, at, Math.random, config, target)
+        const next = target && !s.activeChallenge && opened.activeChallenge ? { ...opened, debugCountryId: undefined } : opened
+        return trackAchievements(s, next, COUNTRIES, at)
+      })
+    }, [config, mutate, debug],
   )
 
   const chooseContinent = useCallback(
-    (continent: ContinentId) => setState((s) => answerContinent(s, continent, COUNTRIES, Date.now(), config)),
-    [config],
+    (continent: ContinentId) => {
+      const expected = state.activeChallenge
+      const at = Date.now()
+      void mutate(s => {
+        if (s.activeChallenge?.countryId !== expected?.countryId || s.activeChallenge?.startedAt !== expected?.startedAt) return s
+        return trackAchievements(s, answerContinent(s, continent, COUNTRIES, at, config), COUNTRIES, at)
+      })
+    }, [config, mutate, state.activeChallenge],
   )
 
   const chooseCountry = useCallback(
-    (answer: string) => setState((s) => answerCountry(s, answer, Date.now(), config)),
-    [config],
+    (answer: string) => {
+      const expected = state.activeChallenge
+      const at = Date.now()
+      void mutate(s => {
+        if (s.activeChallenge?.countryId !== expected?.countryId || s.activeChallenge?.startedAt !== expected?.startedAt) return s
+        return trackAchievements(s, answerCountry(s, answer, at, config), COUNTRIES, at)
+      })
+    }, [config, mutate, state.activeChallenge],
   )
 
   const finishExpedition = useCallback((next: MainScreen = 'home') => {
-    setState(dismissChallenge)
-    navigate(next)
-  }, [navigate])
+    const expected = state.activeChallenge
+    void mutate(s => s.activeChallenge?.startedAt === expected?.startedAt && s.activeChallenge?.countryId === expected?.countryId ? dismissChallenge(s) : s)
+      .then(saved => { if (saved) navigate(next) })
+  }, [navigate, mutate, state.activeChallenge])
 
   const addDebugPack = useCallback(
-    () => setState((s) => ({ ...s, ...(s.packs + 1 >= config.maxPacks ? { packs: config.maxPacks, refillAt: null } : { packs: s.packs + 1 }) })),
-    [config],
+    (code = '') => {
+      if (!debug) return
+      return mutate(s => queueDebugPack(s, code, COUNTRIES, config))
+    }, [config, mutate, debug],
   )
 
   const resetProgress = useCallback(() => {
-    void repository.clear()
-    setState(freshState())
-    navigate('home')
-  }, [repository, freshState, navigate])
+    void mutate(() => ({ ...freshState(), achievements: emptyAchievements() })).then(saved => { if (saved) navigate('home') })
+  }, [freshState, navigate, mutate])
+
+  const acknowledgeBadges = useCallback((ids: readonly AchievementId[]) =>
+    mutate(s => acknowledgeAchievements(s, ids)), [mutate])
 
   return {
     state,
     loaded,
+    storageError,
+    singleTabOnly: typeof navigator !== 'undefined' && !navigator.locks,
+    notificationLock: `${STORAGE_KEY}${demo ? ':demo' : ''}:achievement-notification`,
+    acknowledgeBadges,
     screen,
     helpSection,
     now,
