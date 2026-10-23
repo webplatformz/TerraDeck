@@ -252,8 +252,8 @@ than one growing end-to-end chain. Failed runs retain traces in the ignored `tes
 Confirmed wrong-country answers show the selected and target countries with flags and subtle
 red/green panels. Successful results and revealed wrong-continent answers use the same
 country-and-flag styling. Names are not revealed while choosing; existing map feedback is unchanged.
-Continent map taps and buttons share an 800 ms correction window: the pending choice
-highlights immediately, and another selection restarts the window before the answer counts.
+Continent map taps and buttons highlight a pending choice without submitting it.
+Like country selection, the answer counts only after pressing the confirmation button.
 
 Collection's **Learn again** controls reset all countries or the selected continent after confirmation.
 Affected discovery/stamps/cards (including archives) are cleared; earned achievements, original dates

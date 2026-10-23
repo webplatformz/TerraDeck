@@ -184,8 +184,8 @@
 - **Continent step:** the world map (rectangular equirectangular projection) shows only the six outlines with no borders, plus wide
   hit targets. The overview is enlarged by up to 12%, cropping the horizontal edges while
   keeping the land's full height inside the frame. Map taps and buttons highlight the pending
-  continent and answer after an 800 ms correction window with no confirmation; another
-  selection restarts the window, and only the last one counts.
+  continent without submitting it. Players can change their choice freely; an explicit
+  confirmation button submits the selected continent, matching the country step.
 - **Continent feedback:** the answer is saved immediately (a reload can't undo it). A correct pick turns the
   continent and its button green for 700 ms, then the country step opens. A wrong pick turns them red and shows
   a "Wrong continent" overlay; its button leads to the existing reveal on the correct continent's map.
@@ -208,7 +208,7 @@
   outside, zooming or panning closes it. This works in Europe (the Alps, Benelux, the Balkans) and in the
   Caribbean.
 - Rings mark small selected or revealed countries so they stay visible at low zoom. With reduced motion,
-  the map transitions are instant (the 300 ms continent pick delay stays, because it is input timing).
+  the map transitions are instant. Continent selection has no auto-submit timer.
 
 ## Technical
 - Reference project for structure and tooling: webplatformz/-boring-game-name-.

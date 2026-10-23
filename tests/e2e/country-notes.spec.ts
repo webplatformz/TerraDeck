@@ -87,6 +87,7 @@ test('Silver introductions and Explorer flips respect mastery and fit on phones'
   await page.locator('.expedition .btn--primary').click()
   await page.locator('.orders .btn--primary').click()
   await page.getByRole('button', { name: de ? 'Europa' : 'Europe', exact: true }).click()
+  await page.locator('.sheet .btn--primary').click()
   await page.locator('.challenge-map path[data-name="France"]').click()
   await page.locator('.sheet .btn--primary').click()
   await page.locator('.sheet .btn--primary').click()

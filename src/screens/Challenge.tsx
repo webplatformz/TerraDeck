@@ -15,8 +15,6 @@ import { ContinentPicker, type ContinentVerdict } from '../map/ContinentPicker'
 
 /** How long a correct continent stays green before the country step opens. */
 export const CONTINENT_FEEDBACK_MS = 700
-/** Each continent choice can be corrected until this quiet period expires. */
-export const CONTINENT_PICK_DELAY_MS = 800
 
 /** Country and continent names inside challenge texts are wrapped in <name>…</name>. */
 const PLACE = { name: <em className="place" /> }
@@ -47,13 +45,11 @@ export function Challenge({ game, world }: { game: Game; world: WorldData }) {
   const [selected, setSelected] = useState<string | null>(null)
   const [showUnlock, setShowUnlock] = useState(false)
   const [pendingContinent, setPendingContinent] = useState<ContinentId | null>(null)
-  const pickTimer = useRef<number>()
-  // After the correction window, save the answer and keep the continent visible for feedback.
+  // After confirmation, keep the continent visible for feedback.
   const [verdict, setVerdict] = useState<ContinentVerdict | null>(null)
   const verdictRef = useRef(verdict)
   const feedbackTimer = useRef<number>()
   useEffect(() => () => {
-    window.clearTimeout(pickTimer.current)
     window.clearTimeout(feedbackTimer.current)
   }, [])
   const step = verdict ? 'continent' : challenge.step
@@ -85,6 +81,7 @@ export function Challenge({ game, world }: { game: Game; world: WorldData }) {
     const next = { id, correct }
     verdictRef.current = next
     setVerdict(next)
+    setPendingContinent(null)
     game.chooseContinent(id)
     if (correct) feedbackTimer.current = window.setTimeout(() => {
       verdictRef.current = null
@@ -94,11 +91,6 @@ export function Challenge({ game, world }: { game: Game; world: WorldData }) {
   const pickContinent = (id: ContinentId) => {
     if (verdictRef.current || challenge.step !== 'continent') return
     setPendingContinent(id)
-    window.clearTimeout(pickTimer.current)
-    pickTimer.current = window.setTimeout(() => {
-      setPendingContinent(null)
-      answerContinent(id)
-    }, CONTINENT_PICK_DELAY_MS)
   }
   const continentBtnClass = (id: ContinentId) =>
     `continent-btn${verdict?.id === id ? (verdict.correct ? ' is-correct' : ' is-wrong') : pendingContinent === id ? ' is-picked' : ''}`
@@ -159,6 +151,9 @@ export function Challenge({ game, world }: { game: Game; world: WorldData }) {
                 </button>
               ))}
             </div>
+            <button type="button" className="btn btn--primary btn--wide" disabled={!pendingContinent || !!verdict} onClick={() => pendingContinent && answerContinent(pendingContinent)}>
+              {pendingContinent || verdict ? t('challenge.confirm') : t('challenge.select')}
+            </button>
           </>
         )}
 

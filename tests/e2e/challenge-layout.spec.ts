@@ -67,6 +67,7 @@ test('pack, continent, country and result work without resizing, including reloa
   await page.locator('.orders .btn--primary').click()
   await expectUsableMap(page, 'continent')
   await page.getByRole('button', { name: language === 'en' ? 'Europe' : 'Europa', exact: true }).click()
+  await page.locator('.sheet .btn--primary').click()
   await expect(page.locator('.challenge-map path[data-name="France"]')).toBeAttached()
   await expectUsableMap(page, 'country')
 
@@ -99,6 +100,7 @@ test('wrong-continent answer reveals the country panel and flag', async ({ page 
   const language = testInfo.project.name === 'iphone-16' ? 'de' : 'en'
   await openChallenge(page)
   await page.getByRole('button', { name: language === 'en' ? 'Asia' : 'Asien', exact: true }).click()
+  await page.locator('.sheet .btn--primary').click()
   await expect(page.getByRole('alertdialog')).toBeVisible()
   await expect(page.locator('.answer-place')).toHaveCount(0)
   await page.getByRole('button', { name: language === 'en' ? 'Show the answer' : 'Lösung zeigen', exact: true }).click()
@@ -110,7 +112,7 @@ test('wrong-continent answer reveals the country panel and flag', async ({ page 
   await expect(page.locator('.answer-place--single')).toBeVisible()
 })
 
-test('continent corrections share a fresh 800ms window across map and buttons', async ({ page }, testInfo) => {
+test('continent choices remain editable until explicit confirmation across map and buttons', async ({ page }, testInfo) => {
   const language = testInfo.project.name === 'iphone-16' ? 'de' : 'en'
   await openChallenge(page)
   await expect(page.locator('.map-continent[data-continent="asia"]')).toBeVisible()
@@ -119,23 +121,25 @@ test('continent corrections share a fresh 800ms window across map and buttons', 
   const savedChallenge = () => page.evaluate(() => JSON.parse(localStorage.getItem('terradeck:save:v1')!).activeChallenge)
   const europe = page.getByRole('button', { name: language === 'en' ? 'Europe' : 'Europa', exact: true })
   const asia = page.getByRole('button', { name: language === 'en' ? 'Asia' : 'Asien', exact: true })
+  const confirm = page.locator('.sheet .btn--primary')
+  await expect(confirm).toBeDisabled()
 
   await asia.click()
   await expect(asia).toHaveClass(/is-picked/)
   await expect(page.locator('.map-continent.is-picked')).toHaveAttribute('data-continent', 'asia')
-  await page.clock.runFor(799)
+  await page.clock.runFor(5000)
   expect((await savedChallenge()).continentAnswer).toBeNull()
   await page.locator('.map-continent[data-continent="europe"]').dispatchEvent('click')
   await expect(europe).toHaveClass(/is-picked/)
-  await page.clock.runFor(799)
+  await page.clock.runFor(5000)
   expect((await savedChallenge()).continentAnswer).toBeNull()
   await page.locator('.map-continent[data-continent="asia"]').dispatchEvent('click')
-  await page.clock.runFor(799)
+  await page.clock.runFor(5000)
   expect((await savedChallenge()).continentAnswer).toBeNull()
   await europe.click()
-  await page.clock.runFor(799)
+  await page.clock.runFor(5000)
   expect((await savedChallenge()).continentAnswer).toBeNull()
-  await page.clock.runFor(1)
+  await confirm.click()
   await expect.poll(async () => (await savedChallenge()).continentAnswer).toBe('europe')
   await expect(europe).toBeDisabled()
   await expect(page.getByRole('alertdialog')).toHaveCount(0)
@@ -147,6 +151,7 @@ test('wrong-country feedback preserves flags and map markers after reload', asyn
   const language = testInfo.project.name === 'iphone-16' ? 'de' : 'en'
   await openChallenge(page)
   await page.getByRole('button', { name: language === 'en' ? 'Europe' : 'Europa', exact: true }).click()
+  await page.locator('.sheet .btn--primary').click()
   const germany = page.locator('.challenge-map path[data-name="Germany"]')
   await expect(germany).toBeVisible()
   if (testInfo.project.use.hasTouch) await germany.tap()
