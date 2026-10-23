@@ -18,6 +18,8 @@ export interface AchievementState {
   visitors: number
   discovered: string[]
   collected: string[]
+  /** Mastered cards retained only for completion-goal progress after learning resets. */
+  completionCollected?: string[]
   stampedContinents: ContinentId[]
   misses: Record<string, number>
   recovered: boolean
@@ -98,7 +100,8 @@ export function achievementProgress(
   const countries = roster.filter(c => a.collected.includes(c.id))
   const groupCount = (group: readonly string[]) => countries.filter(c => group.includes(c.id)).length
   const continents = [...new Set(roster.map(c => c.continent))]
-  const collection = (entries: readonly RosterEntry[]) => entries.filter(c => (state.progress[c.id]?.stamps ?? 0) >= 2).length
+  const collection = (entries: readonly RosterEntry[]) => entries.filter(c =>
+    (state.progress[c.id]?.stamps ?? 0) >= 2 || a.completionCollected?.includes(c.id)).length
   let current = 0
   let target = 1
   switch (id) {

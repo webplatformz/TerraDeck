@@ -211,6 +211,13 @@
   "collection": {
     "eyebrow": "Your collection",
     "archiveTitle": "Collection archive",
+    "learnAgain": "Learn again",
+    "resetAll": "Reset all countries",
+    "resetContinent": "Reset {{continent}}",
+    "resetDescription": "Clear discoveries, stamps and cards to learn again. Earned achievements, their dates and unfinished achievement progress stay intact. Packs still draw from all eligible countries, not only the reset continent.",
+    "resetFilterHint": "Choose a continent above to reset only that continent.",
+    "resetConfirm": "{{scope}}?\n\nThis permanently clears the affected discoveries, stamps and cards, including archived countries. Achievements and their progress are kept. Pack stock and cooldown stay unchanged except that an affected unfinished encounter is cancelled and one pack refunded, up to five. Completed results get no refund. This cannot be undone.",
+    "resetDone": "{{scope}}: collection progress cleared. Your achievements are safe.",
     "archiveDescription": "These previously discovered countries are no longer playable because their map targets are too small. Your names, stamps and collected cards are preserved here, separately from atlas completion.",
     "archivedCard": "Archived country — not included in packs or completion totals.",
     "archivedProgress": "Your existing progress is preserved. No further stamps can be earned for this archived card.",
@@ -300,7 +307,7 @@
     },
     "saving": {
       "title": "Is my progress saved?",
-      "body": "Yes, in this browser only: reloading resumes your progress, but there is no cross-device sync. Clearing site data can erase it; private browsing or blocked/full storage may prevent saving."
+      "body": "Yes, in this browser only: reloading resumes your progress, but there is no cross-device sync. Collection → Learn again lets you reset all countries or one selected continent while keeping achievements and their progress. This does not limit future packs to that continent. Clearing site data erases everything; private browsing or blocked/full storage may prevent saving."
     },
     "rarity": {
       "title": "Where does rarity come from?",

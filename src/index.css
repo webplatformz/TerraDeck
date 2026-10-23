@@ -108,6 +108,12 @@ p {
   border-top: 1px solid var(--paper-400);
   color: var(--paper-100);
 }
+.collection-reset { padding: 14px; margin-bottom: 20px; }
+.collection-reset summary { cursor: pointer; font-weight: 600; }
+.collection-reset p { margin-top: 12px; line-height: 1.5; }
+.collection-reset-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.collection-reset-actions .btn { white-space: normal; }
+.collection-reset-status { margin-bottom: 16px; line-height: 1.5; }
 .collection-archive > p { margin: 12px 0 20px; line-height: 1.6; color: var(--paper-300); }
 .roster-notice {
   max-width: 900px;

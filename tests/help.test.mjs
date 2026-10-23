@@ -95,7 +95,7 @@ test('bilingual help content covers every entry, the approved roster policy and 
     }
     assert.match(content.help.roster.excluded, /27/)
     assert.match(content.help.territories.body, /Kosovo.*Taiwan/)
-    assert.match(content.help.project.inspiration, /Camp|camp/)
+    assert.match(content.help.project.inspiration, /Worldle/)
     assert.match(content.help.project.inspiration, /Bundeshaus Pack/)
   }
   assert.deepEqual(Object.keys(en.notice).sort(), Object.keys(de.notice).sort())

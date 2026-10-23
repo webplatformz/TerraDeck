@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { answerContinent, answerCountry, createInitialState, dismissChallenge, openPack, syncPacks } from '../domain/challenge'
 import { DEBUG_CONFIG, DEFAULT_CONFIG } from '../domain/config'
 import type { ContinentId, GameState } from '../domain/types'
-import { ARCHIVED_COUNTRIES, COUNTRIES } from '../data/countries'
+import { ALL_COUNTRIES, ARCHIVED_COUNTRIES, COUNTRIES } from '../data/countries'
 import { LocalStorageRepository, STORAGE_KEY } from '../persistence/LocalStorageRepository'
 import type { ProgressRepository } from '../persistence/ProgressRepository'
 import { prototypeState } from './prototypeState'
@@ -11,6 +11,7 @@ import { mainHash, routeFromHash, type HelpSection, type MainScreen, type Route 
 import { acknowledgeAchievements, emptyAchievements, trackAchievements, type AchievementId } from '../domain/achievements'
 import { addDebugPack as queueDebugPack } from '../domain/debug'
 import { reconcileRoster } from '../domain/rosterUpdate'
+import { resetCollection as clearCollection } from '../domain/resetCollection'
 
 const removedIds = ARCHIVED_COUNTRIES.map(c => c.id)
 
@@ -148,6 +149,8 @@ export function useGame() {
   const resetProgress = useCallback(() => {
     void mutate(() => ({ ...freshState(), achievements: emptyAchievements() })).then(saved => { if (saved) navigate('home') })
   }, [freshState, navigate, mutate])
+  const resetCollection = useCallback((continent: ContinentId | 'all') =>
+    mutate(s => clearCollection(s, ALL_COUNTRIES, continent, Date.now(), config)), [mutate, config])
 
   const acknowledgeBadges = useCallback((ids: readonly AchievementId[]) =>
     mutate(s => acknowledgeAchievements(s, ids)), [mutate])
@@ -175,6 +178,7 @@ export function useGame() {
     finishExpedition,
     addDebugPack,
     resetProgress,
+    resetCollection,
   }
 }
 

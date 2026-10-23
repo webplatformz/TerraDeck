@@ -12,6 +12,7 @@ export function isAchievementState(v: unknown): v is AchievementState {
   if (!isObject(v) || v.version !== 1) return false
   if (![v.encounters, v.perfect, v.visitors].every(isCount)) return false
   if (![v.discovered, v.collected, v.stampedContinents].every(isIds)) return false
+  if (v.completionCollected !== undefined && !isIds(v.completionCollected)) return false
   if (!(v.stampedContinents as string[]).every(c => ['africa', 'asia', 'europe', 'north-america', 'south-america', 'oceania'].includes(c))) return false
   if (!isObject(v.misses) || !Object.values(v.misses).every(isCount)) return false
   if (![v.recovered, v.scenic, v.wrongContinent].every(flag => typeof flag === 'boolean')) return false

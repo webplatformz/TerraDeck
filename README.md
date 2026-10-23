@@ -171,5 +171,13 @@ first-entry map/SVG dimensions **without resizing**, continent/country answers, 
 reload/resume and the result. Failed runs retain traces in the ignored `test-results/` directory.
 Confirmed wrong-country answers show the selected and target countries with flags and subtle
 red/green panels. Names are not revealed while choosing; existing map feedback is unchanged.
+
+Collection's **Learn again** controls reset all countries or the selected continent after confirmation.
+Affected discovery/stamps/cards (including archives) are cleared; earned achievements, original dates
+and unfinished achievement tracking remain intact. Repeated encounters count as new activity, while
+historical discovery/collection ID lists remain unique. Pack stock and refill deadlines are preserved
+apart from normal elapsed refills and a one-pack refund for an affected unfinished encounter (cap five).
+Affected completed results are cancelled without refund; other encounters stay intact. Resetting does
+not restrict draws to a continent. The debug-only full-save reset still clears everything, including badges.
 Unit and browser tests also run before GitHub Pages deployment. Challenge maps have a minimum
 height with scrolling on short screens, rather than shrinking to an unusable strip.

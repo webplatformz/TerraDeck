@@ -21,13 +21,18 @@ export function Expedition({ game }: { game: Game }) {
   const world = useWorld()
   const { t } = useTranslation()
   const { countryName } = useContent()
-  const { state } = game
+  const { state, navigate } = game
   const challenge = state.activeChallenge
   const [phase, setPhase] = useState<Phase>(challenge && challenge.step !== 'continent' ? 'challenge' : challenge ? 'orders' : 'sealed')
   const [drag, setDrag] = useState(0)
   const dragStart = useRef<{ x: number; y: number } | null>(null)
   const moved = useRef(0)
   const packRef = useRef<HTMLDivElement>(null)
+  const previousChallenge = useRef(challenge)
+  useEffect(() => {
+    if (previousChallenge.current && !challenge) navigate('home')
+    previousChallenge.current = challenge
+  }, [challenge, navigate])
 
   useEffect(() => {
     if (phase !== 'tearing') return

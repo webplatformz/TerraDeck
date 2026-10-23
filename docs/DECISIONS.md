@@ -215,7 +215,19 @@
 - **Permanent within the save:** award IDs, actual earned timestamps and the target at the time of
   earning are persisted once. A roster expansion never revokes an award, changes its date or makes its
   progress bar incomplete. Locked completion goals derive targets from the playable roster.
-  Explicit progress reset or clearing site storage still removes badges along with the rest of the save.
+  Collection's **Learn again** reset preserves the entire achievement extension, including unfinished
+  tracking, earned dates, acknowledgement flags and frozen targets. Only the debug-only full-save reset
+  or clearing site storage removes badges.
+- **Learning resets:** confirmed all-country or selected-continent actions clear affected progress,
+  including archives, recent IDs and retired-challenge discovery evidence. Other continents remain
+  untouched; all-country reset also clears unknown legacy progress. Draws still use the whole playable
+  roster. Counters continue with repeated activity, but discovery/collection tracking IDs stay unique.
+  Optional `completionCollected` IDs preserve actually mastered cards for locked continent/atlas badge
+  progress only; they do not reveal cards or count toward the reset Collection. No dates or awards are
+  invented. Completion awards still require a genuinely new card unlock.
+  Under the existing save transaction, reconcile elapsed packs and cancel affected active challenges;
+  refund one pack only for unfinished challenges (cap five), preserving a non-full refill deadline.
+  Repeated resets cannot refund twice. Tabs showing a cancelled encounter return Home.
 - **Progress:** all visible goals have a native accessible progress bar and exact current/target counter.
   Before completion, the continent goal shows the continent nearest completion by proportion.
   Earned goals show their frozen completed target. The two hidden goals show hints without

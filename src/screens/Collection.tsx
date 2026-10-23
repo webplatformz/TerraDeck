@@ -15,6 +15,18 @@ export function Collection({ game }: { game: Game }) {
   const { countryName, continentName } = useContent()
   const [filter, setFilter] = useState<ContinentId | 'all'>('all')
   const [open, setOpen] = useState<Country | null>(null)
+  const [resetting, setResetting] = useState(false)
+  const [resetMessage, setResetMessage] = useState('')
+  const reset = async (scope: ContinentId | 'all') => {
+    const label = scope === 'all' ? t('collection.resetAll') : t('collection.resetContinent', { continent: continentName(scope) })
+    if (!window.confirm(t('collection.resetConfirm', { scope: label }))) return
+    setResetting(true)
+    setResetMessage('')
+    try {
+      const saved = await game.resetCollection(scope)
+      if (saved) setResetMessage(t('collection.resetDone', { scope: label }))
+    } finally { setResetting(false) }
+  }
   const stampsOf = (c: Country) => state.progress[c.id]?.stamps ?? 0
   const isCollected = (c: Country) => stampsOf(c) >= config.stampsToUnlock
   const collected = COUNTRIES.filter(isCollected).length
@@ -45,6 +57,23 @@ export function Collection({ game }: { game: Game }) {
           </button>
         ))}
       </div>
+
+      <details className="collection-reset panel">
+        <summary>{t('collection.learnAgain')}</summary>
+        <p>{t('collection.resetDescription')}</p>
+        <div className="collection-reset-actions">
+          <button type="button" className="btn btn--ghost btn--small" disabled={resetting} onClick={() => void reset('all')}>
+            {t('collection.resetAll')}
+          </button>
+          {filter !== 'all' && (
+            <button type="button" className="btn btn--ghost btn--small" disabled={resetting} onClick={() => void reset(filter)}>
+              {t('collection.resetContinent', { continent: continentName(filter) })}
+            </button>
+          )}
+        </div>
+        {filter === 'all' && <p>{t('collection.resetFilterHint')}</p>}
+      </details>
+      {resetMessage && <p className="collection-reset-status" role="status">{resetMessage}</p>}
 
       <ul className="card-grid">
         {shown.map((c) => (

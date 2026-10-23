@@ -211,6 +211,13 @@
   "collection": {
     "eyebrow": "Deine Sammlung",
     "archiveTitle": "Sammlungsarchiv",
+    "learnAgain": "Noch einmal lernen",
+    "resetAll": "Alle Länder zurücksetzen",
+    "resetContinent": "{{continent}} zurücksetzen",
+    "resetDescription": "Lösche Entdeckungen, Stempel und Karten, um erneut zu lernen. Erfolge, ihre ursprünglichen Daten und der Fortschritt offener Erfolge bleiben erhalten. Päckchen ziehen weiterhin aus allen verfügbaren Ländern, nicht nur dem zurückgesetzten Kontinent.",
+    "resetFilterHint": "Wähle oben einen Kontinent, um nur diesen zurückzusetzen.",
+    "resetConfirm": "{{scope}}?\n\nDies löscht die betroffenen Entdeckungen, Stempel und Karten dauerhaft, auch im Archiv. Erfolge und ihr Fortschritt bleiben erhalten. Päckchen und Nachfüllzeit bleiben unverändert, außer dass eine betroffene offene Begegnung beendet und ein Päckchen bis zum Maximum von fünf zurückgegeben wird. Abgeschlossene Ergebnisse erhalten keine Rückgabe. Dies kann nicht rückgängig gemacht werden.",
+    "resetDone": "{{scope}}: Sammlungsfortschritt gelöscht. Deine Erfolge bleiben erhalten.",
     "archiveDescription": "Diese früher entdeckten Länder sind wegen ihrer zu kleinen Kartenziele nicht mehr spielbar. Namen, Stempel und gesammelte Karten bleiben hier erhalten, getrennt vom Atlas-Abschluss.",
     "archivedCard": "Archiviertes Land — zählt nicht zu Päckchen oder Abschlusszielen.",
     "archivedProgress": "Dein bisheriger Fortschritt bleibt erhalten. Für diese archivierte Karte gibt es keine weiteren Stempel.",
@@ -300,7 +307,7 @@
     },
     "saving": {
       "title": "Wird mein Fortschritt gespeichert?",
-      "body": "Ja, nur in diesem Browser: Neuladen setzt deinen Fortschritt fort, aber es gibt keine geräteübergreifende Synchronisierung. Das Löschen der Websitedaten kann ihn entfernen; privates Surfen oder gesperrter/voller Speicher können das Speichern verhindern."
+      "body": "Ja, nur in diesem Browser: Neuladen setzt deinen Fortschritt fort, aber es gibt keine geräteübergreifende Synchronisierung. Unter Sammlung → Noch einmal lernen kannst du alle Länder oder einen gewählten Kontinent zurücksetzen. Erfolge und ihr Fortschritt bleiben erhalten. Künftige Päckchen werden dadurch nicht auf diesen Kontinent begrenzt. Das Löschen der Websitedaten entfernt alles; privates Surfen oder gesperrter/voller Speicher können das Speichern verhindern."
     },
     "rarity": {
       "title": "Woher kommt die Seltenheit?",
