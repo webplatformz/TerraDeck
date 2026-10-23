@@ -189,6 +189,8 @@
     "notQuite": "Not quite",
     "wrongContinent": "<name>{{country}}</name> is in <name>{{correct}}</name>, not <name>{{wrong}}</name>.",
     "wrongCountry": "That was not <name>{{country}}</name>. It is marked on the map.",
+    "youSelected": "You selected",
+    "correctCountry": "Find this country",
     "stampsSafe": "Your stamps are safe ({{stamps}} of {{total}})."
   },
   "map": {
@@ -323,7 +325,7 @@
     },
     "project": {
       "title": "About the project",
-      "inspiration": "The idea for TerraDeck took shape at a camp, inspired by Bundeshaus Pack. A big thank-you to its developers for the spark and the pack-opening inspiration!",
+      "inspiration": "I wasn't very good at Worldle, so I wanted a fun way to learn the countries and where to find them. That's how TerraDeck began. A big thank-you to the developers of Bundeshaus Pack for the pack-opening inspiration!",
       "credit": "Discover Bundeshaus Pack — inspiration & developer credit"
     },
     "report": {

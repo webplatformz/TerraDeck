@@ -189,6 +189,8 @@
     "notQuite": "Knapp daneben",
     "wrongContinent": "Gesucht war <name>{{country}}</name>. Das liegt in <name>{{correct}}</name>, nicht in <name>{{wrong}}</name>.",
     "wrongCountry": "Leider falsch – gesucht war <name>{{country}}</name>. Die richtige Stelle ist auf der Karte markiert.",
+    "youSelected": "Deine Auswahl",
+    "correctCountry": "Gesucht war",
     "stampsSafe": "Deine Stempel bleiben erhalten ({{stamps}} von {{total}})."
   },
   "map": {
@@ -323,7 +325,7 @@
     },
     "project": {
       "title": "Über das Projekt",
-      "inspiration": "Die Idee zu TerraDeck entstand bei einem Camp, inspiriert von Bundeshaus Pack. Ein großes Dankeschön an dessen Entwicklerinnen und Entwickler für den Funken und die Inspiration zum Packöffnen!",
+      "inspiration": "Ich war nicht besonders gut in Worldle und wollte die Länder und ihre Lage auf spielerische Weise besser kennenlernen. So entstand TerraDeck. Ein großes Dankeschön an die Entwicklerinnen und Entwickler von Bundeshaus Pack für die Inspiration zum Packöffnen!",
       "credit": "Bundeshaus Pack entdecken — Inspiration & Dank ans Entwicklerteam"
     },
     "report": {

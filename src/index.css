@@ -1441,6 +1441,42 @@ p {
   color: #9c3a26;
 }
 
+.answer-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.answer-place {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 12px 8px;
+  border: 1px solid;
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+}
+
+.answer-place--wrong {
+  color: #7d3022;
+  background: rgba(207, 90, 64, 0.08);
+  border-color: rgba(156, 58, 38, 0.25);
+}
+
+.answer-place--correct {
+  color: #245940;
+  background: rgba(79, 165, 143, 0.1);
+  border-color: rgba(47, 110, 82, 0.25);
+}
+
+.answer-place-label { font-size: 0.75rem; }
+.answer-place .flag { width: 44px; height: 33px; object-fit: contain; }
+.answer-place strong { font-size: 0.95rem; line-height: 1.3; }
+
 @media (min-width: 900px) {
   .challenge {
     grid-template-columns: minmax(0, 1fr) 380px;

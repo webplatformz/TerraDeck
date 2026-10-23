@@ -169,5 +169,7 @@ desktop at 1280x800 in English, and iPhone 16-sized touch emulation at 393x852 i
 Phone emulation uses Chrome, not an actual iPhone or Safari. Both runs check pack opening,
 first-entry map/SVG dimensions **without resizing**, continent/country answers, saved-challenge
 reload/resume and the result. Failed runs retain traces in the ignored `test-results/` directory.
+Confirmed wrong-country answers show the selected and target countries with flags and subtle
+red/green panels. Names are not revealed while choosing; existing map feedback is unchanged.
 Unit and browser tests also run before GitHub Pages deployment. Challenge maps have a minimum
 height with scrolling on short screens, rather than shrinking to an unusable strip.

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { StampRow } from '../components/Stamp'
+import { Flag } from '../components/Flag'
 import { UnlockSequence } from '../components/UnlockSequence'
 import { CONTINENTS } from '../data/continents'
 import { COUNTRY_BY_ID, COUNTRY_BY_MAP_NAME } from '../data/countries'
@@ -52,6 +53,9 @@ export function Challenge({ game, world }: { game: Game; world: WorldData }) {
     }
   }
   const wrongContinent = step === 'result' && challenge.continentAnswer !== country.continent
+  const wrongAnswer = step === 'result' && outcome === 'missed' && !wrongContinent && challenge.countryAnswer
+    ? COUNTRY_BY_ID[challenge.countryAnswer] ?? COUNTRY_BY_MAP_NAME[mapNameFromAnswer(challenge.countryAnswer) ?? '']
+    : undefined
 
   const answerContinent = (id: ContinentId) => {
     if (verdictRef.current || challenge.step !== 'continent') return
@@ -161,6 +165,20 @@ export function Challenge({ game, world }: { game: Game; world: WorldData }) {
         {step === 'result' && outcome === 'missed' && (
           <>
             <p className="result-title result-title--miss">{t('challenge.notQuite')}</p>
+            {wrongAnswer && (
+              <div className="answer-comparison">
+                <div className="answer-place answer-place--wrong">
+                  <span className="answer-place-label">{t('challenge.youSelected')}</span>
+                  <Flag countryId={wrongAnswer.id} />
+                  <strong>{countryName(wrongAnswer.id)}</strong>
+                </div>
+                <div className="answer-place answer-place--correct">
+                  <span className="answer-place-label">{t('challenge.correctCountry')}</span>
+                  <Flag countryId={country.id} />
+                  <strong>{name}</strong>
+                </div>
+              </div>
+            )}
             <p className="sheet-prompt">
               {wrongContinent ? (
                 <Trans
