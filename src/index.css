@@ -1203,9 +1203,11 @@ p {
 
 .challenge {
   position: relative;
+  width: 100%;
   height: 100%;
+  overflow-y: auto;
   display: grid;
-  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto minmax(160px, 1fr) auto;
   grid-template-areas: 'bar' 'steps' 'map' 'sheet';
 }
 
@@ -1259,6 +1261,7 @@ p {
 
 .challenge-map {
   grid-area: map;
+  min-width: 0;
   min-height: 0;
   padding: 0 12px;
 }
@@ -1441,7 +1444,7 @@ p {
 @media (min-width: 900px) {
   .challenge {
     grid-template-columns: minmax(0, 1fr) 380px;
-    grid-template-rows: auto auto minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(160px, 1fr);
     grid-template-areas:
       'bar bar'
       'steps steps'

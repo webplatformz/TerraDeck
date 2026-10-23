@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "test": "tsx --test tests/*.test.mjs",
+    "test:e2e": "playwright test",
     "rarity:build": "node scripts/build-rarity.mjs",
     "rarity:collect": "node scripts/collect-rarity.mjs",
     "atlas:collect": "node scripts/collect-atlas.mjs",
@@ -35,6 +36,7 @@
     "world-atlas": "^2.0.2"
   },
   "devDependencies": {
+    "@playwright/test": "~1.58.2",
     "@eslint/js": "^9.39.5",
     "@types/d3-geo": "^3.1.1",
     "@types/d3-selection": "^3.0.12",

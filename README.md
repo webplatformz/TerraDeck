@@ -159,5 +159,15 @@ acknowledgements, cross-tab transactions, geographic groups and permanent awards
 Roster-update checks cover the exact 168/27 partition, frozen card numbering/rarity, archival progress,
 idempotent challenge refunds and debug-target removal. The small-country badge now requires three
 new eligible cards; its stable `small-5` ID and previously earned five-card targets remain intact.
-Lint and the production build remain separate commands. Browser flows are currently checked manually
-with Chrome mobile emulation; a repository-managed end-to-end runner is not configured yet.
+Lint and the production build remain separate commands.
+
+`npm run test:e2e` uses an existing Google Chrome installation; no browser or operating-system
+dependency installation step is run. Chrome must be available locally and on the CI runner;
+a missing installation fails explicitly. Playwright remains the single browser-test dependency.
+The suite starts its own Vite server on port 5178 and runs the same general gameplay flow twice:
+desktop at 1280x800 in English, and iPhone 16-sized touch emulation at 393x852 in German.
+Phone emulation uses Chrome, not an actual iPhone or Safari. Both runs check pack opening,
+first-entry map/SVG dimensions **without resizing**, continent/country answers, saved-challenge
+reload/resume and the result. Failed runs retain traces in the ignored `test-results/` directory.
+Unit and browser tests also run before GitHub Pages deployment. Challenge maps have a minimum
+height with scrolling on short screens, rather than shrinking to an unusable strip.
