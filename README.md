@@ -164,11 +164,13 @@ Lint and the production build remain separate commands.
 `npm run test:e2e` uses an existing Google Chrome installation; no browser or operating-system
 dependency installation step is run. Chrome must be available locally and on the CI runner;
 a missing installation fails explicitly. Playwright remains the single browser-test dependency.
-The suite starts its own Vite server on port 5178 and runs the same general gameplay flow twice:
+The suite starts its own Vite server on port 5178 and uses two viewport/language projects:
 desktop at 1280x800 in English, and iPhone 16-sized touch emulation at 393x852 in German.
 Phone emulation uses Chrome, not an actual iPhone or Safari. Both runs check pack opening,
 first-entry map/SVG dimensions **without resizing**, continent/country answers, saved-challenge
-reload/resume and the result. Failed runs retain traces in the ignored `test-results/` directory.
+reload/resume and the result. Gameplay, wrong-answer feedback, collection resets and cross-tab
+refunds are independent tests with fresh browser storage and separate 30-second budgets, rather
+than one growing end-to-end chain. Failed runs retain traces in the ignored `test-results/` directory.
 Confirmed wrong-country answers show the selected and target countries with flags and subtle
 red/green panels. Names are not revealed while choosing; existing map feedback is unchanged.
 

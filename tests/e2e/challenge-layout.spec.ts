@@ -1,4 +1,7 @@
 import { expect, test, type Page } from '@playwright/test'
+import { emptyAchievements } from '../../src/domain/achievements'
+import { createInitialState } from '../../src/domain/challenge'
+import { DEFAULT_CONFIG } from '../../src/domain/config'
 
 async function expectUsableMap(page: Page, step: 'continent' | 'country') {
   const viewport = page.viewportSize()!
@@ -48,13 +51,16 @@ async function resumeChallenge(page: Page) {
   await page.locator('.home-pack > .btn--primary').click()
 }
 
-test('pack, continent, country and result work without resizing, including reload and resume', async ({ page }, testInfo) => {
+test.beforeEach(async ({ page }, testInfo) => {
   const language = testInfo.project.name === 'iphone-16' ? 'de' : 'en'
   await page.addInitScript(language => {
     localStorage.setItem('terradeck:project-notice', '1')
     localStorage.setItem('terradeck:lang', language)
   }, language)
+})
 
+test('pack, continent, country and result work without resizing, including reload and resume', async ({ page }, testInfo) => {
+  const language = testInfo.project.name === 'iphone-16' ? 'de' : 'en'
   await openChallenge(page)
   await expectUsableMap(page, 'continent')
   await resumeChallenge(page)
@@ -74,9 +80,10 @@ test('pack, continent, country and result work without resizing, including reloa
   await expect(page.locator('.result-title--good')).toBeVisible()
   await expect(page.locator('.answer-comparison')).toHaveCount(0)
   await expectUsableMap(page, 'country')
+})
 
-  await page.locator('.sheet .btn--primary').click()
-  await expect(page.locator('.home-pack')).toBeVisible()
+test('wrong-country feedback preserves flags and map markers after reload', async ({ page }, testInfo) => {
+  const language = testInfo.project.name === 'iphone-16' ? 'de' : 'en'
   await openChallenge(page)
   await page.getByRole('button', { name: language === 'en' ? 'Europe' : 'Europa', exact: true }).click()
   const germany = page.locator('.challenge-map path[data-name="Germany"]')
@@ -95,16 +102,30 @@ test('pack, continent, country and result work without resizing, including reloa
   for (const flag of await page.locator('.answer-comparison img').all()) {
     await expect.poll(() => flag.evaluate(el => (el as HTMLImageElement).complete && (el as HTMLImageElement).naturalWidth > 0)).toBe(true)
   }
+})
+
+test('continent and full collection resets preserve achievements across reloads', async ({ page }, testInfo) => {
+  const language = testInfo.project.name === 'iphone-16' ? 'de' : 'en'
   await page.goto('/?debug#collection')
   await expect(page.locator('.collection')).toBeVisible()
-  const achievements = await page.evaluate(() => JSON.parse(localStorage.getItem('terradeck:save:v1')!).achievements)
-  await page.evaluate(() => {
+  const achievements = {
+    ...emptyAchievements(),
+    encounters: 3, perfect: 3, visitors: 2, discovered: ['fr', 'jp'], collected: ['jp'],
+    earned: { 'first-card': { at: 100, target: 1, acknowledged: true } },
+  }
+  const saved = {
+    ...createInitialState(DEFAULT_CONFIG),
+    progress: {
+      fr: { stamps: 1, encounters: 1, unlockedAt: null },
+      jp: { stamps: 2, encounters: 2, unlockedAt: 100 },
+      li: { stamps: 1, encounters: 1, unlockedAt: null },
+    },
+    achievements,
+  }
+  await page.evaluate(saved => {
     const key = 'terradeck:save:v1'
-    const saved = JSON.parse(localStorage.getItem(key)!)
-    saved.progress.jp = { stamps: 2, encounters: 2, unlockedAt: 100 }
-    saved.progress.li = { stamps: 1, encounters: 1, unlockedAt: null }
     localStorage.setItem(key, JSON.stringify(saved))
-  })
+  }, saved)
   await page.reload()
   await page.getByRole('tab', { name: language === 'en' ? 'Europe' : 'Europa', exact: true }).click()
   await page.locator('.collection-reset summary').click()
@@ -128,7 +149,10 @@ test('pack, continent, country and result work without resizing, including reloa
   const preserved = await page.evaluate(() => JSON.parse(localStorage.getItem('terradeck:save:v1')!).achievements)
   expect(preserved).toMatchObject(achievements)
   expect(preserved.completionCollected).toContain('jp')
+})
 
+test('cross-tab reset cancels an unfinished challenge and refunds one pack', async ({ page }, testInfo) => {
+  const language = testInfo.project.name === 'iphone-16' ? 'de' : 'en'
   await openChallenge(page)
   await expectUsableMap(page, 'continent')
   const beforeReset = await page.evaluate(() => JSON.parse(localStorage.getItem('terradeck:save:v1')!))
