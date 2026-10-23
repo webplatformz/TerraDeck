@@ -23,8 +23,8 @@ export const isDebug = () => params().has('debug')
 export const isDemo = () => params().has('demo')
 
 export function useGame() {
-  const debug = useMemo(isDebug, [])
-  const demo = useMemo(isDemo, [])
+  const debug = useMemo(() => isDebug(), [])
+  const demo = useMemo(() => isDemo(), [])
   const config = debug ? DEBUG_CONFIG : DEFAULT_CONFIG
   const repository = useMemo<ProgressRepository>(
     () => new LocalStorageRepository(undefined, demo ? `${STORAGE_KEY}:demo` : STORAGE_KEY),

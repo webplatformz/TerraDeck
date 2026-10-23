@@ -191,6 +191,7 @@
     "wrongCountry": "That was not <name>{{country}}</name>. It is marked on the map.",
     "youSelected": "You selected",
     "correctCountry": "Find this country",
+    "countryFound": "Country found",
     "stampsSafe": "Your stamps are safe ({{stamps}} of {{total}})."
   },
   "map": {

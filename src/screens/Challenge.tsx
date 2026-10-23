@@ -22,6 +22,22 @@ const PLACE = { name: <em className="place" /> }
 const answerFromMapName = (mapName: string) => COUNTRY_BY_MAP_NAME[mapName]?.id ?? `map:${mapName}`
 const mapNameFromAnswer = (answer: string) => (answer.startsWith('map:') ? answer.slice(4) : COUNTRY_BY_ID[answer]?.mapName)
 
+function AnswerPlace({ countryId, label, tone, single = false }: {
+  countryId: string
+  label: string
+  tone: 'correct' | 'wrong'
+  single?: boolean
+}) {
+  const { countryName } = useContent()
+  return (
+    <div className={`answer-place answer-place--${tone}${single ? ' answer-place--single' : ''}`}>
+      <span className="answer-place-label">{label}</span>
+      <Flag countryId={countryId} />
+      <strong>{countryName(countryId)}</strong>
+    </div>
+  )
+}
+
 export function Challenge({ game, world }: { game: Game; world: WorldData }) {
   const challenge = game.state.activeChallenge!
   const country = COUNTRY_BY_ID[challenge.countryId]!
@@ -31,7 +47,6 @@ export function Challenge({ game, world }: { game: Game; world: WorldData }) {
   // The answer is saved right away; the verdict only keeps the continent step on screen for feedback.
   const [verdict, setVerdict] = useState<ContinentVerdict | null>(null)
   const verdictRef = useRef(verdict)
-  verdictRef.current = verdict
   const feedbackTimer = useRef<number>()
   useEffect(() => () => window.clearTimeout(feedbackTimer.current), [])
   const step = verdict ? 'continent' : challenge.step
@@ -64,7 +79,10 @@ export function Challenge({ game, world }: { game: Game; world: WorldData }) {
     verdictRef.current = next
     setVerdict(next)
     game.chooseContinent(id)
-    if (correct) feedbackTimer.current = window.setTimeout(() => setVerdict(null), CONTINENT_FEEDBACK_MS)
+    if (correct) feedbackTimer.current = window.setTimeout(() => {
+      verdictRef.current = null
+      setVerdict(null)
+    }, CONTINENT_FEEDBACK_MS)
   }
   const continentBtnClass = (id: ContinentId) =>
     `continent-btn${verdict?.id === id ? (verdict.correct ? ' is-correct' : ' is-wrong') : ''}`
@@ -142,6 +160,7 @@ export function Challenge({ game, world }: { game: Game; world: WorldData }) {
         {step === 'result' && outcome === 'stamp' && (
           <>
             <p className="result-title result-title--good">{t('challenge.stampEarned', { stage: t(stamps === 1 ? 'stamp.visitor' : 'stamp.explorer') })}</p>
+            <AnswerPlace countryId={country.id} label={t('challenge.countryFound')} tone="correct" single />
             <StampRow stamps={progress?.stamps ?? 0} code={country.id} size={52} fresh={(progress?.stamps ?? 1) - 1} />
             <p className="sheet-prompt">
               {challenge.unlocked ? (
@@ -167,17 +186,12 @@ export function Challenge({ game, world }: { game: Game; world: WorldData }) {
             <p className="result-title result-title--miss">{t('challenge.notQuite')}</p>
             {wrongAnswer && (
               <div className="answer-comparison">
-                <div className="answer-place answer-place--wrong">
-                  <span className="answer-place-label">{t('challenge.youSelected')}</span>
-                  <Flag countryId={wrongAnswer.id} />
-                  <strong>{countryName(wrongAnswer.id)}</strong>
-                </div>
-                <div className="answer-place answer-place--correct">
-                  <span className="answer-place-label">{t('challenge.correctCountry')}</span>
-                  <Flag countryId={country.id} />
-                  <strong>{name}</strong>
-                </div>
+                <AnswerPlace countryId={wrongAnswer.id} label={t('challenge.youSelected')} tone="wrong" />
+                <AnswerPlace countryId={country.id} label={t('challenge.correctCountry')} tone="correct" />
               </div>
+            )}
+            {!wrongAnswer && (
+              <AnswerPlace countryId={country.id} label={t('challenge.correctCountry')} tone="correct" single />
             )}
             <p className="sheet-prompt">
               {wrongContinent ? (

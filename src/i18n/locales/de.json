@@ -191,6 +191,7 @@
     "wrongCountry": "Leider falsch – gesucht war <name>{{country}}</name>. Die richtige Stelle ist auf der Karte markiert.",
     "youSelected": "Deine Auswahl",
     "correctCountry": "Gesucht war",
+    "countryFound": "Land gefunden",
     "stampsSafe": "Deine Stempel bleiben erhalten ({{stamps}} von {{total}})."
   },
   "map": {

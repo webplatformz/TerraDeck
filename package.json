@@ -18,7 +18,7 @@
     "geo:build": "node scripts/build-geo.mjs"
   },
   "engines": {
-    "node": ">=18.19.0"
+    "node": ">=24 <25"
   },
   "dependencies": {
     "@fontsource/fraunces": "^5.3.0",
@@ -28,16 +28,16 @@
     "d3-transition": "^3.0.1",
     "d3-zoom": "^3.0.0",
     "flag-icons": "^7.6.0",
-    "i18next": "^26.5.4",
+    "i18next": "^26.5.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-i18next": "^17.1.0",
+    "react-i18next": "^17.1.4",
     "topojson-client": "^3.1.0",
     "world-atlas": "^2.0.2"
   },
   "devDependencies": {
-    "@playwright/test": "~1.58.2",
-    "@eslint/js": "^9.39.5",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "~1.64.1",
     "@types/d3-geo": "^3.1.1",
     "@types/d3-selection": "^3.0.12",
     "@types/d3-transition": "^3.0.9",
@@ -47,13 +47,13 @@
     "@types/react-dom": "^18.3.7",
     "@types/topojson-client": "^3.1.5",
     "@types/topojson-specification": "^1.0.5",
-    "@vitejs/plugin-react": "^4.7.0",
-    "eslint": "^9.39.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "globals": "^15.15.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "eslint": "^10.13.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.13.0",
+    "tsx": "^4.23.15",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.72.0",
-    "vite": "^5.4.21",
-    "tsx": "^4.23.15"
+    "vite": "^8.3.5"
   }
 }

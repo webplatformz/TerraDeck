@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import type { MouseEvent } from 'react'
 import { geoEqualEarth, geoGraticule10, geoPath } from 'd3-geo'
 import { useTranslation } from 'react-i18next'
@@ -32,7 +32,7 @@ export function ContinentPicker({ world, onPick, verdict = null }: Props) {
   const { continentName } = useContent()
   const timer = useRef<number>()
   const onPickRef = useRef(onPick)
-  onPickRef.current = onPick
+  useLayoutEffect(() => { onPickRef.current = onPick }, [onPick])
 
   useEffect(() => () => window.clearTimeout(timer.current), [])
 

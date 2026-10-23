@@ -79,7 +79,24 @@ test('pack, continent, country and result work without resizing, including reloa
   await page.locator('.sheet .btn--primary').click()
   await expect(page.locator('.result-title--good')).toBeVisible()
   await expect(page.locator('.answer-comparison')).toHaveCount(0)
+  await expect(page.locator('.answer-place--single')).toContainText(language === 'en' ? 'France' : 'Frankreich')
+  await expect.poll(() => page.locator('.answer-place--single img').evaluate(el => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0)
   await expectUsableMap(page, 'country')
+})
+
+test('wrong-continent answer reveals the country panel and flag', async ({ page }, testInfo) => {
+  const language = testInfo.project.name === 'iphone-16' ? 'de' : 'en'
+  await openChallenge(page)
+  await page.getByRole('button', { name: language === 'en' ? 'Asia' : 'Asien', exact: true }).click()
+  await expect(page.getByRole('alertdialog')).toBeVisible()
+  await expect(page.locator('.answer-place')).toHaveCount(0)
+  await page.getByRole('button', { name: language === 'en' ? 'Show the answer' : 'Lösung zeigen', exact: true }).click()
+  await expect(page.locator('.answer-place--single')).toContainText(language === 'en' ? 'France' : 'Frankreich')
+  await expect.poll(() => page.locator('.answer-place--single img').evaluate(el => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0)
+  await expect(page.locator('.map-land.is-target[data-name="France"]')).toBeAttached()
+  await expectUsableMap(page, 'country')
+  await resumeChallenge(page)
+  await expect(page.locator('.answer-place--single')).toBeVisible()
 })
 
 test('wrong-country feedback preserves flags and map markers after reload', async ({ page }, testInfo) => {
