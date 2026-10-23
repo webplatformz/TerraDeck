@@ -1327,6 +1327,11 @@ p {
   opacity: 0.55;
 }
 
+.continent-btn.is-picked {
+  border-color: var(--brass-400);
+  background: var(--brass-200);
+}
+
 .continent-btn.is-correct,
 .continent-btn.is-wrong {
   opacity: 1;

@@ -148,9 +148,11 @@
   from frame fitting, country hit/lens candidates, selection marks and parent-country silhouettes, and block
   taps rather than falling through to ocean snapping. Only retained canonical countries can be right
   or wrong answers. This is a collection policy, not a political recognition policy.
-- **Continent step:** the world map (Equal Earth) shows only the six outlines with no borders, plus wide
-  invisible tap edges. A tap highlights the continent and answers after 300 ms with no confirmation; a second
-  tap within that time switches, and only the last one counts. The buttons stay as an alternative.
+- **Continent step:** the world map (rectangular equirectangular projection) shows only the six outlines with no borders, plus wide
+  hit targets. The overview is enlarged by up to 12%, cropping the horizontal edges while
+  keeping the land's full height inside the frame. Map taps and buttons highlight the pending
+  continent and answer after an 800 ms correction window with no confirmation; another
+  selection restarts the window, and only the last one counts.
 - **Continent feedback:** the answer is saved immediately (a reload can't undo it). A correct pick turns the
   continent and its button green for 700 ms, then the country step opens. A wrong pick turns them red and shows
   a "Wrong continent" overlay; its button leads to the existing reveal on the correct continent's map.
@@ -161,7 +163,7 @@
   countries retain one card, with any included visible part accepted. Archipelagos preserve their
   dispersed island geometry for silhouettes and answer framing; excluded territories never widen fits.
   Remote nonessential parts such as Svalbard, Hawaii and Galápagos need not widen the overview.
-  Neighbouring land is faded and can't be tapped. Zoom is limited to 1–6×, panning stays inside the
+  Neighbouring land is faded and can't be tapped. Zoom is limited to 1–8×, panning stays inside the
   frame, and double-tap zoom is off so it can't clash with the magnifier. Zoom buttons sit bottom-left so
   they don't cover the Lesser Antilles.
 - **Tap resolution:** taps are resolved by geometry rather than by enlarged hit circles, which used to cover

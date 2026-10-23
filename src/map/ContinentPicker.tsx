@@ -1,15 +1,14 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useRef } from 'react'
 import type { MouseEvent } from 'react'
-import { geoEqualEarth, geoGraticule10, geoPath } from 'd3-geo'
+import { geoEquirectangular, geoGraticule10, geoPath } from 'd3-geo'
 import { useTranslation } from 'react-i18next'
 import type { WorldData } from '../data/world'
 import type { ContinentId } from '../domain/types'
 import { useContent } from '../i18n/useContent'
 import { useSize } from './useSize'
 
-/** How long a tapped continent stays highlighted before it counts as the answer. */
-export const PICK_DELAY_MS = 300
 const PAD = 8
+const OVERVIEW_SCALE = 1.12
 
 export interface ContinentVerdict {
   id: ContinentId
@@ -19,32 +18,34 @@ export interface ContinentVerdict {
 interface Props {
   world: WorldData
   onPick: (id: ContinentId) => void
+  picked: ContinentId | null
   /** Once set, the map is locked and the answered continent shows green or red. */
   verdict?: ContinentVerdict | null
 }
 
-/** World map of the six continents only. A tap highlights, then answers after PICK_DELAY_MS. */
-export function ContinentPicker({ world, onPick, verdict = null }: Props) {
+/** World map of the six continents, sharing pending selection with the continent buttons. */
+export function ContinentPicker({ world, onPick, picked, verdict = null }: Props) {
   const frameRef = useRef<HTMLDivElement>(null)
   const { w, h } = useSize(frameRef)
-  const [picked, setPicked] = useState<ContinentId | null>(null)
   const { t } = useTranslation()
   const { continentName } = useContent()
-  const timer = useRef<number>()
-  const onPickRef = useRef(onPick)
-  useLayoutEffect(() => { onPickRef.current = onPick }, [onPick])
-
-  useEffect(() => () => window.clearTimeout(timer.current), [])
-
   const geo = useMemo(() => {
     if (!w || !h) return null
-    const projection = geoEqualEarth().fitExtent(
+    const projection = geoEquirectangular().fitExtent(
       [
         [PAD, PAD],
         [w - PAD, h - PAD],
       ],
       { type: 'FeatureCollection', features: world.continents },
     )
+    const bounds = geoPath(projection).bounds({ type: 'FeatureCollection', features: world.continents })
+    const landHeight = bounds[1][1] - bounds[0][1]
+    const enlargement = Math.min(OVERVIEW_SCALE, (h - 2 * PAD) / landHeight)
+    const [x, y] = projection.translate()
+    projection
+      .scale(projection.scale() * enlargement)
+      .translate([w / 2 + (x - w / 2) * enlargement, h / 2 + (y - h / 2) * enlargement])
+      .clipExtent([[0, 0], [w, h]])
     const path = geoPath(projection)
     return {
       shapes: world.continents.map((f) => ({ id: f.properties.id, d: path(f) ?? '' })),
@@ -56,9 +57,7 @@ export function ContinentPicker({ world, onPick, verdict = null }: Props) {
   const handleClick = (event: MouseEvent<SVGGElement>) => {
     const id = (event.target as Element).closest('[data-continent]')?.getAttribute('data-continent') as ContinentId | null
     if (!id || verdict) return
-    setPicked(id)
-    window.clearTimeout(timer.current)
-    timer.current = window.setTimeout(() => onPickRef.current(id), PICK_DELAY_MS)
+    onPick(id)
   }
 
   const shown = verdict?.id ?? picked

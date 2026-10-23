@@ -15,6 +15,8 @@ GitHub Actions. With nvm installed, run `nvm install` once, then `nvm use` in ea
 new terminal. In JetBrains, select the installed Node 24 interpreter for this project.
 The toolchain uses Vite 8 with React plugin 6, ESLint 10 and Playwright 1.64;
 the app remains on React 18 and TypeScript 5.9.
+Production SVG flags are emitted as separate hashed assets rather than embedded in the
+main JavaScript bundle, so only displayed flags need to be downloaded.
 
 ```sh
 npm ci               # install the locked dependencies
@@ -178,6 +180,8 @@ than one growing end-to-end chain. Failed runs retain traces in the ignored `tes
 Confirmed wrong-country answers show the selected and target countries with flags and subtle
 red/green panels. Successful results and revealed wrong-continent answers use the same
 country-and-flag styling. Names are not revealed while choosing; existing map feedback is unchanged.
+Continent map taps and buttons share an 800 ms correction window: the pending choice
+highlights immediately, and another selection restarts the window before the answer counts.
 
 Collection's **Learn again** controls reset all countries or the selected continent after confirmation.
 Affected discovery/stamps/cards (including archives) are cleared; earned achievements, original dates

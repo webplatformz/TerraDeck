@@ -39,7 +39,7 @@ interface Shape {
 }
 
 const PAD = 12
-const MAX_ZOOM = 6
+const MAX_ZOOM = 8
 /** Countries smaller than this on screen can also be picked by tapping near them. */
 const SMALL_PX = 30
 /** Two or more small countries within this radius of a tap open the magnifier. */
@@ -117,7 +117,7 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
     }
   }, [world, continent, land, w, h])
 
-  // Zoom: 1–6×, panning kept inside the continent frame.
+  // Zoom: 1–8×, panning kept inside the continent frame.
   useEffect(() => {
     const svg = svgRef.current
     if (!svg || !w || !h) return

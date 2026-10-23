@@ -72,6 +72,17 @@ test('pack, continent, country and result work without resizing, including reloa
 
   await resumeChallenge(page)
   await expectUsableMap(page, 'country')
+  const zoomIn = page.getByRole('button', { name: language === 'en' ? 'Zoom in' : 'Hineinzoomen', exact: true })
+  const zoomScale = () => page.locator('.challenge-map .map-svg > g').first().evaluate(el =>
+    (el as SVGGElement).transform.baseVal.consolidate()?.matrix.a ?? 1)
+  for (const scale of [2, 4, 8]) {
+    await zoomIn.click()
+    await expect.poll(zoomScale).toBeCloseTo(scale)
+  }
+  await zoomIn.click()
+  await expect.poll(zoomScale).toBeCloseTo(8)
+  await page.getByRole('button', { name: language === 'en' ? 'Reset view' : 'Ansicht zurücksetzen', exact: true }).click()
+  await expect.poll(zoomScale).toBeCloseTo(1)
   const france = page.locator('.challenge-map path[data-name="France"]')
   if (testInfo.project.use.hasTouch) await france.tap()
   else await france.click()
@@ -97,6 +108,39 @@ test('wrong-continent answer reveals the country panel and flag', async ({ page 
   await expectUsableMap(page, 'country')
   await resumeChallenge(page)
   await expect(page.locator('.answer-place--single')).toBeVisible()
+})
+
+test('continent corrections share a fresh 800ms window across map and buttons', async ({ page }, testInfo) => {
+  const language = testInfo.project.name === 'iphone-16' ? 'de' : 'en'
+  await openChallenge(page)
+  await expect(page.locator('.map-continent[data-continent="asia"]')).toBeVisible()
+  await page.clock.install()
+  await page.clock.pauseAt(new Date())
+  const savedChallenge = () => page.evaluate(() => JSON.parse(localStorage.getItem('terradeck:save:v1')!).activeChallenge)
+  const europe = page.getByRole('button', { name: language === 'en' ? 'Europe' : 'Europa', exact: true })
+  const asia = page.getByRole('button', { name: language === 'en' ? 'Asia' : 'Asien', exact: true })
+
+  await asia.click()
+  await expect(asia).toHaveClass(/is-picked/)
+  await expect(page.locator('.map-continent.is-picked')).toHaveAttribute('data-continent', 'asia')
+  await page.clock.runFor(799)
+  expect((await savedChallenge()).continentAnswer).toBeNull()
+  await page.locator('.map-continent[data-continent="europe"]').dispatchEvent('click')
+  await expect(europe).toHaveClass(/is-picked/)
+  await page.clock.runFor(799)
+  expect((await savedChallenge()).continentAnswer).toBeNull()
+  await page.locator('.map-continent[data-continent="asia"]').dispatchEvent('click')
+  await page.clock.runFor(799)
+  expect((await savedChallenge()).continentAnswer).toBeNull()
+  await europe.click()
+  await page.clock.runFor(799)
+  expect((await savedChallenge()).continentAnswer).toBeNull()
+  await page.clock.runFor(1)
+  await expect.poll(async () => (await savedChallenge()).continentAnswer).toBe('europe')
+  await expect(europe).toBeDisabled()
+  await expect(page.getByRole('alertdialog')).toHaveCount(0)
+  await page.clock.runFor(700)
+  await expect(page.locator('.challenge-map path[data-name="France"]')).toBeAttached()
 })
 
 test('wrong-country feedback preserves flags and map markers after reload', async ({ page }, testInfo) => {
