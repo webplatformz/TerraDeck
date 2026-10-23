@@ -229,6 +229,19 @@
     "moreStamps_other": "Noch {{count}} Stempel bis zu dieser Karte.",
     "notDiscovered": "Noch nicht entdeckt. Das Land taucht bald in einem Päckchen auf."
   },
+  "notes": {
+    "selectedLanguages": "Sprachen",
+    "seeMore": "Mehr anzeigen",
+    "seeLess": "Weniger anzeigen",
+    "visitor": "Besucher-Steckbrief",
+    "explorer": "Entdecker-Notizen",
+    "currency": "Währung",
+    "funFact": "Schon gewusst?",
+    "nextStamp": "Finde es noch einmal, um die Karte und alle Notizen freizuschalten.",
+    "flip": "Entdecker-Notizen ↻",
+    "tapToTurn": "Zum Umdrehen tippen ↻",
+    "showFront": "Kartenvorderseite ↻"
+  },
   "card": {
     "number": "Nr. {{number}}",
     "label": "Karte: {{country}}",
@@ -266,7 +279,7 @@
     "findTitle": "Auf der Karte finden",
     "findText": "Wähle zuerst den Kontinent, tippe dann das Land auf der unbeschrifteten Karte an und bestätige. Zoome mit zwei Fingern oder den Knöpfen; an engen Stellen hilft eine Lupe bei kleinen Ländern.",
     "stampsTitle": "Vom Besucher zum Entdecker",
-    "stampsText": "Sind beide Antworten beim ersten Versuch richtig, erhältst du den silbernen Besucher-Stempel. Gelingt es erneut, folgt der goldene Entdecker-Stempel: Zwei Stempel schalten die Karte des Landes frei, und es kommt in keinem Päckchen mehr vor. Ein Fehler zeigt dir die Lösung, nimmt dir aber nie bereits gesammelte Stempel weg.",
+    "stampsText": "Sind beide Antworten beim ersten Versuch richtig, erhältst du den silbernen Besucher-Stempel und einen kurzen Steckbrief, auch in der Sammlung. Gelingt es erneut, folgt der goldene Entdecker-Stempel: Zwei Stempel schalten die Karte des Landes frei, und es kommt in keinem Päckchen mehr vor. Drehe die Karte um für Entdecker-Notizen und eine kleine Wissensnotiz. Ein Fehler zeigt dir die Lösung, nimmt dir aber nie bereits gesammelte Stempel weg.",
     "sources": "Quellen",
     "findScope": "Dieser kuratierte Atlas enthält {{count}} sammelbare Länder aus einer UN-basierten Auswahl (Mitglieder und die beiden Beobachterstaaten). Tuvalu, Vatikanstadt, Monaco, die Malediven und Nauru sind aus Gründen der Spielbarkeit vorerst ausgenommen. Graue Gebiete liegen außerhalb dieser Sammlung und sind nicht auswählbar; dies ist keine Aussage über ihren Status.",
     "continentRule": "Im Spiel hat jedes Land einen gültigen Kontinent. Russland, die Türkei, Kasachstan, Zypern und der Kaukasus zählen zu Asien; Ägypten zählt zu Afrika. Mittelamerika und die Karibik zählen zu Nordamerika.",

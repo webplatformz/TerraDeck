@@ -1,0 +1,1556 @@
+[
+  {
+    "id": "fr",
+    "front": {
+      "en": "The Roman Pont du Gard carried water across a river on three tiers of arches.",
+      "de": "Der römische Pont du Gard leitete Wasser auf drei Bogenebenen über einen Fluss.",
+      "source": "https://whc.unesco.org/en/list/344/"
+    },
+    "detail": {
+      "en": "Chauvet Cave’s prehistoric artists depicted animals including mammoths, cave lions and rhinoceroses.",
+      "de": "Die prähistorischen Künstler der Chauvet-Höhle stellten Tiere wie Mammuts, Höhlenlöwen und Nashörner dar.",
+      "source": "https://whc.unesco.org/en/list/1426/"
+    }
+  },
+  {
+    "id": "it",
+    "front": {
+      "en": "The Dolomites preserve fossil reefs that reveal life in ancient seas.",
+      "de": "Die Dolomiten bewahren fossile Riffe, die vom Leben in urzeitlichen Meeren zeugen.",
+      "source": "https://whc.unesco.org/en/list/1237/"
+    },
+    "detail": {
+      "en": "Neapolitan pizza-making involves four stages of dough preparation and baking, with the pizza turned in a wood-fired oven.",
+      "de": "Die neapolitanische Pizzakunst umfasst vier Phasen der Zubereitung; beim Backen im Holzofen wird die Pizza gedreht.",
+      "source": "https://ich.unesco.org/en/RL/art-of-neapolitan-pizzaiuolo-00722"
+    }
+  },
+  {
+    "id": "no",
+    "front": {
+      "en": "Bergen’s wooden Bryggen district preserves the layout of a medieval trading quarter.",
+      "de": "Bergens Holzhausviertel Bryggen bewahrt den Grundriss eines mittelalterlichen Handelsviertels.",
+      "source": "https://whc.unesco.org/en/list/59/"
+    }
+  },
+  {
+    "id": "ch",
+    "front": {
+      "en": "The Jungfrau-Aletsch region reveals ancient rocks pushed over younger layers as the Alps formed.",
+      "de": "Die Region Jungfrau-Aletsch zeigt alte Gesteine, die bei der Alpenbildung über jüngere Schichten geschoben wurden.",
+      "source": "https://whc.unesco.org/en/list/1037/"
+    },
+    "fun": {
+      "en": "Tim Berners-Lee invented the World Wide Web in 1989 while working at CERN.",
+      "de": "Tim Berners-Lee erfand 1989 während seiner Arbeit am CERN das World Wide Web.",
+      "source": "https://home.cern/science/computing/the-birth-of-the-web"
+    }
+  },
+  {
+    "id": "jp",
+    "front": {
+      "en": "Mount Fuji is a volcano rising 3,776 metres above sea level.",
+      "de": "Der Fuji ist ein Vulkan, der 3.776 Meter über den Meeresspiegel ragt.",
+      "source": "https://whc.unesco.org/en/list/1418/"
+    },
+    "detail": {
+      "en": "The World Heritage monuments of ancient Kyoto comprise 17 sites across Kyoto, Uji and Otsu.",
+      "de": "Die Welterbemonumente des alten Kyoto umfassen 17 Stätten in Kyoto, Uji und Otsu.",
+      "source": "https://whc.unesco.org/en/list/688/"
+    },
+    "fun": {
+      "en": "The Tokaido Shinkansen began carrying passengers between Tokyo and Osaka in 1964.",
+      "de": "Der Tokaido-Shinkansen befördert seit 1964 Fahrgäste zwischen Tokio und Osaka.",
+      "source": "https://global.jr-central.co.jp/en/company/about_shinkansen/"
+    }
+  },
+  {
+    "id": "in",
+    "front": {
+      "en": "The Taj Mahal is a white marble mausoleum built for Emperor Shah Jahan’s wife Mumtaz Mahal.",
+      "de": "Das Taj Mahal ist ein Mausoleum aus weißem Marmor für Kaiser Shah Jahans Frau Mumtaz Mahal.",
+      "source": "https://whc.unesco.org/en/list/252/"
+    },
+    "fun": {
+      "en": "Rani-ki-Vav’s stepwell was designed as an inverted temple with seven levels of stairs.",
+      "de": "Der Stufenbrunnen Rani-ki-Vav wurde als umgekehrter Tempel mit sieben Treppenebenen entworfen.",
+      "source": "https://whc.unesco.org/en/list/922/"
+    }
+  },
+  {
+    "id": "vn",
+    "front": {
+      "en": "Limestone islands rise from the sea in Ha Long Bay and the Cat Ba Archipelago.",
+      "de": "In der Ha-Long-Bucht und im Cat-Ba-Archipel ragen Kalksteininseln aus dem Meer.",
+      "source": "https://whc.unesco.org/en/list/672/"
+    }
+  },
+  {
+    "id": "np",
+    "front": {
+      "en": "Chitwan National Park shelters one-horned rhinoceroses at the foot of the Himalayas.",
+      "de": "Im Chitwan-Nationalpark am Fuß des Himalayas leben Panzernashörner.",
+      "source": "https://whc.unesco.org/en/list/284/"
+    },
+    "detail": {
+      "en": "An inscribed pillar erected by Emperor Ashoka marks Lumbini as the birthplace of the Buddha.",
+      "de": "Eine beschriftete Säule von Kaiser Ashoka kennzeichnet Lumbini als Geburtsort des Buddha.",
+      "source": "https://whc.unesco.org/en/list/666/"
+    }
+  },
+  {
+    "id": "eg",
+    "front": {
+      "en": "The ancient burial grounds around Memphis include the pyramids of Giza.",
+      "de": "Zu den antiken Gräberfeldern um Memphis gehören die Pyramiden von Gizeh.",
+      "source": "https://whc.unesco.org/en/list/86/"
+    },
+    "fun": {
+      "en": "Egypt’s desert preserves ancient whale fossils with remnants of hind limbs at Wadi Al-Hitan.",
+      "de": "Ägyptens Wüste bewahrt in Wadi Al-Hitan Fossilien urzeitlicher Wale mit Resten von Hinterbeinen.",
+      "source": "https://whc.unesco.org/en/list/1186/"
+    }
+  },
+  {
+    "id": "ke",
+    "front": {
+      "en": "Mount Kenya is an extinct volcano whose summit reaches 5,199 metres.",
+      "de": "Der Mount Kenya ist ein erloschener Vulkan mit einem 5.199 Meter hohen Gipfel.",
+      "source": "https://whc.unesco.org/en/list/800/"
+    },
+    "detail": {
+      "en": "The Mijikenda’s sacred kaya forests protect the remains of fortified villages and are cared for by councils of elders.",
+      "de": "Die heiligen Kaya-Wälder der Mijikenda schützen Reste befestigter Dörfer und werden von Ältestenräten betreut.",
+      "source": "https://whc.unesco.org/en/list/1231/"
+    }
+  },
+  {
+    "id": "ma",
+    "front": {
+      "en": "Ait-Ben-Haddou is a fortified settlement of earthen buildings below the High Atlas.",
+      "de": "Ait-Ben-Haddou ist eine befestigte Siedlung aus Lehmbauten am Südrand des Hohen Atlas.",
+      "source": "https://whc.unesco.org/en/list/444/"
+    },
+    "detail": {
+      "en": "Traditional argan oil production involves harvesting and drying the fruit, then milling and mixing.",
+      "de": "Zur traditionellen Arganölherstellung gehören das Ernten und Trocknen der Früchte sowie Mahlen und Mischen.",
+      "source": "https://ich.unesco.org/en/RL/argan-practices-and-know-how-concerning-the-argan-tree-00955"
+    }
+  },
+  {
+    "id": "mg",
+    "front": {
+      "en": "The Royal Hill of Ambohimanga unites a royal city, burial sites and sacred places.",
+      "de": "Der Königshügel von Ambohimanga vereint eine Königsstadt, Grabstätten und heilige Orte.",
+      "source": "https://whc.unesco.org/en/list/950/"
+    },
+    "detail": {
+      "en": "At Tsingy de Bemaraha, erosion has sculpted limestone into sharp pinnacles resembling a stone forest.",
+      "de": "In Tsingy de Bemaraha hat Erosion Kalkstein zu scharfen Spitzen geformt, die einem Steinwald ähneln.",
+      "source": "https://whc.unesco.org/en/list/494/"
+    },
+    "fun": {
+      "en": "The aye-aye taps wood to find insect larvae, then hooks them out with its slender middle finger.",
+      "de": "Das Fingertier klopft Holz nach Insektenlarven ab und angelt sie mit seinem dünnen Mittelfinger heraus.",
+      "source": "https://lemur.duke.edu/accordions/aye-aye-species-info-page/"
+    }
+  },
+  {
+    "id": "ca",
+    "front": {
+      "en": "Alberta’s Dinosaur Provincial Park preserves dinosaur fossils about 75 million years old.",
+      "de": "Albertas Dinosaur Provincial Park bewahrt etwa 75 Millionen Jahre alte Dinosaurierfossilien.",
+      "source": "https://whc.unesco.org/en/list/71/"
+    },
+    "fun": {
+      "en": "L’Anse aux Meadows in Newfoundland preserves the remains of an 11th-century Viking settlement.",
+      "de": "L’Anse aux Meadows auf Neufundland bewahrt die Reste einer Wikingersiedlung aus dem 11. Jahrhundert.",
+      "source": "https://whc.unesco.org/en/list/4/"
+    }
+  },
+  {
+    "id": "mx",
+    "front": {
+      "en": "Chichen Itza’s ancient monuments combine Maya building traditions with central Mexican influences.",
+      "de": "Chichén Itzás antike Bauten verbinden Maya-Bautraditionen mit Einflüssen aus Zentralmexiko.",
+      "source": "https://whc.unesco.org/en/list/483/"
+    },
+    "fun": {
+      "en": "Overwintering monarch butterflies can cluster so densely that their weight bends tree branches.",
+      "de": "Überwinternde Monarchfalter sammeln sich teils so dicht, dass ihr Gewicht Baumäste biegt.",
+      "source": "https://whc.unesco.org/en/list/1290/"
+    }
+  },
+  {
+    "id": "cu",
+    "front": {
+      "en": "Rounded limestone hills tower over the traditional farmland of the Viñales Valley.",
+      "de": "Runde Kalksteinhügel überragen die traditionellen Anbauflächen im Viñales-Tal.",
+      "source": "https://whc.unesco.org/en/list/840/"
+    }
+  },
+  {
+    "id": "br",
+    "front": {
+      "en": "The Central Amazon Conservation Complex protects river dolphins and Amazonian manatees.",
+      "de": "Der Schutzgebietskomplex Zentralamazonien schützt Flussdelfine und Amazonas-Seekühe.",
+      "source": "https://whc.unesco.org/en/list/998/"
+    },
+    "detail": {
+      "en": "In a capoeira circle, two players combine dance and combat while others sing, clap and play percussion.",
+      "de": "Im Capoeira-Kreis verbinden zwei Spieler Tanz und Kampf, während die anderen singen, klatschen und Schlaginstrumente spielen.",
+      "source": "https://ich.unesco.org/en/RL/capoeira-circle-00892"
+    }
+  },
+  {
+    "id": "pe",
+    "front": {
+      "en": "Machu Picchu stands 2,430 metres above sea level in a tropical mountain forest.",
+      "de": "Machu Picchu liegt auf 2.430 Metern Höhe in einem tropischen Bergwald.",
+      "source": "https://whc.unesco.org/en/list/274/"
+    },
+    "fun": {
+      "en": "Andean communities renew the Q’eswachaka suspension bridge each year using ropes twisted from straw.",
+      "de": "Andengemeinden erneuern die Q’eswachaka-Hängebrücke jährlich mit Seilen aus zusammengedrehtem Stroh.",
+      "source": "https://ich.unesco.org/en/RL/knowledge-skills-and-rituals-related-to-the-annual-renewal-of-the-q-eswachaka-bridge-00594"
+    }
+  },
+  {
+    "id": "cl",
+    "front": {
+      "en": "Rapa Nui’s monumental stone figures are known as moai.",
+      "de": "Die monumentalen Steinfiguren auf Rapa Nui werden Moai genannt.",
+      "source": "https://whc.unesco.org/en/list/715/"
+    }
+  },
+  {
+    "id": "au",
+    "front": {
+      "en": "The Great Barrier Reef provides habitat for dugongs and green turtles.",
+      "de": "Das Great Barrier Reef bietet Dugongs und Grünen Meeresschildkröten Lebensraum.",
+      "source": "https://whc.unesco.org/en/list/154/"
+    },
+    "fun": {
+      "en": "The platypus is a mammal that lays eggs and produces milk for its young.",
+      "de": "Das Schnabeltier ist ein Säugetier, das Eier legt und Milch für seine Jungen produziert.",
+      "source": "https://australian.museum/learn/animals/mammals/mammals-mammalia/"
+    }
+  },
+  {
+    "id": "nz",
+    "front": {
+      "en": "Te Wahipounamu’s forests include trees more than 800 years old.",
+      "de": "In den Wäldern von Te Wahipounamu stehen über 800 Jahre alte Bäume.",
+      "source": "https://whc.unesco.org/en/list/551/"
+    },
+    "fun": {
+      "en": "Kiwi have nostrils near the tips of their long bills and a well-developed sense of smell.",
+      "de": "Kiwis haben Nasenlöcher nahe der Spitze ihres langen Schnabels und einen ausgeprägten Geruchssinn.",
+      "source": "https://www.doc.govt.nz/Documents/science-and-technical/sap262entire.pdf"
+    }
+  },
+  {
+    "id": "de",
+    "front": {
+      "en": "Fossils from Messel Pit can preserve even the stomach contents of ancient mammals.",
+      "de": "Fossilien aus der Grube Messel bewahren sogar den Mageninhalt urzeitlicher Säugetiere.",
+      "source": "https://whc.unesco.org/en/list/720/"
+    }
+  },
+  {
+    "id": "es",
+    "front": {
+      "en": "Seven works by Antoni Gaudí in and around Barcelona form a World Heritage site.",
+      "de": "Sieben Werke Antoni Gaudís in und um Barcelona bilden eine Welterbestätte.",
+      "source": "https://whc.unesco.org/en/list/320/"
+    },
+    "fun": {
+      "en": "On La Gomera, Silbo Gomero turns spoken Spanish into whistles that can convey messages.",
+      "de": "Auf La Gomera verwandelt Silbo Gomero gesprochenes Spanisch in Pfiffe, die Botschaften vermitteln.",
+      "source": "https://ich.unesco.org/en/RL/whistled-language-of-the-island-of-la-gomera-canary-islands-the-silbo-gomero-00172"
+    }
+  },
+  {
+    "id": "gb",
+    "front": {
+      "en": "Northern Ireland’s Giant’s Causeway has about 40,000 basalt columns formed by volcanic activity.",
+      "de": "Nordirlands Giant’s Causeway besteht aus etwa 40.000 Basaltsäulen vulkanischen Ursprungs.",
+      "source": "https://whc.unesco.org/en/list/369/"
+    }
+  },
+  {
+    "id": "gr",
+    "front": {
+      "en": "Meteora’s monasteries perch on steep sandstone pillars.",
+      "de": "Die Klöster von Meteora thronen auf steilen Sandsteinpfeilern.",
+      "source": "https://whc.unesco.org/en/list/455/"
+    }
+  },
+  {
+    "id": "cn",
+    "front": {
+      "en": "Sichuan’s panda sanctuaries also shelter red pandas and snow leopards.",
+      "de": "Sichuans Panda-Schutzgebiete beherbergen auch Rote Pandas und Schneeleoparden.",
+      "source": "https://whc.unesco.org/en/list/1213/"
+    },
+    "detail": {
+      "en": "Paper, printing and the magnetic compass were among the technologies that spread from China along the Silk Roads.",
+      "de": "Papier, Drucktechnik und Magnetkompass gehörten zu den Technologien, die sich von China über die Seidenstraßen verbreiteten.",
+      "source": "https://whc.unesco.org/en/tentativelists/5521"
+    }
+  },
+  {
+    "id": "kr",
+    "front": {
+      "en": "Jeju’s volcanic landscape includes lava tunnels and a lake-filled summit crater.",
+      "de": "Jejus Vulkanlandschaft umfasst Lavatunnel und einen mit Wasser gefüllten Gipfelkrater.",
+      "source": "https://whc.unesco.org/en/list/1264/"
+    },
+    "fun": {
+      "en": "Jeju’s haenyeo divers gather seafood by holding their breath, without underwater breathing equipment.",
+      "de": "Jejus Haenyeo-Taucherinnen sammeln Meerestiere mit angehaltenem Atem, ohne Unterwasser-Atemgerät.",
+      "source": "https://ich.unesco.org/en/RL/culture-of-jeju-haenyeo-female-divers-01068"
+    }
+  },
+  {
+    "id": "id",
+    "front": {
+      "en": "Borobudur’s circular platforms are surrounded by 72 openwork stupas containing Buddha statues.",
+      "de": "Borobudurs runde Plattformen umgeben 72 durchbrochene Stupas mit Buddhafiguren.",
+      "source": "https://whc.unesco.org/en/list/592/"
+    },
+    "detail": {
+      "en": "An angklung makes a note or chord when its bamboo frame is shaken; several players work together to create melodies.",
+      "de": "Ein Angklung erzeugt beim Schütteln seines Bambusrahmens einen Ton oder Akkord; mehrere Spieler bilden gemeinsam Melodien.",
+      "source": "https://ich.unesco.org/en/RL/indonesian-angklung-00393"
+    }
+  },
+  {
+    "id": "bt",
+    "front": {
+      "en": "Bhutan’s Tiger’s Nest Monastery clings to a cliff above the Paro Valley.",
+      "de": "Bhutans Tigernest-Kloster schmiegt sich an eine Felswand über dem Parotal.",
+      "source": "https://bhutan.travel/journal/editorial/bhutan-is-family-friendly"
+    }
+  },
+  {
+    "id": "dz",
+    "front": {
+      "en": "Tassili n’Ajjer’s rock art records animals and human life in the prehistoric Sahara.",
+      "de": "Die Felskunst von Tassili n’Ajjer zeigt Tiere und menschliches Leben der prähistorischen Sahara.",
+      "source": "https://whc.unesco.org/en/list/179/"
+    }
+  },
+  {
+    "id": "gh",
+    "front": {
+      "en": "Traditional Asante shrines near Kumasi use timber, bamboo and mud plaster.",
+      "de": "Traditionelle Asante-Schreine bei Kumasi bestehen aus Holz, Bambus und Lehmputz.",
+      "source": "https://whc.unesco.org/en/list/35/"
+    }
+  },
+  {
+    "id": "na",
+    "front": {
+      "en": "The Namib Sand Sea is a coastal desert where fog meets vast shifting dunes.",
+      "de": "Die Namib-Sandwüste ist eine Küstenwüste, in der Nebel auf riesige Wanderdünen trifft.",
+      "source": "https://whc.unesco.org/en/list/1430/"
+    },
+    "detail": {
+      "en": "Twyfelfontein’s rock engravings depict wildlife such as giraffes and rhinoceroses, as well as human and animal footprints.",
+      "de": "Twyfelfonteins Felsgravuren zeigen Wildtiere wie Giraffen und Nashörner sowie Fußspuren von Menschen und Tieren.",
+      "source": "https://whc.unesco.org/en/list/1255/"
+    }
+  },
+  {
+    "id": "ls",
+    "front": {
+      "en": "Sehlabathebe’s sandstone landscape forms part of the cross-border Maloti-Drakensberg Park.",
+      "de": "Sehlabathebes Sandsteinlandschaft gehört zum grenzüberschreitenden Maloti-Drakensberg-Park.",
+      "source": "https://whc.unesco.org/en/list/985/"
+    }
+  },
+  {
+    "id": "us",
+    "front": {
+      "en": "Yellowstone combines geysers and forests with wild bison, wolves and grizzly bears.",
+      "de": "Yellowstone vereint Geysire und Wälder mit wilden Bisons, Wölfen und Grizzlybären.",
+      "source": "https://whc.unesco.org/en/list/28/"
+    },
+    "fun": {
+      "en": "Giant sequoias’ thick, fibrous bark helps insulate them from the heat of forest fires.",
+      "de": "Die dicke, faserige Rinde der Riesenmammutbäume schützt sie teilweise vor der Hitze von Waldbränden.",
+      "source": "https://www.nps.gov/seki/learn/gslc.htm"
+    }
+  },
+  {
+    "id": "cr",
+    "front": {
+      "en": "The Diquís Delta preserves ancient stone spheres more than two metres in diameter.",
+      "de": "Im Diquís-Delta sind antike Steinkugeln mit über zwei Metern Durchmesser erhalten.",
+      "source": "https://whc.unesco.org/en/list/1453/"
+    },
+    "detail": {
+      "en": "Costa Rica’s 1949 constitution abolished the army as a permanent institution, while allowing forces for national defence.",
+      "de": "Costa Ricas Verfassung von 1949 schaffte das Heer als dauerhafte Institution ab, erlaubt aber Streitkräfte zur Landesverteidigung.",
+      "source": "https://en.wikipedia.org/wiki/Article_12_of_the_Constitution_of_Costa_Rica"
+    }
+  },
+  {
+    "id": "jm",
+    "front": {
+      "en": "The Blue and John Crow Mountains sheltered Maroon communities escaping slavery.",
+      "de": "Die Blue and John Crow Mountains boten Maroon-Gemeinschaften Schutz vor der Sklaverei.",
+      "source": "https://whc.unesco.org/en/list/1356/"
+    },
+    "detail": {
+      "en": "Jamaican reggae grew from earlier styles such as ska and rocksteady, drawing on soul and rhythm and blues.",
+      "de": "Jamaikanischer Reggae entwickelte sich aus Stilen wie Ska und Rocksteady und nahm Soul sowie Rhythm and Blues auf.",
+      "source": "https://ich.unesco.org/en/RL/reggae-music-of-jamaica-01398"
+    }
+  },
+  {
+    "id": "ar",
+    "front": {
+      "en": "Patagonia’s Los Glaciares National Park contains glaciers that calve into lakes.",
+      "de": "Im patagonischen Nationalpark Los Glaciares brechen Eisberge von Gletschern in Seen ab.",
+      "source": "https://whc.unesco.org/en/list/145/"
+    },
+    "fun": {
+      "en": "Patagonia’s Cave of the Hands takes its name from the painted hand stencils on its rock walls.",
+      "de": "Patagoniens Höhle der Hände verdankt ihren Namen den mit Farbe gesprühten Handumrissen an ihren Felswänden.",
+      "source": "https://whc.unesco.org/en/list/936/"
+    }
+  },
+  {
+    "id": "bo",
+    "front": {
+      "en": "Tiwanaku flourished as the centre of an Andean empire between AD 500 and 900.",
+      "de": "Tiwanaku blühte zwischen 500 und 900 n. Chr. als Zentrum eines Andenreichs.",
+      "source": "https://whc.unesco.org/en/list/567/"
+    },
+    "detail": {
+      "en": "The Salar de Uyuni formed as prehistoric lakes evaporated, leaving behind a crust rich in salt and gypsum.",
+      "de": "Der Salar de Uyuni entstand durch Verdunstung prähistorischer Seen, die eine Kruste aus Salz und Gips hinterließen.",
+      "source": "https://science.nasa.gov/earth/earth-observatory/an-expanse-of-white-in-bolivia-84853/"
+    }
+  },
+  {
+    "id": "uy",
+    "front": {
+      "en": "Fray Bentos once exported meat extract and corned beef to Europe.",
+      "de": "Fray Bentos exportierte einst Fleischextrakt und Corned Beef nach Europa.",
+      "source": "https://whc.unesco.org/en/list/1464/"
+    }
+  },
+  {
+    "id": "fj",
+    "front": {
+      "en": "Levuka’s historic port grew around existing indigenous villages in the 19th century.",
+      "de": "Levukas historischer Hafen wuchs im 19. Jahrhundert um bestehende indigene Dörfer herum.",
+      "source": "https://whc.unesco.org/en/list/1399/"
+    }
+  },
+  {
+    "id": "vu",
+    "front": {
+      "en": "Sites on three islands preserve the story of Vanuatu’s chief Roi Mata.",
+      "de": "Stätten auf drei Inseln bewahren die Geschichte von Vanuatus Häuptling Roi Mata.",
+      "source": "https://whc.unesco.org/en/list/1280/"
+    }
+  },
+  {
+    "id": "ae",
+    "front": {
+      "en": "Al Ain preserves ancient desert tombs and an Iron Age aflaj irrigation system.",
+      "de": "Al Ain bewahrt antike Wüstengräber und ein Aflaj-Bewässerungssystem aus der Eisenzeit.",
+      "source": "https://whc.unesco.org/en/list/1343/"
+    }
+  },
+  {
+    "id": "af",
+    "front": {
+      "en": "The 12th-century Minaret of Jam rises 65 metres above a remote river valley.",
+      "de": "Das Minarett von Dscham aus dem 12. Jahrhundert ragt 65 Meter über einem abgelegenen Flusstal auf.",
+      "source": "https://whc.unesco.org/en/list/211/"
+    }
+  },
+  {
+    "id": "al",
+    "front": {
+      "en": "Butrint preserves layers of history from a Greek colony to a Roman city.",
+      "de": "Butrint bewahrt historische Schichten von einer griechischen Kolonie bis zu einer römischen Stadt.",
+      "source": "https://whc.unesco.org/en/list/570/"
+    }
+  },
+  {
+    "id": "am",
+    "front": {
+      "en": "Many of Geghard Monastery’s medieval churches and tombs were carved directly into rock.",
+      "de": "Viele mittelalterliche Kirchen und Gräber des Klosters Geghard wurden direkt in den Fels gehauen.",
+      "source": "https://whc.unesco.org/en/list/960/"
+    },
+    "fun": {
+      "en": "Armenian lavash is baked by pressing thin sheets of dough against the wall of a clay oven.",
+      "de": "Armenisches Lawasch wird gebacken, indem dünne Teigfladen an die Wand eines Lehmofens gedrückt werden.",
+      "source": "https://ich.unesco.org/en/RL/le-lavash-preparation-signification-et-aspect-du-pain-traditionnel-en-tant-qu-expression-culturelle-en-armenie-00985"
+    }
+  },
+  {
+    "id": "ao",
+    "front": {
+      "en": "Mbanza Kongo was the political and spiritual centre of the Kingdom of Kongo.",
+      "de": "Mbanza Kongo war das politische und spirituelle Zentrum des Königreichs Kongo.",
+      "source": "https://whc.unesco.org/en/list/1511/"
+    }
+  },
+  {
+    "id": "at",
+    "front": {
+      "en": "The Semmering Railway crossed 41 kilometres of mountain terrain when built in 1848–1854.",
+      "de": "Die Semmeringbahn überwand beim Bau 1848–1854 eine 41 Kilometer lange Gebirgsstrecke.",
+      "source": "https://whc.unesco.org/en/list/785/"
+    }
+  },
+  {
+    "id": "az",
+    "front": {
+      "en": "Gobustan preserves more than 6,000 rock engravings in a rocky semi-desert landscape.",
+      "de": "Gobustan bewahrt über 6.000 Felsgravuren in einer felsigen Halbwüstenlandschaft.",
+      "source": "https://whc.unesco.org/en/list/1076/"
+    },
+    "detail": {
+      "en": "Azerbaijani handmade carpets carry patterns characteristic of different carpet-making regions.",
+      "de": "Handgewebte aserbaidschanische Teppiche tragen Muster, die für verschiedene Teppichregionen typisch sind.",
+      "source": "https://ich.unesco.org/en/RL/traditional-art-of-azerbaijani-carpet-weaving-in-the-republic-of-azerbaijan-00389"
+    }
+  },
+  {
+    "id": "ba",
+    "front": {
+      "en": "Mostar takes its name from the mostari, the bridge keepers.",
+      "de": "Mostar verdankt seinen Namen den Mostari, den Brückenwächtern.",
+      "source": "https://whc.unesco.org/en/list/946/"
+    }
+  },
+  {
+    "id": "bd",
+    "front": {
+      "en": "The Sundarbans’ tidal mangrove forests provide habitat for Bengal tigers.",
+      "de": "Die Mangrovenwälder der Sundarbans im Gezeitenbereich bieten Bengaltigern Lebensraum.",
+      "source": "https://whc.unesco.org/en/list/798/"
+    },
+    "detail": {
+      "en": "Jamdani weavers near Dhaka create intricate patterns directly on the handloom as they weave sheer cotton cloth.",
+      "de": "Jamdani-Weber bei Dhaka erzeugen beim Weben feiner Baumwollstoffe aufwendige Muster direkt am Handwebstuhl.",
+      "source": "https://ich.unesco.org/en/RL/traditional-art-of-jamdani-weaving-00879?RL=00879"
+    }
+  },
+  {
+    "id": "be",
+    "front": {
+      "en": "Victor Horta’s Brussels town houses helped pioneer Art Nouveau architecture.",
+      "de": "Victor Hortas Brüsseler Stadthäuser zählen zu den Pionierbauten des Jugendstils.",
+      "source": "https://whc.unesco.org/en/list/1005/"
+    }
+  },
+  {
+    "id": "bf",
+    "front": {
+      "en": "Loropéni’s stone-walled ruins bear witness to the trans-Saharan gold trade.",
+      "de": "Die steinernen Mauerruinen von Loropéni zeugen vom Goldhandel durch die Sahara.",
+      "source": "https://whc.unesco.org/en/list/1225/"
+    }
+  },
+  {
+    "id": "bg",
+    "front": {
+      "en": "The Thracian tomb at Kazanlak preserves murals showing ancient burial rituals.",
+      "de": "Das thrakische Grab von Kasanlak bewahrt Wandbilder mit antiken Bestattungsritualen.",
+      "source": "https://whc.unesco.org/en/list/44/"
+    }
+  },
+  {
+    "id": "bi",
+    "front": {
+      "en": "Burundi’s royal drum ritual combines synchronized drumming, dance, poetry and song.",
+      "de": "Burundis königliches Trommelritual verbindet synchrones Trommeln, Tanz, Dichtung und Gesang.",
+      "source": "https://ich.unesco.org/en/RL/ritual-dance-of-the-royal-drum-00989"
+    }
+  },
+  {
+    "id": "bj",
+    "front": {
+      "en": "The royal palaces of Abomey preserve the heritage of the Kingdom of Dahomey.",
+      "de": "Die Königspaläste von Abomey bewahren das Erbe des Königreichs Dahomey.",
+      "source": "https://whc.unesco.org/en/list/323/"
+    }
+  },
+  {
+    "id": "bn",
+    "front": {
+      "en": "Kampong Ayer’s stilt houses are linked by wooden walkways above the Brunei River.",
+      "de": "Kampong Ayers Pfahlhäuser sind durch Holzstege über dem Brunei-Fluss verbunden.",
+      "source": "https://www.bruneitourism.com/places/kampong-ayer/"
+    }
+  },
+  {
+    "id": "bs",
+    "front": {
+      "en": "Andros’ Blue Holes National Park protects blue holes alongside pine and coppice forests.",
+      "de": "Der Blue Holes National Park auf Andros schützt blaue Wasserlöcher sowie Kiefern- und Niederwälder.",
+      "source": "https://bnt.bs/explore/andros/blue-holes-national-park/"
+    }
+  },
+  {
+    "id": "bw",
+    "front": {
+      "en": "The Okavango Delta’s annual flood arrives during Botswana’s dry season.",
+      "de": "Die jährliche Flut im Okavangodelta trifft während Botswanas Trockenzeit ein.",
+      "source": "https://whc.unesco.org/en/list/1432/"
+    },
+    "detail": {
+      "en": "Tsodilo’s rock paintings and archaeological remains record human activity in the Kalahari over many thousands of years.",
+      "de": "Tsodilos Felsmalereien und archäologische Funde dokumentieren menschliche Aktivitäten in der Kalahari über viele Jahrtausende.",
+      "source": "https://whc.unesco.org/en/list/1021/"
+    }
+  },
+  {
+    "id": "by",
+    "front": {
+      "en": "Mir Castle combines Gothic, Renaissance and Baroque architecture.",
+      "de": "Schloss Mir vereint gotische Architektur mit Renaissance und Barock.",
+      "source": "https://whc.unesco.org/en/list/625/"
+    }
+  },
+  {
+    "id": "bz",
+    "front": {
+      "en": "Belize’s protected reef system includes coral reefs, atolls and mangrove forests.",
+      "de": "Belizes geschütztes Riffsystem umfasst Korallenriffe, Atolle und Mangrovenwälder.",
+      "source": "https://whc.unesco.org/en/list/764/"
+    }
+  },
+  {
+    "id": "cd",
+    "front": {
+      "en": "Virunga National Park’s varied habitats include volcanoes and mountain gorilla forests.",
+      "de": "Virungas vielfältige Lebensräume umfassen Vulkane und Wälder mit Berggorillas.",
+      "source": "https://whc.unesco.org/en/list/63/"
+    },
+    "detail": {
+      "en": "The Okapi Wildlife Reserve protects part of the Ituri forest, including habitat for the forest-dwelling okapi.",
+      "de": "Das Okapi-Wildtierreservat schützt einen Teil des Ituri-Waldes und damit den Lebensraum des waldbewohnenden Okapis.",
+      "source": "https://whc.unesco.org/en/list/718/"
+    }
+  },
+  {
+    "id": "cf",
+    "front": {
+      "en": "The Sangha Trinational forests shelter forest elephants and western lowland gorillas.",
+      "de": "Die Wälder des Sangha-Trinational-Gebiets beherbergen Waldelefanten und Westliche Flachlandgorillas.",
+      "source": "https://whc.unesco.org/en/list/1380/"
+    }
+  },
+  {
+    "id": "cg",
+    "front": {
+      "en": "Sangha Trinational links parks in the Republic of the Congo, Cameroon and the Central African Republic.",
+      "de": "Sangha Trinational verbindet Parks in der Republik Kongo, Kamerun und der Zentralafrikanischen Republik.",
+      "source": "https://whc.unesco.org/en/list/1380/"
+    }
+  },
+  {
+    "id": "ci",
+    "front": {
+      "en": "Grand-Bassam’s historic town includes an N’zima fishing village beside colonial buildings.",
+      "de": "Grand-Bassams historische Stadt umfasst ein N’zima-Fischerdorf neben Kolonialbauten.",
+      "source": "https://whc.unesco.org/en/list/1322/"
+    }
+  },
+  {
+    "id": "cm",
+    "front": {
+      "en": "The Dja River almost completely surrounds the rainforest of the Dja Faunal Reserve.",
+      "de": "Der Fluss Dja umschließt den Regenwald des Dja-Schutzgebiets fast vollständig.",
+      "source": "https://whc.unesco.org/en/list/407/"
+    }
+  },
+  {
+    "id": "co",
+    "front": {
+      "en": "Colombia’s coffee landscape reflects generations of farming on steep Andean slopes.",
+      "de": "Kolumbiens Kaffeelandschaft zeugt von generationenlangem Anbau an steilen Andenhängen.",
+      "source": "https://whc.unesco.org/en/list/1121/"
+    }
+  },
+  {
+    "id": "cv",
+    "front": {
+      "en": "Cidade Velha preserves parts of its early street layout and a royal fortress on Santiago Island.",
+      "de": "Cidade Velha bewahrt Teile seines frühen Straßennetzes und eine königliche Festung auf Santiago.",
+      "source": "https://whc.unesco.org/en/list/1310/"
+    }
+  },
+  {
+    "id": "cy",
+    "front": {
+      "en": "Ten painted churches and monasteries in the Troodos Mountains form a World Heritage site.",
+      "de": "Zehn ausgemalte Kirchen und Klöster im Troodos-Gebirge bilden eine Welterbestätte.",
+      "source": "https://whc.unesco.org/en/list/351/"
+    }
+  },
+  {
+    "id": "cz",
+    "front": {
+      "en": "Silver mining made Kutná Hora a wealthy medieval town with grand churches and houses.",
+      "de": "Silberbergbau machte Kutná Hora zu einer reichen mittelalterlichen Stadt mit prächtigen Kirchen und Häusern.",
+      "source": "https://whc.unesco.org/en/list/732/"
+    }
+  },
+  {
+    "id": "dj",
+    "front": {
+      "en": "Lake Assal lies below sea level in a landscape of salt and volcanic rock.",
+      "de": "Der Assalsee liegt unter dem Meeresspiegel in einer Landschaft aus Salz und Vulkangestein.",
+      "source": "https://guide.visitdjibouti.dj/explorer-ce-quil-faut-voir/explorer-3/sites-touristiques-naturels/le-lac-assal/"
+    }
+  },
+  {
+    "id": "dk",
+    "front": {
+      "en": "Kronborg Castle in Helsingør is the setting of Shakespeare’s Hamlet.",
+      "de": "Schloss Kronborg in Helsingör ist der Schauplatz von Shakespeares Hamlet.",
+      "source": "https://whc.unesco.org/en/list/696/"
+    }
+  },
+  {
+    "id": "do",
+    "front": {
+      "en": "Santo Domingo’s colonial city used a grid layout that influenced later American towns.",
+      "de": "Santo Domingos Kolonialstadt nutzte ein Straßenraster, das spätere Städte Amerikas prägte.",
+      "source": "https://whc.unesco.org/en/list/526/"
+    }
+  },
+  {
+    "id": "ec",
+    "front": {
+      "en": "The Galápagos’ unusual wildlife helped inspire Darwin’s theory of natural selection.",
+      "de": "Die ungewöhnliche Tierwelt der Galápagosinseln inspirierte Darwins Theorie der natürlichen Selektion.",
+      "source": "https://whc.unesco.org/en/list/001/"
+    }
+  },
+  {
+    "id": "ee",
+    "front": {
+      "en": "Tallinn’s old town preserves the merchant houses of a medieval Hanseatic trading city.",
+      "de": "Tallinns Altstadt bewahrt die Kaufmannshäuser einer mittelalterlichen Hansestadt.",
+      "source": "https://whc.unesco.org/en/list/822/"
+    }
+  },
+  {
+    "id": "er",
+    "front": {
+      "en": "Asmara preserves a cityscape shaped by early 20th-century modernist architecture.",
+      "de": "Asmara bewahrt ein Stadtbild, das die moderne Architektur des frühen 20. Jahrhunderts prägte.",
+      "source": "https://whc.unesco.org/en/list/1550/"
+    }
+  },
+  {
+    "id": "et",
+    "front": {
+      "en": "Lalibela’s eleven medieval churches were carved from rock.",
+      "de": "Die elf mittelalterlichen Kirchen von Lalibela wurden aus dem Fels gehauen.",
+      "source": "https://whc.unesco.org/en/list/18/"
+    }
+  },
+  {
+    "id": "fi",
+    "front": {
+      "en": "Sammallahdenmäki’s granite burial cairns date from the Bronze Age.",
+      "de": "Die Grabhügel aus Granit in Sammallahdenmäki stammen aus der Bronzezeit.",
+      "source": "https://whc.unesco.org/en/list/579/"
+    },
+    "fun": {
+      "en": "In Finnish sauna culture, löyly is the steam released when water is thrown onto heated stones.",
+      "de": "In der finnischen Saunakultur bezeichnet Löyly den Dampf, der beim Wasseraufguss auf heiße Steine entsteht.",
+      "source": "https://ich.unesco.org/en/RL/sauna-culture-in-finland-01596"
+    }
+  },
+  {
+    "id": "ga",
+    "front": {
+      "en": "Lopé-Okanda brings tropical rainforest and ancient savannah landscapes together.",
+      "de": "In Lopé-Okanda treffen tropischer Regenwald und alte Savannenlandschaften aufeinander.",
+      "source": "https://whc.unesco.org/en/list/1147/"
+    }
+  },
+  {
+    "id": "ge",
+    "front": {
+      "en": "Mtskheta’s medieval religious monuments stand where the Aragvi and Mtkvari rivers meet.",
+      "de": "Mtskhetas mittelalterliche Sakralbauten stehen am Zusammenfluss von Aragwi und Mtkwari.",
+      "source": "https://whc.unesco.org/en/list/708/"
+    },
+    "fun": {
+      "en": "In Georgia’s qvevri tradition, wine ferments in sealed clay vessels buried in the ground.",
+      "de": "In Georgiens Qvevri-Tradition gärt Wein in verschlossenen Tongefäßen, die im Boden vergraben sind.",
+      "source": "https://ich.unesco.org/en/RL/ancient-georgian-traditional-qvevri-wine-making-method-00870"
+    }
+  },
+  {
+    "id": "gm",
+    "front": {
+      "en": "Kunta Kinteh Island preserves evidence of the slave trade and its abolition along the Gambia River.",
+      "de": "Kunta Kinteh Island bewahrt Zeugnisse des Sklavenhandels und seiner Abschaffung am Gambiafluss.",
+      "source": "https://whc.unesco.org/en/list/761/"
+    }
+  },
+  {
+    "id": "gn",
+    "front": {
+      "en": "Mount Nimba’s wildlife includes toads that give birth to live young.",
+      "de": "Zur Tierwelt des Nimba-Gebirges gehören Kröten, die lebende Junge zur Welt bringen.",
+      "source": "https://whc.unesco.org/en/list/155/"
+    }
+  },
+  {
+    "id": "gq",
+    "front": {
+      "en": "Monte Alén National Park shelters the goliath frog, the world’s largest frog.",
+      "de": "Im Monte-Alén-Nationalpark lebt der Goliathfrosch, der größte Frosch der Welt.",
+      "source": "https://en.wikipedia.org/wiki/Monte_Al%C3%A9n_National_Park"
+    }
+  },
+  {
+    "id": "gt",
+    "front": {
+      "en": "Tikal’s ancient Maya temples and palaces rise in the forests of northern Guatemala.",
+      "de": "Tikals antike Maya-Tempel und Paläste erheben sich in den Wäldern Nordguatemalas.",
+      "source": "https://whc.unesco.org/en/list/64/"
+    }
+  },
+  {
+    "id": "gw",
+    "front": {
+      "en": "The Bijagós Archipelago’s beaches provide nesting sites for green turtles.",
+      "de": "Die Strände des Bijagós-Archipels bieten Grünen Meeresschildkröten Nistplätze.",
+      "source": "https://whc.unesco.org/en/list/1431/"
+    }
+  },
+  {
+    "id": "gy",
+    "front": {
+      "en": "Guyana’s Kaieteur Falls are fed by the Potaro River in a protected rainforest landscape.",
+      "de": "Guyanas Kaieteur-Wasserfall wird in einer geschützten Regenwaldlandschaft vom Potaro gespeist.",
+      "source": "https://ntg.gov.gy/monument/kaieteur-falls/"
+    }
+  },
+  {
+    "id": "hn",
+    "front": {
+      "en": "Copán’s ruined Maya citadel and public squares reveal successive stages of an ancient city.",
+      "de": "Copáns Maya-Zitadelle und Plätze zeigen aufeinanderfolgende Entwicklungsphasen einer antiken Stadt.",
+      "source": "https://whc.unesco.org/en/list/129/"
+    }
+  },
+  {
+    "id": "hr",
+    "front": {
+      "en": "Dubrovnik preserves Gothic, Renaissance and Baroque monuments on the Adriatic coast.",
+      "de": "Dubrovnik bewahrt an der Adriaküste Bauwerke aus Gotik, Renaissance und Barock.",
+      "source": "https://whc.unesco.org/en/list/095/"
+    }
+  },
+  {
+    "id": "ht",
+    "front": {
+      "en": "Haiti’s Citadel and Sans-Souci Palace date from the early years of independence.",
+      "de": "Haitis Zitadelle und der Palast Sans-Souci stammen aus den frühen Jahren der Unabhängigkeit.",
+      "source": "https://whc.unesco.org/en/list/180/"
+    }
+  },
+  {
+    "id": "hu",
+    "front": {
+      "en": "Tokaj’s historic wine landscape includes vineyards and networks of deep wine cellars.",
+      "de": "Tokajs historische Weinlandschaft umfasst Weinberge und Netze tiefer Weinkeller.",
+      "source": "https://whc.unesco.org/en/list/1063/"
+    }
+  },
+  {
+    "id": "ie",
+    "front": {
+      "en": "Brú na Bóinne’s prehistoric burial landscape includes Newgrange, Knowth and Dowth.",
+      "de": "Zur prähistorischen Gräberlandschaft Brú na Bóinne gehören Newgrange, Knowth und Dowth.",
+      "source": "https://whc.unesco.org/en/list/659/"
+    }
+  },
+  {
+    "id": "il",
+    "front": {
+      "en": "Herod the Great built Masada’s palace complex above the Dead Sea.",
+      "de": "Herodes der Große ließ den Palastkomplex von Masada über dem Toten Meer errichten.",
+      "source": "https://whc.unesco.org/en/list/1040/"
+    }
+  },
+  {
+    "id": "iq",
+    "front": {
+      "en": "Babylon’s ruins preserve the walls, gates, temples and palaces of an ancient metropolis.",
+      "de": "Babylons Ruinen bewahren Mauern, Tore, Tempel und Paläste einer antiken Metropole.",
+      "source": "https://whc.unesco.org/en/list/278/"
+    }
+  },
+  {
+    "id": "ir",
+    "front": {
+      "en": "Darius I founded Persepolis in 518 BC on a vast partly artificial terrace.",
+      "de": "Dareios I. gründete Persepolis 518 v. Chr. auf einer riesigen, teils künstlichen Terrasse.",
+      "source": "https://whc.unesco.org/en/list/114/"
+    },
+    "detail": {
+      "en": "Iran’s qanats carry groundwater through gently sloping underground tunnels using gravity rather than pumps.",
+      "de": "Irans Qanate leiten Grundwasser durch leicht abfallende unterirdische Tunnel mithilfe der Schwerkraft statt mit Pumpen.",
+      "source": "https://whc.unesco.org/en/list/1506/"
+    }
+  },
+  {
+    "id": "is",
+    "front": {
+      "en": "Iceland’s Althing assembly began meeting outdoors at Thingvellir in 930.",
+      "de": "Islands Althing-Versammlung tagte ab 930 unter freiem Himmel in Thingvellir.",
+      "source": "https://whc.unesco.org/en/list/1152/"
+    }
+  },
+  {
+    "id": "jo",
+    "front": {
+      "en": "Petra’s Nabataean monuments are partly built and partly carved into the surrounding rock.",
+      "de": "Petras nabatäische Monumente sind teils gebaut, teils aus dem umgebenden Fels gehauen.",
+      "source": "https://whc.unesco.org/en/list/326/"
+    }
+  },
+  {
+    "id": "kg",
+    "front": {
+      "en": "Sulaiman-Too’s sacred mountain contains ancient worship sites and caves with rock art.",
+      "de": "Der heilige Berg Sulaiman-Too birgt alte Kultstätten und Höhlen mit Felskunst.",
+      "source": "https://whc.unesco.org/en/list/1230/"
+    },
+    "fun": {
+      "en": "Continuous recitals of the Kyrgyz epic trilogy Manas, Semetey and Seytek can last up to thirteen hours.",
+      "de": "Durchgehende Vorträge der kirgisischen Epentrilogie Manas, Semetey und Seytek können bis zu dreizehn Stunden dauern.",
+      "source": "https://ich.unesco.org/en/RL/kyrgyz-epic-trilogy-manas-semetey-seytek-00876"
+    }
+  },
+  {
+    "id": "kh",
+    "front": {
+      "en": "Angkor preserves Khmer temples alongside an extensive historic water-management system.",
+      "de": "Angkor bewahrt Khmer-Tempel neben einem weitläufigen historischen Wassersystem.",
+      "source": "https://whc.unesco.org/en/list/668/"
+    }
+  },
+  {
+    "id": "kp",
+    "front": {
+      "en": "The Koguryo tombs preserve wall paintings offering glimpses of life in an ancient kingdom.",
+      "de": "Die Koguryo-Gräber bewahren Wandbilder mit Einblicken in das Leben eines antiken Königreichs.",
+      "source": "https://whc.unesco.org/en/list/1091/"
+    }
+  },
+  {
+    "id": "kw",
+    "front": {
+      "en": "Kuwait’s Failaka Island preserves archaeological sites from the Bronze Age.",
+      "de": "Kuwaits Insel Failaka bewahrt archäologische Stätten aus der Bronzezeit.",
+      "source": "https://nccal.gov.kw/en/archaeological-sites-0"
+    }
+  },
+  {
+    "id": "kz",
+    "front": {
+      "en": "Saryarka’s wetlands are vital stopovers for migrating waterbirds on the Central Asian flyway.",
+      "de": "Saryarkas Feuchtgebiete sind wichtige Rastplätze für Wasservögel auf dem zentralasiatischen Zugweg.",
+      "source": "https://whc.unesco.org/en/list/1102/"
+    }
+  },
+  {
+    "id": "la",
+    "front": {
+      "en": "Luang Prabang blends traditional Lao architecture with European colonial buildings.",
+      "de": "Luang Prabang verbindet traditionelle laotische Architektur mit europäischen Kolonialbauten.",
+      "source": "https://whc.unesco.org/en/list/479/"
+    }
+  },
+  {
+    "id": "lb",
+    "front": {
+      "en": "Baalbek’s monumental Roman sanctuary once drew crowds of pilgrims.",
+      "de": "Baalbeks monumentales römisches Heiligtum zog einst Scharen von Pilgern an.",
+      "source": "https://whc.unesco.org/en/list/294/"
+    }
+  },
+  {
+    "id": "lk",
+    "front": {
+      "en": "Sigiriya’s ancient royal ruins crown a granite rock rising about 180 metres.",
+      "de": "Sigiriyas antike Königsruinen krönen einen etwa 180 Meter aufragenden Granitfelsen.",
+      "source": "https://whc.unesco.org/en/list/202/"
+    }
+  },
+  {
+    "id": "lr",
+    "front": {
+      "en": "Wildlife surveys have recorded pygmy hippopotamuses in Liberia’s Sapo National Park.",
+      "de": "Wildtierstudien haben Zwergflusspferde in Liberias Sapo-Nationalpark nachgewiesen.",
+      "source": "https://cms.zsl.org/sites/default/files/2023-07/Liberia%20Sapo%20NP%20mammal%20status%20report.pdf"
+    }
+  },
+  {
+    "id": "lt",
+    "front": {
+      "en": "The Curonian Spit is a sand-dune peninsula shaped by wind, waves and human care.",
+      "de": "Die Kurische Nehrung ist eine Dünenhalbinsel, geformt von Wind, Wellen und menschlicher Pflege.",
+      "source": "https://whc.unesco.org/en/list/994/"
+    }
+  },
+  {
+    "id": "lu",
+    "front": {
+      "en": "Luxembourg’s old town preserves fortifications developed over several centuries.",
+      "de": "Luxemburgs Altstadt bewahrt Befestigungen, die über mehrere Jahrhunderte entstanden.",
+      "source": "https://whc.unesco.org/en/list/699/"
+    }
+  },
+  {
+    "id": "lv",
+    "front": {
+      "en": "Riga’s historic centre combines medieval streets with Art Nouveau architecture.",
+      "de": "Rigas historisches Zentrum verbindet mittelalterliche Straßen mit Jugendstilarchitektur.",
+      "source": "https://whc.unesco.org/en/list/852/"
+    }
+  },
+  {
+    "id": "ly",
+    "front": {
+      "en": "Leptis Magna was the birthplace of Roman emperor Septimius Severus, who enlarged the city.",
+      "de": "Leptis Magna war der Geburtsort des römischen Kaisers Septimius Severus, der die Stadt ausbaute.",
+      "source": "https://whc.unesco.org/en/list/183/"
+    }
+  },
+  {
+    "id": "md",
+    "front": {
+      "en": "Moldova shares the Struve survey arc, which helped measure Earth’s size and shape.",
+      "de": "Moldau hat Anteil am Struve-Vermessungsbogen, der half, Form und Größe der Erde zu bestimmen.",
+      "source": "https://whc.unesco.org/en/list/1187/"
+    }
+  },
+  {
+    "id": "me",
+    "front": {
+      "en": "Durmitor’s limestone mountains and lakes were shaped by glaciers.",
+      "de": "Durmitors Kalksteingebirge und Seen wurden von Gletschern geformt.",
+      "source": "https://whc.unesco.org/en/list/100/"
+    }
+  },
+  {
+    "id": "mk",
+    "front": {
+      "en": "Lake Ohrid shelters freshwater species found nowhere else.",
+      "de": "Im Ohridsee leben Süßwasserarten, die nirgendwo sonst vorkommen.",
+      "source": "https://whc.unesco.org/en/list/99/"
+    }
+  },
+  {
+    "id": "ml",
+    "front": {
+      "en": "Djenné’s traditional houses stand on small hills to protect them from seasonal floods.",
+      "de": "Djennés traditionelle Häuser stehen zum Schutz vor saisonalen Überschwemmungen auf kleinen Hügeln.",
+      "source": "https://whc.unesco.org/en/list/116/"
+    }
+  },
+  {
+    "id": "mm",
+    "front": {
+      "en": "Bagan’s sacred landscape contains Buddhist temples, stupas and monasteries.",
+      "de": "Bagans heilige Landschaft umfasst buddhistische Tempel, Stupas und Klöster.",
+      "source": "https://whc.unesco.org/en/list/1588/"
+    }
+  },
+  {
+    "id": "mn",
+    "front": {
+      "en": "Mongolian Altai rock carvings show the shift from hunting to herding and horse-based nomadic life.",
+      "de": "Felsbilder im mongolischen Altai zeigen den Wandel von Jagd zu Viehzucht und Reiternomadentum.",
+      "source": "https://whc.unesco.org/en/list/1382/"
+    },
+    "fun": {
+      "en": "The morin khuur is a two-stringed fiddle whose neck ends in a carved horse’s head.",
+      "de": "Die Morin Khuur ist eine zweisaitige Pferdekopfgeige mit einem geschnitzten Pferdekopf am Halsende.",
+      "source": "https://ich.unesco.org/en/RL/traditional-music-of-the-morin-khuur-00068?lang=en"
+    }
+  },
+  {
+    "id": "mr",
+    "front": {
+      "en": "Banc d’Arguin brings desert dunes and bird-rich Atlantic shallows together.",
+      "de": "Im Banc d’Arguin treffen Wüstendünen auf vogelreiche Flachwassergebiete des Atlantiks.",
+      "source": "https://whc.unesco.org/en/list/506/"
+    }
+  },
+  {
+    "id": "mw",
+    "front": {
+      "en": "Lake Malawi’s national park shelters hundreds of cichlid species, nearly all unique to the lake.",
+      "de": "Im Malawisee-Nationalpark leben Hunderte Buntbarscharten, die fast alle nur im Malawisee vorkommen.",
+      "source": "https://whc.unesco.org/en/list/289/"
+    }
+  },
+  {
+    "id": "my",
+    "front": {
+      "en": "Gunung Mulu’s vast caves shelter millions of bats and cave swiftlets.",
+      "de": "Gunung Mulus riesige Höhlen beherbergen Millionen Fledermäuse und Salanganen.",
+      "source": "https://whc.unesco.org/en/list/1013/"
+    }
+  },
+  {
+    "id": "mz",
+    "front": {
+      "en": "Mozambique Island was a fortified Portuguese trading post on the sea route to India.",
+      "de": "Die Ilha de Moçambique war ein befestigter portugiesischer Handelsposten auf dem Seeweg nach Indien.",
+      "source": "https://whc.unesco.org/en/list/599/"
+    },
+    "detail": {
+      "en": "Chopi orchestras combine wooden timbila xylophones whose keys have calabash resonators beneath them.",
+      "de": "Chopi-Orchester vereinen hölzerne Timbila-Xylofone, unter deren Klangstäben Kalebassen als Resonatoren hängen.",
+      "source": "https://ich.unesco.org/en/RL/chopi-timbila-00133?RL=00133"
+    }
+  },
+  {
+    "id": "ne",
+    "front": {
+      "en": "The Aïr Mountains form a volcanic massif amid the Sahara’s Ténéré desert.",
+      "de": "Das Aïr-Gebirge bildet ein Vulkanmassiv in der Ténéré-Wüste der Sahara.",
+      "source": "https://whc.unesco.org/en/list/573/"
+    }
+  },
+  {
+    "id": "ng",
+    "front": {
+      "en": "Osun-Osogbo’s sacred forest contains shrines and sculptures honouring Yoruba deities.",
+      "de": "Osun-Osogbos heiliger Wald birgt Schreine und Skulpturen zu Ehren von Yoruba-Gottheiten.",
+      "source": "https://whc.unesco.org/en/list/1118/"
+    }
+  },
+  {
+    "id": "ni",
+    "front": {
+      "en": "León Viejo’s ruins preserve traces of a 16th-century Spanish colonial settlement.",
+      "de": "Die Ruinen von León Viejo bewahren Spuren einer spanischen Kolonialsiedlung des 16. Jahrhunderts.",
+      "source": "https://whc.unesco.org/en/list/613/"
+    }
+  },
+  {
+    "id": "nl",
+    "front": {
+      "en": "The Wadden Sea’s tidal flats shelter harbour seals and grey seals.",
+      "de": "Die Wattflächen des Wattenmeers bieten Seehunden und Kegelrobben Lebensraum.",
+      "source": "https://whc.unesco.org/en/list/1314/"
+    }
+  },
+  {
+    "id": "om",
+    "front": {
+      "en": "Oman’s Land of Frankincense preserves ancient ports, an oasis and frankincense trees.",
+      "de": "Omans Weihrauchland bewahrt antike Häfen, eine Oase und Weihrauchbäume.",
+      "source": "https://whc.unesco.org/en/list/1010/"
+    },
+    "detail": {
+      "en": "Oman’s aflaj use gravity to channel water from springs or underground sources to farms and homes.",
+      "de": "Omans Aflaj leiten Wasser aus Quellen oder unterirdischen Vorkommen durch Schwerkraft zu Feldern und Häusern.",
+      "source": "https://whc.unesco.org/en/list/1207/"
+    }
+  },
+  {
+    "id": "pa",
+    "front": {
+      "en": "Darién National Park links Pacific beaches and mangroves with mountain rainforests.",
+      "de": "Der Darién-Nationalpark verbindet Pazifikstrände und Mangroven mit Bergregenwäldern.",
+      "source": "https://whc.unesco.org/en/list/159/"
+    }
+  },
+  {
+    "id": "pg",
+    "front": {
+      "en": "Kuk’s ancient wetlands preserve evidence of farming from around 6,500 years ago.",
+      "de": "Kuks uralte Feuchtgebiete bewahren Spuren von Landwirtschaft vor etwa 6.500 Jahren.",
+      "source": "https://whc.unesco.org/en/list/887/"
+    }
+  },
+  {
+    "id": "ph",
+    "front": {
+      "en": "The Ifugao rice terraces follow the contours of the Cordillera mountains.",
+      "de": "Die Reisterrassen der Ifugao folgen den Konturen der Kordillerenberge.",
+      "source": "https://whc.unesco.org/en/list/722/"
+    }
+  },
+  {
+    "id": "pk",
+    "front": {
+      "en": "Mohenjo-daro’s ruins reveal carefully planned urban life in the ancient Indus civilization.",
+      "de": "Mohenjo-Daros Ruinen zeigen sorgfältig geplantes Stadtleben in der antiken Induskultur.",
+      "source": "https://whc.unesco.org/en/list/138/"
+    }
+  },
+  {
+    "id": "pl",
+    "front": {
+      "en": "Wieliczka and Bochnia’s salt mines contain underground chapels and sculptures carved in salt.",
+      "de": "Die Salzbergwerke Wieliczka und Bochnia bergen unterirdische Kapellen und Figuren aus Salz.",
+      "source": "https://whc.unesco.org/en/list/0032/"
+    }
+  },
+  {
+    "id": "ps",
+    "front": {
+      "en": "Battir’s stone terraces grow olives and vines beside gardens fed by spring-water channels.",
+      "de": "Auf Battirs Steinterrassen wachsen Oliven und Reben neben Gärten mit Quellwasserkanälen.",
+      "source": "https://whc.unesco.org/en/list/1492/"
+    }
+  },
+  {
+    "id": "pt",
+    "front": {
+      "en": "Pico’s vineyards grow in small plots protected from wind and seawater by stone walls.",
+      "de": "Picos Weinreben wachsen in kleinen Parzellen, durch Steinmauern vor Wind und Meerwasser geschützt.",
+      "source": "https://whc.unesco.org/en/list/1117/"
+    }
+  },
+  {
+    "id": "py",
+    "front": {
+      "en": "Trinidad and Jesús de Tavarangue preserve Jesuit mission architecture in Paraguay.",
+      "de": "Trinidad und Jesús de Tavarangue bewahren die Architektur von Jesuitenmissionen in Paraguay.",
+      "source": "https://whc.unesco.org/en/list/648/"
+    }
+  },
+  {
+    "id": "qa",
+    "front": {
+      "en": "Al Zubarah flourished as a pearl-fishing and trading town in the Persian Gulf.",
+      "de": "Al Zubarah blühte als Stadt der Perlentaucher und Händler am Persischen Golf.",
+      "source": "https://whc.unesco.org/en/list/1402/"
+    }
+  },
+  {
+    "id": "ro",
+    "front": {
+      "en": "Romania’s Moldavian World Heritage churches have exterior walls covered in religious frescoes.",
+      "de": "Die Welterbekirchen der rumänischen Moldau haben Außenwände voller religiöser Fresken.",
+      "source": "https://whc.unesco.org/en/list/598/"
+    }
+  },
+  {
+    "id": "rs",
+    "front": {
+      "en": "Studenica’s white marble churches preserve Byzantine paintings from the 13th and 14th centuries.",
+      "de": "Studenicas Kirchen aus weißem Marmor bewahren byzantinische Malerei des 13. und 14. Jahrhunderts.",
+      "source": "https://whc.unesco.org/en/list/389/"
+    }
+  },
+  {
+    "id": "ru",
+    "front": {
+      "en": "Lake Baikal’s long isolation has produced many freshwater species found nowhere else.",
+      "de": "Die lange Isolation des Baikalsees brachte viele Süßwasserarten hervor, die nur dort vorkommen.",
+      "source": "https://whc.unesco.org/en/list/754/"
+    }
+  },
+  {
+    "id": "rw",
+    "front": {
+      "en": "Rwanda’s Volcanoes National Park shelters mountain gorillas on forested volcanic slopes.",
+      "de": "Ruandas Vulkan-Nationalpark beherbergt Berggorillas an bewaldeten Vulkanhängen.",
+      "source": "https://visitrwanda.com/destinations/volcanoes-national-park/"
+    }
+  },
+  {
+    "id": "sa",
+    "front": {
+      "en": "Hegra’s monumental tombs have decorated façades carved into rock by the Nabataeans.",
+      "de": "Hegras monumentale Gräber haben verzierte Fassaden, die Nabatäer in den Fels meißelten.",
+      "source": "https://whc.unesco.org/en/list/1293/"
+    }
+  },
+  {
+    "id": "sb",
+    "front": {
+      "en": "Lake Tegano on Rennell Island was once the lagoon of a coral atoll.",
+      "de": "Der Tegano-See auf Rennell war einst die Lagune eines Korallenatolls.",
+      "source": "https://whc.unesco.org/en/list/854/"
+    }
+  },
+  {
+    "id": "sd",
+    "front": {
+      "en": "Meroë’s pyramids and temples preserve the heritage of the ancient Kingdom of Kush.",
+      "de": "Meroës Pyramiden und Tempel bewahren das Erbe des antiken Königreichs Kusch.",
+      "source": "https://whc.unesco.org/en/list/1336/"
+    }
+  },
+  {
+    "id": "se",
+    "front": {
+      "en": "Grimeton Radio Station preserves early wireless equipment for transatlantic communication.",
+      "de": "Die Funkstation Grimeton bewahrt frühe drahtlose Technik für transatlantische Kommunikation.",
+      "source": "https://whc.unesco.org/en/list/1134/"
+    }
+  },
+  {
+    "id": "si",
+    "front": {
+      "en": "The Reka River carved an underground canyon through the limestone of Škocjan’s caves.",
+      "de": "Der Fluss Reka schnitt eine unterirdische Schlucht in den Kalkstein der Höhlen von Škocjan.",
+      "source": "https://whc.unesco.org/en/list/390/"
+    }
+  },
+  {
+    "id": "sk",
+    "front": {
+      "en": "Slovakia’s Carpathian wooden churches reflect different Christian building traditions.",
+      "de": "Die Holzkirchen der slowakischen Karpaten spiegeln verschiedene christliche Bautraditionen.",
+      "source": "https://whc.unesco.org/en/list/1273/"
+    }
+  },
+  {
+    "id": "sl",
+    "front": {
+      "en": "Tiwai Island’s rainforest shelters Diana monkeys and pygmy hippopotamuses.",
+      "de": "Der Regenwald auf Tiwai Island beherbergt Dianameerkatzen und Zwergflusspferde.",
+      "source": "https://slhc-accra.org/tourism/tiwai-island"
+    }
+  },
+  {
+    "id": "sn",
+    "front": {
+      "en": "Djoudj’s wetlands in the Senegal River delta shelter pelicans and African spoonbills.",
+      "de": "Djoudjs Feuchtgebiete im Senegaldelta bieten Pelikanen und Afrikanischen Löfflern Schutz.",
+      "source": "https://whc.unesco.org/en/list/25/"
+    }
+  },
+  {
+    "id": "so",
+    "front": {
+      "en": "Laas Geel’s rock shelters preserve colourful paintings of cattle with elaborately decorated necks.",
+      "de": "Laas Geels Felsdächer bewahren farbige Rinderbilder mit aufwendig verzierten Hälsen.",
+      "source": "https://vr.africanrockart.britishmuseum.org/country/somalia-somaliland/laas-geel/"
+    }
+  },
+  {
+    "id": "sr",
+    "front": {
+      "en": "The Central Suriname Nature Reserve shelters jaguars, giant otters and giant armadillos.",
+      "de": "Im Zentral-Suriname-Naturschutzgebiet leben Jaguare, Riesenotter und Riesengürteltiere.",
+      "source": "https://whc.unesco.org/en/list/1017/"
+    }
+  },
+  {
+    "id": "ss",
+    "front": {
+      "en": "The Sudd’s vast swamps and floodplains provide habitat for shoebills and antelopes.",
+      "de": "Die riesigen Sümpfe und Auen des Sudd bieten Schuhschnäbeln und Antilopen Lebensraum.",
+      "source": "https://rsis.ramsar.org/RISapp/files/RISrep/SS1622RIS.pdf"
+    }
+  },
+  {
+    "id": "sv",
+    "front": {
+      "en": "A volcanic eruption buried the farming village of Joya de Cerén around AD 600.",
+      "de": "Ein Vulkanausbruch begrub das Bauerndorf Joya de Cerén um 600 n. Chr.",
+      "source": "https://whc.unesco.org/en/list/675/"
+    }
+  },
+  {
+    "id": "sy",
+    "front": {
+      "en": "Damascus’ Great Umayyad Mosque dates from the eighth century.",
+      "de": "Die Große Umayyaden-Moschee in Damaskus stammt aus dem achten Jahrhundert.",
+      "source": "https://whc.unesco.org/en/list/20/"
+    }
+  },
+  {
+    "id": "sz",
+    "front": {
+      "en": "Sibebe Rock’s granite slopes hide forested clefts, caves and waterfalls.",
+      "de": "Sibebe Rocks Granithänge verbergen bewaldete Spalten, Höhlen und Wasserfälle.",
+      "source": "https://www.thekingdomofeswatini.com/central-eswatini/sibebe-rock/"
+    }
+  },
+  {
+    "id": "td",
+    "front": {
+      "en": "Ounianga’s desert lakes vary strikingly in colour, size and water chemistry.",
+      "de": "Ouniangas Wüstenseen unterscheiden sich auffallend in Farbe, Größe und Wasserchemie.",
+      "source": "https://whc.unesco.org/en/list/1400/"
+    }
+  },
+  {
+    "id": "tg",
+    "front": {
+      "en": "The Batammariba’s earthen tower houses shape the cultural landscape of Koutammakou.",
+      "de": "Die lehmgebauten Turmhäuser der Batammariba prägen die Kulturlandschaft von Koutammakou.",
+      "source": "https://whc.unesco.org/en/list/1140/"
+    }
+  },
+  {
+    "id": "th",
+    "front": {
+      "en": "Ayutthaya’s ruins include towering reliquaries and vast Buddhist monasteries.",
+      "de": "Ayutthayas Ruinen umfassen hohe Reliquientürme und weitläufige buddhistische Klöster.",
+      "source": "https://whc.unesco.org/en/list/576/"
+    }
+  },
+  {
+    "id": "tj",
+    "front": {
+      "en": "Tajik National Park’s Pamir landscape includes high plateaux and peaks above 7,000 metres.",
+      "de": "Der Pamir im Tadschikischen Nationalpark umfasst Hochplateaus und Gipfel über 7.000 Metern.",
+      "source": "https://whc.unesco.org/en/list/1252/"
+    }
+  },
+  {
+    "id": "tl",
+    "front": {
+      "en": "Timor-Leste’s handwoven tais textiles are used for traditional clothing and decoration.",
+      "de": "Timor-Lestes handgewebte Tais-Textilien dienen als traditionelle Kleidung und Dekoration.",
+      "source": "https://ich.unesco.org/en/USL/tais-traditional-textile-01688"
+    }
+  },
+  {
+    "id": "tm",
+    "front": {
+      "en": "Ancient Merv’s oasis ruins span 4,000 years of history along the Silk Roads.",
+      "de": "Die Oasenruinen des antiken Merv umfassen 4.000 Jahre Geschichte an den Seidenstraßen.",
+      "source": "https://whc.unesco.org/en/list/886/"
+    }
+  },
+  {
+    "id": "tn",
+    "front": {
+      "en": "El Jem’s Roman amphitheatre could hold around 35,000 spectators.",
+      "de": "El Jems römisches Amphitheater bot Platz für etwa 35.000 Zuschauer.",
+      "source": "https://whc.unesco.org/en/list/38/"
+    }
+  },
+  {
+    "id": "tr",
+    "front": {
+      "en": "Cappadocia’s volcanic rock was carved into churches, homes and underground towns.",
+      "de": "In Kappadokiens Vulkangestein wurden Kirchen, Wohnungen und unterirdische Städte gehauen.",
+      "source": "https://whc.unesco.org/en/list/357/"
+    }
+  },
+  {
+    "id": "tt",
+    "front": {
+      "en": "At Trinidad’s Pitch Lake, liquid bitumen rises to the surface and cools into natural asphalt.",
+      "de": "In Trinidads Pitch Lake steigt flüssiges Bitumen auf und kühlt zu Naturasphalt ab.",
+      "source": "https://visittrinidad.tt/attractions/la-brea-pitch-lake/"
+    }
+  },
+  {
+    "id": "tz",
+    "front": {
+      "en": "The Ngorongoro area preserves early human relatives’ footprints about 3.6 million years old.",
+      "de": "Das Ngorongoro-Gebiet bewahrt etwa 3,6 Millionen Jahre alte Fußabdrücke früher Menschenverwandter.",
+      "source": "https://whc.unesco.org/en/list/39/"
+    }
+  },
+  {
+    "id": "ua",
+    "front": {
+      "en": "Kyiv’s Saint-Sophia Cathedral was designed to rival Constantinople’s Hagia Sophia.",
+      "de": "Kyjiws Sophienkathedrale wurde als Gegenstück zur Hagia Sophia in Konstantinopel entworfen.",
+      "source": "https://whc.unesco.org/en/list/527/"
+    }
+  },
+  {
+    "id": "ug",
+    "front": {
+      "en": "Bwindi’s mountain forests provide habitat for mountain gorillas.",
+      "de": "Bwindis Bergwälder bieten Berggorillas Lebensraum.",
+      "source": "https://whc.unesco.org/en/list/682/"
+    }
+  },
+  {
+    "id": "uz",
+    "front": {
+      "en": "Bukhara’s historic centre preserves a Silk Road city with over 2,000 years of history.",
+      "de": "Bucharas historisches Zentrum bewahrt eine Stadt der Seidenstraße mit über 2.000 Jahren Geschichte.",
+      "source": "https://whc.unesco.org/en/list/602/"
+    },
+    "detail": {
+      "en": "Samarkand’s major historic monuments include Ulugh Beg’s observatory alongside mosques and madrasas.",
+      "de": "Zu Samarkands bedeutenden historischen Bauten gehört Ulug Begs Observatorium neben Moscheen und Medresen.",
+      "source": "https://whc.unesco.org/en/list/603/"
+    }
+  },
+  {
+    "id": "ve",
+    "front": {
+      "en": "Canaima’s landscape is dominated by sheer-sided table mountains known as tepuis.",
+      "de": "Canaimas Landschaft wird von steilwandigen Tafelbergen geprägt, die Tepuis genannt werden.",
+      "source": "https://whc.unesco.org/en/list/701/"
+    }
+  },
+  {
+    "id": "ws",
+    "front": {
+      "en": "Samoa’s fine pandanus mats are handwoven and exchanged during traditional ceremonies.",
+      "de": "Samoas feine Pandanusmatten werden von Hand gewebt und bei traditionellen Zeremonien getauscht.",
+      "source": "https://www.unesco.org/archives/multimedia/document-4926"
+    }
+  },
+  {
+    "id": "ye",
+    "front": {
+      "en": "Shibam’s sun-dried mud-brick tower houses rise up to seven storeys high.",
+      "de": "Shibams Turmhäuser aus luftgetrockneten Lehmziegeln sind bis zu sieben Stockwerke hoch.",
+      "source": "https://whc.unesco.org/en/list/192/"
+    }
+  },
+  {
+    "id": "za",
+    "front": {
+      "en": "The Cape Floral Region’s fynbos plants are adapted to periodic fires.",
+      "de": "Die Fynbos-Pflanzen der Kapflora-Region sind an wiederkehrende Brände angepasst.",
+      "source": "https://whc.unesco.org/en/list/1007/"
+    },
+    "detail": {
+      "en": "The Taung fossil site yielded an Australopithecus africanus skull in 1924.",
+      "de": "Die Fossilfundstätte Taung lieferte 1924 einen Schädel der Art Australopithecus africanus.",
+      "source": "https://whc.unesco.org/en/list/915/"
+    }
+  },
+  {
+    "id": "zm",
+    "front": {
+      "en": "At Victoria Falls, the Zambezi plunges into basalt gorges and sends mist high into the air.",
+      "de": "An den Victoriafällen stürzt der Sambesi in Basaltschluchten und wirbelt Gischt in die Höhe.",
+      "source": "https://whc.unesco.org/en/list/509/"
+    }
+  },
+  {
+    "id": "zw",
+    "front": {
+      "en": "Great Zimbabwe’s ruins preserve a major medieval trading centre of Shona civilization.",
+      "de": "Die Ruinen von Groß-Simbabwe bewahren ein bedeutendes mittelalterliches Handelszentrum der Shona.",
+      "source": "https://whc.unesco.org/en/list/364/"
+    }
+  }
+]

@@ -1,5 +1,38 @@
 # TerraDeck — Decisions
 
+## Country knowledge stages
+
+- Silver Visitor unlocks capital, approximate population and area in Collection
+  only, without a notes opener in the challenge result. Zero-stamp discovery does
+  not unlock these notes. The Visitor card reuses the revealed front layout with a
+  centered flag instead of a silhouette, an unlock hint instead of the fact, and
+  only the Visitor stamp earned. Explorer backs omit mastery stamps and labels.
+- Gold Explorer adds a reversible Field notes view in the reveal and Collection,
+  with languages, currencies and any curated detail/fun facts.
+  The illustrated front and reveal animation remain; notes scroll rather
+  than shrink text on short phones. Both faces retain the same fixed card proportions and
+  decorative frame, with internal scrolling. Tap the card (or Enter/Space) to
+  turn it; a subtle hint replaces a separate Field notes button.
+- Coverage includes all 190 catalog entries, including archival cards. Access derives
+  from current stamps, so learning resets relock it without altering save schema.
+- REST Countries details are explicitly collected offline for authoring, with source
+  and retrieval metadata. No runtime network request. Intl/CLDR labels plus explicit
+  uncommon-language translations support EN/DE. Source languages are not an
+  exhaustive inventory of all spoken languages. Show at most two selected source
+  languages without claiming speaker share or ranking. Country-specific percentages
+  need separate sourcing. Front facts are not duplicated on the back: sourced
+  front/detail/fun stories are authored in `scripts/content/country-stories.json`
+  and bundled offline through `src/data/countryStories.ts`; missing front facts
+  retain locale fallbacks. Enforce per-language limits of 120/200/170 characters
+  for front/detail/fun respectively. Omit unreviewed
+  stories rather than invent filler. Both story types are independently optional;
+  missing stories leave empty space without fallback fields or headings. All backs
+  share the same layout. Long stories expand inline without turning.
+- Card headers display uppercase ISO codes, not catalog numbers. Data numbering
+  remains intact. Rarity badges and decorative frames remain, but colored ribbons
+  are removed. Explorer backs omit front-side capital/population/area and visible
+  stage headings.
+
 ## Cooldown and packs
 - **Cooldown: 15 minutes per pack** (debug mode via `?debug`: 10 seconds).
   - Field testing showed geography challenges were harder than expected: reduce both the former

@@ -18,7 +18,8 @@
     "rarity:collect": "node scripts/collect-rarity.mjs",
     "atlas:collect": "node scripts/collect-atlas.mjs",
     "atlas:build": "node scripts/build-atlas.mjs && npm run rarity:build && npm run geo:build",
-    "geo:build": "node scripts/build-geo.mjs"
+    "geo:build": "node scripts/build-geo.mjs",
+    "details:collect": "node scripts/collect-country-details.mjs"
   },
   "engines": {
     "node": ">=24 <25"

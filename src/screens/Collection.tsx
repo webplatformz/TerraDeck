@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { Portal } from '../components/Portal'
 import { CardBack, CardFront } from '../components/Card'
+import { CountryNotes, ExplorerCard } from '../components/CountryNotes'
 import { CONTINENTS } from '../data/continents'
 import { ARCHIVED_COUNTRIES, COUNTRIES, type Country } from '../data/countries'
 import type { ContinentId } from '../domain/types'
@@ -107,7 +108,9 @@ export function Collection({ game }: { game: Game }) {
           <div className="modal-body" onClick={(e) => e.stopPropagation()}>
             {isArchived(open) && <p className="modal-note">{t('collection.archivedCard')}</p>}
             {isCollected(open) ? (
-              <CardFront country={open} size="lg" />
+              <ExplorerCard key={open.id} country={open} />
+            ) : stampsOf(open) > 0 ? (
+              <CountryNotes country={open} />
             ) : (
               <>
                 <CardBack country={open} stamps={stampsOf(open)} discovered={isDiscovered(state, open.id)} size="lg" />

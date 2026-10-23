@@ -86,6 +86,39 @@ Normal mode ignores debug targets. Test encounters use the normal mastery and ac
 
 English (default) and German. Texts live in `src/i18n/locales/*.json`; to add a language, add a JSON file and register it in `src/i18n/index.ts`. The choice is stored under `terradeck:lang`.
 
+### Country introductions and field notes
+
+The first (Silver Visitor) stamp opens a compact introduction: capital, approximate
+population and area. Read it from the country's Collection slot, not the challenge
+result. Merely discovering a country without a stamp does not reveal it.
+The second (Gold Explorer) stamp unlocks a tappable, keyboard-accessible card,
+available during the reveal and later in Collection. Notes add languages and
+currencies. Capital, population and area stay on the front only.
+Sourced EN/DE front facts, back details and fun facts are authored in
+`scripts/content/country-stories.json` and bundled through `src/data/countryStories.ts`.
+This batch supplies 168 front facts, 23 details and 19 fun facts. Front facts missing
+from the batch (including archival cards) retain their existing locale text.
+All backs share the same layout; detail and fun facts are
+independently optional. Missing facts leave empty space, with no fallback text or headings.
+Long back stories have See more/See less controls that do not turn the card.
+Both faces keep the same card dimensions, paper and decorative frame; a small
+“Tap to turn” hint replaces a separate flip button. Long notes scroll inside the
+card. Silver introductions reuse the revealed front layout, with a centered flag
+instead of the country silhouette, the unlock hint instead of the fact, and only
+the Visitor stamp earned. Explorer backs omit the bottom mastery stamps and labels.
+Archived countries use the same mastery gates. Learning resets remove access again;
+there are no new save fields, stamps, awards or gameplay rules.
+
+Language/currency data are bundled in `src/data/generated/country-details.json`,
+with source/retrieval metadata. `npm run details:collect` refreshes all 190 catalog
+entries from REST Countries; this is an explicit online authoring step, never an
+app request. Display labels use Intl/CLDR plus explicit uncommon-language labels.
+At most two selected languages are shown, not a ranking or exhaustive list;
+speaker percentages are omitted until reliable country-specific data are sourced.
+Card headers show uppercase ISO codes instead of catalog numbers, with rarity
+badges retained but no full-width colored ribbon. Catalog numbers remain unchanged
+in the data for compatibility.
+
 ### Saved progress
 
 Progress lives in the browser's localStorage for this site (key `terradeck:save:v1`) and survives

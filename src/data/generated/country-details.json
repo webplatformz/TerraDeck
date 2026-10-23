@@ -1,0 +1,3382 @@
+{
+  "source": "https://raw.githubusercontent.com/restcountries/restcountries/master/src/main/resources/countriesV3.1.json",
+  "retrievedAt": "2026-10-23T18:42:20.087Z",
+  "countries": {
+    "fr": {
+      "landlocked": false,
+      "languageCodes": [
+        "fra"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "French",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Französisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "it": {
+      "landlocked": false,
+      "languageCodes": [
+        "ita",
+        "cat"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Italian · Catalan",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Italienisch · Katalanisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "no": {
+      "landlocked": false,
+      "languageCodes": [
+        "nno",
+        "nob",
+        "smi"
+      ],
+      "currencyCodes": [
+        "NOK"
+      ],
+      "en": {
+        "languages": "Norwegian Nynorsk · Norwegian Bokmål · Sami languages",
+        "currencies": "Norwegian Krone (NOK)"
+      },
+      "de": {
+        "languages": "Norwegisch (Nynorsk) · Norwegisch (Bokmål) · Samische Sprachen",
+        "currencies": "Norwegische Krone (NOK)"
+      }
+    },
+    "ch": {
+      "landlocked": true,
+      "languageCodes": [
+        "fra",
+        "gsw",
+        "ita",
+        "roh"
+      ],
+      "currencyCodes": [
+        "CHF"
+      ],
+      "en": {
+        "languages": "French · Swiss German · Italian · Romansh",
+        "currencies": "Swiss Franc (CHF)"
+      },
+      "de": {
+        "languages": "Französisch · Schweizerdeutsch · Italienisch · Rätoromanisch",
+        "currencies": "Schweizer Franken (CHF)"
+      }
+    },
+    "jp": {
+      "landlocked": false,
+      "languageCodes": [
+        "jpn"
+      ],
+      "currencyCodes": [
+        "JPY"
+      ],
+      "en": {
+        "languages": "Japanese",
+        "currencies": "Japanese Yen (JPY)"
+      },
+      "de": {
+        "languages": "Japanisch",
+        "currencies": "Japanischer Yen (JPY)"
+      }
+    },
+    "in": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "hin",
+        "tam"
+      ],
+      "currencyCodes": [
+        "INR"
+      ],
+      "en": {
+        "languages": "English · Hindi · Tamil",
+        "currencies": "Indian Rupee (INR)"
+      },
+      "de": {
+        "languages": "Englisch · Hindi · Tamil",
+        "currencies": "Indische Rupie (INR)"
+      }
+    },
+    "vn": {
+      "landlocked": false,
+      "languageCodes": [
+        "vie"
+      ],
+      "currencyCodes": [
+        "VND"
+      ],
+      "en": {
+        "languages": "Vietnamese",
+        "currencies": "Vietnamese Dong (VND)"
+      },
+      "de": {
+        "languages": "Vietnamesisch",
+        "currencies": "Vietnamesischer Dong (VND)"
+      }
+    },
+    "np": {
+      "landlocked": true,
+      "languageCodes": [
+        "nep"
+      ],
+      "currencyCodes": [
+        "NPR"
+      ],
+      "en": {
+        "languages": "Nepali",
+        "currencies": "Nepalese Rupee (NPR)"
+      },
+      "de": {
+        "languages": "Nepalesisch",
+        "currencies": "Nepalesische Rupie (NPR)"
+      }
+    },
+    "eg": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara"
+      ],
+      "currencyCodes": [
+        "EGP"
+      ],
+      "en": {
+        "languages": "Arabic",
+        "currencies": "Egyptian Pound (EGP)"
+      },
+      "de": {
+        "languages": "Arabisch",
+        "currencies": "Ägyptisches Pfund (EGP)"
+      }
+    },
+    "ke": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "swa"
+      ],
+      "currencyCodes": [
+        "KES"
+      ],
+      "en": {
+        "languages": "English · Swahili",
+        "currencies": "Kenyan Shilling (KES)"
+      },
+      "de": {
+        "languages": "Englisch · Suaheli",
+        "currencies": "Kenia-Schilling (KES)"
+      }
+    },
+    "ma": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara",
+        "ber"
+      ],
+      "currencyCodes": [
+        "MAD"
+      ],
+      "en": {
+        "languages": "Arabic · Berber languages",
+        "currencies": "Moroccan Dirham (MAD)"
+      },
+      "de": {
+        "languages": "Arabisch · Berbersprachen",
+        "currencies": "Marokkanischer Dirham (MAD)"
+      }
+    },
+    "mg": {
+      "landlocked": false,
+      "languageCodes": [
+        "fra",
+        "mlg"
+      ],
+      "currencyCodes": [
+        "MGA"
+      ],
+      "en": {
+        "languages": "French · Malagasy",
+        "currencies": "Malagasy Ariary (MGA)"
+      },
+      "de": {
+        "languages": "Französisch · Malagasy",
+        "currencies": "Madagaskar-Ariary (MGA)"
+      }
+    },
+    "ca": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "fra"
+      ],
+      "currencyCodes": [
+        "CAD"
+      ],
+      "en": {
+        "languages": "English · French",
+        "currencies": "Canadian Dollar (CAD)"
+      },
+      "de": {
+        "languages": "Englisch · Französisch",
+        "currencies": "Kanadischer Dollar (CAD)"
+      }
+    },
+    "mx": {
+      "landlocked": false,
+      "languageCodes": [
+        "spa"
+      ],
+      "currencyCodes": [
+        "MXN"
+      ],
+      "en": {
+        "languages": "Spanish",
+        "currencies": "Mexican Peso (MXN)"
+      },
+      "de": {
+        "languages": "Spanisch",
+        "currencies": "Mexikanischer Peso (MXN)"
+      }
+    },
+    "cu": {
+      "landlocked": false,
+      "languageCodes": [
+        "spa"
+      ],
+      "currencyCodes": [
+        "CUC",
+        "CUP"
+      ],
+      "en": {
+        "languages": "Spanish",
+        "currencies": "Cuban Convertible Peso (CUC) · Cuban Peso (CUP)"
+      },
+      "de": {
+        "languages": "Spanisch",
+        "currencies": "Kubanischer Peso (konvertibel) (CUC) · Kubanischer Peso (CUP)"
+      }
+    },
+    "br": {
+      "landlocked": false,
+      "languageCodes": [
+        "por"
+      ],
+      "currencyCodes": [
+        "BRL"
+      ],
+      "en": {
+        "languages": "Portuguese",
+        "currencies": "Brazilian Real (BRL)"
+      },
+      "de": {
+        "languages": "Portugiesisch",
+        "currencies": "Brasilianischer Real (BRL)"
+      }
+    },
+    "pe": {
+      "landlocked": false,
+      "languageCodes": [
+        "aym",
+        "que",
+        "spa"
+      ],
+      "currencyCodes": [
+        "PEN"
+      ],
+      "en": {
+        "languages": "Aymara · Quechua · Spanish",
+        "currencies": "Peruvian Sol (PEN)"
+      },
+      "de": {
+        "languages": "Aymara · Quechua · Spanisch",
+        "currencies": "Peruanischer Sol (PEN)"
+      }
+    },
+    "cl": {
+      "landlocked": false,
+      "languageCodes": [
+        "spa"
+      ],
+      "currencyCodes": [
+        "CLP"
+      ],
+      "en": {
+        "languages": "Spanish",
+        "currencies": "Chilean Peso (CLP)"
+      },
+      "de": {
+        "languages": "Spanisch",
+        "currencies": "Chilenischer Peso (CLP)"
+      }
+    },
+    "au": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "AUD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "Australian Dollar (AUD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Australischer Dollar (AUD)"
+      }
+    },
+    "nz": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "mri",
+        "nzs"
+      ],
+      "currencyCodes": [
+        "NZD"
+      ],
+      "en": {
+        "languages": "English · Māori · New Zealand Sign Language",
+        "currencies": "New Zealand Dollar (NZD)"
+      },
+      "de": {
+        "languages": "Englisch · Māori · Neuseeländische Gebärdensprache",
+        "currencies": "Neuseeland-Dollar (NZD)"
+      }
+    },
+    "de": {
+      "landlocked": false,
+      "languageCodes": [
+        "deu"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "German",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Deutsch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "es": {
+      "landlocked": false,
+      "languageCodes": [
+        "spa",
+        "cat",
+        "eus",
+        "glc"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Spanish · Catalan · Basque · Galician",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Spanisch · Katalanisch · Baskisch · Galicisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "gb": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "GBP"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "British Pound (GBP)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Britisches Pfund (GBP)"
+      }
+    },
+    "gr": {
+      "landlocked": false,
+      "languageCodes": [
+        "ell"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Greek",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Griechisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "cn": {
+      "landlocked": false,
+      "languageCodes": [
+        "zho"
+      ],
+      "currencyCodes": [
+        "CNY"
+      ],
+      "en": {
+        "languages": "Chinese",
+        "currencies": "Chinese Yuan (CNY)"
+      },
+      "de": {
+        "languages": "Chinesisch",
+        "currencies": "Renminbi Yuan (CNY)"
+      }
+    },
+    "kr": {
+      "landlocked": false,
+      "languageCodes": [
+        "kor"
+      ],
+      "currencyCodes": [
+        "KRW"
+      ],
+      "en": {
+        "languages": "Korean",
+        "currencies": "South Korean Won (KRW)"
+      },
+      "de": {
+        "languages": "Koreanisch",
+        "currencies": "Südkoreanischer Won (KRW)"
+      }
+    },
+    "id": {
+      "landlocked": false,
+      "languageCodes": [
+        "ind"
+      ],
+      "currencyCodes": [
+        "IDR"
+      ],
+      "en": {
+        "languages": "Indonesian",
+        "currencies": "Indonesian Rupiah (IDR)"
+      },
+      "de": {
+        "languages": "Indonesisch",
+        "currencies": "Indonesische Rupiah (IDR)"
+      }
+    },
+    "bt": {
+      "landlocked": true,
+      "languageCodes": [
+        "dzo"
+      ],
+      "currencyCodes": [
+        "BTN",
+        "INR"
+      ],
+      "en": {
+        "languages": "Dzongkha",
+        "currencies": "Bhutanese Ngultrum (BTN) · Indian Rupee (INR)"
+      },
+      "de": {
+        "languages": "Dzongkha",
+        "currencies": "Bhutan-Ngultrum (BTN) · Indische Rupie (INR)"
+      }
+    },
+    "dz": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara"
+      ],
+      "currencyCodes": [
+        "DZD"
+      ],
+      "en": {
+        "languages": "Arabic",
+        "currencies": "Algerian Dinar (DZD)"
+      },
+      "de": {
+        "languages": "Arabisch",
+        "currencies": "Algerischer Dinar (DZD)"
+      }
+    },
+    "gh": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "GHS"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "Ghanaian Cedi (GHS)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Ghanaischer Cedi (GHS)"
+      }
+    },
+    "na": {
+      "landlocked": false,
+      "languageCodes": [
+        "afr",
+        "deu",
+        "eng",
+        "her",
+        "hgm",
+        "kwn",
+        "loz",
+        "ndo",
+        "tsn"
+      ],
+      "currencyCodes": [
+        "NAD",
+        "ZAR"
+      ],
+      "en": {
+        "languages": "Afrikaans · German · English · Herero · Khoekhoe · Kwangali · Lozi · Ndonga · Tswana",
+        "currencies": "Namibian Dollar (NAD) · South African Rand (ZAR)"
+      },
+      "de": {
+        "languages": "Afrikaans · Deutsch · Englisch · Herero · Khoekhoegowab · Kwangali · Lozi · Ndonga · Tswana",
+        "currencies": "Namibia-Dollar (NAD) · Südafrikanischer Rand (ZAR)"
+      }
+    },
+    "ls": {
+      "landlocked": true,
+      "languageCodes": [
+        "eng",
+        "sot"
+      ],
+      "currencyCodes": [
+        "LSL",
+        "ZAR"
+      ],
+      "en": {
+        "languages": "English · Southern Sotho",
+        "currencies": "Lesotho Loti (LSL) · South African Rand (ZAR)"
+      },
+      "de": {
+        "languages": "Englisch · Süd-Sotho",
+        "currencies": "Loti (LSL) · Südafrikanischer Rand (ZAR)"
+      }
+    },
+    "us": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "USD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "US Dollar (USD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "US-Dollar (USD)"
+      }
+    },
+    "cr": {
+      "landlocked": false,
+      "languageCodes": [
+        "spa"
+      ],
+      "currencyCodes": [
+        "CRC"
+      ],
+      "en": {
+        "languages": "Spanish",
+        "currencies": "Costa Rican Colón (CRC)"
+      },
+      "de": {
+        "languages": "Spanisch",
+        "currencies": "Costa-Rica-Colón (CRC)"
+      }
+    },
+    "jm": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "jam"
+      ],
+      "currencyCodes": [
+        "JMD"
+      ],
+      "en": {
+        "languages": "English · Jamaican Creole English",
+        "currencies": "Jamaican Dollar (JMD)"
+      },
+      "de": {
+        "languages": "Englisch · Jamaikanisch-Kreolisch",
+        "currencies": "Jamaika-Dollar (JMD)"
+      }
+    },
+    "ar": {
+      "landlocked": false,
+      "languageCodes": [
+        "grn",
+        "spa"
+      ],
+      "currencyCodes": [
+        "ARS"
+      ],
+      "en": {
+        "languages": "Guarani · Spanish",
+        "currencies": "Argentine Peso (ARS)"
+      },
+      "de": {
+        "languages": "Guaraní · Spanisch",
+        "currencies": "Argentinischer Peso (ARS)"
+      }
+    },
+    "bo": {
+      "landlocked": true,
+      "languageCodes": [
+        "aym",
+        "grn",
+        "que",
+        "spa"
+      ],
+      "currencyCodes": [
+        "BOB"
+      ],
+      "en": {
+        "languages": "Aymara · Guarani · Quechua · Spanish",
+        "currencies": "Bolivian Boliviano (BOB)"
+      },
+      "de": {
+        "languages": "Aymara · Guaraní · Quechua · Spanisch",
+        "currencies": "Bolivianischer Boliviano (BOB)"
+      }
+    },
+    "uy": {
+      "landlocked": false,
+      "languageCodes": [
+        "spa"
+      ],
+      "currencyCodes": [
+        "UYU"
+      ],
+      "en": {
+        "languages": "Spanish",
+        "currencies": "Uruguayan Peso (UYU)"
+      },
+      "de": {
+        "languages": "Spanisch",
+        "currencies": "Uruguayischer Peso (UYU)"
+      }
+    },
+    "fj": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "fij",
+        "hif"
+      ],
+      "currencyCodes": [
+        "FJD"
+      ],
+      "en": {
+        "languages": "English · Fijian · Fiji Hindi",
+        "currencies": "Fijian Dollar (FJD)"
+      },
+      "de": {
+        "languages": "Englisch · Fidschi · Fidschi-Hindi",
+        "currencies": "Fidschi-Dollar (FJD)"
+      }
+    },
+    "vu": {
+      "landlocked": false,
+      "languageCodes": [
+        "bis",
+        "eng",
+        "fra"
+      ],
+      "currencyCodes": [
+        "VUV"
+      ],
+      "en": {
+        "languages": "Bislama · English · French",
+        "currencies": "Vanuatu Vatu (VUV)"
+      },
+      "de": {
+        "languages": "Bislama · Englisch · Französisch",
+        "currencies": "Vanuatu-Vatu (VUV)"
+      }
+    },
+    "ad": {
+      "landlocked": true,
+      "languageCodes": [
+        "cat"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Catalan",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Katalanisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "ae": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara"
+      ],
+      "currencyCodes": [
+        "AED"
+      ],
+      "en": {
+        "languages": "Arabic",
+        "currencies": "United Arab Emirates Dirham (AED)"
+      },
+      "de": {
+        "languages": "Arabisch",
+        "currencies": "VAE-Dirham (AED)"
+      }
+    },
+    "af": {
+      "landlocked": true,
+      "languageCodes": [
+        "prs",
+        "pus",
+        "tuk"
+      ],
+      "currencyCodes": [
+        "AFN"
+      ],
+      "en": {
+        "languages": "Dari · Pashto · Turkmen",
+        "currencies": "Afghan Afghani (AFN)"
+      },
+      "de": {
+        "languages": "Dari · Paschtu · Turkmenisch",
+        "currencies": "Afghanischer Afghani (AFN)"
+      }
+    },
+    "ag": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "XCD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "East Caribbean Dollar (XCD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Ostkaribischer Dollar (XCD)"
+      }
+    },
+    "al": {
+      "landlocked": false,
+      "languageCodes": [
+        "sqi"
+      ],
+      "currencyCodes": [
+        "ALL"
+      ],
+      "en": {
+        "languages": "Albanian",
+        "currencies": "Albanian Lek (ALL)"
+      },
+      "de": {
+        "languages": "Albanisch",
+        "currencies": "Albanischer Lek (ALL)"
+      }
+    },
+    "am": {
+      "landlocked": true,
+      "languageCodes": [
+        "hye"
+      ],
+      "currencyCodes": [
+        "AMD"
+      ],
+      "en": {
+        "languages": "Armenian",
+        "currencies": "Armenian Dram (AMD)"
+      },
+      "de": {
+        "languages": "Armenisch",
+        "currencies": "Armenischer Dram (AMD)"
+      }
+    },
+    "ao": {
+      "landlocked": false,
+      "languageCodes": [
+        "por"
+      ],
+      "currencyCodes": [
+        "AOA"
+      ],
+      "en": {
+        "languages": "Portuguese",
+        "currencies": "Angolan Kwanza (AOA)"
+      },
+      "de": {
+        "languages": "Portugiesisch",
+        "currencies": "Angolanischer Kwanza (AOA)"
+      }
+    },
+    "at": {
+      "landlocked": true,
+      "languageCodes": [
+        "deu"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "German",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Deutsch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "az": {
+      "landlocked": true,
+      "languageCodes": [
+        "aze"
+      ],
+      "currencyCodes": [
+        "AZN"
+      ],
+      "en": {
+        "languages": "Azerbaijani",
+        "currencies": "Azerbaijani Manat (AZN)"
+      },
+      "de": {
+        "languages": "Aserbaidschanisch",
+        "currencies": "Aserbaidschan-Manat (AZN)"
+      }
+    },
+    "ba": {
+      "landlocked": false,
+      "languageCodes": [
+        "bos",
+        "hrv",
+        "srp"
+      ],
+      "currencyCodes": [
+        "BAM"
+      ],
+      "en": {
+        "languages": "Bosnian · Croatian · Serbian",
+        "currencies": "Bosnia-Herzegovina Convertible Mark (BAM)"
+      },
+      "de": {
+        "languages": "Bosnisch · Kroatisch · Serbisch",
+        "currencies": "Konvertible Mark Bosnien und Herzegowina (BAM)"
+      }
+    },
+    "bb": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "BBD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "Barbadian Dollar (BBD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Barbados-Dollar (BBD)"
+      }
+    },
+    "bd": {
+      "landlocked": false,
+      "languageCodes": [
+        "ben"
+      ],
+      "currencyCodes": [
+        "BDT"
+      ],
+      "en": {
+        "languages": "Bangla",
+        "currencies": "Bangladeshi Taka (BDT)"
+      },
+      "de": {
+        "languages": "Bengalisch",
+        "currencies": "Bangladesch-Taka (BDT)"
+      }
+    },
+    "be": {
+      "landlocked": false,
+      "languageCodes": [
+        "deu",
+        "fra",
+        "nld"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "German · French · Dutch",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Deutsch · Französisch · Niederländisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "bf": {
+      "landlocked": true,
+      "languageCodes": [
+        "fra"
+      ],
+      "currencyCodes": [
+        "XOF"
+      ],
+      "en": {
+        "languages": "French",
+        "currencies": "West African CFA Franc (XOF)"
+      },
+      "de": {
+        "languages": "Französisch",
+        "currencies": "CFA-Franc (BCEAO) (XOF)"
+      }
+    },
+    "bg": {
+      "landlocked": false,
+      "languageCodes": [
+        "bul"
+      ],
+      "currencyCodes": [
+        "BGN"
+      ],
+      "en": {
+        "languages": "Bulgarian",
+        "currencies": "Bulgarian Lev (BGN)"
+      },
+      "de": {
+        "languages": "Bulgarisch",
+        "currencies": "Bulgarischer Lew (BGN)"
+      }
+    },
+    "bh": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara"
+      ],
+      "currencyCodes": [
+        "BHD"
+      ],
+      "en": {
+        "languages": "Arabic",
+        "currencies": "Bahraini Dinar (BHD)"
+      },
+      "de": {
+        "languages": "Arabisch",
+        "currencies": "Bahrain-Dinar (BHD)"
+      }
+    },
+    "bi": {
+      "landlocked": true,
+      "languageCodes": [
+        "fra",
+        "run"
+      ],
+      "currencyCodes": [
+        "BIF"
+      ],
+      "en": {
+        "languages": "French · Rundi",
+        "currencies": "Burundian Franc (BIF)"
+      },
+      "de": {
+        "languages": "Französisch · Rundi",
+        "currencies": "Burundi-Franc (BIF)"
+      }
+    },
+    "bj": {
+      "landlocked": false,
+      "languageCodes": [
+        "fra"
+      ],
+      "currencyCodes": [
+        "XOF"
+      ],
+      "en": {
+        "languages": "French",
+        "currencies": "West African CFA Franc (XOF)"
+      },
+      "de": {
+        "languages": "Französisch",
+        "currencies": "CFA-Franc (BCEAO) (XOF)"
+      }
+    },
+    "bn": {
+      "landlocked": false,
+      "languageCodes": [
+        "msa"
+      ],
+      "currencyCodes": [
+        "BND",
+        "SGD"
+      ],
+      "en": {
+        "languages": "Malay",
+        "currencies": "Brunei Dollar (BND) · Singapore Dollar (SGD)"
+      },
+      "de": {
+        "languages": "Malaiisch",
+        "currencies": "Brunei-Dollar (BND) · Singapur-Dollar (SGD)"
+      }
+    },
+    "bs": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "BSD",
+        "USD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "Bahamian Dollar (BSD) · US Dollar (USD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Bahamas-Dollar (BSD) · US-Dollar (USD)"
+      }
+    },
+    "bw": {
+      "landlocked": true,
+      "languageCodes": [
+        "eng",
+        "tsn"
+      ],
+      "currencyCodes": [
+        "BWP"
+      ],
+      "en": {
+        "languages": "English · Tswana",
+        "currencies": "Botswanan Pula (BWP)"
+      },
+      "de": {
+        "languages": "Englisch · Tswana",
+        "currencies": "Botswanischer Pula (BWP)"
+      }
+    },
+    "by": {
+      "landlocked": true,
+      "languageCodes": [
+        "bel",
+        "rus"
+      ],
+      "currencyCodes": [
+        "BYN"
+      ],
+      "en": {
+        "languages": "Belarusian · Russian",
+        "currencies": "Belarusian Ruble (BYN)"
+      },
+      "de": {
+        "languages": "Belarussisch · Russisch",
+        "currencies": "Weißrussischer Rubel (BYN)"
+      }
+    },
+    "bz": {
+      "landlocked": false,
+      "languageCodes": [
+        "bjz",
+        "eng",
+        "spa"
+      ],
+      "currencyCodes": [
+        "BZD"
+      ],
+      "en": {
+        "languages": "Belizean Creole · English · Spanish",
+        "currencies": "Belize Dollar (BZD)"
+      },
+      "de": {
+        "languages": "Belize-Kreolisch · Englisch · Spanisch",
+        "currencies": "Belize-Dollar (BZD)"
+      }
+    },
+    "cd": {
+      "landlocked": false,
+      "languageCodes": [
+        "fra",
+        "kon",
+        "lin",
+        "lua",
+        "swa"
+      ],
+      "currencyCodes": [
+        "CDF"
+      ],
+      "en": {
+        "languages": "French · Kongo · Lingala · Luba-Lulua · Swahili",
+        "currencies": "Congolese Franc (CDF)"
+      },
+      "de": {
+        "languages": "Französisch · Kongolesisch · Lingala · Luba-Lulua · Suaheli",
+        "currencies": "Kongo-Franc (CDF)"
+      }
+    },
+    "cf": {
+      "landlocked": true,
+      "languageCodes": [
+        "fra",
+        "sag"
+      ],
+      "currencyCodes": [
+        "XAF"
+      ],
+      "en": {
+        "languages": "French · Sango",
+        "currencies": "Central African CFA Franc (XAF)"
+      },
+      "de": {
+        "languages": "Französisch · Sango",
+        "currencies": "CFA-Franc (BEAC) (XAF)"
+      }
+    },
+    "cg": {
+      "landlocked": false,
+      "languageCodes": [
+        "fra",
+        "kon",
+        "lin"
+      ],
+      "currencyCodes": [
+        "XAF"
+      ],
+      "en": {
+        "languages": "French · Kongo · Lingala",
+        "currencies": "Central African CFA Franc (XAF)"
+      },
+      "de": {
+        "languages": "Französisch · Kongolesisch · Lingala",
+        "currencies": "CFA-Franc (BEAC) (XAF)"
+      }
+    },
+    "ci": {
+      "landlocked": false,
+      "languageCodes": [
+        "fra"
+      ],
+      "currencyCodes": [
+        "XOF"
+      ],
+      "en": {
+        "languages": "French",
+        "currencies": "West African CFA Franc (XOF)"
+      },
+      "de": {
+        "languages": "Französisch",
+        "currencies": "CFA-Franc (BCEAO) (XOF)"
+      }
+    },
+    "cm": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "fra"
+      ],
+      "currencyCodes": [
+        "XAF"
+      ],
+      "en": {
+        "languages": "English · French",
+        "currencies": "Central African CFA Franc (XAF)"
+      },
+      "de": {
+        "languages": "Englisch · Französisch",
+        "currencies": "CFA-Franc (BEAC) (XAF)"
+      }
+    },
+    "co": {
+      "landlocked": false,
+      "languageCodes": [
+        "spa"
+      ],
+      "currencyCodes": [
+        "COP"
+      ],
+      "en": {
+        "languages": "Spanish",
+        "currencies": "Colombian Peso (COP)"
+      },
+      "de": {
+        "languages": "Spanisch",
+        "currencies": "Kolumbianischer Peso (COP)"
+      }
+    },
+    "cv": {
+      "landlocked": false,
+      "languageCodes": [
+        "por"
+      ],
+      "currencyCodes": [
+        "CVE"
+      ],
+      "en": {
+        "languages": "Portuguese",
+        "currencies": "Cape Verdean Escudo (CVE)"
+      },
+      "de": {
+        "languages": "Portugiesisch",
+        "currencies": "Cabo-Verde-Escudo (CVE)"
+      }
+    },
+    "cy": {
+      "landlocked": false,
+      "languageCodes": [
+        "ell",
+        "tur"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Greek · Turkish",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Griechisch · Türkisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "cz": {
+      "landlocked": true,
+      "languageCodes": [
+        "ces",
+        "slk"
+      ],
+      "currencyCodes": [
+        "CZK"
+      ],
+      "en": {
+        "languages": "Czech · Slovak",
+        "currencies": "Czech Koruna (CZK)"
+      },
+      "de": {
+        "languages": "Tschechisch · Slowakisch",
+        "currencies": "Tschechische Krone (CZK)"
+      }
+    },
+    "dj": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara",
+        "fra"
+      ],
+      "currencyCodes": [
+        "DJF"
+      ],
+      "en": {
+        "languages": "Arabic · French",
+        "currencies": "Djiboutian Franc (DJF)"
+      },
+      "de": {
+        "languages": "Arabisch · Französisch",
+        "currencies": "Dschibuti-Franc (DJF)"
+      }
+    },
+    "dk": {
+      "landlocked": false,
+      "languageCodes": [
+        "dan"
+      ],
+      "currencyCodes": [
+        "DKK"
+      ],
+      "en": {
+        "languages": "Danish",
+        "currencies": "Danish Krone (DKK)"
+      },
+      "de": {
+        "languages": "Dänisch",
+        "currencies": "Dänische Krone (DKK)"
+      }
+    },
+    "dm": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "XCD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "East Caribbean Dollar (XCD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Ostkaribischer Dollar (XCD)"
+      }
+    },
+    "do": {
+      "landlocked": false,
+      "languageCodes": [
+        "spa"
+      ],
+      "currencyCodes": [
+        "DOP"
+      ],
+      "en": {
+        "languages": "Spanish",
+        "currencies": "Dominican Peso (DOP)"
+      },
+      "de": {
+        "languages": "Spanisch",
+        "currencies": "Dominikanischer Peso (DOP)"
+      }
+    },
+    "ec": {
+      "landlocked": false,
+      "languageCodes": [
+        "spa"
+      ],
+      "currencyCodes": [
+        "USD"
+      ],
+      "en": {
+        "languages": "Spanish",
+        "currencies": "US Dollar (USD)"
+      },
+      "de": {
+        "languages": "Spanisch",
+        "currencies": "US-Dollar (USD)"
+      }
+    },
+    "ee": {
+      "landlocked": false,
+      "languageCodes": [
+        "est"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Estonian",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Estnisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "er": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara",
+        "eng",
+        "tir"
+      ],
+      "currencyCodes": [
+        "ERN"
+      ],
+      "en": {
+        "languages": "Arabic · English · Tigrinya",
+        "currencies": "Eritrean Nakfa (ERN)"
+      },
+      "de": {
+        "languages": "Arabisch · Englisch · Tigrinya",
+        "currencies": "Eritreischer Nakfa (ERN)"
+      }
+    },
+    "et": {
+      "landlocked": true,
+      "languageCodes": [
+        "amh"
+      ],
+      "currencyCodes": [
+        "ETB"
+      ],
+      "en": {
+        "languages": "Amharic",
+        "currencies": "Ethiopian Birr (ETB)"
+      },
+      "de": {
+        "languages": "Amharisch",
+        "currencies": "Äthiopischer Birr (ETB)"
+      }
+    },
+    "fi": {
+      "landlocked": false,
+      "languageCodes": [
+        "fin",
+        "swe"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Finnish · Swedish",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Finnisch · Schwedisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "fm": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "USD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "US Dollar (USD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "US-Dollar (USD)"
+      }
+    },
+    "ga": {
+      "landlocked": false,
+      "languageCodes": [
+        "fra"
+      ],
+      "currencyCodes": [
+        "XAF"
+      ],
+      "en": {
+        "languages": "French",
+        "currencies": "Central African CFA Franc (XAF)"
+      },
+      "de": {
+        "languages": "Französisch",
+        "currencies": "CFA-Franc (BEAC) (XAF)"
+      }
+    },
+    "gd": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "XCD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "East Caribbean Dollar (XCD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Ostkaribischer Dollar (XCD)"
+      }
+    },
+    "ge": {
+      "landlocked": false,
+      "languageCodes": [
+        "kat"
+      ],
+      "currencyCodes": [
+        "GEL"
+      ],
+      "en": {
+        "languages": "Georgian",
+        "currencies": "Georgian Lari (GEL)"
+      },
+      "de": {
+        "languages": "Georgisch",
+        "currencies": "Georgischer Lari (GEL)"
+      }
+    },
+    "gm": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "GMD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "Gambian Dalasi (GMD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Gambia-Dalasi (GMD)"
+      }
+    },
+    "gn": {
+      "landlocked": false,
+      "languageCodes": [
+        "fra"
+      ],
+      "currencyCodes": [
+        "GNF"
+      ],
+      "en": {
+        "languages": "French",
+        "currencies": "Guinean Franc (GNF)"
+      },
+      "de": {
+        "languages": "Französisch",
+        "currencies": "Guinea-Franc (GNF)"
+      }
+    },
+    "gq": {
+      "landlocked": false,
+      "languageCodes": [
+        "fra",
+        "por",
+        "spa"
+      ],
+      "currencyCodes": [
+        "XAF"
+      ],
+      "en": {
+        "languages": "French · Portuguese · Spanish",
+        "currencies": "Central African CFA Franc (XAF)"
+      },
+      "de": {
+        "languages": "Französisch · Portugiesisch · Spanisch",
+        "currencies": "CFA-Franc (BEAC) (XAF)"
+      }
+    },
+    "gt": {
+      "landlocked": false,
+      "languageCodes": [
+        "spa"
+      ],
+      "currencyCodes": [
+        "GTQ"
+      ],
+      "en": {
+        "languages": "Spanish",
+        "currencies": "Guatemalan Quetzal (GTQ)"
+      },
+      "de": {
+        "languages": "Spanisch",
+        "currencies": "Guatemaltekischer Quetzal (GTQ)"
+      }
+    },
+    "gw": {
+      "landlocked": false,
+      "languageCodes": [
+        "por",
+        "pov"
+      ],
+      "currencyCodes": [
+        "XOF"
+      ],
+      "en": {
+        "languages": "Portuguese · Upper Guinea Creole",
+        "currencies": "West African CFA Franc (XOF)"
+      },
+      "de": {
+        "languages": "Portugiesisch · Guineabissauisches Kreol",
+        "currencies": "CFA-Franc (BCEAO) (XOF)"
+      }
+    },
+    "gy": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "GYD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "Guyanaese Dollar (GYD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Guyana-Dollar (GYD)"
+      }
+    },
+    "hn": {
+      "landlocked": false,
+      "languageCodes": [
+        "spa"
+      ],
+      "currencyCodes": [
+        "HNL"
+      ],
+      "en": {
+        "languages": "Spanish",
+        "currencies": "Honduran Lempira (HNL)"
+      },
+      "de": {
+        "languages": "Spanisch",
+        "currencies": "Honduras-Lempira (HNL)"
+      }
+    },
+    "hr": {
+      "landlocked": false,
+      "languageCodes": [
+        "hrv"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Croatian",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Kroatisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "ht": {
+      "landlocked": false,
+      "languageCodes": [
+        "fra",
+        "hat"
+      ],
+      "currencyCodes": [
+        "HTG"
+      ],
+      "en": {
+        "languages": "French · Haitian Creole",
+        "currencies": "Haitian Gourde (HTG)"
+      },
+      "de": {
+        "languages": "Französisch · Haiti-Kreolisch",
+        "currencies": "Haitianische Gourde (HTG)"
+      }
+    },
+    "hu": {
+      "landlocked": true,
+      "languageCodes": [
+        "hun"
+      ],
+      "currencyCodes": [
+        "HUF"
+      ],
+      "en": {
+        "languages": "Hungarian",
+        "currencies": "Hungarian Forint (HUF)"
+      },
+      "de": {
+        "languages": "Ungarisch",
+        "currencies": "Ungarischer Forint (HUF)"
+      }
+    },
+    "ie": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "gle"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "English · Irish",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Englisch · Irisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "il": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara",
+        "heb"
+      ],
+      "currencyCodes": [
+        "ILS"
+      ],
+      "en": {
+        "languages": "Arabic · Hebrew",
+        "currencies": "Israeli New Shekel (ILS)"
+      },
+      "de": {
+        "languages": "Arabisch · Hebräisch",
+        "currencies": "Israelischer Neuer Schekel (ILS)"
+      }
+    },
+    "iq": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara",
+        "arc",
+        "ckb"
+      ],
+      "currencyCodes": [
+        "IQD"
+      ],
+      "en": {
+        "languages": "Arabic · Aramaic · Central Kurdish",
+        "currencies": "Iraqi Dinar (IQD)"
+      },
+      "de": {
+        "languages": "Arabisch · Aramäisch · Zentralkurdisch",
+        "currencies": "Irakischer Dinar (IQD)"
+      }
+    },
+    "ir": {
+      "landlocked": false,
+      "languageCodes": [
+        "fas"
+      ],
+      "currencyCodes": [
+        "IRR"
+      ],
+      "en": {
+        "languages": "Persian",
+        "currencies": "Iranian Rial (IRR)"
+      },
+      "de": {
+        "languages": "Persisch",
+        "currencies": "Iranischer Rial (IRR)"
+      }
+    },
+    "is": {
+      "landlocked": false,
+      "languageCodes": [
+        "isl"
+      ],
+      "currencyCodes": [
+        "ISK"
+      ],
+      "en": {
+        "languages": "Icelandic",
+        "currencies": "Icelandic Króna (ISK)"
+      },
+      "de": {
+        "languages": "Isländisch",
+        "currencies": "Isländische Krone (ISK)"
+      }
+    },
+    "jo": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara"
+      ],
+      "currencyCodes": [
+        "JOD"
+      ],
+      "en": {
+        "languages": "Arabic",
+        "currencies": "Jordanian Dinar (JOD)"
+      },
+      "de": {
+        "languages": "Arabisch",
+        "currencies": "Jordanischer Dinar (JOD)"
+      }
+    },
+    "kg": {
+      "landlocked": true,
+      "languageCodes": [
+        "kir",
+        "rus"
+      ],
+      "currencyCodes": [
+        "KGS"
+      ],
+      "en": {
+        "languages": "Kyrgyz · Russian",
+        "currencies": "Kyrgyz Som (KGS)"
+      },
+      "de": {
+        "languages": "Kirgisisch · Russisch",
+        "currencies": "Kirgisischer Som (KGS)"
+      }
+    },
+    "kh": {
+      "landlocked": false,
+      "languageCodes": [
+        "khm"
+      ],
+      "currencyCodes": [
+        "KHR",
+        "USD"
+      ],
+      "en": {
+        "languages": "Khmer",
+        "currencies": "Cambodian Riel (KHR) · US Dollar (USD)"
+      },
+      "de": {
+        "languages": "Khmer",
+        "currencies": "Kambodschanischer Riel (KHR) · US-Dollar (USD)"
+      }
+    },
+    "ki": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "gil"
+      ],
+      "currencyCodes": [
+        "AUD",
+        "KID"
+      ],
+      "en": {
+        "languages": "English · Gilbertese",
+        "currencies": "Australian Dollar (AUD) · Kiribati dollar (KID)"
+      },
+      "de": {
+        "languages": "Englisch · Kiribatisch",
+        "currencies": "Australischer Dollar (AUD) · Kiribati-Dollar (KID)"
+      }
+    },
+    "km": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara",
+        "fra",
+        "zdj"
+      ],
+      "currencyCodes": [
+        "KMF"
+      ],
+      "en": {
+        "languages": "Arabic · French · Comorian",
+        "currencies": "Comorian Franc (KMF)"
+      },
+      "de": {
+        "languages": "Arabisch · Französisch · Komorisch",
+        "currencies": "Komoren-Franc (KMF)"
+      }
+    },
+    "kn": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "XCD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "East Caribbean Dollar (XCD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Ostkaribischer Dollar (XCD)"
+      }
+    },
+    "kp": {
+      "landlocked": false,
+      "languageCodes": [
+        "kor"
+      ],
+      "currencyCodes": [
+        "KPW"
+      ],
+      "en": {
+        "languages": "Korean",
+        "currencies": "North Korean Won (KPW)"
+      },
+      "de": {
+        "languages": "Koreanisch",
+        "currencies": "Nordkoreanischer Won (KPW)"
+      }
+    },
+    "kw": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara"
+      ],
+      "currencyCodes": [
+        "KWD"
+      ],
+      "en": {
+        "languages": "Arabic",
+        "currencies": "Kuwaiti Dinar (KWD)"
+      },
+      "de": {
+        "languages": "Arabisch",
+        "currencies": "Kuwait-Dinar (KWD)"
+      }
+    },
+    "kz": {
+      "landlocked": true,
+      "languageCodes": [
+        "kaz",
+        "rus"
+      ],
+      "currencyCodes": [
+        "KZT"
+      ],
+      "en": {
+        "languages": "Kazakh · Russian",
+        "currencies": "Kazakhstani Tenge (KZT)"
+      },
+      "de": {
+        "languages": "Kasachisch · Russisch",
+        "currencies": "Kasachischer Tenge (KZT)"
+      }
+    },
+    "la": {
+      "landlocked": true,
+      "languageCodes": [
+        "lao"
+      ],
+      "currencyCodes": [
+        "LAK"
+      ],
+      "en": {
+        "languages": "Lao",
+        "currencies": "Laotian Kip (LAK)"
+      },
+      "de": {
+        "languages": "Laotisch",
+        "currencies": "Laotischer Kip (LAK)"
+      }
+    },
+    "lb": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara",
+        "fra"
+      ],
+      "currencyCodes": [
+        "LBP"
+      ],
+      "en": {
+        "languages": "Arabic · French",
+        "currencies": "Lebanese Pound (LBP)"
+      },
+      "de": {
+        "languages": "Arabisch · Französisch",
+        "currencies": "Libanesisches Pfund (LBP)"
+      }
+    },
+    "lc": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "XCD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "East Caribbean Dollar (XCD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Ostkaribischer Dollar (XCD)"
+      }
+    },
+    "li": {
+      "landlocked": true,
+      "languageCodes": [
+        "deu"
+      ],
+      "currencyCodes": [
+        "CHF"
+      ],
+      "en": {
+        "languages": "German",
+        "currencies": "Swiss Franc (CHF)"
+      },
+      "de": {
+        "languages": "Deutsch",
+        "currencies": "Schweizer Franken (CHF)"
+      }
+    },
+    "lk": {
+      "landlocked": false,
+      "languageCodes": [
+        "sin",
+        "tam"
+      ],
+      "currencyCodes": [
+        "LKR"
+      ],
+      "en": {
+        "languages": "Sinhala · Tamil",
+        "currencies": "Sri Lankan Rupee (LKR)"
+      },
+      "de": {
+        "languages": "Singhalesisch · Tamil",
+        "currencies": "Sri-Lanka-Rupie (LKR)"
+      }
+    },
+    "lr": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "LRD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "Liberian Dollar (LRD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Liberianischer Dollar (LRD)"
+      }
+    },
+    "lt": {
+      "landlocked": false,
+      "languageCodes": [
+        "lit"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Lithuanian",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Litauisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "lu": {
+      "landlocked": true,
+      "languageCodes": [
+        "deu",
+        "fra",
+        "ltz"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "German · French · Luxembourgish",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Deutsch · Französisch · Luxemburgisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "lv": {
+      "landlocked": false,
+      "languageCodes": [
+        "lav"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Latvian",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Lettisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "ly": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara"
+      ],
+      "currencyCodes": [
+        "LYD"
+      ],
+      "en": {
+        "languages": "Arabic",
+        "currencies": "Libyan Dinar (LYD)"
+      },
+      "de": {
+        "languages": "Arabisch",
+        "currencies": "Libyscher Dinar (LYD)"
+      }
+    },
+    "md": {
+      "landlocked": true,
+      "languageCodes": [
+        "ron"
+      ],
+      "currencyCodes": [
+        "MDL"
+      ],
+      "en": {
+        "languages": "Romanian",
+        "currencies": "Moldovan Leu (MDL)"
+      },
+      "de": {
+        "languages": "Rumänisch",
+        "currencies": "Moldau-Leu (MDL)"
+      }
+    },
+    "me": {
+      "landlocked": false,
+      "languageCodes": [
+        "cnr"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Montenegrin",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Serbisch (Montenegro)",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "mh": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "mah"
+      ],
+      "currencyCodes": [
+        "USD"
+      ],
+      "en": {
+        "languages": "English · Marshallese",
+        "currencies": "US Dollar (USD)"
+      },
+      "de": {
+        "languages": "Englisch · Marschallesisch",
+        "currencies": "US-Dollar (USD)"
+      }
+    },
+    "mk": {
+      "landlocked": true,
+      "languageCodes": [
+        "mkd"
+      ],
+      "currencyCodes": [
+        "MKD"
+      ],
+      "en": {
+        "languages": "Macedonian",
+        "currencies": "Macedonian Denar (MKD)"
+      },
+      "de": {
+        "languages": "Mazedonisch",
+        "currencies": "Mazedonischer Denar (MKD)"
+      }
+    },
+    "ml": {
+      "landlocked": true,
+      "languageCodes": [
+        "fra"
+      ],
+      "currencyCodes": [
+        "XOF"
+      ],
+      "en": {
+        "languages": "French",
+        "currencies": "West African CFA Franc (XOF)"
+      },
+      "de": {
+        "languages": "Französisch",
+        "currencies": "CFA-Franc (BCEAO) (XOF)"
+      }
+    },
+    "mm": {
+      "landlocked": false,
+      "languageCodes": [
+        "mya"
+      ],
+      "currencyCodes": [
+        "MMK"
+      ],
+      "en": {
+        "languages": "Burmese",
+        "currencies": "Myanmar Kyat (MMK)"
+      },
+      "de": {
+        "languages": "Birmanisch",
+        "currencies": "Myanmarischer Kyat (MMK)"
+      }
+    },
+    "mn": {
+      "landlocked": true,
+      "languageCodes": [
+        "mon"
+      ],
+      "currencyCodes": [
+        "MNT"
+      ],
+      "en": {
+        "languages": "Mongolian",
+        "currencies": "Mongolian Tugrik (MNT)"
+      },
+      "de": {
+        "languages": "Mongolisch",
+        "currencies": "Mongolischer Tögrög (MNT)"
+      }
+    },
+    "mr": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara"
+      ],
+      "currencyCodes": [
+        "MRU"
+      ],
+      "en": {
+        "languages": "Arabic",
+        "currencies": "Mauritanian Ouguiya (MRU)"
+      },
+      "de": {
+        "languages": "Arabisch",
+        "currencies": "Mauretanischer Ouguiya (MRU)"
+      }
+    },
+    "mt": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "mlt"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "English · Maltese",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Englisch · Maltesisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "mu": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "fra",
+        "mfe"
+      ],
+      "currencyCodes": [
+        "MUR"
+      ],
+      "en": {
+        "languages": "English · French · Morisyen",
+        "currencies": "Mauritian Rupee (MUR)"
+      },
+      "de": {
+        "languages": "Englisch · Französisch · Morisyen",
+        "currencies": "Mauritius-Rupie (MUR)"
+      }
+    },
+    "mw": {
+      "landlocked": true,
+      "languageCodes": [
+        "eng",
+        "nya"
+      ],
+      "currencyCodes": [
+        "MWK"
+      ],
+      "en": {
+        "languages": "English · Nyanja",
+        "currencies": "Malawian Kwacha (MWK)"
+      },
+      "de": {
+        "languages": "Englisch · Nyanja",
+        "currencies": "Malawi-Kwacha (MWK)"
+      }
+    },
+    "my": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "msa"
+      ],
+      "currencyCodes": [
+        "MYR"
+      ],
+      "en": {
+        "languages": "English · Malay",
+        "currencies": "Malaysian Ringgit (MYR)"
+      },
+      "de": {
+        "languages": "Englisch · Malaiisch",
+        "currencies": "Malaysischer Ringgit (MYR)"
+      }
+    },
+    "mz": {
+      "landlocked": false,
+      "languageCodes": [
+        "por"
+      ],
+      "currencyCodes": [
+        "MZN"
+      ],
+      "en": {
+        "languages": "Portuguese",
+        "currencies": "Mozambican Metical (MZN)"
+      },
+      "de": {
+        "languages": "Portugiesisch",
+        "currencies": "Mosambikanischer Metical (MZN)"
+      }
+    },
+    "ne": {
+      "landlocked": true,
+      "languageCodes": [
+        "fra"
+      ],
+      "currencyCodes": [
+        "XOF"
+      ],
+      "en": {
+        "languages": "French",
+        "currencies": "West African CFA Franc (XOF)"
+      },
+      "de": {
+        "languages": "Französisch",
+        "currencies": "CFA-Franc (BCEAO) (XOF)"
+      }
+    },
+    "ng": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "NGN"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "Nigerian Naira (NGN)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Nigerianischer Naira (NGN)"
+      }
+    },
+    "ni": {
+      "landlocked": false,
+      "languageCodes": [
+        "spa"
+      ],
+      "currencyCodes": [
+        "NIO"
+      ],
+      "en": {
+        "languages": "Spanish",
+        "currencies": "Nicaraguan Córdoba (NIO)"
+      },
+      "de": {
+        "languages": "Spanisch",
+        "currencies": "Nicaragua-Córdoba (NIO)"
+      }
+    },
+    "nl": {
+      "landlocked": false,
+      "languageCodes": [
+        "nld"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Dutch",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Niederländisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "om": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara"
+      ],
+      "currencyCodes": [
+        "OMR"
+      ],
+      "en": {
+        "languages": "Arabic",
+        "currencies": "Omani Rial (OMR)"
+      },
+      "de": {
+        "languages": "Arabisch",
+        "currencies": "Omanischer Rial (OMR)"
+      }
+    },
+    "pa": {
+      "landlocked": false,
+      "languageCodes": [
+        "spa"
+      ],
+      "currencyCodes": [
+        "PAB",
+        "USD"
+      ],
+      "en": {
+        "languages": "Spanish",
+        "currencies": "Panamanian Balboa (PAB) · US Dollar (USD)"
+      },
+      "de": {
+        "languages": "Spanisch",
+        "currencies": "Panamaischer Balboa (PAB) · US-Dollar (USD)"
+      }
+    },
+    "pg": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "hmo",
+        "tpi"
+      ],
+      "currencyCodes": [
+        "PGK"
+      ],
+      "en": {
+        "languages": "English · Hiri Motu · Tok Pisin",
+        "currencies": "Papua New Guinean Kina (PGK)"
+      },
+      "de": {
+        "languages": "Englisch · Hiri-Motu · Neumelanesisch",
+        "currencies": "Papua-neuguineischer Kina (PGK)"
+      }
+    },
+    "ph": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "fil"
+      ],
+      "currencyCodes": [
+        "PHP"
+      ],
+      "en": {
+        "languages": "English · Filipino",
+        "currencies": "Philippine Peso (PHP)"
+      },
+      "de": {
+        "languages": "Englisch · Filipino",
+        "currencies": "Philippinischer Peso (PHP)"
+      }
+    },
+    "pk": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "urd"
+      ],
+      "currencyCodes": [
+        "PKR"
+      ],
+      "en": {
+        "languages": "English · Urdu",
+        "currencies": "Pakistani Rupee (PKR)"
+      },
+      "de": {
+        "languages": "Englisch · Urdu",
+        "currencies": "Pakistanische Rupie (PKR)"
+      }
+    },
+    "pl": {
+      "landlocked": false,
+      "languageCodes": [
+        "pol"
+      ],
+      "currencyCodes": [
+        "PLN"
+      ],
+      "en": {
+        "languages": "Polish",
+        "currencies": "Polish Zloty (PLN)"
+      },
+      "de": {
+        "languages": "Polnisch",
+        "currencies": "Polnischer Złoty (PLN)"
+      }
+    },
+    "ps": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara"
+      ],
+      "currencyCodes": [
+        "EGP",
+        "ILS",
+        "JOD"
+      ],
+      "en": {
+        "languages": "Arabic",
+        "currencies": "Egyptian Pound (EGP) · Israeli New Shekel (ILS) · Jordanian Dinar (JOD)"
+      },
+      "de": {
+        "languages": "Arabisch",
+        "currencies": "Ägyptisches Pfund (EGP) · Israelischer Neuer Schekel (ILS) · Jordanischer Dinar (JOD)"
+      }
+    },
+    "pt": {
+      "landlocked": false,
+      "languageCodes": [
+        "por"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Portuguese",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Portugiesisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "pw": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "pau"
+      ],
+      "currencyCodes": [
+        "USD"
+      ],
+      "en": {
+        "languages": "English · Palauan",
+        "currencies": "US Dollar (USD)"
+      },
+      "de": {
+        "languages": "Englisch · Palau",
+        "currencies": "US-Dollar (USD)"
+      }
+    },
+    "py": {
+      "landlocked": true,
+      "languageCodes": [
+        "grn",
+        "spa"
+      ],
+      "currencyCodes": [
+        "PYG"
+      ],
+      "en": {
+        "languages": "Guarani · Spanish",
+        "currencies": "Paraguayan Guarani (PYG)"
+      },
+      "de": {
+        "languages": "Guaraní · Spanisch",
+        "currencies": "Paraguayischer Guaraní (PYG)"
+      }
+    },
+    "qa": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara"
+      ],
+      "currencyCodes": [
+        "QAR"
+      ],
+      "en": {
+        "languages": "Arabic",
+        "currencies": "Qatari Riyal (QAR)"
+      },
+      "de": {
+        "languages": "Arabisch",
+        "currencies": "Katar-Riyal (QAR)"
+      }
+    },
+    "ro": {
+      "landlocked": false,
+      "languageCodes": [
+        "ron"
+      ],
+      "currencyCodes": [
+        "RON"
+      ],
+      "en": {
+        "languages": "Romanian",
+        "currencies": "Romanian Leu (RON)"
+      },
+      "de": {
+        "languages": "Rumänisch",
+        "currencies": "Rumänischer Leu (RON)"
+      }
+    },
+    "rs": {
+      "landlocked": true,
+      "languageCodes": [
+        "srp"
+      ],
+      "currencyCodes": [
+        "RSD"
+      ],
+      "en": {
+        "languages": "Serbian",
+        "currencies": "Serbian Dinar (RSD)"
+      },
+      "de": {
+        "languages": "Serbisch",
+        "currencies": "Serbischer Dinar (RSD)"
+      }
+    },
+    "ru": {
+      "landlocked": false,
+      "languageCodes": [
+        "rus"
+      ],
+      "currencyCodes": [
+        "RUB"
+      ],
+      "en": {
+        "languages": "Russian",
+        "currencies": "Russian Ruble (RUB)"
+      },
+      "de": {
+        "languages": "Russisch",
+        "currencies": "Russischer Rubel (RUB)"
+      }
+    },
+    "rw": {
+      "landlocked": true,
+      "languageCodes": [
+        "eng",
+        "fra",
+        "kin"
+      ],
+      "currencyCodes": [
+        "RWF"
+      ],
+      "en": {
+        "languages": "English · French · Kinyarwanda",
+        "currencies": "Rwandan Franc (RWF)"
+      },
+      "de": {
+        "languages": "Englisch · Französisch · Kinyarwanda",
+        "currencies": "Ruanda-Franc (RWF)"
+      }
+    },
+    "sa": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara"
+      ],
+      "currencyCodes": [
+        "SAR"
+      ],
+      "en": {
+        "languages": "Arabic",
+        "currencies": "Saudi Riyal (SAR)"
+      },
+      "de": {
+        "languages": "Arabisch",
+        "currencies": "Saudi-Rial (SAR)"
+      }
+    },
+    "sb": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "SBD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "Solomon Islands Dollar (SBD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Salomonen-Dollar (SBD)"
+      }
+    },
+    "sc": {
+      "landlocked": false,
+      "languageCodes": [
+        "crs",
+        "eng",
+        "fra"
+      ],
+      "currencyCodes": [
+        "SCR"
+      ],
+      "en": {
+        "languages": "Seselwa Creole French · English · French",
+        "currencies": "Seychellois Rupee (SCR)"
+      },
+      "de": {
+        "languages": "Seychellenkreol · Englisch · Französisch",
+        "currencies": "Seychellen-Rupie (SCR)"
+      }
+    },
+    "sd": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara",
+        "eng"
+      ],
+      "currencyCodes": [
+        "SDG"
+      ],
+      "en": {
+        "languages": "Arabic · English",
+        "currencies": "Sudanese Pound (SDG)"
+      },
+      "de": {
+        "languages": "Arabisch · Englisch",
+        "currencies": "Sudanesisches Pfund (SDG)"
+      }
+    },
+    "se": {
+      "landlocked": false,
+      "languageCodes": [
+        "swe"
+      ],
+      "currencyCodes": [
+        "SEK"
+      ],
+      "en": {
+        "languages": "Swedish",
+        "currencies": "Swedish Krona (SEK)"
+      },
+      "de": {
+        "languages": "Schwedisch",
+        "currencies": "Schwedische Krone (SEK)"
+      }
+    },
+    "sg": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "zho",
+        "msa",
+        "tam"
+      ],
+      "currencyCodes": [
+        "SGD"
+      ],
+      "en": {
+        "languages": "English · Chinese · Malay · Tamil",
+        "currencies": "Singapore Dollar (SGD)"
+      },
+      "de": {
+        "languages": "Englisch · Chinesisch · Malaiisch · Tamil",
+        "currencies": "Singapur-Dollar (SGD)"
+      }
+    },
+    "si": {
+      "landlocked": false,
+      "languageCodes": [
+        "slv"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Slovenian",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Slowenisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "sk": {
+      "landlocked": true,
+      "languageCodes": [
+        "slk"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Slovak",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Slowakisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "sl": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "SLE"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "Sierra Leonean leone (SLE)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Sierra-leonischer Leone (SLE)"
+      }
+    },
+    "sm": {
+      "landlocked": true,
+      "languageCodes": [
+        "ita"
+      ],
+      "currencyCodes": [
+        "EUR"
+      ],
+      "en": {
+        "languages": "Italian",
+        "currencies": "Euro (EUR)"
+      },
+      "de": {
+        "languages": "Italienisch",
+        "currencies": "Euro (EUR)"
+      }
+    },
+    "sn": {
+      "landlocked": false,
+      "languageCodes": [
+        "fra"
+      ],
+      "currencyCodes": [
+        "XOF"
+      ],
+      "en": {
+        "languages": "French",
+        "currencies": "West African CFA Franc (XOF)"
+      },
+      "de": {
+        "languages": "Französisch",
+        "currencies": "CFA-Franc (BCEAO) (XOF)"
+      }
+    },
+    "so": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara",
+        "som"
+      ],
+      "currencyCodes": [
+        "SOS"
+      ],
+      "en": {
+        "languages": "Arabic · Somali",
+        "currencies": "Somali Shilling (SOS)"
+      },
+      "de": {
+        "languages": "Arabisch · Somali",
+        "currencies": "Somalia-Schilling (SOS)"
+      }
+    },
+    "sr": {
+      "landlocked": false,
+      "languageCodes": [
+        "nld"
+      ],
+      "currencyCodes": [
+        "SRD"
+      ],
+      "en": {
+        "languages": "Dutch",
+        "currencies": "Surinamese Dollar (SRD)"
+      },
+      "de": {
+        "languages": "Niederländisch",
+        "currencies": "Suriname-Dollar (SRD)"
+      }
+    },
+    "ss": {
+      "landlocked": true,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "SSP"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "South Sudanese Pound (SSP)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Südsudanesisches Pfund (SSP)"
+      }
+    },
+    "st": {
+      "landlocked": false,
+      "languageCodes": [
+        "por"
+      ],
+      "currencyCodes": [
+        "STN"
+      ],
+      "en": {
+        "languages": "Portuguese",
+        "currencies": "São Tomé & Príncipe Dobra (STN)"
+      },
+      "de": {
+        "languages": "Portugiesisch",
+        "currencies": "São-toméischer Dobra (STN)"
+      }
+    },
+    "sv": {
+      "landlocked": false,
+      "languageCodes": [
+        "spa"
+      ],
+      "currencyCodes": [
+        "USD"
+      ],
+      "en": {
+        "languages": "Spanish",
+        "currencies": "US Dollar (USD)"
+      },
+      "de": {
+        "languages": "Spanisch",
+        "currencies": "US-Dollar (USD)"
+      }
+    },
+    "sy": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara"
+      ],
+      "currencyCodes": [
+        "SYP"
+      ],
+      "en": {
+        "languages": "Arabic",
+        "currencies": "Syrian Pound (SYP)"
+      },
+      "de": {
+        "languages": "Arabisch",
+        "currencies": "Syrisches Pfund (SYP)"
+      }
+    },
+    "sz": {
+      "landlocked": true,
+      "languageCodes": [
+        "eng",
+        "ssw"
+      ],
+      "currencyCodes": [
+        "SZL",
+        "ZAR"
+      ],
+      "en": {
+        "languages": "English · Swati",
+        "currencies": "Swazi Lilangeni (SZL) · South African Rand (ZAR)"
+      },
+      "de": {
+        "languages": "Englisch · Swazi",
+        "currencies": "Swasiländischer Lilangeni (SZL) · Südafrikanischer Rand (ZAR)"
+      }
+    },
+    "td": {
+      "landlocked": true,
+      "languageCodes": [
+        "ara",
+        "fra"
+      ],
+      "currencyCodes": [
+        "XAF"
+      ],
+      "en": {
+        "languages": "Arabic · French",
+        "currencies": "Central African CFA Franc (XAF)"
+      },
+      "de": {
+        "languages": "Arabisch · Französisch",
+        "currencies": "CFA-Franc (BEAC) (XAF)"
+      }
+    },
+    "tg": {
+      "landlocked": false,
+      "languageCodes": [
+        "fra"
+      ],
+      "currencyCodes": [
+        "XOF"
+      ],
+      "en": {
+        "languages": "French",
+        "currencies": "West African CFA Franc (XOF)"
+      },
+      "de": {
+        "languages": "Französisch",
+        "currencies": "CFA-Franc (BCEAO) (XOF)"
+      }
+    },
+    "th": {
+      "landlocked": false,
+      "languageCodes": [
+        "tha"
+      ],
+      "currencyCodes": [
+        "THB"
+      ],
+      "en": {
+        "languages": "Thai",
+        "currencies": "Thai Baht (THB)"
+      },
+      "de": {
+        "languages": "Thailändisch",
+        "currencies": "Thailändischer Baht (THB)"
+      }
+    },
+    "tj": {
+      "landlocked": true,
+      "languageCodes": [
+        "rus",
+        "tgk"
+      ],
+      "currencyCodes": [
+        "TJS"
+      ],
+      "en": {
+        "languages": "Russian · Tajik",
+        "currencies": "Tajikistani Somoni (TJS)"
+      },
+      "de": {
+        "languages": "Russisch · Tadschikisch",
+        "currencies": "Tadschikistan-Somoni (TJS)"
+      }
+    },
+    "tl": {
+      "landlocked": false,
+      "languageCodes": [
+        "por",
+        "tet"
+      ],
+      "currencyCodes": [
+        "USD"
+      ],
+      "en": {
+        "languages": "Portuguese · Tetum",
+        "currencies": "US Dollar (USD)"
+      },
+      "de": {
+        "languages": "Portugiesisch · Tetum",
+        "currencies": "US-Dollar (USD)"
+      }
+    },
+    "tm": {
+      "landlocked": true,
+      "languageCodes": [
+        "rus",
+        "tuk"
+      ],
+      "currencyCodes": [
+        "TMT"
+      ],
+      "en": {
+        "languages": "Russian · Turkmen",
+        "currencies": "Turkmenistani Manat (TMT)"
+      },
+      "de": {
+        "languages": "Russisch · Turkmenisch",
+        "currencies": "Turkmenistan-Manat (TMT)"
+      }
+    },
+    "tn": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara"
+      ],
+      "currencyCodes": [
+        "TND"
+      ],
+      "en": {
+        "languages": "Arabic",
+        "currencies": "Tunisian Dinar (TND)"
+      },
+      "de": {
+        "languages": "Arabisch",
+        "currencies": "Tunesischer Dinar (TND)"
+      }
+    },
+    "to": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "ton"
+      ],
+      "currencyCodes": [
+        "TOP"
+      ],
+      "en": {
+        "languages": "English · Tongan",
+        "currencies": "Tongan Paʻanga (TOP)"
+      },
+      "de": {
+        "languages": "Englisch · Tongaisch",
+        "currencies": "Tongaischer Paʻanga (TOP)"
+      }
+    },
+    "tr": {
+      "landlocked": false,
+      "languageCodes": [
+        "tur"
+      ],
+      "currencyCodes": [
+        "TRY"
+      ],
+      "en": {
+        "languages": "Turkish",
+        "currencies": "Turkish Lira (TRY)"
+      },
+      "de": {
+        "languages": "Türkisch",
+        "currencies": "Türkische Lira (TRY)"
+      }
+    },
+    "tt": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "TTD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "Trinidad & Tobago Dollar (TTD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Trinidad-und-Tobago-Dollar (TTD)"
+      }
+    },
+    "tz": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "swa"
+      ],
+      "currencyCodes": [
+        "TZS"
+      ],
+      "en": {
+        "languages": "English · Swahili",
+        "currencies": "Tanzanian Shilling (TZS)"
+      },
+      "de": {
+        "languages": "Englisch · Suaheli",
+        "currencies": "Tansania-Schilling (TZS)"
+      }
+    },
+    "ua": {
+      "landlocked": false,
+      "languageCodes": [
+        "ukr"
+      ],
+      "currencyCodes": [
+        "UAH"
+      ],
+      "en": {
+        "languages": "Ukrainian",
+        "currencies": "Ukrainian Hryvnia (UAH)"
+      },
+      "de": {
+        "languages": "Ukrainisch",
+        "currencies": "Ukrainische Hrywnja (UAH)"
+      }
+    },
+    "ug": {
+      "landlocked": true,
+      "languageCodes": [
+        "eng",
+        "swa"
+      ],
+      "currencyCodes": [
+        "UGX"
+      ],
+      "en": {
+        "languages": "English · Swahili",
+        "currencies": "Ugandan Shilling (UGX)"
+      },
+      "de": {
+        "languages": "Englisch · Suaheli",
+        "currencies": "Uganda-Schilling (UGX)"
+      }
+    },
+    "uz": {
+      "landlocked": true,
+      "languageCodes": [
+        "rus",
+        "uzb"
+      ],
+      "currencyCodes": [
+        "UZS"
+      ],
+      "en": {
+        "languages": "Russian · Uzbek",
+        "currencies": "Uzbekistani Som (UZS)"
+      },
+      "de": {
+        "languages": "Russisch · Usbekisch",
+        "currencies": "Usbekistan-Sum (UZS)"
+      }
+    },
+    "vc": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "XCD"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "East Caribbean Dollar (XCD)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Ostkaribischer Dollar (XCD)"
+      }
+    },
+    "ve": {
+      "landlocked": false,
+      "languageCodes": [
+        "spa"
+      ],
+      "currencyCodes": [
+        "VES"
+      ],
+      "en": {
+        "languages": "Spanish",
+        "currencies": "Venezuelan Bolívar (VES)"
+      },
+      "de": {
+        "languages": "Spanisch",
+        "currencies": "Venezolanischer Bolívar (VES)"
+      }
+    },
+    "ws": {
+      "landlocked": false,
+      "languageCodes": [
+        "eng",
+        "smo"
+      ],
+      "currencyCodes": [
+        "WST"
+      ],
+      "en": {
+        "languages": "English · Samoan",
+        "currencies": "Samoan Tala (WST)"
+      },
+      "de": {
+        "languages": "Englisch · Samoanisch",
+        "currencies": "Samoanischer Tala (WST)"
+      }
+    },
+    "ye": {
+      "landlocked": false,
+      "languageCodes": [
+        "ara"
+      ],
+      "currencyCodes": [
+        "YER"
+      ],
+      "en": {
+        "languages": "Arabic",
+        "currencies": "Yemeni Rial (YER)"
+      },
+      "de": {
+        "languages": "Arabisch",
+        "currencies": "Jemen-Rial (YER)"
+      }
+    },
+    "za": {
+      "landlocked": false,
+      "languageCodes": [
+        "afr",
+        "eng",
+        "nbl",
+        "nso",
+        "sot",
+        "ssw",
+        "tsn",
+        "tso",
+        "ven",
+        "xho",
+        "zul"
+      ],
+      "currencyCodes": [
+        "ZAR"
+      ],
+      "en": {
+        "languages": "Afrikaans · English · South Ndebele · Northern Sotho · Southern Sotho · Swati · Tswana · Tsonga · Venda · Xhosa · Zulu",
+        "currencies": "South African Rand (ZAR)"
+      },
+      "de": {
+        "languages": "Afrikaans · Englisch · Süd-Ndebele · Nord-Sotho · Süd-Sotho · Swazi · Tswana · Tsonga · Venda · Xhosa · Zulu",
+        "currencies": "Südafrikanischer Rand (ZAR)"
+      }
+    },
+    "zm": {
+      "landlocked": true,
+      "languageCodes": [
+        "eng"
+      ],
+      "currencyCodes": [
+        "ZMW"
+      ],
+      "en": {
+        "languages": "English",
+        "currencies": "Zambian Kwacha (ZMW)"
+      },
+      "de": {
+        "languages": "Englisch",
+        "currencies": "Kwacha (ZMW)"
+      }
+    },
+    "zw": {
+      "landlocked": true,
+      "languageCodes": [
+        "bwg",
+        "eng",
+        "kck",
+        "khi",
+        "ndc",
+        "nde",
+        "nya",
+        "sna",
+        "sot",
+        "toi",
+        "tsn",
+        "tso",
+        "ven",
+        "xho",
+        "zib"
+      ],
+      "currencyCodes": [
+        "ZWL"
+      ],
+      "en": {
+        "languages": "Chibarwe · English · Kalanga · Khoisan languages · Ndau · North Ndebele · Nyanja · Shona · Southern Sotho · Tonga · Tswana · Tsonga · Venda · Xhosa · Zimbabwean Sign Language",
+        "currencies": "Zimbabwean Dollar (2009–2024) (ZWL)"
+      },
+      "de": {
+        "languages": "Chibarwe · Englisch · Kalanga · Khoisansprachen · Ndau · Nord-Ndebele · Nyanja · Shona · Süd-Sotho · Tonga · Tswana · Tsonga · Venda · Xhosa · Simbabwische Gebärdensprache",
+        "currencies": "Simbabwe-Dollar (2009) (ZWL)"
+      }
+    }
+  }
+}

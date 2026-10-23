@@ -229,6 +229,19 @@
     "moreStamps_other": "{{count}} more stamps to unlock this card.",
     "notDiscovered": "Not discovered yet. It will turn up in a pack."
   },
+  "notes": {
+    "selectedLanguages": "Languages",
+    "seeMore": "See more",
+    "seeLess": "See less",
+    "visitor": "Visitor introduction",
+    "explorer": "Explorer field notes",
+    "currency": "Currency",
+    "funFact": "Did you know?",
+    "nextStamp": "Find it once more to unlock its card and full field notes.",
+    "flip": "Field notes ↻",
+    "tapToTurn": "Tap to turn ↻",
+    "showFront": "Card front ↻"
+  },
   "card": {
     "number": "No. {{number}}",
     "label": "{{country}} card",
@@ -268,7 +281,7 @@
     "findScope": "This curated atlas has {{count}} collectible countries from a UN-based set (members plus the two observer states). Tuvalu, Vatican City, Monaco, Maldives and Nauru are deferred for map playability. Gray areas are outside this collection and cannot be selected; this is not a statement about their status.",
     "continentRule": "Each country has one accepted continent in this game. Russia, Turkey, Kazakhstan, Cyprus and the Caucasus count as Asia; Egypt counts as Africa. Central America and the Caribbean count as North America.",
     "stampsTitle": "From Visitor to Explorer",
-    "stampsText": "Get both answers right first time to earn the silver Visitor stamp. Do it again to earn the gold Explorer stamp: two stamps unlock the country's card and take it out of future packs. A mistake shows you the answer but never removes stamps you already have.",
+    "stampsText": "Get both answers right first time to earn the silver Visitor stamp and a short country introduction, also accessible in Collection. Do it again to earn the gold Explorer stamp: two stamps unlock the country's card and take it out of future packs. Flip the card to read field notes and a fun fact. A mistake shows you the answer but never removes stamps you already have.",
     "sources": "Sources",
     "rarityTitle": "Discover rarity",
     "rarityText": "Your first pack reveals a country's name and fixed rarity. Five grades run from Common to Legendary, based mostly on Wikipedia language coverage and partly on size, not on a country's value. Higher grades are only slightly less likely in packs; all countries need the same two stamps: Visitor and Explorer.",

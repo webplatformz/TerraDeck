@@ -1997,7 +1997,6 @@ p {
   line-height: 1;
 }
 
-.card[class*="rarity--"] .card-top::before,
 .orders-top::before {
   content: '';
   position: absolute;
@@ -2016,15 +2015,6 @@ p {
   font-size: 4.4cqw;
   padding: 0.45em 0.6em;
   flex-shrink: 0;
-}
-
-.card[class*="rarity--"] .card-top {
-  background: var(--rarity-banner);
-  color: var(--rarity-foreground);
-}
-
-.card[class*="rarity--"] .card-top .card-number {
-  color: inherit;
 }
 
 .card--front[class*="rarity--"] .card-inner {
@@ -2168,6 +2158,18 @@ p {
     repeating-linear-gradient(90deg, rgba(239, 211, 138, 0.07) 0 1px, transparent 1px 12cqw),
     radial-gradient(120% 100% at 50% 30%, var(--ocean-600), var(--ocean-900));
   box-shadow: inset 0 0 0 0.5cqw var(--brass-700);
+}
+
+.card--visitor .card-window {
+  background: none;
+  box-shadow: none;
+}
+
+.card--visitor .card-flag {
+  position: static;
+  width: 32cqw;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .country-shape {
@@ -2407,7 +2409,45 @@ p {
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  width: min(100%, 420px);
 }
+
+.modal-body > * { flex-shrink: 0; }
+
+.country-notes {
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.country-notes-scroll { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; margin-top: 12px; }
+.country-notes-heading { display: flex; align-items: center; gap: 10px; }
+.country-notes-heading .flag { width: 40px; height: 30px; object-fit: contain; flex-shrink: 0; }
+.country-notes h3 { font-family: var(--font-display), serif; font-size: 1.1rem; }
+.country-notes-heading p { font-size: 0.75rem; color: var(--ink-700); }
+.country-notes-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 10px; margin: 14px 0; }
+.country-notes-grid div { min-width: 0; }
+.country-notes-grid dt { font-size: 0.75rem; color: var(--ink-700); }
+.country-notes-grid dd { margin: 4px 0 0; font-size: 0.95rem; line-height: 1.4; }
+.country-notes-fact { border-top: 1px solid var(--brass-400); padding-top: 12px; }
+.country-notes-fact h4 { font-size: 0.8rem; margin-bottom: 6px; }
+.country-notes-fact p { font-size: 0.9rem; line-height: 1.5; }
+.country-notes-fact + .country-notes-fact { margin-top: 12px; }
+.country-notes-fact .card-fact { margin: 0; font-size: 0.9rem; }
+.country-notes-fact h4 { text-align: center; color: var(--ink-500); }
+.card-fact-expand summary { cursor: pointer; list-style: none; }
+.card-fact-preview { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-family: var(--font-display), serif; font-style: italic; text-align: center; }
+.card-fact-more { display: block; text-align: center; font-size: 0.75rem; text-decoration: underline; margin-top: 6px; }
+.card-fact-expand[open] .card-fact-preview { display: none; }
+.card-fact-expand[open] .card-fact-more { display: none; }
+.card-fact-less { display: none; text-align: center; font-size: 0.75rem; text-decoration: underline; }
+.card-fact-expand[open] .card-fact-less { display: block; }
+.explorer-card { position: relative; width: fit-content; cursor: pointer; border-radius: 12px; }
+.explorer-card:focus-visible { outline: 3px solid var(--brass-400); outline-offset: 5px; }
+.explorer-card .card-inner { padding-bottom: 30px; }
+.card-turn-hint { position: absolute; bottom: 10px; left: 0; right: 0; text-align: center; font-size: 0.65rem; color: var(--ink-700); pointer-events: none; }
+.unlock-actions { flex-wrap: wrap; justify-content: center; flex-shrink: 0; }
 
 .modal-note {
   color: var(--paper-300);

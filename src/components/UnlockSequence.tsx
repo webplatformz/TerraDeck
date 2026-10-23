@@ -3,9 +3,10 @@ import { useTranslation } from 'react-i18next'
 import type { Country } from '../data/countries'
 import { useContent } from '../i18n/useContent'
 import { UNLOCK_FLIP_MS } from '../theme'
-import { CardBack, CardFront } from './Card'
+import { CardBack } from './Card'
 import { Portal } from './Portal'
 import { MASTERY_STAMP_COUNT } from '../domain/mastery'
+import { ExplorerCard } from './CountryNotes'
 
 interface Props {
   country: Country
@@ -34,7 +35,7 @@ export function UnlockSequence({ country, onCollection, onContinue }: Props) {
             <CardBack country={country} stamps={MASTERY_STAMP_COUNT} discovered size="lg" />
           </div>
           <div className="unlock-face unlock-face--front">
-            <CardFront country={country} size="lg" />
+            {flipped && <ExplorerCard country={country} />}
             <div className="unlock-shine" aria-hidden />
           </div>
         </div>

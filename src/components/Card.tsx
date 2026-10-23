@@ -8,22 +8,20 @@ import { StampRow } from './Stamp'
 import { RarityBadge } from './RarityBadge'
 import { displayedStamps, MASTERY_STAMP_COUNT } from '../domain/mastery'
 
-const pad = (n: number) => String(n).padStart(2, '0')
-
-export function CardFront({ country, size = 'md' }: { country: Country; size?: 'sm' | 'md' | 'lg' }) {
+export function CardFront({ country, size = 'md', visitor = false }: { country: Country; size?: 'sm' | 'md' | 'lg'; visitor?: boolean }) {
   const { t } = useTranslation()
   const content = useContent()
   const name = content.countryName(country.id)
   return (
-    <article className={`card card--front card--${size} rarity--${country.rarity}`} aria-label={t('card.label', { country: name })}>
+    <article className={`card card--front card--${size}${visitor ? ' card--visitor' : ''} rarity--${country.rarity}`} aria-label={visitor ? t('notes.visitor') : t('card.label', { country: name })}>
       <div className="card-inner">
         <header className="card-top">
-          <span className="card-number">{t('card.number', { number: pad(country.number) })}</span>
+          <span className="card-number">{country.id.toUpperCase()}</span>
           <RarityBadge rarity={country.rarity} />
         </header>
         <div className="card-window">
           <Flag countryId={country.id} className="card-flag" />
-          <CountryShape mapName={country.mapName} />
+          {!visitor && <CountryShape mapName={country.mapName} />}
         </div>
         <h3 className={`card-name${name.length > 26 ? ' card-name--long' : ''}`}>{name}</h3>
         <p className="card-continent">{content.continentName(country.continent)}</p>
@@ -43,11 +41,11 @@ export function CardFront({ country, size = 'md' }: { country: Country; size?: '
                 <dd>{content.formatArea(country.areaKm2)}</dd>
               </div>
             </dl>
-            <p className="card-fact">{content.fact(country.id)}</p>
+            <p className="card-fact">{visitor ? t('notes.nextStamp') : content.fact(country.id)}</p>
           </>
         )}
         <footer className="card-stamps">
-          <StampRow stamps={MASTERY_STAMP_COUNT} code={country.id} size={size === 'lg' ? 40 : size === 'md' ? 32 : 22} />
+          <StampRow stamps={visitor ? 1 : MASTERY_STAMP_COUNT} code={country.id} size={size === 'lg' ? 40 : size === 'md' ? 32 : 22} />
         </footer>
       </div>
     </article>
@@ -70,10 +68,10 @@ export function CardBack({ country, stamps = 0, discovered = false, size = 'md' 
       <div className="card-inner">
         {country && (known ? (
           <header className="card-top">
-            <span className="card-number">{t('card.number', { number: pad(country.number) })}</span>
+            <span className="card-number">{country.id.toUpperCase()}</span>
             <RarityBadge rarity={country.rarity} />
           </header>
-        ) : <span className="card-number">{t('card.number', { number: pad(country.number) })}</span>)}
+        ) : <span className="card-number">{country.id.toUpperCase()}</span>)}
         {country && discovered && stamps > 0 ? (
           <Flag countryId={country.id} className="card-back-flag" />
         ) : (
