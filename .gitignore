@@ -32,6 +32,7 @@ bin/
 ### Node / Vite ###
 node_modules/
 dist/
+dist-android/
 *.local
 .env*
 !.env.example

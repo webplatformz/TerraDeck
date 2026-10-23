@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">TerraDeck</string>
+    <string name="title_activity_main">TerraDeck</string>
+    <string name="package_name">com.webplatformz.terradeck</string>
+    <string name="custom_url_scheme">com.webplatformz.terradeck</string>
+</resources>

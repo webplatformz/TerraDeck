@@ -36,6 +36,45 @@ Useful URLs while developing:
 - `http://localhost:5173/?demo` — a separate save pre-filled with some cards and stamps (combine: `?demo&debug`)
 - Test mobile layouts with Chrome DevTools device emulation (Cmd+Shift+M)
 
+### Optional Android trial
+
+The Android wrapper is for local device testing only. It bundles the normal game
+with a separate device-local save; it does not load GitHub Pages or a Mac dev server.
+No accounts, cloud sync, browser-save transfer or Play Store setup are included.
+The ordinary `npm run build` and Pages deployment still use `dist/` and `/TerraDeck/`.
+
+Install Android Studio and SDK Platform 36, Build Tools and Platform Tools through
+its setup wizard/SDK Manager. Use Android Studio's bundled Gradle JDK rather than
+changing the Mac's global Java configuration. Enable USB debugging on the phone
+and authorize the Mac when prompted.
+
+```sh
+nvm use
+npm run android:sync # builds root-based dist-android/ and copies assets/plugins
+npm run android:open # open the generated android/ project in Android Studio
+```
+
+Let Gradle sync finish, select the connected phone, then Run. To obtain an APK,
+use Android Studio's Build APK(s) action for the debug variant. The output is
+`android/app/build/outputs/apk/debug/app-debug.apk`. No release key is needed.
+Repeat `android:sync` after web changes before rebuilding/running Android.
+
+Keep the app ID (`com.webplatformz.terradeck`) and debug signing key stable for
+in-place updates. Uninstalling/clearing app data can erase the Android collection;
+the website collection is unaffected. Native assets/build products and SDK-local
+paths are ignored by Git. Capacitor dependencies and the generated Android source
+are the optional wrapper, not a change to the game's rules.
+
+First-device acceptance is still required: cold start in airplane mode, fonts/flags
+and maps, touch/magnifier/8x zoom, EN/DE, status/navigation bar clearance,
+background/resume, saved encounters after force-stop, and in-place updates.
+Use the existing in-app navigation for this initial trial; Android system Back
+is not yet adapted to expedition/overlay state. Check external-link return too.
+
+The Capacitor 8.5.3 CLI currently brings an npm advisory chain through its
+iOS-only `xcode`/`uuid` tooling. It is a development dependency, not bundled game
+code or an Android runtime dependency; reassess before expanding beyond the trial.
+
 In debug mode, the field before **add a pack** accepts a playable two-letter country code
 (for example `CH`, case-insensitive). It adds stock up to the usual five-pack cap and targets the
 next pack, even if that country is collected or was recently drawn. The target survives reloads,
