@@ -9,7 +9,7 @@ export interface GameConfig {
 
 export const DEFAULT_CONFIG: GameConfig = {
   cooldownMs: 15 * 60 * 1000,
-  maxPacks: 5,
+  maxPacks: 10,
   stampsToUnlock: MASTERY_STAMP_COUNT,
   recentWindow: 3,
 }

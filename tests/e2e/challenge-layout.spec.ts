@@ -234,7 +234,7 @@ test('cross-tab reset cancels an unfinished challenge and refunds one pack', asy
   await expect(page.locator('.home-pack')).toBeVisible()
   const afterReset = await page.evaluate(() => JSON.parse(localStorage.getItem('terradeck:save:v1')!))
   expect(afterReset.activeChallenge).toBeNull()
-  expect(afterReset.packs).toBe(Math.min(5, beforeReset.packs + 1))
+  expect(afterReset.packs).toBe(Math.min(DEFAULT_CONFIG.maxPacks, beforeReset.packs + 1))
   expect(afterReset.achievements).toEqual(beforeReset.achievements)
   await otherTab.close()
 })

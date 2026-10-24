@@ -19,8 +19,8 @@
 - Browser sharing with copy/manual-copy fallback; canonical public Pages URL,
   no answers or debug parameters. No native Android sharing plugin, backend,
   account or leaderboard. Local device-clock/save limitations are intentional.
-- Debug random practice samples five unique countries from one random continent
-  and has no discovery, mastery, achievement, daily-attempt or pack effects.
+- Debug offers one reset for today's attempt, retaining collection progress and
+  earlier days. Replays follow the real daily flow, including normal stamp rewards.
 
 ## Country knowledge stages
 
@@ -63,13 +63,13 @@
     Mistakes, check-in frequency and the stock cap affect completion.
   - The original four-week worldwide goal remains an unvalidated long-term aim, not a guarantee from
     these settings. Reassess with play data rather than retaining the obsolete completion calculation.
-- **Packs stack up to 5.** The cooldown starts when a pack is opened.
-  - One pack regenerates every 15 minutes while fewer than 5 are stored.
-  - The timer pauses at 5 and restarts when a pack is opened from a full stack.
+- **Packs stack up to 10.** The cooldown starts when a pack is opened.
+  - One pack regenerates every 15 minutes while fewer than 10 are stored.
+  - The timer pauses at 10 and restarts when a pack is opened from a full stack.
   - Pack count is computed from saved timestamps on load, so it accrues while the app is closed.
   - Stored as `{ packs, refillAt }`; `refillAt` is null when full (same pattern as the reference project's `packRefill.ts`).
-  - New players start with a full stack of 5.
-  - An empty stack fills in 75 minutes. Existing future deadlines are capped at 15 minutes remaining;
+  - New players start with a full stack of 10. Existing five-pack saves resume refilling.
+  - An empty stack fills in 150 minutes. Existing future deadlines are capped at 15 minutes remaining;
     shorter waits and stored packs stay intact, and repeated reconciliation never postpones the deadline.
 
 ## Challenge rules
@@ -85,7 +85,7 @@
 - **Collected countries** (at least 2 stamps) are removed from the random pool. When the pool is empty, show "Atlas complete".
 - **Debug targeting:** the optional two-letter code beside "add a pack" queues one playable country
   for the next debug pack. Codes are case-insensitive; invalid/excluded entries show an error.
-  Stock still caps at five; a target can be set at full stock, survives reloads and waits for active
+  Stock still caps at ten; a target can be set at full stock, survives reloads and waits for active
   challenges. A new code replaces the target; an empty field only adds stock. Debug draws can repeat
   recent or collected countries without resetting stamps or replaying card unlocks. Normal mode
   ignores the target and keeps ordinary draw rules. Completed debug encounters still count as new activity.
@@ -116,7 +116,7 @@
   Rarity counts: Common 29, Uncommon 46, Rare 42, Epic 35, Legendary 16. No scores or draw weights change.
 - **Save transition under the existing Web Lock:** retire an active excluded-country challenge,
   preserve it verbatim as `retiredChallenge`, and leave country and achievement history untouched.
-  Unfinished continent/country steps refund one pack after timestamp reconciliation, capped at five;
+  Unfinished continent/country steps refund one pack after timestamp reconciliation, capped at ten;
   a full stock has no refill deadline. A completed result receives no refund and no replayed awards.
   Clearing the active challenge makes retirement idempotent. Excluded queued debug targets are cleared.
   A persisted localized notice explains both changes until explicitly dismissed, across reloads/tabs.
@@ -283,7 +283,7 @@
   progress only; they do not reveal cards or count toward the reset Collection. No dates or awards are
   invented. Completion awards still require a genuinely new card unlock.
   Under the existing save transaction, reconcile elapsed packs and cancel affected active challenges;
-  refund one pack only for unfinished challenges (cap five), preserving a non-full refill deadline.
+  refund one pack only for unfinished challenges (cap ten), preserving a non-full refill deadline.
   Repeated resets cannot refund twice. Tabs showing a cancelled encounter return Home.
 - **Progress:** all visible goals have a native accessible progress bar and exact current/target counter.
   Before completion, the continent goal shows the continent nearest completion by proportion.

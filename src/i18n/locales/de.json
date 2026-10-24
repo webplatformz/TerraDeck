@@ -205,7 +205,7 @@
   },
   "rosterUpdate": {
     "title": "Ein kleines Atlas-Update",
-    "unfinished": "{{country}} ist jetzt ausgeschlossen, weil es auf Handykarten nicht zuverlässig auswählbar ist. Deine offene Begegnung wurde beendet und ein Päckchen bis zum Maximum von fünf zurückgegeben. Dein bisheriger Fortschritt bleibt im Sammlungsarchiv erhalten.",
+    "unfinished": "{{country}} ist jetzt ausgeschlossen, weil es auf Handykarten nicht zuverlässig auswählbar ist. Deine offene Begegnung wurde beendet und ein Päckchen bis zum Maximum von zehn zurückgegeben. Dein bisheriger Fortschritt bleibt im Sammlungsarchiv erhalten.",
     "finished": "{{country}} ist jetzt ausgeschlossen, weil es auf Handykarten nicht zuverlässig auswählbar ist. Dein abgeschlossenes Ergebnis und dein Fortschritt bleiben im Archiv erhalten. Es wurden keine zusätzlichen Stempel, Abzeichen oder Päckchen vergeben.",
     "debug": "Das vorgemerkte Debug-Ziel {{country}} wurde entfernt, weil dieses Land nicht mehr spielbar ist."
   },
@@ -217,7 +217,7 @@
     "resetContinent": "{{continent}} zurücksetzen",
     "resetDescription": "Lösche Entdeckungen, Stempel und Karten, um erneut zu lernen. Erfolge, ihre ursprünglichen Daten und der Fortschritt offener Erfolge bleiben erhalten. Päckchen ziehen weiterhin aus allen verfügbaren Ländern, nicht nur dem zurückgesetzten Kontinent.",
     "resetFilterHint": "Wähle oben einen Kontinent, um nur diesen zurückzusetzen.",
-    "resetConfirm": "{{scope}}?\n\nDies löscht die betroffenen Entdeckungen, Stempel und Karten dauerhaft, auch im Archiv. Erfolge und ihr Fortschritt bleiben erhalten. Päckchen und Nachfüllzeit bleiben unverändert, außer dass eine betroffene offene Begegnung beendet und ein Päckchen bis zum Maximum von fünf zurückgegeben wird. Abgeschlossene Ergebnisse erhalten keine Rückgabe. Dies kann nicht rückgängig gemacht werden.",
+    "resetConfirm": "{{scope}}?\n\nDies löscht die betroffenen Entdeckungen, Stempel und Karten dauerhaft, auch im Archiv. Erfolge und ihr Fortschritt bleiben erhalten. Päckchen und Nachfüllzeit bleiben unverändert, außer dass eine betroffene offene Begegnung beendet und ein Päckchen bis zum Maximum von zehn zurückgegeben wird. Abgeschlossene Ergebnisse erhalten keine Rückgabe. Dies kann nicht rückgängig gemacht werden.",
     "resetDone": "{{scope}}: Sammlungsfortschritt gelöscht. Deine Erfolge bleiben erhalten.",
     "archiveDescription": "Diese früher entdeckten Länder sind wegen ihrer zu kleinen Kartenziele nicht mehr spielbar. Namen, Stempel und gesammelte Karten bleiben hier erhalten, getrennt vom Atlas-Abschluss.",
     "archivedCard": "Archiviertes Land — zählt nicht zu Päckchen oder Abschlusszielen.",
@@ -230,6 +230,14 @@
     "notDiscovered": "Noch nicht entdeckt. Das Land taucht bald in einem Päckchen auf."
   },
   "tour": {
+    "detour": "Umweg-Kilometer",
+    "detourHints": {
+      "near": "Unter 1.000 km: noch auf Kurs. Dein Kompass nickt zufrieden.",
+      "scenic": "1.000–4.999 km: die Panoramaroute? Die Postkarten werden toll.",
+      "adventure": "Ab 5.000 km: dein Kompass hat Urlaub beantragt. Was für ein Abenteuer!"
+    },
+    "debugReset": "Heutige Tour zurücksetzen",
+    "homeTitle": "Welttour",
     "beta": "Beta",
     "title": "Tägliche Welttour",
     "number": "Welttour #{{number}}",

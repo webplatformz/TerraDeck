@@ -61,12 +61,12 @@ test('unfinished retired challenges refund once, retain every historical field a
   }
 })
 
-test('refund reconciles elapsed refills first, caps at five and preserves shorter future deadlines', () => {
-  const full = reconcileRoster({ ...initial('country'), packs: 4 }, removed, 1000, DEFAULT_CONFIG)
-  assert.equal(full.packs, 5)
+test('refund reconciles elapsed refills first, caps at ten and preserves shorter future deadlines', () => {
+  const full = reconcileRoster({ ...initial('country'), packs: 9 }, removed, 1000, DEFAULT_CONFIG)
+  assert.equal(full.packs, 10)
   assert.equal(full.refillAt, null)
-  const accrued = reconcileRoster({ ...initial('continent'), packs: 3, refillAt: 500 }, removed, 1000, DEFAULT_CONFIG)
-  assert.equal(accrued.packs, 5)
+  const accrued = reconcileRoster({ ...initial('continent'), packs: 8, refillAt: 500 }, removed, 1000, DEFAULT_CONFIG)
+  assert.equal(accrued.packs, 10)
   assert.equal(accrued.refillAt, null)
   const noDeadline = reconcileRoster({ ...initial('country'), packs: 1, refillAt: null }, removed, 1000, DEFAULT_CONFIG)
   assert.equal(noDeadline.packs, 2)

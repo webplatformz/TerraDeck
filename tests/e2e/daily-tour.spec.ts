@@ -46,9 +46,28 @@ async function playStop(page: Page, id: string) {
   await expect(page.locator('.sheet .btn--primary')).toBeEnabled()
   await page.locator('.sheet .btn--primary').click()
   await expect(page.locator('.tour-feedback')).toBeVisible()
+  const current = Object.values((await dailyState(page)).dailyTours.records)[0] as { index: number; totalKm: number; answers: { correct: boolean }[] }
+  await expect(page.locator('.tour-stops > span').nth(current.index)).toHaveText(current.answers[current.index].correct ? '✓' : '×')
+  await expect(page.locator('.tour-detour summary strong')).toHaveText(new Intl.NumberFormat(await page.locator('html').getAttribute('lang') || 'en').format(current.totalKm) + ' km')
   await page.locator('.sheet .btn--primary').click()
   await expect(page.locator('.tour-feedback')).toHaveCount(0)
 }
+
+test('missed tour stops keep crosses and detour hints follow the running total', async ({ page }, info) => {
+  await prepare(page, info.project.name === 'iphone-16')
+  await page.locator('.tour-ticket').click()
+  await expect(page.locator('.daily-challenge')).toBeVisible()
+  await expect(page.locator('.tour-detour')).toHaveClass(/--near/)
+  await playStop(page, 'gr')
+  await expect(page.locator('.tour-stops > span').first()).toHaveText('×')
+  const run = Object.values((await dailyState(page)).dailyTours.records)[0] as { totalKm: number }
+  expect(run.totalKm).toBeGreaterThan(1000)
+  await expect(page.locator('.tour-detour')).toHaveClass(new RegExp(run.totalKm < 5000 ? '--scenic' : '--adventure'))
+  await page.locator('.tour-detour summary').click()
+  await expect(page.locator('.tour-detour p')).toBeVisible()
+  await page.reload()
+  await expect(page.locator('.tour-stops > span').first()).toHaveText('×')
+})
 
 test('daily tour resumes, rewards once and shares a numbered spoiler-free result', async ({ page }, info) => {
   test.setTimeout(45000)
@@ -110,27 +129,34 @@ test('daily tour resumes, rewards once and shares a numbered spoiler-free result
   await expect(page.locator('.daily-panel')).toBeVisible()
 })
 
-test('random debug practice scores misses without changing collection or daily attempts', async ({ page }, info) => {
+test('debug reset reopens the same daily tour without clearing progress', async ({ page }, info) => {
   test.setTimeout(45000)
   const de = info.project.name === 'iphone-16'
-  await page.addInitScript(() => { Math.random = () => 0.42 })
   await prepare(page, de)
-  const before = await dailyState(page)
-  await page.getByRole('button', { name: de ? 'Neue zufällige Übungstour' : 'New random practice tour', exact: true }).click()
+  const reset = page.getByRole('button', { name: de ? 'Heutige Tour zurücksetzen' : "Reset today's tour", exact: true })
+  await expect(reset).toBeDisabled()
+  await page.locator('.tour-ticket').click()
   await expect(page.locator('.daily-challenge')).toBeVisible()
-  const practice = (await dailyState(page)).dailyTours.practice
-  expect(new Set(practice.assignment.countryIds).size).toBe(5)
-  const wrong = COUNTRIES.find(c => c.continent === practice.assignment.continent && c.id !== practice.assignment.countryIds[0])!
-  await playStop(page, wrong.id)
-  for (const id of practice.assignment.countryIds.slice(1)) await playStop(page, id)
-  await expect(page.locator('.tour-summary')).toContainText(de ? '4/5 richtig' : '4/5 correct')
-  await expect(page.locator('.tour-share')).toHaveCount(0)
+  const run = Object.values((await dailyState(page)).dailyTours.records)[0] as { assignment: { countryIds: string[] } }
+  for (const id of run.assignment.countryIds) await playStop(page, id)
+  await page.locator('.tour-summary > .atlas-back').click()
+  const before = await dailyState(page)
+  await reset.click()
+  await expect(page.locator('.tour-ticket-hint')).toHaveText(de ? /Tour starten/ : /Start tour/)
   const after = await dailyState(page)
   expect(after.progress).toEqual(before.progress)
   expect(after.packs).toBe(before.packs)
   expect(after.achievements).toEqual(before.achievements)
   expect(Object.keys(after.dailyTours.records)).toHaveLength(0)
-  expect(after.dailyTours.practice.totalKm).toBeGreaterThan(0)
+  await page.reload()
+  await expect(reset).toBeDisabled()
+  await page.locator('.tour-ticket').click()
+  await expect(page.locator('.daily-challenge')).toBeVisible()
+  const restarted = Object.values((await dailyState(page)).dailyTours.records)[0] as { index: number; assignment: { countryIds: string[] } }
+  expect(restarted.index).toBe(0)
+  expect(restarted.assignment.countryIds).toEqual(run.assignment.countryIds)
+  await page.goto('/')
+  await expect(reset).toHaveCount(0)
 })
 
 test('unfinished daily tour expires at UTC midnight and a fresh numbered tour is available', async ({ page }, info) => {

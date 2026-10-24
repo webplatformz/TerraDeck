@@ -12,6 +12,22 @@ import { useContent } from '../i18n/useContent'
 import { ContinentMap, type MarkTone } from '../map/ContinentMap'
 import { useWorld } from '../map/useWorld'
 
+function DetourDistance({ km }: { km: number }) {
+  const { t, i18n } = useTranslation()
+  const level = km < 1000 ? 'near' : km < 5000 ? 'scenic' : 'adventure'
+  return (
+    <details className={`tour-detour tour-detour--${level}`}>
+      <summary aria-label={`${t('tour.detour')}: ${km} km. ${t(`tour.detourHints.${level}`)}`}>
+        <span>{t('tour.detour')}</span>
+        <strong>{new Intl.NumberFormat(i18n.resolvedLanguage).format(km)} km</strong>
+        <span className="tour-detour-meter" aria-hidden="true"><i /><i /><i /></span>
+        <span className="tour-detour-info" aria-hidden="true">ⓘ</span>
+      </summary>
+      <p>{t(`tour.detourHints.${level}`)}</p>
+    </details>
+  )
+}
+
 export function DailyTour({ game }: { game: Game }) {
   const { goToDaily, beginDailyTour } = game
   const { t, i18n } = useTranslation()
@@ -87,6 +103,7 @@ function TourRun({ game, run }: { game: Game; run: DailyRun }) {
         <AtlasBack onClick={back} />
         <p className="eyebrow">{label}</p><h1>{title}</h1>
         <h2>{t('tour.score', { correct: run.correctCount, distance: run.totalKm })}</h2>
+        <DetourDistance km={run.totalKm} />
         <p>{t(run.practice ? 'tour.practiceHint' : run.correctCount === 5 ? 'tour.perfect' : 'tour.noReward')}</p>
         <ol className="tour-breakdown">{run.answers.map(answer => <li key={answer.targetId}>
           <span aria-hidden="true">{answer.correct ? '✓' : '×'}</span><Flag countryId={answer.targetId} />
@@ -119,8 +136,14 @@ function TourRun({ game, run }: { game: Game; run: DailyRun }) {
         <AtlasBack onClick={back} />
         <div className="challenge-title"><span className="eyebrow">{label} · {continentName(assignment.continent)}</span><h1><Flag countryId={target.id} className="prompt-flag" />{t('tour.find', { country: countryName(target.id) })}</h1></div>
       </header>
-      <div className="steps tour-stops" aria-label={t('tour.stop', { current: run.index + 1 })}>{assignment.countryIds.map((id, index) =>
-        <span key={id} className={index === run.index ? 'is-current' : ''} aria-current={index === run.index ? 'step' : undefined}>{index < run.index ? '✓' : index + 1}</span>)}</div>
+      <div className="steps tour-stops" aria-label={t('tour.stop', { current: run.index + 1 })}>{assignment.countryIds.map((id, index) => {
+        const stopAnswer = run.answers[index]
+        return <span key={id} className={`${index === run.index ? 'is-current ' : ''}${stopAnswer ? stopAnswer.correct ? 'is-correct' : 'is-wrong' : ''}`}
+          aria-current={index === run.index ? 'step' : undefined}
+          aria-label={`${t('tour.stop', { current: index + 1 })}${stopAnswer ? `: ${t(stopAnswer.correct ? 'tour.correct' : 'tour.miss', { distance: stopAnswer.km })}` : ''}`}>
+          {stopAnswer ? stopAnswer.correct ? '✓' : '×' : index + 1}
+        </span>
+      })}</div>
       <div className="challenge-map">
         {world ? <ContinentMap key={`${run.id}:${run.index}`} world={world} continent={assignment.continent}
           interactive={run.phase === 'answer' && !busy} selected={selected} onSelect={setSelected}
@@ -128,6 +151,7 @@ function TourRun({ game, run }: { game: Game; run: DailyRun }) {
           pulse={answer ? target.mapName : null} label={continentName(assignment.continent)} /> : <p>{t('common.loadingMap')}</p>}
       </div>
       <section className="sheet" aria-live="polite">
+        <DetourDistance km={run.totalKm} />
         <p className="eyebrow">{title} · {t('tour.stop', { current: run.index + 1 })}</p>
         {run.practice && <p className="sheet-prompt">{t('tour.practiceHint')}</p>}
         {answer ? <>

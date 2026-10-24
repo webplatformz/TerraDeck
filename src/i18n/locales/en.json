@@ -205,7 +205,7 @@
   },
   "rosterUpdate": {
     "title": "A small atlas update",
-    "unfinished": "{{country}} is now excluded because it is difficult to select reliably on phones. Your unfinished encounter has been retired, with one pack returned up to the five-pack limit. Your existing progress is safe in the Collection archive.",
+    "unfinished": "{{country}} is now excluded because it is difficult to select reliably on phones. Your unfinished encounter has been retired, with one pack returned up to the ten-pack limit. Your existing progress is safe in the Collection archive.",
     "finished": "{{country}} is now excluded because it is difficult to select reliably on phones. Your completed result and progress have been preserved in the archive. No additional stamps, badges or pack refund were awarded.",
     "debug": "The queued debug target {{country}} was cleared because this country is no longer playable."
   },
@@ -217,7 +217,7 @@
     "resetContinent": "Reset {{continent}}",
     "resetDescription": "Clear discoveries, stamps and cards to learn again. Earned achievements, their dates and unfinished achievement progress stay intact. Packs still draw from all eligible countries, not only the reset continent.",
     "resetFilterHint": "Choose a continent above to reset only that continent.",
-    "resetConfirm": "{{scope}}?\n\nThis permanently clears the affected discoveries, stamps and cards, including archived countries. Achievements and their progress are kept. Pack stock and cooldown stay unchanged except that an affected unfinished encounter is cancelled and one pack refunded, up to five. Completed results get no refund. This cannot be undone.",
+    "resetConfirm": "{{scope}}?\n\nThis permanently clears the affected discoveries, stamps and cards, including archived countries. Achievements and their progress are kept. Pack stock and cooldown stay unchanged except that an affected unfinished encounter is cancelled and one pack refunded, up to ten. Completed results get no refund. This cannot be undone.",
     "resetDone": "{{scope}}: collection progress cleared. Your achievements are safe.",
     "archiveDescription": "These previously discovered countries are no longer playable because their map targets are too small. Your names, stamps and collected cards are preserved here, separately from atlas completion.",
     "archivedCard": "Archived country — not included in packs or completion totals.",
@@ -230,6 +230,14 @@
     "notDiscovered": "Not discovered yet. It will turn up in a pack."
   },
   "tour": {
+    "detour": "Detour distance",
+    "detourHints": {
+      "near": "Under 1,000 km: still on the trail. Your compass approves.",
+      "scenic": "1,000–4,999 km: taking the scenic route? The postcards will be lovely.",
+      "adventure": "5,000 km or more: your compass has requested a holiday. Quite the adventure!"
+    },
+    "debugReset": "Reset today's tour",
+    "homeTitle": "World Tour",
     "beta": "Beta",
     "title": "Daily World Tour",
     "number": "World Tour #{{number}}",

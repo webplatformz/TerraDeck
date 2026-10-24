@@ -12,7 +12,7 @@ import { acknowledgeAchievements, emptyAchievements, trackAchievements, type Ach
 import { addDebugPack as queueDebugPack } from '../domain/debug'
 import { reconcileRoster } from '../domain/rosterUpdate'
 import { resetCollection as clearCollection } from '../domain/resetCollection'
-import { acknowledgeTourUnlock, advanceDailyTour, answerDailyTour, expireDailyTours, getDailyRun, startDailyTour, startPracticeTour } from '../domain/dailyTour'
+import { acknowledgeTourUnlock, advanceDailyTour, answerDailyTour, expireDailyTours, getDailyAssignment, getDailyRun, startDailyTour } from '../domain/dailyTour'
 
 const removedIds = ARCHIVED_COUNTRIES.map(c => c.id)
 
@@ -118,9 +118,15 @@ export function useGame() {
     setRoute({ screen: 'daily', helpSection: null })
   }, [])
   const beginDailyTour = useCallback(() => mutate(s => startDailyTour(s, Date.now())), [mutate])
-  const beginPracticeTour = useCallback(() => {
+  const resetDailyTour = useCallback(() => {
     if (!debug) return Promise.resolve(undefined)
-    return mutate(s => startPracticeTour(s, Date.now(), Math.random))
+    return mutate(s => {
+      const today = getDailyAssignment(Date.now())
+      if (!today || !s.dailyTours || s.dailyTours.blocked) return s
+      const records = { ...s.dailyTours.records }
+      delete records[today.dayKey]
+      return { ...s, dailyTours: { ...s.dailyTours, records } }
+    })
   }, [debug, mutate])
   const chooseTourCountry = useCallback((answer: string, runId: string, index: number) =>
     mutate(s => answerDailyTour(s, answer, runId, index, Date.now())), [mutate])
@@ -204,7 +210,7 @@ export function useGame() {
     goToExpedition,
     goToDaily,
     beginDailyTour,
-    beginPracticeTour,
+    resetDailyTour,
     chooseTourCountry,
     nextTourStop,
     acknowledgeDailyUnlock,

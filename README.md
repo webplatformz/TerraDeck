@@ -76,7 +76,7 @@ iOS-only `xcode`/`uuid` tooling. It is a development dependency, not bundled gam
 code or an Android runtime dependency; reassess before expanding beyond the trial.
 
 In debug mode, the field before **add a pack** accepts a playable two-letter country code
-(for example `CH`, case-insensitive). It adds stock up to the usual five-pack cap and targets the
+(for example `CH`, case-insensitive). It adds stock up to the usual ten-pack cap and targets the
 next pack, even if that country is collected or was recently drawn. The target survives reloads,
 waits for any active challenge to finish, and is consumed once. Setting another code replaces it.
 An empty field only adds stock; an invalid or excluded code shows an error without changing the save.
@@ -98,6 +98,9 @@ Select and explicitly confirm each country, then review the answer before moving
 on. Correct answers score 0 km; other answers use rounded great-circle distances
 between fixed country reference points, not taps or borders. Compare correct
 answers first, total kilometres second.
+Stops show ticks for correct answers and crosses for misses. The running
+**Detour distance** uses green below 1,000 km, amber below 5,000 km, then red.
+Tap its indicator for a playful explanation; these bands do not affect scoring.
 
 A perfect 5/5 awards one stamp per country, capped at collection mastery. Daily
 play costs no packs and does not replace an ordinary challenge. Discovery,
@@ -111,9 +114,9 @@ to the public Pages site and open today's tour. Android WebView may only support
 the copy fallback; no native plugin is required. Results and date checks are local
 to this browser/device, not a cheat-proof leaderboard or cross-device account.
 
-In `?debug`, **New random practice tour** samples five unique countries from one
-random continent. Practice can be replaced or resumed, even before the official
-start date, and never awards progress or consumes the daily attempt.
+In `?debug`, **Reset today's tour** clears only today's attempt so the real daily
+flow can be replayed. Collection progress, earned stamps and previous days stay
+unchanged. Replaying uses normal rewards and can therefore earn further stamps.
 
 Fixed tours live in `src/data/dailyTours.ts`: each definition has a stable `id`,
 `continent`, five ordered `countryIds`, and `title: { en, de }`. Do not edit a
@@ -163,7 +166,7 @@ reloads. Clearing site data resets the game.
 Existing one-stamp progress stays intact; countries with two or three saved stamps count as collected.
 Historical stamp counts and unlock dates are preserved, while progress displays stop at two.
 
-Normal packs refill every **15 minutes**, up to five stored packs. Existing future refill deadlines
+Normal packs refill every **15 minutes**, up to ten stored packs. Existing future refill deadlines
 are capped at a 15-minute remaining wait; shorter waits and stored packs are preserved.
 
 ### Achievements
@@ -225,7 +228,7 @@ The published **190-card catalog** remains intact for archival compatibility: or
 rarity assignments and saved progress never change. Only 168 entries are playable; numbering gaps
 are intentional. Previously discovered excluded countries appear in a separate Collection archive,
 with their stamps and collected cards preserved but no contribution to completion totals.
-An unfinished challenge for an excluded country is retired with one pack refunded up to the cap of five;
+An unfinished challenge for an excluded country is retired with one pack refunded up to the cap of ten;
 completed results are preserved without a refund or replay. A persisted explanation survives reloads
 until dismissed. Queued debug targets for excluded countries are cleared with an explanation.
 Transcontinental countries use one accepted game continent, explained
@@ -296,7 +299,7 @@ Collection's **Learn again** controls reset all countries or the selected contin
 Affected discovery/stamps/cards (including archives) are cleared; earned achievements, original dates
 and unfinished achievement tracking remain intact. Repeated encounters count as new activity, while
 historical discovery/collection ID lists remain unique. Pack stock and refill deadlines are preserved
-apart from normal elapsed refills and a one-pack refund for an affected unfinished encounter (cap five).
+apart from normal elapsed refills and a one-pack refund for an affected unfinished encounter (cap ten).
 Affected completed results are cancelled without refund; other encounters stay intact. Resetting does
 not restrict draws to a continent. The debug-only full-save reset still clears everything, including badges.
 Unit and browser tests also run before GitHub Pages deployment. Challenge maps have a minimum

@@ -70,27 +70,29 @@ test('already-active legacy challenges neither reduce earned counts nor create d
   }
 })
 
-test('normal refill is exactly 15 minutes, debug remains 10 seconds, full capacity remains five', () => {
+test('normal refill is exactly 15 minutes, debug remains 10 seconds, full capacity is ten', () => {
   assert.equal(config.cooldownMs, 15 * minute)
   assert.equal(DEBUG_CONFIG.cooldownMs, 10_000)
-  assert.equal(config.maxPacks, 5)
+  assert.equal(config.maxPacks, 10)
   for (const rules of [config, DEBUG_CONFIG]) {
     const opened = openPack(createInitialState(rules), roster, 1000, () => 0, rules)
-    assert.equal(opened.packs, 4)
+    assert.equal(opened.packs, 9)
     assert.equal(opened.refillAt, 1000 + rules.cooldownMs)
-    assert.equal(syncPacks(opened, opened.refillAt - 1, rules).packs, 4)
+    assert.equal(syncPacks(opened, opened.refillAt - 1, rules).packs, 9)
     const filled = syncPacks(opened, opened.refillAt, rules)
-    assert.equal(filled.packs, 5)
+    assert.equal(filled.packs, 10)
     assert.equal(filled.refillAt, null)
   }
 })
 
-test('offline refills accrue at the new interval and stop at five', () => {
+test('offline refills accrue at the normal interval and stop at ten', () => {
   const stock = { packs: 0, refillAt: 15 * minute }
   assert.deepEqual(reconcilePacks(stock, 45 * minute, config), { packs: 3, refillAt: 60 * minute })
-  assert.deepEqual(reconcilePacks(stock, 75 * minute, config), { packs: 5, refillAt: null })
-  assert.deepEqual(reconcilePacks(stock, 300 * minute, config), { packs: 5, refillAt: null })
-  assert.deepEqual(reconcilePacks({ packs: 5, refillAt: 1 }, 1000, config), { packs: 5, refillAt: null })
+  assert.deepEqual(reconcilePacks(stock, 75 * minute, config), { packs: 5, refillAt: 90 * minute })
+  assert.deepEqual(reconcilePacks(stock, 150 * minute, config), { packs: 10, refillAt: null })
+  assert.deepEqual(reconcilePacks(stock, 300 * minute, config), { packs: 10, refillAt: null })
+  assert.deepEqual(reconcilePacks({ packs: 10, refillAt: 1 }, 1000, config), { packs: 10, refillAt: null })
+  assert.deepEqual(reconcilePacks({ packs: 5, refillAt: null }, 1000, config), { packs: 5, refillAt: 1000 + 15 * minute })
 })
 
 test('legacy future deadlines are capped without postponing shorter waits or granting early packs', () => {

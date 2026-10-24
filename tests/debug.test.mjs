@@ -14,8 +14,8 @@ test('debug pack targets normalize valid codes, cap stock, preserve active chall
   assert.equal(next.refillAt, 9000)
   assert.equal(next.debugCountryId, 'ch')
   assert.equal(parseGameState(JSON.parse(JSON.stringify(next))).debugCountryId, 'ch')
-  const full = addDebugPack({ ...next, packs: 5 }, 'JP', COUNTRIES, DEFAULT_CONFIG)
-  assert.equal(full.packs, 5)
+  const full = addDebugPack({ ...next, packs: 10 }, 'JP', COUNTRIES, DEFAULT_CONFIG)
+  assert.equal(full.packs, 10)
   assert.equal(full.refillAt, null)
   assert.equal(full.debugCountryId, 'jp')
   assert.equal(addDebugPack(full, '', COUNTRIES, DEFAULT_CONFIG).debugCountryId, 'jp')
@@ -30,7 +30,7 @@ test('invalid or non-playable debug codes throw without consuming stock or chang
   for (const code of ['x', 'xxx', 'zz', 'va', 'tv', '12']) {
     assert.throws(() => addDebugPack(state, code, COUNTRIES, DEFAULT_CONFIG), /playable/)
   }
-  assert.equal(state.packs, 5)
+  assert.equal(state.packs, 10)
   assert.deepEqual(state.progress, {})
   assert.throws(() => openPack(state, COUNTRIES, 100, () => 0, DEFAULT_CONFIG, 'zz'), /Unknown debug country/)
 })
@@ -41,7 +41,7 @@ test('forced debug draws bypass collected/recent exclusions without resetting ma
   state.recentIds = ['ch']
   const opened = openPack(state, COUNTRIES, 100, () => { throw new Error('Forced draw must not use RNG') }, DEFAULT_CONFIG, 'ch')
   assert.equal(opened.activeChallenge.countryId, 'ch')
-  assert.equal(opened.packs, 4)
+  assert.equal(opened.packs, 9)
   assert.deepEqual(opened.progress.ch, state.progress.ch)
   const continent = answerContinent(opened, 'europe', COUNTRIES, 101, DEFAULT_CONFIG)
   const result = trackAchievements(continent, answerCountry(continent, 'ch', 102, DEFAULT_CONFIG), COUNTRIES, 102)

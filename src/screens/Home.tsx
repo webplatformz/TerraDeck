@@ -43,7 +43,7 @@ export function Home({ game }: { game: Game }) {
 
       <section className="home-pack" aria-label={t('home.packs')}>
         <button type="button" className="pack-stack" onClick={game.goToExpedition} disabled={!canOpen} aria-label={active ? t('home.resumeExpedition') : t('home.openPack')}>
-          {Array.from({ length: Math.max(0, Math.min(state.packs, config.maxPacks) - 1) }, (_, i) => (
+          {Array.from({ length: Math.max(0, Math.min(state.packs - 1, 4)) }, (_, i) => (
             <span key={i} className="pack-ghost" style={{ ['--i' as string]: i + 1 }} />
           ))}
           <PackArt className={state.packs === 0 && !active ? 'is-empty' : ''} />
