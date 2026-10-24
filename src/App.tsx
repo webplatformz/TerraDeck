@@ -12,6 +12,7 @@ import { noticeStore } from './persistence/noticeStore'
 import { Achievements } from './screens/Achievements'
 import { AchievementNotification } from './components/AchievementNotification'
 import { RosterNotice } from './components/RosterNotice'
+import { DailyTour } from './screens/DailyTour'
 
 export function App() {
   const game = useGame()
@@ -23,12 +24,14 @@ export function App() {
   if (!game.loaded) return <div className="app" aria-busy={!game.storageError}>{game.storageError && <p role="alert">{t('achievements.storageError')}</p>}</div>
 
   return (
-    <div className={`app${screen === 'expedition' ? ' app--full' : ''}`}>
+    <div className={`app${screen === 'expedition' || screen === 'daily' ? ' app--full' : ''}`}>
       {noticeSessionOnly && <p className="notice-storage-hint" role="status">{t('notice.sessionOnly')}</p>}
       {game.storageError && <p className="notice-storage-hint" role="alert">{t('achievements.storageError')}</p>}
       {game.singleTabOnly && <p className="notice-storage-hint" role="status">{t('achievements.singleTab')}</p>}
       <RosterNotice game={game} />
-      {screen === 'expedition' ? (
+      {screen === 'daily' ? (
+        <DailyTour game={game} />
+      ) : screen === 'expedition' ? (
         <>
           <Expedition game={game} />
           <InfoFooter />
@@ -45,7 +48,7 @@ export function App() {
           </main>
         </>
       )}
-      <AchievementNotification game={game} enabled={noticeDismissed && !game.state.rosterNotice} />
+      <AchievementNotification game={game} enabled={noticeDismissed && !game.state.rosterNotice && screen !== 'daily'} />
       {!noticeDismissed && screen !== 'about' && (
         <ProjectNotice onDismiss={() => setNoticeDismissed(true)} onAcknowledge={() => {
           setNoticeSessionOnly(!noticeStore.acknowledge())

@@ -2,6 +2,7 @@ import type { GameConfig } from './config'
 import { reconcilePacks } from './packRefill'
 import { pickCountry, type Rng } from './selection'
 import type { ContinentId, CountryProgress, GameState, RosterEntry } from './types'
+import { awardMasteryStamp } from './mastery'
 
 export function createInitialState(config: GameConfig): GameState {
   return {
@@ -100,18 +101,16 @@ export function dismissChallenge(state: GameState): GameState {
 function finish(state: GameState, outcome: 'stamp' | 'missed', now: number, config: GameConfig): GameState {
   const challenge = state.activeChallenge!
   const before: CountryProgress = state.progress[challenge.countryId] ?? { stamps: 0, encounters: 0, unlockedAt: null }
-  const stamps = outcome === 'stamp' && before.stamps < config.stampsToUnlock ? Math.min(config.stampsToUnlock, before.stamps + 1) : before.stamps
-  const unlocked = outcome === 'stamp' && before.stamps < config.stampsToUnlock && stamps >= config.stampsToUnlock
+  const award = outcome === 'stamp' ? awardMasteryStamp(before, now, config.stampsToUnlock) : null
+  const unlocked = award?.unlocked ?? false
 
   return {
     ...state,
     progress: {
       ...state.progress,
       [challenge.countryId]: {
-        ...before,
-        stamps,
+        ...(award?.progress ?? before),
         encounters: before.encounters + 1,
-        unlockedAt: unlocked ? now : before.unlockedAt,
       },
     },
     activeChallenge: { ...challenge, step: 'result', outcome, unlocked },

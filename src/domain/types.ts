@@ -30,6 +30,7 @@ export interface GameState {
   schemaVersion: 1
   /** Optional, independently versioned extension; old saves start tracking fresh. */
   achievements?: import('./achievements').AchievementState
+  dailyTours?: import('./dailyTour').DailyTourState
   /** Debug-only target for the next opened pack; never used by normal draws. */
   debugCountryId?: string
   /** Preserves the last retired challenge verbatim, including completed results. */

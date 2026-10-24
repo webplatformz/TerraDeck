@@ -62,6 +62,8 @@ test.beforeEach(async ({ page }, testInfo) => {
 test('pack, continent, country and result work without resizing, including reload and resume', async ({ page }, testInfo) => {
   const language = testInfo.project.name === 'iphone-16' ? 'de' : 'en'
   await openChallenge(page)
+  await expect.poll(() => page.locator('.challenge-title .prompt-flag').evaluate(el => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0)
+  await expect(page.locator('.screen-bar .atlas-back')).toBeInViewport()
   await expectUsableMap(page, 'continent')
   await resumeChallenge(page)
   await page.locator('.orders .btn--primary').click()

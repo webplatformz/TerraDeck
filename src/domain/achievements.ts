@@ -82,15 +82,42 @@ export function trackAchievements(
     }
   }
   if (a === original) return next
+  return awardAchievements(next, a, roster, now, finished && challenge.unlocked)
+}
+
+function awardAchievements(
+  next: GameState, a: AchievementState, roster: readonly RosterEntry[], now: number, newUnlock: boolean,
+): GameState {
   const candidate = { ...next, achievements: a }
   const earned = { ...a.earned }
   for (const id of ACHIEVEMENT_IDS) {
     // Existing collections are consulted only on a genuinely new card unlock.
-    if ((id === 'complete-atlas' || id === 'complete-continent') && !(finished && challenge.unlocked)) continue
+    if ((id === 'complete-atlas' || id === 'complete-continent') && !newUnlock) continue
     const { current, target } = achievementProgress(id, candidate, roster)
     if (!earned[id] && current >= target) earned[id] = { at: now, acknowledged: false, target }
   }
   return { ...candidate, achievements: { ...a, earned } }
+}
+
+/** Daily events never manufacture ordinary encounter, miss or recovery evidence. */
+export function trackDailyAchievements(
+  before: GameState, next: GameState, roster: readonly RosterEntry[], now: number,
+  discoveredIds: readonly string[], stampedIds: readonly string[] = [], unlockedIds: readonly string[] = [],
+): GameState {
+  let a = before.achievements ?? emptyAchievements()
+  for (const id of discoveredIds) {
+    if (!knownBefore(before, id)) a = { ...a, discovered: add(a.discovered, id) }
+  }
+  for (const id of stampedIds) {
+    const country = roster.find(c => c.id === id)
+    if (!country) continue
+    a = { ...a,
+      visitors: a.visitors + ((before.progress[id]?.stamps ?? 0) === 0 ? 1 : 0),
+      stampedContinents: add(a.stampedContinents, country.continent),
+    }
+  }
+  for (const id of unlockedIds) a = { ...a, collected: add(a.collected, id) }
+  return awardAchievements(next, a, roster, now, unlockedIds.length > 0)
 }
 
 export function achievementProgress(

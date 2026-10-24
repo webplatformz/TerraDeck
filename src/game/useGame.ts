@@ -12,6 +12,7 @@ import { acknowledgeAchievements, emptyAchievements, trackAchievements, type Ach
 import { addDebugPack as queueDebugPack } from '../domain/debug'
 import { reconcileRoster } from '../domain/rosterUpdate'
 import { resetCollection as clearCollection } from '../domain/resetCollection'
+import { acknowledgeTourUnlock, advanceDailyTour, answerDailyTour, expireDailyTours, getDailyRun, startDailyTour, startPracticeTour } from '../domain/dailyTour'
 
 const removedIds = ARCHIVED_COUNTRIES.map(c => c.id)
 
@@ -41,7 +42,7 @@ export function useGame() {
   const now = useNow(1000)
   const [storageError, setStorageError] = useState(false)
   const mutate = useCallback((change: (state: GameState) => GameState) =>
-    repository.update(freshState, saved => change(reconcileRoster(saved, removedIds, Date.now(), config))).then(next => {
+    repository.update(freshState, saved => change(expireDailyTours(reconcileRoster(saved, removedIds, Date.now(), config), Date.now()))).then(next => {
       setState(next)
       return next
     }).catch((error: unknown) => {
@@ -52,7 +53,7 @@ export function useGame() {
   useEffect(() => {
     let cancelled = false
     void repository.update(freshState, saved => {
-      const synced = syncPacks(reconcileRoster(saved, removedIds, Date.now(), config), Date.now(), config)
+      const synced = syncPacks(expireDailyTours(reconcileRoster(saved, removedIds, Date.now(), config), Date.now()), Date.now(), config)
       return synced.achievements ? synced : { ...synced, achievements: emptyAchievements() }
     }).then((saved) => {
       if (cancelled) return
@@ -81,6 +82,19 @@ export function useGame() {
   }, [now, config, loaded, mutate, state.refillAt])
 
   useEffect(() => {
+    const expired = Object.values(state.dailyTours?.records ?? {}).some(run => run.status === 'active' && run.assignment.expiresAt <= now)
+    if (loaded && expired) void mutate(s => expireDailyTours(s, Date.now()))
+  }, [loaded, now, state.dailyTours, mutate])
+
+  useEffect(() => {
+    const resume = () => {
+      if (document.visibilityState === 'visible') void mutate(s => expireDailyTours(s, Date.now()))
+    }
+    document.addEventListener('visibilitychange', resume)
+    return () => document.removeEventListener('visibilitychange', resume)
+  }, [mutate])
+
+  useEffect(() => {
     const onHash = () => setRoute(routeFromHash(window.location.hash))
     window.addEventListener('hashchange', onHash)
     window.addEventListener('popstate', onHash)
@@ -98,6 +112,22 @@ export function useGame() {
 
   /** Shows the sealed pack (or the challenge in progress). Nothing is consumed yet. */
   const goToExpedition = useCallback(() => setRoute({ screen: 'expedition', helpSection: null }), [])
+  const goToDaily = useCallback((record = '') => {
+    const hash = record ? `#daily/${encodeURIComponent(record)}` : '#daily'
+    if (window.location.hash !== hash) window.history.pushState(null, '', hash)
+    setRoute({ screen: 'daily', helpSection: null })
+  }, [])
+  const beginDailyTour = useCallback(() => mutate(s => startDailyTour(s, Date.now())), [mutate])
+  const beginPracticeTour = useCallback(() => {
+    if (!debug) return Promise.resolve(undefined)
+    return mutate(s => startPracticeTour(s, Date.now(), Math.random))
+  }, [debug, mutate])
+  const chooseTourCountry = useCallback((answer: string, runId: string, index: number) =>
+    mutate(s => answerDailyTour(s, answer, runId, index, Date.now())), [mutate])
+  const nextTourStop = useCallback((runId: string, index: number) =>
+    mutate(s => getDailyRun(s, runId)?.index === index ? advanceDailyTour(s, runId, Date.now()) : s), [mutate])
+  const acknowledgeDailyUnlock = useCallback((id: string) =>
+    mutate(s => acknowledgeTourUnlock(s, id)), [mutate])
 
   const ripPack = useCallback(
     () => {
@@ -172,6 +202,12 @@ export function useGame() {
     debug,
     navigate,
     goToExpedition,
+    goToDaily,
+    beginDailyTour,
+    beginPracticeTour,
+    chooseTourCountry,
+    nextTourStop,
+    acknowledgeDailyUnlock,
     ripPack,
     chooseContinent,
     chooseCountry,

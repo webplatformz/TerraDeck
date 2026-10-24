@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { KeyboardEvent, PointerEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Flag } from '../components/Flag'
+import { AtlasBack } from '../components/AtlasBack'
 import { PackArt } from '../components/PackArt'
 import { StampRow } from '../components/Stamp'
 import { RarityBadge } from '../components/RarityBadge'
@@ -82,9 +83,7 @@ export function Expedition({ game }: { game: Game }) {
   return (
     <div className="expedition">
       <header className="screen-bar">
-        <button type="button" className="icon-btn" onClick={close} aria-label={t('common.backToAtlas')}>
-          ×
-        </button>
+        <AtlasBack onClick={close} />
         <span className="screen-bar-title">{phase === 'orders' ? t('expedition.ordersTitle') : t('expedition.packTitle')}</span>
         <span className="icon-btn-spacer" />
       </header>

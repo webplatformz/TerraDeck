@@ -51,7 +51,13 @@ export function About({ game }: { game: Game }) {
       {game.state.activeChallenge && <button type="button" className="btn btn--ghost" onClick={game.goToExpedition}>{t('home.resumeExpedition')}</button>}
       <section className="help-group" aria-labelledby="help-playing">
         <h2 id="help-playing">{t('help.playing')}</h2>
-        {textEntry('play', t('help.play.title'), t('help.play.body'))}
+        <Entry id="play" title={t('help.play.title')}>
+          <p>{t('help.play.body')}</p>
+          <h4>{t('tour.title')}</h4>
+          <p>{t('tour.rules')}</p>
+          <p>{t('tour.distance')}</p>
+          <p>{t('tour.expired')}</p>
+        </Entry>
         {textEntry('packs', t('help.packs.title'), t('help.packs.body', { cooldown, max: maxPacks }))}
         {textEntry('map', t('help.map.title'), t('help.map.body'))}
         <Entry id="saving" title={t('help.saving.title')}>

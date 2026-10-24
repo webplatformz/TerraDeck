@@ -6,6 +6,7 @@ import { COUNTRIES } from '../data/countries'
 import { useContent } from '../i18n/useContent'
 import { ACHIEVEMENT_IDS } from '../domain/achievements'
 import type { Game } from '../game/useGame'
+import { DailyTourPanel } from '../components/DailyTourPanel'
 
 export function formatCountdown(ms: number): string {
   const total = Math.max(0, Math.ceil(ms / 1000))
@@ -97,6 +98,8 @@ export function Home({ game }: { game: Game }) {
           </button>
         )}
       </section>
+
+      <DailyTourPanel game={game} />
 
       <button
         type="button"

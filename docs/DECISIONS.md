@@ -1,5 +1,27 @@
 # TerraDeck — Decisions
 
+## Daily World Tour
+
+- One numbered five-stop tour per UTC day, starting with #1 at
+  `2026-10-23T00:00:00Z`. Initially three fixed Europe/Africa/Asia tours rotate.
+  Future schedules must be forward-effective rather than reassign published days.
+- Same continent and ordered targets for everyone; explicit country confirmation,
+  then answer reveal and Continue. No continent question or auto-submit delay.
+- Correct = 0 km; wrong = rounded great-circle distance between frozen country
+  reference points. Rank correct count before kilometres. This is an estimated game
+  distance, not a border-distance measurement or precision pin placement.
+- Only 5/5 rewards stamps; capped mastery and atomic once-only rewards. Discovery
+  happens as each stop is presented. Mastery/collection/discovery achievements
+  count, regular encounter/perfect/miss-specific achievements do not.
+- Normal pack progress remains independent. Learning resets retain daily attempts
+  and rewards; unfinished daily runs expire at midnight. Completed results remain
+  shareable with their original number.
+- Browser sharing with copy/manual-copy fallback; canonical public Pages URL,
+  no answers or debug parameters. No native Android sharing plugin, backend,
+  account or leaderboard. Local device-clock/save limitations are intentional.
+- Debug random practice samples five unique countries from one random continent
+  and has no discovery, mastery, achievement, daily-attempt or pack effects.
+
 ## Country knowledge stages
 
 - Silver Visitor unlocks capital, approximate population and area in Collection

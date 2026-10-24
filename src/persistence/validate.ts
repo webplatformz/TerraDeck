@@ -1,5 +1,6 @@
 import type { ActiveChallenge, CountryProgress, GameState } from '../domain/types'
 import type { AchievementState } from '../domain/achievements'
+import { validateDailyTours } from './validateDailyTours'
 
 const isObject = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v)
 const isNum = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v)
@@ -65,7 +66,8 @@ export function parseGameState(raw: unknown): GameState | null {
   }
   if (raw.achievements !== undefined && !isAchievementState(raw.achievements)) {
     console.warn('TerraDeck: invalid achievement extension; country progress preserved')
-    return { ...raw, achievements: undefined } as unknown as GameState
+    return parseGameState({ ...raw, achievements: undefined })
   }
+  if (raw.dailyTours !== undefined) return { ...raw, dailyTours: validateDailyTours(raw.dailyTours) } as unknown as GameState
   return raw as unknown as GameState
 }

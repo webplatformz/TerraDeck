@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { StampRow } from '../components/Stamp'
 import { Flag } from '../components/Flag'
+import { AtlasBack } from '../components/AtlasBack'
 import { UnlockSequence } from '../components/UnlockSequence'
 import { CONTINENTS } from '../data/continents'
 import { COUNTRY_BY_ID, COUNTRY_BY_MAP_NAME } from '../data/countries'
@@ -98,12 +99,10 @@ export function Challenge({ game, world }: { game: Game; world: WorldData }) {
   return (
     <div className="challenge">
       <header className="screen-bar">
-        <button type="button" className="icon-btn" onClick={() => game.navigate('home')} aria-label={t('common.backToAtlas')}>
-          ×
-        </button>
+        <AtlasBack onClick={() => game.navigate('home')} />
         <div className="challenge-title">
           <span className="eyebrow">{t('challenge.find')}</span>
-          <h1>{name}</h1>
+          <h1><Flag countryId={country.id} className="prompt-flag" />{name}</h1>
         </div>
         <StampRow stamps={progress?.stamps ?? 0} code={country.id} size={22} />
       </header>

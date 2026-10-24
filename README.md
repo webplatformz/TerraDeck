@@ -86,6 +86,43 @@ Normal mode ignores debug targets. Test encounters use the normal mastery and ac
 
 English (default) and German. Texts live in `src/i18n/locales/*.json`; to add a language, add a JSON file and register it in `src/i18n/index.ts`. The choice is stored under `terradeck:lang`.
 
+### Daily World Tour
+
+Home offers one shared, five-country tour on a single announced continent each
+UTC day. Tour #1 starts at `2026-10-23T00:00:00Z`; the three predefined Europe,
+Africa and Asia tours rotate, while public daily numbers continue increasing.
+Home starts or resumes the tour directly, without an extra introduction screen.
+The panel shows only today's tour, without a countdown or previous-results links.
+It carries a Beta badge while the initial three-tour selection is being trialled.
+Select and explicitly confirm each country, then review the answer before moving
+on. Correct answers score 0 km; other answers use rounded great-circle distances
+between fixed country reference points, not taps or borders. Compare correct
+answers first, total kilometres second.
+
+A perfect 5/5 awards one stamp per country, capped at collection mastery. Daily
+play costs no packs and does not replace an ordinary challenge. Discovery,
+mastery and collection achievements count, but normal encounter/perfect/mistake
+counters do not. Reloads resume the run; unfinished runs expire at midnight UTC.
+Learning resets do not reopen daily attempts or reclaim rewards.
+
+Completed results can be shared without answers using the browser share sheet,
+copied, or manually selected if clipboard access is unavailable. Links always point
+to the public Pages site and open today's tour. Android WebView may only support
+the copy fallback; no native plugin is required. Results and date checks are local
+to this browser/device, not a cheat-proof leaderboard or cross-device account.
+
+In `?debug`, **New random practice tour** samples five unique countries from one
+random continent. Practice can be replaced or resumed, even before the official
+start date, and never awards progress or consumes the daily attempt.
+
+Fixed tours live in `src/data/dailyTours.ts`: each definition has a stable `id`,
+`continent`, five ordered `countryIds`, and `title: { en, de }`. Do not edit a
+published schedule. Add a future-midnight entry to `DAILY_SCHEDULES` with a new
+version and widen the assignment/validator version support while retaining older
+versions. The new rotation starts on its effective date; daily numbering continues.
+Scoring references are frozen in `src/data/generated/tour-references-v1.json`;
+do not regenerate published references in place.
+
 ### Country introductions and field notes
 
 The first (Silver Visitor) stamp opens a compact introduction: capital, approximate
