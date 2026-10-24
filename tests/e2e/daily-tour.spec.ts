@@ -43,6 +43,8 @@ async function playStop(page: Page, id: string) {
   await expect.poll(async () => await page.locator('.map-lens, .map-land.is-selected').count()).toBeGreaterThan(0)
   if (await page.locator('.map-lens').count()) await clickLand(true)
   await expect(page.locator('.map-land.is-selected').first()).toHaveAttribute('data-name', name)
+  await expect.poll(() => page.locator('.challenge-map .map-svg > g').first().evaluate(el =>
+    (el as SVGGElement).transform.baseVal.consolidate()?.matrix.a ?? 1)).toBeCloseTo(1.5)
   await expect(page.locator('.sheet .btn--primary')).toBeEnabled()
   await page.locator('.sheet .btn--primary').click()
   await expect(page.locator('.tour-feedback')).toBeVisible()

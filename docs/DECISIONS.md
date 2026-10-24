@@ -1,10 +1,39 @@
 # TerraDeck — Decisions
 
+## Saved-data evolution
+
+- Check backward compatibility before changing persisted structures, validators,
+  or saved-field semantics. Prefer additive optional fields and safe initialization
+  of new feature data; retain the current version when older saves remain compatible.
+- Incompatible changes require a version bump for the affected schema or extension
+  and, wherever possible, an explicit, retry-safe migration separate from game rules.
+  Preserve original saves and verify affected legacy saves with focused tests.
+- Preserve unsupported newer saves without overwriting them or silently resetting
+  progress; report incompatibility when no safe migration exists. This is a required
+  safeguard before introducing an incompatible main-save version, not a claim that
+  the current v1 loader already provides it.
+- Contributor instructions live in `.github/copilot-instructions.md`.
+
 ## Daily World Tour
 
 - One numbered five-stop tour per UTC day, starting with #1 at
   `2026-10-23T00:00:00Z`. Initially three fixed Europe/Africa/Asia tours rotate.
+  Schedule v2 starts `2026-10-25T00:00:00Z`: 36 unique, named routes span
+  six continents. Keep v1 assignments readable.
   Future schedules must be forward-effective rather than reassign published days.
+- The catalogue mixes 12 regional, 13 thematic and 11 dispersed journeys.
+  Themes use English display names (five letters, shared S initials, `stan`
+  endings) or the five smallest/largest playable countries on a continent by
+  stored area. These rankings do not claim to include non-playable microstates.
+  Dispersed routes retain substantial map jumps; thematic routes can deliberately
+  be more predictable. Names are localized, with the English-name basis explicit
+  in the German five-letter title. Full country coverage and a fixed route count
+  are guidelines, not requirements; quality takes priority. Completion targets,
+  localized descriptions and gold badge numbers follow the catalogue size.
+  This revision was made on 24 October,
+  before schedule v2 becomes available; published v1 definitions remain unchanged.
+  Save and extension versions stay unchanged: no persisted format changes or
+  migration are needed, and existing v1 results and achievement evidence are retained.
 - Same continent and ordered targets for everyone; explicit country confirmation,
   then answer reveal and Continue. No continent question or auto-submit delay.
 - Correct = 0 km; wrong = rounded great-circle distance between frozen country
@@ -231,6 +260,17 @@
   Caribbean.
 - Rings mark small selected or revealed countries so they stay visible at low zoom. With reduced motion,
   the map transitions are instant. Continent selection has no auto-submit timer.
+- The continent-selection world map uses the same bottom-left zoom controls,
+  pinch/wheel zoom, bounded panning and reset interaction as the country map,
+  capped at 4× rather than 8×. Double-tap zoom is disabled; dragging does not
+  select an answer. Zooming retains the pending selection and explicit confirmation.
+  Selecting a continent on the map or via a button gently recenters it at a minimum
+  1.5× zoom, retaining a higher manual zoom. Neighbours remain reachable, and reset
+  returns to the world overview without clearing the pending answer.
+- Country selections in normal challenges and daily tours use the same gentle
+  minimum 1.5× recentering, without reducing higher manual zoom. Selection through
+  the small-country magnifier also recenters; answer-reveal framing takes priority.
+  View transforms are temporary UI state, so the save format is unchanged.
 
 ## Technical
 - Reference project for structure and tooling: webplatformz/-boring-game-name-.
@@ -251,10 +291,16 @@
 
 ## Achievements
 
-- **20 cosmetic badges**, five in each category: First footsteps, Atlas builder, Finding your
-  bearings and Expedition oddities. The separate **Achievements / Erfolge** screen uses
+- **27 cosmetic badges**: five each in First footsteps, Atlas builder, Finding your
+  bearings and Expedition oddities, plus seven in World traveller. The separate **Achievements / Erfolge** screen uses
   `#achievements`. Badges do not alter packs, cooldowns, randomness, rarity or mastery.
-  No consecutive-success or calendar-day achievements; no goal family has more than three tiers.
+  No streaks or consecutive-day requirements; no goal family has more than three tiers.
+- **Tour evidence:** first completed official result per UTC day is retained independently
+  of resettable daily runs. Backfill valid existing completions; never count practice or
+  repeat debug attempts as additional days. Later rotations can perfect missing routes.
+  Goals: first tour, ten days, first perfect, five perfect days, a miss within 500 km,
+  all catalogue routes completed, and all catalogue routes perfected. Tour and atlas completion
+  use special gold Explorer-stamp badges and celebratory notifications.
 - **Stable IDs and pure rules:** `src/domain/achievements.ts` owns tracking, progress and evaluation;
   the UI and repository do not define eligibility. Evaluate actual pack-opening and completed-encounter
   transitions, not renders or timers. An unfinished encounter earns no encounter credit.

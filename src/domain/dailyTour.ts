@@ -2,7 +2,7 @@ import { geoDistance } from 'd3-geo'
 import { COUNTRIES } from '../data/countries'
 import { DAILY_SCHEDULES } from '../data/dailyTours'
 import references from '../data/generated/tour-references-v1.json'
-import { trackDailyAchievements } from './achievements'
+import { trackDailyAchievements, reconcileTourAchievements } from './achievements'
 import { awardMasteryStamp } from './mastery'
 import type { Rng } from './selection'
 import type { ContinentId, CountryProgress, GameState } from './types'
@@ -18,7 +18,7 @@ export interface DailyAssignment {
   dayKey: string
   expiresAt: number
   definitionId: string
-  version: 1
+  version: 1 | 2
   continent: ContinentId
   countryIds: string[]
   title: { en: string; de: string }
@@ -159,7 +159,8 @@ export function answerDailyTour(
     }
     updated = { ...updated, rewards: { applied: true, stampedIds, unlockedIds }, pendingUnlockIds: [...unlockedIds] }
   }
-  return putRun(next, updated)
+  const saved = putRun(next, updated)
+  return completed && !run.practice ? reconcileTourAchievements(saved, now) : saved
 }
 
 export function advanceDailyTour(state: GameState, expectedRunId: string, now: number): GameState {

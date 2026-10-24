@@ -89,11 +89,16 @@ English (default) and German. Texts live in `src/i18n/locales/*.json`; to add a 
 ### Daily World Tour
 
 Home offers one shared, five-country tour on a single announced continent each
-UTC day. Tour #1 starts at `2026-10-23T00:00:00Z`; the three predefined Europe,
-Africa and Asia tours rotate, while public daily numbers continue increasing.
+UTC day. Tour #1 starts at `2026-10-23T00:00:00Z`. The original three-tour schedule
+is preserved; from `2026-10-25T00:00:00Z`, 36 bilingual routes rotate across all
+six continents: 12 regional journeys, 13 themed journeys and 11 dispersed journeys.
+Themes include five-letter English names, shared initials, names ending in
+`stan`, and the five smallest/largest playable countries by area on a continent.
+Route quality takes priority over covering every country or fixing the route count.
+Daily numbers keep increasing.
 Home starts or resumes the tour directly, without an extra introduction screen.
 The panel shows only today's tour, without a countdown or previous-results links.
-It carries a Beta badge while the initial three-tour selection is being trialled.
+It carries a Beta badge while daily tours are being trialled.
 Select and explicitly confirm each country, then review the answer before moving
 on. Correct answers score 0 km; other answers use rounded great-circle distances
 between fixed country reference points, not taps or borders. Compare correct
@@ -117,6 +122,13 @@ to this browser/device, not a cheat-proof leaderboard or cross-device account.
 In `?debug`, **Reset today's tour** clears only today's attempt so the real daily
 flow can be replayed. Collection progress, earned stamps and previous days stay
 unchanged. Replaying uses normal rewards and can therefore earn further stamps.
+Tour achievements retain only the first completed result per UTC day, so debug
+replays cannot inflate them. Seven World traveller badges reward the first/10th
+tour, first/fifth perfect tour, a non-perfect finish within 500 km, every catalogue route
+completed and every route perfected. Targets and badge labels follow the catalogue size.
+Repeats on later days can perfect missing routes.
+Existing saved completions count; learning resets preserve this evidence.
+Perfecting every route and collecting the whole atlas earn special gold badges.
 
 Fixed tours live in `src/data/dailyTours.ts`: each definition has a stable `id`,
 `continent`, five ordered `countryIds`, and `title: { en, de }`. Do not edit a
@@ -171,12 +183,13 @@ are capped at a 15-minute remaining wait; shorter waits and stored packs are pre
 
 ### Achievements
 
-Open **Achievements / Erfolge** (`#achievements`) for 20 cosmetic explorer badges across four
+Open **Achievements / Erfolge** (`#achievements`) for 27 cosmetic explorer badges across five
 categories. Visible goals have progress bars and exact counters; two playful surprises stay hidden
-behind hints until earned. No consecutive-success goals, date requirements, sound or video.
+behind hints until earned. No consecutive-success or daily streak goals, sound or video.
 Home links to achievements through an earned-count card; the atlas progress panel still opens Collection.
 
-Tracking starts fresh when this feature first loads: old activity is not backfilled. Newly unlocked
+Ordinary encounter tracking starts fresh when this feature first loads: old activity is not backfilled.
+Tour badges can use saved daily results. Newly unlocked
 cards count, including countries that already had a stamp. Continent/atlas completion checks the full
 collection after the next new card unlock. Earned badges retain their date and completed target even
 when the roster expands; resetting progress removes badges too.

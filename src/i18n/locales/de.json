@@ -19,7 +19,7 @@
     "eyebrow": "Kleine Erfolge, große Abenteuer",
     "intro": "Ein paar Andenken für deine Neugier. Ganz ohne zusätzliche Hausaufgaben.",
     "total": "{{count}} / {{total}} Abzeichen verdient",
-    "freshStart": "Für Aktivitätsziele zählen neue Entdeckungen, Stempel und Karten seit Beginn der Erfolgserfassung. Abschlussziele prüfen nach deiner nächsten freigeschalteten Karte die ganze Sammlung. Verdiente Abzeichen bleiben dir, auch wenn der Atlas wächst.",
+    "freshStart": "Für Aktivitätsziele zählen neue Entdeckungen, Stempel und Karten seit Beginn der Erfolgserfassung. Abschlussziele prüfen nach deiner nächsten freigeschalteten Karte die ganze Sammlung. Gespeicherte Tagesergebnisse zählen für Tour-Abzeichen. Verdiente Abzeichen bleiben dir, auch wenn der Atlas wächst.",
     "earned": "Verdient",
     "locked": "Noch nicht verdient",
     "hidden": "Eine kleine Überraschung",
@@ -29,16 +29,25 @@
     "notificationOne": "Abzeichen verdient",
     "notificationMany": "{{count}} Abzeichen verdient",
     "notificationSummary": "Eine Expedition, gleich mehrere kleine Erfolge.",
+    "goldCelebration": "Ein goldener Meilenstein. Was für eine Reise!",
     "view": "Abzeichen ansehen",
     "storageError": "Der Fortschritt konnte nicht aktualisiert werden. Bitte lade die Seite neu, bevor du weiterspielst.",
     "singleTab": "Dieser Browser kann Spielstände nicht zwischen Tabs koordinieren. Bitte spiele nur in einem Tab.",
     "categories": {
+      "traveller": "Weltenbummler",
       "footsteps": "Erste Schritte",
       "builder": "Atlas im Aufbau",
       "bearings": "Gut orientiert",
       "oddities": "Expeditionskuriositäten"
     },
     "badges": {
+      "tour-first": { "name": "Bordkarte", "description": "Beende deine erste tägliche Tour." },
+      "tour-ten": { "name": "Vielflieger", "description": "Beende tägliche Touren an 10 verschiedenen UTC-Tagen." },
+      "tour-perfect": { "name": "Perfekt auf Kurs", "description": "Beende eine tägliche Tour mit fünf richtigen Antworten." },
+      "tour-perfect-five": { "name": "Punktlandung", "description": "Beende fünf perfekte tägliche Touren an verschiedenen UTC-Tagen." },
+      "tour-pinpoint": { "name": "Fast punktgenau", "description": "Beende eine tägliche Tour mit einem Fehler, aber höchstens 500 km Gesamtabweichung." },
+      "tour-all": { "name": "Alle Wege bereist", "description": "Beende alle {{routeCount}} Routen. Wiederkehrende Touren zählen für noch fehlende Routen." },
+      "tour-all-perfect": { "name": "Goldener Kompass", "description": "Finde auf allen {{routeCount}} Routen zu 5/5. Jede Rückkehr ist eine neue Chance, ans Ziel zu kommen.", "earnedDescription": "Jede Route gemeistert. Kein Land am falschen Platz. Du bist drangeblieben, hast gelernt und deinen Weg gefunden. Dieser Kompass gehört dir. Du hast ihn dir verdient." },
       "first-encounter": {
         "name": "Und los!",
         "description": "Beende deine erste Begegnung, ob richtig oder falsch."
@@ -77,7 +86,8 @@
       },
       "complete-atlas": {
         "name": "Atlas? Durchgespielt",
-        "description": "Sammle alle Länder des aktuellen spielbaren Atlas."
+        "description": "Hole jedes Land des spielbaren Atlas in deine Sammlung. Mach dir die Welt vertraut, eine Entdeckung nach der anderen.",
+        "earnedDescription": "Weißt du noch, als diese Karte voller unbekannter Länder war? Du hast jedem einen Platz in deiner Erinnerung gegeben. Schau, wie weit du gekommen bist. Dieser Atlas gehört dir."
       },
       "perfect-5": {
         "name": "Fünf gute Treffer",

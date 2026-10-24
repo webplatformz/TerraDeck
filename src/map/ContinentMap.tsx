@@ -40,6 +40,7 @@ interface Shape {
 
 const PAD = 12
 const MAX_ZOOM = 8
+const SELECTION_ZOOM = 1.5
 /** Countries smaller than this on screen can also be picked by tapping near them. */
 const SMALL_PX = 30
 /** Two or more small countries within this radius of a tap open the magnifier. */
@@ -171,6 +172,20 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
     const duration = home === zoomIdentity || prefersReducedMotion() ? 0 : 700
     select(svg).transition().duration(duration).call(behavior.transform, home)
   }, [home, geo])
+
+  useEffect(() => {
+    const svg = svgRef.current
+    const behavior = zoomRef.current
+    if (!svg || !behavior || !geo || !selected || !interactive || focusKey) return
+    const shape = geo.byName.get(selected)
+    if (!shape?.member || !shape.centroid.every(Number.isFinite)) return
+    const scale = Math.max(SELECTION_ZOOM, transformRef.current.k)
+    const desired = zoomIdentity
+      .translate(w / 2 - shape.centroid[0] * scale, h / 2 - shape.centroid[1] * scale)
+      .scale(scale)
+    const target = behavior.constrain()(desired, [[0, 0], [w, h]], [[0, 0], [w, h]])
+    select(svg).transition().duration(prefersReducedMotion() ? 0 : 400).call(behavior.transform, target)
+  }, [selected, interactive, focusKey, geo, w, h])
 
   const zoomBy = (factor: number) => {
     const svg = svgRef.current

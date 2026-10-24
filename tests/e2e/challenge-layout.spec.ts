@@ -114,6 +114,62 @@ test('wrong-continent answer reveals the country panel and flag', async ({ page 
   await expect(page.locator('.answer-place--single')).toBeVisible()
 })
 
+test('continent map shares zoom controls, caps at four and keeps gestures separate from answers', async ({ page }, testInfo) => {
+  const de = testInfo.project.name === 'iphone-16'
+  await openChallenge(page)
+  const svg = page.locator('.challenge-map .map-svg')
+  const scale = () => svg.evaluate(el => (el as SVGSVGElement & { __zoom: { k: number } }).__zoom.k)
+  const zoomIn = page.getByRole('button', { name: de ? 'Hineinzoomen' : 'Zoom in', exact: true })
+  const reset = page.getByRole('button', { name: de ? 'Ansicht zurücksetzen' : 'Reset view', exact: true })
+  for (const expected of [2, 4, 4]) {
+    await zoomIn.click()
+    await expect.poll(scale).toBeCloseTo(expected)
+  }
+  await page.getByRole('button', { name: de ? 'Herauszoomen' : 'Zoom out', exact: true }).click()
+  await expect.poll(scale).toBeCloseTo(2)
+  const box = (await svg.boundingBox())!
+  const x = box.x + box.width / 2
+  const y = box.y + box.height / 2
+  if (testInfo.project.use.hasTouch) {
+    const session = await page.context().newCDPSession(page)
+    await session.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: x - 20, y, id: 0 }, { x: x + 20, y, id: 1 }] })
+    for (const gap of [25, 35, 45, 60]) {
+      await session.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: x - gap, y, id: 0 }, { x: x + gap, y, id: 1 }] })
+    }
+    await session.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] })
+    await expect.poll(scale).toBeCloseTo(4)
+    await session.detach()
+  } else {
+    const before = await svg.locator(':scope > g').getAttribute('transform')
+    await page.mouse.move(x, y)
+    await page.mouse.down()
+    await page.mouse.move(x + 45, y + 25, { steps: 8 })
+    await page.mouse.up()
+    await expect(svg.locator(':scope > g')).not.toHaveAttribute('transform', before!)
+  }
+  await expect(page.locator('.map-continent.is-picked')).toHaveCount(0)
+  await expect(page.locator('.sheet .btn--primary')).toBeDisabled()
+  await reset.click()
+  await expect.poll(scale).toBeCloseTo(1)
+  await expectUsableMap(page, 'continent')
+  const europe = page.getByRole('button', { name: de ? 'Europa' : 'Europe', exact: true })
+  await europe.click()
+  await expect.poll(scale).toBeCloseTo(1.5)
+  await zoomIn.click()
+  await expect.poll(scale).toBeCloseTo(3)
+  await page.getByRole('button', { name: de ? 'Afrika' : 'Africa', exact: true }).click()
+  await expect(page.locator('.map-continent.is-picked')).toHaveAttribute('data-continent', 'africa')
+  await expect.poll(scale).toBeCloseTo(3)
+  await reset.click()
+  await expect.poll(scale).toBeCloseTo(1)
+  await expect(page.locator('.map-continent.is-picked')).toHaveAttribute('data-continent', 'africa')
+  await page.locator('.map-continent[data-continent="europe"]').dispatchEvent('click')
+  await expect.poll(scale).toBeCloseTo(1.5)
+  await expect(europe).toHaveClass(/is-picked/)
+  await page.locator('.sheet .btn--primary').click()
+  await expect(page.locator('.challenge-map path[data-name="France"]')).toBeAttached()
+})
+
 test('continent choices remain editable until explicit confirmation across map and buttons', async ({ page }, testInfo) => {
   const language = testInfo.project.name === 'iphone-16' ? 'de' : 'en'
   await openChallenge(page)
@@ -158,6 +214,8 @@ test('wrong-country feedback preserves flags and map markers after reload', asyn
   await expect(germany).toBeVisible()
   if (testInfo.project.use.hasTouch) await germany.tap()
   else await germany.click()
+  await expect.poll(() => page.locator('.challenge-map .map-svg > g').first().evaluate(el =>
+    (el as SVGGElement).transform.baseVal.consolidate()?.matrix.a ?? 1)).toBeCloseTo(1.5)
   await expect(page.locator('.answer-comparison')).toHaveCount(0)
   await page.locator('.sheet .btn--primary').click()
   await expect(page.locator('.answer-place--wrong')).toContainText(language === 'en' ? 'Germany' : 'Deutschland')

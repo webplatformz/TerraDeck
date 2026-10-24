@@ -31,10 +31,10 @@ const memoryStorage = () => {
   return { getItem: k => map.get(k) ?? null, setItem: (k, v) => map.set(k, v), removeItem: k => map.delete(k) }
 }
 
-test('20 stable IDs, four coherent categories and complete bilingual definitions', () => {
-  assert.equal(ACHIEVEMENT_IDS.length, 20)
-  assert.equal(new Set(ACHIEVEMENT_IDS).size, 20)
-  for (const c of ACHIEVEMENT_CATEGORIES) assert.equal(ACHIEVEMENT_IDS.filter(id => achievementCategory(id) === c).length, 5)
+test('27 stable IDs, five coherent categories and complete bilingual definitions', () => {
+  assert.equal(ACHIEVEMENT_IDS.length, 27)
+  assert.equal(new Set(ACHIEVEMENT_IDS).size, 27)
+  for (const c of ACHIEVEMENT_CATEGORIES) assert.equal(ACHIEVEMENT_IDS.filter(id => achievementCategory(id) === c).length, c === 'traveller' ? 7 : 5)
   const en = JSON.parse(readFileSync(new URL('../src/i18n/locales/en.json', import.meta.url)))
   const de = JSON.parse(readFileSync(new URL('../src/i18n/locales/de.json', import.meta.url)))
   assert.deepEqual(Object.keys(en.achievements), Object.keys(de.achievements))

@@ -19,7 +19,7 @@
     "eyebrow": "Little victories, great adventures",
     "intro": "A few souvenirs for your curiosity. No extra homework required.",
     "total": "{{count}} / {{total}} badges earned",
-    "freshStart": "Activity goals count new discoveries, stamps and collections since achievement tracking began. Completion goals check your whole collection after your next card unlock. Earned badges stay yours, even when the atlas grows.",
+    "freshStart": "Activity goals count new discoveries, stamps and collections since achievement tracking began. Completion goals check your whole collection after your next card unlock. Saved daily results count toward tour badges. Earned badges stay yours, even when the atlas grows.",
     "earned": "Earned",
     "locked": "Not yet earned",
     "hidden": "A little surprise",
@@ -29,16 +29,25 @@
     "notificationOne": "Badge earned",
     "notificationMany": "{{count}} badges earned",
     "notificationSummary": "One expedition, several little victories.",
+    "goldCelebration": "A golden milestone. What a journey!",
     "view": "View badges",
     "storageError": "Progress could not be updated. Reload before continuing.",
     "singleTab": "This browser cannot coordinate saves across tabs. Please play in one tab only.",
     "categories": {
+      "traveller": "World traveller",
       "footsteps": "First footsteps",
       "builder": "Atlas builder",
       "bearings": "Finding your bearings",
       "oddities": "Expedition oddities"
     },
     "badges": {
+      "tour-first": { "name": "Boarding pass", "description": "Finish your first daily tour." },
+      "tour-ten": { "name": "Frequent flyer", "description": "Finish daily tours on 10 different UTC days." },
+      "tour-perfect": { "name": "Perfect bearings", "description": "Finish a daily tour with all five answers correct." },
+      "tour-perfect-five": { "name": "Precision traveller", "description": "Finish five perfect daily tours on different UTC days." },
+      "tour-pinpoint": { "name": "Almost pinpoint", "description": "Finish a daily tour with a miss but no more than 500 km total deviation." },
+      "tour-all": { "name": "Every route travelled", "description": "Complete all {{routeCount}} routes. Repeated tours count toward routes you still need." },
+      "tour-all-perfect": { "name": "Golden compass", "description": "Find your way to 5/5 on all {{routeCount}} routes. Every return is another chance to get there.", "earnedDescription": "Every route mastered. Not a country out of place. You kept coming back, learning and finding your way. This compass is yours. You've earned it." },
       "first-encounter": {
         "name": "Off we go",
         "description": "Finish your first encounter, correct or not."
@@ -77,7 +86,8 @@
       },
       "complete-atlas": {
         "name": "Atlas? Completed it",
-        "description": "Collect every country in the current playable atlas."
+        "description": "Bring every country in the playable atlas into your collection. One discovery at a time, make the world familiar.",
+        "earnedDescription": "Remember when this map was full of strangers? You gave every country a place in your memory. Look how far you've come. This atlas is yours."
       },
       "perfect-5": {
         "name": "Five well placed",

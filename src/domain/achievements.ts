@@ -1,14 +1,16 @@
 import type { ContinentId, GameState, RosterEntry } from './types'
 import { ACHIEVEMENT_GROUPS } from '../data/achievementGroups'
+import { TOUR_CATALOGUE } from '../data/dailyTours'
 
 export const ACHIEVEMENT_IDS = [
   'first-encounter', 'first-visitor', 'first-card', 'discover-10', 'encounters-25',
   'collect-10', 'collect-50', 'all-continents', 'complete-continent', 'complete-atlas',
   'perfect-5', 'stamp-continents', 'discover-50', 'recovery', 'small-5',
   'wrong-continent', 'scenic-route', 'islands-5', 'landlocked-5', 'legendary',
+  'tour-first', 'tour-ten', 'tour-perfect', 'tour-perfect-five', 'tour-pinpoint', 'tour-all', 'tour-all-perfect',
 ] as const
 export type AchievementId = typeof ACHIEVEMENT_IDS[number]
-export const ACHIEVEMENT_CATEGORIES = ['footsteps', 'builder', 'bearings', 'oddities'] as const
+export const ACHIEVEMENT_CATEGORIES = ['footsteps', 'builder', 'bearings', 'oddities', 'traveller'] as const
 export type AchievementCategory = typeof ACHIEVEMENT_CATEGORIES[number]
 
 export interface AchievementState {
@@ -25,6 +27,8 @@ export interface AchievementState {
   recovered: boolean
   scenic: boolean
   wrongContinent: boolean
+  /** One immutable completion per UTC day; retained when debug resets the daily run. */
+  tourDays?: Record<string, { routeId: string; perfect: boolean; near: boolean }>
   earned: Partial<Record<AchievementId, { at: number; acknowledged: boolean; target: number }>>
 }
 
@@ -36,8 +40,10 @@ export const emptyAchievements = (): AchievementState => ({
 
 export const achievementCategory = (id: AchievementId): AchievementCategory => {
   const index = ACHIEVEMENT_IDS.indexOf(id)
-  return index < 5 ? 'footsteps' : index < 10 ? 'builder' : index < 15 ? 'bearings' : 'oddities'
+  return index < 5 ? 'footsteps' : index < 10 ? 'builder' : index < 15 ? 'bearings' : index < 20 ? 'oddities' : 'traveller'
 }
+
+export const isGoldAchievement = (id: AchievementId) => id === 'complete-atlas' || id === 'tour-all-perfect'
 
 export const isHiddenAchievement = (id: AchievementId): id is 'wrong-continent' | 'scenic-route' =>
   id === 'wrong-continent' || id === 'scenic-route'
@@ -120,10 +126,41 @@ export function trackDailyAchievements(
   return awardAchievements(next, a, roster, now, unlockedIds.length > 0)
 }
 
+/** Backfill genuine saved completions and keep the first result per UTC day. */
+export function reconcileTourAchievements(state: GameState, now: number): GameState {
+  if (state.dailyTours?.blocked) return state
+  const original = state.achievements ?? emptyAchievements()
+  const days = { ...original.tourDays }
+  let changed = false
+  for (const run of Object.values(state.dailyTours?.records ?? {})) {
+    if (run.practice || run.status !== 'completed' || !run.rewards.applied || days[run.assignment.dayKey]) continue
+    days[run.assignment.dayKey] = {
+      routeId: run.assignment.definitionId, perfect: run.correctCount === 5,
+      near: run.correctCount < 5 && run.totalKm <= 500,
+    }
+    changed = true
+  }
+  const a = changed ? { ...original, tourDays: days } : original
+  const earned = { ...a.earned }
+  for (const id of ACHIEVEMENT_IDS) {
+    if (achievementCategory(id) !== 'traveller' || earned[id]) continue
+    const { current, target } = achievementProgress(id, { ...state, achievements: a }, [])
+    if (current >= target) {
+      earned[id] = { at: now, acknowledged: false, target }
+      changed = true
+    }
+  }
+  return changed ? { ...state, achievements: { ...a, earned } } : state
+}
+
 export function achievementProgress(
   id: AchievementId, state: GameState, roster: readonly RosterEntry[],
 ): { current: number; target: number } {
   const a = state.achievements ?? emptyAchievements()
+  const tours = Object.values(a.tourDays ?? {})
+  const routeIds = new Set(TOUR_CATALOGUE.map(tour => tour.id))
+  const routes = (perfect: boolean) => new Set(tours.filter(day =>
+    routeIds.has(day.routeId) && (!perfect || day.perfect)).map(day => day.routeId)).size
   const countries = roster.filter(c => a.collected.includes(c.id))
   const groupCount = (group: readonly string[]) => countries.filter(c => group.includes(c.id)).length
   const continents = [...new Set(roster.map(c => c.continent))]
@@ -161,6 +198,13 @@ export function achievementProgress(
     case 'islands-5': current = groupCount(ACHIEVEMENT_GROUPS.islands); target = 5; break
     case 'landlocked-5': current = groupCount(ACHIEVEMENT_GROUPS.landlocked); target = 5; break
     case 'legendary': current = countries.filter(c => c.rarity === 'legendary').length; break
+    case 'tour-first': current = tours.length; break
+    case 'tour-ten': current = tours.length; target = 10; break
+    case 'tour-perfect': current = tours.filter(day => day.perfect).length; break
+    case 'tour-perfect-five': current = tours.filter(day => day.perfect).length; target = 5; break
+    case 'tour-pinpoint': current = Number(tours.some(day => day.near)); break
+    case 'tour-all': current = routes(false); target = routeIds.size; break
+    case 'tour-all-perfect': current = routes(true); target = routeIds.size; break
   }
   return { current: Math.min(current, target), target }
 }

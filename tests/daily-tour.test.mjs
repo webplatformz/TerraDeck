@@ -1,8 +1,9 @@
 import { test, mock } from 'node:test'
 import assert from 'node:assert/strict'
+import { readFileSync } from 'node:fs'
 import { geoCentroid } from 'd3-geo'
 import { COUNTRIES } from '../src/data/countries.ts'
-import { DAILY_SCHEDULES } from '../src/data/dailyTours.ts'
+import { DAILY_SCHEDULES, TOUR_CATALOGUE } from '../src/data/dailyTours.ts'
 import { loadWorld } from '../src/data/world.ts'
 import {
   DAILY_EPOCH, UTC_DAY_MS, TOUR_REFERENCE_POINTS, getDailyAssignment, scoreTourAnswer,
@@ -11,7 +12,7 @@ import {
 } from '../src/domain/dailyTour.ts'
 import { createInitialState, openPack, answerContinent, answerCountry } from '../src/domain/challenge.ts'
 import { DEFAULT_CONFIG } from '../src/domain/config.ts'
-import { emptyAchievements } from '../src/domain/achievements.ts'
+import { emptyAchievements, achievementProgress, reconcileTourAchievements, isGoldAchievement } from '../src/domain/achievements.ts'
 import { resetCollection } from '../src/domain/resetCollection.ts'
 import { parseGameState } from '../src/persistence/validate.ts'
 import { LocalStorageRepository } from '../src/persistence/LocalStorageRepository.ts'
@@ -36,12 +37,152 @@ const memoryStorage = () => {
   return { getItem: key => data.get(key) ?? null, setItem: (key, value) => data.set(key, value), removeItem: key => data.delete(key) }
 }
 
+test('curated catalogue has unique playable routes and bilingual names across six continents', () => {
+  assert.equal(TOUR_CATALOGUE.length, 36)
+  assert.equal(new Set(TOUR_CATALOGUE.map(tour => tour.id)).size, TOUR_CATALOGUE.length)
+  assert.equal(new Set(TOUR_CATALOGUE.map(tour => [...tour.countryIds].sort().join(','))).size, TOUR_CATALOGUE.length)
+  assert.equal(new Set(TOUR_CATALOGUE.map(tour => tour.continent)).size, 6)
+  for (const lang of ['en', 'de']) assert.equal(new Set(TOUR_CATALOGUE.map(tour => tour.title[lang])).size, TOUR_CATALOGUE.length)
+  for (const tour of TOUR_CATALOGUE) {
+    assert.equal(tour.countryIds.length, 5)
+    assert.equal(new Set(tour.countryIds).size, 5)
+    assert.ok(tour.title.en.trim() && tour.title.de.trim())
+    for (const id of tour.countryIds) assert.equal(COUNTRIES.find(c => c.id === id)?.continent, tour.continent)
+  }
+  const at = DAILY_SCHEDULES[1].effectiveAt
+  for (let index = 0; index < TOUR_CATALOGUE.length * 2; index++) {
+    const assignment = getDailyAssignment(at + index * UTC_DAY_MS)
+    assert.equal(assignment.definitionId, TOUR_CATALOGUE[index % TOUR_CATALOGUE.length].id)
+    assert.equal(assignment.number, index + 3)
+  }
+})
+
+test('tour badges backfill completions once per day and ignore debug replays and practice', () => {
+  const completed = play(startDailyTour(fresh(), DAILY_EPOCH))
+  assert.ok(completed.achievements.earned['tour-first'])
+  assert.ok(completed.achievements.earned['tour-perfect'])
+  assert.equal(completed.achievements.encounters, 0)
+  assert.equal(Object.keys(completed.achievements.tourDays).length, 1)
+  const reloaded = parseGameState(clone(completed))
+  assert.strictEqual(reconcileTourAchievements(reloaded, DAILY_EPOCH + 50), reloaded)
+  const replay = play(startDailyTour({ ...completed, dailyTours: { version: 1, records: {} } }, DAILY_EPOCH))
+  assert.equal(Object.keys(replay.achievements.tourDays).length, 1)
+  const historical = reconcileTourAchievements({ ...completed, achievements: emptyAchievements() }, DAILY_EPOCH + 100)
+  assert.ok(historical.achievements.earned['tour-first'])
+  const practice = play(startPracticeTour(fresh(), DAILY_EPOCH, () => 0.4), { practice: true })
+  assert.equal(reconcileTourAchievements(practice, DAILY_EPOCH).achievements.tourDays, undefined)
+})
+
+test('regional, thematic and dispersed routes provide three distinct kinds of journey', () => {
+  const regional = new Set([
+    'europe-02', 'europe-03', 'europe-06',
+    'africa-02', 'africa-03', 'africa-06', 'africa-08', 'africa-11',
+    'asia-03', 'asia-06', 'asia-08', 'asia-09',
+  ])
+  const thematic = new Set([
+    'europe-04', 'europe-05', 'europe-07',
+    'africa-04', 'africa-05', 'africa-07', 'africa-09',
+    'asia-02', 'asia-05', 'asia-07',
+    'north-america-03', 'south-america-02', 'oceania-02',
+  ])
+  assert.equal(TOUR_CATALOGUE.filter(tour => regional.has(tour.id)).length, 12)
+  assert.equal(TOUR_CATALOGUE.filter(tour => thematic.has(tour.id)).length, 13)
+  assert.ok(regional.size / TOUR_CATALOGUE.length < 0.5)
+  const dispersed = TOUR_CATALOGUE.filter(tour => !regional.has(tour.id) && !thematic.has(tour.id))
+  assert.equal(dispersed.length, 11)
+  const minLegKm = { europe: 700, africa: 2000, asia: 750, 'north-america': 1500, 'south-america': 2000, oceania: 2000 }
+  const minMeanKm = { europe: 1000, africa: 3000, asia: 3000, 'north-america': 3000, 'south-america': 3000, oceania: 2800 }
+  for (const tour of dispersed) {
+    const legs = tour.countryIds.slice(1).map((id, index) => scoreTourAnswer(tour.countryIds[index], id))
+    assert.ok(Math.min(...legs) >= minLegKm[tour.continent], `${tour.id}: neighbouring stops are too close`)
+    assert.ok(legs.reduce((sum, km) => sum + km, 0) / 4 >= minMeanKm[tour.continent], `${tour.id}: route is too clustered`)
+  }
+})
+
+test('name themes match English display names and size themes match playable-country areas', () => {
+  const en = JSON.parse(readFileSync(new URL('../src/i18n/locales/en.json', import.meta.url)))
+  const names = id => TOUR_CATALOGUE.find(tour => tour.id === id).countryIds.map(id => en.countries[id].name)
+  for (const id of ['asia-02', 'africa-04']) assert.ok(names(id).every(name => /^[A-Za-z]{5}$/.test(name)), id)
+  for (const id of ['europe-07', 'africa-05']) assert.ok(names(id).every(name => name.startsWith('S')), id)
+  assert.ok(names('asia-05').every(name => name.endsWith('stan')))
+  const small = ['europe-04', 'africa-09', 'north-america-03', 'oceania-02']
+  const large = ['europe-05', 'africa-07', 'asia-07', 'south-america-02']
+  for (const id of [...small, ...large]) {
+    const tour = TOUR_CATALOGUE.find(tour => tour.id === id)
+    const ranked = COUNTRIES.filter(country => country.continent === tour.continent)
+      .sort((a, b) => small.includes(id) ? a.areaKm2 - b.areaKm2 : b.areaKm2 - a.areaKm2)
+    assert.deepEqual([...tour.countryIds].sort(), ranked.slice(0, 5).map(country => country.id).sort(), id)
+  }
+})
+
+test('published v1 results survive the revised, not-yet-published v2 catalogue without migration', () => {
+  const now = DAILY_EPOCH + UTC_DAY_MS
+  const completed = play(startDailyTour(fresh(), now), { now })
+  const reloaded = parseGameState(clone(completed))
+  assert.equal(reloaded.schemaVersion, 1)
+  assert.deepEqual(reloaded.dailyTours, completed.dailyTours)
+  assert.deepEqual(reloaded.achievements, completed.achievements)
+  assert.deepEqual(reloaded.progress, completed.progress)
+  const next = startDailyTour(reloaded, DAILY_SCHEDULES[1].effectiveAt)
+  assert.deepEqual(next.dailyTours.records['2026-10-24'], completed.dailyTours.records['2026-10-24'])
+  assert.equal(next.dailyTours.records['2026-10-25'].assignment.version, 2)
+  assert.equal(next.dailyTours.blocked, undefined)
+  for (const [id, progress] of Object.entries(completed.progress)) assert.deepEqual(next.progress[id], progress)
+})
+
+test('all-route gold follows catalogue size across rotations and retains awards', () => {
+  let state = fresh()
+  const at = DAILY_SCHEDULES[1].effectiveAt
+  const total = TOUR_CATALOGUE.length
+  for (let index = 0; index < total; index++) {
+    const now = at + index * UTC_DAY_MS
+    state = play(startDailyTour(state, now), { now, perfect: index !== 0 })
+    if (index < total - 1) assert.equal(state.achievements.earned['tour-all'], undefined)
+  }
+  assert.ok(state.achievements.earned['tour-ten'])
+  assert.ok(state.achievements.earned['tour-perfect-five'])
+  assert.ok(state.achievements.earned['tour-all'])
+  assert.equal(state.achievements.earned['tour-all-perfect'], undefined)
+  assert.deepEqual(achievementProgress('tour-all-perfect', state, COUNTRIES), { current: total - 1, target: total })
+  const now = at + total * UTC_DAY_MS
+  state = play(startDailyTour(state, now), { now })
+  assert.ok(state.achievements.earned['tour-all-perfect'])
+  assert.equal(state.achievements.earned['tour-all-perfect'].target, total)
+  const reset = resetCollection(state, COUNTRIES, 'all', now + 20, DEFAULT_CONFIG)
+  assert.deepEqual(reset.achievements.tourDays, state.achievements.tourDays)
+  assert.deepEqual(reset.achievements.earned, state.achievements.earned)
+  assert.ok(isGoldAchievement('tour-all-perfect'))
+  assert.ok(isGoldAchievement('complete-atlas'))
+  assert.equal(isGoldAchievement('tour-perfect'), false)
+  assert.ok(parseGameState(clone(reset)).achievements.earned['tour-all-perfect'])
+})
+
+test('almost pinpoint counts only completed non-perfect tours at or below 500 km', () => {
+  for (const [km, expected] of [[500, true], [501, false], [0, false]]) {
+    const completed = play(startDailyTour(fresh(), DAILY_EPOCH))
+    const run = daily(completed)
+    const state = { ...completed, achievements: emptyAchievements(), dailyTours: {
+      ...completed.dailyTours, records: { [run.assignment.dayKey]: { ...run, correctCount: km === 0 ? 5 : 4, totalKm: km } },
+    } }
+    const measured = reconcileTourAchievements(state, DAILY_EPOCH + 100)
+    assert.equal(!!measured.achievements.earned['tour-pinpoint'], expected)
+  }
+})
+
 test('three immutable ordered tours have five unique playable same-continent countries and bilingual titles', () => {
-  assert.equal(DAILY_SCHEDULES.length, 1)
+  assert.equal(DAILY_SCHEDULES.length, 2)
   const schedule = DAILY_SCHEDULES[0]
   assert.equal(schedule.version, 1)
   assert.equal(schedule.effectiveAt, DAILY_EPOCH)
   assert.equal(schedule.tours.length, 3)
+  assert.deepEqual(schedule.tours.map(tour => ({ ...tour, countryIds: [...tour.countryIds] })), [
+    { id: 'europe-01', continent: 'europe', countryIds: ['no', 'de', 'fr', 'it', 'gr'],
+      title: { en: 'Fjords to the Aegean', de: 'Vom Fjord zur Ägäis' } },
+    { id: 'africa-01', continent: 'africa', countryIds: ['ma', 'gh', 'ke', 'mg', 'na'],
+      title: { en: 'An African zigzag', de: 'Afrika im Zickzack' } },
+    { id: 'asia-01', continent: 'asia', countryIds: ['jp', 'vn', 'np', 'in', 'id'],
+      title: { en: 'Islands and high peaks', de: 'Inseln und hohe Gipfel' } },
+  ])
   assert.deepEqual(schedule.tours.map(t => t.continent), ['europe', 'africa', 'asia'])
   assert.equal(new Set(schedule.tours.map(t => t.id)).size, 3)
   for (const tour of schedule.tours) {
@@ -70,15 +211,15 @@ test('every one of 168 playable countries has a finite frozen mainland centroid 
   assert.ok(TOUR_REFERENCE_POINTS.id[0] > 100 && TOUR_REFERENCE_POINTS.id[0] < 140)
 })
 
-test('UTC epoch, midnight boundaries, 3/4 and 6/7 rotations, and pre-epoch availability', () => {
+test('UTC epoch, midnight boundaries, expanded rotation and pre-epoch availability', () => {
   assert.equal(getDailyAssignment(DAILY_EPOCH - 1), null)
   assert.equal(getDailyAssignment(NaN), null)
   assert.equal(getDailyAssignment(Infinity), null)
   for (let day = 0; day < 10; day++) {
     const a = getDailyAssignment(DAILY_EPOCH + day * UTC_DAY_MS)
     assert.equal(a.number, day + 1)
-    assert.equal(a.version, 1)
-    assert.equal(a.definitionId, DAILY_SCHEDULES[0].tours[day % 3].id)
+    assert.equal(a.version, day < 2 ? 1 : 2)
+    assert.equal(a.definitionId, day < 2 ? DAILY_SCHEDULES[0].tours[day].id : TOUR_CATALOGUE[(day - 2) % TOUR_CATALOGUE.length].id)
     assert.equal(a.expiresAt, DAILY_EPOCH + (day + 1) * UTC_DAY_MS)
     assert.deepEqual(getDailyAssignment(a.expiresAt - 1), a)
   }

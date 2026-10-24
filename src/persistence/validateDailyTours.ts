@@ -13,7 +13,7 @@ function validRun(raw: unknown, key: string, practice: boolean): raw is DailyRun
   if (!object(raw) || typeof raw.id !== 'string' || !raw.id || raw.practice !== practice ||
       !time(raw.startedAt) || !count(raw.index) || raw.index > 4 || !object(raw.assignment)) return false
   const a = raw.assignment
-  if (a.version !== 1 || typeof a.definitionId !== 'string' || !a.definitionId || a.dayKey !== key ||
+  if ((a.version !== 1 && a.version !== 2) || typeof a.definitionId !== 'string' || !a.definitionId || a.dayKey !== key ||
       !count(a.number) || !time(a.expiresAt) || !ids(a.countryIds) || a.countryIds.length !== 5 ||
       !object(a.title) || typeof a.title.en !== 'string' || !a.title.en.trim() ||
       typeof a.title.de !== 'string' || !a.title.de.trim() ||

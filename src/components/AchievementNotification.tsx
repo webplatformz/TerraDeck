@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ACHIEVEMENT_IDS, type AchievementId } from '../domain/achievements'
+import { ACHIEVEMENT_IDS, isGoldAchievement, type AchievementId } from '../domain/achievements'
 import type { Game } from '../game/useGame'
 import { AchievementBadge } from '../screens/Achievements'
 import { Portal } from './Portal'
@@ -18,6 +18,7 @@ export function AchievementNotification({ game, enabled }: { game: Game; enabled
   })
   const pendingKey = pending.join(',')
   const first = pending[0]
+  const gold = pending.find(isGoldAchievement)
   const eligible = enabled && foreground && !game.state.activeChallenge && game.screen !== 'expedition' && pending.length > 0
 
   useEffect(() => {
@@ -86,10 +87,10 @@ export function AchievementNotification({ game, enabled }: { game: Game; enabled
   return (
     <>
       {eligible && owner === pendingKey && (
-        <aside className="achievement-notification" aria-label={t('achievements.notificationLabel')}>
+        <aside className={`achievement-notification${gold ? ' achievement-notification--gold' : ''}`} aria-label={t('achievements.notificationLabel')}>
           <div role="status">
-            <strong>{t(pending.length === 1 ? 'achievements.notificationOne' : 'achievements.notificationMany', { count: pending.length })}</strong>
-            <p>{pending.length === 1 && first ? t(`achievements.badges.${first}.name`) : t('achievements.notificationSummary')}</p>
+            <strong>{t(gold ? 'achievements.goldCelebration' : pending.length === 1 ? 'achievements.notificationOne' : 'achievements.notificationMany', { count: pending.length })}</strong>
+            <p>{gold ? t(`achievements.badges.${gold}.name`) : pending.length === 1 && first ? t(`achievements.badges.${first}.name`) : t('achievements.notificationSummary')}</p>
           </div>
           <div className="achievement-notification-actions">
             <button type="button" className="btn btn--primary" onClick={openDetails}>{t('achievements.view')}</button>

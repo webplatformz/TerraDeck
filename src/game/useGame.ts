@@ -8,7 +8,7 @@ import type { ProgressRepository } from '../persistence/ProgressRepository'
 import { prototypeState } from './prototypeState'
 import { useNow } from './useNow'
 import { mainHash, routeFromHash, type HelpSection, type MainScreen, type Route } from './navigation'
-import { acknowledgeAchievements, emptyAchievements, trackAchievements, type AchievementId } from '../domain/achievements'
+import { acknowledgeAchievements, emptyAchievements, reconcileTourAchievements, trackAchievements, type AchievementId } from '../domain/achievements'
 import { addDebugPack as queueDebugPack } from '../domain/debug'
 import { reconcileRoster } from '../domain/rosterUpdate'
 import { resetCollection as clearCollection } from '../domain/resetCollection'
@@ -54,7 +54,7 @@ export function useGame() {
     let cancelled = false
     void repository.update(freshState, saved => {
       const synced = syncPacks(expireDailyTours(reconcileRoster(saved, removedIds, Date.now(), config), Date.now()), Date.now(), config)
-      return synced.achievements ? synced : { ...synced, achievements: emptyAchievements() }
+      return reconcileTourAchievements(synced.achievements ? synced : { ...synced, achievements: emptyAchievements() }, Date.now())
     }).then((saved) => {
       if (cancelled) return
       setState(saved)
