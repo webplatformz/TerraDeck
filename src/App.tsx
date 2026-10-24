@@ -32,10 +32,7 @@ export function App() {
       {screen === 'daily' ? (
         <DailyTour game={game} />
       ) : screen === 'expedition' ? (
-        <>
-          <Expedition game={game} />
-          <InfoFooter />
-        </>
+        <Expedition game={game} />
       ) : (
         <>
           <TabBar active={screen} onNavigate={game.navigate} />

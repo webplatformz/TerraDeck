@@ -230,6 +230,11 @@
     "notDiscovered": "Not discovered yet. It will turn up in a pack."
   },
   "tour": {
+    "logCorrect": "correct",
+    "perfectBearings": "Perfect bearings",
+    "scenicJourney": "A journey worth taking",
+    "completedToday": "Today's tour complete",
+    "fiveCountries": "Five Countries",
     "detour": "Detour distance",
     "detourHints": {
       "near": "Under 1,000 km: still on the trail. Your compass approves.",
@@ -257,7 +262,7 @@
     "correct": "Correct · 0 km",
     "miss": "Not quite · {{distance}} km",
     "answer": "Correct answer: {{country}}",
-    "score": "{{correct}}/5 correct · {{distance}} km",
+    "score": "{{correct}}/5 correct",
     "perfect": "Perfect tour! Your stamps have been added.",
     "noReward": "A perfect 5/5 earns stamps. A close result is still a great journey.",
     "expired": "This unfinished tour has ended. No stamps were awarded.",

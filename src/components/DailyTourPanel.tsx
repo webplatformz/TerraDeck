@@ -20,10 +20,10 @@ export function DailyTourPanel({ game }: { game: Game }) {
   return (
     <section className="daily-panel" aria-label={t('tour.title')}>
       <button type="button" className="tour-ticket" disabled={!today} onClick={openTour} aria-label={`${t('tour.homeTitle')} · ${actionLabel}`}>
-      <div className="daily-panel-heading">
-        <span className="tour-ticket-title">{t('tour.homeTitle')}</span>
-        <span className="tour-beta">{t('tour.beta')}</span>
-      </div>
+      <span className="tour-beta tour-beta--corner">{t('tour.beta')}</span>
+      <div className={`pack tour-pack${run?.status === 'completed' ? ' tour-pack--completed' : ''}`}>
+      <div className="pack-body">
+      <div className="pack-foil" />
       <svg className="tour-ticket-art" viewBox="0 0 320 100" fill="none" aria-hidden="true">
         <ellipse cx="160" cy="50" rx="142" ry="44" />
         <ellipse cx="160" cy="50" rx="87" ry="44" />
@@ -33,8 +33,12 @@ export function DailyTourPanel({ game }: { game: Game }) {
         {[[46, 66], [103, 37], [163, 62], [223, 29], [277, 48]].map(([cx, cy], index) =>
           <g key={index}><circle className="tour-ticket-stop-halo" cx={cx} cy={cy} r="8" /><circle className="tour-ticket-stop" cx={cx} cy={cy} r="3.5" /></g>)}
       </svg>
+      <span className="tour-pack-count">{t('tour.fiveCountries')}</span>
       {today && <strong className="tour-ticket-subtitle">{today.title[locale]} · {continentName(today.continent)} · <span className="mono">#{today.number}</span></strong>}
       <span className="tour-ticket-hint">{actionLabel} <span aria-hidden="true">→</span></span>
+      </div>
+      <div className="pack-strip"><span>{run?.status === 'completed' && <span aria-hidden="true">✓ </span>}{t(run?.status === 'completed' ? 'tour.completedToday' : 'tour.homeTitle')}</span></div>
+      </div>
       </button>
       <p className="tour-ticket-intro">{t('tour.intro')}</p>
       {!today && <p>{t('tour.unavailable')}</p>}

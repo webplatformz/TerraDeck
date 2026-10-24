@@ -230,6 +230,11 @@
     "notDiscovered": "Noch nicht entdeckt. Das Land taucht bald in einem Päckchen auf."
   },
   "tour": {
+    "logCorrect": "richtig",
+    "perfectBearings": "Perfekt auf Kurs",
+    "scenicJourney": "Eine Reise wert",
+    "completedToday": "Heute abgeschlossen",
+    "fiveCountries": "Fünf Länder",
     "detour": "Umweg-Kilometer",
     "detourHints": {
       "near": "Unter 1.000 km: noch auf Kurs. Dein Kompass nickt zufrieden.",
@@ -257,7 +262,7 @@
     "correct": "Richtig · 0 km",
     "miss": "Nicht ganz · {{distance}} km",
     "answer": "Richtige Antwort: {{country}}",
-    "score": "{{correct}}/5 richtig · {{distance}} km",
+    "score": "{{correct}}/5 richtig",
     "perfect": "Perfekte Tour! Deine Stempel wurden hinzugefügt.",
     "noReward": "Perfekte 5/5 bringen Stempel. Auch knapp daneben ist eine gute Reise.",
     "expired": "Diese unvollendete Tour ist beendet. Es gab keine Stempel.",

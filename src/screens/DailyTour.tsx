@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Flag } from '../components/Flag'
+import { Stamp } from '../components/Stamp'
+import { MASTERY_STAGES } from '../domain/mastery'
 import { AtlasBack } from '../components/AtlasBack'
+import { Compass } from '../components/Compass'
 import { TourShare } from '../components/TourShare'
 import { UnlockSequence } from '../components/UnlockSequence'
 import { COUNTRY_BY_ID, COUNTRY_BY_MAP_NAME } from '../data/countries'
@@ -99,20 +102,33 @@ function TourRun({ game, run }: { game: Game; run: DailyRun }) {
     const unlockId = run.pendingUnlockIds[0]
     const unlockCountry = unlockId ? COUNTRY_BY_ID[unlockId] : undefined
     return (
-      <div className="tour-summary">
-        <AtlasBack onClick={back} />
-        <p className="eyebrow">{label}</p><h1>{title}</h1>
-        <h2>{t('tour.score', { correct: run.correctCount, distance: run.totalKm })}</h2>
+      <div className={`tour-summary tour-log${run.correctCount === 5 ? ' tour-log--perfect' : ''}`}>
+        <header className="tour-log-bar">
+          <AtlasBack onClick={back} />
+          <p className="eyebrow">{label}</p>
+        </header>
+        <header className="tour-log-hero">
+          <Compass className="tour-log-compass" />
+          <h1>{title}</h1>
+          <div className="tour-log-seal" aria-label={t('tour.score', { correct: run.correctCount })}>
+            <strong>{run.correctCount}<span>/5</span></strong>
+            <span>{t('tour.logCorrect')}</span>
+          </div>
+          <p className="tour-log-verdict">{t(run.correctCount === 5 ? 'tour.perfectBearings' : 'tour.scenicJourney')}</p>
+        </header>
         <DetourDistance km={run.totalKm} />
-        <p>{t(run.practice ? 'tour.practiceHint' : run.correctCount === 5 ? 'tour.perfect' : 'tour.noReward')}</p>
-        <ol className="tour-breakdown">{run.answers.map(answer => <li key={answer.targetId}>
+        <p className="tour-log-reward">{t(run.practice ? 'tour.practiceHint' : run.correctCount === 5 ? 'tour.perfect' : 'tour.noReward')}</p>
+        <ol className="tour-breakdown">{run.answers.map(answer => <li key={answer.targetId} className={answer.correct ? 'is-correct' : 'is-miss'}>
           <span aria-hidden="true">{answer.correct ? '✓' : '×'}</span><Flag countryId={answer.targetId} />
-          <span>{countryName(answer.targetId)}</span><strong>{answer.km} km</strong>
+          <span>{countryName(answer.targetId)}</span>
+          {!run.practice && run.correctCount === 5 && run.rewards.stampedIds.includes(answer.targetId) &&
+            <span className="tour-earned-stamp" role="img" aria-label={t('tour.reward', { country: countryName(answer.targetId) })}>
+              <span aria-hidden="true">+</span>
+              <Stamp stage={MASTERY_STAGES[run.rewards.unlockedIds.includes(answer.targetId) ? 1 : 0]} filled code={answer.targetId} size={28} />
+            </span>}
+          <strong>{answer.km} km</strong>
         </li>)}</ol>
-        {!run.practice && run.correctCount === 5 && <ul>{assignment.countryIds.map(id =>
-          <li key={id}>{t(run.rewards.stampedIds.includes(id) ? 'tour.reward' : 'tour.unchanged', { country: countryName(id) })}</li>)}</ul>}
         {!run.practice && <TourShare text={tourShareText(assignment.number, title, run.answers.map(answer => answer.correct), run.answers.map(answer => answer.km), locale)} />}
-        <p className="tour-status">{t('tour.distance')}</p>
         <button type="button" className="btn btn--ghost" onClick={back}>{t('tour.back')}</button>
         {unlockId && unlockCountry && <UnlockSequence key={unlockId} country={unlockCountry}
           onContinue={() => void game.acknowledgeDailyUnlock(unlockId)}

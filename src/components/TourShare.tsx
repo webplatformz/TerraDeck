@@ -34,7 +34,6 @@ export function TourShare({ text }: { text: string }) {
   }
   return (
     <section className="tour-share">
-      <p>{t('tour.shareHint')}</p>
       <div className="tour-actions">
         {typeof navigator.share === 'function' && <button type="button" className="btn btn--primary" disabled={busy} onClick={() => void share()}>{t('tour.share')}</button>}
         <button type="button" className="btn btn--ghost" onClick={() => void copy()}>{t('tour.copy')}</button>
