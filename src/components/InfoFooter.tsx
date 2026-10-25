@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 import { mainHash, type HelpSection } from '../game/navigation'
+import { APP_VERSION } from '../data/releases'
 
 export function HelpLink({ section, children }: { section: HelpSection; children: ReactNode }) {
   return <a href={mainHash('about', section)} onClick={() => {
@@ -22,6 +23,9 @@ export function InfoFooter() {
         <HelpLink section="sources">{t('help.sources.title')}</HelpLink>
         <HelpLink section="project">{t('help.project.title')}</HelpLink>
       </nav>
+      <div className="info-footer-version">
+        <a href={mainHash('releases')}>{APP_VERSION} · {t('releases.link')}</a>
+      </div>
     </footer>
   )
 }

@@ -13,6 +13,7 @@ import { Achievements } from './screens/Achievements'
 import { AchievementNotification } from './components/AchievementNotification'
 import { RosterNotice } from './components/RosterNotice'
 import { DailyTour } from './screens/DailyTour'
+import { ReleaseNotes } from './screens/ReleaseNotes'
 
 export function App() {
   const game = useGame()
@@ -41,6 +42,7 @@ export function App() {
             {screen === 'collection' && <Collection game={game} />}
             {screen === 'achievements' && <Achievements game={game} />}
             {screen === 'about' && <About game={game} />}
+            {screen === 'releases' && <ReleaseNotes game={game} />}
             <InfoFooter />
           </main>
         </>

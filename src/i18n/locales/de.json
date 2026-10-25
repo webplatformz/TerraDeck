@@ -1,4 +1,9 @@
 {
+  "releases": {
+    "link": "Neuerungen",
+    "title": "Was gibt's Neues?",
+    "intro": "Kleine Entdeckungen, liebevolle Verbesserungen. So wächst dein Atlas weiter."
+  },
   "common": {
     "backToAtlas": "Zurück zum Atlas",
     "backToTheAtlas": "Zurück zum Atlas",
@@ -422,10 +427,12 @@
     "privacy": {
       "title": "Datenschutz",
       "local": "Der lokale Speicher enthält Spielstand, Päckchen-Zeitpunkte, Sprache und Hinweisbestätigung sowie separate Demospielstände und gegebenenfalls Sicherungen unlesbarer Spielstände. Es gibt keine Konten, Cloud-Spielstände, App-Analysedienste oder Werbetracker. Schriften, Flaggen und Geografie werden mit der Website ausgeliefert.",
-      "hosting": "GitHub Pages erhält beim Bereitstellen der Website technische Anfragedaten wie deine IP-Adresse. Dafür gelten dessen Datenschutzpraktiken.",
+      "hosting": "GitHub Pages erhält technische Anfragedaten wie deine IP-Adresse und Browser-/Anfrageinformationen, um diese Website bereitzustellen und abzusichern. GitHub und seine Dienstleister können diese Daten in den USA und anderen Ländern verarbeiten. GitHubs Datenschutzerklärung beschreibt die Verarbeitung und die Schutzmaßnahmen für internationale Übermittlungen.",
       "hostLink": "Datenschutzerklärung von GitHub",
+      "retention": "Lokale Spielstände und Einstellungen bleiben in diesem Browser, bis du Websitedaten löschst oder der Browser sie entfernt; ein Reset entfernt nur die im Spiel beschriebenen Daten. GitHub bestimmt die Aufbewahrung technischer Hosting-Anfragedaten nach eigenen Regeln; TerraDeck legt diese Frist nicht fest.",
       "external": "Externe Links senden Anfragen an deren Betreiber. GitHub verarbeitet Kontoinformationen und Fehlermeldungen nach eigenen Regeln; eingereichte Meldungen sind öffentlich.",
-      "clear": "Das Löschen der Websitedaten entfernt alle lokalen Spielstände, Sicherungen und Einstellungen; eine Serverkopie gibt es nicht. Ein Spielstand-Reset lässt Sprache und Hinweisbestätigung bestehen."
+      "clear": "Das Löschen der Websitedaten entfernt alle lokalen Spielstände, Sicherungen und Einstellungen; eine Serverkopie gibt es nicht. Ein Spielstand-Reset lässt Sprache und Hinweisbestätigung bestehen.",
+      "rights": "Angaben zum Betreiber sind unten verlinkt. Je nach anwendbarem Recht kannst du Auskunft, Berichtigung oder Löschung personenbezogener Daten verlangen und dich an den Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) wenden. Die App lädt deinen lokalen Spielstand nicht hoch. Für eigenständig durch GitHub verarbeitete Daten nutze die Kontakt- und Anfragemöglichkeiten in dessen Datenschutzerklärung. GitHub Issues sind öffentlich und kein privater Kanal."
     },
     "sources": {
       "title": "Quellen & Credits",
@@ -433,15 +440,17 @@
       "naturalEarth": "Natural Earth — geografische Daten, gemeinfrei",
       "worldAtlas": "world-atlas — Kartenaufbereitung, ISC; Copyright Michael Bostock",
       "flags": "flag-icons — Flaggen, MIT; Copyright Panayiotis Lipiridis",
-      "countries": "REST Countries — Namen, Hauptstädte, Bevölkerung, Fläche und geografische Angaben",
+      "countries": "REST Countries — Namen, Hauptstädte, Bevölkerung, Fläche und geografische Angaben, MPL-2.0; für TerraDeck ausgewählt und angepasst",
       "wikidata": "Wikidata — strukturierte Daten und Wikipedia-Sitelinks, CC0",
       "fraunces": "Fraunces — Fraunces Project Authors, SIL Open Font License 1.1",
-      "inter": "Inter — Inter Project Authors, SIL Open Font License 1.1"
+      "inter": "Inter — Inter Project Authors, SIL Open Font License 1.1",
+      "licences": "Vollständige Lizenz- und Copyright-Hinweise Dritter",
+      "sourceDownload": "Zugehörige Länderdaten-Quelldateien herunterladen (.tar)",
+      "editorial": "Die Ländergeschichten sind separat redigierte EN/DE-Lerntexte. Quellenangaben bedeuten keine Unterstützung durch die Quellen; für übernommenes Material gelten weiterhin dessen Lizenzbedingungen."
     },
     "impressum": {
       "title": "Impressum",
-      "by": "Projektersteller: {{name}}",
-      "incomplete": "Unvollständige Anbieterangaben: Hier wird nur der Name des Erstellers veröffentlicht. Postanschrift und direkte Kontaktdaten wurden nicht angegeben. Dies ist kein vollständiges Impressum; die geltenden Veröffentlichungspflichten müssen vor einer Veröffentlichung noch geprüft werden."
+      "by": "Projektersteller: {{name}}"
     }
   },
   "rarity": {

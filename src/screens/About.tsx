@@ -102,17 +102,22 @@ export function About({ game }: { game: Game }) {
           <p>{t('help.privacy.local')}</p>
           <p>{t('help.privacy.hosting')}</p>
           <a href={PROJECT.hostingPrivacyUrl}>{t('help.privacy.hostLink')}</a>
+          <p>{t('help.privacy.retention')}</p>
           <p>{t('help.privacy.external')}</p>
           <p>{t('help.privacy.clear')}</p>
+          <p>{t('help.privacy.rights')}</p>
+          <HelpLink section="impressum">{t('help.impressum.title')}</HelpLink>
         </Entry>
         <Entry id="sources" title={t('help.sources.title')}>
           <p>{t('help.sources.body')}</p>
           <ul>{SOURCE_LINKS.map(source => <li key={source.id}><a href={source.url}>{t(`help.sources.${source.id}`)}</a></li>)}</ul>
+          <p><a href={`${import.meta.env.BASE_URL}third-party-notices.txt`}>{t('help.sources.licences')}</a></p>
+          <p><a href={`${import.meta.env.BASE_URL}third-party-sources.tar`} download>{t('help.sources.sourceDownload')}</a></p>
+          <p>{t('help.sources.editorial')}</p>
         </Entry>
         <Entry id="impressum" title={t('help.impressum.title')}>
           <p>{t('help.impressum.by', { name: PROJECT.creator })}</p>
           <HelpLink section="report">{t('help.report.link')}</HelpLink>
-          <p className="help-draft">{t('help.impressum.incomplete')}</p>
         </Entry>
       </section>
     </div>

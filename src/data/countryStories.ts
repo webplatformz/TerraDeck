@@ -3,7 +3,6 @@ import stories from '../../scripts/content/country-stories.json'
 interface Story {
   en: string
   de: string
-  source: string
 }
 
 interface CountryStories {

@@ -1,5 +1,29 @@
 # TerraDeck — Decisions
 
+## App release version and notes
+
+- Player-facing versions use `v<Major>.<YYYYMMDD>` from the major and fixed release
+  date in `src/data/releases.ts`; the clock never changes the release date.
+  This date-based display is independent of the three-part npm package version,
+  Android native versioning and saved-data schema versions.
+- The existing main-screen footer links to `#releases`; fullscreen challenges
+  and tours remain footer-free. Notes are bilingual local data, newest first,
+  with older releases retained. No router or Markdown dependency is needed.
+  Each release has a localized title and version; each bullet uses a short
+  bold label (one to three words), a colon and a technical/feature-focused
+  description with light humor. The first production entry may introduce
+  existing launch features without presenting them as newly implemented.
+- Before publication, verify the date, version and EN/DE notes against changes
+  since the last successful deployment, then obtain explicit user approval of
+  the notes. This check is part of every release, not optional copy editing.
+  Wording approval alone does not authorize a push or deployment.
+- The initial draft introduces the first production release, then covers changes
+  after deployed commit `a07f599`: the country-text refresh and version/notes page.
+  Tours and achievements appear as launch context, not newly implemented changes;
+  they and map zoom were already deployed.
+- Release notes and navigation are bundled UI data only; saved progress and the
+  save schema are unchanged, so no migration or schema-version bump is needed.
+
 ## Saved-data evolution
 
 - Check backward compatibility before changing persisted structures, validators,
@@ -71,12 +95,19 @@
   uncommon-language translations support EN/DE. Source languages are not an
   exhaustive inventory of all spoken languages. Show at most two selected source
   languages without claiming speaker share or ranking. Country-specific percentages
-  need separate sourcing. Front facts are not duplicated on the back: sourced
+  need separate sourcing. Front facts are not duplicated on the back: editable
   front/detail/fun stories are authored in `scripts/content/country-stories.json`
   and bundled offline through `src/data/countryStories.ts`; missing front facts
   retain locale fallbacks. Enforce per-language limits of 120/200/170 characters
-  for front/detail/fun respectively. Omit unreviewed
-  stories rather than invent filler. Both story types are independently optional;
+  for front/detail/fun respectively. Story objects contain only `en` and `de`,
+  with no per-story source URLs. Keep the JSON as the single editable content
+  file, not a one-time input or generated output. Accept user-supplied batches
+  without a mandatory web-verification pass; refine wording and translations,
+  preserve other entries, and leave corrections easy to make country by country.
+  Prefer playful, memorable details; omit missing stories rather than invent filler.
+  These are bundled content changes, not saved progress changes: no save version
+  bump or migration is required. Unrelated geographic data and license credits remain.
+  Both story types are independently optional;
   missing stories leave empty space without fallback fields or headings. All backs
   share the same layout. Long stories expand inline without turning.
 - Card headers display uppercase ISO codes, not catalog numbers. Data numbering
@@ -403,19 +434,35 @@
 - **Corrections:** public GitHub Issues, with a clear public/account-required warning and no
   automatic uploads. The user chose this instead of publishing an email/address. A report should
   identify the entry/problem and ideally a reliable source; no promised response deadline.
-- **Impressum:** publish only the user-approved creator name, with an explicit incomplete-provider-
-  information warning. Address, direct contact and jurisdiction have not been supplied, so this is
-  not represented as a complete legal notice or legally ready for publication.
+- **Impressum:** retain the approved creator name and public issue link only.
+  At the user's request, omit visible missing-information warnings; this does not
+  establish legal completeness. Do not publish a personal email or address without permission.
+  Direct private contact and address publication are deferred; applicable operator/contact
+  requirements remain unresolved, not represented as legally cleared for release.
 - The idea arose at a camp, inspired by **Bundeshaus Pack**. Credit its developers collectively
   and link to the app; do not invent individual contributors, the camp's identity or endorsement.
 - **Privacy:** distinguish browser-local progress/language/notice/demo/backups from GitHub Pages
   hosting request data. No application analytics, advertising tracking, accounts or cloud saves
   are currently integrated. External sources, inspiration and public GitHub reports have their own
   handling. Do not import the reference app's unrelated profiling, accounts or analytics claims.
+  Explain international hosting processing, local retention and GitHub's own retention
+  responsibility, and applicable rights. Do not invent hosting log-retention periods
+  or treat public GitHub Issues as a private data-rights contact.
 - **Sources:** link Natural Earth public-domain data, world-atlas ISC packaging, flag-icons MIT,
   REST Countries, Wikidata CC0 and Fraunces/Inter SIL OFL fonts. There are no portraits requiring
   a photo-credit inventory. Current source/license links are in `src/data/project.ts`; EN/DE
   descriptive copy is in the locale files.
+- **Bundled notices:** generate complete installed production-dependency licence/copyright
+  texts and font OFL notices with `scripts/prepare-notices.mjs`, including supporting
+  tools/platform packages conservatively. Ship a local notice file and corresponding
+  REST Countries-derived editable sources archive, linked with Vite's base URL.
+  REST Countries is MPL-2.0; preserve its upstream licence and source availability
+  for derived material without relicensing independent app code. Regenerate offline
+  before dev/web/Android web builds; no new runtime dependency or network request.
+- **Provenance limits:** structured collectors use REST Countries fields and Wikidata
+  sitelinks, not Wikipedia article prose. Country-story drafts are separately edited,
+  but have not received exhaustive source-by-source wording/rights clearance.
+  Removing source URLs or translating does not remove upstream obligations.
 
 ## Languages (i18n)
 

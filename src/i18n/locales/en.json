@@ -1,4 +1,9 @@
 {
+  "releases": {
+    "link": "Notes",
+    "title": "What's new",
+    "intro": "Small discoveries, thoughtful improvements. Here's how your atlas is growing."
+  },
   "common": {
     "backToAtlas": "Back to atlas",
     "backToTheAtlas": "Back to the atlas",
@@ -422,10 +427,12 @@
     "privacy": {
       "title": "Privacy",
       "local": "Local storage holds progress, pack timestamps, language and notice acknowledgement, plus separate demo saves and any unreadable-save backups. There are no accounts, cloud saves, application analytics or advertising trackers. Fonts, flags and geography are bundled with the site.",
-      "hosting": "GitHub Pages receives technical request data, such as your IP address, when serving this site. Its privacy practices apply.",
+      "hosting": "GitHub Pages receives technical request data, including your IP address and browser/request information, to deliver and secure this site. GitHub and its service providers may process this data in the United States and other countries. GitHub's privacy statement describes its processing and international-transfer safeguards.",
       "hostLink": "GitHub's privacy statement",
+      "retention": "Local saves and preferences remain in this browser until you clear site data or the browser removes them; resets remove only the data described in the game. GitHub determines retention of hosting request data under its own policies; TerraDeck does not set that retention period.",
       "external": "External links send requests to their operators. GitHub handles account information and issue reports under its own policies; submitted reports are public.",
-      "clear": "Clearing site data removes all local saves, backups and preferences; no server copy exists. Resetting game progress leaves language and notice acknowledgement intact."
+      "clear": "Clearing site data removes all local saves, backups and preferences; no server copy exists. Resetting game progress leaves language and notice acknowledgement intact.",
+      "rights": "Operator information is linked below. Depending on applicable law, you may request access to, correction or deletion of personal data and raise concerns with the Swiss Federal Data Protection and Information Commissioner (FDPIC). The app does not upload your local save. For data processed independently by GitHub, use the privacy contact and request options in its statement. GitHub Issues are public, not a private channel."
     },
     "sources": {
       "title": "Sources & credits",
@@ -433,15 +440,17 @@
       "naturalEarth": "Natural Earth — geographic data, public domain",
       "worldAtlas": "world-atlas — map packaging, ISC; copyright Michael Bostock",
       "flags": "flag-icons — flags, MIT; copyright Panayiotis Lipiridis",
-      "countries": "REST Countries — names, capitals, population, area and geographic facts",
+      "countries": "REST Countries — names, capitals, population, area and geographic facts, MPL-2.0; selected and adapted for TerraDeck",
       "wikidata": "Wikidata — structured data and Wikipedia sitelinks, CC0",
       "fraunces": "Fraunces — Fraunces Project Authors, SIL Open Font License 1.1",
-      "inter": "Inter — Inter Project Authors, SIL Open Font License 1.1"
+      "inter": "Inter — Inter Project Authors, SIL Open Font License 1.1",
+      "licences": "Full third-party licence and copyright notices",
+      "sourceDownload": "Download corresponding country-data sources (.tar)",
+      "editorial": "Country stories are separately edited EN/DE learning texts. Source credits do not imply endorsement, and third-party terms continue to apply to reused material."
     },
     "impressum": {
       "title": "Impressum",
-      "by": "Project creator: {{name}}",
-      "incomplete": "Incomplete provider information: only the creator's name is published here. No postal address or direct contact details have been supplied. This is not a complete legal notice; applicable publication requirements still need to be checked before release."
+      "by": "Project creator: {{name}}"
     }
   },
   "rarity": {

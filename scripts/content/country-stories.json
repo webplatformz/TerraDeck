@@ -2,1555 +2,1933 @@
   {
     "id": "fr",
     "front": {
-      "en": "The Roman Pont du Gard carried water across a river on three tiers of arches.",
-      "de": "Der römische Pont du Gard leitete Wasser auf drei Bogenebenen über einen Fluss.",
-      "source": "https://whc.unesco.org/en/list/344/"
+      "en": "Built to impress: the Eiffel Tower made its debut at the 1889 Paris World's Fair.",
+      "de": "Ein großer Auftritt: Der Eiffelturm wurde für die Pariser Weltausstellung von 1889 gebaut."
     },
     "detail": {
       "en": "Chauvet Cave’s prehistoric artists depicted animals including mammoths, cave lions and rhinoceroses.",
-      "de": "Die prähistorischen Künstler der Chauvet-Höhle stellten Tiere wie Mammuts, Höhlenlöwen und Nashörner dar.",
-      "source": "https://whc.unesco.org/en/list/1426/"
+      "de": "Die prähistorischen Künstler der Chauvet-Höhle stellten Tiere wie Mammuts, Höhlenlöwen und Nashörner dar."
+    },
+    "fun": {
+      "en": "Even the Eiffel Tower feels the heat: it grows slightly in warm weather and shrinks in the cold.",
+      "de": "Auch der Eiffelturm spürt die Hitze: Bei Wärme wächst er ein wenig, bei Kälte schrumpft er."
     }
   },
   {
     "id": "it",
     "front": {
-      "en": "The Dolomites preserve fossil reefs that reveal life in ancient seas.",
-      "de": "Die Dolomiten bewahren fossile Riffe, die vom Leben in urzeitlichen Meeren zeugen.",
-      "source": "https://whc.unesco.org/en/list/1237/"
+      "en": "Still learning! Bologna has the Western world's oldest university, traditionally dated to 1088.",
+      "de": "Lernen seit Jahrhunderten: Bologna hat die älteste Universität der westlichen Welt, traditionell auf 1088 datiert."
     },
     "detail": {
       "en": "Neapolitan pizza-making involves four stages of dough preparation and baking, with the pizza turned in a wood-fired oven.",
-      "de": "Die neapolitanische Pizzakunst umfasst vier Phasen der Zubereitung; beim Backen im Holzofen wird die Pizza gedreht.",
-      "source": "https://ich.unesco.org/en/RL/art-of-neapolitan-pizzaiuolo-00722"
+      "de": "Die neapolitanische Pizzakunst umfasst vier Phasen der Zubereitung; beim Backen im Holzofen wird die Pizza gedreht."
+    },
+    "fun": {
+      "en": "Two countries tucked inside one: Italy completely surrounds Vatican City and San Marino.",
+      "de": "Zwei Länder mittendrin: Italien umschließt den Vatikan und San Marino vollständig."
     }
   },
   {
     "id": "no",
     "front": {
-      "en": "Bergen’s wooden Bryggen district preserves the layout of a medieval trading quarter.",
-      "de": "Bergens Holzhausviertel Bryggen bewahrt den Grundriss eines mittelalterlichen Handelsviertels.",
-      "source": "https://whc.unesco.org/en/list/59/"
+      "en": "A long way through the mountain: Norway's 24.5 km Lærdal Tunnel is the world's longest road tunnel.",
+      "de": "Ein langer Weg durch den Berg: Norwegens 24,5 km langer Lærdalstunnel ist der längste Straßentunnel der Welt."
+    },
+    "fun": {
+      "en": "A penguin in uniform? Sir Nils Olav at Edinburgh Zoo is the Norwegian King's Guard mascot, complete with an honorary military rank.",
+      "de": "Ein Pinguin in Uniform? Sir Nils Olav im Zoo Edinburgh ist das Maskottchen der norwegischen Königsgarde und trägt einen militärischen Ehrenrang."
     }
   },
   {
     "id": "ch",
     "front": {
-      "en": "The Jungfrau-Aletsch region reveals ancient rocks pushed over younger layers as the Alps formed.",
-      "de": "Die Region Jungfrau-Aletsch zeigt alte Gesteine, die bei der Alpenbildung über jüngere Schichten geschoben wurden.",
-      "source": "https://whc.unesco.org/en/list/1037/"
+      "en": "A square deal: Switzerland and Vatican City are the only countries with square national flags.",
+      "de": "Quadratisch gut: Nur die Schweiz und der Vatikan haben quadratische Nationalflaggen."
     },
     "fun": {
-      "en": "Tim Berners-Lee invented the World Wide Web in 1989 while working at CERN.",
-      "de": "Tim Berners-Lee erfand 1989 während seiner Arbeit am CERN das World Wide Web.",
-      "source": "https://home.cern/science/computing/the-birth-of-the-web"
+      "en": "Not always a white cross! The Helvetic Republic (1798–1803) flew a green, red and yellow flag.",
+      "de": "Nicht immer ein weißes Kreuz! Die Helvetische Republik (1798–1803) hatte eine grün-rot-gelbe Flagge."
     }
   },
   {
     "id": "jp",
     "front": {
-      "en": "Mount Fuji is a volcano rising 3,776 metres above sea level.",
-      "de": "Der Fuji ist ein Vulkan, der 3.776 Meter über den Meeresspiegel ragt.",
-      "source": "https://whc.unesco.org/en/list/1418/"
+      "en": "A very long stay: Nishiyama Onsen Keiunkan, the world's oldest operating hotel, traces its history to 705.",
+      "de": "Ein sehr langer Aufenthalt: Nishiyama Onsen Keiunkan, das älteste noch betriebene Hotel der Welt, geht auf 705 zurück."
     },
     "detail": {
       "en": "The World Heritage monuments of ancient Kyoto comprise 17 sites across Kyoto, Uji and Otsu.",
-      "de": "Die Welterbemonumente des alten Kyoto umfassen 17 Stätten in Kyoto, Uji und Otsu.",
-      "source": "https://whc.unesco.org/en/list/688/"
+      "de": "Die Welterbemonumente des alten Kyoto umfassen 17 Stätten in Kyoto, Uji und Otsu."
     },
     "fun": {
-      "en": "The Tokaido Shinkansen began carrying passengers between Tokyo and Osaka in 1964.",
-      "de": "Der Tokaido-Shinkansen befördert seit 1964 Fahrgäste zwischen Tokio und Osaka.",
-      "source": "https://global.jr-central.co.jp/en/company/about_shinkansen/"
+      "en": "An island full of hopping neighbours: rabbits roam freely on Ōkunoshima, Japan's 'Rabbit Island'.",
+      "de": "Eine Insel voller hüpfender Nachbarn: Auf Japans „Kanincheninsel“ Ōkunoshima laufen Kaninchen frei herum."
     }
   },
   {
     "id": "in",
     "front": {
-      "en": "The Taj Mahal is a white marble mausoleum built for Emperor Shah Jahan’s wife Mumtaz Mahal.",
-      "de": "Das Taj Mahal ist ein Mausoleum aus weißem Marmor für Kaiser Shah Jahans Frau Mumtaz Mahal.",
-      "source": "https://whc.unesco.org/en/list/252/"
+      "en": "Bridges that grow: in India's Meghalaya region, people make living bridges from tree roots.",
+      "de": "Brücken, die wachsen: Im indischen Meghalaya entstehen lebende Brücken aus Baumwurzeln."
     },
     "fun": {
-      "en": "Rani-ki-Vav’s stepwell was designed as an inverted temple with seven levels of stairs.",
-      "de": "Der Stufenbrunnen Rani-ki-Vav wurde als umgekehrter Tempel mit sieben Treppenebenen entworfen.",
-      "source": "https://whc.unesco.org/en/list/922/"
+      "en": "Slow-motion engineering: builders guide rubber fig roots across rivers and valleys.",
+      "de": "Baukunst in Zeitlupe: Die Menschen lenken Wurzeln des Gummibaums über Flüsse und Täler."
     }
   },
   {
     "id": "vn",
     "front": {
-      "en": "Limestone islands rise from the sea in Ha Long Bay and the Cat Ba Archipelago.",
-      "de": "In der Ha-Long-Bucht und im Cat-Ba-Archipel ragen Kalksteininseln aus dem Meer.",
-      "source": "https://whc.unesco.org/en/list/672/"
+      "en": "A giant underground passage: Vietnam's Sơn Đoòng has the world's largest known cave passage by volume.",
+      "de": "Ein riesiger Gang unter der Erde: Vietnams Sơn Đoòng hat nach Volumen den größten bekannten Höhlengang der Welt."
+    },
+    "fun": {
+      "en": "A world inside a cave: Sơn Đoòng has its own river and patches of jungle.",
+      "de": "Eine Welt in einer Höhle: Sơn Đoòng hat einen eigenen Fluss und sogar Dschungelflächen."
     }
   },
   {
     "id": "np",
     "front": {
-      "en": "Chitwan National Park shelters one-horned rhinoceroses at the foot of the Himalayas.",
-      "de": "Im Chitwan-Nationalpark am Fuß des Himalayas leben Panzernashörner.",
-      "source": "https://whc.unesco.org/en/list/284/"
+      "en": "Who needs rectangles? Nepal has the world's only non-rectangular national flag.",
+      "de": "Wer braucht schon Rechtecke? Nepal hat die einzige nicht rechteckige Nationalflagge der Welt."
     },
     "detail": {
       "en": "An inscribed pillar erected by Emperor Ashoka marks Lumbini as the birthplace of the Buddha.",
-      "de": "Eine beschriftete Säule von Kaiser Ashoka kennzeichnet Lumbini als Geburtsort des Buddha.",
-      "source": "https://whc.unesco.org/en/list/666/"
+      "de": "Eine beschriftete Säule von Kaiser Ashoka kennzeichnet Lumbini als Geburtsort des Buddha."
+    },
+    "fun": {
+      "en": "Cross from India into Nepal and move your clock forward—just 15 minutes.",
+      "de": "Von Indien nach Nepal? Stell deine Uhr vor—um gerade einmal 15 Minuten."
     }
   },
   {
     "id": "eg",
     "front": {
-      "en": "The ancient burial grounds around Memphis include the pyramids of Giza.",
-      "de": "Zu den antiken Gräberfeldern um Memphis gehören die Pyramiden von Gizeh.",
-      "source": "https://whc.unesco.org/en/list/86/"
+      "en": "A long reign at the top: the Great Pyramid was the world's tallest human-made structure for nearly 4,000 years.",
+      "de": "Lange ganz oben: Die Cheops-Pyramide war fast 4.000 Jahre lang das höchste von Menschen errichtete Bauwerk der Welt."
     },
     "fun": {
-      "en": "Egypt’s desert preserves ancient whale fossils with remnants of hind limbs at Wadi Al-Hitan.",
-      "de": "Ägyptens Wüste bewahrt in Wadi Al-Hitan Fossilien urzeitlicher Wale mit Resten von Hinterbeinen.",
-      "source": "https://whc.unesco.org/en/list/1186/"
+      "en": "Cleopatra was closer in time to the Moon landing than to the building of the Great Pyramid.",
+      "de": "Kleopatra lebte zeitlich näher an der Mondlandung als am Bau der Cheops-Pyramide."
     }
   },
   {
     "id": "ke",
     "front": {
-      "en": "Mount Kenya is an extinct volcano whose summit reaches 5,199 metres.",
-      "de": "Der Mount Kenya ist ein erloschener Vulkan mit einem 5.199 Meter hohen Gipfel.",
-      "source": "https://whc.unesco.org/en/list/800/"
+      "en": "A continent pulling apart: Kenya's Great Rift Valley belongs to a vast tectonic rift system.",
+      "de": "Ein Kontinent bewegt sich: Kenias Großer Grabenbruch ist Teil eines riesigen tektonischen Grabensystems."
     },
     "detail": {
       "en": "The Mijikenda’s sacred kaya forests protect the remains of fortified villages and are cared for by councils of elders.",
-      "de": "Die heiligen Kaya-Wälder der Mijikenda schützen Reste befestigter Dörfer und werden von Ältestenräten betreut.",
-      "source": "https://whc.unesco.org/en/list/1231/"
+      "de": "Die heiligen Kaya-Wälder der Mijikenda schützen Reste befestigter Dörfer und werden von Ältestenräten betreut."
+    },
+    "fun": {
+      "en": "A country in both halves: the Equator runs through Kenya.",
+      "de": "Ein Land in beiden Hälften: Der Äquator verläuft durch Kenia."
     }
   },
   {
     "id": "ma",
     "front": {
-      "en": "Ait-Ben-Haddou is a fortified settlement of earthen buildings below the High Atlas.",
-      "de": "Ait-Ben-Haddou ist eine befestigte Siedlung aus Lehmbauten am Südrand des Hohen Atlas.",
-      "source": "https://whc.unesco.org/en/list/444/"
+      "en": "Learning for centuries: Guinness recognises Fez's al-Qarawiyyin as the oldest existing educational institution.",
+      "de": "Lernen seit Jahrhunderten: Guinness führt die al-Qarawiyyin in Fès als älteste bestehende Bildungseinrichtung."
     },
     "detail": {
       "en": "Traditional argan oil production involves harvesting and drying the fruit, then milling and mixing.",
-      "de": "Zur traditionellen Arganölherstellung gehören das Ernten und Trocknen der Früchte sowie Mahlen und Mischen.",
-      "source": "https://ich.unesco.org/en/RL/argan-practices-and-know-how-concerning-the-argan-tree-00955"
+      "de": "Zur traditionellen Arganölherstellung gehören das Ernten und Trocknen der Früchte sowie Mahlen und Mischen."
+    },
+    "fun": {
+      "en": "A long school history: al-Qarawiyyin traces its founding to AD 859.",
+      "de": "Eine lange Bildungsgeschichte: Die Gründung der al-Qarawiyyin geht auf das Jahr 859 zurück."
     }
   },
   {
     "id": "mg",
     "front": {
-      "en": "The Royal Hill of Ambohimanga unites a royal city, burial sites and sacred places.",
-      "de": "Der Königshügel von Ambohimanga vereint eine Königsstadt, Grabstätten und heilige Orte.",
-      "source": "https://whc.unesco.org/en/list/950/"
+      "en": "Baobab central: six of the world's eight baobab species grow naturally only in Madagascar.",
+      "de": "Heimat der Baobabs: Sechs der acht Baobab-Arten der Welt kommen von Natur aus nur auf Madagaskar vor."
     },
     "detail": {
       "en": "At Tsingy de Bemaraha, erosion has sculpted limestone into sharp pinnacles resembling a stone forest.",
-      "de": "In Tsingy de Bemaraha hat Erosion Kalkstein zu scharfen Spitzen geformt, die einem Steinwald ähneln.",
-      "source": "https://whc.unesco.org/en/list/494/"
+      "de": "In Tsingy de Bemaraha hat Erosion Kalkstein zu scharfen Spitzen geformt, die einem Steinwald ähneln."
     },
     "fun": {
-      "en": "The aye-aye taps wood to find insect larvae, then hooks them out with its slender middle finger.",
-      "de": "Das Fingertier klopft Holz nach Insektenlarven ab und angelt sie mit seinem dünnen Mittelfinger heraus.",
-      "source": "https://lemur.duke.edu/accordions/aye-aye-species-info-page/"
+      "en": "A tree with a grand title: Madagascar's giant baobab is locally known as the 'mother of the forest'.",
+      "de": "Ein Baum mit großem Titel: Madagaskars Riesenbaobab wird vor Ort „Mutter des Waldes“ genannt."
     }
   },
   {
     "id": "ca",
     "front": {
-      "en": "Alberta’s Dinosaur Provincial Park preserves dinosaur fossils about 75 million years old.",
-      "de": "Albertas Dinosaur Provincial Park bewahrt etwa 75 Millionen Jahre alte Dinosaurierfossilien.",
-      "source": "https://whc.unesco.org/en/list/71/"
+      "en": "Coast for days: Canada has the world's longest coastline.",
+      "de": "Küste ohne Ende: Kanada hat die längste Küstenlinie der Welt."
     },
     "fun": {
-      "en": "L’Anse aux Meadows in Newfoundland preserves the remains of an 11th-century Viking settlement.",
-      "de": "L’Anse aux Meadows auf Neufundland bewahrt die Reste einer Wikingersiedlung aus dem 11. Jahrhundert.",
-      "source": "https://whc.unesco.org/en/list/4/"
+      "en": "An emergency maple-syrup supply? Quebec has a strategic reserve.",
+      "de": "Ahornsirup für den Notfall? Québec hat dafür eine strategische Reserve."
     }
   },
   {
     "id": "mx",
     "front": {
-      "en": "Chichen Itza’s ancient monuments combine Maya building traditions with central Mexican influences.",
-      "de": "Chichén Itzás antike Bauten verbinden Maya-Bautraditionen mit Einflüssen aus Zentralmexiko.",
-      "source": "https://whc.unesco.org/en/list/483/"
+      "en": "Bigger than Giza by volume: the world's largest pyramid is in Cholula, Mexico.",
+      "de": "Mehr Volumen als Gizeh: Die größte Pyramide der Welt steht in Cholula in Mexiko."
     },
     "fun": {
-      "en": "Overwintering monarch butterflies can cluster so densely that their weight bends tree branches.",
-      "de": "Überwinternde Monarchfalter sammeln sich teils so dicht, dass ihr Gewicht Baumäste biegt.",
-      "source": "https://whc.unesco.org/en/list/1290/"
+      "en": "Spot the pyramid! Cholula's looks like a grassy hill—with a church built on top.",
+      "de": "Such die Pyramide! Die von Cholula sieht aus wie ein grüner Hügel—mit einer Kirche obendrauf."
     }
   },
   {
     "id": "cu",
     "front": {
-      "en": "Rounded limestone hills tower over the traditional farmland of the Viñales Valley.",
-      "de": "Runde Kalksteinhügel überragen die traditionellen Anbauflächen im Viñales-Tal.",
-      "source": "https://whc.unesco.org/en/list/840/"
+      "en": "Tiny wings, big record: Cuba's bee hummingbird is the world's smallest bird.",
+      "de": "Winzige Flügel, großer Rekord: Kubas Bienenelfe ist der kleinste Vogel der Welt."
+    },
+    "fun": {
+      "en": "Coffee-bean-sized eggs: even the bee hummingbird's nest comes in miniature.",
+      "de": "Eier so klein wie Kaffeebohnen: Bei der Bienenelfe gibt es selbst das Nest im Miniaturformat."
     }
   },
   {
     "id": "br",
     "front": {
-      "en": "The Central Amazon Conservation Complex protects river dolphins and Amazonian manatees.",
-      "de": "Der Schutzgebietskomplex Zentralamazonien schützt Flussdelfine und Amazonas-Seekühe.",
-      "source": "https://whc.unesco.org/en/list/998/"
+      "en": "The big neighbour: Brazil is South America's largest country.",
+      "de": "Der große Nachbar: Brasilien ist das größte Land Südamerikas."
     },
     "detail": {
       "en": "In a capoeira circle, two players combine dance and combat while others sing, clap and play percussion.",
-      "de": "Im Capoeira-Kreis verbinden zwei Spieler Tanz und Kampf, während die anderen singen, klatschen und Schlaginstrumente spielen.",
-      "source": "https://ich.unesco.org/en/RL/capoeira-circle-00892"
+      "de": "Im Capoeira-Kreis verbinden zwei Spieler Tanz und Kampf, während die anderen singen, klatschen und Schlaginstrumente spielen."
+    },
+    "fun": {
+      "en": "Bird or aeroplane? Seen from above, Brasília's planned layout can resemble either.",
+      "de": "Vogel oder Flugzeug? Von oben erinnert Brasílias geplanter Stadtgrundriss an beides."
     }
   },
   {
     "id": "pe",
     "front": {
-      "en": "Machu Picchu stands 2,430 metres above sea level in a tropical mountain forest.",
-      "de": "Machu Picchu liegt auf 2.430 Metern Höhe in einem tropischen Bergwald.",
-      "source": "https://whc.unesco.org/en/list/274/"
+      "en": "Potato fans, take note: Peru grows more than 3,000 varieties of potato.",
+      "de": "Aufgepasst, Kartoffelfans: In Peru wachsen mehr als 3.000 Kartoffelsorten."
     },
     "fun": {
-      "en": "Andean communities renew the Q’eswachaka suspension bridge each year using ropes twisted from straw.",
-      "de": "Andengemeinden erneuern die Q’eswachaka-Hängebrücke jährlich mit Seilen aus zusammengedrehtem Stroh.",
-      "source": "https://ich.unesco.org/en/RL/knowledge-skills-and-rituals-related-to-the-annual-renewal-of-the-q-eswachaka-bridge-00594"
+      "en": "Homes that float: Uros communities on Lake Titicaca live on islands made from reeds.",
+      "de": "Ein Zuhause, das schwimmt: Uros-Gemeinschaften leben auf dem Titicacasee auf Inseln aus Schilf."
     }
   },
   {
     "id": "cl",
     "front": {
-      "en": "Rapa Nui’s monumental stone figures are known as moai.",
-      "de": "Die monumentalen Steinfiguren auf Rapa Nui werden Moai genannt.",
-      "source": "https://whc.unesco.org/en/list/715/"
+      "en": "Dry, drier, Atacama: Chile has the world's driest non-polar desert.",
+      "de": "Trocken, trockener, Atacama: In Chile liegt die trockenste Wüste der Welt außerhalb der Polarregionen."
+    },
+    "fun": {
+      "en": "A desert in bloom: after enough rain, parts of the Atacama burst into colourful wildflowers.",
+      "de": "Eine Wüste blüht auf: Nach genügend Regen erstrahlen Teile der Atacama in bunten Wildblumen."
     }
   },
   {
     "id": "au",
     "front": {
-      "en": "The Great Barrier Reef provides habitat for dugongs and green turtles.",
-      "de": "Das Great Barrier Reef bietet Dugongs und Grünen Meeresschildkröten Lebensraum.",
-      "source": "https://whc.unesco.org/en/list/154/"
+      "en": "A kangaroo and an emu share the spotlight on Australia's coat of arms.",
+      "de": "Känguru und Emu teilen sich die Bühne auf Australiens Staatswappen."
     },
     "fun": {
-      "en": "The platypus is a mammal that lays eggs and produces milk for its young.",
-      "de": "Das Schnabeltier ist ein Säugetier, das Eier legt und Milch für seine Jungen produziert.",
-      "source": "https://australian.museum/learn/animals/mammals/mammals-mammalia/"
+      "en": "Wombats poo cubes. Yes, actual cubes.",
+      "de": "Wombats machen Würfelhäufchen. Ja, wirklich Würfel."
     }
   },
   {
     "id": "nz",
     "front": {
-      "en": "Te Wahipounamu’s forests include trees more than 800 years old.",
-      "de": "In den Wäldern von Te Wahipounamu stehen über 800 Jahre alte Bäume.",
-      "source": "https://whc.unesco.org/en/list/551/"
+      "en": "In 1893, New Zealand became the first self-governing country to give women the parliamentary vote.",
+      "de": "1893 gab Neuseeland als erstes selbstverwaltetes Land Frauen das Wahlrecht bei Parlamentswahlen."
     },
     "fun": {
-      "en": "Kiwi have nostrils near the tips of their long bills and a well-developed sense of smell.",
-      "de": "Kiwis haben Nasenlöcher nahe der Spitze ihres langen Schnabels und einen ausgeprägten Geruchssinn.",
-      "source": "https://www.doc.govt.nz/Documents/science-and-technical/sap262entire.pdf"
+      "en": "One hill's Māori name has 85 letters. Need a breather? Locals call it Taumata.",
+      "de": "Der Māori-Name eines Hügels hat 85 Buchstaben. Erst mal Luft holen? Vor Ort sagt man einfach Taumata."
     }
   },
   {
     "id": "de",
     "front": {
-      "en": "Fossils from Messel Pit can preserve even the stomach contents of ancient mammals.",
-      "de": "Fossilien aus der Grube Messel bewahren sogar den Mageninhalt urzeitlicher Säugetiere.",
-      "source": "https://whc.unesco.org/en/list/720/"
+      "en": "A little bear with a long history: Hans Riegel invented gummy bears in Bonn in 1922.",
+      "de": "Ein kleiner Bär mit langer Geschichte: Hans Riegel erfand 1922 in Bonn die Gummibärchen."
+    },
+    "fun": {
+      "en": "A name in three bites: HARIBO stands for HAns RIegel BOnn.",
+      "de": "Ein Name in drei Häppchen: HARIBO steht für HAns RIegel BOnn."
     }
   },
   {
     "id": "es",
     "front": {
-      "en": "Seven works by Antoni Gaudí in and around Barcelona form a World Heritage site.",
-      "de": "Sieben Werke Antoni Gaudís in und um Barcelona bilden eine Welterbestätte.",
-      "source": "https://whc.unesco.org/en/list/320/"
+      "en": "Serving since 1725: Madrid's Botín holds the Guinness title for the world's oldest restaurant.",
+      "de": "Am Tisch seit 1725: Madrids Botín trägt den Guinness-Titel als ältestes Restaurant der Welt."
     },
     "fun": {
-      "en": "On La Gomera, Silbo Gomero turns spoken Spanish into whistles that can convey messages.",
-      "de": "Auf La Gomera verwandelt Silbo Gomero gesprochenes Spanisch in Pfiffe, die Botschaften vermitteln.",
-      "source": "https://ich.unesco.org/en/RL/whistled-language-of-the-island-of-la-gomera-canary-islands-the-silbo-gomero-00172"
+      "en": "Tomatoes incoming! At Buñol's La Tomatina festival, crowds throw tomatoes at each other.",
+      "de": "Achtung, Tomaten! Beim Fest La Tomatina in Buñol bewerfen sich Menschen mit Tomaten."
     }
   },
   {
     "id": "gb",
     "front": {
-      "en": "Northern Ireland’s Giant’s Causeway has about 40,000 basalt columns formed by volcanic activity.",
-      "de": "Nordirlands Giant’s Causeway besteht aus etwa 40.000 Basaltsäulen vulkanischen Ursprungs.",
-      "source": "https://whc.unesco.org/en/list/369/"
+      "en": "Scotland's national animal is the unicorn. A mythical choice!",
+      "de": "Schottlands Nationaltier ist das Einhorn. Eine sagenhafte Wahl!"
+    },
+    "fun": {
+      "en": "The heraldic unicorn wears chains: legend says only a king could control it.",
+      "de": "Das Wappeneinhorn trägt Ketten: Der Legende nach konnte nur ein König es bändigen."
     }
   },
   {
     "id": "gr",
     "front": {
-      "en": "Meteora’s monasteries perch on steep sandstone pillars.",
-      "de": "Die Klöster von Meteora thronen auf steilen Sandsteinpfeilern.",
-      "source": "https://whc.unesco.org/en/list/455/"
+      "en": "Quite a songbook: Greece's national anthem comes from a poem with 158 stanzas.",
+      "de": "Ein ganzes Liederbuch: Griechenlands Nationalhymne stammt aus einem Gedicht mit 158 Strophen."
+    },
+    "fun": {
+      "en": "No need to sing all 158: usually only the first two stanzas are sung on official occasions.",
+      "de": "Keine Sorge, nicht alle 158: Bei offiziellen Anlässen werden meist nur die ersten beiden Strophen gesungen."
     }
   },
   {
     "id": "cn",
     "front": {
-      "en": "Sichuan’s panda sanctuaries also shelter red pandas and snow leopards.",
-      "de": "Sichuans Panda-Schutzgebiete beherbergen auch Rote Pandas und Schneeleoparden.",
-      "source": "https://whc.unesco.org/en/list/1213/"
+      "en": "One clock for a vast country: China uses one official time zone across roughly five geographical time zones.",
+      "de": "Eine Uhr für ein riesiges Land: China nutzt eine offizielle Zeitzone über etwa fünf geografische Zeitzonen hinweg."
     },
     "detail": {
       "en": "Paper, printing and the magnetic compass were among the technologies that spread from China along the Silk Roads.",
-      "de": "Papier, Drucktechnik und Magnetkompass gehörten zu den Technologien, die sich von China über die Seidenstraßen verbreiteten.",
-      "source": "https://whc.unesco.org/en/tentativelists/5521"
+      "de": "Papier, Drucktechnik und Magnetkompass gehörten zu den Technologien, die sich von China über die Seidenstraßen verbreiteten."
+    },
+    "fun": {
+      "en": "A panda's extra 'thumb' is actually an enlarged wrist bone that helps it grip bamboo.",
+      "de": "Der zusätzliche „Daumen“ eines Pandas ist ein vergrößerter Handwurzelknochen, mit dem er Bambus festhält."
     }
   },
   {
     "id": "kr",
     "front": {
-      "en": "Jeju’s volcanic landscape includes lava tunnels and a lake-filled summit crater.",
-      "de": "Jejus Vulkanlandschaft umfasst Lavatunnel und einen mit Wasser gefüllten Gipfelkrater.",
-      "source": "https://whc.unesco.org/en/list/1264/"
+      "en": "An alphabet with a royal chapter: Korea's Hangul was created under King Sejong in the 15th century.",
+      "de": "Ein Alphabet mit königlichem Kapitel: Koreas Hangul entstand im 15. Jahrhundert unter König Sejong."
     },
     "fun": {
-      "en": "Jeju’s haenyeo divers gather seafood by holding their breath, without underwater breathing equipment.",
-      "de": "Jejus Haenyeo-Taucherinnen sammeln Meerestiere mit angehaltenem Atem, ohne Unterwasser-Atemgerät.",
-      "source": "https://ich.unesco.org/en/RL/culture-of-jeju-haenyeo-female-divers-01068"
+      "en": "A breath of tradition: Jeju's haenyeo divers harvest seafood without breathing equipment.",
+      "de": "Mit einem Atemzug: Die Haenyeo-Taucherinnen von Jeju sammeln Meeresfrüchte ohne Atemgerät."
     }
   },
   {
     "id": "id",
     "front": {
-      "en": "Borobudur’s circular platforms are surrounded by 72 openwork stupas containing Buddha statues.",
-      "de": "Borobudurs runde Plattformen umgeben 72 durchbrochene Stupas mit Buddhafiguren.",
-      "source": "https://whc.unesco.org/en/list/592/"
+      "en": "Real dragons? Wild Komodo dragons, the largest living lizards, live on a few Indonesian islands.",
+      "de": "Echte Drachen? Komodowarane, die größten lebenden Echsen, leben wild auf einigen indonesischen Inseln."
     },
     "detail": {
       "en": "An angklung makes a note or chord when its bamboo frame is shaken; several players work together to create melodies.",
-      "de": "Ein Angklung erzeugt beim Schütteln seines Bambusrahmens einen Ton oder Akkord; mehrere Spieler bilden gemeinsam Melodien.",
-      "source": "https://ich.unesco.org/en/RL/indonesian-angklung-00393"
+      "de": "Ein Angklung erzeugt beim Schütteln seines Bambusrahmens einen Ton oder Akkord; mehrere Spieler bilden gemeinsam Melodien."
+    },
+    "fun": {
+      "en": "Big bloom, big stink: Indonesia's Rafflesia arnoldii makes the world's largest individual flower—and smells like rotten meat.",
+      "de": "Große Blüte, großer Gestank: Indonesiens Rafflesia arnoldii bildet die größte Einzelblüte der Welt—und riecht nach faulem Fleisch."
     }
   },
   {
     "id": "bt",
     "front": {
-      "en": "Bhutan’s Tiger’s Nest Monastery clings to a cliff above the Paro Valley.",
-      "de": "Bhutans Tigernest-Kloster schmiegt sich an eine Felswand über dem Parotal.",
-      "source": "https://bhutan.travel/journal/editorial/bhutan-is-family-friendly"
+      "en": "Progress with a smile: Bhutan measures Gross National Happiness alongside economic progress.",
+      "de": "Fortschritt mit einem Lächeln: Bhutan misst neben der wirtschaftlichen Entwicklung auch das Bruttonationalglück."
+    },
+    "fun": {
+      "en": "No red, amber or green: in the capital Thimphu, police direct traffic by hand instead of traffic lights.",
+      "de": "Kein Rot, Gelb oder Grün: In der Hauptstadt Thimphu regelt die Polizei den Verkehr per Hand statt mit Ampeln."
     }
   },
   {
     "id": "dz",
     "front": {
-      "en": "Tassili n’Ajjer’s rock art records animals and human life in the prehistoric Sahara.",
-      "de": "Die Felskunst von Tassili n’Ajjer zeigt Tiere und menschliches Leben der prähistorischen Sahara.",
-      "source": "https://whc.unesco.org/en/list/179/"
+      "en": "Room to roam: Algeria is Africa's largest country by area.",
+      "de": "Viel Platz zum Streifen: Algerien ist flächenmäßig Afrikas größtes Land."
+    },
+    "fun": {
+      "en": "A greener Sahara? Rock art at Tassili n'Ajjer shows animals from a time when the desert was much greener.",
+      "de": "Eine grünere Sahara? Felsbilder im Tassili n'Ajjer zeigen Tiere aus einer Zeit, als die Wüste viel grüner war."
     }
   },
   {
     "id": "gh",
     "front": {
-      "en": "Traditional Asante shrines near Kumasi use timber, bamboo and mud plaster.",
-      "de": "Traditionelle Asante-Schreine bei Kumasi bestehen aus Holz, Bambus und Lehmputz.",
-      "source": "https://whc.unesco.org/en/list/35/"
+      "en": "A new chapter: Ghana gained independence from Britain in 1957.",
+      "de": "Ein neues Kapitel: Ghana wurde 1957 von Großbritannien unabhängig."
+    },
+    "fun": {
+      "en": "A lake on a grand scale: Lake Volta is among the world's largest artificial lakes by surface area.",
+      "de": "Ein See im Großformat: Der Voltastausee gehört nach Fläche zu den größten künstlichen Seen der Welt."
     }
   },
   {
     "id": "na",
     "front": {
-      "en": "The Namib Sand Sea is a coastal desert where fog meets vast shifting dunes.",
-      "de": "Die Namib-Sandwüste ist eine Küstenwüste, in der Nebel auf riesige Wanderdünen trifft.",
-      "source": "https://whc.unesco.org/en/list/1430/"
+      "en": "Ancient sands: Namibia's Namib is considered the world's oldest desert.",
+      "de": "Uralter Sand: Namibias Namib gilt als die älteste Wüste der Welt."
     },
     "detail": {
       "en": "Twyfelfontein’s rock engravings depict wildlife such as giraffes and rhinoceroses, as well as human and animal footprints.",
-      "de": "Twyfelfonteins Felsgravuren zeigen Wildtiere wie Giraffen und Nashörner sowie Fußspuren von Menschen und Tieren.",
-      "source": "https://whc.unesco.org/en/list/1255/"
+      "de": "Twyfelfonteins Felsgravuren zeigen Wildtiere wie Giraffen und Nashörner sowie Fußspuren von Menschen und Tieren."
+    },
+    "fun": {
+      "en": "A desert that drinks fog: mist supplies much of the water sustaining life in the Namib Sand Sea.",
+      "de": "Eine Wüste, die Nebel trinkt: Nebel liefert viel von dem Wasser, das Leben in der Namib-Sandwüste ermöglicht."
     }
   },
   {
     "id": "ls",
     "front": {
-      "en": "Sehlabathebe’s sandstone landscape forms part of the cross-border Maloti-Drakensberg Park.",
-      "de": "Sehlabathebes Sandsteinlandschaft gehört zum grenzüberschreitenden Maloti-Drakensberg-Park.",
-      "source": "https://whc.unesco.org/en/list/985/"
+      "en": "A whole country up high: every part of Lesotho lies more than 1,000 metres above sea level.",
+      "de": "Ein ganzes Land hoch oben: Ganz Lesotho liegt mehr als 1.000 Meter über dem Meeresspiegel."
+    },
+    "fun": {
+      "en": "Even its low point is lofty: Lesotho's lowest spot is roughly 1,400 metres above sea level.",
+      "de": "Selbst der Tiefpunkt liegt hoch: Lesothos niedrigste Stelle liegt rund 1.400 Meter über dem Meeresspiegel."
     }
   },
   {
     "id": "us",
     "front": {
-      "en": "Yellowstone combines geysers and forests with wild bison, wolves and grizzly bears.",
-      "de": "Yellowstone vereint Geysire und Wälder mit wilden Bisons, Wölfen und Grizzlybären.",
-      "source": "https://whc.unesco.org/en/list/28/"
+      "en": "A huge purchase: the United States bought Alaska from Russia in 1867.",
+      "de": "Ein riesiger Einkauf: Die Vereinigten Staaten kauften Alaska 1867 von Russland."
     },
     "fun": {
-      "en": "Giant sequoias’ thick, fibrous bark helps insulate them from the heat of forest fires.",
-      "de": "Die dicke, faserige Rinde der Riesenmammutbäume schützt sie teilweise vor der Hitze von Waldbränden.",
-      "source": "https://www.nps.gov/seki/learn/gslc.htm"
+      "en": "The price tag for Alaska? The purchase cost $7.2 million.",
+      "de": "Das Preisschild für Alaska? Der Kauf kostete 7,2 Millionen US-Dollar."
     }
   },
   {
     "id": "cr",
     "front": {
-      "en": "The Diquís Delta preserves ancient stone spheres more than two metres in diameter.",
-      "de": "Im Diquís-Delta sind antike Steinkugeln mit über zwei Metern Durchmesser erhalten.",
-      "source": "https://whc.unesco.org/en/list/1453/"
+      "en": "A different kind of defence: Costa Rica abolished its army in 1948.",
+      "de": "Ein anderer Weg: Costa Rica schaffte 1948 seine Armee ab."
     },
     "detail": {
       "en": "Costa Rica’s 1949 constitution abolished the army as a permanent institution, while allowing forces for national defence.",
-      "de": "Costa Ricas Verfassung von 1949 schaffte das Heer als dauerhafte Institution ab, erlaubt aber Streitkräfte zur Landesverteidigung.",
-      "source": "https://en.wikipedia.org/wiki/Article_12_of_the_Constitution_of_Costa_Rica"
+      "de": "Costa Ricas Verfassung von 1949 schaffte das Heer als dauerhafte Institution ab, erlaubt aber Streitkräfte zur Landesverteidigung."
+    },
+    "fun": {
+      "en": "From soldiers to stories: the former Bellavista army barracks became Costa Rica's National Museum.",
+      "de": "Von Soldaten zu Geschichten: Die frühere Bellavista-Kaserne wurde zu Costa Ricas Nationalmuseum."
     }
   },
   {
     "id": "jm",
     "front": {
-      "en": "The Blue and John Crow Mountains sheltered Maroon communities escaping slavery.",
-      "de": "Die Blue and John Crow Mountains boten Maroon-Gemeinschaften Schutz vor der Sklaverei.",
-      "source": "https://whc.unesco.org/en/list/1356/"
+      "en": "An island with a beat: reggae music originated in Jamaica.",
+      "de": "Eine Insel mit Rhythmus: Reggae-Musik entstand auf Jamaika."
     },
     "detail": {
       "en": "Jamaican reggae grew from earlier styles such as ska and rocksteady, drawing on soul and rhythm and blues.",
-      "de": "Jamaikanischer Reggae entwickelte sich aus Stilen wie Ska und Rocksteady und nahm Soul sowie Rhythm and Blues auf.",
-      "source": "https://ich.unesco.org/en/RL/reggae-music-of-jamaica-01398"
+      "de": "Jamaikanischer Reggae entwickelte sich aus Stilen wie Ska und Rocksteady und nahm Soul sowie Rhythm and Blues auf."
+    },
+    "fun": {
+      "en": "A spy's literary home: Ian Fleming wrote the James Bond novels at his Jamaican house, Goldeneye.",
+      "de": "Die literarische Heimat eines Spions: Ian Fleming schrieb die James-Bond-Romane in seinem Haus Goldeneye auf Jamaika."
     }
   },
   {
     "id": "ar",
     "front": {
-      "en": "Patagonia’s Los Glaciares National Park contains glaciers that calve into lakes.",
-      "de": "Im patagonischen Nationalpark Los Glaciares brechen Eisberge von Gletschern in Seen ab.",
-      "source": "https://whc.unesco.org/en/list/145/"
+      "en": "Top of the world outside Asia: Argentina's Aconcagua is the highest mountain on any other continent.",
+      "de": "Hoch hinaus: Argentiniens Aconcagua ist der höchste Berg außerhalb Asiens."
     },
     "fun": {
-      "en": "Patagonia’s Cave of the Hands takes its name from the painted hand stencils on its rock walls.",
-      "de": "Patagoniens Höhle der Hände verdankt ihren Namen den mit Farbe gesprühten Handumrissen an ihren Felswänden.",
-      "source": "https://whc.unesco.org/en/list/936/"
+      "en": "Welsh in Patagonia? Settlers arrived in 1865, and the language is still spoken in parts of the region.",
+      "de": "Walisisch in Patagonien? 1865 kamen Siedler an, und in Teilen der Region wird die Sprache noch heute gesprochen."
     }
   },
   {
     "id": "bo",
     "front": {
-      "en": "Tiwanaku flourished as the centre of an Andean empire between AD 500 and 900.",
-      "de": "Tiwanaku blühte zwischen 500 und 900 n. Chr. als Zentrum eines Andenreichs.",
-      "source": "https://whc.unesco.org/en/list/567/"
+      "en": "Pass the salt! Bolivia's Salar de Uyuni is the world's largest salt flat.",
+      "de": "Einmal Salz, bitte! Boliviens Salar de Uyuni ist die größte Salzpfanne der Welt."
     },
     "detail": {
       "en": "The Salar de Uyuni formed as prehistoric lakes evaporated, leaving behind a crust rich in salt and gypsum.",
-      "de": "Der Salar de Uyuni entstand durch Verdunstung prähistorischer Seen, die eine Kruste aus Salz und Gips hinterließen.",
-      "source": "https://science.nasa.gov/earth/earth-observatory/an-expanse-of-white-in-bolivia-84853/"
+      "de": "Der Salar de Uyuni entstand durch Verdunstung prähistorischer Seen, die eine Kruste aus Salz und Gips hinterließen."
+    },
+    "fun": {
+      "en": "Flat enough for space science: scientists use Salar de Uyuni to calibrate satellite instruments.",
+      "de": "Flach genug für die Raumfahrt: Am Salar de Uyuni kalibrieren Forschende Satelliteninstrumente."
     }
   },
   {
     "id": "uy",
     "front": {
-      "en": "Fray Bentos once exported meat extract and corned beef to Europe.",
-      "de": "Fray Bentos exportierte einst Fleischextrakt und Corned Beef nach Europa.",
-      "source": "https://whc.unesco.org/en/list/1464/"
+      "en": "Hosts and champions: Uruguay held and won the first football World Cup in 1930.",
+      "de": "Gastgeber und Sieger: Uruguay richtete 1930 die erste Fußball-Weltmeisterschaft aus und gewann sie."
+    },
+    "fun": {
+      "en": "A final between neighbours: Uruguay beat Argentina to claim the first World Cup.",
+      "de": "Ein Finale unter Nachbarn: Uruguay besiegte Argentinien und holte den ersten Weltmeistertitel."
     }
   },
   {
     "id": "fj",
     "front": {
-      "en": "Levuka’s historic port grew around existing indigenous villages in the 19th century.",
-      "de": "Levukas historischer Hafen wuchs im 19. Jahrhundert um bestehende indigene Dörfer herum.",
-      "source": "https://whc.unesco.org/en/list/1399/"
+      "en": "Island hopping for ages: Fiji has more than 300 islands.",
+      "de": "Inselhüpfen ohne Ende: Fidschi hat mehr als 300 Inseln."
+    },
+    "fun": {
+      "en": "A root, not a fruit: Fiji's traditional kava drink is made from a plant in the pepper family.",
+      "de": "Wurzel statt Frucht: Fidschis traditionelles Kava-Getränk wird aus der Wurzel eines Pfeffergewächses hergestellt."
     }
   },
   {
     "id": "vu",
     "front": {
-      "en": "Sites on three islands preserve the story of Vanuatu’s chief Roi Mata.",
-      "de": "Stätten auf drei Inseln bewahren die Geschichte von Vanuatus Häuptling Roi Mata.",
-      "source": "https://whc.unesco.org/en/list/1280/"
+      "en": "A daring tradition: Vanuatu's land divers jump from wooden towers with vines tied to their ankles.",
+      "de": "Eine waghalsige Tradition: Vanuatus Landtaucher springen mit Lianen an den Knöcheln von Holztürmen."
+    },
+    "fun": {
+      "en": "An idea that travelled: the ritual helped inspire modern bungee jumping.",
+      "de": "Eine Idee auf Reisen: Das Ritual inspirierte das moderne Bungeespringen mit."
     }
   },
   {
     "id": "ae",
     "front": {
-      "en": "Al Ain preserves ancient desert tombs and an Iron Age aflaj irrigation system.",
-      "de": "Al Ain bewahrt antike Wüstengräber und ein Aflaj-Bewässerungssystem aus der Eisenzeit.",
-      "source": "https://whc.unesco.org/en/list/1343/"
+      "en": "Top of the skyline: Dubai's Burj Khalifa is the world's tallest building.",
+      "de": "Ganz oben in der Skyline: Dubais Burj Khalifa ist das höchste Gebäude der Welt."
+    },
+    "fun": {
+      "en": "A very high lookout: one of its observation decks is more than 550 metres above the ground.",
+      "de": "Ein sehr hoher Ausguck: Eine seiner Aussichtsplattformen liegt mehr als 550 Meter über dem Boden."
     }
   },
   {
     "id": "af",
     "front": {
-      "en": "The 12th-century Minaret of Jam rises 65 metres above a remote river valley.",
-      "de": "Das Minarett von Dscham aus dem 12. Jahrhundert ragt 65 Meter über einem abgelegenen Flusstal auf.",
-      "source": "https://whc.unesco.org/en/list/211/"
+      "en": "A tower in a remote valley: Afghanistan's Minaret of Jam rises about 65 metres above the rivers below.",
+      "de": "Ein Turm im abgelegenen Tal: Afghanistans Minarett von Dscham ragt rund 65 Meter über die Flüsse darunter."
+    },
+    "fun": {
+      "en": "Look closely: the minaret's intricate brickwork includes an inscription in turquoise tiles.",
+      "de": "Genau hinsehen: Im kunstvollen Ziegelmuster des Minaretts steckt eine Inschrift aus türkisfarbenen Kacheln."
     }
   },
   {
     "id": "al",
     "front": {
-      "en": "Butrint preserves layers of history from a Greek colony to a Roman city.",
-      "de": "Butrint bewahrt historische Schichten von einer griechischen Kolonie bis zu einer römischen Stadt.",
-      "source": "https://whc.unesco.org/en/list/570/"
+      "en": "Concrete everywhere: Albania's communist government built thousands of bunkers.",
+      "de": "Beton überall: Albaniens kommunistische Regierung ließ Tausende Bunker bauen."
+    },
+    "fun": {
+      "en": "A new life underground: some former bunkers now house museums.",
+      "de": "Ein neues Leben unter der Erde: Einige frühere Bunker beherbergen heute Museen."
     }
   },
   {
     "id": "am",
     "front": {
-      "en": "Many of Geghard Monastery’s medieval churches and tombs were carved directly into rock.",
-      "de": "Viele mittelalterliche Kirchen und Gräber des Klosters Geghard wurden direkt in den Fels gehauen.",
-      "source": "https://whc.unesco.org/en/list/960/"
+      "en": "Armenia is traditionally considered the first country to adopt Christianity as its state religion.",
+      "de": "Armenien gilt traditionell als erstes Land, das das Christentum zur Staatsreligion machte."
     },
     "fun": {
-      "en": "Armenian lavash is baked by pressing thin sheets of dough against the wall of a clay oven.",
-      "de": "Armenisches Lawasch wird gebacken, indem dünne Teigfladen an die Wand eines Lehmofens gedrückt werden.",
-      "source": "https://ich.unesco.org/en/RL/le-lavash-preparation-signification-et-aspect-du-pain-traditionnel-en-tant-qu-expression-culturelle-en-armenie-00985"
+      "en": "Checkmate on the timetable: in 2011, Armenia made chess compulsory in school grades 2–4.",
+      "de": "Schachmatt im Stundenplan: 2011 machte Armenien Schach zum Pflichtfach in den Klassen 2 bis 4."
     }
   },
   {
     "id": "ao",
     "front": {
-      "en": "Mbanza Kongo was the political and spiritual centre of the Kingdom of Kongo.",
-      "de": "Mbanza Kongo war das politische und spirituelle Zentrum des Königreichs Kongo.",
-      "source": "https://whc.unesco.org/en/list/1511/"
+      "en": "Only in Angola: the giant sable antelope lives naturally nowhere else.",
+      "de": "Nur in Angola: Die Riesen-Rappenantilope kommt von Natur aus nirgendwo sonst vor."
+    },
+    "fun": {
+      "en": "A remarkable comeback: the antelope was rediscovered in 2005 after years without confirmed sightings.",
+      "de": "Ein erstaunliches Wiedersehen: Nach Jahren ohne bestätigte Sichtung wurde die Antilope 2005 wiederentdeckt."
     }
   },
   {
     "id": "at",
     "front": {
-      "en": "The Semmering Railway crossed 41 kilometres of mountain terrain when built in 1848–1854.",
-      "de": "Die Semmeringbahn überwand beim Bau 1848–1854 eine 41 Kilometer lange Gebirgsstrecke.",
-      "source": "https://whc.unesco.org/en/list/785/"
+      "en": "Snow on demand: Vienna's Perzy family has been making snow globes since around 1900.",
+      "de": "Schnee auf Bestellung: Die Wiener Familie Perzy stellt seit etwa 1900 Schneekugeln her."
+    },
+    "fun": {
+      "en": "A happy accident: Perzy's snow globe emerged from experiments to improve surgical lighting.",
+      "de": "Ein glücklicher Zufall: Perzys Schneekugel entstand bei Versuchen, die Beleuchtung für Operationen zu verbessern."
     }
   },
   {
     "id": "az",
     "front": {
-      "en": "Gobustan preserves more than 6,000 rock engravings in a rocky semi-desert landscape.",
-      "de": "Gobustan bewahrt über 6.000 Felsgravuren in einer felsigen Halbwüstenlandschaft.",
-      "source": "https://whc.unesco.org/en/list/1076/"
+      "en": "Bubbling earth: Azerbaijan is home to hundreds of mud volcanoes.",
+      "de": "Blubbernde Erde: In Aserbaidschan gibt es Hunderte Schlammvulkane."
     },
     "detail": {
       "en": "Azerbaijani handmade carpets carry patterns characteristic of different carpet-making regions.",
-      "de": "Handgewebte aserbaidschanische Teppiche tragen Muster, die für verschiedene Teppichregionen typisch sind.",
-      "source": "https://ich.unesco.org/en/RL/traditional-art-of-azerbaijani-carpet-weaving-in-the-republic-of-azerbaijan-00389"
+      "de": "Handgewebte aserbaidschanische Teppiche tragen Muster, die für verschiedene Teppichregionen typisch sind."
+    },
+    "fun": {
+      "en": "A hillside on fire: natural gas feeds the flames at Yanar Dag.",
+      "de": "Ein Hügel in Flammen: Erdgas speist das Feuer am Yanar Dag."
     }
   },
   {
     "id": "ba",
     "front": {
-      "en": "Mostar takes its name from the mostari, the bridge keepers.",
-      "de": "Mostar verdankt seinen Namen den Mostari, den Brückenwächtern.",
-      "source": "https://whc.unesco.org/en/list/946/"
+      "en": "A bridge with a second chapter: Mostar's famous Old Bridge was rebuilt after its destruction in the 1990s.",
+      "de": "Eine Brücke mit zweitem Kapitel: Mostars Alte Brücke wurde nach ihrer Zerstörung in den 1990ern wiederaufgebaut."
+    },
+    "fun": {
+      "en": "A spectacular local tradition: divers leap from the bridge into the Neretva River below.",
+      "de": "Eine spektakuläre Tradition: Brückenspringer stürzen sich von der Brücke in die Neretva darunter."
     }
   },
   {
     "id": "bd",
     "front": {
-      "en": "The Sundarbans’ tidal mangrove forests provide habitat for Bengal tigers.",
-      "de": "Die Mangrovenwälder der Sundarbans im Gezeitenbereich bieten Bengaltigern Lebensraum.",
-      "source": "https://whc.unesco.org/en/list/798/"
+      "en": "Roots in the tide: Bangladesh shares the world's largest mangrove forest, the Sundarbans, with India.",
+      "de": "Wurzeln in den Gezeiten: Bangladesch teilt sich die Sundarbans, den größten Mangrovenwald der Welt, mit Indien."
     },
     "detail": {
       "en": "Jamdani weavers near Dhaka create intricate patterns directly on the handloom as they weave sheer cotton cloth.",
-      "de": "Jamdani-Weber bei Dhaka erzeugen beim Weben feiner Baumwollstoffe aufwendige Muster direkt am Handwebstuhl.",
-      "source": "https://ich.unesco.org/en/RL/traditional-art-of-jamdani-weaving-00879?RL=00879"
+      "de": "Jamdani-Weber bei Dhaka erzeugen beim Weben feiner Baumwollstoffe aufwendige Muster direkt am Handwebstuhl."
+    },
+    "fun": {
+      "en": "Stripes among the roots: Bengal tigers live in this tidal forest.",
+      "de": "Streifen zwischen Wurzeln: In diesem Gezeitenwald leben Bengalische Tiger."
     }
   },
   {
     "id": "be",
     "front": {
-      "en": "Victor Horta’s Brussels town houses helped pioneer Art Nouveau architecture.",
-      "de": "Victor Hortas Brüsseler Stadthäuser zählen zu den Pionierbauten des Jugendstils.",
-      "source": "https://whc.unesco.org/en/list/1005/"
+      "en": "All that jazz: Belgian instrument maker Adolphe Sax invented the saxophone.",
+      "de": "Das hat Klang: Der belgische Instrumentenbauer Adolphe Sax erfand das Saxofon."
+    },
+    "fun": {
+      "en": "A sweet origin story: Belgian pralines grew out of a pharmacist's idea of coating medicine in chocolate.",
+      "de": "Eine süße Vorgeschichte: Belgische Pralinen gehen auf die Idee eines Apothekers zurück, Medizin mit Schokolade zu umhüllen."
     }
   },
   {
     "id": "bf",
     "front": {
-      "en": "Loropéni’s stone-walled ruins bear witness to the trans-Saharan gold trade.",
-      "de": "Die steinernen Mauerruinen von Loropéni zeugen vom Goldhandel durch die Sahara.",
-      "source": "https://whc.unesco.org/en/list/1225/"
+      "en": "A name with a message: Burkina Faso is commonly translated as 'land of upright people'.",
+      "de": "Ein Name mit Botschaft: Burkina Faso wird oft als „Land der aufrichtigen Menschen“ übersetzt."
+    },
+    "fun": {
+      "en": "Cinema takes the stage: Ouagadougou hosts FESPACO, a major African film festival.",
+      "de": "Vorhang auf fürs Kino: In Ouagadougou findet FESPACO statt, ein bedeutendes afrikanisches Filmfestival."
     }
   },
   {
     "id": "bg",
     "front": {
-      "en": "The Thracian tomb at Kazanlak preserves murals showing ancient burial rituals.",
-      "de": "Das thrakische Grab von Kasanlak bewahrt Wandbilder mit antiken Bestattungsritualen.",
-      "source": "https://whc.unesco.org/en/list/44/"
+      "en": "Ancient sparkle: Bulgaria's Varna cemetery yielded some of the world's oldest worked gold.",
+      "de": "Uralter Glanz: Im Gräberfeld von Warna in Bulgarien fand man einige der ältesten bearbeiteten Goldstücke der Welt."
+    },
+    "fun": {
+      "en": "Gold with a very long history: the Varna finds date to the fifth millennium BC.",
+      "de": "Gold mit sehr langer Geschichte: Die Funde von Warna stammen aus dem fünften Jahrtausend vor Christus."
     }
   },
   {
     "id": "bi",
     "front": {
-      "en": "Burundi’s royal drum ritual combines synchronized drumming, dance, poetry and song.",
-      "de": "Burundis königliches Trommelritual verbindet synchrones Trommeln, Tanz, Dichtung und Gesang.",
-      "source": "https://ich.unesco.org/en/RL/ritual-dance-of-the-royal-drum-00989"
+      "en": "A royal rhythm: Burundi's drumming tradition is recognised by UNESCO.",
+      "de": "Ein königlicher Rhythmus: Burundis Trommeltradition ist von der UNESCO anerkannt."
+    },
+    "fun": {
+      "en": "More than a beat: the performances bring together drumming, dancing and singing.",
+      "de": "Mehr als ein Takt: Die Aufführungen verbinden Trommeln, Tanz und Gesang."
     }
   },
   {
     "id": "bj",
     "front": {
-      "en": "The royal palaces of Abomey preserve the heritage of the Kingdom of Dahomey.",
-      "de": "Die Königspaläste von Abomey bewahren das Erbe des Königreichs Dahomey.",
-      "source": "https://whc.unesco.org/en/list/323/"
+      "en": "An unusual royal guard: Benin's former Kingdom of Dahomey had an elite corps of female soldiers.",
+      "de": "Eine besondere Königsgarde: Im früheren Königreich Dahomey in Benin gab es eine Elitetruppe aus Soldatinnen."
+    },
+    "fun": {
+      "en": "A royal address worth remembering: the palaces at Abomey are a UNESCO World Heritage site.",
+      "de": "Eine königliche Adresse zum Merken: Die Paläste von Abomey gehören zum UNESCO-Welterbe."
     }
   },
   {
     "id": "bn",
     "front": {
-      "en": "Kampong Ayer’s stilt houses are linked by wooden walkways above the Brunei River.",
-      "de": "Kampong Ayers Pfahlhäuser sind durch Holzstege über dem Brunei-Fluss verbunden.",
-      "source": "https://www.bruneitourism.com/places/kampong-ayer/"
+      "en": "A neighbourhood on stilts: Brunei's Kampong Ayer is built over the water.",
+      "de": "Ein Viertel auf Stelzen: Bruneis Kampong Ayer ist über dem Wasser gebaut."
+    },
+    "fun": {
+      "en": "Waterways instead of streets: Kampong Ayer is often nicknamed the 'Venice of the East'.",
+      "de": "Wasserwege statt Straßen: Kampong Ayer wird oft das „Venedig des Ostens“ genannt."
     }
   },
   {
     "id": "bs",
     "front": {
-      "en": "Andros’ Blue Holes National Park protects blue holes alongside pine and coppice forests.",
-      "de": "Der Blue Holes National Park auf Andros schützt blaue Wasserlöcher sowie Kiefern- und Niederwälder.",
-      "source": "https://bnt.bs/explore/andros/blue-holes-national-park/"
+      "en": "Unusual swimmers: pigs in the Bahamas swim out to meet visiting boats.",
+      "de": "Ungewöhnliche Schwimmer: Auf den Bahamas schwimmen Schweine den ankommenden Booten entgegen."
+    },
+    "fun": {
+      "en": "Their island address? The famous swimming pigs live on uninhabited Big Major Cay.",
+      "de": "Ihre Inseladresse? Die berühmten schwimmenden Schweine leben auf der unbewohnten Insel Big Major Cay."
     }
   },
   {
     "id": "bw",
     "front": {
-      "en": "The Okavango Delta’s annual flood arrives during Botswana’s dry season.",
-      "de": "Die jährliche Flut im Okavangodelta trifft während Botswanas Trockenzeit ein.",
-      "source": "https://whc.unesco.org/en/list/1432/"
+      "en": "A river with no sea to meet: Botswana's Okavango Delta spreads inland.",
+      "de": "Ein Fluss ohne Weg zum Meer: Botswanas Okavangodelta breitet sich im Landesinneren aus."
     },
     "detail": {
       "en": "Tsodilo’s rock paintings and archaeological remains record human activity in the Kalahari over many thousands of years.",
-      "de": "Tsodilos Felsmalereien und archäologische Funde dokumentieren menschliche Aktivitäten in der Kalahari über viele Jahrtausende.",
-      "source": "https://whc.unesco.org/en/list/1021/"
+      "de": "Tsodilos Felsmalereien und archäologische Funde dokumentieren menschliche Aktivitäten in der Kalahari über viele Jahrtausende."
+    },
+    "fun": {
+      "en": "Water with surprising timing: the Okavango's annual flood arrives during the local dry season.",
+      "de": "Wasser zur überraschenden Zeit: Die jährliche Flut im Okavangodelta trifft während der örtlichen Trockenzeit ein."
     }
   },
   {
     "id": "by",
     "front": {
-      "en": "Mir Castle combines Gothic, Renaissance and Baroque architecture.",
-      "de": "Schloss Mir vereint gotische Architektur mit Renaissance und Barock.",
-      "source": "https://whc.unesco.org/en/list/625/"
+      "en": "An ancient green neighbour: Belarus shares Białowieża Forest with Poland.",
+      "de": "Ein uralter grüner Nachbar: Belarus teilt sich den Białowieża-Wald mit Polen."
+    },
+    "fun": {
+      "en": "Forest heavyweights: European bison roam this UNESCO-listed woodland.",
+      "de": "Schwergewichte im Wald: In diesem UNESCO-Welterbe streifen Wisente umher."
     }
   },
   {
     "id": "bz",
     "front": {
-      "en": "Belize’s protected reef system includes coral reefs, atolls and mangrove forests.",
-      "de": "Belizes geschütztes Riffsystem umfasst Korallenriffe, Atolle und Mangrovenwälder.",
-      "source": "https://whc.unesco.org/en/list/764/"
+      "en": "An English-speaking neighbour: Belize is Central America's only country with English as its official language.",
+      "de": "Ein englischsprachiger Nachbar: Nur Belize hat in Mittelamerika Englisch als Amtssprache."
+    },
+    "fun": {
+      "en": "A giant blue circle in the sea: Belize's Great Blue Hole is a marine sinkhole.",
+      "de": "Ein riesiger blauer Kreis im Meer: Belizes Great Blue Hole ist ein im Meer versunkenes Einsturzloch."
     }
   },
   {
     "id": "cd",
     "front": {
-      "en": "Virunga National Park’s varied habitats include volcanoes and mountain gorilla forests.",
-      "de": "Virungas vielfältige Lebensräume umfassen Vulkane und Wälder mit Berggorillas.",
-      "source": "https://whc.unesco.org/en/list/63/"
+      "en": "Only here in the wild: bonobos live naturally only in the Democratic Republic of the Congo.",
+      "de": "Nur hier in freier Wildbahn: Bonobos kommen von Natur aus nur in der Demokratischen Republik Kongo vor."
     },
     "detail": {
       "en": "The Okapi Wildlife Reserve protects part of the Ituri forest, including habitat for the forest-dwelling okapi.",
-      "de": "Das Okapi-Wildtierreservat schützt einen Teil des Ituri-Waldes und damit den Lebensraum des waldbewohnenden Okapis.",
-      "source": "https://whc.unesco.org/en/list/718/"
+      "de": "Das Okapi-Wildtierreservat schützt einen Teil des Ituri-Waldes und damit den Lebensraum des waldbewohnenden Okapis."
+    },
+    "fun": {
+      "en": "North, south, north again: the Congo River crosses the Equator twice.",
+      "de": "Nord, Süd und wieder Nord: Der Kongo überquert den Äquator zweimal."
     }
   },
   {
     "id": "cf",
     "front": {
-      "en": "The Sangha Trinational forests shelter forest elephants and western lowland gorillas.",
-      "de": "Die Wälder des Sangha-Trinational-Gebiets beherbergen Waldelefanten und Westliche Flachlandgorillas.",
-      "source": "https://whc.unesco.org/en/list/1380/"
+      "en": "Rainforest neighbours: Dzanga-Sangha shelters forest elephants and gorillas in the Central African Republic.",
+      "de": "Nachbarn im Regenwald: Dzanga-Sangha in der Zentralafrikanischen Republik schützt Waldelefanten und Gorillas."
+    },
+    "fun": {
+      "en": "An elephant meeting place: herds gather at Dzanga Bai, a natural clearing in the forest.",
+      "de": "Elefantentreff im Grünen: In Dzanga Bai versammeln sich Elefanten auf einer natürlichen Waldlichtung."
     }
   },
   {
     "id": "cg",
     "front": {
-      "en": "Sangha Trinational links parks in the Republic of the Congo, Cameroon and the Central African Republic.",
-      "de": "Sangha Trinational verbindet Parks in der Republik Kongo, Kamerun und der Zentralafrikanischen Republik.",
-      "source": "https://whc.unesco.org/en/list/1380/"
+      "en": "Remember this capital: Brazzaville is the capital of the Republic of the Congo.",
+      "de": "Diese Hauptstadt merken: Brazzaville ist die Hauptstadt der Republik Kongo."
+    },
+    "fun": {
+      "en": "Two capitals, one river: across the Congo lies Kinshasa, capital of the Democratic Republic of the Congo.",
+      "de": "Zwei Hauptstädte, ein Fluss: Gegenüber liegt Kinshasa, die Hauptstadt der Demokratischen Republik Kongo."
     }
   },
   {
     "id": "ci",
     "front": {
-      "en": "Grand-Bassam’s historic town includes an N’zima fishing village beside colonial buildings.",
-      "de": "Grand-Bassams historische Stadt umfasst ein N’zima-Fischerdorf neben Kolonialbauten.",
-      "source": "https://whc.unesco.org/en/list/1322/"
+      "en": "A chocolate connection: Côte d'Ivoire is the world's largest cocoa producer.",
+      "de": "Eine Verbindung zur Schokolade: Die Elfenbeinküste ist der größte Kakaoproduzent der Welt."
+    },
+    "fun": {
+      "en": "Two cities, different jobs: Yamoussoukro is the political capital, while Abidjan is the main economic centre.",
+      "de": "Zwei Städte, andere Aufgaben: Yamoussoukro ist die politische Hauptstadt, Abidjan das wichtigste Wirtschaftszentrum."
     }
   },
   {
     "id": "cm",
     "front": {
       "en": "The Dja River almost completely surrounds the rainforest of the Dja Faunal Reserve.",
-      "de": "Der Fluss Dja umschließt den Regenwald des Dja-Schutzgebiets fast vollständig.",
-      "source": "https://whc.unesco.org/en/list/407/"
+      "de": "Der Fluss Dja umschließt den Regenwald des Dja-Schutzgebiets fast vollständig."
     }
   },
   {
     "id": "co",
     "front": {
-      "en": "Colombia’s coffee landscape reflects generations of farming on steep Andean slopes.",
-      "de": "Kolumbiens Kaffeelandschaft zeugt von generationenlangem Anbau an steilen Andenhängen.",
-      "source": "https://whc.unesco.org/en/list/1121/"
+      "en": "A river of colours: Colombia's Caño Cristales can appear red, yellow, green, blue and black.",
+      "de": "Ein Fluss voller Farben: Kolumbiens Caño Cristales kann rot, gelb, grün, blau und schwarz erscheinen."
+    },
+    "fun": {
+      "en": "No paint required: aquatic plants help give the river its famous red colour.",
+      "de": "Ganz ohne Farbeimer: Wasserpflanzen verleihen dem Fluss seine berühmte rote Farbe."
     }
   },
   {
     "id": "cv",
     "front": {
-      "en": "Cidade Velha preserves parts of its early street layout and a royal fortress on Santiago Island.",
-      "de": "Cidade Velha bewahrt Teile seines frühen Straßennetzes und eine königliche Festung auf Santiago.",
-      "source": "https://whc.unesco.org/en/list/1310/"
+      "en": "Atlantic stepping stones: Cabo Verde is an island country off West Africa.",
+      "de": "Trittsteine im Atlantik: Cabo Verde ist ein Inselstaat vor Westafrika."
+    },
+    "fun": {
+      "en": "An island soundtrack: singer Cesária Évora helped make Cabo Verde's morna music famous worldwide.",
+      "de": "Der Klang der Inseln: Sängerin Cesária Évora machte Cabo Verdes Morna-Musik weltweit bekannt."
     }
   },
   {
     "id": "cy",
     "front": {
-      "en": "Ten painted churches and monasteries in the Troodos Mountains form a World Heritage site.",
-      "de": "Zehn ausgemalte Kirchen und Klöster im Troodos-Gebirge bilden eine Welterbestätte.",
-      "source": "https://whc.unesco.org/en/list/351/"
+      "en": "A line through the old town: a UN buffer zone divides Nicosia on Cyprus.",
+      "de": "Eine Linie durch die Altstadt: Eine UN-Pufferzone teilt Nikosia auf Zypern."
+    },
+    "fun": {
+      "en": "A legendary arrival: Greek myth places Aphrodite's birth near Petra tou Romiou on Cyprus.",
+      "de": "Eine sagenhafte Ankunft: Der griechischen Sage nach wurde Aphrodite bei Petra tou Romiou auf Zypern geboren."
     }
   },
   {
     "id": "cz",
     "front": {
-      "en": "Silver mining made Kutná Hora a wealthy medieval town with grand churches and houses.",
-      "de": "Silberbergbau machte Kutná Hora zu einer reichen mittelalterlichen Stadt mit prächtigen Kirchen und Häusern.",
-      "source": "https://whc.unesco.org/en/list/732/"
+      "en": "Robots made their entrance on stage: the word 'robot' spread through the Czech play R.U.R.",
+      "de": "Roboter betraten zuerst die Bühne: Das Wort „Roboter“ wurde durch das tschechische Theaterstück R.U.R. bekannt."
+    },
+    "fun": {
+      "en": "Sweet and square: the first sugar cubes were produced in Dačice, now in Czechia.",
+      "de": "Süß und eckig: Die ersten Zuckerwürfel wurden in Dačice im heutigen Tschechien hergestellt."
     }
   },
   {
     "id": "dj",
     "front": {
-      "en": "Lake Assal lies below sea level in a landscape of salt and volcanic rock.",
-      "de": "Der Assalsee liegt unter dem Meeresspiegel in einer Landschaft aus Salz und Vulkangestein.",
-      "source": "https://guide.visitdjibouti.dj/explorer-ce-quil-faut-voir/explorer-3/sites-touristiques-naturels/le-lac-assal/"
+      "en": "Below the usual level: Djibouti's Lake Assal lies about 155 metres below sea level.",
+      "de": "Unter dem üblichen Niveau: Dschibutis Assalsee liegt rund 155 Meter unter dem Meeresspiegel."
+    },
+    "fun": {
+      "en": "Extra salty: Lake Assal's water is saltier than seawater.",
+      "de": "Eine Extraportion Salz: Das Wasser des Assalsees ist salziger als Meerwasser."
     }
   },
   {
     "id": "dk",
     "front": {
-      "en": "Kronborg Castle in Helsingør is the setting of Shakespeare’s Hamlet.",
-      "de": "Schloss Kronborg in Helsingör ist der Schauplatz von Shakespeares Hamlet.",
-      "source": "https://whc.unesco.org/en/list/696/"
+      "en": "Before the bricks: LEGO began in Denmark in 1932, making wooden toys.",
+      "de": "Vor den bunten Steinen: LEGO begann 1932 in Dänemark mit Holzspielzeug."
+    },
+    "detail": {
+      "en": "A castle fit for drama: Kronborg in Helsingør is the setting of Shakespeare's Hamlet.",
+      "de": "Ein Schloss mit Drama: Kronborg in Helsingör ist der Schauplatz von Shakespeares Hamlet."
+    },
+    "fun": {
+      "en": "LEGO is a tiny Danish instruction: 'leg godt' means 'play well'.",
+      "de": "LEGO ist eine kleine dänische Spielanleitung: „leg godt“ bedeutet „spiel gut“."
     }
   },
   {
     "id": "do",
     "front": {
-      "en": "Santo Domingo’s colonial city used a grid layout that influenced later American towns.",
-      "de": "Santo Domingos Kolonialstadt nutzte ein Straßenraster, das spätere Städte Amerikas prägte.",
-      "source": "https://whc.unesco.org/en/list/526/"
+      "en": "One island, two countries: the Dominican Republic shares Hispaniola with Haiti.",
+      "de": "Eine Insel, zwei Länder: Die Dominikanische Republik teilt sich Hispaniola mit Haiti."
+    },
+    "fun": {
+      "en": "A little piece of blue: the gemstone larimar is found only in the Dominican Republic.",
+      "de": "Ein kleines Stück Blau: Der Schmuckstein Larimar kommt nur in der Dominikanischen Republik vor."
     }
   },
   {
     "id": "ec",
     "front": {
-      "en": "The Galápagos’ unusual wildlife helped inspire Darwin’s theory of natural selection.",
-      "de": "Die ungewöhnliche Tierwelt der Galápagosinseln inspirierte Darwins Theorie der natürlichen Selektion.",
-      "source": "https://whc.unesco.org/en/list/001/"
+      "en": "Measured from Earth's centre, Chimborazo's summit is the farthest surface point—not Everest!",
+      "de": "Vom Erdmittelpunkt aus gemessen liegt Chimborazos Gipfel am weitesten außen—nicht der Everest!"
+    },
+    "fun": {
+      "en": "A hat with a misleading name: Panama hats actually originate in Ecuador.",
+      "de": "Ein Hut mit irreführendem Namen: Panamahüte stammen tatsächlich aus Ecuador."
     }
   },
   {
     "id": "ee",
     "front": {
-      "en": "Tallinn’s old town preserves the merchant houses of a medieval Hanseatic trading city.",
-      "de": "Tallinns Altstadt bewahrt die Kaufmannshäuser einer mittelalterlichen Hansestadt.",
-      "source": "https://whc.unesco.org/en/list/822/"
+      "en": "Voices for freedom: mass singing helped fuel Estonia's independence movement during the Singing Revolution.",
+      "de": "Stimmen für die Freiheit: Gemeinsames Singen stärkte Estlands Unabhängigkeitsbewegung in der Singenden Revolution."
+    },
+    "fun": {
+      "en": "Over the top, literally: Estonia invented kiiking, a sport where people swing a full 360 degrees over the top bar.",
+      "de": "Einmal ganz herum: Beim estnischen Sport Kiiking schwingen Menschen auf einer Schaukel volle 360 Grad über die obere Stange."
     }
   },
   {
     "id": "er",
     "front": {
-      "en": "Asmara preserves a cityscape shaped by early 20th-century modernist architecture.",
-      "de": "Asmara bewahrt ein Stadtbild, das die moderne Architektur des frühen 20. Jahrhunderts prägte.",
-      "source": "https://whc.unesco.org/en/list/1550/"
+      "en": "A city of bold shapes: Eritrea's capital Asmara is UNESCO-listed for its modernist architecture.",
+      "de": "Eine Stadt mutiger Formen: Eritreas Hauptstadt Asmara ist für ihre moderne Architektur UNESCO-Welterbe."
+    },
+    "fun": {
+      "en": "Ready for takeoff? Asmara's Fiat Tagliero building looks like an aeroplane.",
+      "de": "Bereit zum Abheben? Asmaras Fiat-Tagliero-Gebäude sieht aus wie ein Flugzeug."
     }
   },
   {
     "id": "et",
     "front": {
-      "en": "Lalibela’s eleven medieval churches were carved from rock.",
-      "de": "Die elf mittelalterlichen Kirchen von Lalibela wurden aus dem Fels gehauen.",
-      "source": "https://whc.unesco.org/en/list/18/"
+      "en": "One more month, please: Ethiopia's calendar has 13 months.",
+      "de": "Ein Monat mehr, bitte: Äthiopiens Kalender hat 13 Monate."
+    },
+    "fun": {
+      "en": "A tiny final chapter: the thirteenth month has just five days—or six in a leap year.",
+      "de": "Ein kurzes Schlusskapitel: Der dreizehnte Monat hat nur fünf Tage—oder sechs in einem Schaltjahr."
     }
   },
   {
     "id": "fi",
     "front": {
-      "en": "Sammallahdenmäki’s granite burial cairns date from the Bronze Age.",
-      "de": "Die Grabhügel aus Granit in Sammallahdenmäki stammen aus der Bronzezeit.",
-      "source": "https://whc.unesco.org/en/list/579/"
+      "en": "Time to unwind: Finland has roughly three million saunas.",
+      "de": "Zeit zum Abschalten: Finnland hat rund drei Millionen Saunen."
     },
     "fun": {
-      "en": "In Finnish sauna culture, löyly is the steam released when water is thrown onto heated stones.",
-      "de": "In der finnischen Saunakultur bezeichnet Löyly den Dampf, der beim Wasseraufguss auf heiße Steine entsteht.",
-      "source": "https://ich.unesco.org/en/RL/sauna-culture-in-finland-01596"
+      "en": "A steamy departure: in 2025, Helsinki Airport opened a sauna beside its runways.",
+      "de": "Ein dampfender Abflug: 2025 eröffnete der Flughafen Helsinki eine Sauna direkt neben seinen Pisten."
     }
   },
   {
     "id": "ga",
     "front": {
-      "en": "Lopé-Okanda brings tropical rainforest and ancient savannah landscapes together.",
-      "de": "In Lopé-Okanda treffen tropischer Regenwald und alte Savannenlandschaften aufeinander.",
-      "source": "https://whc.unesco.org/en/list/1147/"
+      "en": "Where forest meets surf: Gabon's rainforest reaches the Atlantic coast.",
+      "de": "Wo Wald auf Wellen trifft: Gabuns Regenwald reicht bis an die Atlantikküste."
+    },
+    "fun": {
+      "en": "Unexpected beachgoers: elephants can be seen walking along the shore at Loango.",
+      "de": "Unerwartete Strandgäste: In Loango kann man Elefanten am Strand entlanglaufen sehen."
     }
   },
   {
     "id": "ge",
     "front": {
-      "en": "Mtskheta’s medieval religious monuments stand where the Aragvi and Mtkvari rivers meet.",
-      "de": "Mtskhetas mittelalterliche Sakralbauten stehen am Zusammenfluss von Aragwi und Mtkwari.",
-      "source": "https://whc.unesco.org/en/list/708/"
+      "en": "A very old vintage: evidence of winemaking in Georgia dates back about 8,000 years.",
+      "de": "Ein sehr alter Jahrgang: Spuren der Weinherstellung in Georgien reichen rund 8.000 Jahre zurück."
     },
     "fun": {
-      "en": "In Georgia’s qvevri tradition, wine ferments in sealed clay vessels buried in the ground.",
-      "de": "In Georgiens Qvevri-Tradition gärt Wein in verschlossenen Tongefäßen, die im Boden vergraben sind.",
-      "source": "https://ich.unesco.org/en/RL/ancient-georgian-traditional-qvevri-wine-making-method-00870"
+      "en": "Wine goes underground: in Georgia's qvevri tradition, it ferments in clay vessels buried in the earth.",
+      "de": "Wein geht unter die Erde: In Georgiens Qvevri-Tradition gärt er in Tongefäßen, die im Boden vergraben sind."
     }
   },
   {
     "id": "gm",
     "front": {
-      "en": "Kunta Kinteh Island preserves evidence of the slave trade and its abolition along the Gambia River.",
-      "de": "Kunta Kinteh Island bewahrt Zeugnisse des Sklavenhandels und seiner Abschaffung am Gambiafluss.",
-      "source": "https://whc.unesco.org/en/list/761/"
+      "en": "A small mainland neighbour: The Gambia is the smallest country on mainland Africa.",
+      "de": "Ein kleiner Nachbar auf dem Festland: Gambia ist das kleinste Land auf dem afrikanischen Festland."
+    },
+    "fun": {
+      "en": "Almost a country inside a country: apart from its Atlantic coast, The Gambia is surrounded by Senegal.",
+      "de": "Fast ein Land im Land: Außer an seiner Atlantikküste ist Gambia vollständig von Senegal umgeben."
     }
   },
   {
     "id": "gn",
     "front": {
-      "en": "Mount Nimba’s wildlife includes toads that give birth to live young.",
-      "de": "Zur Tierwelt des Nimba-Gebirges gehören Kröten, die lebende Junge zur Welt bringen.",
-      "source": "https://whc.unesco.org/en/list/155/"
+      "en": "A highland water source: Guinea's Fouta Djallon feeds several major West African rivers.",
+      "de": "Ein Hochland als Wasserquelle: Guineas Fouta Djallon speist mehrere große Flüsse Westafrikas."
+    },
+    "fun": {
+      "en": "Two famous rivers start here: both the Niger and the Gambia rise in Guinea.",
+      "de": "Hier beginnen zwei bekannte Flüsse: Sowohl der Niger als auch der Gambia entspringen in Guinea."
     }
   },
   {
     "id": "gq",
     "front": {
-      "en": "Monte Alén National Park shelters the goliath frog, the world’s largest frog.",
-      "de": "Im Monte-Alén-Nationalpark lebt der Goliathfrosch, der größte Frosch der Welt.",
-      "source": "https://en.wikipedia.org/wiki/Monte_Al%C3%A9n_National_Park"
+      "en": "A language surprise: Equatorial Guinea is Africa's only country with Spanish as an official language.",
+      "de": "Eine Sprachüberraschung: Äquatorialguinea ist Afrikas einziges Land mit Spanisch als Amtssprache."
+    },
+    "fun": {
+      "en": "Mainland and island life: its territory includes land on the continent and islands in the Gulf of Guinea.",
+      "de": "Festland und Inselleben: Zum Land gehören ein Teil des Kontinents und Inseln im Golf von Guinea."
     }
   },
   {
     "id": "gt",
     "front": {
-      "en": "Tikal’s ancient Maya temples and palaces rise in the forests of northern Guatemala.",
-      "de": "Tikals antike Maya-Tempel und Paläste erheben sich in den Wäldern Nordguatemalas.",
-      "source": "https://whc.unesco.org/en/list/64/"
+      "en": "A city among the trees: Guatemala's Tikal was a major centre of the ancient Maya.",
+      "de": "Eine Stadt zwischen Bäumen: Guatemalas Tikal war ein bedeutendes Zentrum der alten Maya."
+    },
+    "fun": {
+      "en": "A bird in your wallet? Guatemala's currency takes its name from its national bird, the quetzal.",
+      "de": "Ein Vogel im Geldbeutel? Guatemalas Währung ist nach seinem Nationalvogel benannt, dem Quetzal."
     }
   },
   {
     "id": "gw",
     "front": {
-      "en": "The Bijagós Archipelago’s beaches provide nesting sites for green turtles.",
-      "de": "Die Strände des Bijagós-Archipels bieten Grünen Meeresschildkröten Nistplätze.",
-      "source": "https://whc.unesco.org/en/list/1431/"
+      "en": "An Atlantic island maze: Guinea-Bissau's Bijagós archipelago contains dozens of islands.",
+      "de": "Ein Insellabyrinth im Atlantik: Guinea-Bissaus Bijagós-Archipel besteht aus Dutzenden Inseln."
+    },
+    "fun": {
+      "en": "Seafaring hippos? Some hippos here travel between islands through salt water.",
+      "de": "Flusspferde auf Seereise? Einige Flusspferde gelangen hier durch Salzwasser von einer Insel zur nächsten."
     }
   },
   {
     "id": "gy",
     "front": {
-      "en": "Guyana’s Kaieteur Falls are fed by the Potaro River in a protected rainforest landscape.",
-      "de": "Guyanas Kaieteur-Wasserfall wird in einer geschützten Regenwaldlandschaft vom Potaro gespeist.",
-      "source": "https://ntg.gov.gy/monument/kaieteur-falls/"
+      "en": "An English-speaking corner: Guyana is South America's only country with English as its official language.",
+      "de": "Eine englischsprachige Ecke: Nur Guyana hat in Südamerika Englisch als Amtssprache."
+    },
+    "fun": {
+      "en": "One mighty drop: Kaieteur Falls plunges about 226 metres in a single leap.",
+      "de": "Ein gewaltiger Sprung: Der Kaieteur-Wasserfall stürzt rund 226 Meter in einem Stück hinab."
     }
   },
   {
     "id": "hn",
     "front": {
-      "en": "Copán’s ruined Maya citadel and public squares reveal successive stages of an ancient city.",
-      "de": "Copáns Maya-Zitadelle und Plätze zeigen aufeinanderfolgende Entwicklungsphasen einer antiken Stadt.",
-      "source": "https://whc.unesco.org/en/list/129/"
+      "en": "History carved in stone: Honduras's Copán is famous for Maya sculptures and inscriptions.",
+      "de": "Geschichte in Stein: Copán in Honduras ist für Maya-Skulpturen und Inschriften berühmt."
+    },
+    "fun": {
+      "en": "A staircase you can read: Copán's Hieroglyphic Stairway records a long stretch of royal history.",
+      "de": "Eine Treppe zum Lesen: Copáns Hieroglyphentreppe erzählt ausführlich von der Geschichte seiner Herrscher."
     }
   },
   {
     "id": "hr",
     "front": {
-      "en": "Dubrovnik preserves Gothic, Renaissance and Baroque monuments on the Adriatic coast.",
-      "de": "Dubrovnik bewahrt an der Adriaküste Bauwerke aus Gotik, Renaissance und Barock.",
-      "source": "https://whc.unesco.org/en/list/095/"
+      "en": "Dressed for history: the modern necktie traces its roots to scarves worn by Croatian soldiers.",
+      "de": "Gut gekleidet: Die moderne Krawatte geht auf die Halstücher kroatischer Soldaten zurück."
+    },
+    "fun": {
+      "en": "The sea plays the soundtrack: Zadar's Sea Organ makes music powered by waves.",
+      "de": "Das Meer spielt die Musik: Zadars Meeresorgel wird von Wellen zum Klingen gebracht."
     }
   },
   {
     "id": "ht",
     "front": {
-      "en": "Haiti’s Citadel and Sans-Souci Palace date from the early years of independence.",
-      "de": "Haitis Zitadelle und der Palast Sans-Souci stammen aus den frühen Jahren der Unabhängigkeit.",
-      "source": "https://whc.unesco.org/en/list/180/"
+      "en": "A historic first: Haiti became the first independent Black republic in 1804.",
+      "de": "Ein historischer Anfang: Haiti wurde 1804 die erste unabhängige Schwarze Republik."
+    },
+    "fun": {
+      "en": "A fortress above the clouds: the Citadelle Laferrière was built high on a mountain after independence.",
+      "de": "Eine Festung hoch oben: Nach der Unabhängigkeit entstand die Citadelle Laferrière auf einem Berg."
     }
   },
   {
     "id": "hu",
     "front": {
-      "en": "Tokaj’s historic wine landscape includes vineyards and networks of deep wine cellars.",
-      "de": "Tokajs historische Weinlandschaft umfasst Weinberge und Netze tiefer Weinkeller.",
-      "source": "https://whc.unesco.org/en/list/1063/"
+      "en": "A colourful puzzle: Hungarian architect Ernő Rubik invented the Rubik's Cube in 1974.",
+      "de": "Ein buntes Rätsel: Der ungarische Architekt Ernő Rubik erfand 1974 den Zauberwürfel."
+    },
+    "fun": {
+      "en": "Before it carried Rubik's name, the puzzle was sold as the 'Magic Cube'.",
+      "de": "Bevor er Rubiks Namen trug, wurde der Würfel als „Magic Cube“ verkauft—also als „Zauberwürfel“."
     }
   },
   {
     "id": "ie",
     "front": {
-      "en": "Brú na Bóinne’s prehistoric burial landscape includes Newgrange, Knowth and Dowth.",
-      "de": "Zur prähistorischen Gräberlandschaft Brú na Bóinne gehören Newgrange, Knowth und Dowth.",
-      "source": "https://whc.unesco.org/en/list/659/"
+      "en": "Older than the pyramids: Ireland's Newgrange tomb predates the Great Pyramid of Giza.",
+      "de": "Älter als die Pyramiden: Irlands Grabmal Newgrange entstand vor der Cheops-Pyramide."
+    },
+    "fun": {
+      "en": "Spooky roots: Halloween draws on ancient Celtic traditions celebrated in Ireland.",
+      "de": "Schaurige Wurzeln: Halloween geht auch auf alte keltische Traditionen zurück, die in Irland gefeiert wurden."
     }
   },
   {
     "id": "il",
     "front": {
-      "en": "Herod the Great built Masada’s palace complex above the Dead Sea.",
-      "de": "Herodes der Große ließ den Palastkomplex von Masada über dem Toten Meer errichten.",
-      "source": "https://whc.unesco.org/en/list/1040/"
+      "en": "A very low shore: the Dead Sea coast is the lowest exposed land on Earth.",
+      "de": "Eine sehr tiefe Küste: Das Ufer des Toten Meeres ist das tiefstgelegene freiliegende Land der Erde."
+    },
+    "fun": {
+      "en": "Floating comes easily: the Dead Sea's very salty water makes people unusually buoyant.",
+      "de": "Treiben leicht gemacht: Das sehr salzige Wasser des Toten Meeres gibt Menschen besonders viel Auftrieb."
     }
   },
   {
     "id": "iq",
     "front": {
-      "en": "Babylon’s ruins preserve the walls, gates, temples and palaces of an ancient metropolis.",
-      "de": "Babylons Ruinen bewahren Mauern, Tore, Tempel und Paläste einer antiken Metropole.",
-      "source": "https://whc.unesco.org/en/list/278/"
+      "en": "Writing's early days: cuneiform developed in ancient Mesopotamia, largely in what is now Iraq.",
+      "de": "Die Anfänge der Schrift: Keilschrift entstand im alten Mesopotamien, größtenteils im heutigen Irak."
+    },
+    "fun": {
+      "en": "Ancient paperwork: early clay tablets recorded everyday deals involving grain and livestock.",
+      "de": "Antiker Papierkram ohne Papier: Frühe Tontafeln hielten Alltagsgeschäfte mit Getreide und Vieh fest."
     }
   },
   {
     "id": "ir",
     "front": {
-      "en": "Darius I founded Persepolis in 518 BC on a vast partly artificial terrace.",
-      "de": "Dareios I. gründete Persepolis 518 v. Chr. auf einer riesigen, teils künstlichen Terrasse.",
-      "source": "https://whc.unesco.org/en/list/114/"
+      "en": "Water takes the underground route: Persian qanats carry groundwater through tunnels.",
+      "de": "Wasser nimmt den unterirdischen Weg: Persische Qanate leiten Grundwasser durch Tunnel."
     },
     "detail": {
       "en": "Iran’s qanats carry groundwater through gently sloping underground tunnels using gravity rather than pumps.",
-      "de": "Irans Qanate leiten Grundwasser durch leicht abfallende unterirdische Tunnel mithilfe der Schwerkraft statt mit Pumpen.",
-      "source": "https://whc.unesco.org/en/list/1506/"
+      "de": "Irans Qanate leiten Grundwasser durch leicht abfallende unterirdische Tunnel mithilfe der Schwerkraft statt mit Pumpen."
+    },
+    "fun": {
+      "en": "Built to last: some Iranian qanats have supplied water for thousands of years.",
+      "de": "Für lange Zeit gebaut: Einige iranische Qanate liefern seit Jahrtausenden Wasser."
     }
   },
   {
     "id": "is",
     "front": {
-      "en": "Iceland’s Althing assembly began meeting outdoors at Thingvellir in 930.",
-      "de": "Islands Althing-Versammlung tagte ab 930 unter freiem Himmel in Thingvellir.",
-      "source": "https://whc.unesco.org/en/list/1152/"
+      "en": "A long wait for a pint: full-strength beer was banned in Iceland until 1989.",
+      "de": "Langes Warten aufs Bier: Bier mit normalem Alkoholgehalt war in Island bis 1989 verboten."
+    },
+    "fun": {
+      "en": "Parliament under the sky: Iceland's Althing assembly began meeting outdoors at Thingvellir in 930.",
+      "de": "Parlament unter freiem Himmel: Islands Althing-Versammlung tagte ab 930 draußen in Thingvellir."
     }
   },
   {
     "id": "jo",
     "front": {
-      "en": "Petra’s Nabataean monuments are partly built and partly carved into the surrounding rock.",
-      "de": "Petras nabatäische Monumente sind teils gebaut, teils aus dem umgebenden Fels gehauen.",
-      "source": "https://whc.unesco.org/en/list/326/"
+      "en": "A city carved from cliffs: Petra's monumental façades were cut straight into sandstone.",
+      "de": "Eine Stadt aus Fels: Petras monumentale Fassaden wurden direkt in Sandstein gehauen."
+    },
+    "fun": {
+      "en": "A misleading name: Petra's famous Treasury was actually a tomb.",
+      "de": "Ein irreführender Name: Petras berühmtes Schatzhaus war tatsächlich ein Grabmal."
     }
   },
   {
     "id": "kg",
     "front": {
-      "en": "Sulaiman-Too’s sacred mountain contains ancient worship sites and caves with rock art.",
-      "de": "Der heilige Berg Sulaiman-Too birgt alte Kultstätten und Höhlen mit Felskunst.",
-      "source": "https://whc.unesco.org/en/list/1230/"
+      "en": "A story on an epic scale: Kyrgyzstan's Manas is a vast oral storytelling tradition.",
+      "de": "Eine Geschichte im Großformat: Kirgisistans Manas ist eine gewaltige mündliche Erzähltradition."
     },
     "fun": {
-      "en": "Continuous recitals of the Kyrgyz epic trilogy Manas, Semetey and Seytek can last up to thirteen hours.",
-      "de": "Durchgehende Vorträge der kirgisischen Epentrilogie Manas, Semetey und Seytek können bis zu dreizehn Stunden dauern.",
-      "source": "https://ich.unesco.org/en/RL/kyrgyz-epic-trilogy-manas-semetey-seytek-00876"
+      "en": "Settle in for a story: a continuous performance of the epic trilogy can last up to 13 hours.",
+      "de": "Mach es dir bequem: Eine durchgehende Darbietung der Epen-Trilogie kann bis zu 13 Stunden dauern."
     }
   },
   {
     "id": "kh",
     "front": {
-      "en": "Angkor preserves Khmer temples alongside an extensive historic water-management system.",
-      "de": "Angkor bewahrt Khmer-Tempel neben einem weitläufigen historischen Wassersystem.",
-      "source": "https://whc.unesco.org/en/list/668/"
+      "en": "Room for wonder: Cambodia's Angkor Wat is the world's largest religious structure.",
+      "de": "Viel Platz zum Staunen: Kambodschas Angkor Wat ist das größte religiöse Bauwerk der Welt."
+    },
+    "fun": {
+      "en": "A national landmark you can wave: Angkor Wat also appears on Cambodia's flag.",
+      "de": "Ein Wahrzeichen zum Schwenken: Angkor Wat ist auch auf Kambodschas Flagge zu sehen."
     }
   },
   {
     "id": "kp",
     "front": {
       "en": "The Koguryo tombs preserve wall paintings offering glimpses of life in an ancient kingdom.",
-      "de": "Die Koguryo-Gräber bewahren Wandbilder mit Einblicken in das Leben eines antiken Königreichs.",
-      "source": "https://whc.unesco.org/en/list/1091/"
+      "de": "Die Koguryo-Gräber bewahren Wandbilder mit Einblicken in das Leben eines antiken Königreichs."
     }
   },
   {
     "id": "kw",
     "front": {
-      "en": "Kuwait’s Failaka Island preserves archaeological sites from the Bronze Age.",
-      "de": "Kuwaits Insel Failaka bewahrt archäologische Stätten aus der Bronzezeit.",
-      "source": "https://nccal.gov.kw/en/archaeological-sites-0"
+      "en": "Water tanks with style: Kuwait's landmark Kuwait Towers include giant spheres that store water.",
+      "de": "Wassertanks mit Stil: Die markanten Kuwait Towers besitzen riesige Kugeln, die Wasser speichern."
+    },
+    "fun": {
+      "en": "A view that turns: one tower has a viewing sphere with a rotating platform.",
+      "de": "Ein Ausblick, der sich dreht: Ein Turm hat eine Aussichtskugel mit einer drehbaren Plattform."
     }
   },
   {
     "id": "kz",
     "front": {
-      "en": "Saryarka’s wetlands are vital stopovers for migrating waterbirds on the Central Asian flyway.",
-      "de": "Saryarkas Feuchtgebiete sind wichtige Rastplätze für Wasservögel auf dem zentralasiatischen Zugweg.",
-      "source": "https://whc.unesco.org/en/list/1102/"
+      "en": "Far from the ocean: Kazakhstan is the world's largest landlocked country.",
+      "de": "Weit weg vom Ozean: Kasachstan ist das größte Binnenland der Welt."
+    },
+    "fun": {
+      "en": "A launch into history: the first human spaceflight took off from Baikonur in 1961.",
+      "de": "Ein Start in die Geschichte: Der erste bemannte Raumflug startete 1961 von Baikonur."
     }
   },
   {
     "id": "la",
     "front": {
-      "en": "Luang Prabang blends traditional Lao architecture with European colonial buildings.",
-      "de": "Luang Prabang verbindet traditionelle laotische Architektur mit europäischen Kolonialbauten.",
-      "source": "https://whc.unesco.org/en/list/479/"
+      "en": "No coast on this map: Laos is Southeast Asia's only landlocked country.",
+      "de": "Keine Küste auf dieser Karte: Laos ist das einzige Binnenland Südostasiens."
+    },
+    "fun": {
+      "en": "A giant puzzle in stone: the Plain of Jars contains thousands of ancient stone vessels.",
+      "de": "Ein großes Rätsel aus Stein: Auf der Ebene der Tonkrüge stehen Tausende uralte Steingefäße."
     }
   },
   {
     "id": "lb",
     "front": {
-      "en": "Baalbek’s monumental Roman sanctuary once drew crowds of pilgrims.",
-      "de": "Baalbeks monumentales römisches Heiligtum zog einst Scharen von Pilgern an.",
-      "source": "https://whc.unesco.org/en/list/294/"
+      "en": "A tree on the flag: Lebanon's national flag features a cedar.",
+      "de": "Ein Baum auf der Flagge: Auf Libanons Nationalflagge steht eine Zeder."
+    },
+    "fun": {
+      "en": "Timber with a history: Lebanon's ancient cedars supplied wood to Mediterranean civilisations.",
+      "de": "Holz mit Geschichte: Libanons alte Zedern lieferten Holz für die Kulturen am Mittelmeer."
     }
   },
   {
     "id": "lk",
     "front": {
-      "en": "Sigiriya’s ancient royal ruins crown a granite rock rising about 180 metres.",
-      "de": "Sigiriyas antike Königsruinen krönen einen etwa 180 Meter aufragenden Granitfelsen.",
-      "source": "https://whc.unesco.org/en/list/202/"
+      "en": "A royal perch: Sri Lanka's Sigiriya is a ruined royal complex on top of a towering rock.",
+      "de": "Ein königlicher Aussichtspunkt: Sri Lankas Sigiriya ist eine Ruinenanlage auf einem hoch aufragenden Felsen."
+    },
+    "fun": {
+      "en": "A lion in the name: Sigiriya means 'Lion Rock'.",
+      "de": "Ein Löwe im Namen: Sigiriya bedeutet „Löwenfelsen“."
     }
   },
   {
     "id": "lr",
     "front": {
-      "en": "Wildlife surveys have recorded pygmy hippopotamuses in Liberia’s Sapo National Park.",
-      "de": "Wildtierstudien haben Zwergflusspferde in Liberias Sapo-Nationalpark nachgewiesen.",
-      "source": "https://cms.zsl.org/sites/default/files/2023-07/Liberia%20Sapo%20NP%20mammal%20status%20report.pdf"
+      "en": "An independent chapter: Liberia declared independence in 1847.",
+      "de": "Ein unabhängiges Kapitel: Liberia erklärte 1847 seine Unabhängigkeit."
+    },
+    "fun": {
+      "en": "A name across the Atlantic: Monrovia is named after US president James Monroe.",
+      "de": "Ein Name über den Atlantik hinweg: Monrovia ist nach US-Präsident James Monroe benannt."
     }
   },
   {
     "id": "lt",
     "front": {
-      "en": "The Curonian Spit is a sand-dune peninsula shaped by wind, waves and human care.",
-      "de": "Die Kurische Nehrung ist eine Dünenhalbinsel, geformt von Wind, Wellen und menschlicher Pflege.",
-      "source": "https://whc.unesco.org/en/list/994/"
+      "en": "An echo of ancient speech: Lithuanian preserves many old Indo-European language features.",
+      "de": "Ein Echo alter Sprache: Litauisch bewahrt viele alte Merkmale der indogermanischen Sprachfamilie."
+    },
+    "fun": {
+      "en": "A hill full of messages: thousands of crosses left by visitors cover Lithuania's Hill of Crosses.",
+      "de": "Ein Hügel voller Zeichen: Tausende von Besuchern hinterlassene Kreuze bedecken Litauens Berg der Kreuze."
     }
   },
   {
     "id": "lu",
     "front": {
-      "en": "Luxembourg’s old town preserves fortifications developed over several centuries.",
-      "de": "Luxemburgs Altstadt bewahrt Befestigungen, die über mehrere Jahrhunderte entstanden.",
-      "source": "https://whc.unesco.org/en/list/699/"
+      "en": "Tickets, please? Not here: Luxembourg made nationwide public transport free in 2020.",
+      "de": "Fahrkarten, bitte? Hier nicht: Luxemburg machte 2020 den landesweiten öffentlichen Verkehr kostenlos."
+    },
+    "fun": {
+      "en": "One upgrade still costs extra: first-class train travel is an exception to the free rides.",
+      "de": "Ein Upgrade kostet weiter extra: Zugfahrten in der ersten Klasse sind von den Gratisfahrten ausgenommen."
     }
   },
   {
     "id": "lv",
     "front": {
-      "en": "Riga’s historic centre combines medieval streets with Art Nouveau architecture.",
-      "de": "Rigas historisches Zentrum verbindet mittelalterliche Straßen mit Jugendstilarchitektur.",
-      "source": "https://whc.unesco.org/en/list/852/"
+      "en": "A waterfall that spreads out: Latvia's Ventas Rumba is often called Europe's widest waterfall.",
+      "de": "Ein Wasserfall, der sich breitmacht: Lettlands Ventas Rumba gilt oft als Europas breitester Wasserfall."
+    },
+    "fun": {
+      "en": "Wide rather than tall: the waterfall is only about two metres high.",
+      "de": "Lieber breit als hoch: Der Wasserfall ist nur etwa zwei Meter hoch."
     }
   },
   {
     "id": "ly",
     "front": {
-      "en": "Leptis Magna was the birthplace of Roman emperor Septimius Severus, who enlarged the city.",
-      "de": "Leptis Magna war der Geburtsort des römischen Kaisers Septimius Severus, der die Stadt ausbaute.",
-      "source": "https://whc.unesco.org/en/list/183/"
+      "en": "Roman grandeur in North Africa: Libya's Leptis Magna was a major city of the Roman Empire.",
+      "de": "Römische Pracht in Nordafrika: Leptis Magna in Libyen war eine bedeutende Stadt des Römischen Reiches."
+    },
+    "fun": {
+      "en": "An emperor's hometown: Septimius Severus was born in Leptis Magna.",
+      "de": "Die Heimatstadt eines Kaisers: Septimius Severus wurde in Leptis Magna geboren."
     }
   },
   {
     "id": "md",
     "front": {
-      "en": "Moldova shares the Struve survey arc, which helped measure Earth’s size and shape.",
-      "de": "Moldau hat Anteil am Struve-Vermessungsbogen, der half, Form und Größe der Erde zu bestimmen.",
-      "source": "https://whc.unesco.org/en/list/1187/"
+      "en": "Bottles on a grand scale: Moldova's Mileștii Mici holds the Guinness record for the largest wine collection.",
+      "de": "Flaschen im Großformat: Moldaus Mileștii Mici hält den Guinness-Rekord für die größte Weinsammlung."
+    },
+    "fun": {
+      "en": "An underground address for wine: the bottles are stored in tunnels beneath the ground.",
+      "de": "Eine unterirdische Adresse für Wein: Die Flaschen lagern in Tunneln unter der Erde."
     }
   },
   {
     "id": "me",
     "front": {
-      "en": "Durmitor’s limestone mountains and lakes were shaped by glaciers.",
-      "de": "Durmitors Kalksteingebirge und Seen wurden von Gletschern geformt.",
-      "source": "https://whc.unesco.org/en/list/100/"
+      "en": "A mountain in the name: Montenegro means 'Black Mountain'.",
+      "de": "Ein Berg im Namen: Montenegro bedeutet „Schwarzer Berg“."
+    },
+    "fun": {
+      "en": "A very deep cut: Montenegro's Tara River canyon is among Europe's deepest.",
+      "de": "Ein sehr tiefer Einschnitt: Montenegros Tara-Schlucht zählt zu den tiefsten Europas."
     }
   },
   {
     "id": "mk",
     "front": {
-      "en": "Lake Ohrid shelters freshwater species found nowhere else.",
-      "de": "Im Ohridsee leben Süßwasserarten, die nirgendwo sonst vorkommen.",
-      "source": "https://whc.unesco.org/en/list/99/"
+      "en": "A lake with a long memory: Lake Ohrid is one of Europe's oldest lakes.",
+      "de": "Ein See mit langem Gedächtnis: Der Ohridsee zählt zu den ältesten Seen Europas."
+    },
+    "fun": {
+      "en": "An underwater world of its own: many of Lake Ohrid's freshwater species occur nowhere else.",
+      "de": "Eine eigene Welt unter Wasser: Viele Süßwasserarten des Ohridsees kommen nirgendwo sonst vor."
     }
   },
   {
     "id": "ml",
     "front": {
-      "en": "Djenné’s traditional houses stand on small hills to protect them from seasonal floods.",
-      "de": "Djennés traditionelle Häuser stehen zum Schutz vor saisonalen Überschwemmungen auf kleinen Hügeln.",
-      "source": "https://whc.unesco.org/en/list/116/"
+      "en": "Architecture from earth: Mali's Great Mosque of Djenné is among the world's largest earthen buildings.",
+      "de": "Architektur aus Erde: Malis Große Moschee von Djenné zählt zu den größten Lehmbauten der Welt."
+    },
+    "fun": {
+      "en": "A fresh coat, together: the community replasters the mosque's walls at an annual festival.",
+      "de": "Gemeinsam frisch verputzt: Bei einem jährlichen Fest erneuert die Gemeinschaft den Lehmputz der Moschee."
     }
   },
   {
     "id": "mm",
     "front": {
-      "en": "Bagan’s sacred landscape contains Buddhist temples, stupas and monasteries.",
-      "de": "Bagans heilige Landschaft umfasst buddhistische Tempel, Stupas und Klöster.",
-      "source": "https://whc.unesco.org/en/list/1588/"
+      "en": "A skyline of temples: Bagan's plain has thousands of Buddhist temples, stupas and monasteries.",
+      "de": "Eine Skyline aus Tempeln: In Bagans Ebene stehen Tausende buddhistische Tempel, Stupas und Klöster."
+    },
+    "fun": {
+      "en": "A medieval building boom: many of Bagan's monuments were built between the 11th and 13th centuries.",
+      "de": "Ein Bauboom im Mittelalter: Viele von Bagans Bauwerken entstanden zwischen dem 11. und 13. Jahrhundert."
     }
   },
   {
     "id": "mn",
     "front": {
-      "en": "Mongolian Altai rock carvings show the shift from hunting to herding and horse-based nomadic life.",
-      "de": "Felsbilder im mongolischen Altai zeigen den Wandel von Jagd zu Viehzucht und Reiternomadentum.",
-      "source": "https://whc.unesco.org/en/list/1382/"
+      "en": "Room to breathe: Mongolia is the world's least densely populated sovereign country.",
+      "de": "Platz zum Durchatmen: Die Mongolei ist der souveräne Staat mit der geringsten Bevölkerungsdichte der Welt."
     },
     "fun": {
-      "en": "The morin khuur is a two-stringed fiddle whose neck ends in a carved horse’s head.",
-      "de": "Die Morin Khuur ist eine zweisaitige Pferdekopfgeige mit einem geschnitzten Pferdekopf am Halsende.",
-      "source": "https://ich.unesco.org/en/RL/traditional-music-of-the-morin-khuur-00068?lang=en"
+      "en": "Milk with a twist: airag, a traditional Mongolian drink, is made from fermented mare's milk.",
+      "de": "Milch mal anders: Airag, ein traditionelles mongolisches Getränk, wird aus vergorener Stutenmilch hergestellt."
     }
   },
   {
     "id": "mr",
     "front": {
-      "en": "Banc d’Arguin brings desert dunes and bird-rich Atlantic shallows together.",
-      "de": "Im Banc d’Arguin treffen Wüstendünen auf vogelreiche Flachwassergebiete des Atlantiks.",
-      "source": "https://whc.unesco.org/en/list/506/"
+      "en": "Rings on a giant scale: Mauritania's Richat Structure is visible from space.",
+      "de": "Ringe im Riesenformat: Mauretaniens Richat-Struktur ist aus dem Weltraum sichtbar."
+    },
+    "fun": {
+      "en": "A desert looking back: the formation is nicknamed the 'Eye of the Sahara'.",
+      "de": "Die Wüste schaut zurück: Die Formation wird „Auge der Sahara“ genannt."
     }
   },
   {
     "id": "mw",
     "front": {
-      "en": "Lake Malawi’s national park shelters hundreds of cichlid species, nearly all unique to the lake.",
-      "de": "Im Malawisee-Nationalpark leben Hunderte Buntbarscharten, die fast alle nur im Malawisee vorkommen.",
-      "source": "https://whc.unesco.org/en/list/289/"
+      "en": "An underwater rainbow: Lake Malawi is home to hundreds of colourful cichlid fish species.",
+      "de": "Ein Regenbogen unter Wasser: Im Malawisee leben Hunderte Arten bunter Buntbarsche."
+    },
+    "fun": {
+      "en": "Only in this lake: many of its fish species live nowhere else on Earth.",
+      "de": "Nur in diesem See: Viele seiner Fischarten kommen nirgendwo sonst auf der Erde vor."
     }
   },
   {
     "id": "my",
     "front": {
-      "en": "Gunung Mulu’s vast caves shelter millions of bats and cave swiftlets.",
-      "de": "Gunung Mulus riesige Höhlen beherbergen Millionen Fledermäuse und Salanganen.",
-      "source": "https://whc.unesco.org/en/list/1013/"
+      "en": "Twin giants: Malaysia's Petronas Towers were the world's tallest buildings when completed.",
+      "de": "Zwei Riesen: Malaysias Petronas Towers waren bei ihrer Fertigstellung die höchsten Gebäude der Welt."
+    },
+    "fun": {
+      "en": "A walk in the sky: a double-decker skybridge links the two towers.",
+      "de": "Ein Spaziergang in der Luft: Eine zweistöckige Brücke verbindet die beiden Türme."
     }
   },
   {
     "id": "mz",
     "front": {
       "en": "Mozambique Island was a fortified Portuguese trading post on the sea route to India.",
-      "de": "Die Ilha de Moçambique war ein befestigter portugiesischer Handelsposten auf dem Seeweg nach Indien.",
-      "source": "https://whc.unesco.org/en/list/599/"
+      "de": "Die Ilha de Moçambique war ein befestigter portugiesischer Handelsposten auf dem Seeweg nach Indien."
     },
     "detail": {
       "en": "Chopi orchestras combine wooden timbila xylophones whose keys have calabash resonators beneath them.",
-      "de": "Chopi-Orchester vereinen hölzerne Timbila-Xylofone, unter deren Klangstäben Kalebassen als Resonatoren hängen.",
-      "source": "https://ich.unesco.org/en/RL/chopi-timbila-00133?RL=00133"
+      "de": "Chopi-Orchester vereinen hölzerne Timbila-Xylofone, unter deren Klangstäben Kalebassen als Resonatoren hängen."
+    },
+    "fun": {
+      "en": "An island with a capital past: the Island of Mozambique was once the capital of Portuguese East Africa.",
+      "de": "Eine Insel mit Hauptstadtvergangenheit: Die Ilha de Moçambique war einst Hauptstadt von Portugiesisch-Ostafrika."
     }
   },
   {
     "id": "ne",
     "front": {
-      "en": "The Aïr Mountains form a volcanic massif amid the Sahara’s Ténéré desert.",
-      "de": "Das Aïr-Gebirge bildet ein Vulkanmassiv in der Ténéré-Wüste der Sahara.",
-      "source": "https://whc.unesco.org/en/list/573/"
+      "en": "Mountains in a sea of sand: Niger's Aïr range rises from the Sahara.",
+      "de": "Berge im Sandmeer: Nigers Aïr-Gebirge erhebt sich aus der Sahara."
+    },
+    "fun": {
+      "en": "A very lonely landmark: the nearby Ténéré once had a famously isolated acacia tree.",
+      "de": "Ein sehr einsames Wahrzeichen: In der nahen Ténéré stand einst eine berühmt gewordene, völlig isolierte Akazie."
     }
   },
   {
     "id": "ng",
     "front": {
-      "en": "Osun-Osogbo’s sacred forest contains shrines and sculptures honouring Yoruba deities.",
-      "de": "Osun-Osogbos heiliger Wald birgt Schreine und Skulpturen zu Ehren von Yoruba-Gottheiten.",
-      "source": "https://whc.unesco.org/en/list/1118/"
+      "en": "A country full of people: Nigeria is Africa's most populous country.",
+      "de": "Ein Land voller Menschen: Nigeria ist Afrikas bevölkerungsreichstes Land."
+    },
+    "fun": {
+      "en": "Lights, camera, Nollywood! That's the widely used nickname for Nigeria's film industry.",
+      "de": "Licht, Kamera, Nollywood! So wird Nigerias Filmindustrie weithin genannt."
     }
   },
   {
     "id": "ni",
     "front": {
-      "en": "León Viejo’s ruins preserve traces of a 16th-century Spanish colonial settlement.",
-      "de": "Die Ruinen von León Viejo bewahren Spuren einer spanischen Kolonialsiedlung des 16. Jahrhunderts.",
-      "source": "https://whc.unesco.org/en/list/613/"
+      "en": "Sharks in fresh water? Bull sharks have been recorded in Lake Nicaragua.",
+      "de": "Haie im Süßwasser? Im Nicaraguasee wurden Bullenhaie nachgewiesen."
+    },
+    "fun": {
+      "en": "A river route to the lake: researchers documented the sharks migrating through the San Juan River.",
+      "de": "Ein Fluss als Weg zum See: Forschende dokumentierten die Wanderung der Haie durch den Río San Juan."
     }
   },
   {
     "id": "nl",
     "front": {
-      "en": "The Wadden Sea’s tidal flats shelter harbour seals and grey seals.",
-      "de": "Die Wattflächen des Wattenmeers bieten Seehunden und Kegelrobben Lebensraum.",
-      "source": "https://whc.unesco.org/en/list/1314/"
+      "en": "Below the waves? Roughly a quarter of the Netherlands lies below sea level.",
+      "de": "Unter dem Meeresspiegel? Rund ein Viertel der Niederlande liegt darunter."
+    },
+    "fun": {
+      "en": "Two wheels everywhere: the Netherlands has more bicycles than people.",
+      "de": "Zwei Räder überall: In den Niederlanden gibt es mehr Fahrräder als Menschen."
     }
   },
   {
     "id": "om",
     "front": {
-      "en": "Oman’s Land of Frankincense preserves ancient ports, an oasis and frankincense trees.",
-      "de": "Omans Weihrauchland bewahrt antike Häfen, eine Oase und Weihrauchbäume.",
-      "source": "https://whc.unesco.org/en/list/1010/"
+      "en": "A fragrant past: Oman's Dhofar region was a major source of ancient frankincense.",
+      "de": "Eine duftende Vergangenheit: Omans Region Dhofar war eine wichtige Quelle für Weihrauch in der Antike."
     },
     "detail": {
       "en": "Oman’s aflaj use gravity to channel water from springs or underground sources to farms and homes.",
-      "de": "Omans Aflaj leiten Wasser aus Quellen oder unterirdischen Vorkommen durch Schwerkraft zu Feldern und Häusern.",
-      "source": "https://whc.unesco.org/en/list/1207/"
+      "de": "Omans Aflaj leiten Wasser aus Quellen oder unterirdischen Vorkommen durch Schwerkraft zu Feldern und Häusern."
+    },
+    "fun": {
+      "en": "Perfume from a tree: frankincense is resin from Boswellia trees.",
+      "de": "Duft aus einem Baum: Weihrauch ist das Harz von Boswellia-Bäumen."
     }
   },
   {
     "id": "pa",
     "front": {
-      "en": "Darién National Park links Pacific beaches and mangroves with mountain rainforests.",
-      "de": "Der Darién-Nationalpark verbindet Pazifikstrände und Mangroven mit Bergregenwäldern.",
-      "source": "https://whc.unesco.org/en/list/159/"
+      "en": "An ocean shortcut: the Panama Canal links the Atlantic and Pacific.",
+      "de": "Eine Abkürzung zwischen Ozeanen: Der Panamakanal verbindet Atlantik und Pazifik."
+    },
+    "fun": {
+      "en": "A lift for ships: locks raise and lower vessels instead of letting them sail through at sea level.",
+      "de": "Ein Aufzug für Schiffe: Schleusen heben und senken sie, statt sie auf Meereshöhe durchfahren zu lassen."
     }
   },
   {
     "id": "pg",
     "front": {
-      "en": "Kuk’s ancient wetlands preserve evidence of farming from around 6,500 years ago.",
-      "de": "Kuks uralte Feuchtgebiete bewahren Spuren von Landwirtschaft vor etwa 6.500 Jahren.",
-      "source": "https://whc.unesco.org/en/list/887/"
+      "en": "So many ways to say hello: Papua New Guinea has more than 800 living languages.",
+      "de": "So viele Arten, Hallo zu sagen: In Papua-Neuguinea gibt es mehr als 800 lebende Sprachen."
+    },
+    "fun": {
+      "en": "Dressed to impress: birds-of-paradise are famous for elaborate courtship displays.",
+      "de": "Ein großer Auftritt: Paradiesvögel sind für ihre aufwendigen Balzvorführungen berühmt."
     }
   },
   {
     "id": "ph",
     "front": {
-      "en": "The Ifugao rice terraces follow the contours of the Cordillera mountains.",
-      "de": "Die Reisterrassen der Ifugao folgen den Konturen der Kordillerenberge.",
-      "source": "https://whc.unesco.org/en/list/722/"
+      "en": "A sea of islands: the Philippines has more than 7,000 islands.",
+      "de": "Ein Meer voller Inseln: Die Philippinen bestehen aus mehr als 7.000 Inseln."
+    },
+    "fun": {
+      "en": "Not edible, sadly: Bohol's Chocolate Hills get their name from their brown colour in the dry season.",
+      "de": "Leider nicht essbar: Bohols Schokoladenhügel verdanken ihren Namen der braunen Farbe in der Trockenzeit."
     }
   },
   {
     "id": "pk",
     "front": {
-      "en": "Mohenjo-daro’s ruins reveal carefully planned urban life in the ancient Indus civilization.",
-      "de": "Mohenjo-Daros Ruinen zeigen sorgfältig geplantes Stadtleben in der antiken Induskultur.",
-      "source": "https://whc.unesco.org/en/list/138/"
+      "en": "Almost at the top: Pakistan's K2 is the world's second-highest mountain.",
+      "de": "Fast ganz oben: Pakistans K2 ist der zweithöchste Berg der Welt."
+    },
+    "fun": {
+      "en": "From peaks to ancient streets: Pakistan also contains the Indus city of Mohenjo-daro.",
+      "de": "Von Gipfeln zu alten Gassen: In Pakistan liegt auch die antike Indus-Stadt Mohenjo-Daro."
     }
   },
   {
     "id": "pl",
     "front": {
-      "en": "Wieliczka and Bochnia’s salt mines contain underground chapels and sculptures carved in salt.",
-      "de": "Die Salzbergwerke Wieliczka und Bochnia bergen unterirdische Kapellen und Figuren aus Salz.",
-      "source": "https://whc.unesco.org/en/list/0032/"
+      "en": "An underground wonder: Poland's Wieliczka Salt Mine has chapels carved from rock salt.",
+      "de": "Ein Wunder unter der Erde: Polens Salzbergwerk Wieliczka besitzt Kapellen, die aus Steinsalz gehauen sind."
+    },
+    "fun": {
+      "en": "Even the lights sparkle with salt: some chandeliers are made with salt crystals.",
+      "de": "Sogar die Lichter funkeln mit Salz: Einige Kronleuchter bestehen aus Salzkristallen."
     }
   },
   {
     "id": "ps",
     "front": {
-      "en": "Battir’s stone terraces grow olives and vines beside gardens fed by spring-water channels.",
-      "de": "Auf Battirs Steinterrassen wachsen Oliven und Reben neben Gärten mit Quellwasserkanälen.",
-      "source": "https://whc.unesco.org/en/list/1492/"
+      "en": "A very old neighbourhood: Jericho has evidence of settlement more than 10,000 years old.",
+      "de": "Eine sehr alte Nachbarschaft: In Jericho gibt es mehr als 10.000 Jahre alte Siedlungsspuren."
+    },
+    "fun": {
+      "en": "Art beneath your feet: Hisham's Palace near Jericho is famous for a vast floor mosaic.",
+      "de": "Kunst unter den Füßen: Der Hischam-Palast bei Jericho ist für sein riesiges Bodenmosaik berühmt."
     }
   },
   {
     "id": "pt",
     "front": {
-      "en": "Pico’s vineyards grow in small plots protected from wind and seawater by stone walls.",
-      "de": "Picos Weinreben wachsen in kleinen Parzellen, durch Steinmauern vor Wind und Meerwasser geschützt.",
-      "source": "https://whc.unesco.org/en/list/1117/"
+      "en": "Turning pages since 1732: Lisbon's Bertrand is the world's oldest operating bookshop.",
+      "de": "Umblättern seit 1732: Bertrand in Lissabon ist die älteste noch betriebene Buchhandlung der Welt."
+    },
+    "fun": {
+      "en": "The library has a night shift: bats in Coimbra's Joanina Library eat insects that could damage its books.",
+      "de": "Nachtschicht in der Bibliothek: Fledermäuse fressen in Coimbras Joanina-Bibliothek Insekten, die Bücher beschädigen könnten."
     }
   },
   {
     "id": "py",
     "front": {
-      "en": "Trinidad and Jesús de Tavarangue preserve Jesuit mission architecture in Paraguay.",
-      "de": "Trinidad und Jesús de Tavarangue bewahren die Architektur von Jesuitenmissionen in Paraguay.",
-      "source": "https://whc.unesco.org/en/list/648/"
+      "en": "Two official voices: Paraguay's official languages are Spanish and Guaraní.",
+      "de": "Zwei offizielle Stimmen: Paraguays Amtssprachen sind Spanisch und Guaraní."
+    },
+    "fun": {
+      "en": "A language shared widely: Guaraní is spoken across much of society, not only in Indigenous communities.",
+      "de": "Eine weithin geteilte Sprache: Guaraní wird in weiten Teilen der Gesellschaft gesprochen, nicht nur in indigenen Gemeinschaften."
     }
   },
   {
     "id": "qa",
     "front": {
-      "en": "Al Zubarah flourished as a pearl-fishing and trading town in the Persian Gulf.",
-      "de": "Al Zubarah blühte als Stadt der Perlentaucher und Händler am Persischen Golf.",
-      "source": "https://whc.unesco.org/en/list/1402/"
+      "en": "Where dunes meet the tide: Qatar's Khor Al Adaid is a tidal inlet surrounded by desert.",
+      "de": "Wo Dünen auf Gezeiten treffen: Katars Khor Al Adaid ist eine von Wüste umgebene Gezeitenbucht."
+    },
+    "fun": {
+      "en": "A sea inside the sands: Khor Al Adaid is often called the 'Inland Sea'.",
+      "de": "Ein Meer mitten im Sand: Khor Al Adaid wird oft als „Binnenmeer“ bezeichnet."
     }
   },
   {
     "id": "ro",
     "front": {
-      "en": "Romania’s Moldavian World Heritage churches have exterior walls covered in religious frescoes.",
-      "de": "Die Welterbekirchen der rumänischen Moldau haben Außenwände voller religiöser Fresken.",
-      "source": "https://whc.unesco.org/en/list/598/"
+      "en": "Heavyweight architecture: Bucharest's Palace of Parliament holds the record for the world's heaviest building.",
+      "de": "Ein architektonisches Schwergewicht: Bukarests Parlamentspalast hält den Rekord als schwerstes Gebäude der Welt."
+    },
+    "fun": {
+      "en": "Stories with a smile: Romania's Merry Cemetery has colourful crosses with humorous epitaphs.",
+      "de": "Geschichten mit einem Lächeln: Rumäniens Fröhlicher Friedhof hat bunte Kreuze mit humorvollen Grabinschriften."
     }
   },
   {
     "id": "rs",
     "front": {
-      "en": "Studenica’s white marble churches preserve Byzantine paintings from the 13th and 14th centuries.",
-      "de": "Studenicas Kirchen aus weißem Marmor bewahren byzantinische Malerei des 13. und 14. Jahrhunderts.",
-      "source": "https://whc.unesco.org/en/list/389/"
+      "en": "A family celebration: Serbia's slava honours a family's patron saint.",
+      "de": "Ein Fest für die Familie: Serbiens Slava ehrt den Schutzheiligen einer Familie."
+    },
+    "fun": {
+      "en": "A tradition with recognition: slava is on UNESCO's list of intangible cultural heritage.",
+      "de": "Eine Tradition mit Anerkennung: Die Slava steht auf der UNESCO-Liste des immateriellen Kulturerbes."
     }
   },
   {
     "id": "ru",
     "front": {
-      "en": "Lake Baikal’s long isolation has produced many freshwater species found nowhere else.",
-      "de": "Die lange Isolation des Baikalsees brachte viele Süßwasserarten hervor, die nur dort vorkommen.",
-      "source": "https://whc.unesco.org/en/list/754/"
+      "en": "A lot of clocks to set: Russia spans 11 time zones.",
+      "de": "Viele Uhren zum Stellen: Russland erstreckt sich über elf Zeitzonen."
+    },
+    "fun": {
+      "en": "A lake that goes deep: Lake Baikal is the world's deepest lake.",
+      "de": "Ein See, der in die Tiefe geht: Der Baikalsee ist der tiefste See der Welt."
     }
   },
   {
     "id": "rw",
     "front": {
-      "en": "Rwanda’s Volcanoes National Park shelters mountain gorillas on forested volcanic slopes.",
-      "de": "Ruandas Vulkan-Nationalpark beherbergt Berggorillas an bewaldeten Vulkanhängen.",
-      "source": "https://visitrwanda.com/destinations/volcanoes-national-park/"
+      "en": "Mountain neighbours: Rwanda's Volcanoes National Park protects endangered mountain gorillas.",
+      "de": "Nachbarn in den Bergen: Ruandas Vulkan-Nationalpark schützt bedrohte Berggorillas."
+    },
+    "fun": {
+      "en": "A name to celebrate: baby gorillas receive names at the public Kwita Izina ceremony.",
+      "de": "Ein Name zum Feiern: Bei der öffentlichen Zeremonie Kwita Izina erhalten Gorillababys ihre Namen."
     }
   },
   {
     "id": "sa",
     "front": {
-      "en": "Hegra’s monumental tombs have decorated façades carved into rock by the Nabataeans.",
-      "de": "Hegras monumentale Gräber haben verzierte Fassaden, die Nabatäer in den Fels meißelten.",
-      "source": "https://whc.unesco.org/en/list/1293/"
+      "en": "No permanent river routes: Saudi Arabia has no permanently flowing rivers.",
+      "de": "Keine dauerhaften Flusswege: Saudi-Arabien hat keine ständig wasserführenden Flüsse."
+    },
+    "fun": {
+      "en": "An oasis with millions of palms: Al-Ahsa supports date palms on a huge scale.",
+      "de": "Eine Oase mit Millionen Palmen: In Al-Ahsa wachsen Dattelpalmen in riesiger Zahl."
     }
   },
   {
     "id": "sb",
     "front": {
-      "en": "Lake Tegano on Rennell Island was once the lagoon of a coral atoll.",
-      "de": "Der Tegano-See auf Rennell war einst die Lagune eines Korallenatolls.",
-      "source": "https://whc.unesco.org/en/list/854/"
+      "en": "An island lifted from the sea: Rennell in the Solomon Islands is a large raised coral atoll.",
+      "de": "Eine Insel aus dem Meer gehoben: Rennell auf den Salomonen ist ein großes angehobenes Korallenatoll."
+    },
+    "fun": {
+      "en": "A special island world: East Rennell is UNESCO-listed for its unusual ecosystem.",
+      "de": "Eine besondere Inselwelt: Ost-Rennell ist wegen seines ungewöhnlichen Ökosystems UNESCO-Welterbe."
     }
   },
   {
     "id": "sd",
     "front": {
-      "en": "Meroë’s pyramids and temples preserve the heritage of the ancient Kingdom of Kush.",
-      "de": "Meroës Pyramiden und Tempel bewahren das Erbe des antiken Königreichs Kusch.",
-      "source": "https://whc.unesco.org/en/list/1336/"
+      "en": "A royal chapter in the desert: Sudan's Meroë was a city of the ancient Kingdom of Kush.",
+      "de": "Ein königliches Kapitel in der Wüste: Sudans Meroë war eine Stadt des antiken Königreichs Kusch."
+    },
+    "fun": {
+      "en": "Pyramids with steep sides: Meroë's royal burial grounds have their own distinctive skyline.",
+      "de": "Pyramiden mit steilen Seiten: Meroës königliche Gräberfelder haben ihre ganz eigene Silhouette."
     }
   },
   {
     "id": "se",
     "front": {
-      "en": "Grimeton Radio Station preserves early wireless equipment for transatlantic communication.",
-      "de": "Die Funkstation Grimeton bewahrt frühe drahtlose Technik für transatlantische Kommunikation.",
-      "source": "https://whc.unesco.org/en/list/1134/"
+      "en": "Island hopping, anyone? Sweden has around 268,000 islands.",
+      "de": "Lust auf Inselhüpfen? Schweden hat rund 268.000 Inseln."
+    },
+    "fun": {
+      "en": "A hotel with a spring checkout: the seasonal Icehotel is rebuilt each winter, then melts away.",
+      "de": "Ein Hotel mit Frühlings-Checkout: Das saisonale Eishotel wird jeden Winter neu gebaut und schmilzt danach."
     }
   },
   {
     "id": "si",
     "front": {
-      "en": "The Reka River carved an underground canyon through the limestone of Škocjan’s caves.",
-      "de": "Der Fluss Reka schnitt eine unterirdische Schlucht in den Kalkstein der Höhlen von Škocjan.",
-      "source": "https://whc.unesco.org/en/list/390/"
+      "en": "A pale cave neighbour: the olm lives in Slovenia's Postojna Cave.",
+      "de": "Ein blasser Höhlennachbar: In Sloweniens Höhle von Postojna lebt der Grottenolm."
+    },
+    "fun": {
+      "en": "Baby dragons? That's the nickname given to these unusual cave-dwelling salamanders.",
+      "de": "Drachenbabys? So werden diese ungewöhnlichen, in Höhlen lebenden Schwanzlurche auch genannt."
     }
   },
   {
     "id": "sk",
     "front": {
-      "en": "Slovakia’s Carpathian wooden churches reflect different Christian building traditions.",
-      "de": "Die Holzkirchen der slowakischen Karpaten spiegeln verschiedene christliche Bautraditionen.",
-      "source": "https://whc.unesco.org/en/list/1273/"
+      "en": "Ice below the hills: Slovakia's Dobšinská Ice Cave contains permanent underground ice.",
+      "de": "Eis unter den Hügeln: Die Dobschauer Eishöhle in der Slowakei enthält dauerhaftes unterirdisches Eis."
+    },
+    "fun": {
+      "en": "A shared underground treasure: it belongs to a UNESCO-listed group of caves in Slovakia and Hungary.",
+      "de": "Ein geteilter Schatz unter der Erde: Sie gehört zu einer UNESCO-Welterbegruppe von Höhlen in der Slowakei und Ungarn."
     }
   },
   {
     "id": "sl",
     "front": {
-      "en": "Tiwai Island’s rainforest shelters Diana monkeys and pygmy hippopotamuses.",
-      "de": "Der Regenwald auf Tiwai Island beherbergt Dianameerkatzen und Zwergflusspferde.",
-      "source": "https://slhc-accra.org/tourism/tiwai-island"
+      "en": "A name with history: Freetown began as a settlement for freed Black people.",
+      "de": "Ein Name mit Geschichte: Freetown entstand als Siedlung für befreite Schwarze Menschen."
+    },
+    "fun": {
+      "en": "Lions in the name: Sierra Leone comes from Portuguese words meaning 'Lion Mountains'.",
+      "de": "Löwen im Namen: Sierra Leone geht auf portugiesische Wörter für „Löwenberge“ zurück."
     }
   },
   {
     "id": "sn",
     "front": {
-      "en": "Djoudj’s wetlands in the Senegal River delta shelter pelicans and African spoonbills.",
-      "de": "Djoudjs Feuchtgebiete im Senegaldelta bieten Pelikanen und Afrikanischen Löfflern Schutz.",
-      "source": "https://whc.unesco.org/en/list/25/"
+      "en": "A colourful nickname: Senegal's Lake Retba is known as the Pink Lake.",
+      "de": "Ein farbiger Beiname: Senegals Retba-See ist als Rosa See bekannt."
+    },
+    "fun": {
+      "en": "Pink isn't paint: salt-loving microorganisms can give the lake its rosy colour.",
+      "de": "Rosa ist hier keine Farbe aus dem Eimer: Salzliebende Mikroorganismen können den See rosa färben."
     }
   },
   {
     "id": "so",
     "front": {
-      "en": "Laas Geel’s rock shelters preserve colourful paintings of cattle with elaborately decorated necks.",
-      "de": "Laas Geels Felsdächer bewahren farbige Rinderbilder mit aufwendig verzierten Hälsen.",
-      "source": "https://vr.africanrockart.britishmuseum.org/country/somalia-somaliland/laas-geel/"
+      "en": "A very long shore: Somalia has the longest coastline on mainland Africa.",
+      "de": "Eine sehr lange Küste: Somalia hat die längste Küstenlinie auf dem afrikanischen Festland."
+    },
+    "fun": {
+      "en": "Two waters meet its shores: Somalia borders both the Indian Ocean and the Gulf of Aden.",
+      "de": "Zwei Gewässer an seinen Ufern: Somalia grenzt an den Indischen Ozean und den Golf von Aden."
     }
   },
   {
     "id": "sr",
     "front": {
-      "en": "The Central Suriname Nature Reserve shelters jaguars, giant otters and giant armadillos.",
-      "de": "Im Zentral-Suriname-Naturschutzgebiet leben Jaguare, Riesenotter und Riesengürteltiere.",
-      "source": "https://whc.unesco.org/en/list/1017/"
+      "en": "A small sovereign neighbour: Suriname is South America's smallest sovereign country by area.",
+      "de": "Ein kleiner souveräner Nachbar: Suriname ist flächenmäßig der kleinste souveräne Staat Südamerikas."
+    },
+    "fun": {
+      "en": "A language link across the ocean: Dutch is Suriname's official language.",
+      "de": "Eine Sprachverbindung über den Ozean: Niederländisch ist Surinames Amtssprache."
     }
   },
   {
     "id": "ss",
     "front": {
-      "en": "The Sudd’s vast swamps and floodplains provide habitat for shoebills and antelopes.",
-      "de": "Die riesigen Sümpfe und Auen des Sudd bieten Schuhschnäbeln und Antilopen Lebensraum.",
-      "source": "https://rsis.ramsar.org/RISapp/files/RISrep/SS1622RIS.pdf"
+      "en": "A young name at the UN: South Sudan became independent in 2011 and is the youngest UN member state.",
+      "de": "Ein junger Name bei der UNO: Südsudan wurde 2011 unabhängig und ist der jüngste UN-Mitgliedstaat."
+    },
+    "fun": {
+      "en": "A watery world: the Sudd is one of the world's largest tropical wetlands.",
+      "de": "Eine Welt voller Wasser: Der Sudd gehört zu den größten tropischen Feuchtgebieten der Welt."
     }
   },
   {
     "id": "sv",
     "front": {
-      "en": "A volcanic eruption buried the farming village of Joya de Cerén around AD 600.",
-      "de": "Ein Vulkanausbruch begrub das Bauerndorf Joya de Cerén um 600 n. Chr.",
-      "source": "https://whc.unesco.org/en/list/675/"
+      "en": "Small on the map: El Salvador is Central America's smallest country.",
+      "de": "Klein auf der Karte: El Salvador ist das kleinste Land Mittelamerikas."
+    },
+    "fun": {
+      "en": "A village frozen in time: volcanic ash preserved the Maya farming community of Joya de Cerén.",
+      "de": "Ein Dorf wie eingefroren: Vulkanasche bewahrte die bäuerliche Maya-Siedlung Joya de Cerén."
     }
   },
   {
     "id": "sy",
     "front": {
-      "en": "Damascus’ Great Umayyad Mosque dates from the eighth century.",
-      "de": "Die Große Umayyaden-Moschee in Damaskus stammt aus dem achten Jahrhundert.",
-      "source": "https://whc.unesco.org/en/list/20/"
+      "en": "A city with a very long story: Damascus has been inhabited for thousands of years.",
+      "de": "Eine Stadt mit sehr langer Geschichte: Damaskus ist seit Jahrtausenden bewohnt."
+    },
+    "fun": {
+      "en": "A city's name woven into cloth: traditional damask fabric takes its name from Damascus.",
+      "de": "Ein Stadtname im Stoff: Der traditionelle Damaststoff verdankt seinen Namen Damaskus."
     }
   },
   {
     "id": "sz",
     "front": {
-      "en": "Sibebe Rock’s granite slopes hide forested clefts, caves and waterfalls.",
-      "de": "Sibebe Rocks Granithänge verbergen bewaldete Spalten, Höhlen und Wasserfälle.",
-      "source": "https://www.thekingdomofeswatini.com/central-eswatini/sibebe-rock/"
+      "en": "A new name on the map: Swaziland officially became Eswatini in 2018.",
+      "de": "Ein neuer Name auf der Karte: Aus Swasiland wurde 2018 offiziell Eswatini."
+    },
+    "fun": {
+      "en": "The name tells a story: Eswatini means 'land of the Swazis'.",
+      "de": "Der Name erzählt etwas: Eswatini bedeutet „Land der Swasi“."
     }
   },
   {
     "id": "td",
     "front": {
-      "en": "Ounianga’s desert lakes vary strikingly in colour, size and water chemistry.",
-      "de": "Ouniangas Wüstenseen unterscheiden sich auffallend in Farbe, Größe und Wasserchemie.",
-      "source": "https://whc.unesco.org/en/list/1400/"
+      "en": "Sculpted by nature: Chad's Ennedi Massif has dramatic sandstone arches in the Sahara.",
+      "de": "Von der Natur geformt: Im Ennedi-Massiv im Tschad stehen spektakuläre Sandsteinbögen in der Sahara."
+    },
+    "fun": {
+      "en": "Pictures from the past: Ennedi's rock art records thousands of years of human activity.",
+      "de": "Bilder aus der Vergangenheit: Ennedis Felskunst erzählt von menschlichem Leben über viele Jahrtausende."
     }
   },
   {
     "id": "tg",
     "front": {
-      "en": "The Batammariba’s earthen tower houses shape the cultural landscape of Koutammakou.",
-      "de": "Die lehmgebauten Turmhäuser der Batammariba prägen die Kulturlandschaft von Koutammakou.",
-      "source": "https://whc.unesco.org/en/list/1140/"
+      "en": "Homes like small towers: Togo's Koutammakou landscape is known for earthen houses called takienta.",
+      "de": "Häuser wie kleine Türme: Togos Landschaft Koutammakou ist für Lehmhäuser namens Takienta bekannt."
+    },
+    "fun": {
+      "en": "A home-building tradition: these distinctive tower houses belong to Batammariba culture.",
+      "de": "Eine Tradition des Hausbaus: Diese markanten Turmhäuser gehören zur Kultur der Batammariba."
     }
   },
   {
     "id": "th",
     "front": {
-      "en": "Ayutthaya’s ruins include towering reliquaries and vast Buddhist monasteries.",
-      "de": "Ayutthayas Ruinen umfassen hohe Reliquientürme und weitläufige buddhistische Klöster.",
-      "source": "https://whc.unesco.org/en/list/576/"
+      "en": "Thailand is the only Southeast Asian country never colonised by a Western power.",
+      "de": "Thailand ist das einzige Land Südostasiens, das nie von einer westlichen Macht kolonisiert wurde."
+    },
+    "fun": {
+      "en": "Take a deep breath: Bangkok's full ceremonial name has 168 letters in one standard transliteration.",
+      "de": "Tief Luft holen: Bangkoks voller zeremonieller Name hat in einer gängigen Umschrift 168 Buchstaben."
     }
   },
   {
     "id": "tj",
     "front": {
-      "en": "Tajik National Park’s Pamir landscape includes high plateaux and peaks above 7,000 metres.",
-      "de": "Der Pamir im Tadschikischen Nationalpark umfasst Hochplateaus und Gipfel über 7.000 Metern.",
-      "source": "https://whc.unesco.org/en/list/1252/"
+      "en": "Mountains almost everywhere: more than 90% of Tajikistan is mountainous.",
+      "de": "Fast überall Berge: Mehr als 90 Prozent Tadschikistans sind gebirgig."
+    },
+    "fun": {
+      "en": "A road with lofty views: the Pamir Highway crosses some of Central Asia's highest mountain passes.",
+      "de": "Eine Straße mit hohem Ausblick: Der Pamir Highway führt über einige der höchsten Pässe Zentralasiens."
     }
   },
   {
     "id": "tl",
     "front": {
-      "en": "Timor-Leste’s handwoven tais textiles are used for traditional clothing and decoration.",
-      "de": "Timor-Lestes handgewebte Tais-Textilien dienen als traditionelle Kleidung und Dekoration.",
-      "source": "https://ich.unesco.org/en/USL/tais-traditional-textile-01688"
+      "en": "A new chapter in 2002: Timor-Leste became independent that year.",
+      "de": "Ein neues Kapitel im Jahr 2002: In diesem Jahr wurde Timor-Leste unabhängig."
+    },
+    "fun": {
+      "en": "East, twice: its name combines Malay and Portuguese words meaning 'east'.",
+      "de": "Osten, gleich zweimal: Sein Name verbindet malaiische und portugiesische Wörter für „Osten“."
     }
   },
   {
     "id": "tm",
     "front": {
       "en": "Ancient Merv’s oasis ruins span 4,000 years of history along the Silk Roads.",
-      "de": "Die Oasenruinen des antiken Merv umfassen 4.000 Jahre Geschichte an den Seidenstraßen.",
-      "source": "https://whc.unesco.org/en/list/886/"
+      "de": "Die Oasenruinen des antiken Merv umfassen 4.000 Jahre Geschichte an den Seidenstraßen."
     }
   },
   {
     "id": "tn",
     "front": {
-      "en": "El Jem’s Roman amphitheatre could hold around 35,000 spectators.",
-      "de": "El Jems römisches Amphitheater bot Platz für etwa 35.000 Zuschauer.",
-      "source": "https://whc.unesco.org/en/list/38/"
+      "en": "Roman grandeur: Tunisia's El Jem has one of the Roman world's great surviving amphitheatres.",
+      "de": "Römische Pracht: Tunesiens El Djem besitzt eines der großen erhaltenen Amphitheater der Römerwelt."
+    },
+    "fun": {
+      "en": "A galaxy not so far away: several Star Wars desert scenes were filmed in Tunisia.",
+      "de": "Eine gar nicht so ferne Galaxis: Mehrere Wüstenszenen aus Star Wars wurden in Tunesien gedreht."
     }
   },
   {
     "id": "tr",
     "front": {
-      "en": "Cappadocia’s volcanic rock was carved into churches, homes and underground towns.",
-      "de": "In Kappadokiens Vulkangestein wurden Kirchen, Wohnungen und unterirdische Städte gehauen.",
-      "source": "https://whc.unesco.org/en/list/357/"
+      "en": "One city, two continents: Istanbul spans Europe and Asia.",
+      "de": "Eine Stadt, zwei Kontinente: Istanbul liegt in Europa und Asien."
+    },
+    "fun": {
+      "en": "Santa's sunny roots: Saint Nicholas, an inspiration for Santa Claus, was born in what is now Türkiye.",
+      "de": "Sonnige Wurzeln: Der heilige Nikolaus, ein Vorbild für den Weihnachtsmann, wurde in der heutigen Türkei geboren."
     }
   },
   {
     "id": "tt",
     "front": {
-      "en": "At Trinidad’s Pitch Lake, liquid bitumen rises to the surface and cools into natural asphalt.",
-      "de": "In Trinidads Pitch Lake steigt flüssiges Bitumen auf und kühlt zu Naturasphalt ab.",
-      "source": "https://visittrinidad.tt/attractions/la-brea-pitch-lake/"
+      "en": "Music from metal: the steelpan instrument originated in Trinidad and Tobago.",
+      "de": "Musik aus Metall: Das Instrument Steelpan entstand in Trinidad und Tobago."
+    },
+    "fun": {
+      "en": "A lake you wouldn't swim in: Trinidad's Pitch Lake is a huge natural deposit of asphalt.",
+      "de": "Ein See, in dem man nicht schwimmen möchte: Trinidads Pitch Lake ist eine riesige natürliche Asphaltlagerstätte."
     }
   },
   {
     "id": "tz",
     "front": {
-      "en": "The Ngorongoro area preserves early human relatives’ footprints about 3.6 million years old.",
-      "de": "Das Ngorongoro-Gebiet bewahrt etwa 3,6 Millionen Jahre alte Fußabdrücke früher Menschenverwandter.",
-      "source": "https://whc.unesco.org/en/list/39/"
+      "en": "Africa's rooftop: Tanzania's Mount Kilimanjaro is the continent's highest mountain.",
+      "de": "Afrikas Dach: Tansanias Kilimandscharo ist der höchste Berg des Kontinents."
+    },
+    "fun": {
+      "en": "A rock star's island roots: Queen singer Freddie Mercury was born in Zanzibar.",
+      "de": "Die Inselwurzeln eines Rockstars: Queen-Sänger Freddie Mercury wurde auf Sansibar geboren."
     }
   },
   {
     "id": "ua",
     "front": {
-      "en": "Kyiv’s Saint-Sophia Cathedral was designed to rival Constantinople’s Hagia Sophia.",
-      "de": "Kyjiws Sophienkathedrale wurde als Gegenstück zur Hagia Sophia in Konstantinopel entworfen.",
-      "source": "https://whc.unesco.org/en/list/527/"
+      "en": "A long way down: Kyiv's Arsenalna metro station lies more than 100 metres underground.",
+      "de": "Ein weiter Weg nach unten: Kyjiws Metrostation Arsenalna liegt mehr als 100 Meter unter der Erde."
+    },
+    "fun": {
+      "en": "Patterns in wax: Ukrainian pysanky are eggs decorated using a wax-resist technique.",
+      "de": "Muster mit Wachs: Ukrainische Pysanky sind Eier, die mit einer Wachsreservetechnik verziert werden."
     }
   },
   {
     "id": "ug",
     "front": {
-      "en": "Bwindi’s mountain forests provide habitat for mountain gorillas.",
-      "de": "Bwindis Bergwälder bieten Berggorillas Lebensraum.",
-      "source": "https://whc.unesco.org/en/list/682/"
+      "en": "A lake with three neighbours: Uganda shares Lake Victoria with Kenya and Tanzania.",
+      "de": "Ein See mit drei Nachbarn: Uganda teilt sich den Viktoriasee mit Kenia und Tansania."
+    },
+    "fun": {
+      "en": "Deep in the green: Uganda's Bwindi forest protects mountain gorillas.",
+      "de": "Tief im Grünen: Ugandas Bwindi-Wald schützt Berggorillas."
     }
   },
   {
     "id": "uz",
     "front": {
-      "en": "Bukhara’s historic centre preserves a Silk Road city with over 2,000 years of history.",
-      "de": "Bucharas historisches Zentrum bewahrt eine Stadt der Seidenstraße mit über 2.000 Jahren Geschichte.",
-      "source": "https://whc.unesco.org/en/list/602/"
+      "en": "Landlocked twice over: Uzbekistan's neighbours are all landlocked too.",
+      "de": "Gleich doppelt ohne Meer: Auch alle Nachbarländer Usbekistans sind Binnenländer."
     },
     "detail": {
       "en": "Samarkand’s major historic monuments include Ulugh Beg’s observatory alongside mosques and madrasas.",
-      "de": "Zu Samarkands bedeutenden historischen Bauten gehört Ulug Begs Observatorium neben Moscheen und Medresen.",
-      "source": "https://whc.unesco.org/en/list/603/"
+      "de": "Zu Samarkands bedeutenden historischen Bauten gehört Ulug Begs Observatorium neben Moscheen und Medresen."
+    },
+    "fun": {
+      "en": "A meeting point for travellers: Samarkand was a major crossroads on the Silk Roads.",
+      "de": "Ein Treffpunkt für Reisende: Samarkand war ein bedeutender Knotenpunkt der Seidenstraßen."
     }
   },
   {
     "id": "ve",
     "front": {
-      "en": "Canaima’s landscape is dominated by sheer-sided table mountains known as tepuis.",
-      "de": "Canaimas Landschaft wird von steilwandigen Tafelbergen geprägt, die Tepuis genannt werden.",
-      "source": "https://whc.unesco.org/en/list/701/"
+      "en": "One enormous drop: Venezuela's Angel Falls is the world's highest uninterrupted waterfall.",
+      "de": "Ein gewaltiger Fall: Venezuelas Salto Ángel ist der höchste ununterbrochene Wasserfall der Welt."
+    },
+    "fun": {
+      "en": "A waterfall from a tabletop: it plunges from a flat-topped mountain called a tepui.",
+      "de": "Ein Wasserfall von einer Tischplatte: Er stürzt von einem Tafelberg hinab, einem sogenannten Tepui."
     }
   },
   {
     "id": "ws",
     "front": {
-      "en": "Samoa’s fine pandanus mats are handwoven and exchanged during traditional ceremonies.",
-      "de": "Samoas feine Pandanusmatten werden von Hand gewebt und bei traditionellen Zeremonien getauscht.",
-      "source": "https://www.unesco.org/archives/multimedia/document-4926"
+      "en": "A missing day: Samoa skipped 30 December 2011 when it moved across the International Date Line.",
+      "de": "Ein fehlender Tag: Beim Wechsel über die Datumsgrenze übersprang Samoa den 30. Dezember 2011."
+    },
+    "fun": {
+      "en": "Another big switch: Samoa changed from driving on the right to driving on the left in 2009.",
+      "de": "Noch ein großer Wechsel: Samoa stellte 2009 vom Rechtsverkehr auf Linksverkehr um."
     }
   },
   {
     "id": "ye",
     "front": {
-      "en": "Shibam’s sun-dried mud-brick tower houses rise up to seven storeys high.",
-      "de": "Shibams Turmhäuser aus luftgetrockneten Lehmziegeln sind bis zu sieben Stockwerke hoch.",
-      "source": "https://whc.unesco.org/en/list/192/"
+      "en": "Trees like umbrellas: Yemen's Socotra island is famous for dragon's blood trees.",
+      "de": "Bäume wie Regenschirme: Jemens Insel Sokotra ist für ihre Drachenblutbäume berühmt."
+    },
+    "fun": {
+      "en": "No dragon required: the trees get their dramatic name from their red resin.",
+      "de": "Ganz ohne Drachen: Die Bäume verdanken ihren dramatischen Namen ihrem roten Harz."
     }
   },
   {
     "id": "za",
     "front": {
-      "en": "The Cape Floral Region’s fynbos plants are adapted to periodic fires.",
-      "de": "Die Fynbos-Pflanzen der Kapflora-Region sind an wiederkehrende Brände angepasst.",
-      "source": "https://whc.unesco.org/en/list/1007/"
+      "en": "Why settle for one? South Africa has three capitals: Pretoria, Cape Town and Bloemfontein.",
+      "de": "Warum nur eine? Südafrika hat drei Hauptstädte: Pretoria, Kapstadt und Bloemfontein."
     },
     "detail": {
       "en": "The Taung fossil site yielded an Australopithecus africanus skull in 1924.",
-      "de": "Die Fossilfundstätte Taung lieferte 1924 einen Schädel der Art Australopithecus africanus.",
-      "source": "https://whc.unesco.org/en/list/915/"
+      "de": "Die Fossilfundstätte Taung lieferte 1924 einen Schädel der Art Australopithecus africanus."
+    },
+    "fun": {
+      "en": "A country inside a country: South Africa completely surrounds Lesotho.",
+      "de": "Ein Land im Land: Südafrika umschließt Lesotho vollständig."
     }
   },
   {
     "id": "zm",
     "front": {
-      "en": "At Victoria Falls, the Zambezi plunges into basalt gorges and sends mist high into the air.",
-      "de": "An den Victoriafällen stürzt der Sambesi in Basaltschluchten und wirbelt Gischt in die Höhe.",
-      "source": "https://whc.unesco.org/en/list/509/"
+      "en": "A shared curtain of water: Zambia shares Victoria Falls with Zimbabwe.",
+      "de": "Ein geteilter Wasservorhang: Sambia teilt sich die Victoriafälle mit Simbabwe."
+    },
+    "fun": {
+      "en": "A name you can almost hear: Mosi-oa-Tunya means 'the smoke that thunders'.",
+      "de": "Ein Name, den man fast hören kann: Mosi-oa-Tunya bedeutet „der Rauch, der donnert“."
     }
   },
   {
     "id": "zw",
     "front": {
-      "en": "Great Zimbabwe’s ruins preserve a major medieval trading centre of Shona civilization.",
-      "de": "Die Ruinen von Groß-Simbabwe bewahren ein bedeutendes mittelalterliches Handelszentrum der Shona.",
-      "source": "https://whc.unesco.org/en/list/364/"
+      "en": "A country named after ruins: Great Zimbabwe's stone city gave the modern country its name.",
+      "de": "Ein Land, benannt nach Ruinen: Die Steinstadt Groß-Simbabwe gab dem heutigen Land seinen Namen."
+    },
+    "fun": {
+      "en": "No mortar needed: Great Zimbabwe's walls were built by fitting stones together.",
+      "de": "Ganz ohne Mörtel: Groß-Simbabwes Mauern wurden aus passend aufgeschichteten Steinen gebaut."
     }
   }
 ]

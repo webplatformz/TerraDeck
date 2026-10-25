@@ -1,5 +1,26 @@
 # TerraDeck contributor rules
 
+## Language
+
+- Keep agent communication and console summaries in English, even when the user
+  occasionally writes in German. Continue maintaining EN/DE app localization.
+
+## Release approval
+
+- Before each release, review `src/data/releases.ts`: check the major version,
+  fixed release date and player-facing notes in both English and German against
+  changes since the last successful deployment. Retain previous release entries.
+- Display versions use `v<Major>.<YYYYMMDD>`. Never derive the release date from
+  the build clock. Package/tooling versions remain valid three-part versions;
+  app display versions and save-schema versions are independent.
+- Present both language drafts and require explicit user approval before
+  publication. Do not commit, push (which deploys main), or deploy as part of
+  preparing a draft. Approval of wording is not permission to publish.
+- Review bundled licence notices/source availability and EN/DE privacy/operator
+  information before publication. Regenerate notices with `npm run licenses:prepare`
+  after dependency or covered-source changes. Do not publish personal contact
+  details without approval or treat technical checks as legal clearance.
+
 ## Saved-data compatibility
 
 - Before changing persisted data, validation, or the meaning of saved fields,

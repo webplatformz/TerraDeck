@@ -5,8 +5,12 @@
   "type": "module",
   "description": "Find every country on the map, earn Visitor and Explorer stamps, collect the atlas.",
   "scripts": {
+    "licenses:prepare": "node scripts/prepare-notices.mjs",
+    "predev": "npm run licenses:prepare",
     "dev": "vite",
+    "prebuild": "npm run licenses:prepare",
     "build": "tsc -b && vite build",
+    "prebuild:android": "npm run licenses:prepare",
     "build:android": "tsc -b && vite build --mode android",
     "android:sync": "npm run build:android && cap sync android",
     "android:open": "cap open android",

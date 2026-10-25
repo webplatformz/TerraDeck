@@ -8,6 +8,32 @@ Built with React, TypeScript and Vite; deployed to GitHub Pages. Progress is sav
 - [Plan](docs/PLAN.md) — architecture, map approach and milestones
 - [Decisions](docs/DECISIONS.md) — game rules and technical choices with their reasoning
 
+## Release notes and approval
+
+The footer links to `#releases`. Edit `src/data/releases.ts` for each release:
+add a new entry with a major version, fixed `YYYY-MM-DD` release date, EN/DE title
+and bilingual notes, keeping the newest entry first and retaining older ones.
+Each note has a one-to-three-word `label` (rendered bold, followed by a colon)
+and a `description`. Focus on concrete technical and feature changes, with light
+humor rather than marketing copy. The first production entry also introduces
+the existing launch features; later entries describe changes since the prior release.
+The displayed version is derived from that entry, e.g. `v1.20261025`; it is not
+generated from the build date. `package.json` keeps its valid three-part tooling
+version; it is not the player-facing version or save-schema version.
+
+Before publishing, inspect changes since the last successful Pages deployment,
+check the version/date and both translations, and present the notes for explicit
+user approval. The initial 25 October draft is based on the country-text refresh
+and new version/notes page; the previous successful deployment was `a07f599`
+(24 October), which already included tours, achievements and map zoom.
+Approval of the notes does not authorize a commit, push or deployment. Pushing
+to `main` triggers the Pages workflow, so do not push an unapproved release.
+Once publication is explicitly requested, run the normal release checks and builds.
+For a preview only, use targeted checks and a phone smoke check.
+Before release, also review third-party notices, data-source availability and
+EN/DE privacy/operator information. Resolve outstanding operator/contact and
+applicable-law questions; passing technical checks is not legal clearance.
+
 ## Local development
 
 Requires Node 24 LTS. The `.nvmrc` file selects the same major version locally and in
@@ -146,10 +172,18 @@ result. Merely discovering a country without a stamp does not reveal it.
 The second (Gold Explorer) stamp unlocks a tappable, keyboard-accessible card,
 available during the reveal and later in Collection. Notes add languages and
 currencies. Capital, population and area stay on the front only.
-Sourced EN/DE front facts, back details and fun facts are authored in
+Editable EN/DE front facts, back details and fun facts are authored in
 `scripts/content/country-stories.json` and bundled through `src/data/countryStories.ts`.
-This batch supplies 168 front facts, 23 details and 19 fun facts. Front facts missing
-from the batch (including archival cards) retain their existing locale text.
+Keep this JSON file as the single authoring location: search for the lowercase
+country `id` and edit `front` (card front), `detail` (Field notes) or `fun`
+(Field notes with a fun-fact heading). Each story contains only `en` and `de`;
+no source URLs or import/generation step are needed. Changes are bundled on build.
+New content can be supplied in batches; preserve unrelated countries and write
+short, playful, natural translations without inventing filler. Optional extra
+details can cover a different subject from the main fact and fun fact.
+Limits per language are 120 characters for `front`, 200 for `detail` and 170 for
+`fun`. Run `npx tsx --test tests/country-details.test.mjs` after editing.
+Front facts missing from the file (including archival cards) retain their existing locale text.
 All backs share the same layout; detail and fun facts are
 independently optional. Missing facts leave empty space, with no fallback text or headings.
 Long back stories have See more/See less controls that do not turn the card.
@@ -220,9 +254,41 @@ If browser storage is unavailable, acknowledgement lasts for the app session and
 Project links and the approved public creator name live in `src/data/project.ts`. Error reports
 use [GitHub Issues](https://github.com/webplatformz/TerraDeck/issues), which are public and generally
 require a GitHub account. The camp inspiration and Bundeshaus Pack developers are credited.
-The **name-only Impressum is explicitly incomplete**: no address or direct contact has been supplied.
+The Impressum displays the approved creator name and public issue link only.
+The user requested removal of visible missing-information warnings; this is a
+presentation choice, not legal clearance. Do not add personal contact details without explicit approval.
 Applicable provider-information requirements must be checked before treating the site as publication-ready;
 the welcome acknowledgement does not make the legal notice complete.
+
+### Third-party licences and content provenance
+
+`npm run licenses:prepare` generates `public/third-party-notices.txt` from the
+installed production dependency tree, preserving complete copyright/licence texts
+(including font OFL and supporting tool notices). It also generates
+`public/third-party-sources.tar`, containing the editable REST Countries-derived
+snapshots, transformed data/locales and transformation scripts. Both downloads
+are linked in Sources & credits and shipped locally, not fetched by players from
+third-party servers. `predev`, `prebuild` and `prebuild:android` regenerate them
+offline; a missing licence fails explicitly. Run preparation again after changing
+dependencies, covered data, translations or build scripts. Commit the refreshed
+downloads alongside their inputs. The archive contains no local saves.
+
+REST Countries supplies structured data under MPL-2.0; the upstream licence is
+retained in `scripts/licenses/rest-countries-MPL-2.0.txt`. Derived portions remain
+subject to those terms; the source download does not relicense independent app code.
+Natural Earth data is public domain, world-atlas packaging ISC, and Wikidata
+structured data CC0. Wikipedia **links** are not Wikipedia article text.
+The collectors import structured fields/sitelink counts, not article prose.
+Country stories are separately edited user-supplied drafts; no exhaustive
+source-by-source wording/rights clearance has been performed. If copied expressive
+text or new licensed material is introduced, obtain permission or comply with its
+attribution/licence requirements; rewriting or removing URLs is not clearance.
+
+Privacy describes local functional storage, GitHub hosting/international processing,
+retention responsibilities and applicable rights without inventing GitHub log-retention
+periods. No analytics or consent-management service was added. Operator/contact
+requirements remain a pre-release review item, not a declaration of compliance.
+Reference: [FDPIC guidance on privacy statements](https://www.edoeb.admin.ch/en/privacy-statements-on-the-internet).
 
 ### Rarity and country content
 
