@@ -5,9 +5,11 @@ import { execFileSync } from 'node:child_process'
 
 const root = new URL('../', import.meta.url)
 const read = path => readFileSync(new URL(path, root), 'utf8')
+const normalize = text => text.replace(/\r\n/g, '\n')
 
 test('bundled notices retain complete production dependency and country-data licences', () => {
   const notices = read('public/third-party-notices.txt')
+  assert.equal(notices, normalize(notices), 'Licence bundle must use portable LF line endings')
   const lock = JSON.parse(read('package-lock.json'))
   for (const [path, entry] of Object.entries(lock.packages)) {
     if (!path || entry.dev) continue
@@ -16,13 +18,16 @@ test('bundled notices retain complete production dependency and country-data lic
     const files = readdirSync(new URL(`${path}/`, root))
       .filter(name => /^(licen[sc]e|copying|notice|ofl|copyright|thirdpartynotice)/i.test(name))
     assert.ok(files.length, path)
-    for (const file of files) assert.ok(notices.includes(read(`${path}/${file}`)), `${path}/${file}`)
+    for (const file of files) assert.ok(notices.includes(normalize(read(`${path}/${file}`))), `${path}/${file}`)
   }
-  assert.ok(notices.includes(read('scripts/licenses/rest-countries-MPL-2.0.txt')))
+  assert.ok(notices.includes(normalize(read('scripts/licenses/rest-countries-MPL-2.0.txt'))))
 })
 
 test('country-data source download contains current editable data and transformations', () => {
   const files = execFileSync('tar', ['-tf', 'public/third-party-sources.tar'], { cwd: root, encoding: 'utf8' }).trim().split('\n')
+  for (const file of files) {
+    assert.ok(!file.split('/').some(part => part.startsWith('._') || part === '.DS_Store'), `Unexpected macOS metadata: ${file}`)
+  }
   for (const file of files.filter(path => !path.endsWith('/'))) {
     assert.ok(/^(src\/(data|i18n)\/|scripts\/)/.test(file), file)
     assert.equal(execFileSync('tar', ['-xOf', 'public/third-party-sources.tar', file], { cwd: root, encoding: 'utf8' }), read(file), file)

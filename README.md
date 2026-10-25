@@ -269,7 +269,9 @@ installed production dependency tree, preserving complete copyright/licence text
 snapshots, transformed data/locales and transformation scripts. Both downloads
 are linked in Sources & credits and shipped locally, not fetched by players from
 third-party servers. `predev`, `prebuild` and `prebuild:android` regenerate them
-offline; a missing licence fails explicitly. Run preparation again after changing
+offline; `pretest` also regenerates them before unit tests, including on CI.
+Licence text uses LF line endings and source archives exclude macOS metadata.
+A missing licence fails explicitly. Run preparation again after changing
 dependencies, covered data, translations or build scripts. Commit the refreshed
 downloads alongside their inputs. The archive contains no local saves.
 

@@ -3,11 +3,11 @@ import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
 const root = fileURLToPath(new URL('../', import.meta.url))
-const read = path => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8')
+const read = path => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8').replace(/\r\n/g, '\n')
 const lock = JSON.parse(read('package-lock.json'))
 const sections = [
   'TerraDeck — third-party notices',
-  'This inventory includes installed production dependencies, including supporting tools and platform packages. Not every listed file is sent to your browser. Original licence and copyright texts follow unchanged.',
+  'This inventory includes installed production dependencies, including supporting tools and platform packages. Not every listed file is sent to your browser. Original licence and copyright texts follow with line endings normalized to LF.',
   'Natural Earth geographic data is public domain. Terms: https://www.naturalearthdata.com/about/terms-of-use/\nWikidata structured data is CC0. Terms: https://www.wikidata.org/wiki/Wikidata:Licensing',
   'REST Countries — MPL-2.0\nSource: https://github.com/restcountries/restcountries\nTerraDeck selects and transforms country records, localizes names and details, rounds numeric values and derives rarity values. The REST Countries-derived material remains available under MPL-2.0. Download third-party-sources.tar alongside this file for the corresponding editable snapshots, derived files and transformation scripts. Original app code and independent editorial text are not relicensed by this notice.',
   read('scripts/licenses/rest-countries-MPL-2.0.txt'),
@@ -45,5 +45,9 @@ const sources = [
 
 mkdirSync(new URL('../public/', import.meta.url), { recursive: true })
 writeFileSync(new URL('../public/third-party-notices.txt', import.meta.url), `${sections.join('\n\n' + '='.repeat(72) + '\n\n')}\n`)
-execFileSync('tar', ['-cf', 'public/third-party-sources.tar', ...sources], { cwd: root, stdio: 'pipe' })
+execFileSync('tar', ['--exclude=._*', '--exclude=.DS_Store', '-cf', 'public/third-party-sources.tar', ...sources], {
+  cwd: root,
+  env: { ...process.env, COPYFILE_DISABLE: '1' },
+  stdio: 'pipe',
+})
 console.log('Prepared third-party licence texts and corresponding country-data sources.')

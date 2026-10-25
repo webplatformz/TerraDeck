@@ -16,6 +16,7 @@
     "android:open": "cap open android",
     "preview": "vite preview",
     "lint": "eslint .",
+    "pretest": "npm run licenses:prepare",
     "test": "tsx --test tests/*.test.mjs",
     "test:e2e": "playwright test",
     "rarity:build": "node scripts/build-rarity.mjs",
