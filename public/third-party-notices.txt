@@ -2,7 +2,7 @@ TerraDeck — third-party notices
 
 ========================================================================
 
-This inventory includes installed production dependencies, including supporting tools and platform packages. Not every listed file is sent to your browser. Original licence and copyright texts follow unchanged.
+This inventory includes installed production dependencies, including supporting tools and platform packages. Not every listed file is sent to your browser. Original licence and copyright texts follow with line endings normalized to LF.
 
 ========================================================================
 

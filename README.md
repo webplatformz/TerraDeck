@@ -39,6 +39,8 @@ applicable-law questions; passing technical checks is not legal clearance.
 Requires Node 24 LTS. The `.nvmrc` file selects the same major version locally and in
 GitHub Actions. With nvm installed, run `nvm install` once, then `nvm use` in each
 new terminal. In JetBrains, select the installed Node 24 interpreter for this project.
+The Pages workflow also uses Node-24-based action releases; their internal runtime
+is separate from the application Node version selected by `.nvmrc`.
 The toolchain uses Vite 8 with React plugin 6, ESLint 10 and Playwright 1.64;
 the app remains on React 18 and TypeScript 5.9.
 Production SVG flags are emitted as separate hashed assets rather than embedded in the
