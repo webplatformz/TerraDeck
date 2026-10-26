@@ -15,6 +15,7 @@ import { DEFAULT_CONFIG } from '../src/domain/config.ts'
 import { emptyAchievements, achievementProgress, reconcileTourAchievements, isGoldAchievement } from '../src/domain/achievements.ts'
 import { resetCollection } from '../src/domain/resetCollection.ts'
 import { parseGameState } from '../src/persistence/validate.ts'
+import { validateDailyTours } from '../src/persistence/validateDailyTours.ts'
 import { LocalStorageRepository } from '../src/persistence/LocalStorageRepository.ts'
 
 const fresh = () => ({ ...createInitialState(DEFAULT_CONFIG), achievements: emptyAchievements() })
@@ -432,12 +433,12 @@ test('practice random sampling covers every eligible continent without duplicate
   }
 })
 
-test('legacy saves preserved; malformed or unsupported extension quarantines rewards and valid progress survives', () => {
+test('legacy saves preserved; malformed tour records reset locally without losing regular progress', () => {
   const base = fresh()
   assert.deepEqual(parseGameState(clone(base)), base)
   const good = play(startDailyTour(base, DAILY_EPOCH))
   const cases = [
-    null, [], { version: 99, records: { future: { reward: true } } },
+    null, [],
     { version: 1, records: [] },
     { version: 1, records: { '2026-10-23': { ...daily(good), rewards: { ...daily(good).rewards, applied: false } } } },
   ]
@@ -459,18 +460,154 @@ test('legacy saves preserved; malformed or unsupported extension quarantines rew
   try {
     for (const bad of cases) {
       const state = parseGameState({ ...good, dailyTours: bad })
-      assert.ok(state.dailyTours.blocked)
+      assert.equal(state.dailyTours.blocked, undefined)
       assert.deepEqual(state.progress, good.progress)
-      assert.deepEqual(state.dailyTours.quarantined, bad)
-      assert.strictEqual(startDailyTour(state, DAILY_EPOCH + UTC_DAY_MS), state)
-      assert.strictEqual(startPracticeTour(state, DAILY_EPOCH, () => 0), state)
+      assert.equal(state.dailyTours.quarantined, undefined)
+      assert.equal(state.dailyTours.recoveryNotice, 'reset')
+      assert.ok(startDailyTour(state, DAILY_EPOCH + UTC_DAY_MS).dailyTours.records['2026-10-24'])
+      assert.ok(startPracticeTour(state, DAILY_EPOCH, () => 0).dailyTours.practice)
       assert.strictEqual(answerDailyTour(state, 'gr', daily(good).id, 4, DAILY_EPOCH + 100), state)
       assert.deepEqual(parseGameState(clone(state)), state)
     }
     const both = parseGameState({ ...good, achievements: { version: 9 }, dailyTours: null })
     assert.equal(both.achievements, undefined)
-    assert.equal(both.dailyTours.blocked, true)
+    assert.equal(both.dailyTours.recoveryNotice, 'reset')
   } finally { warn.mock.restore() }
+})
+
+test('old clients can save v1 assignments after v2 begins; changed titles and repeated routes stay valid', () => {
+  const now = DAILY_EPOCH + 2 * UTC_DAY_MS
+  let state = startDailyTour(fresh(), now)
+  const assignment = getDailyAssignment(now, 1)
+  assert.equal(assignment.definitionId, 'asia-01')
+  assert.equal(getDailyAssignment(now).definitionId, 'europe-01')
+  const run = daily(state, now)
+  run.assignment = assignment
+  run.id = `daily:${assignment.dayKey}:v1:${assignment.definitionId}`
+  state = play(state, { now })
+  const completedRun = daily(state, now)
+  completedRun.assignment.title = { en: 'Previous title', de: 'Alter Titel' }
+  assert.deepEqual(parseGameState(clone(state)), state)
+  const day2 = DAILY_EPOCH + UTC_DAY_MS
+  const day4 = DAILY_EPOCH + 3 * UTC_DAY_MS
+  const africa = play(startDailyTour(fresh(), day2), { now: day2 })
+  const repeated = play(startDailyTour(africa, day4), { now: day4 })
+  assert.equal(daily(africa, day2).assignment.definitionId, daily(repeated, day4).assignment.definitionId)
+  assert.deepEqual(parseGameState(clone(repeated)), repeated)
+})
+
+test('legacy quarantines recover without nesting, retain valid siblings and acknowledge idempotently', () => {
+  const good = play(startDailyTour(fresh(), DAILY_EPOCH))
+  let raw = clone(good.dailyTours)
+  for (let depth = 0; depth < 20; depth++) raw = { version: 1, records: {}, blocked: true, quarantined: raw }
+  const restored = validateDailyTours(raw, DAILY_EPOCH)
+  assert.equal(restored.recoveryNotice, 'recovered')
+  assert.deepEqual(restored.records, good.dailyTours.records)
+  assert.deepEqual(validateDailyTours(clone(restored), DAILY_EPOCH), restored)
+  delete restored.recoveryNotice
+  assert.deepEqual(validateDailyTours(clone(restored), DAILY_EPOCH), restored)
+  const partial = validateDailyTours({ version: 1, records: {
+    ...good.dailyTours.records, '2026-10-24': { corrupt: true },
+  } }, DAILY_EPOCH)
+  assert.deepEqual(partial.records, good.dailyTours.records)
+  assert.ok(partial.rewardDays.includes('2026-10-24'))
+  assert.equal(partial.recoveryNotice, 'reset')
+  const wrappedLedger = validateDailyTours({ version: 1, records: {}, blocked: true,
+    rewardDays: ['2026-10-24'], rewardBlockedThrough: '2026-10-25',
+    quarantined: { version: 1, records: {} } }, DAILY_EPOCH)
+  assert.ok(wrappedLedger.rewardDays.includes('2026-10-24'))
+  assert.equal(wrappedLedger.rewardBlockedThrough, '2026-10-25')
+})
+
+test('newer tour formats and nested wrappers are preserved byte-for-byte and block only tours', () => {
+  const good = play(startDailyTour(fresh(), DAILY_EPOCH))
+  const futureRun = clone(good.dailyTours)
+  futureRun.records['2026-10-23'].assignment.version = 3
+  for (const future of [
+    { version: 2, records: {}, unknown: { important: true } },
+    { version: 1, recoveryVersion: 2, records: {} }, futureRun,
+  ]) {
+    for (const depth of [0, 1, 20]) {
+      let raw = future
+      for (let i = 0; i < depth; i++) raw = { version: 1, records: {}, blocked: true, quarantined: raw }
+      const state = parseGameState({ ...good, dailyTours: raw })
+      assert.equal(state.dailyTours.blocked, true)
+      assert.equal(JSON.stringify(depth ? state.dailyTours : state.dailyTours.quarantined), JSON.stringify(raw))
+      assert.deepEqual(parseGameState(clone(state)), state)
+      assert.strictEqual(startDailyTour(state, DAILY_EPOCH + UTC_DAY_MS), state)
+      assert.deepEqual(state.progress, good.progress)
+      assert.deepEqual(state.achievements, good.achievements)
+      const regular = openPack(state, COUNTRIES, DAILY_EPOCH + 20, () => 0, DEFAULT_CONFIG, 'jp')
+      assert.equal(regular.activeChallenge.countryId, 'jp')
+      assert.deepEqual(regular.dailyTours, state.dailyTours)
+    }
+  }
+})
+
+test('reset, unreadable reward evidence and UTC rollover never duplicate daily mastery rewards', () => {
+  const now = DAILY_EPOCH
+  const complete = play(startDailyTour(fresh(), now))
+  const replayBase = { ...complete, achievements: emptyAchievements(),
+    dailyTours: validateDailyTours({ ...complete.dailyTours, records: {} }, now) }
+  const replayed = play(startDailyTour(replayBase, now))
+  assert.deepEqual(replayed.progress, complete.progress)
+  const corrupt = validateDailyTours({ version: 1, records: {}, rewardDays: ['bad'] }, now)
+  let recovered = play(startDailyTour({ ...fresh(), dailyTours: corrupt }, now))
+  assert.deepEqual(daily(recovered).rewards.stampedIds, [])
+  recovered = parseGameState(clone(recovered))
+  assert.deepEqual(validateDailyTours(clone(recovered.dailyTours), now + UTC_DAY_MS), recovered.dailyTours)
+  recovered = play(startDailyTour(recovered, now + UTC_DAY_MS), { now: now + UTC_DAY_MS })
+  assert.equal(daily(recovered, now + UTC_DAY_MS).rewards.stampedIds.length, 5)
+  const fromAchievement = play(startDailyTour({ ...complete, dailyTours: { version: 1, records: {} } }, now))
+  assert.deepEqual(fromAchievement.progress, complete.progress)
+  const recoveredWrapper = validateDailyTours({ version: 1, records: {}, blocked: true,
+    quarantined: complete.dailyTours }, now)
+  const removedRecords = { ...complete, achievements: emptyAchievements(),
+    dailyTours: { ...recoveredWrapper, records: {} } }
+  const recoveredReplay = play(startDailyTour(removedRecords, now))
+  assert.deepEqual(recoveredReplay.progress, complete.progress)
+})
+
+test('tour-only repairs retain active regular challenge, packs, badges and valid achievement days', () => {
+  const complete = play(startDailyTour(fresh(), DAILY_EPOCH))
+  const state = openPack(complete, COUNTRIES, DAILY_EPOCH + 20, () => 0, DEFAULT_CONFIG, 'jp')
+  const bad = { ...clone(state), dailyTours: null }
+  bad.achievements.tourDays['2026-10-24'] = { damaged: true }
+  const repaired = parseGameState(bad)
+  assert.deepEqual(repaired.progress, state.progress)
+  assert.deepEqual(repaired.activeChallenge, state.activeChallenge)
+  assert.equal(repaired.packs, state.packs)
+  assert.equal(repaired.refillAt, state.refillAt)
+  assert.deepEqual(repaired.achievements.earned, state.achievements.earned)
+  assert.deepEqual(repaired.achievements.tourDays, state.achievements.tourDays)
+  assert.deepEqual(parseGameState(clone(repaired)), repaired)
+  for (const version of [0, -1]) {
+    const reset = validateDailyTours({ version, records: state.dailyTours.records }, DAILY_EPOCH)
+    assert.deepEqual(reset.records, {})
+    assert.equal(reset.recoveryNotice, 'reset')
+    assert.ok(reset.rewardDays.includes('2026-10-23'))
+  }
+})
+
+test('recovery is persisted by a no-op serialized transaction and does not move its day bound on reload', async () => {
+  const storage = memoryStorage()
+  const key = 'tour-recovery-test'
+  storage.setItem(key, JSON.stringify({ ...fresh(), dailyTours: { version: 1, records: null } }))
+  const clock = mock.method(Date, 'now', () => DAILY_EPOCH)
+  try {
+    const repository = new LocalStorageRepository(storage, key)
+    const recovered = await repository.update(fresh, state => state)
+    assert.equal(recovered.dailyTours.rewardBlockedThrough, '2026-10-23')
+    assert.deepEqual(JSON.parse(storage.getItem(key)), recovered)
+    clock.mock.restore()
+    const tomorrow = mock.method(Date, 'now', () => DAILY_EPOCH + UTC_DAY_MS)
+    try {
+      const reloaded = await new LocalStorageRepository(storage, key).update(fresh, state => state)
+      assert.equal(reloaded.dailyTours.rewardBlockedThrough, '2026-10-23')
+      const completed = play(startDailyTour(reloaded, DAILY_EPOCH + UTC_DAY_MS), { now: DAILY_EPOCH + UTC_DAY_MS })
+      assert.equal(daily(completed, DAILY_EPOCH + UTC_DAY_MS).rewards.stampedIds.length, 5)
+    } finally { tomorrow.mock.restore() }
+  } finally { clock.mock.restore() }
 })
 
 test('every valid answer/feedback/completed/expired daily state survives persistence', () => {

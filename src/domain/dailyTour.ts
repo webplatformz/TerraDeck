@@ -48,16 +48,22 @@ export interface DailyTourState {
   version: 1
   records: Record<string, DailyRun>
   practice?: DailyRun
-  /** A damaged/unsupported extension is retained but cannot issue new rewards. */
+  /** Unsupported newer data is retained but cannot be interpreted by this app. */
   blocked?: boolean
   quarantined?: unknown
+  /** Independent recovery-policy revision; additive to the v1 tour format. */
+  recoveryVersion?: 1
+  rewardDays?: string[]
+  rewardBlockedThrough?: string
+  recoveryNotice?: 'recovered' | 'reset'
 }
 
-export function getDailyAssignment(now: number): DailyAssignment | null {
+export function getDailyAssignment(now: number, savedVersion?: 1 | 2): DailyAssignment | null {
   if (!Number.isFinite(now) || now < DAILY_EPOCH || now > 8_639_999_913_600_000) return null
   const number = Math.floor((now - DAILY_EPOCH) / UTC_DAY_MS) + 1
   const start = DAILY_EPOCH + (number - 1) * UTC_DAY_MS
-  const schedule = [...DAILY_SCHEDULES].reverse().find(s => s.effectiveAt <= start)!
+  const schedule = [...DAILY_SCHEDULES].reverse().find(s => s.effectiveAt <= start && (savedVersion === undefined || s.version === savedVersion))
+  if (!schedule) return null
   const offset = Math.floor((start - schedule.effectiveAt) / UTC_DAY_MS)
   const definition = schedule.tours[offset % schedule.tours.length]!
   return {
@@ -147,7 +153,11 @@ export function answerDailyTour(
   if (completed && !run.practice) {
     const stampedIds: string[] = []
     const unlockedIds: string[] = []
-    if (updated.correctCount === 5) {
+    const day = run.assignment.dayKey
+    const rewardAlreadyHandled = synced.dailyTours?.rewardDays?.includes(day) ||
+      !!synced.achievements?.tourDays?.[day] ||
+      (!!synced.dailyTours?.rewardBlockedThrough && day <= synced.dailyTours.rewardBlockedThrough)
+    if (updated.correctCount === 5 && !rewardAlreadyHandled) {
       const progress = { ...next.progress }
       for (const id of run.assignment.countryIds) {
         const award = awardMasteryStamp(progress[id] ?? emptyProgress(), now)
@@ -159,7 +169,11 @@ export function answerDailyTour(
     }
     updated = { ...updated, rewards: { applied: true, stampedIds, unlockedIds }, pendingUnlockIds: [...unlockedIds] }
   }
-  const saved = putRun(next, updated)
+  let saved = putRun(next, updated)
+  if (completed && !run.practice && saved.dailyTours) {
+    saved = { ...saved, dailyTours: { ...saved.dailyTours,
+      rewardDays: [...new Set([...(saved.dailyTours.rewardDays ?? []), run.assignment.dayKey])].sort() } }
+  }
   return completed && !run.practice ? reconcileTourAchievements(saved, now) : saved
 }
 

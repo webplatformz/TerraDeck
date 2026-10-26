@@ -30,6 +30,12 @@ export function App() {
       {game.storageError && <p className="notice-storage-hint" role="alert">{t('achievements.storageError')}</p>}
       {game.singleTabOnly && <p className="notice-storage-hint" role="status">{t('achievements.singleTab')}</p>}
       <RosterNotice game={game} />
+      {game.state.dailyTours?.recoveryNotice && !game.state.dailyTours.blocked && (
+        <div className="notice-storage-hint" role="status">
+          <p>{t(game.state.dailyTours.recoveryNotice === 'reset' ? 'tour.recoveryReset' : 'tour.recoveryRestored')}</p>
+          <button type="button" className="btn btn--ghost btn--small" onClick={() => void game.acknowledgeTourRecovery()}>{t('tour.recoveryDismiss')}</button>
+        </div>
+      )}
       {screen === 'daily' ? (
         <DailyTour game={game} />
       ) : screen === 'expedition' ? (

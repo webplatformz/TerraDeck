@@ -8,17 +8,16 @@ export function DailyTourPanel({ game }: { game: Game }) {
   const { continentName } = useContent()
   const today = getDailyAssignment(game.now)
   const run = today && game.state.dailyTours?.records[today.dayKey]
+  const assignment = run?.assignment ?? today
   const locale = i18n.resolvedLanguage === 'de' ? 'de' : 'en'
   const actionLabel = t(run?.status === 'completed' ? 'tour.result' : run?.status === 'active' ? 'tour.resume' : 'tour.start')
   const openTour = () => {
     if (!today) return
-    if (run) game.goToDaily(today.dayKey)
-    else void game.beginDailyTour().then(saved => {
-      if (saved?.dailyTours?.records[today.dayKey]) game.goToDaily(today.dayKey)
-    })
+    game.goToDaily(run ? today.dayKey : '')
   }
   return (
     <section className="daily-panel" aria-label={t('tour.title')}>
+      {game.state.dailyTours?.blocked && <p role="alert">{t('tour.newerData')}</p>}
       <button type="button" className="tour-ticket" disabled={!today} onClick={openTour} aria-label={`${t('tour.homeTitle')} · ${actionLabel}`}>
       <span className="tour-beta tour-beta--corner">{t('tour.beta')}</span>
       <div className={`pack tour-pack${run?.status === 'completed' ? ' tour-pack--completed' : ''}`}>
@@ -34,7 +33,7 @@ export function DailyTourPanel({ game }: { game: Game }) {
           <g key={index}><circle className="tour-ticket-stop-halo" cx={cx} cy={cy} r="8" /><circle className="tour-ticket-stop" cx={cx} cy={cy} r="3.5" /></g>)}
       </svg>
       <span className="tour-pack-count">{t('tour.fiveCountries')}</span>
-      {today && <strong className="tour-ticket-subtitle">{today.title[locale]} · {continentName(today.continent)} · <span className="mono">#{today.number}</span></strong>}
+      {assignment && <strong className="tour-ticket-subtitle">{assignment.title[locale]} · {continentName(assignment.continent)} · <span className="mono">#{assignment.number}</span></strong>}
       <span className="tour-ticket-hint">{actionLabel} <span aria-hidden="true">→</span></span>
       </div>
       <div className="pack-strip"><span>{run?.status === 'completed' && <span aria-hidden="true">✓ </span>}{t(run?.status === 'completed' ? 'tour.completedToday' : 'tour.homeTitle')}</span></div>

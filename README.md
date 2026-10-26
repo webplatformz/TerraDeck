@@ -64,16 +64,21 @@ Useful URLs while developing:
 - `http://localhost:5173/?demo` — a separate save pre-filled with some cards and stamps (combine: `?demo&debug`)
 - Test mobile layouts with Chrome DevTools device emulation (Cmd+Shift+M)
 
-### Optional Android trial
+### Android app and release preparation
 
-The Android wrapper is for local device testing only. It bundles the normal game
+The Android wrapper bundles the normal game
 with a separate device-local save; it does not load GitHub Pages or a Mac dev server.
-No accounts, cloud sync, browser-save transfer or Play Store setup are included.
+No accounts, cloud sync or browser-save transfer are included. Android cloud backup
+and device transfer are excluded; uninstalling can permanently remove progress.
+See [Android release checklist](docs/ANDROID-RELEASE.md) for signing, Play preparation
+and the draft EN/DE listing. Nothing is uploaded by the build commands.
 The ordinary `npm run build` and Pages deployment still use `dist/` and `/TerraDeck/`.
 
 Install Android Studio and SDK Platform 36, Build Tools and Platform Tools through
-its setup wizard/SDK Manager. Use Android Studio's bundled Gradle JDK rather than
-changing the Mac's global Java configuration. Enable USB debugging on the phone
+its setup wizard/SDK Manager. Select a JDK 21 Gradle JDK for this project rather than
+changing the Mac's global Java configuration. Newer Android Studio versions may
+bundle JDK 25, which is incompatible with this project's Gradle 8.14.3.
+Enable USB debugging on the phone
 and authorize the Mac when prompted.
 
 ```sh
@@ -86,6 +91,9 @@ Let Gradle sync finish, select the connected phone, then Run. To obtain an APK,
 use Android Studio's Build APK(s) action for the debug variant. The output is
 `android/app/build/outputs/apk/debug/app-debug.apk`. No release key is needed.
 Repeat `android:sync` after web changes before rebuilding/running Android.
+The Android `versionName` is read from the first entry in `src/data/releases.ts`;
+`versionCode` in `android/app/build.gradle` is independent and must increase for
+every new bundle uploaded to Play (initial code: 1).
 
 Keep the app ID (`com.webplatformz.terradeck`) and debug signing key stable for
 in-place updates. Uninstalling/clearing app data can erase the Android collection;
@@ -149,7 +157,7 @@ to this browser/device, not a cheat-proof leaderboard or cross-device account.
 
 In `?debug`, **Reset today's tour** clears only today's attempt so the real daily
 flow can be replayed. Collection progress, earned stamps and previous days stay
-unchanged. Replaying uses normal rewards and can therefore earn further stamps.
+unchanged. Replaying cannot award the same UTC day's stamps again.
 Tour achievements retain only the first completed result per UTC day, so debug
 replays cannot inflate them. Seven World traveller badges reward the first/10th
 tour, first/fifth perfect tour, a non-perfect finish within 500 km, every catalogue route
@@ -157,6 +165,20 @@ completed and every route perfected. Targets and badge labels follow the catalog
 Repeats on later days can perfect missing routes.
 Existing saved completions count; learning resets preserve this evidence.
 Perfecting every route and collecting the whole atlas earn special gold badges.
+
+Daily-tour recovery is independent of the main save schema. Valid v1 histories
+and legacy blocked wrappers are recovered, including old-client schedule assignments
+and renamed display titles. Only unsupported older or unreadable tour data is removed;
+valid sibling results, collection progress, packs, regular challenges and earned badges
+remain. No result expires merely because its play date is old.
+
+A separate daily reward ledger survives disposal of attempt records; existing
+achievement completion days are also checked. Unreadable reward evidence disables
+stamps through the recovery UTC day, not future days. Affected tours can still be
+played and count toward tour achievements/discovery; lost results not already counted
+in achievement evidence cannot be reconstructed. Recovery is explained once and can
+be acknowledged. Newer formats are preserved and show an update/reload message rather
+than being reset. See the policy in `docs/DECISIONS.md`.
 
 Fixed tours live in `src/data/dailyTours.ts`: each definition has a stable `id`,
 `continent`, five ordered `countryIds`, and `title: { en, de }`. Do not edit a

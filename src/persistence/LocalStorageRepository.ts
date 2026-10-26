@@ -55,7 +55,9 @@ export class LocalStorageRepository implements ProgressRepository {
       const saved = await this.load()
       const before = saved ?? fallback()
       const next = change(before)
-      if (!saved || next !== before) await this.save(next)
+      // Recovery is produced while reading. Commit it under the same transaction
+      // even when the game mutation is a no-op, so its UTC reward bound cannot drift.
+      if (!saved || next !== before || saved.dailyTours?.recoveryNotice || saved.dailyTours?.blocked) await this.save(next)
       this.memory = next
       return next
     }

@@ -73,7 +73,60 @@
   no answers or debug parameters. No native Android sharing plugin, backend,
   account or leaderboard. Local device-clock/save limitations are intentional.
 - Debug offers one reset for today's attempt, retaining collection progress and
-  earlier days. Replays follow the real daily flow, including normal stamp rewards.
+  earlier days. Replays follow the real daily flow but cannot repeat that day's stamp rewards.
+
+### Bounded daily-tour recovery
+
+- Main schema stays at 1. Daily-tour format stays at 1 with additive
+  `recoveryVersion: 1`, independent of schedule versions 1/2. Missing optional
+  fields remain valid. No play-date retention limit is imposed.
+- Recognized v1 blocked/quarantined envelopes are unwrapped iteratively, without
+  recursive stack growth or creating more wrappers. Valid sibling runs/practice
+  survive; unknown additive fields in recognized v1 data are retained.
+  Saved schedule version selects the corresponding immutable schedule, even if an
+  older client played after a newer schedule became effective. Display titles are
+  required nonblank strings, not identity checks against today's catalogue.
+  Country order, run IDs, timing, answer distances, totals, phases and reward
+  consistency remain validated.
+- Unknown older formats (anything below v1, with no reliable migration) and damaged
+  records are disposable, not grounds for an indefinite tour lock. Only recognized
+  v1 records are salvaged. No collection/stamp/card/pack/normal-challenge reset occurs.
+  Existing earned achievements remain untouched by tour recovery. If only `tourDays`
+  in the achievement extension is malformed, valid days and all other valid badge
+  evidence/counters survive. Removed historical results that had not been reconciled
+  into achievements can no longer contribute to traveller goals; no missing evidence
+  is invented.
+- `rewardDays` is a sorted unique ledger of completed/retired UTC days independent of
+  disposable `records`; known achievement completion days also prevent repeat awards.
+  Stamp awards and the day's marker are written in the same serialized repository
+  transaction. Invalid dated records retire their day conservatively. If evidence
+  is unreadable, `rewardBlockedThrough` conservatively suppresses stamps through
+  the recovery UTC day (including clock rollback); later UTC days remain eligible.
+  This may sacrifice an unclaimed current-day reward. It never removes stamps
+  already earned. Valid tours/discovery/traveller achievements remain playable;
+  recovery is not an anti-cheat or cross-device synchronization system.
+- Read-time recovery is committed even for a no-op repository transaction, so
+  reloading cannot repeatedly move the reward block to tomorrow. `recoveryNotice`
+  is acknowledged through that same queue and removed persistently. Home always
+  opens the daily screen: incompatible saves and refused starts receive localized
+  feedback instead of a silent button. A reset notice explains its limited scope.
+- Newer extension/recovery/schedule versions are not guessed at or erased. Their
+  complete payload remains inside one stable compatibility envelope; only tours
+  are blocked until an app update/reload can read them. Regular play remains usable.
+- Demonstrated failure: the former all-or-nothing validator quarantined every
+  tour after any invalid record, while Home waited for a newly created run before
+  navigating. Git's original v1 schedule can validly produce Asia on 25 October
+  whereas the v2 current-day lookup expects Europe: this reproduces one rejection
+  path. Historical title equality was another brittle check. Repeated African
+  zigzag routes on different dates are valid. Without the affected iPhone's save,
+  its exact rejected field remains unconfirmed.
+
+### Approved local release candidate
+
+`v1.20261026` contains the approved short EN/DE tour-recovery notes in
+`src/data/releases.ts`, retaining the original `2026-10-25` entry.
+Android's independent upload counter is 2. Preparation does not authorize
+commit, push/deployment, Android asset sync or signing a new bundle.
 
 ## Country knowledge stages
 

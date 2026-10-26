@@ -118,6 +118,12 @@ export function useGame() {
     setRoute({ screen: 'daily', helpSection: null })
   }, [])
   const beginDailyTour = useCallback(() => mutate(s => startDailyTour(s, Date.now())), [mutate])
+  const acknowledgeTourRecovery = useCallback(() => mutate(s => {
+    if (!s.dailyTours?.recoveryNotice || s.dailyTours.blocked) return s
+    const dailyTours = { ...s.dailyTours }
+    delete dailyTours.recoveryNotice
+    return { ...s, dailyTours }
+  }), [mutate])
   const resetDailyTour = useCallback(() => {
     if (!debug) return Promise.resolve(undefined)
     return mutate(s => {
@@ -210,6 +216,7 @@ export function useGame() {
     goToExpedition,
     goToDaily,
     beginDailyTour,
+    acknowledgeTourRecovery,
     resetDailyTour,
     chooseTourCountry,
     nextTourStop,

@@ -41,6 +41,7 @@ export function DailyTour({ game }: { game: Game }) {
     : data?.records[record || today?.dayKey || '']
   const locale = i18n.resolvedLanguage === 'de' ? 'de' : 'en'
   const attemptedDay = useRef<string | null>(null)
+  const [startFailed, setStartFailed] = useState(false)
   const dayKey = today?.dayKey
   useEffect(() => {
     if (run && !record) goToDaily(run.assignment.dayKey)
@@ -50,20 +51,23 @@ export function DailyTour({ game }: { game: Game }) {
     attemptedDay.current = dayKey
     void beginDailyTour().then(saved => {
       if (saved?.dailyTours?.records[dayKey]) goToDaily(dayKey)
+      else setStartFailed(true)
     })
   }, [beginDailyTour, data?.blocked, dayKey, goToDaily, record, run])
   const home = <AtlasBack onClick={() => game.navigate('home')} />
-  if (data?.blocked) return <div className="tour-summary"><p role="alert">{t('tour.storage')}</p>{home}</div>
+  if (data?.blocked) return <div className="tour-summary"><p role="alert">{t('tour.newerData')}</p>{home}</div>
   if (run) return <TourRun key={`${run.id}:${run.index}:${run.phase}`} game={game} run={run} />
   return (
     <div className="tour-summary">
       {home}
       <p className="eyebrow">{t('tour.title')}</p>
       <h1>{today ? t('tour.number', { number: today.number }) : t('tour.title')}</h1>
+      {startFailed && <p role="alert">{t('tour.startFailed')}</p>}
       {today ? <>
         <h2>{today.title[locale]}</h2>
         <button type="button" className="btn btn--primary" onClick={() => void game.beginDailyTour().then(saved => {
           if (saved?.dailyTours?.records[today.dayKey]) game.goToDaily(today.dayKey)
+          else setStartFailed(true)
         })}>{t('tour.start')}</button>
       </> : <p>{t('tour.unavailable')}</p>}
     </div>
@@ -79,6 +83,10 @@ function TourRun({ game, run }: { game: Game; run: DailyRun }) {
   const pending = useRef(false)
   const locale = i18n.resolvedLanguage === 'de' ? 'de' : 'en'
   const { assignment } = run
+  const data = game.state.dailyTours
+  const noRewards = !run.practice && (data?.rewardDays?.includes(assignment.dayKey) ||
+    !!game.state.achievements?.tourDays?.[assignment.dayKey] ||
+    (!!data?.rewardBlockedThrough && assignment.dayKey <= data.rewardBlockedThrough))
   const title = assignment.title[locale]
   const back = () => game.navigate('home')
   const transact = async (action: () => ReturnType<Game['nextTourStop']>) => {
@@ -117,7 +125,8 @@ function TourRun({ game, run }: { game: Game; run: DailyRun }) {
           <p className="tour-log-verdict">{t(run.correctCount === 5 ? 'tour.perfectBearings' : 'tour.scenicJourney')}</p>
         </header>
         <DetourDistance km={run.totalKm} />
-        <p className="tour-log-reward">{t(run.practice ? 'tour.practiceHint' : run.correctCount === 5 ? 'tour.perfect' : 'tour.noReward')}</p>
+        <p className="tour-log-reward">{t(run.practice ? 'tour.practiceHint' : run.correctCount === 5
+          ? run.rewards.stampedIds.length ? 'tour.perfect' : 'tour.perfectNoStamps' : 'tour.noReward')}</p>
         <ol className="tour-breakdown">{run.answers.map(answer => <li key={answer.targetId} className={answer.correct ? 'is-correct' : 'is-miss'}>
           <span aria-hidden="true">{answer.correct ? '✓' : '×'}</span><Flag countryId={answer.targetId} />
           <span>{countryName(answer.targetId)}</span>
@@ -170,6 +179,7 @@ function TourRun({ game, run }: { game: Game; run: DailyRun }) {
         <DetourDistance km={run.totalKm} />
         <p className="eyebrow">{title} · {t('tour.stop', { current: run.index + 1 })}</p>
         {run.practice && <p className="sheet-prompt">{t('tour.practiceHint')}</p>}
+        {noRewards && run.status !== 'completed' && <p role="status">{t('tour.noRecoveryRewards')}</p>}
         {answer ? <>
           <h2 className={`result-title ${answer.correct ? 'result-title--good' : 'result-title--miss'}`}>{t(answer.correct ? 'tour.correct' : 'tour.miss', { distance: answer.km })}</h2>
           <div className="tour-feedback"><Flag countryId={target.id} /><strong>{t('tour.answer', { country: countryName(target.id) })}</strong></div>

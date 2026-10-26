@@ -1,5 +1,12 @@
 apply plugin: 'com.android.application'
 
+def releaseText = file('../../src/data/releases.ts').getText('UTF-8')
+def releaseMatch = releaseText =~ /major:\s*(\d+),\s*date:\s*'(\d{4})-(\d{2})-(\d{2})'/
+if (!releaseMatch.find()) {
+    throw new GradleException('Cannot read the current release from src/data/releases.ts')
+}
+def appVersionName = "${releaseMatch.group(1)}.${releaseMatch.group(2)}${releaseMatch.group(3)}${releaseMatch.group(4)}"
+
 android {
     namespace = "com.webplatformz.terradeck"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -7,8 +14,8 @@ android {
         applicationId "com.webplatformz.terradeck"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName appVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.

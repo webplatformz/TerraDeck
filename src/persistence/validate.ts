@@ -70,9 +70,28 @@ export function parseGameState(raw: unknown): GameState | null {
     return parseGameState({ ...raw, debugCountryId: undefined })
   }
   if (raw.achievements !== undefined && !isAchievementState(raw.achievements)) {
+    // Isolate damaged tour evidence from otherwise valid earned badges/counters.
+    if (isObject(raw.achievements) && raw.achievements.version === 1 &&
+        isAchievementState({ ...raw.achievements, tourDays: undefined })) {
+      const achievements = { ...raw.achievements, tourDays: {} }
+      if (isObject(raw.achievements.tourDays)) {
+        for (const [day, entry] of Object.entries(raw.achievements.tourDays)) {
+          if (isAchievementState({ ...achievements, tourDays: { [day]: entry } })) {
+            Object.assign(achievements.tourDays, { [day]: entry })
+          }
+        }
+      }
+      console.warn('TerraDeck: damaged tour achievement evidence repaired; earned badges preserved')
+      return parseGameState({ ...raw, achievements,
+        dailyTours: validateDailyTours(raw.dailyTours ?? { version: 1, records: {} },
+          Date.now(), Object.keys(achievements.tourDays), true) })
+    }
     console.warn('TerraDeck: invalid achievement extension; country progress preserved')
-    return parseGameState({ ...raw, achievements: undefined })
+    return parseGameState({ ...raw, achievements: undefined,
+      ...(raw.dailyTours !== undefined || (isObject(raw.achievements) && raw.achievements.tourDays !== undefined)
+        ? { dailyTours: validateDailyTours(raw.dailyTours ?? { version: 1, records: {} }, Date.now(), [], true) } : {}) })
   }
-  if (raw.dailyTours !== undefined) return { ...raw, dailyTours: validateDailyTours(raw.dailyTours) } as unknown as GameState
+  if (raw.dailyTours !== undefined) return { ...raw, dailyTours: validateDailyTours(raw.dailyTours, Date.now(),
+    Object.keys((raw.achievements as AchievementState | undefined)?.tourDays ?? {})) } as unknown as GameState
   return raw as unknown as GameState
 }

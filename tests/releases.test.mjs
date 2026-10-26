@@ -4,7 +4,8 @@ import { APP_VERSION, CURRENT_RELEASE, RELEASES, releaseVersion } from '../src/d
 import { mainHash, routeFromHash } from '../src/game/navigation.ts'
 
 test('release versions derive from fixed dated bilingual entries, not the build clock', () => {
-  assert.equal(APP_VERSION, 'v1.20261025')
+  assert.equal(APP_VERSION, 'v1.20261026')
+  assert.equal(releaseVersion(RELEASES[1]), 'v1.20261025')
   assert.equal(APP_VERSION, releaseVersion(CURRENT_RELEASE))
   assert.equal(new Set(RELEASES.map(releaseVersion)).size, RELEASES.length)
   for (const [index, release] of RELEASES.entries()) {

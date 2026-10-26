@@ -12,6 +12,25 @@ interface Release {
 export const RELEASES = [
   {
     major: 1,
+    date: '2026-10-26',
+    title: { en: 'Daily tours back on track', de: 'Tagestouren wieder auf Kurs' },
+    notes: {
+      en: [
+        {
+          label: 'Tour recovery',
+          description: 'Fixed blocked daily tours while preserving collection progress and preventing duplicate rewards.',
+        },
+      ],
+      de: [
+        {
+          label: 'Tour-Rettung',
+          description: 'Blockierte Tagestouren behoben; Sammlungsfortschritt bleibt erhalten und Belohnungen werden nicht doppelt vergeben.',
+        },
+      ],
+    },
+  },
+  {
+    major: 1,
     date: '2026-10-25',
     title: { en: 'TerraDeck goes live', de: 'TerraDeck geht an den Start' },
     notes: {
