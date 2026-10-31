@@ -14,9 +14,12 @@ import { AchievementNotification } from './components/AchievementNotification'
 import { RosterNotice } from './components/RosterNotice'
 import { DailyTour } from './screens/DailyTour'
 import { ReleaseNotes } from './screens/ReleaseNotes'
+import { ContinentTrainingScreen } from './screens/ContinentTraining'
+import { useContinentTraining } from './game/useContinentTraining'
 
 export function App() {
   const game = useGame()
+  const training = useContinentTraining()
   const { t } = useTranslation()
   const [noticeDismissed, setNoticeDismissed] = useState(() => noticeStore.acknowledged())
   const [noticeSessionOnly, setNoticeSessionOnly] = useState(false)
@@ -25,7 +28,7 @@ export function App() {
   if (!game.loaded) return <div className="app" aria-busy={!game.storageError}>{game.storageError && <p role="alert">{t('achievements.storageError')}</p>}</div>
 
   return (
-    <div className={`app${screen === 'expedition' || screen === 'daily' ? ' app--full' : ''}`}>
+    <div className={`app${screen === 'expedition' || screen === 'daily' || screen === 'training' ? ' app--full' : ''}`}>
       {noticeSessionOnly && <p className="notice-storage-hint" role="status">{t('notice.sessionOnly')}</p>}
       {game.storageError && <p className="notice-storage-hint" role="alert">{t('achievements.storageError')}</p>}
       {game.singleTabOnly && <p className="notice-storage-hint" role="status">{t('achievements.singleTab')}</p>}
@@ -38,13 +41,15 @@ export function App() {
       )}
       {screen === 'daily' ? (
         <DailyTour game={game} />
+      ) : screen === 'training' ? (
+        <ContinentTrainingScreen game={game} training={training} />
       ) : screen === 'expedition' ? (
         <Expedition game={game} />
       ) : (
         <>
           <TabBar active={screen} onNavigate={game.navigate} />
           <main key={screen} className="app-main screen-in">
-            {screen === 'home' && <Home game={game} />}
+            {screen === 'home' && <Home game={game} training={training} />}
             {screen === 'collection' && <Collection game={game} />}
             {screen === 'achievements' && <Achievements game={game} />}
             {screen === 'about' && <About game={game} />}

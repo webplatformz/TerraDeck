@@ -216,7 +216,8 @@
     "lensHint": "Tippe auf das genaue Land · außerhalb tippen zum Schließen",
     "zoomIn": "Hineinzoomen",
     "zoomOut": "Herauszoomen",
-    "resetView": "Ansicht zurücksetzen"
+    "resetView": "Ansicht zurücksetzen",
+    "trainingNames": "Trainingskarte mit Namen richtig platzierter Länder"
   },
   "rosterUpdate": {
     "title": "Ein kleines Atlas-Update",
@@ -258,7 +259,6 @@
     },
     "debugReset": "Heutige Tour zurücksetzen",
     "homeTitle": "Welttour",
-    "beta": "Beta",
     "title": "Tägliche Welttour",
     "number": "Welttour #{{number}}",
     "intro": "Fünf Länder. Ein Kontinent. Wie nah kommst du?",
@@ -304,6 +304,66 @@
     "unchanged": "{{country}}: bereits gesammelt",
     "shareHint": "Keine Lösungen werden geteilt. Der Link öffnet die heutige Tour.",
     "busy": "Speichern…"
+  },
+  "training": {
+    "title": "Kontinenttraining",
+    "beta": "Beta",
+    "eyebrow": "Eine kleine Geografieübung",
+    "chooseContinent": "Wähle einen Kontinent",
+    "intro": "Ordne jedes Land auf der Karte zu. Dein Fortschritt bleibt erhalten, bis du abschließt oder abbrichst.",
+    "homeIntro": "Lerne einen Kontinent in deinem Tempo kennen.",
+    "homeProgress": "{{placed}} / {{total}} Länder platziert",
+    "continue": "Training fortsetzen",
+    "loading": "Training wird vorbereitet …",
+    "unavailable": "Das Training ist nicht verfügbar, bis die gespeicherten Daten sicher gelesen werden können.",
+    "storageError": "Die Trainingsdaten sind unlesbar oder stammen aus einer anderen Version. Sie wurden unverändert beibehalten.",
+    "saveError": "Der Trainingsfortschritt konnte nicht gespeichert werden. Prüfe den Gerätespeicher, bevor du weiterspielst.",
+    "clearError": "Die Trainingsdaten konnten nicht gelöscht werden. Deine gespeicherten Daten bleiben unverändert.",
+    "continentProgress": "Kontinentfortschritt",
+    "explorerKnowledge": "Entdeckerwissen",
+    "streakCount": "{{count}} am Stück",
+    "chooseCountry": "Wähle ein Land",
+    "remainingCount": "Noch {{count}}",
+    "placeCountry": "Platziere dieses Land auf der Karte",
+    "selectLocation": "Wähle einen Ort auf der Karte",
+    "confirmPlacement": "Platzierung bestätigen",
+    "revealHint": "Hinweis zeigen",
+    "hideHint": "Hinweis verbergen",
+    "chooseAnotherCountry": "Anderes Land auswählen",
+    "geographicClue": "Geografischer Hinweis",
+    "direction": {
+      "northwest": "Suche im Nordwesten des Kontinents.",
+      "north": "Suche im Norden des Kontinents.",
+      "northeast": "Suche im Nordosten des Kontinents.",
+      "west": "Suche im Westen des Kontinents.",
+      "center": "Suche nahe der Mitte des Kontinents.",
+      "east": "Suche im Osten des Kontinents.",
+      "southwest": "Suche im Südwesten des Kontinents.",
+      "south": "Suche im Süden des Kontinents.",
+      "southeast": "Suche im Südosten des Kontinents."
+    },
+    "size": {
+      "largest": "Es gehört zu den fünf größten spielbaren Ländern des Kontinents.",
+      "smallest": "Es gehört zu den fünf kleinsten spielbaren Ländern des Kontinents."
+    },
+    "borderHint": "Es teilt eine Landgrenze mit {{neighbors}}.",
+    "noLandBorders": "Es hat keine Landgrenzen.",
+    "generalHint": "Suche innerhalb der Umrisse des Kontinents.",
+    "correct": "Richtig! Ein weiteres Land findet seinen Platz.",
+    "wrong": "Nicht ganz. Wähle das Land erneut und versuche es noch einmal.",
+    "cancel": "Training abbrechen",
+    "completeEyebrow": "Kontinent abgeschlossen",
+    "congratulations": "Du hast den Kontinent gefüllt!",
+    "completeMessage": "Alle spielbaren Länder in {{continent}} sind jetzt auf der Karte.",
+    "ultraPower": "Ultrakraft – vom ersten Versuch an jedes Land richtig!",
+    "trainAgain": "Diesen Kontinent erneut trainieren",
+    "closeTraining": "Training schließen",
+    "confirmCancelTitle": "Dieses Training abbrechen?",
+    "confirmCancelBody": "Deine platzierten Länder und dein Entdeckerwissen werden gelöscht. Das kann nicht rückgängig gemacht werden.",
+    "confirmCancel": "Fortschritt löschen",
+    "confirmCloseTitle": "Abgeschlossenes Training schließen?",
+    "confirmCloseBody": "Beim Schließen werden die Trainingsdaten dieses Kontinents gelöscht. Du kannst später von vorn beginnen.",
+    "confirmClose": "Schließen und löschen"
   },
   "notes": {
     "selectedLanguages": "Sprachen",
@@ -391,6 +451,12 @@
       "title": "Wann kommen neue Päckchen?",
       "body": "Alle {{cooldown}} kommt ein Päckchen dazu, auch bei geschlossener App, bis höchstens {{max}} gelagert sind. Bei vollem Stapel pausiert die Uhr und startet wieder, sobald du eines öffnest."
     },
+    "training": {
+      "title": "Wie funktioniert Kontinenttraining (Beta)?",
+      "play": "Öffne Kontinenttraining auf der Startseite und wähle einen Kontinent. Wähle ein Land aus der Liste, tippe auf seinen Ort auf der Karte und bestätige. Richtige Länder werden grün und verschwinden aus der Liste; bei Fehlern kannst du beliebig oft erneut versuchen. Mit dem kleinen X wählst du ein anderes Land. Hinweis zeigen bietet einen optionalen geografischen Tipp. Beim Hineinzoomen erscheinen nur Namen richtig platzierter Länder; überlappende Namen bleiben verborgen.",
+      "knowledge": "Der Fortschrittszähler zeigt platzierte Länder. Entdeckerwissen zählt richtige Platzierungen in Folge und ist nach der Hälfte der spielbaren Länder des Kontinents, aufgerundet, voll. Ein Fehler setzt nur diese Serie zurück, nie deine grünen Länder. Ein fehlerfrei abgeschlossener Kontinent erhält eine besondere Feier, keinen Erfolg.",
+      "saving": "Nur ein Kontinent kann aktiv sein. Verlassen oder Neuladen erhält platzierte Länder und die Serie in einem separaten lokalen Speicher; das Training verändert weder Päckchen, Stempel, Erfolge noch Tagestouren. Abbrechen erfordert eine Bestätigung und löscht den Trainingsfortschritt. Nach dem Abschluss kannst du von vorn trainieren oder Training schließen bestätigen, um die Daten zu löschen. Feedback zur Beta ist willkommen."
+    },
     "map": {
       "title": "Wie wähle ich kleine Länder aus?",
       "body": "Zoome mit zwei Fingern oder + und −, verschiebe die Karte durch Ziehen und kehre mit Zurücksetzen zurück. An engen Stellen erscheint eine Lupe: Wähle darin das Land oder tippe außerhalb zum Schließen. Prüfe die Markierung vor dem Bestätigen."
@@ -433,7 +499,7 @@
     },
     "privacy": {
       "title": "Datenschutz",
-      "local": "Der lokale Speicher enthält Spielstand, Päckchen-Zeitpunkte, Sprache und Hinweisbestätigung sowie separate Demospielstände und gegebenenfalls Sicherungen unlesbarer Spielstände. Es gibt keine Konten, Cloud-Spielstände, App-Analysedienste oder Werbetracker. Schriften, Flaggen und Geografie werden mit der Website ausgeliefert.",
+      "local": "Der lokale Speicher enthält Spielstand, Päckchen-Zeitpunkte, Sprache und Hinweisbestätigung sowie separaten Kontinenttrainingsfortschritt (Kontinent, platzierte Länder und Serie), Demospielstände und gegebenenfalls Sicherungen unlesbarer Spielstände. Es gibt keine Konten, Cloud-Spielstände, App-Analysedienste oder Werbetracker. Schriften, Flaggen und Geografie werden mit der Website ausgeliefert.",
       "hosting": "GitHub Pages erhält technische Anfragedaten wie deine IP-Adresse und Browser-/Anfrageinformationen, um diese Website bereitzustellen und abzusichern. GitHub und seine Dienstleister können diese Daten in den USA und anderen Ländern verarbeiten. GitHubs Datenschutzerklärung beschreibt die Verarbeitung und die Schutzmaßnahmen für internationale Übermittlungen.",
       "hostLink": "Datenschutzerklärung von GitHub",
       "retention": "Lokale Spielstände und Einstellungen bleiben in diesem Browser, bis du Websitedaten löschst oder der Browser sie entfernt; ein Reset entfernt nur die im Spiel beschriebenen Daten. GitHub bestimmt die Aufbewahrung technischer Hosting-Anfragedaten nach eigenen Regeln; TerraDeck legt diese Frist nicht fest.",

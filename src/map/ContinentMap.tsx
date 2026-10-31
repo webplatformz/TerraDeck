@@ -22,6 +22,8 @@ interface Props {
   /** Shapes to frame when the map opens (e.g. the answer and the wrong tap). */
   focus?: string[]
   label?: string
+  /** Optional training labels; only correctly marked countries can be named. */
+  countryNames?: { mapName: string; name: string }[]
   onSelect?: (mapName: string) => void
 }
 
@@ -62,7 +64,7 @@ interface Lens {
 }
 
 /** One continent, drawn with its own projection. Neighbouring land is faded and cannot be tapped. */
-export function ContinentMap({ world, continent, interactive, selected, marks = [], pulse, focus, label, onSelect }: Props) {
+export function ContinentMap({ world, continent, interactive, selected, marks = [], pulse, focus, label, countryNames, onSelect }: Props) {
   const frameRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
   const layerRef = useRef<SVGGElement>(null)
@@ -264,6 +266,28 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
 
   const k = t.k
   const markByName = new Map(marks.map((m) => [m.mapName, m.tone]))
+  const nameLabels = (() => {
+    if (!countryNames || !geo || k < 2 || lens) return []
+    const context = document.createElement('canvas').getContext('2d')
+    if (context) context.font = `600 12px ${getComputedStyle(document.documentElement).fontFamily}`
+    const boxes: { left: number; right: number; top: number; bottom: number }[] = []
+    const candidates = countryNames.flatMap(entry => {
+      const shape = geo.byName.get(entry.mapName)
+      if (!shape?.member || markByName.get(entry.mapName) !== 'correct' || shape.extent * k < 40) return []
+      const [x, y] = t.apply(shape.centroid)
+      if (!Number.isFinite(x) || !Number.isFinite(y)) return []
+      return [{ ...entry, x, y, extent: shape.extent }]
+    }).sort((a, b) => b.extent - a.extent || a.mapName.localeCompare(b.mapName))
+    return candidates.filter(entry => {
+      const width = (context?.measureText(entry.name).width ?? entry.name.length * 12) + 12
+      const box = { left: entry.x - width / 2, right: entry.x + width / 2, top: entry.y - 12, bottom: entry.y + 12 }
+      // Leave space for the continent caption and zoom controls.
+      if (box.left < 6 || box.right > w - 6 || box.top < 42 || box.bottom > h - 64) return false
+      if (boxes.some(other => box.left < other.right + 5 && box.right + 5 > other.left && box.top < other.bottom + 5 && box.bottom + 5 > other.top)) return false
+      boxes.push(box)
+      return true
+    })
+  })()
 
   const renderLand = (scale: number, keyPrefix: string) =>
     geo && (
@@ -288,7 +312,7 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
   return (
     <div ref={frameRef} className={`map-frame${interactive ? ' is-interactive' : ''}`}>
       {geo && (
-        <svg ref={svgRef} className="map-svg" width={w} height={h} role="img" aria-label={label ? tr('map.unlabelledOf', { continent: label }) : tr('map.unlabelled')} onClick={handleMapClick}>
+        <svg ref={svgRef} className="map-svg" width={w} height={h} role="img" aria-label={countryNames ? tr('map.trainingNames') : label ? tr('map.unlabelledOf', { continent: label }) : tr('map.unlabelled')} onClick={handleMapClick}>
           <rect className="map-ocean-hit" width={w} height={h} />
           <g ref={layerRef}>
             {renderLand(k, '')}
@@ -298,6 +322,11 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
                 <circle className="map-pulse map-pulse--late" r={16} />
               </g>
             )}
+          </g>
+          <g className="map-country-names">
+            {nameLabels.map(entry => (
+              <text key={entry.mapName} data-country-name={entry.mapName} x={entry.x} y={entry.y} textAnchor="middle" dominantBaseline="central">{entry.name}</text>
+            ))}
           </g>
           {lens && (
             <g className="map-lens" onClick={handleLensClick}>

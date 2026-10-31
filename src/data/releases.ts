@@ -12,6 +12,41 @@ interface Release {
 export const RELEASES = [
   {
     major: 1,
+    date: '2026-10-31',
+    title: { en: 'Continent Training enters Beta', de: 'Kontinenttraining startet in die Beta' },
+    notes: {
+      en: [
+        {
+          label: 'Training Beta',
+          description: 'Choose a continent and place its countries with unlimited attempts and optional geographic clues. Green countries stay placed, and you can leave and resume your training in this browser. No packs, stamps or achievements are involved.',
+        },
+        {
+          label: 'Explorer knowledge',
+          description: 'Build a glowing streak bar with consecutive correct placements. A miss resets only the streak; a perfect continent run gets an extra celebration. Finish to train again or close and clear your training.',
+        },
+        {
+          label: 'Maps & guidance',
+          description: 'Correctly placed countries show their names when you zoom in, with crowded labels hidden. Added geographic clues to Field notes, a short training guide to the FAQ, and more consistent home-tile hover styling. Daily Tour no longer carries a Beta badge.',
+        },
+      ],
+      de: [
+        {
+          label: 'Training Beta',
+          description: 'Wähle einen Kontinent und platziere seine Länder mit beliebig vielen Versuchen und optionalen geografischen Hinweisen. Grüne Länder bleiben platziert; dein Training kannst du in diesem Browser verlassen und fortsetzen. Ohne Päckchen, Stempel oder Erfolge.',
+        },
+        {
+          label: 'Entdeckerwissen',
+          description: 'Fülle mit richtigen Platzierungen in Folge einen leuchtenden Serienbalken. Ein Fehler setzt nur die Serie zurück; ein fehlerfreier Kontinent erhält eine besondere Feier. Nach dem Abschluss kannst du erneut trainieren oder das Training schließen und löschen.',
+        },
+        {
+          label: 'Karten & Anleitung',
+          description: 'Richtig platzierte Länder zeigen beim Hineinzoomen ihre Namen; überlappende Beschriftungen bleiben verborgen. Geografische Hinweise in den Feldnotizen, eine kurze Trainingsanleitung in den FAQ und einheitliche Hover-Effekte auf den Startseiten-Kacheln ergänzt. Die Tagestour trägt kein Beta-Abzeichen mehr.',
+        },
+      ],
+    },
+  },
+  {
+    major: 1,
     date: '2026-10-26',
     title: { en: 'Daily tours back on track', de: 'Tagestouren wieder auf Kurs' },
     notes: {

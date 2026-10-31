@@ -117,6 +117,10 @@ export function useGame() {
     if (window.location.hash !== hash) window.history.pushState(null, '', hash)
     setRoute({ screen: 'daily', helpSection: null })
   }, [])
+  const goToTraining = useCallback(() => {
+    if (window.location.hash !== '#training') window.history.pushState(null, '', '#training')
+    setRoute({ screen: 'training', helpSection: null })
+  }, [])
   const beginDailyTour = useCallback(() => mutate(s => startDailyTour(s, Date.now())), [mutate])
   const acknowledgeTourRecovery = useCallback(() => mutate(s => {
     if (!s.dailyTours?.recoveryNotice || s.dailyTours.blocked) return s
@@ -215,6 +219,7 @@ export function useGame() {
     navigate,
     goToExpedition,
     goToDaily,
+    goToTraining,
     beginDailyTour,
     acknowledgeTourRecovery,
     resetDailyTour,

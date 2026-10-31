@@ -18,7 +18,7 @@
     "lint": "eslint .",
     "pretest": "npm run licenses:prepare",
     "test": "tsx --test tests/*.test.mjs",
-    "test:e2e": "playwright test",
+    "test:e2e": "node --import tsx node_modules/@playwright/test/cli.js test",
     "rarity:build": "node scripts/build-rarity.mjs",
     "rarity:collect": "node scripts/collect-rarity.mjs",
     "atlas:collect": "node scripts/collect-atlas.mjs",

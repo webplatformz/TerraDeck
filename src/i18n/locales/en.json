@@ -216,7 +216,8 @@
     "lensHint": "Tap the exact country · tap outside to close",
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out",
-    "resetView": "Reset view"
+    "resetView": "Reset view",
+    "trainingNames": "Training map with names of correctly placed countries"
   },
   "rosterUpdate": {
     "title": "A small atlas update",
@@ -258,7 +259,6 @@
     },
     "debugReset": "Reset today's tour",
     "homeTitle": "World Tour",
-    "beta": "Beta",
     "title": "Daily World Tour",
     "number": "World Tour #{{number}}",
     "intro": "Five countries. One continent. How close can you get?",
@@ -304,6 +304,66 @@
     "unchanged": "{{country}}: already collected",
     "shareHint": "No answers are shared. The link opens today's tour.",
     "busy": "Saving…"
+  },
+  "training": {
+    "title": "Continent Training",
+    "beta": "Beta",
+    "eyebrow": "A little geography practice",
+    "chooseContinent": "Choose a continent",
+    "intro": "Place each country on the map. Your progress stays here until you finish or cancel.",
+    "homeIntro": "Learn a continent at your own pace.",
+    "homeProgress": "{{placed}} / {{total}} countries placed",
+    "continue": "Continue training",
+    "loading": "Preparing your training…",
+    "unavailable": "Training is unavailable until its saved data can be safely read.",
+    "storageError": "Saved training data is unreadable or from another version. It has been preserved unchanged.",
+    "saveError": "Training progress could not be saved. Check your device storage before continuing.",
+    "clearError": "Training data could not be cleared. Your saved data has been kept unchanged.",
+    "continentProgress": "Continent progress",
+    "explorerKnowledge": "Explorer knowledge",
+    "streakCount": "{{count}} in a row",
+    "chooseCountry": "Choose a country",
+    "remainingCount": "{{count}} left",
+    "placeCountry": "Place this country on the map",
+    "selectLocation": "Select a map location",
+    "confirmPlacement": "Confirm placement",
+    "revealHint": "Reveal hint",
+    "hideHint": "Hide hint",
+    "chooseAnotherCountry": "Choose a different country",
+    "geographicClue": "Geographic clue",
+    "direction": {
+      "northwest": "Look toward the continent's northwest.",
+      "north": "Look toward the continent's north.",
+      "northeast": "Look toward the continent's northeast.",
+      "west": "Look toward the continent's west.",
+      "center": "Look near the continent's center.",
+      "east": "Look toward the continent's east.",
+      "southwest": "Look toward the continent's southwest.",
+      "south": "Look toward the continent's south.",
+      "southeast": "Look toward the continent's southeast."
+    },
+    "size": {
+      "largest": "It is among this continent's five largest playable countries.",
+      "smallest": "It is among this continent's five smallest playable countries."
+    },
+    "borderHint": "It shares a land border with {{neighbors}}.",
+    "noLandBorders": "It has no land borders.",
+    "generalHint": "Look within the continent's outline.",
+    "correct": "Correct! A new country takes its place.",
+    "wrong": "Not quite. Choose the country again and try another spot.",
+    "cancel": "Cancel training",
+    "completeEyebrow": "Continent complete",
+    "congratulations": "You filled the continent!",
+    "completeMessage": "Every playable country in {{continent}} is now on the map.",
+    "ultraPower": "Ultra power — every country right from the start!",
+    "trainAgain": "Train this continent again",
+    "closeTraining": "Close training",
+    "confirmCancelTitle": "Cancel this training?",
+    "confirmCancelBody": "Your placed countries and Explorer knowledge progress will be cleared. This cannot be undone.",
+    "confirmCancel": "Clear progress",
+    "confirmCloseTitle": "Close completed training?",
+    "confirmCloseBody": "Closing clears this continent's training data. You can train it again later from the beginning.",
+    "confirmClose": "Close and clear"
   },
   "notes": {
     "selectedLanguages": "Languages",
@@ -391,6 +451,12 @@
       "title": "When do packs return?",
       "body": "One pack refills every {{cooldown}}, including while the app is closed, up to {{max}} stored packs. The clock pauses when the stack is full and restarts when you open one."
     },
+    "training": {
+      "title": "How does Continent Training (Beta) work?",
+      "play": "Open Continent Training on the home screen and choose one continent. Pick a country from the list, tap its location on the map and confirm. Correct countries turn green and leave the list; wrong guesses let you try again as often as you like. The small X lets you choose another country. Reveal hint offers one optional geographic clue. Zooming in shows names only for correctly placed countries, with overlapping names hidden.",
+      "knowledge": "The progress counter tracks countries placed. Explorer knowledge tracks correct placements in a row and fills after half the continent's playable countries, rounded up. A wrong guess resets only this streak, never your green countries. Completing a continent without a miss gets a special celebration, not an achievement.",
+      "saving": "Only one continent can be active. Leaving or reloading keeps placed countries and the streak in separate local storage; training does not affect packs, stamps, achievements or Daily Tour. Cancel requires confirmation and clears training progress. After completion, train again from scratch or confirm Close training to clear it. This Beta welcomes feedback."
+    },
     "map": {
       "title": "How do I pick small countries?",
       "body": "Pinch or use + and − to zoom, drag to pan, and use Reset to return. Crowded taps can open a magnifier: pick the country inside it, or tap outside to close. Check the highlight before confirming."
@@ -433,7 +499,7 @@
     },
     "privacy": {
       "title": "Privacy",
-      "local": "Local storage holds progress, pack timestamps, language and notice acknowledgement, plus separate demo saves and any unreadable-save backups. There are no accounts, cloud saves, application analytics or advertising trackers. Fonts, flags and geography are bundled with the site.",
+      "local": "Local storage holds progress, pack timestamps, language and notice acknowledgement, plus separate Continent Training progress (continent, placed countries and streak), demo saves and any unreadable-save backups. There are no accounts, cloud saves, application analytics or advertising trackers. Fonts, flags and geography are bundled with the site.",
       "hosting": "GitHub Pages receives technical request data, including your IP address and browser/request information, to deliver and secure this site. GitHub and its service providers may process this data in the United States and other countries. GitHub's privacy statement describes its processing and international-transfer safeguards.",
       "hostLink": "GitHub's privacy statement",
       "retention": "Local saves and preferences remain in this browser until you clear site data or the browser removes them; resets remove only the data described in the game. GitHub determines retention of hosting request data under its own policies; TerraDeck does not set that retention period.",

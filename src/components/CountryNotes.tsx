@@ -7,6 +7,8 @@ import { CardFront } from './Card'
 import { Flag } from './Flag'
 import { RarityBadge } from './RarityBadge'
 import { COUNTRY_STORIES } from '../data/countryStories'
+import { GeographicClue } from './GeographicClue'
+import { useWorld } from '../map/useWorld'
 
 function CardFact({ text, fun = false }: { text: string; fun?: boolean }) {
   const { t } = useTranslation()
@@ -26,6 +28,7 @@ function CardFact({ text, fun = false }: { text: string; fun?: boolean }) {
 export function CountryNotes({ country, explorer = false }: { country: Country; explorer?: boolean }) {
   const { t, i18n } = useTranslation()
   const content = useContent()
+  const world = useWorld()
   const entry = details.countries[country.id as keyof typeof details.countries]
   const locale = i18n.resolvedLanguage === 'de' ? 'de' : 'en'
   const stories = COUNTRY_STORIES[country.id]
@@ -51,6 +54,12 @@ export function CountryNotes({ country, explorer = false }: { country: Country; 
           <div><dt>{t('notes.currency')}</dt><dd>{entry[locale].currencies}</dd></div>
       </dl>
       {stories?.detail && <CardFact text={stories.detail[locale]} />}
+      {world && (
+        <section className="country-notes-fact country-notes-geography">
+          <h4>{t('training.geographicClue')}</h4>
+          <GeographicClue country={country} world={world} />
+        </section>
+      )}
       {stories?.fun && <CardFact text={stories.fun[locale]} fun />}
       </div>
       </div>

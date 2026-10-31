@@ -38,6 +38,24 @@
   the current v1 loader already provides it.
 - Contributor instructions live in `.github/copilot-instructions.md`.
 
+## Continent Training
+
+- Training progress uses its own `terradeck:continent-training:v1` local-storage
+  key and versioned envelope. It is not part of the game save, achievements or
+  daily-tour state. Missing data means no active training; valid unfinished
+  sessions resume with their placed countries and current streak.
+- Corrupt or unsupported training data is reported and left untouched. Training
+  cannot start, overwrite, or clear that data until it can be safely interpreted.
+  Confirmed cancel/close clears the isolated training entry; replay replaces it
+  with a fresh session. The main save schema remains unchanged.
+- The Beta remains compatible with existing main saves (including missing optional
+  extensions and in-progress challenges/tours) because it never writes their key.
+  Training v1 accepts and preserves unknown session/envelope fields on progress
+  updates; replay intentionally starts a fresh session. No migration is needed.
+- Names appear automatically only for correctly placed countries at zoom 2 or
+  above, with overlapping/offscreen labels omitted. This is presentation-only;
+  no map controls or label preferences are added to saved data.
+
 ## Daily World Tour
 
 - One numbered five-stop tour per UTC day, starting with #1 at

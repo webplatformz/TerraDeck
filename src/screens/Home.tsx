@@ -7,6 +7,8 @@ import { useContent } from '../i18n/useContent'
 import { ACHIEVEMENT_IDS } from '../domain/achievements'
 import type { Game } from '../game/useGame'
 import { DailyTourPanel } from '../components/DailyTourPanel'
+import type { ContinentTraining } from '../game/useContinentTraining'
+import { continentTrainingCountryIds } from '../domain/continentTraining'
 
 export function formatCountdown(ms: number): string {
   const total = Math.max(0, Math.ceil(ms / 1000))
@@ -18,10 +20,10 @@ export function formatCountdown(ms: number): string {
   return h ? `${h}:${mm}:${ss}` : `${mm}:${ss}`
 }
 
-export function Home({ game }: { game: Game }) {
+export function Home({ game, training }: { game: Game; training: ContinentTraining }) {
   const { state, now, config } = game
   const { t } = useTranslation()
-  const { countryName } = useContent()
+  const { countryName, continentName } = useContent()
   const [debugCode, setDebugCode] = useState('')
   const [debugInvalid, setDebugInvalid] = useState(false)
   const collected = COUNTRIES.filter((c) => (state.progress[c.id]?.stamps ?? 0) >= config.stampsToUnlock).length
@@ -32,6 +34,8 @@ export function Home({ game }: { game: Game }) {
   const active = state.activeChallenge
   const full = state.packs >= config.maxPacks
   const canOpen = !!active || ((!complete || (game.debug && !!state.debugCountryId)) && state.packs > 0)
+  const trainingTotal = training.session ? continentTrainingCountryIds(training.session.continent).length : 0
+  const trainingPlaced = training.session?.placedIds.length ?? 0
 
   return (
     <div className="home">
@@ -99,11 +103,29 @@ export function Home({ game }: { game: Game }) {
         )}
       </section>
 
+      <button type="button" className="training-home panel interactive-tile" onClick={game.goToTraining} disabled={!training.ready || training.error === 'training.storageError'}>
+        <span className="training-home-heading">
+          <span className="link-title">{t('training.title')}</span>
+          <span className="tour-beta">{t('training.beta')}</span>
+        </span>
+        {training.error ? (
+          <span className="link-sub" role="alert">{t(training.error)}</span>
+        ) : training.session ? (
+          <>
+            <span className="training-home-continent">{continentName(training.session.continent)}</span>
+            <span className="training-home-progress">{t('training.homeProgress', { placed: trainingPlaced, total: trainingTotal })}</span>
+            <span className="training-home-continue">{t('training.continue')}</span>
+          </>
+        ) : (
+          <span className="link-sub">{t('training.homeIntro')}</span>
+        )}
+      </button>
+
       <DailyTourPanel game={game} />
 
       <button
         type="button"
-        className="home-progress panel"
+        className="home-progress panel interactive-tile"
         aria-label={`${t('home.progressTitle')}, ${collected} / ${COUNTRIES.length} cards. ${t('home.collectionTitle')}`}
         onClick={() => game.navigate('collection')}
       >
@@ -120,14 +142,14 @@ export function Home({ game }: { game: Game }) {
       </button>
 
       <nav className="home-links" aria-label={t('home.more')}>
-        <button type="button" className="link-tile panel" onClick={() => game.navigate('achievements')}>
+        <button type="button" className="link-tile panel interactive-tile" onClick={() => game.navigate('achievements')}>
           <span className="link-title">{t('nav.achievements')}</span>
           <span className="home-achievement-count mono" aria-label={t('achievements.total', { count: achievementsEarned, total: ACHIEVEMENT_IDS.length })}>
             {achievementsEarned} / {ACHIEVEMENT_IDS.length}
           </span>
           <span className="link-sub">{t('home.achievementsSub')}</span>
         </button>
-        <button type="button" className="link-tile panel" onClick={() => game.navigate('about')}>
+        <button type="button" className="link-tile panel interactive-tile" onClick={() => game.navigate('about')}>
           <span className="link-title">{t('home.aboutTitle')}</span>
           <span className="link-sub">{t('home.aboutSub')}</span>
         </button>

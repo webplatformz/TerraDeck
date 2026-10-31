@@ -58,6 +58,11 @@ export function About({ game }: { game: Game }) {
           <p>{t('tour.distance')}</p>
           <p>{t('tour.expired')}</p>
         </Entry>
+        <Entry id="training" title={t('help.training.title')}>
+          <p>{t('help.training.play')}</p>
+          <p>{t('help.training.knowledge')}</p>
+          <p>{t('help.training.saving')}</p>
+        </Entry>
         {textEntry('packs', t('help.packs.title'), t('help.packs.body', { cooldown, max: maxPacks }))}
         {textEntry('map', t('help.map.title'), t('help.map.body'))}
         <Entry id="saving" title={t('help.saving.title')}>

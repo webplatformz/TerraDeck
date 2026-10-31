@@ -1,5 +1,5 @@
 import { geoArea, geoCentroid, geoDistance } from 'd3-geo'
-import { feature } from 'topojson-client'
+import { feature, neighbors } from 'topojson-client'
 import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson'
 import type { GeometryCollection, Topology } from 'topojson-specification'
 import type { ContinentId } from '../domain/types'
@@ -20,6 +20,8 @@ export interface WorldData {
   byName: Map<string, CountryFeature>
   /** Main territory per feature (drops far-away overseas parts). */
   mainland: Map<string, CountryFeature>
+  /** Countries sharing a land boundary, keyed by map feature name. */
+  neighbors: Map<string, string[]>
   /** Six merged continent outlines (no country borders). */
   continents: ContinentFeature[]
 }
@@ -36,10 +38,15 @@ export function loadWorld(): Promise<WorldData> {
     const topo = (mod.default ?? mod) as unknown as Atlas
     const features = (feature(topo, topo.objects.countries) as FeatureCollection<Polygon | MultiPolygon, CountryProps>).features
     const continents = (feature(topo, topo.objects.continents) as FeatureCollection<Polygon | MultiPolygon, { id: ContinentId }>).features
+    const adjacent = neighbors(topo.objects.countries.geometries)
     return {
       features,
       byName: new Map(features.map((f) => [f.properties.name, f])),
       mainland: new Map(features.map((f) => [f.properties.name, mainlandOf(f)])),
+      neighbors: new Map(features.map((f, index) => [
+        f.properties.name,
+        (adjacent[index] ?? []).map(neighborIndex => features[neighborIndex]!.properties.name),
+      ])),
       continents,
     }
   })

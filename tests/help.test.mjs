@@ -28,7 +28,7 @@ test('help hashes round-trip every subsection while retaining legacy navigation 
   assert.deepEqual(routeFromHash('#about/unknown'), { screen: 'about', helpSection: null })
   assert.deepEqual(routeFromHash('#about/stamps'), { screen: 'about', helpSection: 'play' })
   assert.deepEqual(routeFromHash('#about/deferred'), { screen: 'about', helpSection: 'roster' })
-  assert.equal(HELP_SECTIONS.length, 14)
+  assert.equal(HELP_SECTIONS.length, 15)
   for (const hash of ['', '#unknown', '#expedition']) assert.equal(routeFromHash(hash).screen, 'home')
   assert.equal(mainHash('home', 'privacy'), '#home')
   assert.equal(routeFromHash('#collection').screen, 'collection')

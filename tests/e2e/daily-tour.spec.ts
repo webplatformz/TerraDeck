@@ -78,7 +78,8 @@ test('daily tour resumes, rewards once and shares a numbered spoiler-free result
     Object.defineProperty(navigator, 'share', { configurable: true, value: async () => { throw new DOMException('Cancelled', 'AbortError') } })
   })
   await prepare(page, de)
-  await expect(page.locator('.daily-panel .tour-beta')).toHaveText('Beta')
+  await expect(page.locator('.daily-panel .tour-beta')).toHaveCount(0)
+  await expect(page.locator('.training-home .tour-beta')).toHaveText('Beta')
   await expect(page.locator('.daily-panel')).not.toContainText(/UTC|remaining|noch|Previous results|Frühere Ergebnisse/)
   await page.locator('.daily-panel > .btn--primary').click()
   await expect(page.locator('.daily-challenge')).toBeVisible()
@@ -207,7 +208,7 @@ test('perfect tours reveal newly collected cards once and retain rewards across 
 
 test('shared daily link starts immediately and the header returns to the atlas', async ({ page }, info) => {
   await prepare(page, info.project.name === 'iphone-16')
-  await expect(page.locator('.daily-panel .tour-beta')).toHaveText('Beta')
+  await expect(page.locator('.daily-panel .tour-beta')).toHaveCount(0)
   await page.goto('/#daily')
   await expect(page.locator('.daily-challenge')).toBeVisible()
   await expect(page.locator('.tour-summary')).toHaveCount(0)

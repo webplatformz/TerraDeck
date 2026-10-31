@@ -19,7 +19,6 @@ export function DailyTourPanel({ game }: { game: Game }) {
     <section className="daily-panel" aria-label={t('tour.title')}>
       {game.state.dailyTours?.blocked && <p role="alert">{t('tour.newerData')}</p>}
       <button type="button" className="tour-ticket" disabled={!today} onClick={openTour} aria-label={`${t('tour.homeTitle')} · ${actionLabel}`}>
-      <span className="tour-beta tour-beta--corner">{t('tour.beta')}</span>
       <div className={`pack tour-pack${run?.status === 'completed' ? ' tour-pack--completed' : ''}`}>
       <div className="pack-body">
       <div className="pack-foil" />
