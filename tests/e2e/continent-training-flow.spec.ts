@@ -4,6 +4,7 @@ import { createInitialState, openPack } from '../../src/domain/challenge'
 import { DEFAULT_CONFIG } from '../../src/domain/config'
 import { COUNTRY_BY_ID } from '../../src/data/countries'
 import { startDailyTour } from '../../src/domain/dailyTour'
+import { emptyAchievements } from '../../src/domain/achievements'
 
 test.beforeEach(async ({ page }, testInfo) => {
   const now = Date.UTC(2026, 9, 31, 12)
@@ -23,9 +24,23 @@ const trainingSave = (page: Page) => page.evaluate(key => localStorage.getItem(k
 function normalizedMainSave(raw: string | null) {
   if (!raw) return raw
   const state = JSON.parse(raw)
-  state.achievements ??= createInitialState(DEFAULT_CONFIG, 0).achievements
+  state.achievements ??= emptyAchievements()
   return state
 }
+
+test('save normalization permits empty legacy achievements but detects progress changes', () => {
+  const legacy = JSON.stringify({ packs: 9, progress: { fr: { stamps: 1 } } })
+  const initialized = JSON.stringify({ ...JSON.parse(legacy), achievements: emptyAchievements() })
+  expect(normalizedMainSave(initialized)).toEqual(normalizedMainSave(legacy))
+  expect(normalizedMainSave(JSON.stringify({
+    ...JSON.parse(initialized),
+    achievements: { ...emptyAchievements(), encounters: 1 },
+  }))).not.toEqual(normalizedMainSave(legacy))
+  expect(normalizedMainSave(JSON.stringify({
+    ...JSON.parse(initialized),
+    progress: { fr: { stamps: 2 } },
+  }))).not.toEqual(normalizedMainSave(legacy))
+})
 
 async function place(page: Page, mapName: string) {
   await page.locator('.training-map .map-controls button').nth(2).click()
