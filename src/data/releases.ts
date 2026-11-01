@@ -12,6 +12,41 @@ interface Release {
 export const RELEASES = [
   {
     major: 1,
+    date: '2026-11-01',
+    title: { en: 'A new way to explore the atlas', de: 'Eine neue Art, den Atlas zu entdecken' },
+    notes: {
+      en: [
+        {
+          label: 'Continent Training',
+          description: 'Continent Training is now out of Beta. Choose a continent, place its countries at your own pace and resume whenever you like. The Home tile shows your continent progress; training stays separate from packs, stamps, achievements and Daily Tour.',
+        },
+        {
+          label: 'Precise map selection',
+          description: 'Hold a map location for 450 ms, slide the crosshair across the magnified view, then release to select. Confirm your choice as usual; quick taps still work.',
+        },
+        {
+          label: 'Home & sharing',
+          description: 'Refined the responsive Home tiles and added a QR code to How to play & FAQ for easy sharing.',
+        },
+      ],
+      de: [
+        {
+          label: 'Kontinenttraining',
+          description: 'Das Kontinenttraining ist jetzt aus der Beta. Wähle einen Kontinent, platziere seine Länder in deinem Tempo und setze jederzeit fort. Die Startseiten-Kachel zeigt deinen Fortschritt; das Training bleibt getrennt von Päckchen, Stempeln, Erfolgen und Tagestour.',
+        },
+        {
+          label: 'Präzise Kartenauswahl',
+          description: 'Halte eine Stelle auf der Karte 450 ms gedrückt, bewege das Fadenkreuz über die vergrößerte Ansicht und lasse zum Auswählen los. Bestätige wie gewohnt; kurze Tipps funktionieren weiterhin.',
+        },
+        {
+          label: 'Startseite & Teilen',
+          description: 'Startseiten-Kacheln für verschiedene Bildschirmgrößen verfeinert und einen QR-Code zum einfachen Teilen in Spielanleitung & FAQ ergänzt.',
+        },
+      ],
+    },
+  },
+  {
+    major: 1,
     date: '2026-10-31',
     title: { en: 'Continent Training enters Beta', de: 'Kontinenttraining startet in die Beta' },
     notes: {

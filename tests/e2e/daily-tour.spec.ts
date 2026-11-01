@@ -22,8 +22,8 @@ const dailyState = (page: Page) => page.evaluate(() => JSON.parse(localStorage.g
 async function playStop(page: Page, id: string) {
   const name = COUNTRY_BY_ID[id].mapName
   await expect(page.locator('.map-frame.is-interactive')).toBeVisible()
-  const clickLand = async (lens: boolean) => {
-    const shape = page.locator(`${lens ? '.map-lens' : '.map-svg > g:first-of-type'} path[data-name="${name}"]`).first()
+  const clickLand = async () => {
+    const shape = page.locator(`.map-svg > g:first-of-type path[data-name="${name}"]`).first()
     await expect(shape).toBeAttached()
     const point = await shape.evaluate(el => {
       const rect = el.getBoundingClientRect()
@@ -39,9 +39,8 @@ async function playStop(page: Page, id: string) {
     })
     await page.mouse.click(point.x, point.y)
   }
-  await clickLand(false)
-  await expect.poll(async () => await page.locator('.map-lens, .map-land.is-selected').count()).toBeGreaterThan(0)
-  if (await page.locator('.map-lens').count()) await clickLand(true)
+  await clickLand()
+  await expect(page.locator('.map-lens')).toHaveCount(0)
   await expect(page.locator('.map-land.is-selected').first()).toHaveAttribute('data-name', name)
   await expect.poll(() => page.locator('.challenge-map .map-svg > g').first().evaluate(el =>
     (el as SVGGElement).transform.baseVal.consolidate()?.matrix.a ?? 1)).toBeCloseTo(1.5)
@@ -79,7 +78,7 @@ test('daily tour resumes, rewards once and shares a numbered spoiler-free result
   })
   await prepare(page, de)
   await expect(page.locator('.daily-panel .tour-beta')).toHaveCount(0)
-  await expect(page.locator('.training-home .tour-beta')).toHaveText('Beta')
+  await expect(page.locator('.training-home .tour-beta')).toHaveCount(0)
   await expect(page.locator('.daily-panel')).not.toContainText(/UTC|remaining|noch|Previous results|Frühere Ergebnisse/)
   await page.locator('.daily-panel > .btn--primary').click()
   await expect(page.locator('.daily-challenge')).toBeVisible()

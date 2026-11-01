@@ -193,7 +193,7 @@
     "wrongContinentTitle": "Wrong continent",
     "wrongContinentBody": "<name>{{country}}</name> is not in <name>{{wrong}}</name>.",
     "showAnswer": "Show the answer",
-    "promptCountry": "Tap <name>{{country}}</name>. Pinch or use + to zoom; crowded spots open a magnifier.",
+    "promptCountry": "Tap <name>{{country}}</name>. Pinch or use + to zoom; hold for 450 ms to magnify, then slide the crosshair over the country.",
     "confirm": "Confirm location",
     "select": "Select a country",
     "stampEarned": "{{stage}} stamp earned",
@@ -213,7 +213,7 @@
     "worldLabel": "World map of the continents",
     "unlabelled": "Unlabelled map",
     "unlabelledOf": "Unlabelled map of {{continent}}",
-    "lensHint": "Tap the exact country · tap outside to close",
+    "lensHint": "Slide the crosshair over the country · release to select",
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out",
     "resetView": "Reset view",
@@ -307,12 +307,15 @@
   },
   "training": {
     "title": "Continent Training",
-    "beta": "Beta",
     "eyebrow": "A little geography practice",
     "chooseContinent": "Choose a continent",
     "intro": "Place each country on the map. Your progress stays here until you finish or cancel.",
-    "homeIntro": "Learn a continent at your own pace.",
-    "homeProgress": "{{placed}} / {{total}} countries placed",
+    "homeTitleActive": "{{continent}} Training",
+    "homeCountries": "countries",
+    "homeCount": "<strong>{{placed}}</strong> / {{total}} countries",
+    "homeTeaser": "See a continent come together.",
+    "homeStartHint": "Choose a continent to begin.",
+    "homeContinueHint": "Continue your training",
     "continue": "Continue training",
     "loading": "Preparing your training…",
     "unavailable": "Training is unavailable until its saved data can be safely read.",
@@ -413,7 +416,7 @@
     "ripTitle": "Rip a pack",
     "ripText": "Each pack holds one country. A new pack arrives every {{cooldown}}, and you can hold up to {{max}}. When the stack is full the clock pauses, so open one to keep packs coming.",
     "findTitle": "Find it on the map",
-    "findText": "Pick the continent first, then tap the country on the unlabelled map and confirm. Pinch or use the buttons to zoom; in crowded spots a magnifier helps you pick small countries.",
+    "findText": "Pick the continent first, then tap the country on the unlabelled map and confirm. Pinch or use the buttons to zoom; hold for 450 ms to magnify and slide the crosshair over a small country before releasing.",
     "findScope": "This curated atlas has {{count}} collectible countries from a UN-based set (members plus the two observer states). Tuvalu, Vatican City, Monaco, Maldives and Nauru are deferred for map playability. Gray areas are outside this collection and cannot be selected; this is not a statement about their status.",
     "continentRule": "Each country has one accepted continent in this game. Russia, Turkey, Kazakhstan, Cyprus and the Caucasus count as Asia; Egypt counts as Africa. Central America and the Caribbean count as North America.",
     "stampsTitle": "From Visitor to Explorer",
@@ -440,6 +443,11 @@
     "title": "How to play & FAQ",
     "intro": "A field guide for your atlas. Tap a question to unfold the answer.",
     "footerLabel": "Project information",
+    "share": {
+      "title": "Share TerraDeck",
+      "body": "Scan the QR code to open TerraDeck on another device or share it with a friend.",
+      "qrLabel": "QR code for the TerraDeck website"
+    },
     "playing": "Playing TerraDeck",
     "places": "Which places are included?",
     "information": "Project & information",
@@ -452,14 +460,14 @@
       "body": "One pack refills every {{cooldown}}, including while the app is closed, up to {{max}} stored packs. The clock pauses when the stack is full and restarts when you open one."
     },
     "training": {
-      "title": "How does Continent Training (Beta) work?",
+      "title": "How does Continent Training work?",
       "play": "Open Continent Training on the home screen and choose one continent. Pick a country from the list, tap its location on the map and confirm. Correct countries turn green and leave the list; wrong guesses let you try again as often as you like. The small X lets you choose another country. Reveal hint offers one optional geographic clue. Zooming in shows names only for correctly placed countries, with overlapping names hidden.",
       "knowledge": "The progress counter tracks countries placed. Explorer knowledge tracks correct placements in a row and fills after half the continent's playable countries, rounded up. A wrong guess resets only this streak, never your green countries. Completing a continent without a miss gets a special celebration, not an achievement.",
-      "saving": "Only one continent can be active. Leaving or reloading keeps placed countries and the streak in separate local storage; training does not affect packs, stamps, achievements or Daily Tour. Cancel requires confirmation and clears training progress. After completion, train again from scratch or confirm Close training to clear it. This Beta welcomes feedback."
+      "saving": "Only one continent can be active. Leaving or reloading keeps placed countries and the streak in separate local storage; training does not affect packs, stamps, achievements or Daily Tour. Cancel requires confirmation and clears training progress. After completion, train again from scratch or confirm Close training to clear it."
     },
     "map": {
       "title": "How do I pick small countries?",
-      "body": "Pinch or use + and − to zoom, drag to pan, and use Reset to return. Crowded taps can open a magnifier: pick the country inside it, or tap outside to close. Check the highlight before confirming."
+      "body": "Pinch or use + and − to zoom, drag to pan, and use Reset to return. Hold a spot for 450 ms to open the magnifier, then slide the crosshair over the country and release. A quick tap still selects normally. Check the highlight before confirming."
     },
     "saving": {
       "title": "Is my progress saved?",

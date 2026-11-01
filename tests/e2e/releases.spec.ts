@@ -17,7 +17,7 @@ test(`release notes fit the ${locale} atlas and preserve active progress across 
   const errors: string[] = []
   page.on('pageerror', error => errors.push(error.message))
   await page.goto('/')
-  const link = page.getByRole('link', { name: de ? 'v1.20261031 · Neuerungen' : 'v1.20261031 · Notes', exact: true })
+  const link = page.getByRole('link', { name: de ? 'v1.20261101 · Neuerungen' : 'v1.20261101 · Notes', exact: true })
   await expect(link).toBeVisible()
   expect((await link.boundingBox())!.height).toBeGreaterThanOrEqual(44)
   const saved = () => page.evaluate(() => localStorage.getItem('terradeck:save:v1'))
@@ -25,16 +25,16 @@ test(`release notes fit the ${locale} atlas and preserve active progress across 
   await link.click()
   await expect(page.getByRole('heading', { name: de ? "Was gibt's Neues?" : "What's new", exact: true })).toBeVisible()
   await expect(page.locator('.release-entry h2')).toHaveText(de
-    ? ['Kontinenttraining startet in die Beta', 'Tagestouren wieder auf Kurs', 'TerraDeck geht an den Start']
-    : ['Continent Training enters Beta', 'Daily tours back on track', 'TerraDeck goes live'])
-  await expect(page.locator('.release-version')).toHaveText(['v1.20261031', 'v1.20261026', 'v1.20261025'])
+    ? ['Eine neue Art, den Atlas zu entdecken', 'Kontinenttraining startet in die Beta', 'Tagestouren wieder auf Kurs', 'TerraDeck geht an den Start']
+    : ['A new way to explore the atlas', 'Continent Training enters Beta', 'Daily tours back on track', 'TerraDeck goes live'])
+  await expect(page.locator('.release-version')).toHaveText(['v1.20261101', 'v1.20261031', 'v1.20261026', 'v1.20261025'])
   await expect(page.locator('.release-entry').first().locator('li')).toHaveCount(3)
-  await expect(page.locator('.release-entry li')).toHaveCount(9)
-  await expect(page.locator('.release-entry li strong')).toHaveCount(9)
+  await expect(page.locator('.release-entry li')).toHaveCount(12)
+  await expect(page.locator('.release-entry li strong')).toHaveCount(12)
   for (const item of await page.locator('.release-entry li').all()) {
     expect(await item.textContent()).toMatch(/^[^:]+: \S/)
   }
-  await expect(page.locator('.release-entry time').first()).toHaveAttribute('datetime', '2026-10-31')
+  await expect(page.locator('.release-entry time').first()).toHaveAttribute('datetime', '2026-11-01')
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
   expect(await saved()).toBe(before)
   await page.screenshot({ path: info.outputPath('release-notes.png'), fullPage: true })

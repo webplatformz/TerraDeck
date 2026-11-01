@@ -103,7 +103,6 @@ export function ContinentTrainingScreen({ game, training }: Props) {
       <header className="screen-bar">
         <AtlasBack onClick={leave} />
         <span className="screen-bar-title">{t('training.title')}</span>
-        <span className="tour-beta">{t('training.beta')}</span>
       </header>
 
       {training.error && <p className="training-error" role="alert">{t(training.error)}</p>}

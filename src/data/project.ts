@@ -1,4 +1,5 @@
 export const PROJECT = {
+  publicUrl: 'https://webplatformz.github.io/TerraDeck',
   creator: 'Ben Millo',
   issuesUrl: 'https://github.com/webplatformz/TerraDeck/issues',
   inspirationUrl: 'https://webplatformz.github.io/-boring-game-name-/',

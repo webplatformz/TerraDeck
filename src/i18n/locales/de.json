@@ -193,7 +193,7 @@
     "wrongContinentTitle": "Falscher Kontinent",
     "wrongContinentBody": "Gesucht war <name>{{country}}</name> – das liegt nicht in <name>{{wrong}}</name>.",
     "showAnswer": "Lösung zeigen",
-    "promptCountry": "Gesucht: <name>{{country}}</name>. Tippe das Land an. Zoome mit zwei Fingern oder +; an engen Stellen öffnet sich eine Lupe.",
+    "promptCountry": "Gesucht: <name>{{country}}</name>. Tippe das Land an. Zoome mit zwei Fingern oder +; halte 450 ms zum Vergrößern und ziehe das Fadenkreuz über das Land.",
     "confirm": "Auswahl bestätigen",
     "select": "Wähle ein Land",
     "stampEarned": "{{stage}}-Stempel erhalten",
@@ -213,7 +213,7 @@
     "worldLabel": "Weltkarte der Kontinente",
     "unlabelled": "Karte ohne Beschriftung",
     "unlabelledOf": "Karte von {{continent}} ohne Beschriftung",
-    "lensHint": "Tippe auf das genaue Land · außerhalb tippen zum Schließen",
+    "lensHint": "Ziehe das Fadenkreuz über das Land · zum Auswählen loslassen",
     "zoomIn": "Hineinzoomen",
     "zoomOut": "Herauszoomen",
     "resetView": "Ansicht zurücksetzen",
@@ -307,12 +307,15 @@
   },
   "training": {
     "title": "Kontinenttraining",
-    "beta": "Beta",
     "eyebrow": "Eine kleine Geografieübung",
     "chooseContinent": "Wähle einen Kontinent",
     "intro": "Ordne jedes Land auf der Karte zu. Dein Fortschritt bleibt erhalten, bis du abschließt oder abbrichst.",
-    "homeIntro": "Lerne einen Kontinent in deinem Tempo kennen.",
-    "homeProgress": "{{placed}} / {{total}} Länder platziert",
+    "homeTitleActive": "Training: {{continent}}",
+    "homeCountries": "Länder",
+    "homeCount": "<strong>{{placed}}</strong> / {{total}} Länder",
+    "homeTeaser": "Entdecke, wie Länder zusammenhängen.",
+    "homeStartHint": "Wähle einen Kontinent und leg los.",
+    "homeContinueHint": "Setze dein Training fort",
     "continue": "Training fortsetzen",
     "loading": "Training wird vorbereitet …",
     "unavailable": "Das Training ist nicht verfügbar, bis die gespeicherten Daten sicher gelesen werden können.",
@@ -413,7 +416,7 @@
     "ripTitle": "Päckchen aufreißen",
     "ripText": "Jedes Päckchen enthält ein Land. Alle {{cooldown}} kommt ein neues dazu, und du kannst bis zu {{max}} sammeln. Ist der Stapel voll, pausiert die Uhr – öffne also eins, damit weitere kommen.",
     "findTitle": "Auf der Karte finden",
-    "findText": "Wähle zuerst den Kontinent, tippe dann das Land auf der unbeschrifteten Karte an und bestätige. Zoome mit zwei Fingern oder den Knöpfen; an engen Stellen hilft eine Lupe bei kleinen Ländern.",
+    "findText": "Wähle zuerst den Kontinent, tippe dann das Land auf der unbeschrifteten Karte an und bestätige. Zoome mit zwei Fingern oder den Knöpfen; halte 450 ms zum Vergrößern und ziehe das Fadenkreuz über ein kleines Land.",
     "stampsTitle": "Vom Besucher zum Entdecker",
     "stampsText": "Sind beide Antworten beim ersten Versuch richtig, erhältst du den silbernen Besucher-Stempel und einen kurzen Steckbrief, auch in der Sammlung. Gelingt es erneut, folgt der goldene Entdecker-Stempel: Zwei Stempel schalten die Karte des Landes frei, und es kommt in keinem Päckchen mehr vor. Drehe die Karte um für Entdecker-Notizen und eine kleine Wissensnotiz. Ein Fehler zeigt dir die Lösung, nimmt dir aber nie bereits gesammelte Stempel weg.",
     "sources": "Quellen",
@@ -440,6 +443,11 @@
     "title": "Spielanleitung & FAQ",
     "intro": "Ein Reiseführer für deinen Atlas. Tippe auf eine Frage, um die Antwort aufzuklappen.",
     "footerLabel": "Projektinformationen",
+    "share": {
+      "title": "TerraDeck teilen",
+      "body": "Scanne den QR-Code, um TerraDeck auf einem anderen Gerät zu öffnen oder mit Freunden zu teilen.",
+      "qrLabel": "QR-Code für die TerraDeck-Website"
+    },
     "playing": "TerraDeck spielen",
     "places": "Welche Orte sind dabei?",
     "information": "Projekt & Informationen",
@@ -452,14 +460,14 @@
       "body": "Alle {{cooldown}} kommt ein Päckchen dazu, auch bei geschlossener App, bis höchstens {{max}} gelagert sind. Bei vollem Stapel pausiert die Uhr und startet wieder, sobald du eines öffnest."
     },
     "training": {
-      "title": "Wie funktioniert Kontinenttraining (Beta)?",
+      "title": "Wie funktioniert Kontinenttraining?",
       "play": "Öffne Kontinenttraining auf der Startseite und wähle einen Kontinent. Wähle ein Land aus der Liste, tippe auf seinen Ort auf der Karte und bestätige. Richtige Länder werden grün und verschwinden aus der Liste; bei Fehlern kannst du beliebig oft erneut versuchen. Mit dem kleinen X wählst du ein anderes Land. Hinweis zeigen bietet einen optionalen geografischen Tipp. Beim Hineinzoomen erscheinen nur Namen richtig platzierter Länder; überlappende Namen bleiben verborgen.",
       "knowledge": "Der Fortschrittszähler zeigt platzierte Länder. Entdeckerwissen zählt richtige Platzierungen in Folge und ist nach der Hälfte der spielbaren Länder des Kontinents, aufgerundet, voll. Ein Fehler setzt nur diese Serie zurück, nie deine grünen Länder. Ein fehlerfrei abgeschlossener Kontinent erhält eine besondere Feier, keinen Erfolg.",
-      "saving": "Nur ein Kontinent kann aktiv sein. Verlassen oder Neuladen erhält platzierte Länder und die Serie in einem separaten lokalen Speicher; das Training verändert weder Päckchen, Stempel, Erfolge noch Tagestouren. Abbrechen erfordert eine Bestätigung und löscht den Trainingsfortschritt. Nach dem Abschluss kannst du von vorn trainieren oder Training schließen bestätigen, um die Daten zu löschen. Feedback zur Beta ist willkommen."
+      "saving": "Nur ein Kontinent kann aktiv sein. Verlassen oder Neuladen erhält platzierte Länder und die Serie in einem separaten lokalen Speicher; das Training verändert weder Päckchen, Stempel, Erfolge noch Tagestouren. Abbrechen erfordert eine Bestätigung und löscht den Trainingsfortschritt. Nach dem Abschluss kannst du von vorn trainieren oder Training schließen bestätigen, um die Daten zu löschen."
     },
     "map": {
       "title": "Wie wähle ich kleine Länder aus?",
-      "body": "Zoome mit zwei Fingern oder + und −, verschiebe die Karte durch Ziehen und kehre mit Zurücksetzen zurück. An engen Stellen erscheint eine Lupe: Wähle darin das Land oder tippe außerhalb zum Schließen. Prüfe die Markierung vor dem Bestätigen."
+      "body": "Zoome mit zwei Fingern oder + und −, verschiebe die Karte durch Ziehen und kehre mit Zurücksetzen zurück. Halte eine Stelle 450 ms, um die Lupe zu öffnen, ziehe dann das Fadenkreuz über das Land und lasse los. Ein kurzer Tipp wählt weiterhin normal aus. Prüfe die Markierung vor dem Bestätigen."
     },
     "saving": {
       "title": "Wird mein Fortschritt gespeichert?",

@@ -8,6 +8,7 @@ import { EXCLUDED_COUNTRIES } from '../data/excludedCountries'
 import { PROJECT, SOURCE_LINKS } from '../data/project'
 import { LanguageSelect } from '../components/LanguageSelect'
 import { HelpLink } from '../components/InfoFooter'
+import { QRCodeSVG } from 'qrcode.react'
 
 function Entry({ id, title, children }: { id: HelpSection; title: string; children: ReactNode }) {
   return (
@@ -45,8 +46,31 @@ export function About({ game }: { game: Game }) {
       <header className="page-header">
         <LanguageSelect />
         <p className="eyebrow">{t('about.eyebrow')}</p>
-        <h1>{t('help.title')}</h1>
-        <p>{t('help.intro')}</p>
+        <div className="help-title-row">
+          <h1>{t('help.title')}</h1>
+          <p className="help-title-intro">{t('help.intro')}</p>
+          <div className="help-share">
+            <a href={PROJECT.publicUrl} aria-label={t('help.share.qrLabel')} title={t('help.share.body')}>
+              <QRCodeSVG
+                className="help-share-qr"
+                value={PROJECT.publicUrl}
+                size={96}
+                level="H"
+                marginSize={4}
+                fgColor="#081428"
+                bgColor="#ffffff"
+                title={t('help.share.qrLabel')}
+                imageSettings={{
+                  src: `${import.meta.env.BASE_URL}favicon.svg`,
+                  height: 16,
+                  width: 16,
+                  excavate: true,
+                }}
+              />
+            </a>
+            <span>Like it? Share it!</span>
+          </div>
+        </div>
       </header>
       {game.state.activeChallenge && <button type="button" className="btn btn--ghost" onClick={game.goToExpedition}>{t('home.resumeExpedition')}</button>}
       <section className="help-group" aria-labelledby="help-playing">

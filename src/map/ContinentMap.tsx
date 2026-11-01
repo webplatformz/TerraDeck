@@ -1,5 +1,5 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react'
-import type { MouseEvent } from 'react'
+import type { MouseEvent, PointerEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { geoGraticule10, geoPath } from 'd3-geo'
 import { select } from 'd3-selection'
@@ -45,22 +45,40 @@ const MAX_ZOOM = 8
 const SELECTION_ZOOM = 1.5
 /** Countries smaller than this on screen can also be picked by tapping near them. */
 const SMALL_PX = 30
-/** Two or more small countries within this radius of a tap open the magnifier. */
+/** A stationary press must last this long before the magnifier appears. */
+const HOLD_DURATION_MS = 450
+/** Movement beyond this distance before the hold matures is a pan, not a selection. */
+const HOLD_TOLERANCE_PX = 10
+/** Countries this small can also be selected by tapping nearby. */
 const CROWD_RADIUS_PX = 24
 const OCEAN_SNAP_PX = 28
 const LENS_RADIUS_PX = 96
-const LENS_HIT_PX = 20
-/** Aim for this gap between the closest pair of crowded countries inside the lens. */
-const LENS_TARGET_GAP_PX = 36
+const LENS_SCALE = 4
+const LENS_OFFSET_PX = LENS_RADIUS_PX + 28
 
 const dist = (a: Pt, b: Pt) => Math.hypot(a[0] - b[0], a[1] - b[1])
 const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v))
 
 interface Lens {
-  /** Tap point and lens centre, in screen px. */
+  /** Map point beneath the finger and the display centre, in screen px. */
   at: Pt
   center: Pt
   scale: number
+  world: WorldData
+  continent: ContinentId
+  width: number
+  height: number
+}
+
+interface MapGesture {
+  pointerId: number
+  pointerType: string
+  start: Pt
+  current: Pt
+  timer: ReturnType<typeof setTimeout> | null
+  held: boolean
+  moved: boolean
+  cancelled: boolean
 }
 
 /** One continent, drawn with its own projection. Neighbouring land is faded and cannot be tapped. */
@@ -70,6 +88,9 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
   const layerRef = useRef<SVGGElement>(null)
   const zoomRef = useRef<ZoomBehavior<SVGSVGElement, unknown> | null>(null)
   const transformRef = useRef<ZoomTransform>(zoomIdentity)
+  const gestureRef = useRef<MapGesture | null>(null)
+  const pointersRef = useRef(new Set<number>())
+  const suppressClickRef = useRef<{ at: Pt; until: number } | null>(null)
   const { w, h } = useSize(frameRef)
   const [t, setT] = useState<ZoomTransform>(zoomIdentity)
   const [lens, setLens] = useState<Lens | null>(null)
@@ -77,6 +98,53 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
   const clipId = useId()
 
   const land = useMemo(() => framingLand(continent, world.features), [world, continent])
+
+  const cancelGesture = () => {
+    const gesture = gestureRef.current
+    if (gesture) {
+      if (gesture.timer) clearTimeout(gesture.timer)
+      suppressClickRef.current = { at: gesture.current, until: Date.now() + 700 }
+    }
+    gestureRef.current = null
+    pointersRef.current.clear()
+    setLens(null)
+  }
+
+  useEffect(() => {
+    const pointers = pointersRef.current
+    return () => {
+      const gesture = gestureRef.current
+      if (gesture) {
+        if (gesture.timer) clearTimeout(gesture.timer)
+        suppressClickRef.current = { at: gesture.current, until: Date.now() + 700 }
+      }
+      gestureRef.current = null
+      pointers.clear()
+    }
+  }, [world, continent, w, h, interactive])
+
+  useEffect(() => {
+    const cancelOnBlur = () => cancelGesture()
+    const cancelWhenHidden = () => {
+      if (document.visibilityState === 'hidden') cancelGesture()
+    }
+    const suppressZoomMove = (event: Event) => {
+      if (!gestureRef.current?.held || gestureRef.current.cancelled) return
+      event.stopImmediatePropagation()
+      if (event.cancelable) event.preventDefault()
+    }
+    window.addEventListener('blur', cancelOnBlur)
+    document.addEventListener('visibilitychange', cancelWhenHidden)
+    window.addEventListener('mousemove', suppressZoomMove, true)
+    window.addEventListener('touchmove', suppressZoomMove, { capture: true, passive: false })
+    return () => {
+      window.removeEventListener('blur', cancelOnBlur)
+      document.removeEventListener('visibilitychange', cancelWhenHidden)
+      window.removeEventListener('mousemove', suppressZoomMove, true)
+      window.removeEventListener('touchmove', suppressZoomMove, true)
+      cancelGesture()
+    }
+  }, [])
 
   const geo = useMemo(() => {
     if (!w || !h) return null
@@ -120,6 +188,11 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
     }
   }, [world, continent, land, w, h])
 
+  const activeLens = lens && lens.world === world && lens.continent === continent && lens.width === w && lens.height === h && interactive
+    ? lens
+    : null
+  const makeLens = (at: Pt, center: Pt): Lens => ({ at, center, scale: LENS_SCALE, world, continent, width: w, height: h })
+
   // Zoom: 1–8×, panning kept inside the continent frame.
   useEffect(() => {
     const svg = svgRef.current
@@ -145,7 +218,7 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
         cancelAnimationFrame(frame)
         frame = requestAnimationFrame(() => setT(next))
       })
-    // No double-tap zoom: two quick taps (open magnifier, then pick inside it) must not zoom and close the lens.
+    // Keep repeated country taps from unexpectedly changing the view.
     select(svg).call(behavior).on('dblclick.zoom', null)
     zoomRef.current = behavior
     return () => {
@@ -201,12 +274,12 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
     select(svg).transition().duration(prefersReducedMotion() ? 0 : 400).call(zoomRef.current.transform, home)
   }
 
-  /** Resolves a tap to the country under it plus nearby small countries, in a given screen mapping. */
-  const probe = (event: MouseEvent, tap: Pt, toScreen: (s: Shape) => Pt, scale: number, inLens: boolean) => {
+  /** Resolves a map point to its country plus nearby small countries. */
+  const probe = (event: { clientX: number; clientY: number }, tap: Pt, toScreen: (s: Shape) => Pt, scale: number) => {
     const members = geo?.members ?? []
     const underElement = document
       .elementsFromPoint(event.clientX, event.clientY)
-      .find((el) => el.matches('path[data-map-land]') && !!el.closest('.map-lens') === inLens)
+      .find((el) => el.matches('path[data-map-land]'))
     const blocked = underElement?.getAttribute('data-excluded') === 'true'
     const under = underElement?.getAttribute('data-name')
     const direct = under ? members.find((s) => s.name === under) : undefined
@@ -216,58 +289,130 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
         .filter((s) => s !== direct && isSmall(s) && dist(toScreen(s), tap) <= radius)
         .sort((a, b) => dist(toScreen(a), tap) - dist(toScreen(b), tap))
     const nearest = (radius: number) => members.filter((s) => dist(toScreen(s), tap) <= radius).sort((a, b) => dist(toScreen(a), tap) - dist(toScreen(b), tap))[0]
-    return { direct, isSmall, near, nearest, blocked }
+    return { direct, near, nearest, blocked }
   }
 
-  const handleMapClick = (event: MouseEvent<SVGSVGElement>) => {
+  const selectAt = (event: { clientX: number; clientY: number }, magnified: boolean) => {
     if (!interactive || !onSelect || !geo || !svgRef.current) return
-    if (lens) return setLens(null)
     const rect = svgRef.current.getBoundingClientRect()
     const tap: Pt = [event.clientX - rect.left, event.clientY - rect.top]
     const tr = transformRef.current
     const toScreen = (s: Shape) => tr.apply(s.centroid) as Pt
-    const { direct, isSmall, near, nearest, blocked } = probe(event, tap, toScreen, tr.k, false)
+    const { direct, near, nearest, blocked } = probe(event, tap, toScreen, tr.k)
     if (blocked) return
+    if (magnified) {
+      if (direct?.member) onSelect(direct.name)
+      return
+    }
     const crowd = near(CROWD_RADIUS_PX)
 
-    // Ambiguous: two or more small countries in reach, or a small one right next to the country under the finger.
-    const ambiguous = direct ? (isSmall(direct) ? crowd.length >= 1 : near(CROWD_RADIUS_PX / 2).length >= 1) : crowd.length >= 2
-    if (ambiguous) {
-      const points = [...(direct ? [direct] : []), ...crowd].map(toScreen)
-      let gap = Infinity
-      points.forEach((a, i) => points.slice(i + 1).forEach((b) => (gap = Math.min(gap, dist(a, b)))))
-      const scale = clamp(LENS_TARGET_GAP_PX / Math.max(gap, 1), 3, 6)
-      const r = LENS_RADIUS_PX + 4
-      return setLens({ at: tap, center: [clamp(tap[0], r, w - r), clamp(tap[1], r, h - r)], scale })
-    }
+    // A normal tap never opens the magnifier; nearby small countries remain easy to pick.
     const pick = direct ?? crowd[0] ?? nearest(OCEAN_SNAP_PX)
     if (pick) onSelect(pick.name)
   }
 
-  const handleLensClick = (event: MouseEvent<SVGGElement>) => {
-    event.stopPropagation()
-    if (!lens || !geo || !onSelect || !svgRef.current) return
-    const rect = svgRef.current.getBoundingClientRect()
-    const tap: Pt = [event.clientX - rect.left, event.clientY - rect.top]
-    if (dist(tap, lens.center) > LENS_RADIUS_PX) return setLens(null)
-    const tr = transformRef.current
-    const toScreen = (s: Shape): Pt => {
-      const [sx, sy] = tr.apply(s.centroid)
-      return [lens.center[0] + (sx - lens.at[0]) * lens.scale, lens.center[1] + (sy - lens.at[1]) * lens.scale]
+  const handleMapClick = (event: MouseEvent<SVGSVGElement>) => {
+    const suppressed = suppressClickRef.current
+    if (suppressed && Date.now() <= suppressed.until && dist([event.clientX, event.clientY], suppressed.at) < 24) {
+      suppressClickRef.current = null
+      return
     }
-    const { direct, near, nearest, blocked } = probe(event, tap, toScreen, tr.k * lens.scale, true)
-    if (blocked) return
-    const pick = direct ?? near(LENS_HIT_PX)[0] ?? nearest(OCEAN_SNAP_PX)
-    if (pick) {
-      setLens(null)
-      onSelect(pick.name)
+    if (suppressed && Date.now() > suppressed.until) suppressClickRef.current = null
+    selectAt(event, false)
+  }
+
+  const handlePointerDown = (event: PointerEvent<SVGSVGElement>) => {
+    if (!interactive || !onSelect || event.button !== 0) return
+    const point: Pt = [event.clientX, event.clientY]
+    pointersRef.current.add(event.pointerId)
+    try {
+      event.currentTarget.setPointerCapture(event.pointerId)
+    } catch {
+      // Capture can fail when a browser has already cancelled the pointer.
     }
+    const gesture = gestureRef.current
+    if (gesture) {
+      if (event.pointerType === 'touch' && gesture.pointerType === 'touch') {
+        gesture.cancelled = true
+        if (gesture.timer) clearTimeout(gesture.timer)
+        gesture.timer = null
+        setLens(null)
+      }
+      return
+    }
+    const next: MapGesture = {
+      pointerId: event.pointerId,
+      pointerType: event.pointerType,
+      start: point,
+      current: point,
+      timer: null,
+      held: false,
+      moved: false,
+      cancelled: false,
+    }
+    gestureRef.current = next
+    next.timer = setTimeout(() => {
+      if (gestureRef.current !== next || next.moved || next.cancelled || pointersRef.current.size > 1) return
+      next.held = true
+      const rect = svgRef.current?.getBoundingClientRect()
+      if (!rect) return
+      const at: Pt = [next.current[0] - rect.left, next.current[1] - rect.top]
+      const radius = Math.min(LENS_RADIUS_PX, w / 2, h / 2)
+      const center: Pt = [
+        clamp(at[0], radius, w - radius),
+        clamp(at[1] - LENS_OFFSET_PX, radius, h - radius),
+      ]
+      setLens(makeLens(at, center))
+    }, HOLD_DURATION_MS)
+  }
+
+  const handlePointerMove = (event: PointerEvent<SVGSVGElement>) => {
+    const gesture = gestureRef.current
+    if (!gesture || gesture.pointerId !== event.pointerId || gesture.cancelled) return
+    gesture.current = [event.clientX, event.clientY]
+    const rect = svgRef.current?.getBoundingClientRect()
+    if (!rect) return
+    if (!gesture.held && dist(gesture.start, gesture.current) > HOLD_TOLERANCE_PX) {
+      gesture.moved = true
+      if (gesture.timer) clearTimeout(gesture.timer)
+      gesture.timer = null
+      return
+    }
+    if (gesture.held) {
+      event.preventDefault()
+      const at: Pt = [event.clientX - rect.left, event.clientY - rect.top]
+      const radius = Math.min(LENS_RADIUS_PX, w / 2, h / 2)
+      setLens(makeLens(at, [clamp(at[0], radius, w - radius), clamp(at[1] - LENS_OFFSET_PX, radius, h - radius)]))
+    }
+  }
+
+  const finishPointer = (event: PointerEvent<SVGSVGElement>, cancelled: boolean) => {
+    pointersRef.current.delete(event.pointerId)
+    const gesture = gestureRef.current
+    if (!gesture || gesture.pointerId !== event.pointerId) return
+    if (gesture.timer) clearTimeout(gesture.timer)
+    gesture.timer = null
+    const shouldSelect = !cancelled && !gesture.cancelled && !gesture.moved
+    const wasHeld = gesture.held
+    const point: Pt = [event.clientX, event.clientY]
+    gestureRef.current = null
+    setLens(null)
+    if (shouldSelect) selectAt(event, wasHeld)
+    if (shouldSelect || cancelled || gesture.moved || gesture.cancelled) {
+      suppressClickRef.current = { at: point, until: Date.now() + 700 }
+    }
+  }
+
+  const handlePointerCancel = (event: PointerEvent<SVGSVGElement>) => finishPointer(event, true)
+
+  const handleLostPointerCapture = (event: PointerEvent<SVGSVGElement>) => {
+    if (gestureRef.current?.pointerId === event.pointerId) finishPointer(event, true)
   }
 
   const k = t.k
   const markByName = new Map(marks.map((m) => [m.mapName, m.tone]))
   const nameLabels = (() => {
-    if (!countryNames || !geo || k < 2 || lens) return []
+    if (!countryNames || !geo || k < 2 || activeLens) return []
     const context = document.createElement('canvas').getContext('2d')
     if (context) context.font = `600 12px ${getComputedStyle(document.documentElement).fontFamily}`
     const boxes: { left: number; right: number; top: number; bottom: number }[] = []
@@ -307,12 +452,27 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
     )
 
   const pulseShape = pulse && geo ? geo.byName.get(pulse) : undefined
-  const lensTransform = lens ? `translate(${lens.center[0]},${lens.center[1]}) scale(${lens.scale}) translate(${-lens.at[0]},${-lens.at[1]}) ${t.toString()}` : ''
+  const lensTransform = activeLens ? `translate(${activeLens.center[0]},${activeLens.center[1]}) scale(${activeLens.scale}) translate(${-activeLens.at[0]},${-activeLens.at[1]}) ${t.toString()}` : ''
 
   return (
     <div ref={frameRef} className={`map-frame${interactive ? ' is-interactive' : ''}`}>
       {geo && (
-        <svg ref={svgRef} className="map-svg" width={w} height={h} role="img" aria-label={countryNames ? tr('map.trainingNames') : label ? tr('map.unlabelledOf', { continent: label }) : tr('map.unlabelled')} onClick={handleMapClick}>
+        <svg
+          ref={svgRef}
+          className="map-svg"
+          width={w}
+          height={h}
+          role="img"
+          aria-label={countryNames ? tr('map.trainingNames') : label ? tr('map.unlabelledOf', { continent: label }) : tr('map.unlabelled')}
+          onClick={handleMapClick}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={event => finishPointer(event, false)}
+          onPointerCancel={handlePointerCancel}
+          onLostPointerCapture={handleLostPointerCapture}
+          onContextMenu={event => event.preventDefault()}
+          onSelect={event => event.preventDefault()}
+        >
           <rect className="map-ocean-hit" width={w} height={h} />
           <g ref={layerRef}>
             {renderLand(k, '')}
@@ -328,23 +488,24 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
               <text key={entry.mapName} data-country-name={entry.mapName} x={entry.x} y={entry.y} textAnchor="middle" dominantBaseline="central">{entry.name}</text>
             ))}
           </g>
-          {lens && (
-            <g className="map-lens" onClick={handleLensClick}>
+          {activeLens && (
+            <g className="map-lens" pointerEvents="none">
               <clipPath id={clipId}>
-                <circle cx={lens.center[0]} cy={lens.center[1]} r={LENS_RADIUS_PX} />
+                <circle cx={activeLens.center[0]} cy={activeLens.center[1]} r={LENS_RADIUS_PX} />
               </clipPath>
-              <circle className="map-lens-shadow" cx={lens.center[0]} cy={lens.center[1]} r={LENS_RADIUS_PX + 2} />
+              <circle className="map-lens-shadow" cx={activeLens.center[0]} cy={activeLens.center[1]} r={LENS_RADIUS_PX + 2} />
               <g clipPath={`url(#${clipId})`}>
-                <circle className="map-lens-ocean" cx={lens.center[0]} cy={lens.center[1]} r={LENS_RADIUS_PX} />
-                <g transform={lensTransform}>{renderLand(k * lens.scale, 'lens-')}</g>
+                <circle className="map-lens-ocean" cx={activeLens.center[0]} cy={activeLens.center[1]} r={LENS_RADIUS_PX} />
+                <g transform={lensTransform}>{renderLand(k * activeLens.scale, 'lens-')}</g>
               </g>
-              <circle className="map-lens-rim" cx={lens.center[0]} cy={lens.center[1]} r={LENS_RADIUS_PX} />
+              <circle className="map-lens-rim" cx={activeLens.center[0]} cy={activeLens.center[1]} r={LENS_RADIUS_PX} />
+              <path className="map-lens-crosshair" d={`M${activeLens.center[0] - 8} ${activeLens.center[1]}h16m-8 -8v16`} />
             </g>
           )}
         </svg>
       )}
       {label && <div className="map-label">{label}</div>}
-      {lens && <div className="map-hint">{tr('map.lensHint')}</div>}
+      {activeLens && <div className="map-hint">{tr('map.lensHint')}</div>}
       <div className="map-controls">
         <button type="button" aria-label={tr('map.zoomIn')} onClick={() => zoomBy(2)}>
           +

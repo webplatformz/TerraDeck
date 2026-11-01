@@ -103,21 +103,56 @@ export function Home({ game, training }: { game: Game; training: ContinentTraini
         )}
       </section>
 
-      <button type="button" className="training-home panel interactive-tile" onClick={game.goToTraining} disabled={!training.ready || training.error === 'training.storageError'}>
-        <span className="training-home-heading">
-          <span className="link-title">{t('training.title')}</span>
-          <span className="tour-beta">{t('training.beta')}</span>
-        </span>
+      <button
+        type="button"
+        className="training-home panel interactive-tile"
+        onClick={game.goToTraining}
+        disabled={!training.ready || training.error === 'training.storageError'}
+        aria-label={training.session
+          ? `${t('training.homeTitleActive', { continent: continentName(training.session.continent) })}, ${trainingPlaced} / ${trainingTotal} ${t('training.homeCountries')}`
+          : undefined}
+      >
+        <div className="progress-head training-home-heading">
+          <span className="training-home-title">
+            <h2>{training.session
+              ? t('training.homeTitleActive', { continent: continentName(training.session.continent) })
+              : t('training.title')}</h2>
+          </span>
+          {training.session && (
+            <span className="progress-count training-home-count">
+              <Trans
+                i18nKey="training.homeCount"
+                values={{ placed: trainingPlaced, total: trainingTotal }}
+                components={{ strong: <strong /> }}
+              />
+            </span>
+          )}
+        </div>
         {training.error ? (
-          <span className="link-sub" role="alert">{t(training.error)}</span>
-        ) : training.session ? (
-          <>
-            <span className="training-home-continent">{continentName(training.session.continent)}</span>
-            <span className="training-home-progress">{t('training.homeProgress', { placed: trainingPlaced, total: trainingTotal })}</span>
-            <span className="training-home-continue">{t('training.continue')}</span>
-          </>
+          <span className="training-home-message" role="alert">{t(training.error)}</span>
         ) : (
-          <span className="link-sub">{t('training.homeIntro')}</span>
+          <>
+            {training.session ? (
+              <>
+                <span
+                  className="progress-bar"
+                  role="progressbar"
+                  aria-label={t('training.continentProgress')}
+                  aria-valuemin={0}
+                  aria-valuemax={trainingTotal}
+                  aria-valuenow={trainingPlaced}
+                >
+                  <span style={{ width: `${trainingTotal ? (trainingPlaced / trainingTotal) * 100 : 0}%` }} />
+                </span>
+                <span className="progress-sub training-home-hint">{t('training.homeContinueHint')}</span>
+              </>
+            ) : (
+              <>
+                <span className="training-home-teaser">{t('training.homeTeaser')}</span>
+                <span className="progress-sub training-home-hint">{t('training.homeStartHint')}</span>
+              </>
+            )}
+          </>
         )}
       </button>
 
@@ -142,14 +177,14 @@ export function Home({ game, training }: { game: Game; training: ContinentTraini
       </button>
 
       <nav className="home-links" aria-label={t('home.more')}>
-        <button type="button" className="link-tile panel interactive-tile" onClick={() => game.navigate('achievements')}>
+        <button type="button" className="link-tile link-achievements panel interactive-tile" onClick={() => game.navigate('achievements')}>
           <span className="link-title">{t('nav.achievements')}</span>
           <span className="home-achievement-count mono" aria-label={t('achievements.total', { count: achievementsEarned, total: ACHIEVEMENT_IDS.length })}>
             {achievementsEarned} / {ACHIEVEMENT_IDS.length}
           </span>
           <span className="link-sub">{t('home.achievementsSub')}</span>
         </button>
-        <button type="button" className="link-tile panel interactive-tile" onClick={() => game.navigate('about')}>
+        <button type="button" className="link-tile link-about panel interactive-tile" onClick={() => game.navigate('about')}>
           <span className="link-title">{t('home.aboutTitle')}</span>
           <span className="link-sub">{t('home.aboutSub')}</span>
         </button>
