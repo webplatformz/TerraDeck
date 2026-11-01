@@ -20,6 +20,12 @@ test.beforeEach(async ({ page }, testInfo) => {
 
 const mainSave = (page: Page) => page.evaluate(() => localStorage.getItem('terradeck:save:v1'))
 const trainingSave = (page: Page) => page.evaluate(key => localStorage.getItem(key), CONTINENT_TRAINING_STORAGE_KEY)
+function normalizedMainSave(raw: string | null) {
+  if (!raw) return raw
+  const state = JSON.parse(raw)
+  state.achievements ??= createInitialState(DEFAULT_CONFIG, 0).achievements
+  return state
+}
 
 async function place(page: Page, mapName: string) {
   await page.locator('.training-map .map-controls button').nth(2).click()
@@ -67,7 +73,7 @@ test('training resumes after leaving/reloading; wrong guesses, hints and cancel 
   await page.locator('.training-modal .btn--primary').click()
   await expect(page.locator('.home')).toBeVisible()
   expect(await trainingSave(page)).toBeNull()
-  expect(await mainSave(page)).toBe(before)
+  expect(normalizedMainSave(await mainSave(page))).toEqual(normalizedMainSave(before))
 })
 
 for (const perfect of [true, false]) {

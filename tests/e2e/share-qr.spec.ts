@@ -31,16 +31,19 @@ for (const language of ['en', 'de']) {
         reader.readAsDataURL(blob)
       })
       logo.setAttribute('href', dataUrl)
+      const rasterSize = 768
+      clone.setAttribute('width', String(rasterSize))
+      clone.setAttribute('height', String(rasterSize))
       const image = new Image()
       image.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(new XMLSerializer().serializeToString(clone))}`
       await image.decode()
       const canvas = document.createElement('canvas')
-      canvas.width = canvas.height = 96
+      canvas.width = canvas.height = rasterSize
       const context = canvas.getContext('2d')!
-      context.drawImage(image, 0, 0, 96, 96)
-      return Array.from(context.getImageData(0, 0, 96, 96).data)
+      context.drawImage(image, 0, 0, rasterSize, rasterSize)
+      return Array.from(context.getImageData(0, 0, rasterSize, rasterSize).data)
     })
-    expect(jsQR(new Uint8ClampedArray(raster), 96, 96)?.data).toBe('https://webplatformz.github.io/TerraDeck')
+    expect(jsQR(new Uint8ClampedArray(raster), 768, 768)?.data).toBe('https://webplatformz.github.io/TerraDeck')
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
     expect(externalRequests).toEqual([])
   })
