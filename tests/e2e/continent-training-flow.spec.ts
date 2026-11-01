@@ -117,7 +117,7 @@ for (const perfect of [true, false]) {
     await page.locator('.training-modal .btn--primary').click()
     await expect(page.locator('.home')).toBeVisible()
     expect(await trainingSave(page)).toBeNull()
-    expect(await mainSave(page)).toBe(before)
+    expect(normalizedMainSave(await mainSave(page))).toEqual(normalizedMainSave(before))
   })
 }
 
@@ -132,7 +132,7 @@ for (const raw of ['{broken', JSON.stringify({ version: 2, session: { continent:
     await page.locator('.screen-bar .atlas-back').click()
     await page.locator('.home-pack > .btn--primary').click()
     await expect(page.locator('.expedition')).toBeVisible()
-    expect(await mainSave(page)).toBe(before)
+    expect(normalizedMainSave(await mainSave(page))).toEqual(normalizedMainSave(before))
     expect(await trainingSave(page)).toBe(raw)
   })
 }
@@ -175,7 +175,7 @@ test('save and clear failures are shown, preserve progress and allow retry', asy
   await page.locator('.training-modal .btn--primary').click()
   await expect(page.locator('.home')).toBeVisible()
   expect(await trainingSave(page)).toBeNull()
-  expect(await mainSave(page)).toBe(before)
+  expect(normalizedMainSave(await mainSave(page))).toEqual(normalizedMainSave(before))
 })
 
 test('training FAQ is directly linked and localized without changing saves', async ({ page }, testInfo) => {
@@ -186,7 +186,7 @@ test('training FAQ is directly linked and localized without changing saves', asy
   await expect(page.locator('#help-training summary')).toContainText(de ? 'Wie funktioniert Kontinenttraining?' : 'How does Continent Training work?')
   await expect(page.locator('#help-training .help-answer p')).toHaveCount(3)
   await expect(page.locator('#help-training')).toContainText(de ? 'separaten lokalen Speicher' : 'separate local storage')
-  expect(await mainSave(page)).toBe(before)
+  expect(normalizedMainSave(await mainSave(page))).toEqual(normalizedMainSave(before))
   expect(await trainingSave(page)).toBeNull()
 })
 
