@@ -178,7 +178,7 @@ stamps through the recovery UTC day, not future days. Affected tours can still b
 played and count toward tour achievements/discovery; lost results not already counted
 in achievement evidence cannot be reconstructed. Recovery is explained once and can
 be acknowledged. Newer formats are preserved and show an update/reload message rather
-than being reset. See the policy in `docs/DECISIONS.md`.
+than being reset. See [daily-tour recovery](docs/decisions/saved-data.md#daily-tour-recovery).
 
 Fixed tours live in `src/data/dailyTours.ts`: each definition has a stable `id`,
 `continent`, five ordered `countryIds`, and `title: { en, de }`. Do not edit a
@@ -250,14 +250,16 @@ Ordinary encounter tracking starts fresh when this feature first loads: old acti
 Tour badges can use saved daily results. Newly unlocked
 cards count, including countries that already had a stamp. Continent/atlas completion checks the full
 collection after the next new card unlock. Earned badges retain their date and completed target even
-when the roster expands; resetting progress removes badges too.
+when the roster expands. Learning resets preserve badges and their tracking;
+only a full-save reset or clearing site storage removes them.
 
 One silent banner groups pending awards after encounter feedback and country-card celebrations.
 View it for details or dismiss it to acknowledge the batch across tabs. Pending batches survive reloads.
 Rules live in `src/domain/achievements.ts`, reviewed country groups in `src/data/achievementGroups.ts`,
 and the independently versioned achievement extension stays inside the existing local save.
 Web Locks serialize browser-tab mutations and notification ownership; browsers without them show
-a single-tab-only warning. See [Decisions](docs/DECISIONS.md#achievements) for thresholds and conventions.
+a single-tab-only warning. See [achievement decisions](docs/decisions/gameplay.md#achievements)
+for thresholds and conventions.
 
 ### Help and project information
 

@@ -5,6 +5,30 @@
 - Keep agent communication and console summaries in English, even when the user
   occasionally writes in German. Continue maintaining EN/DE app localization.
 
+## Repository context and new chats
+
+- Before implementation, read the relevant sections of `docs/PLAN.md` and
+  use the task-to-document table in `docs/DECISIONS.md` to read the relevant
+  topic files in `docs/decisions/` for accepted decisions. Do this in new chats
+  too; do not assume these documents were automatically loaded or retained from
+  a previous conversation.
+- Keep these instructions as the contributor rules, `docs/PLAN.md` as the
+  product/architecture overview and `docs/DECISIONS.md` as the navigation hub
+  for accepted decisions and their reasoning in `docs/decisions/`.
+  Update the relevant documents when changes affect their content; avoid
+  duplicating whole documents here.
+- When a task exposes inconsistent or outdated documentation, verify the intended
+  behavior against implementation, tests and accepted decisions. Correct directly
+  related documentation in the same change. Do not silently choose between
+  conflicting product decisions; ask for clarification when the conflict remains.
+- Conversation history does not automatically carry into a new chat. Use any
+  supplied handoff for unfinished work, recent findings and approval status,
+  and verify it against the current repository. If required context is missing,
+  ask for it rather than assuming prior decisions or approval.
+- Copilot can automatically load this file when repository instructions are
+  supported and enabled; this does not automatically load the referenced
+  documents or previous conversations.
+
 ## Release approval
 
 - Before each release, review `src/data/releases.ts`: check the major version,
@@ -38,4 +62,5 @@
   and report the incompatibility explicitly rather than silently resetting it.
 - Add focused compatibility tests for affected old saves and new feature data.
   When introducing a migration, also cover repeated migration and unsupported
-  versions. Document the compatibility decision in `docs/DECISIONS.md`.
+  versions. Document the compatibility decision in
+  `docs/decisions/saved-data.md`, linking from `docs/DECISIONS.md` when needed.
