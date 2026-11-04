@@ -1399,6 +1399,22 @@ p {
   overflow: hidden;
 }
 .continent-training > .screen-bar { grid-row: 1; }
+.continent-training--active {
+  --training-previous-header: 209px;
+  /* Keep the old sheet share (0.95 / 1.95) below its original header budget; only the map gains space. */
+  grid-template-rows: auto auto minmax(150px, 1fr) max(190px, calc((100% - var(--training-previous-header) - max(0px, env(safe-area-inset-top) - 12px)) * 0.487179));
+}
+.continent-training--active > .screen-bar {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  gap: 8px;
+  padding: max(6px, env(safe-area-inset-top)) 12px 4px;
+}
+.continent-training--active > .screen-bar h1 { min-width: 0; font-size: clamp(1.15rem, 4vw, 1.5rem); overflow-wrap: anywhere; }
+.training-cancel { min-width: 44px; min-height: 44px; max-width: 132px; white-space: normal; }
 .training-error {
   position: absolute;
   z-index: 5;
@@ -1443,12 +1459,8 @@ p {
   font-weight: 600;
 }
 .training-chevron { color: var(--brass-300); font-size: 1.25rem; }
-.training-summary { grid-row: 2; width: 100%; max-width: 960px; margin: 0 auto; padding: 4px 16px 10px; }
-.training-summary-title { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.training-summary-title h1 { font-size: clamp(1.25rem, 4vw, 1.7rem); }
-.training-summary-title .eyebrow { margin-bottom: 4px; }
-.training-summary-title .btn { flex-shrink: 0; }
-.training-metrics { display: grid; gap: 7px; margin-top: 9px; }
+.training-summary { grid-row: 2; width: 100%; max-width: 960px; margin: 0 auto; padding: 2px 16px 10px; }
+.training-metrics { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
 .training-metric { min-width: 0; }
 .training-progress-copy, .training-streak-copy, .training-list-heading {
   display: flex;
@@ -1458,7 +1470,7 @@ p {
   color: var(--paper-300);
   font-size: 0.76rem;
 }
-.training-progress-copy strong { color: var(--paper-100); font-variant-numeric: tabular-nums; }
+.training-progress-copy strong, .training-streak-copy strong { color: var(--paper-100); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .training-progress, .training-streak {
   height: 7px;
   overflow: hidden;
@@ -1492,7 +1504,7 @@ p {
 }
 .training-metric--knowledge.is-full .training-streak { border-color: var(--brass-300); box-shadow: 0 0 12px rgba(201, 162, 74, 0.25); }
 .training-metric--knowledge.is-full .training-streak-copy { color: var(--brass-200); }
-.training-map { grid-row: 3; min-height: 0; padding: 0 12px; }
+.training-map { position: relative; grid-row: 3; min-height: 0; padding: 0 12px; }
 .training-sheet {
   grid-row: 4;
   min-height: 0;
@@ -1503,10 +1515,22 @@ p {
   border-radius: 16px;
   background: linear-gradient(180deg, rgba(28, 53, 97, 0.55), rgba(11, 26, 51, 0.82));
 }
-.training-feedback { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.85rem; font-weight: 600; }
-.training-feedback--correct { color: #8acdbb; }
-.training-feedback--wrong { color: #ffac97; }
-.training-feedback span { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; border: 1px solid currentColor; }
+.training-feedback { position: absolute; top: 12px; right: 24px; display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid currentColor; border-radius: 50%; background: var(--ocean-900); font-size: 0.95rem; pointer-events: none; }
+.training-feedback:empty { border: 0; background: transparent; }
+.training-feedback--correct { color: #8acdbb; animation: training-feedback-fade 1100ms ease-out both; }
+.training-feedback--wrong { color: #ffac97; animation: training-feedback-fade 1800ms ease-out both; }
+.training-map .map-land.is-wrong { animation: training-country-fade 1800ms ease-out both; }
+.training-map .map-land.is-wrong.was-correct { --training-country-fill: var(--verdigris); --training-country-stroke: #1d4a3c; --training-country-stroke-width: 1.4; }
+.training-map .map-ring--wrong { animation: training-feedback-fade 1800ms ease-out both; }
+@keyframes training-feedback-fade {
+  0%, 65% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes training-country-fade {
+  0%, 65% { fill: var(--vermilion); stroke: #5c1d10; stroke-width: 1.2; }
+  100% { fill: var(--training-country-fill, var(--land)); stroke: var(--training-country-stroke, var(--land-edge)); stroke-width: var(--training-country-stroke-width, 0.6); }
+}
+.training-feedback-copy { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .training-target { display: grid; gap: 10px; }
 .training-target-heading { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 5px 10px; }
 .training-target-heading > p, .training-target-heading > strong { grid-column: 1; }
@@ -1516,7 +1540,6 @@ p {
 .training-hint-toggle { display: inline-flex; align-items: center; gap: 7px; justify-self: start; min-height: 38px; border: 0; background: transparent; color: var(--brass-300); font-size: 0.82rem; }
 .training-hint { display: grid; gap: 7px; padding: 10px 12px; border-left: 2px solid var(--brass-500); background: rgba(4, 10, 22, 0.3); color: var(--paper-200); font-size: 0.82rem; line-height: 1.5; }
 .geographic-clue { margin: 0; color: var(--brass-200); font-size: 0.82rem; line-height: 1.5; }
-.country-notes-geography .geographic-clue { color: var(--ink-700); text-align: center; }
 .training-country-cancel { grid-column: 2; grid-row: 1 / 3; align-self: center; }
 .training-country-picker { display: grid; gap: 8px; height: 100%; min-height: 0; grid-template-rows: auto minmax(0, 1fr); }
 .training-list-heading { margin-bottom: 1px; }
@@ -1559,23 +1582,13 @@ p {
   .training-sheet--selected .training-hint-toggle,
   .training-sheet--selected .training-target > .btn { justify-self: center; }
   .training-sheet--selected .training-hint { border-left: 0; border-top: 2px solid var(--brass-500); border-radius: 8px; }
-  .training-sheet--selected .training-feedback { justify-content: center; }
-  .training-summary { padding: 6px 24px 14px; }
-  .training-metrics { grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px; }
-  .training-metric {
-    padding: 12px 14px;
-    border: 1px solid rgba(79, 165, 143, 0.24);
-    border-radius: 12px;
-    background: linear-gradient(135deg, rgba(79, 165, 143, 0.08), rgba(4, 10, 22, 0.35));
-  }
-  .training-metric--knowledge {
-    border-color: rgba(201, 162, 74, 0.24);
-    background: linear-gradient(135deg, rgba(201, 162, 74, 0.08), rgba(4, 10, 22, 0.35));
-  }
+  .continent-training--active { --training-previous-header: 215px; }
+  .training-summary { padding-inline: 24px; }
   .training-progress-copy, .training-streak-copy { font-size: 0.82rem; }
-  .training-progress, .training-streak { height: 11px; margin-top: 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .training-feedback--correct, .training-feedback--wrong,
+  .training-map .map-land.is-wrong, .training-map .map-ring--wrong { animation: none; }
   .training-progress-fill, .training-streak-fill { transition: none; }
   .training-complete.is-perfect .training-complete-seal { animation: none; }
   .training-metric--knowledge.is-active .training-streak-fill,
@@ -2720,6 +2733,10 @@ p {
   flex-shrink: 0;
 }
 
+.card--front .card-top { padding: 0; min-height: 0; align-items: center; }
+.card--front .rarity-badge { font-size: 4.1cqw; padding: 0.4em 0.55em; }
+.card--front .card-top .card-continent { flex: 1; min-width: 0; margin-top: 0; text-align: left; overflow-wrap: anywhere; }
+
 .card-number {
   font-size: 4.4cqw;
   font-weight: 600;
@@ -2835,7 +2852,7 @@ p {
   margin-top: 2cqw;
   font-family: var(--font-display), serif;
   font-style: italic;
-  font-size: 4cqw;
+  font-size: 4.4cqw;
   line-height: 1.35;
   text-align: center;
   color: var(--ink-700);
@@ -3039,7 +3056,7 @@ p {
 .explorer-card { position: relative; width: fit-content; cursor: pointer; border-radius: 12px; }
 .explorer-card:focus-visible { outline: 3px solid var(--brass-400); outline-offset: 5px; }
 .explorer-card .card-inner { padding-bottom: 30px; }
-.card-turn-hint { position: absolute; bottom: 10px; left: 0; right: 0; text-align: center; font-size: 0.65rem; color: var(--ink-700); pointer-events: none; }
+.card-turn-hint { position: absolute; bottom: 10px; right: 12px; display: grid; place-items: center; width: 20px; height: 20px; color: var(--ink-700); pointer-events: none; }
 .unlock-actions { flex-wrap: wrap; justify-content: center; flex-shrink: 0; }
 
 .modal-note {

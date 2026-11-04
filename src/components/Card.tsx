@@ -16,7 +16,7 @@ export function CardFront({ country, size = 'md', visitor = false }: { country: 
     <article className={`card card--front card--${size}${visitor ? ' card--visitor' : ''} rarity--${country.rarity}`} aria-label={visitor ? t('notes.visitor') : t('card.label', { country: name })}>
       <div className="card-inner">
         <header className="card-top">
-          <span className="card-number">{country.id.toUpperCase()}</span>
+          <span className="card-continent">{content.continentName(country.continent)} - {country.id.toUpperCase()}</span>
           <RarityBadge rarity={country.rarity} />
         </header>
         <div className="card-window">
@@ -24,7 +24,6 @@ export function CardFront({ country, size = 'md', visitor = false }: { country: 
           {!visitor && <CountryShape mapName={country.mapName} />}
         </div>
         <h3 className={`card-name${name.length > 26 ? ' card-name--long' : ''}`}>{name}</h3>
-        <p className="card-continent">{content.continentName(country.continent)}</p>
         {size !== 'sm' && (
           <>
             <dl className="card-facts">

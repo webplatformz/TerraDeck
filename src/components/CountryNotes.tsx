@@ -7,8 +7,6 @@ import { CardFront } from './Card'
 import { Flag } from './Flag'
 import { RarityBadge } from './RarityBadge'
 import { COUNTRY_STORIES } from '../data/countryStories'
-import { GeographicClue } from './GeographicClue'
-import { useWorld } from '../map/useWorld'
 
 function CardFact({ text, fun = false }: { text: string; fun?: boolean }) {
   const { t } = useTranslation()
@@ -28,7 +26,6 @@ function CardFact({ text, fun = false }: { text: string; fun?: boolean }) {
 export function CountryNotes({ country, explorer = false }: { country: Country; explorer?: boolean }) {
   const { t, i18n } = useTranslation()
   const content = useContent()
-  const world = useWorld()
   const entry = details.countries[country.id as keyof typeof details.countries]
   const locale = i18n.resolvedLanguage === 'de' ? 'de' : 'en'
   const stories = COUNTRY_STORIES[country.id]
@@ -38,7 +35,7 @@ export function CountryNotes({ country, explorer = false }: { country: Country; 
     <article className={`card card--front card--lg country-notes rarity--${country.rarity}`} aria-label={t('notes.explorer')}>
       <div className="card-inner">
       <div className="card-top">
-        <span className="card-number">{country.id.toUpperCase()}</span>
+        <span className="card-continent">{content.continentName(country.continent)} - {country.id.toUpperCase()}</span>
         <RarityBadge rarity={country.rarity} />
       </div>
       <div className="country-notes-scroll" tabIndex={0}>
@@ -46,7 +43,6 @@ export function CountryNotes({ country, explorer = false }: { country: Country; 
         <Flag countryId={country.id} />
         <div>
           <h3>{content.countryName(country.id)}</h3>
-          <p>{content.continentName(country.continent)}</p>
         </div>
       </header>
       <dl className="country-notes-grid">
@@ -54,12 +50,6 @@ export function CountryNotes({ country, explorer = false }: { country: Country; 
           <div><dt>{t('notes.currency')}</dt><dd>{entry[locale].currencies}</dd></div>
       </dl>
       {stories?.detail && <CardFact text={stories.detail[locale]} />}
-      {world && (
-        <section className="country-notes-fact country-notes-geography">
-          <h4>{t('training.geographicClue')}</h4>
-          <GeographicClue country={country} world={world} />
-        </section>
-      )}
       {stories?.fun && <CardFact text={stories.fun[locale]} fun />}
       </div>
       </div>
@@ -84,7 +74,11 @@ export function ExplorerCard({ country }: { country: Country }) {
         }
       }}>
       {showNotes ? <CountryNotes country={country} explorer /> : <CardFront country={country} size="lg" />}
-      <span className="card-turn-hint" aria-hidden="true">{t('notes.tapToTurn')}</span>
+      <span className="card-turn-hint" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20 7a9 9 0 0 0-15-1L3 9m0-5v5h5M4 17a9 9 0 0 0 15 1l2-3m0 5v-5h-5" />
+        </svg>
+      </span>
     </div>
   )
 }

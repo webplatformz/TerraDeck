@@ -216,7 +216,8 @@
     "lensHint": "Ziehe das Fadenkreuz über das Land · zum Auswählen loslassen",
     "zoomIn": "Hineinzoomen",
     "zoomOut": "Herauszoomen",
-    "resetView": "Ansicht zurücksetzen",
+    "resetView": "Ganzen Kontinent anzeigen",
+    "showWorld": "Ganze Welt anzeigen",
     "trainingNames": "Trainingskarte mit Namen richtig platzierter Länder"
   },
   "rosterUpdate": {
@@ -323,6 +324,9 @@
     "saveError": "Der Trainingsfortschritt konnte nicht gespeichert werden. Prüfe den Gerätespeicher, bevor du weiterspielst.",
     "clearError": "Die Trainingsdaten konnten nicht gelöscht werden. Deine gespeicherten Daten bleiben unverändert.",
     "continentProgress": "Kontinentfortschritt",
+    "progressShort": "Fortschritt",
+    "streakShort": "Serie",
+    "options": "Trainingsoptionen",
     "explorerKnowledge": "Entdeckerwissen",
     "streakCount": "{{count}} am Stück",
     "chooseCountry": "Wähle ein Land",
@@ -354,6 +358,16 @@
     "generalHint": "Suche innerhalb der Umrisse des Kontinents.",
     "correct": "Richtig! Ein weiteres Land findet seinen Platz.",
     "wrong": "Nicht ganz. Wähle das Land erneut und versuche es noch einmal.",
+    "wrongDirection": {
+      "north": "Nicht ganz. Versuche es weiter nördlich.",
+      "northeast": "Nicht ganz. Versuche es weiter nordöstlich.",
+      "east": "Nicht ganz. Versuche es weiter östlich.",
+      "southeast": "Nicht ganz. Versuche es weiter südöstlich.",
+      "south": "Nicht ganz. Versuche es weiter südlich.",
+      "southwest": "Nicht ganz. Versuche es weiter südwestlich.",
+      "west": "Nicht ganz. Versuche es weiter westlich.",
+      "northwest": "Nicht ganz. Versuche es weiter nordwestlich."
+    },
     "cancel": "Training abbrechen",
     "completeEyebrow": "Kontinent abgeschlossen",
     "congratulations": "Du hast den Kontinent gefüllt!",

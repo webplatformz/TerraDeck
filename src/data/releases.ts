@@ -12,6 +12,41 @@ interface Release {
 export const RELEASES = [
   {
     major: 1,
+    date: '2026-11-04',
+    title: { en: 'More map, less clutter', de: 'Mehr Karte, weniger Drumherum' },
+    notes: {
+      en: [
+        {
+          label: 'Training',
+          description: 'More room for the map, directional hints after misses and subtler feedback.',
+        },
+        {
+          label: 'UI polish',
+          description: 'Improved country cards, map controls and several UI elements and interactions.',
+        },
+        {
+          label: 'Geo-data',
+          description: 'Corrected map data.',
+        },
+      ],
+      de: [
+        {
+          label: 'Training',
+          description: 'Mehr Platz für die Karte, Richtungshinweise nach Fehlversuchen und dezenteres Feedback.',
+        },
+        {
+          label: 'Feinschliff',
+          description: 'Länderkarten, Kartensteuerung und weitere UI-Elemente und Interaktionen verbessert.',
+        },
+        {
+          label: 'Geodaten',
+          description: 'Kartendaten korrigiert.',
+        },
+      ],
+    },
+  },
+  {
+    major: 1,
     date: '2026-11-01',
     title: { en: 'A new way to explore the atlas', de: 'Eine neue Art, den Atlas zu entdecken' },
     notes: {

@@ -28,11 +28,23 @@
 - One continent is active at a time. Players choose countries by flag/name and
   use the shared select-and-confirm map flow, with unlimited attempts and optional
   geographic hints. Correct placements turn green and leave the remaining list;
-  mistakes give generic feedback without revealing the target.
+  mistakes show one of eight arrows toward the target from the selected country's
+  mainland center in the continent projection, without revealing its exact location.
 - Completion remains visible until an explicit close or replay. Cancel/close
   requires confirmation and explains that training progress is cleared.
   Storage failures are shown and preserve retryable progress rather than reporting
   successful closure.
+- During play, the continent heading shares a row with back navigation and a direct
+  Cancel training button. Compact progress/streak meters
+  sit side by side even on mobile. Reclaimed header height belongs to the map;
+  the country sheet keeps its previous responsive height allocation, including
+  scrollable hints on short screens. Selection and completion retain their headers.
+  Correct/incorrect feedback overlays the map without shifting content; localized
+  status text remains available to screen readers.
+  Wrong-direction badges remain for 1.8 seconds, or until another country is chosen.
+  Badges and wrong-country colors fade during the final 35% of their existing
+  lifetime, unless reduced motion is requested. Wrong colors return to the
+  country's previous state; correctly placed countries remain green.
 
 ## Daily World Tour
 

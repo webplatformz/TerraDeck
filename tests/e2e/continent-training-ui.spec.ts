@@ -29,7 +29,8 @@ test('country selection has an accessible circular cancel and responsive progres
   await page.goto('/')
   await page.locator('.training-home').click()
   await page.getByRole('button', { name: de ? 'Europa' : 'Europe', exact: true }).click()
-  await expect(page.locator('.training-summary-title .action-circle')).toHaveCount(0)
+  await expect(page.locator('.screen-bar h1')).toHaveText(de ? 'Europa' : 'Europe')
+  await expect(page.locator('.training-summary .eyebrow')).toHaveCount(0)
   await expect(page.locator('.training-map .map-svg')).toBeVisible()
   await page.locator('.training-country').filter({ hasText: de ? 'Frankreich' : 'France' }).click()
   const cancel = page.getByRole('button', { name: de ? 'Anderes Land auswählen' : 'Choose a different country', exact: true })
@@ -59,16 +60,100 @@ test('country selection has an accessible circular cancel and responsive progres
       const box = el.getBoundingClientRect()
       return { x: box.x, y: box.y, width: box.width }
     }))
-    if (width >= 640) {
-      expect(metrics[0].y).toBeCloseTo(metrics[1].y, 0)
-      expect(metrics[1].x).toBeGreaterThan(metrics[0].x + metrics[0].width)
-      expect(metrics[0].width).toBeLessThan(470)
-    } else {
-      expect(metrics[1].y).toBeGreaterThan(metrics[0].y)
-    }
+    expect(metrics[0].y).toBeCloseTo(metrics[1].y, 0)
+    expect(metrics[1].x).toBeGreaterThan(metrics[0].x + metrics[0].width)
+    expect(metrics[0].width).toBeLessThan(470)
     await expect(page.locator('.training-sheet')).toBeInViewport()
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
   }
+})
+
+for (const language of ['en', 'de']) {
+  test(`compact ${language} header gives its reclaimed height only to the map`, async ({ page }, testInfo) => {
+    await page.addInitScript(language => localStorage.setItem('terradeck:lang', language), language)
+    await page.goto('/')
+    await page.locator('.training-home').click()
+    await expect(page.locator('.screen-bar-title')).toHaveText(language === 'de' ? 'Kontinenttraining' : 'Continent Training')
+    await page.getByRole('button', { name: language === 'de' ? 'Europa' : 'Europe', exact: true }).click()
+    await expect(page.locator('.training-map .map-svg')).toBeVisible()
+
+    // Recorded before compacting the header: viewport, header, map and visible sheet heights.
+    const baselines = testInfo.project.use.hasTouch
+      ? [
+          { width: 320, height: 568, header: 209, map: 169, sheet: 168 },
+          { width: 393, height: 667, header: 209, map: 234.86, sheet: 201.14 },
+          { width: 393, height: 852, header: 209, map: 329.73, sheet: 291.27 },
+        ]
+      : [
+          { width: 768, height: 852, header: 215.02, map: 326.66, sheet: 288.33 },
+          { width: 1280, height: 800, header: 215, map: 300, sheet: 263 },
+        ]
+    for (const baseline of baselines) {
+      await page.setViewportSize({ width: baseline.width, height: baseline.height })
+      const map = (await page.locator('.training-map').boundingBox())!
+      const sheet = (await page.locator('.training-sheet').boundingBox())!
+      const reclaimed = baseline.header - map.y
+      expect(reclaimed).toBeGreaterThan(100)
+      expect(Math.abs(map.height - baseline.map - reclaimed)).toBeLessThan(1)
+      expect(Math.abs(sheet.height - baseline.sheet)).toBeLessThan(1)
+      for (const selector of ['.screen-bar .atlas-back', '.training-cancel']) {
+        const box = (await page.locator(selector).boundingBox())!
+        expect(box.width).toBeGreaterThanOrEqual(44)
+        expect(box.height).toBeGreaterThanOrEqual(44)
+      }
+      const metrics = await page.locator('.training-metric').evaluateAll(elements => elements.map(el => {
+        const box = el.getBoundingClientRect()
+        return { y: box.y, clipped: el.scrollWidth > el.clientWidth }
+      }))
+      expect(metrics[0].y).toEqual(metrics[1].y)
+      expect(metrics.every(metric => !metric.clipped)).toBe(true)
+      await expect(page.getByRole('progressbar', { name: language === 'de' ? 'Kontinentfortschritt' : 'Continent progress' })).toHaveAttribute('aria-valuenow', '0')
+      await expect(page.getByRole('progressbar', { name: language === 'de' ? 'Entdeckerwissen' : 'Explorer knowledge' })).toHaveAttribute('aria-valuetext', language === 'de' ? '0 am Stück' : '0 in a row')
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+    }
+
+    await page.locator('.training-country').filter({ hasText: language === 'de' ? 'Frankreich' : 'France' }).click()
+    await page.locator('.training-hint-toggle').click()
+    await expect(page.locator('.training-hint .geographic-clue')).toBeVisible()
+    await page.setViewportSize({ width: 320, height: 568 })
+    await page.locator('.training-target > .btn').scrollIntoViewIfNeeded()
+    await expect(page.locator('.training-target > .btn')).toBeInViewport()
+    expect(Math.abs((await page.locator('.training-sheet').boundingBox())!.height - 168)).toBeLessThan(1)
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+  })
+}
+
+test('direct training cancellation supports confirmation, keyboard dismissal and preserved back navigation', async ({ page }, testInfo) => {
+  const de = testInfo.project.name === 'iphone-16'
+  await page.goto('/')
+  await page.locator('.training-home').click()
+  await page.getByRole('button', { name: de ? 'Südamerika' : 'South America', exact: true }).click()
+  await page.setViewportSize({ width: 320, height: 568 })
+  await expect(page.locator('.screen-bar h1')).toHaveText(de ? 'Südamerika' : 'South America')
+  await expect(page.locator('.training-options')).toHaveCount(0)
+  const cancel = page.getByRole('button', { name: de ? 'Training abbrechen' : 'Cancel training', exact: true })
+  const saved = await page.evaluate(key => localStorage.getItem(key), CONTINENT_TRAINING_STORAGE_KEY)
+  await expect(cancel).toBeVisible()
+  await cancel.focus()
+  await page.keyboard.press('Enter')
+  await expect(page.getByRole('alertdialog')).toBeVisible()
+  await expect(page.locator('.training-modal .btn--ghost')).toBeFocused()
+  await page.keyboard.press('Shift+Tab')
+  await expect(page.locator('.training-modal .btn--primary')).toBeFocused()
+  await page.keyboard.press('Tab')
+  await expect(page.locator('.training-modal .btn--ghost')).toBeFocused()
+  await page.keyboard.press('Escape')
+  await expect(page.getByRole('alertdialog')).toHaveCount(0)
+  await expect(cancel).toBeFocused()
+  expect(await page.evaluate(key => localStorage.getItem(key), CONTINENT_TRAINING_STORAGE_KEY)).toBe(saved)
+  await cancel.click()
+  await page.locator('.training-modal .btn--ghost').click()
+  await expect(cancel).toBeFocused()
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+  await page.locator('.screen-bar .atlas-back').click()
+  await page.locator('.training-home').click()
+  await expect(page.locator('.screen-bar h1')).toHaveText(de ? 'Südamerika' : 'South America')
+  expect(await page.evaluate(key => localStorage.getItem(key), CONTINENT_TRAINING_STORAGE_KEY)).toBe(saved)
 })
 
 test('selected-country panel is compact and centered only on wider screens', async ({ page }, testInfo) => {
@@ -105,6 +190,77 @@ test('selected-country panel is compact and centered only on wider screens', asy
     await expect(page.locator('.training-target > .btn')).toBeInViewport()
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
   }
+})
+
+for (const correct of [true, false]) {
+  test(`${correct ? 'correct' : 'wrong'} placement feedback never shifts the country picker`, async ({ page }, testInfo) => {
+    const de = testInfo.project.name === 'iphone-16'
+    await page.goto('/')
+    await page.locator('.training-home').click()
+    await page.getByRole('button', { name: de ? 'Europa' : 'Europe', exact: true }).click()
+    await page.locator('.training-country').filter({ hasText: de ? 'Frankreich' : 'France' }).click()
+    const mapName = correct ? 'France' : 'Germany'
+    await page.locator(`.training-map path[data-name="${mapName}"]`).click()
+    await page.clock.install()
+    await page.locator('.training-target > .btn').click()
+
+    const feedback = page.getByRole('status')
+    await expect(feedback).toHaveClass(new RegExp(`training-feedback--${correct ? 'correct' : 'wrong'}`))
+    await expect(feedback.locator('[aria-hidden="true"]')).toHaveText(correct ? '✓' : '↙')
+    if (!correct) await expect(feedback).toContainText(de ? 'weiter südwestlich' : 'farther southwest')
+    await expect(feedback).toHaveCSS('position', 'absolute')
+    await expect(feedback.locator('.training-feedback-copy')).toHaveCSS('clip-path', 'inset(50%)')
+    await expect(page.locator('.training-sheet .training-feedback')).toHaveCount(0)
+    await expect(page.locator(`.training-map path[data-name="${mapName}"]`)).toHaveClass(new RegExp(`is-${correct ? 'correct' : 'wrong'}`))
+    const picker = page.locator('.training-country-picker')
+    const before = await picker.boundingBox()
+    const mapBefore = await page.locator('.training-map').boundingBox()
+    await page.clock.runFor(correct ? 1100 : 1800)
+    await expect(feedback).toBeEmpty()
+    expect(await picker.boundingBox()).toEqual(before)
+    expect(await page.locator('.training-map').boundingBox()).toEqual(mapBefore)
+  })
+}
+
+test('wrong feedback fades back to the previous country color without changing its lifetime', async ({ page }) => {
+  await page.addInitScript(key => localStorage.setItem(key, JSON.stringify({
+    version: 1, session: { continent: 'europe', placedIds: ['de'], streak: 1 },
+  })), CONTINENT_TRAINING_STORAGE_KEY)
+  await page.goto('/')
+  await page.locator('.training-home').click()
+  await page.locator('.training-country').filter({ hasText: /France|Frankreich/ }).click()
+  await page.locator('.training-map path[data-name="Germany"]').click()
+  await page.clock.install()
+  await page.locator('.training-target > .btn').click()
+  const badge = page.locator('.training-feedback--wrong')
+  const country = page.locator('.training-map path[data-name="Germany"]')
+  await expect(badge).toHaveCSS('animation-duration', '1.8s')
+  await expect(country).toHaveClass(/was-correct/)
+  await expect(country).toHaveCSS('animation-duration', '1.8s')
+  const red = await country.evaluate(el => getComputedStyle(el).fill)
+  for (const locator of [badge, country]) {
+    await locator.evaluate(el => {
+      for (const animation of el.getAnimations()) {
+        animation.pause()
+        animation.currentTime = 1500
+      }
+    })
+  }
+  const opacity = Number(await badge.evaluate(el => getComputedStyle(el).opacity))
+  expect(opacity).toBeGreaterThan(0)
+  expect(opacity).toBeLessThan(1)
+  expect(await country.evaluate(el => getComputedStyle(el).fill)).not.toBe(red)
+  await country.evaluate(el => {
+    for (const animation of el.getAnimations()) animation.currentTime = 1800
+  })
+  await expect(country).toHaveCSS('fill', 'rgb(79, 165, 143)')
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await expect(badge).toHaveCSS('animation-name', 'none')
+  await expect(country).toHaveCSS('animation-name', 'none')
+  await page.clock.runFor(1800)
+  await expect(page.locator('.training-feedback')).toBeEmpty()
+  await expect(country).toHaveClass(/is-correct/)
+  await expect(country).not.toHaveClass(/is-wrong/)
 })
 
 test('a full streak pulses, respects reduced motion and stops after a wrong guess', async ({ page }) => {
@@ -168,6 +324,13 @@ test('training names appear automatically when zoomed, are localized and never l
       expect(box.left < other.right && box.right > other.left && box.top < other.bottom && box.bottom > other.top).toBe(false)
     }
   }
-  await page.getByRole('button', { name: de ? 'Ansicht zurücksetzen' : 'Reset view', exact: true }).click()
+  const reset = page.getByRole('button', { name: de ? 'Ganzen Kontinent anzeigen' : 'Show whole continent', exact: true })
+  await expect(reset).toHaveAttribute('title', de ? 'Ganzen Kontinent anzeigen' : 'Show whole continent')
+  await expect(reset).toHaveCSS('width', '44px')
+  await expect(reset).toHaveCSS('height', '44px')
+  await expect(reset).toHaveCSS('border-radius', '50%')
+  await reset.click()
+  await expect.poll(() => page.locator('.training-map .map-svg').evaluate(el =>
+    (el as SVGSVGElement & { __zoom: { k: number; x: number; y: number } }).__zoom)).toEqual({ k: 1, x: 0, y: 0 })
   await expect(names).toHaveCount(0)
 })

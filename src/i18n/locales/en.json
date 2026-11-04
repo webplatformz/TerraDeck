@@ -216,7 +216,8 @@
     "lensHint": "Slide the crosshair over the country · release to select",
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out",
-    "resetView": "Reset view",
+    "resetView": "Show whole continent",
+    "showWorld": "Show whole world",
     "trainingNames": "Training map with names of correctly placed countries"
   },
   "rosterUpdate": {
@@ -323,6 +324,9 @@
     "saveError": "Training progress could not be saved. Check your device storage before continuing.",
     "clearError": "Training data could not be cleared. Your saved data has been kept unchanged.",
     "continentProgress": "Continent progress",
+    "progressShort": "Progress",
+    "streakShort": "Streak",
+    "options": "Training options",
     "explorerKnowledge": "Explorer knowledge",
     "streakCount": "{{count}} in a row",
     "chooseCountry": "Choose a country",
@@ -354,6 +358,16 @@
     "generalHint": "Look within the continent's outline.",
     "correct": "Correct! A new country takes its place.",
     "wrong": "Not quite. Choose the country again and try another spot.",
+    "wrongDirection": {
+      "north": "Not quite. Try farther north.",
+      "northeast": "Not quite. Try farther northeast.",
+      "east": "Not quite. Try farther east.",
+      "southeast": "Not quite. Try farther southeast.",
+      "south": "Not quite. Try farther south.",
+      "southwest": "Not quite. Try farther southwest.",
+      "west": "Not quite. Try farther west.",
+      "northwest": "Not quite. Try farther northwest."
+    },
     "cancel": "Cancel training",
     "completeEyebrow": "Continent complete",
     "congratulations": "You filled the continent!",

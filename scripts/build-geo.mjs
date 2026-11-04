@@ -9,7 +9,7 @@ import { createRequire } from 'node:module'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { mergeArcs, feature } from 'topojson-client'
-import { geoCentroid } from 'd3-geo'
+import { geoCentroid, geoContains } from 'd3-geo'
 import { COUNTRIES, EXCLUDED, OVERSEAS_PARTS } from './geo/countries.mjs'
 import { EXCLUDED_PARTS, EXCLUDED_TERRITORY_ISOS } from './geo/exclusions.mjs'
 const roster = JSON.parse(readFileSync(new URL('./atlas/roster.json', import.meta.url), 'utf8'))
@@ -30,6 +30,24 @@ for (const [name, iso, continent] of COUNTRIES) {
   listed.set(name, { iso, continent })
 }
 const shapes = source.objects.countries.geometries
+// world-atlas 2's Natural Earth 50m data assigns the Crimea polygon to Russia.
+// Reassign its existing arcs to Ukraine, dissolving the shared isthmus boundary.
+const russia = shapes.find(g => g.properties.name === 'Russia')
+const ukraine = shapes.find(g => g.properties.name === 'Ukraine')
+if (russia?.type !== 'MultiPolygon' || ukraine?.type !== 'MultiPolygon') {
+  throw new Error('build-geo: expected Russia and Ukraine multipolygons for the Crimea correction')
+}
+const crimea = russia.arcs.filter(arcs => geoContains(feature(source, { type: 'Polygon', arcs }), [34.1, 44.95]))
+if (crimea.length !== 1) throw new Error('build-geo: expected exactly one Russian source polygon containing Simferopol')
+const correctedUkraine = mergeArcs(source, [
+  ukraine,
+  { type: 'Polygon', arcs: crimea[0] },
+])
+if (correctedUkraine.arcs.length !== ukraine.arcs.length) {
+  throw new Error('build-geo: Crimea did not merge into mainland Ukraine')
+}
+russia.arcs = russia.arcs.filter(arcs => arcs !== crimea[0])
+ukraine.arcs = correctedUkraine.arcs
 const onMap = new Set(shapes.map((g) => g.properties.name))
 for (const name of onMap) if (!listed.has(name) && !EXCLUDED.includes(name)) errors.push(`missing from list: ${name}`)
 for (const name of listed.keys()) if (!onMap.has(name)) errors.push(`not on the map: ${name}`)
