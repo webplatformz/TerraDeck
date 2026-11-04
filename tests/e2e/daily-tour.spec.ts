@@ -15,6 +15,7 @@ async function prepare(page: Page, de: boolean) {
     localStorage.setItem('terradeck:lang', de ? 'de' : 'en')
   }, de)
   await page.goto('/?debug')
+  await expect(page.locator('.daily-panel')).toBeVisible()
 }
 
 const dailyState = (page: Page) => page.evaluate(() => JSON.parse(localStorage.getItem('terradeck:save:v1')!))
