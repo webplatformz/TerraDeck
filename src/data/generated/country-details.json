@@ -344,18 +344,17 @@
       "landlocked": false,
       "languageCodes": [
         "eng",
-        "mri",
-        "nzs"
+        "mri"
       ],
       "currencyCodes": [
         "NZD"
       ],
       "en": {
-        "languages": "English · Māori · New Zealand Sign Language",
+        "languages": "English · Māori",
         "currencies": "New Zealand Dollar (NZD)"
       },
       "de": {
-        "languages": "Englisch · Māori · Neuseeländische Gebärdensprache",
+        "languages": "Englisch · Māori",
         "currencies": "Neuseeland-Dollar (NZD)"
       }
     },
@@ -3363,18 +3362,17 @@
         "tsn",
         "tso",
         "ven",
-        "xho",
-        "zib"
+        "xho"
       ],
       "currencyCodes": [
         "ZWL"
       ],
       "en": {
-        "languages": "Chibarwe · English · Kalanga · Khoisan languages · Ndau · North Ndebele · Nyanja · Shona · Southern Sotho · Tonga · Tswana · Tsonga · Venda · Xhosa · Zimbabwean Sign Language",
+        "languages": "Chibarwe · English · Kalanga · Khoisan languages · Ndau · North Ndebele · Nyanja · Shona · Southern Sotho · Tonga · Tswana · Tsonga · Venda · Xhosa",
         "currencies": "Zimbabwean Dollar (2009–2024) (ZWL)"
       },
       "de": {
-        "languages": "Chibarwe · Englisch · Kalanga · Khoisansprachen · Ndau · Nord-Ndebele · Nyanja · Shona · Süd-Sotho · Tonga · Tswana · Tsonga · Venda · Xhosa · Simbabwische Gebärdensprache",
+        "languages": "Chibarwe · Englisch · Kalanga · Khoisansprachen · Ndau · Nord-Ndebele · Nyanja · Shona · Süd-Sotho · Tonga · Tswana · Tsonga · Venda · Xhosa",
         "currencies": "Simbabwe-Dollar (2009) (ZWL)"
       }
     }

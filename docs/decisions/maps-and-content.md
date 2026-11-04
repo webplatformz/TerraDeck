@@ -55,9 +55,11 @@
 - REST Countries details are explicitly collected offline for authoring, with source
   and retrieval metadata. No runtime network request. Intl/CLDR labels plus explicit
   uncommon-language translations support EN/DE. Source languages are not an
-  exhaustive inventory of all spoken languages. Show at most two selected source
-  languages without claiming speaker share or ranking. Country-specific percentages
-  need separate sourcing.
+  exhaustive inventory of all spoken languages. Sign-language entries (`nzs`, `zib`)
+  are omitted from this compact learning list during collection. Show all remaining source languages
+  without claiming speaker share or ranking. Country-specific percentages need
+  separate sourcing. Field notes stack Languages above Currency in full-width
+  rows, reusing the front card's label/value typography.
 - Front facts are not duplicated on the back: editable front/detail/fun stories
   are authored in `scripts/content/country-stories.json` and bundled offline through
   `src/data/countryStories.ts`; missing front facts retain locale fallbacks.
@@ -85,6 +87,15 @@
 - **Generated data:** `npm run geo:build` validates the list (fails on missing or unknown shapes), tags
   every shape, merges the six continent outlines (topojson merge) and writes `src/data/generated/atlas.json`.
   The output is committed and lazy-loaded at runtime.
+- **Crimea correction:** the installed `world-atlas` 2 `countries-50m.json`
+  (Natural Earth public-domain geometry, distributed in the ISC-licensed package)
+  assigns the peninsula polygon to Russia. `scripts/build-geo.mjs` transfers that
+  existing polygon, identified by an interior point at Simferopol, to Ukraine
+  before tagging/merging continents. TopoJSON merging dissolves the shared isthmus
+  boundary without introducing coordinates, gaps or duplicate land. All map modes,
+  mainland silhouettes, hints and adjacency consume this corrected atlas.
+  Country IDs, progress/save schemas and frozen Daily Tour scoring references stay
+  unchanged; this is a geometry correction, not a save migration.
 - **Excluded territory context:** `scripts/geo/exclusions.mjs` lists separately split overseas polygons;
   the approved canonical roster additionally excludes every non-roster feature.
   Embedded overseas polygons (including French Guiana) are split out before country-map rendering, while

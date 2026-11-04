@@ -48,6 +48,17 @@ test('offline field notes cover the full playable and archival catalog in both l
   assert.match(details.countries.jp.de.languages, /Japanisch/)
 })
 
+test('field-note language lists omit sign-language entries in both locales', () => {
+  for (const entry of Object.values(details.countries)) {
+    assert.ok(!entry.languageCodes.some(code => ['nzs', 'zib'].includes(code)))
+    for (const locale of ['en', 'de']) {
+      assert.doesNotMatch(entry[locale].languages, /sign language|Gebärdensprache/i)
+    }
+  }
+  assert.equal(details.countries.nz.en.languages, 'English · Māori')
+  assert.match(details.countries.zw.en.languages, /Xhosa$/)
+})
+
 test('curated back stories have distinct bilingual facts', () => {
   const ids = new Set(ALL_COUNTRIES.map(country => country.id))
   for (const [id, stories] of Object.entries(COUNTRY_STORIES)) {

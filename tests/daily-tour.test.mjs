@@ -203,7 +203,11 @@ test('every one of 168 playable countries has a finite frozen mainland centroid 
     assert.equal(point.length, 2)
     assert.ok(point.every(Number.isFinite))
     assert.ok(Math.abs(point[0]) <= 180 && Math.abs(point[1]) <= 90)
-    assert.deepEqual(point, geoCentroid(world.mainland.get(country.mapName)).map(v => Number(v.toFixed(6))))
+    // Scoring stays frozen when the display atlas receives a geometry correction.
+    const expected = country.id === 'ua'
+      ? [31.31562, 49.195642]
+      : geoCentroid(world.mainland.get(country.mapName)).map(v => Number(v.toFixed(6)))
+    assert.deepEqual(point, expected)
   }
   // Review guards for dropped remote territories and antimeridian archipelagos.
   assert.ok(TOUR_REFERENCE_POINTS.us[0] < -90 && TOUR_REFERENCE_POINTS.us[1] < 50)

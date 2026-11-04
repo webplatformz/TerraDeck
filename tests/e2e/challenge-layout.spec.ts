@@ -84,7 +84,7 @@ test('pack, continent, country and result work without resizing, including reloa
   }
   await zoomIn.click()
   await expect.poll(zoomScale).toBeCloseTo(8)
-  await page.getByRole('button', { name: language === 'en' ? 'Reset view' : 'Ansicht zurücksetzen', exact: true }).click()
+  await page.getByRole('button', { name: language === 'en' ? 'Show whole continent' : 'Ganzen Kontinent anzeigen', exact: true }).click()
   await expect.poll(zoomScale).toBeCloseTo(1)
   const france = page.locator('.challenge-map path[data-name="France"]')
   if (testInfo.project.use.hasTouch) await france.tap()
@@ -120,7 +120,11 @@ test('continent map shares zoom controls, caps at four and keeps gestures separa
   const svg = page.locator('.challenge-map .map-svg')
   const scale = () => svg.evaluate(el => (el as SVGSVGElement & { __zoom: { k: number } }).__zoom.k)
   const zoomIn = page.getByRole('button', { name: de ? 'Hineinzoomen' : 'Zoom in', exact: true })
-  const reset = page.getByRole('button', { name: de ? 'Ansicht zurücksetzen' : 'Reset view', exact: true })
+  const reset = page.getByRole('button', { name: de ? 'Ganze Welt anzeigen' : 'Show whole world', exact: true })
+  await expect(reset).toHaveAttribute('title', de ? 'Ganze Welt anzeigen' : 'Show whole world')
+  await expect(reset).toHaveCSS('width', '44px')
+  await expect(reset).toHaveCSS('height', '44px')
+  await expect(reset).toHaveCSS('border-radius', '50%')
   for (const expected of [2, 4, 4]) {
     await zoomIn.click()
     await expect.poll(scale).toBeCloseTo(expected)

@@ -12,6 +12,7 @@ test('Silver introductions and Explorer flips respect mastery and fit on phones'
       fr: { stamps: 1, encounters: 1, unlockedAt: null },
       jp: { stamps: 2, encounters: 2, unlockedAt: 100 },
       mg: { stamps: 2, encounters: 2, unlockedAt: 100 },
+      ch: { stamps: 2, encounters: 2, unlockedAt: 100 },
       li: { stamps: 1, encounters: 1, unlockedAt: null },
     },
   }
@@ -27,11 +28,11 @@ test('Silver introductions and Explorer flips respect mastery and fit on phones'
   await page.locator('.card-grid .card-button').filter({ hasText: de ? 'Frankreich' : 'France' }).first().click()
   const visitor = page.locator('.card--visitor')
   await expect(visitor).toContainText('Paris')
-  await expect(visitor.locator('.card-number')).toHaveText('FR')
+  await expect(visitor.locator('.card-top .card-continent')).toHaveText(de ? 'Europa - FR' : 'Europe - FR')
   await expect(visitor.locator('.card-window .card-flag')).toBeVisible()
   await expect(visitor.locator('.country-shape')).toHaveCount(0)
   await expect(visitor.locator('.card-name')).toHaveText(de ? 'Frankreich' : 'France')
-  await expect(visitor.locator('.card-continent')).toHaveText(de ? 'Europa' : 'Europe')
+  await expect(visitor.locator('.card-name + .card-continent')).toHaveCount(0)
   await expect(visitor.locator('.card-facts > div')).toHaveCount(3)
   await expect(visitor.locator('.card-fact')).toContainText(de ? 'einmal' : 'once more')
   await expect(visitor.locator('.card-stamps .stamp-stage.is-earned')).toHaveCount(1)
@@ -47,6 +48,15 @@ test('Silver introductions and Explorer flips respect mastery and fit on phones'
   await page.getByRole('button', { name: de ? 'Schließen' : 'Close', exact: true }).click()
   await page.locator('.card-grid .card-button').filter({ hasText: 'Japan' }).first().click()
   const flip = page.getByRole('button', { name: de ? 'Entdecker-Notizen ↻' : 'Field notes ↻', exact: true })
+  await expect(flip.locator('.card-turn-hint')).toHaveText('')
+  await expect(flip.locator('.card-turn-hint svg')).toBeVisible()
+  await expect.poll(() => flip.evaluate(el => {
+    const title = el.querySelector('.card-top .card-continent')!.getBoundingClientRect()
+    const badge = el.querySelector('.rarity-badge')!.getBoundingClientRect()
+    const panel = el.querySelector('.card-window')!.getBoundingClientRect()
+    return Math.max(Math.abs(title.y + title.height / 2 - badge.y - badge.height / 2),
+      Math.abs(title.left - panel.left), Math.abs(badge.right - panel.right))
+  })).toBeLessThan(1)
   await expect(page.locator('.modal .card-fact')).toContainText('705')
   const frontSize = await page.locator('.modal .card').boundingBox()
   await flip.click()
@@ -58,7 +68,7 @@ test('Silver introductions and Explorer flips respect mastery and fit on phones'
   await expect(page.locator('.country-notes-fact').first()).toBeVisible()
   await expect(page.locator('.country-notes-fact--fun')).toContainText('Ōkunoshima')
   await expect(page.locator('.country-notes-fact').first()).toContainText('Kyoto')
-  await expect(page.locator('.modal .card-number')).toHaveText('JP')
+  await expect(page.locator('.modal .card-top .card-continent')).toHaveText(de ? 'Asien - JP' : 'Asia - JP')
   await expect(page.locator('.country-notes-grid')).not.toContainText(de ? 'Hauptstadt' : 'Capital')
   expect(await page.locator('.country-notes').evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true)
   await page.getByRole('button', { name: de ? 'Kartenvorderseite ↻' : 'Card front ↻', exact: true }).click()
@@ -71,14 +81,45 @@ test('Silver introductions and Explorer flips respect mastery and fit on phones'
   const madagascarBack = await page.locator('.modal .card').boundingBox()
   expect(madagascarBack!.width).toBeCloseTo(madagascarFront!.width, 1)
   expect(madagascarBack!.height).toBeCloseTo(madagascarFront!.height, 1)
-  await expect(page.locator('.country-notes .card-number')).toHaveText('MG')
+  await expect(page.locator('.country-notes .card-top .card-continent')).toHaveText(de ? 'Afrika - MG' : 'Africa - MG')
   await expect(page.locator('.country-notes-grid > div')).toHaveCount(2)
-  await expect(page.locator('.country-notes-fact')).toHaveCount(3)
-  await expect(page.locator('.country-notes-geography .geographic-clue')).toBeVisible()
+  await expect(page.locator('.country-notes-fact')).toHaveCount(2)
+  await expect(page.locator('.country-notes-geography')).toHaveCount(0)
   await expect(page.locator('.country-notes-fact').first()).toContainText('Tsingy de Bemaraha')
   await expect(page.locator('.country-notes-fact--fun')).toContainText(de ? 'Mutter des Waldes' : 'mother of the forest')
   await expect(page.locator('.country-notes')).not.toContainText(de ? 'Geografie' : 'Geography')
   await expect(page.locator('.country-notes .card-stamps')).toHaveCount(0)
+  await page.getByRole('button', { name: de ? 'Schließen' : 'Close', exact: true }).click()
+
+  await page.locator('.card-grid .card-button').filter({ hasText: de ? 'Schweiz' : 'Switzerland' }).first().click()
+  const frontLabel = await page.locator('.modal .card-facts dt').first().evaluate(el => {
+    const style = getComputedStyle(el)
+    return { font: style.font, letterSpacing: style.letterSpacing, textTransform: style.textTransform, color: style.color }
+  })
+  const frontValue = await page.locator('.modal .card-facts dd').first().evaluate(el => {
+    const style = getComputedStyle(el)
+    return { fontFamily: style.fontFamily, fontSize: style.fontSize, fontWeight: style.fontWeight }
+  })
+  await flip.click()
+  const rows = page.locator('.country-notes-grid > div')
+  await expect(rows.nth(0).locator('dd')).toHaveText(de
+    ? 'Französisch · Schweizerdeutsch · Italienisch · Rätoromanisch'
+    : 'French · Swiss German · Italian · Romansh')
+  await expect(rows.nth(1).locator('dd')).toHaveText(de ? 'Schweizer Franken (CHF)' : 'Swiss Franc (CHF)')
+  const languageBox = (await rows.nth(0).boundingBox())!
+  const currencyBox = (await rows.nth(1).boundingBox())!
+  expect(currencyBox.y).toBeGreaterThanOrEqual(languageBox.y + languageBox.height)
+  expect(currencyBox.x).toBeCloseTo(languageBox.x, 1)
+  expect(currencyBox.width).toBeCloseTo(languageBox.width, 1)
+  expect(await rows.first().locator('dt').evaluate(el => {
+    const style = getComputedStyle(el)
+    return { font: style.font, letterSpacing: style.letterSpacing, textTransform: style.textTransform, color: style.color }
+  })).toEqual(frontLabel)
+  expect(await rows.first().locator('dd').evaluate(el => {
+    const style = getComputedStyle(el)
+    return { fontFamily: style.fontFamily, fontSize: style.fontSize, fontWeight: style.fontWeight }
+  })).toEqual(frontValue)
+  expect(await page.locator('.country-notes-scroll').evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true)
   await page.getByRole('button', { name: de ? 'Schließen' : 'Close', exact: true }).click()
 
   await page.goto('/?debug')
@@ -94,7 +135,7 @@ test('Silver introductions and Explorer flips respect mastery and fit on phones'
   await page.locator('.sheet .btn--primary').click()
   await expect(page.locator('.unlock.is-flipped')).toBeVisible()
   await flip.click()
-  await expect(page.locator('.unlock .country-notes-fact')).toHaveCount(3)
+  await expect(page.locator('.unlock .country-notes-fact')).toHaveCount(2)
   await expect(page.locator('.unlock .country-notes')).toContainText('EUR')
   await page.getByRole('button', { name: de ? 'Weiter' : 'Continue', exact: true }).click()
   await expect(page.locator('.home-pack')).toBeVisible()

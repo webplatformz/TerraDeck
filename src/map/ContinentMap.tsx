@@ -440,7 +440,7 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
         <path className="map-graticule" d={geo.graticule} />
         {geo.shapes.map((s) => {
           const tone = s.excluded ? undefined : markByName.get(s.name)
-          const cls = ['map-land', !s.member && 'is-faded', s.excluded && 'is-excluded', !s.excluded && s.name === selected && 'is-selected', tone && `is-${tone}`].filter(Boolean).join(' ')
+          const cls = ['map-land', !s.member && 'is-faded', s.excluded && 'is-excluded', !s.excluded && s.name === selected && 'is-selected', tone && `is-${tone}`, tone === 'wrong' && marks.some(mark => mark.mapName === s.name && mark.tone === 'correct') && 'was-correct'].filter(Boolean).join(' ')
           return <path key={keyPrefix + s.name} data-map-land="" data-excluded={s.excluded} data-name={s.member ? s.name : undefined} className={cls} d={s.d} />
         })}
         {[...markByName.entries(), ...(selected ? [[selected, 'selected'] as const] : [])].map(([name, tone]) => {
@@ -513,9 +513,9 @@ export function ContinentMap({ world, continent, interactive, selected, marks = 
         <button type="button" aria-label={tr('map.zoomOut')} onClick={() => zoomBy(0.5)}>
           −
         </button>
-        <button type="button" aria-label={tr('map.resetView')} onClick={resetView}>
+        <button type="button" aria-label={tr('map.resetView')} title={tr('map.resetView')} onClick={resetView}>
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
-            <path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M8 3H3v5m13-5h5v5M3 16v5h5m8 0h5v-5M8 8h8v8H8Z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
       </div>

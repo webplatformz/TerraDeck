@@ -44,6 +44,16 @@ Eligibility, thresholds and stable IDs live in [gameplay](gameplay.md#achievemen
 - Use CSS transitions/keyframes and respect `prefers-reduced-motion`. No sound, video or operating-system notifications; achievement feedback is in-app and never requests browser permission.
 - Fullscreen card/unlock overlays render through a portal to `document.body`, because screen-entry transforms would otherwise trap `position: fixed`.
 - Map keyboard navigation is part of accessibility; a list-based alternative remains deferred.
+- Map overview controls retain circular 44px buttons and use a corner-bracket
+  fit-to-view icon rather than a refresh arrow. Localized tooltips/accessibility
+  labels distinguish showing the whole continent from showing the whole world.
+- Flippable Explorer cards show only a two-arrow circular icon in the bottom-right
+  corner on both faces. The whole card remains clickable/keyboard-operable with
+  localized accessible flip labels; the decorative icon replaces the visible tap instruction.
+- Front/Field-notes card headers place the localized continent and country code
+  at top left, using the continent typography, opposite the rarity badge. Header
+  side edges align with the map window, without extra header padding; the
+  continent is no longer repeated below the country name.
 
 ## Help, project notice and credits
 

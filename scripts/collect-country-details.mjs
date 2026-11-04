@@ -29,7 +29,7 @@ const specialCurrencies = {
 const entries = Object.fromEntries(ids.map(id => {
   const country = countries.find(c => c.cca2.toLowerCase() === id)
   if (!country) throw new Error(`Missing country: ${id}`)
-  const languageCodes = Object.keys(country.languages ?? {})
+  const languageCodes = Object.keys(country.languages ?? {}).filter(code => !['nzs', 'zib'].includes(code))
   const currencyCodes = Object.keys(country.currencies ?? {})
   if (!languageCodes.length || !currencyCodes.length) throw new Error(`Incomplete details: ${id}`)
   const localized = Object.fromEntries(['en', 'de'].map((locale, index) => {

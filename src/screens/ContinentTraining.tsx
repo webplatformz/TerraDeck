@@ -1,4 +1,4 @@
-import { useEffect, useState, type CSSProperties } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { useTranslation } from 'react-i18next'
 import { AtlasBack } from '../components/AtlasBack'
 import { Flag } from '../components/Flag'
@@ -12,6 +12,7 @@ import type { Game } from '../game/useGame'
 import { useContent } from '../i18n/useContent'
 import { ContinentMap, type MarkTone } from '../map/ContinentMap'
 import { useWorld } from '../map/useWorld'
+import { trainingDirection } from '../map/trainingDirection'
 
 interface Props {
   game: Game
@@ -27,8 +28,10 @@ export function ContinentTrainingScreen({ game, training }: Props) {
   const [hintVisible, setHintVisible] = useState(false)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [wrongMapName, setWrongMapName] = useState<string | null>(null)
+  const [wrongTargetMapName, setWrongTargetMapName] = useState<string | null>(null)
   const [pulseMapName, setPulseMapName] = useState<string | null>(null)
   const [confirmClear, setConfirmClear] = useState(false)
+  const cancelButton = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     if (!feedback) return
@@ -36,7 +39,7 @@ export function ContinentTrainingScreen({ game, training }: Props) {
       setFeedback(null)
       setWrongMapName(null)
       setPulseMapName(null)
-    }, feedback === 'correct' ? 1100 : 650)
+    }, feedback === 'correct' ? 1100 : 1800)
     return () => window.clearTimeout(timer)
   }, [feedback])
 
@@ -47,13 +50,21 @@ export function ContinentTrainingScreen({ game, training }: Props) {
   const total = allIds.length
   const knowledge = explorerKnowledgePercent(session?.streak ?? 0, total)
   const complete = !!session && remaining.length === 0
+  const active = training.ready && training.error !== 'training.storageError' && !!session && !complete
   const target = targetId ? COUNTRY_BY_ID[targetId] : undefined
+  const direction = feedback === 'wrong' && world && session && wrongMapName && wrongTargetMapName
+    ? trainingDirection(world, session.continent, wrongMapName, wrongTargetMapName)
+    : null
   const marks: { mapName: string; tone: MarkTone }[] = [
     ...placed.map(id => ({ mapName: COUNTRY_BY_ID[id]!.mapName, tone: 'correct' as const })),
     ...(wrongMapName ? [{ mapName: wrongMapName, tone: 'wrong' as const }] : []),
   ]
 
   const leave = () => game.navigate('home')
+  const dismissClear = () => {
+    setConfirmClear(false)
+    cancelButton.current?.focus()
+  }
   const clearTraining = () => {
     if (training.clear()) {
       setConfirmClear(false)
@@ -91,6 +102,7 @@ export function ContinentTrainingScreen({ game, training }: Props) {
       return
     }
     setWrongMapName(mapSelection)
+    setWrongTargetMapName(target.mapName)
     setTargetId(null)
     setMapSelection(null)
     setHintVisible(false)
@@ -99,10 +111,17 @@ export function ContinentTrainingScreen({ game, training }: Props) {
   }
 
   return (
-    <div className="continent-training">
+    <div className={`continent-training${active ? ' continent-training--active' : ''}`}>
       <header className="screen-bar">
         <AtlasBack onClick={leave} />
-        <span className="screen-bar-title">{t('training.title')}</span>
+        {active ? (
+          <>
+            <h1>{continentName(session.continent)}</h1>
+            <button type="button" ref={cancelButton} className="btn btn--ghost btn--small training-cancel" onClick={() => setConfirmClear(true)}>
+              {t('training.cancel')}
+            </button>
+          </>
+        ) : <span className="screen-bar-title">{t('training.title')}</span>}
       </header>
 
       {training.error && <p className="training-error" role="alert">{t(training.error)}</p>}
@@ -170,19 +189,10 @@ export function ContinentTrainingScreen({ game, training }: Props) {
       ) : (
         <>
           <div className="training-summary">
-            <div className="training-summary-title">
-              <div>
-                <p className="eyebrow">{t('training.eyebrow')}</p>
-                <h1>{continentName(session.continent)}</h1>
-              </div>
-              <button type="button" className="btn btn--ghost btn--small" onClick={() => setConfirmClear(true)}>
-                {t('training.cancel')}
-              </button>
-            </div>
             <div className="training-metrics">
               <div className="training-metric">
                 <div className="training-progress-copy">
-                  <span>{t('training.continentProgress')}</span>
+                  <span>{t('training.progressShort')}</span>
                   <strong>{placed.length} / {total}</strong>
                 </div>
                 <div className="training-progress" role="progressbar" aria-label={t('training.continentProgress')} aria-valuemin={0} aria-valuemax={total} aria-valuenow={placed.length}>
@@ -194,10 +204,10 @@ export function ContinentTrainingScreen({ game, training }: Props) {
                 '--streak-pulse-duration': `${2.8 - knowledge / 100 * 1.6}s`,
               } as CSSProperties}>
                 <div className="training-streak-copy">
-                  <span><span className="training-energy-icon" aria-hidden="true">✦</span> {t('training.explorerKnowledge')}</span>
-                  <span>{t('training.streakCount', { count: session.streak })}</span>
+                  <span><span className="training-energy-icon" aria-hidden="true">✦</span> {t('training.streakShort')}</span>
+                  <strong title={t('training.streakCount', { count: session.streak })}>{session.streak}</strong>
                 </div>
-                <div className="training-streak" role="progressbar" aria-label={t('training.explorerKnowledge')} aria-valuemin={0} aria-valuemax={100} aria-valuenow={knowledge}>
+                <div className="training-streak" role="progressbar" aria-label={t('training.explorerKnowledge')} aria-valuemin={0} aria-valuemax={100} aria-valuenow={knowledge} aria-valuetext={t('training.streakCount', { count: session.streak })}>
                   <span className="training-streak-fill" style={{ width: `${knowledge}%` }} />
                 </div>
               </div>
@@ -218,15 +228,17 @@ export function ContinentTrainingScreen({ game, training }: Props) {
                 onSelect={setMapSelection}
               />
             ) : <div className="map-frame"><div className="map-loading">{t('common.loadingMap')}</div></div>}
+            <div className={`training-feedback${feedback ? ` training-feedback--${feedback}` : ''}`} role="status" aria-atomic="true">
+              {feedback && (
+                <>
+                  <span aria-hidden="true">{feedback === 'correct' ? '✓' : direction?.arrow ?? '✕'}</span>
+                  <span className="training-feedback-copy">{feedback === 'correct' ? t('training.correct') : direction ? t(`training.wrongDirection.${direction.name}`) : t('training.wrong')}</span>
+                </>
+              )}
+            </div>
           </div>
 
           <section className={`training-sheet${target ? ' training-sheet--selected' : ''}`} aria-live="polite">
-            {feedback && (
-              <p className={`training-feedback training-feedback--${feedback}`} role="status">
-                <span aria-hidden="true">{feedback === 'correct' ? '✓' : '✕'}</span>
-                {t(feedback === 'correct' ? 'training.correct' : 'training.wrong')}
-              </p>
-            )}
             {target ? (
               <div className="training-target">
                 <div className="training-target-heading">
@@ -275,11 +287,22 @@ export function ContinentTrainingScreen({ game, training }: Props) {
 
       {confirmClear && session && (
         <div className="training-modal-backdrop">
-          <section className="training-modal" role="alertdialog" aria-modal="true" aria-labelledby="training-modal-title" aria-describedby="training-modal-body">
+          <section className="training-modal" role="alertdialog" aria-modal="true" aria-labelledby="training-modal-title" aria-describedby="training-modal-body" onKeyDown={event => {
+            if (event.key === 'Escape') dismissClear()
+            if (event.key === 'Tab') {
+              const buttons = event.currentTarget.querySelectorAll('button')
+              const next = event.shiftKey ? buttons[buttons.length - 1] : buttons[0]
+              const edge = event.shiftKey ? buttons[0] : buttons[buttons.length - 1]
+              if (document.activeElement === edge) {
+                event.preventDefault()
+                next?.focus()
+              }
+            }
+          }}>
             <h2 id="training-modal-title">{t(complete ? 'training.confirmCloseTitle' : 'training.confirmCancelTitle')}</h2>
             <p id="training-modal-body">{t(complete ? 'training.confirmCloseBody' : 'training.confirmCancelBody')}</p>
             <div className="training-modal-actions">
-              <button type="button" className="btn btn--ghost" autoFocus onClick={() => setConfirmClear(false)}>{t('common.continue')}</button>
+              <button type="button" className="btn btn--ghost" autoFocus onClick={dismissClear}>{t('common.continue')}</button>
               <button type="button" className="btn btn--primary" onClick={clearTraining}>{t(complete ? 'training.confirmClose' : 'training.confirmCancel')}</button>
             </div>
           </section>
